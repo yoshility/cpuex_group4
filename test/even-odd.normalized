@@ -1,0 +1,93 @@
+Let
+   t type Int
+   123
+   Let
+      f type Int
+      456
+      LetRec
+            even:type Fun:type Int,->type Int
+            args:x:type Int, 
+            LetRec
+                  odd:type Fun:type Int,->type Int
+                  args:x:type Int, 
+                  Let
+                     Ti9 type Int
+                     0
+                     IfLE
+                         x
+                         Ti9
+                         Let
+                            Ti10 type Int
+                            0
+                            IfLE
+                                Ti10
+                                x
+                                Var f
+                                Let
+                                   Ti12 type Int
+                                   Let
+                                      Ti11 type Int
+                                      1
+                                      Add
+                                         x
+                                         Ti11
+                                   App
+                                      even
+                                      Ti12
+                         Let
+                            Ti14 type Int
+                            Let
+                               Ti13 type Int
+                               1
+                               Sub
+                                  x
+                                  Ti13
+                            App
+                               even
+                               Ti14
+                  Let
+                     Ti3 type Int
+                     0
+                     IfLE
+                         x
+                         Ti3
+                         Let
+                            Ti4 type Int
+                            0
+                            IfLE
+                                Ti4
+                                x
+                                Var t
+                                Let
+                                   Ti6 type Int
+                                   Let
+                                      Ti5 type Int
+                                      1
+                                      Add
+                                         x
+                                         Ti5
+                                   App
+                                      odd
+                                      Ti6
+                         Let
+                            Ti8 type Int
+                            Let
+                               Ti7 type Int
+                               1
+                               Sub
+                                  x
+                                  Ti7
+                            App
+                               odd
+                               Ti8
+            Let
+               Ti2 type Int
+               Let
+                  Ti1 type Int
+                  789
+                  App
+                     even
+                     Ti1
+               ExtFunApp
+                       print_int
+                       Ti2

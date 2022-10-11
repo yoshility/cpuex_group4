@@ -1,0 +1,72 @@
+LetRec
+      h:type Var type Fun:type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,),->type Int
+      args:p:type Var type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,), 
+      LetTuple
+              v1 type Var type Int
+              v2 type Var type Int
+              v3 type Var type Int
+              v4 type Var type Int
+              v5 type Var type Int
+              v6 type Var type Int
+              v7 type Var type Int
+              v8 type Var type Int
+              v9 type Var type Int
+              v10 type Var type Int
+              Var p
+              LetRec
+                    g:type Var type Fun:type Int,->type Int
+                    args:z:type Var type Int, 
+                    Let
+                       r
+                       type Var type Int
+                       Add
+                          Add
+                             Add
+                                Add
+                                   Add
+                                      Add
+                                         Add
+                                            Add
+                                               Add
+                                                  Var v1
+                                                  Var v2
+                                               Var v3
+                                            Var v4
+                                         Var v5
+                                      Var v6
+                                   Var v7
+                                Var v8
+                             Var v9
+                          Var v10
+                       IF
+                         Not LE
+                               Var z
+                               0
+                         Var r
+                         App
+                            Var g
+                            Neg Var z
+                    App
+                       Var g
+                       1
+      Let
+         Tu1
+         type Unit
+         App
+            Var print_int
+            App
+               Var h
+               Tuple
+                    1
+                    2
+                    3
+                    4
+                    5
+                    6
+                    7
+                    8
+                    9
+                    10
+         App
+            Var print_newline
+            Unit

@@ -1,0 +1,37 @@
+LetRec
+      ack:type Var type Fun:type Int,type Int,->type Int
+      args:x:type Var type Int, y:type Var type Int, 
+      IF
+        LE
+          Var x
+          0
+        Add
+           Var y
+           1
+        IF
+          LE
+            Var y
+            0
+          App
+             Var ack
+             Sub
+                Var x
+                1
+             1
+          App
+             Var ack
+             Sub
+                Var x
+                1
+             App
+                Var ack
+                Var x
+                Sub
+                   Var y
+                   1
+      App
+         Var print_int
+         App
+            Var ack
+            3
+            10

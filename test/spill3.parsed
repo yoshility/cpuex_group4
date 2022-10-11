@@ -1,0 +1,297 @@
+LetRec
+      f:type Var type Fun:type Int,->type Int
+      args:x0:type Var type Int, 
+      Let
+         x1
+         type Var type Int
+         Add
+            Var x0
+            1
+         Let
+            x2
+            type Var type Int
+            Add
+               Var x1
+               1
+            Let
+               x3
+               type Var type Int
+               Add
+                  Var x2
+                  1
+               Let
+                  x4
+                  type Var type Int
+                  Add
+                     Var x3
+                     1
+                  Let
+                     x5
+                     type Var type Int
+                     Add
+                        Var x4
+                        1
+                     Let
+                        x6
+                        type Var type Int
+                        Add
+                           Var x5
+                           1
+                        Let
+                           x7
+                           type Var type Int
+                           Add
+                              Var x6
+                              1
+                           Let
+                              x8
+                              type Var type Int
+                              Add
+                                 Var x7
+                                 1
+                              Let
+                                 x9
+                                 type Var type Int
+                                 Add
+                                    Var x8
+                                    1
+                                 Let
+                                    x10
+                                    type Var type Int
+                                    Add
+                                       Var x9
+                                       1
+                                    Let
+                                       x11
+                                       type Var type Int
+                                       Add
+                                          Var x10
+                                          1
+                                       Let
+                                          x12
+                                          type Var type Int
+                                          Add
+                                             Var x11
+                                             1
+                                          Let
+                                             x13
+                                             type Var type Int
+                                             Add
+                                                Var x12
+                                                1
+                                             Let
+                                                x14
+                                                type Var type Int
+                                                Add
+                                                   Var x13
+                                                   1
+                                                Let
+                                                   x15
+                                                   type Var type Int
+                                                   Add
+                                                      Var x14
+                                                      1
+                                                   Let
+                                                      x16
+                                                      type Var type Int
+                                                      Add
+                                                         Var x15
+                                                         1
+                                                      Let
+                                                         x17
+                                                         type Var type Int
+                                                         Add
+                                                            Var x16
+                                                            1
+                                                         Let
+                                                            x18
+                                                            type Var type Int
+                                                            Add
+                                                               Var x17
+                                                               1
+                                                            Let
+                                                               x19
+                                                               type Var type Int
+                                                               Add
+                                                                  Var x18
+                                                                  Var x1
+                                                               Let
+                                                                  x20
+                                                                  type Var type Int
+                                                                  Add
+                                                                     Var x19
+                                                                     Var x2
+                                                                  Let
+                                                                     x21
+                                                                     type Var type Int
+                                                                     Add
+                                                                        Var x20
+                                                                        Var x3
+                                                                     Let
+                                                                        x22
+                                                                        type Var type Int
+                                                                        Add
+                                                                           Var x21
+                                                                           Var x4
+                                                                        Let
+                                                                           x23
+                                                                           type Var type Int
+                                                                           Add
+                                                                              Var x22
+                                                                              Var x5
+                                                                           Let
+                                                                              x24
+                                                                              type Var type Int
+                                                                              Add
+                                                                                 Var x23
+                                                                                 Var x6
+                                                                              Let
+                                                                                 x25
+                                                                                 type Var type Int
+                                                                                 Add
+                                                                                    Var x24
+                                                                                    Var x7
+                                                                                 Let
+                                                                                    x26
+                                                                                    type Var type Int
+                                                                                    Add
+                                                                                       Var x25
+                                                                                       Var x8
+                                                                                    Let
+                                                                                       x27
+                                                                                       type Var type Int
+                                                                                       Add
+                                                                                          Var x26
+                                                                                          Var x9
+                                                                                       Let
+                                                                                          x28
+                                                                                          type Var type Int
+                                                                                          Add
+                                                                                             Var x27
+                                                                                             Var x10
+                                                                                          Let
+                                                                                             x29
+                                                                                             type Var type Int
+                                                                                             Add
+                                                                                                Var x28
+                                                                                                Var x11
+                                                                                             Let
+                                                                                                x30
+                                                                                                type Var type Int
+                                                                                                Add
+                                                                                                   Var x29
+                                                                                                   Var x12
+                                                                                                Let
+                                                                                                   x31
+                                                                                                   type Var type Int
+                                                                                                   Add
+                                                                                                      Var x30
+                                                                                                      Var x13
+                                                                                                   Let
+                                                                                                      x32
+                                                                                                      type Var type Int
+                                                                                                      Add
+                                                                                                         Var x31
+                                                                                                         Var x14
+                                                                                                      Let
+                                                                                                         x33
+                                                                                                         type Var type Int
+                                                                                                         Add
+                                                                                                            Var x32
+                                                                                                            Var x15
+                                                                                                         Let
+                                                                                                            x34
+                                                                                                            type Var type Int
+                                                                                                            Add
+                                                                                                               Var x33
+                                                                                                               Var x16
+                                                                                                            Let
+                                                                                                               x35
+                                                                                                               type Var type Int
+                                                                                                               Add
+                                                                                                                  Var x34
+                                                                                                                  Var x17
+                                                                                                               Let
+                                                                                                                  x36
+                                                                                                                  type Var type Int
+                                                                                                                  Add
+                                                                                                                     Var x35
+                                                                                                                     Var x0
+                                                                                                                  Add
+                                                                                                                     Add
+                                                                                                                        Add
+                                                                                                                           Add
+                                                                                                                              Add
+                                                                                                                                 Add
+                                                                                                                                    Add
+                                                                                                                                       Add
+                                                                                                                                          Add
+                                                                                                                                             Add
+                                                                                                                                                Add
+                                                                                                                                                   Add
+                                                                                                                                                      Add
+                                                                                                                                                         Add
+                                                                                                                                                            Add
+                                                                                                                                                               Add
+                                                                                                                                                                  Add
+                                                                                                                                                                     Add
+                                                                                                                                                                        Add
+                                                                                                                                                                           Add
+                                                                                                                                                                              Add
+                                                                                                                                                                                 Add
+                                                                                                                                                                                    Add
+                                                                                                                                                                                       Add
+                                                                                                                                                                                          Add
+                                                                                                                                                                                             Add
+                                                                                                                                                                                                Add
+                                                                                                                                                                                                   Add
+                                                                                                                                                                                                      Add
+                                                                                                                                                                                                         Add
+                                                                                                                                                                                                            Add
+                                                                                                                                                                                                               Add
+                                                                                                                                                                                                                  Add
+                                                                                                                                                                                                                     Add
+                                                                                                                                                                                                                        Add
+                                                                                                                                                                                                                           Add
+                                                                                                                                                                                                                              Var x1
+                                                                                                                                                                                                                              Var x2
+                                                                                                                                                                                                                           Var x3
+                                                                                                                                                                                                                        Var x4
+                                                                                                                                                                                                                     Var x5
+                                                                                                                                                                                                                  Var x6
+                                                                                                                                                                                                               Var x7
+                                                                                                                                                                                                            Var x8
+                                                                                                                                                                                                         Var x9
+                                                                                                                                                                                                      Var x10
+                                                                                                                                                                                                   Var x11
+                                                                                                                                                                                                Var x12
+                                                                                                                                                                                             Var x13
+                                                                                                                                                                                          Var x14
+                                                                                                                                                                                       Var x15
+                                                                                                                                                                                    Var x16
+                                                                                                                                                                                 Var x17
+                                                                                                                                                                              Var x18
+                                                                                                                                                                           Var x19
+                                                                                                                                                                        Var x20
+                                                                                                                                                                     Var x21
+                                                                                                                                                                  Var x22
+                                                                                                                                                               Var x23
+                                                                                                                                                            Var x24
+                                                                                                                                                         Var x25
+                                                                                                                                                      Var x26
+                                                                                                                                                   Var x27
+                                                                                                                                                Var x28
+                                                                                                                                             Var x29
+                                                                                                                                          Var x30
+                                                                                                                                       Var x31
+                                                                                                                                    Var x32
+                                                                                                                                 Var x33
+                                                                                                                              Var x34
+                                                                                                                           Var x35
+                                                                                                                        Var x36
+                                                                                                                     Var x0
+      App
+         Var print_int
+         App
+            Var f
+            0

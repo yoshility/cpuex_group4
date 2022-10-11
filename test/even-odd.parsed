@@ -1,0 +1,57 @@
+Let
+   t
+   type Var type Int
+   123
+   Let
+      f
+      type Var type Int
+      456
+      LetRec
+            even:type Var type Fun:type Int,->type Int
+            args:x:type Var type Int, 
+            LetRec
+                  odd:type Var type Fun:type Int,->type Int
+                  args:x:type Var type Int, 
+                  IF
+                    Not LE
+                          Var x
+                          0
+                    App
+                       Var even
+                       Sub
+                          Var x
+                          1
+                    IF
+                      Not LE
+                            0
+                            Var x
+                      App
+                         Var even
+                         Add
+                            Var x
+                            1
+                      Var f
+                  IF
+                    Not LE
+                          Var x
+                          0
+                    App
+                       Var odd
+                       Sub
+                          Var x
+                          1
+                    IF
+                      Not LE
+                            0
+                            Var x
+                      App
+                         Var odd
+                         Add
+                            Var x
+                            1
+                      Var t
+            App
+               Var print_int
+               App
+                  Var even
+                  789

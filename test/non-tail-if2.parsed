@@ -1,0 +1,32 @@
+LetRec
+      f:type Var type Fun:type Unit,->type Int
+      args:Tu1:type Var type Unit, 
+      12345
+      Let
+         y
+         type Var type Array type Int
+         Array
+              10
+              3
+         Let
+            x
+            type Var type Int
+            67890
+            App
+               Var print_int
+               IF
+                 Eq
+                   Get
+                      Var y
+                      0
+                   3
+                 Add
+                    Add
+                       App
+                          Var f
+                          Unit
+                       Get
+                          Var y
+                          1
+                    Var x
+                 7

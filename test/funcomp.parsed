@@ -1,0 +1,45 @@
+LetRec
+      compose:type Var type Fun:type Fun:type Int,->type Int,type Fun:type Int,->type Int,->type Fun:type Int,->type Int
+      args:f:type Var type Fun:type Int,->type Int, g:type Var type Fun:type Int,->type Int, 
+      LetRec
+            composed:type Var type Fun:type Int,->type Int
+            args:x:type Var type Int, 
+            App
+               Var g
+               App
+                  Var f
+                  Var x
+            Var composed
+      LetRec
+            dbl:type Var type Fun:type Int,->type Int
+            args:x:type Var type Int, 
+            Add
+               Var x
+               Var x
+            LetRec
+                  inc:type Var type Fun:type Int,->type Int
+                  args:x:type Var type Int, 
+                  Add
+                     Var x
+                     1
+                  LetRec
+                        dec:type Var type Fun:type Int,->type Int
+                        args:x:type Var type Int, 
+                        Sub
+                           Var x
+                           1
+                        Let
+                           h
+                           type Var type Fun:type Int,->type Int
+                           App
+                              Var compose
+                              Var inc
+                              App
+                                 Var compose
+                                 Var dbl
+                                 Var dec
+                           App
+                              Var print_int
+                              App
+                                 Var h
+                                 123

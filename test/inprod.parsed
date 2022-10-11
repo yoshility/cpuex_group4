@@ -1,0 +1,69 @@
+LetRec
+      getx:type Var type Fun:type Tuple(type Float,type Float,type Float,),->type Float
+      args:v:type Var type Tuple(type Float,type Float,type Float,), 
+      LetTuple
+              x type Var type Float
+              y type Var type Float
+              z type Var type Float
+              Var v
+              Var x
+      LetRec
+            gety:type Var type Fun:type Tuple(type Float,type Float,type Float,),->type Float
+            args:v:type Var type Tuple(type Float,type Float,type Float,), 
+            LetTuple
+                    x type Var type Float
+                    y type Var type Float
+                    z type Var type Float
+                    Var v
+                    Var y
+            LetRec
+                  getz:type Var type Fun:type Tuple(type Float,type Float,type Float,),->type Float
+                  args:v:type Var type Tuple(type Float,type Float,type Float,), 
+                  LetTuple
+                          x type Var type Float
+                          y type Var type Float
+                          z type Var type Float
+                          Var v
+                          Var z
+                  LetRec
+                        inprod:type Var type Fun:type Tuple(type Float,type Float,type Float,),type Tuple(type Float,type Float,type Float,),->type Float
+                        args:v1:type Var type Tuple(type Float,type Float,type Float,), v2:type Var type Tuple(type Float,type Float,type Float,), 
+                        FAdd
+                            FAdd
+                                FMul
+                                    App
+                                       Var getx
+                                       Var v1
+                                    App
+                                       Var getx
+                                       Var v2
+                                FMul
+                                    App
+                                       Var gety
+                                       Var v1
+                                    App
+                                       Var gety
+                                       Var v2
+                            FMul
+                                App
+                                   Var getz
+                                   Var v1
+                                App
+                                   Var getz
+                                   Var v2
+                        App
+                           Var print_int
+                           App
+                              Var truncate
+                              FMul
+                                  1000000.
+                                  App
+                                     Var inprod
+                                     Tuple
+                                          1.
+                                          2.
+                                          3.
+                                     Tuple
+                                          4.
+                                          5.
+                                          6.

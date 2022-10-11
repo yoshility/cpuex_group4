@@ -1,0 +1,17 @@
+LetRec
+      f:type Var type Fun:type Int,->type Int
+      args:x:type Var type Int, 
+      Add
+         Var x
+         123
+      LetRec
+            g:type Var type Fun:type Int,->type Fun:type Int,->type Int
+            args:y:type Var type Int, 
+            Var f
+            App
+               Var print_int
+               App
+                  App
+                     Var g
+                     456
+                  789

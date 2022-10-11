@@ -1,0 +1,24 @@
+Let
+   x
+   type Var type Int
+   10
+   LetRec
+         f:type Var type Fun:type Int,->type Int
+         args:y:type Var type Int, 
+         IF
+           Eq
+             Var y
+             0
+           0
+           Add
+              Var x
+              App
+                 Var f
+                 Sub
+                    Var y
+                    1
+         App
+            Var print_int
+            App
+               Var f
+               123

@@ -1,0 +1,48 @@
+LetRec
+      inprod:type Var type Fun:type Array type Float,type Array type Float,type Float,type Int,->type Float
+      args:v1:type Var type Array type Float, v2:type Var type Array type Float, acc:type Var type Float, i:type Var type Int, 
+      IF
+        Not LE
+              0
+              Var i
+        Var acc
+        App
+           Var inprod
+           Var v1
+           Var v2
+           FAdd
+               Var acc
+               FMul
+                   Get
+                      Var v1
+                      Var i
+                   Get
+                      Var v2
+                      Var i
+           Sub
+              Var i
+              1
+      Let
+         v1
+         type Var type Array type Float
+         Array
+              3
+              1.23
+         Let
+            v2
+            type Var type Array type Float
+            Array
+                 3
+                 4.56
+            App
+               Var print_int
+               App
+                  Var truncate
+                  FMul
+                      1000000.
+                      App
+                         Var inprod
+                         Var v1
+                         Var v2
+                         0.
+                         2

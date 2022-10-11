@@ -1,0 +1,2 @@
+regAlloc.cmi : \
+    asm.cmi

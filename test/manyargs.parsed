@@ -1,0 +1,27 @@
+Let
+   x
+   type Var type Int
+   42
+   LetRec
+         f:type Var type Fun:type Int,type Int,type Int,type Int,type Int,->type Unit
+         args:y1:type Var type Int, y2:type Var type Int, y3:type Var type Int, y4:type Var type Int, y5:type Var type Int, 
+         App
+            Var print_int
+            Add
+               Add
+                  Add
+                     Add
+                        Add
+                           Var x
+                           Var y1
+                        Var y2
+                     Var y3
+                  Var y4
+               Var y5
+         App
+            Var f
+            1
+            2
+            3
+            4
+            5

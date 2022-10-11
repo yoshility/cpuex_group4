@@ -1,0 +1,40 @@
+Let
+   x
+   type Var type Int
+   App
+      Var truncate
+      1.23
+   Let
+      y
+      type Var type Int
+      App
+         Var truncate
+         4.56
+      Let
+         z
+         type Var type Int
+         App
+            Var truncate
+            FNeg 7.89
+         App
+            Var print_int
+            Add
+               Add
+                  IF
+                    Not LE
+                          0
+                          Var z
+                    Var y
+                    Var x
+                  IF
+                    Not LE
+                          Var x
+                          0
+                    Var z
+                    Var y
+               IF
+                 Not LE
+                       0
+                       Var y
+                 Var x
+                 Var z

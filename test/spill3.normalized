@@ -1,0 +1,426 @@
+LetRec
+      f:type Fun:type Int,->type Int
+      args:x0:type Int, 
+      Let
+         x1 type Int
+         Let
+            Ti3 type Int
+            1
+            Add
+               x0
+               Ti3
+         Let
+            x2 type Int
+            Let
+               Ti4 type Int
+               1
+               Add
+                  x1
+                  Ti4
+            Let
+               x3 type Int
+               Let
+                  Ti5 type Int
+                  1
+                  Add
+                     x2
+                     Ti5
+               Let
+                  x4 type Int
+                  Let
+                     Ti6 type Int
+                     1
+                     Add
+                        x3
+                        Ti6
+                  Let
+                     x5 type Int
+                     Let
+                        Ti7 type Int
+                        1
+                        Add
+                           x4
+                           Ti7
+                     Let
+                        x6 type Int
+                        Let
+                           Ti8 type Int
+                           1
+                           Add
+                              x5
+                              Ti8
+                        Let
+                           x7 type Int
+                           Let
+                              Ti9 type Int
+                              1
+                              Add
+                                 x6
+                                 Ti9
+                           Let
+                              x8 type Int
+                              Let
+                                 Ti10 type Int
+                                 1
+                                 Add
+                                    x7
+                                    Ti10
+                              Let
+                                 x9 type Int
+                                 Let
+                                    Ti11 type Int
+                                    1
+                                    Add
+                                       x8
+                                       Ti11
+                                 Let
+                                    x10 type Int
+                                    Let
+                                       Ti12 type Int
+                                       1
+                                       Add
+                                          x9
+                                          Ti12
+                                    Let
+                                       x11 type Int
+                                       Let
+                                          Ti13 type Int
+                                          1
+                                          Add
+                                             x10
+                                             Ti13
+                                       Let
+                                          x12 type Int
+                                          Let
+                                             Ti14 type Int
+                                             1
+                                             Add
+                                                x11
+                                                Ti14
+                                          Let
+                                             x13 type Int
+                                             Let
+                                                Ti15 type Int
+                                                1
+                                                Add
+                                                   x12
+                                                   Ti15
+                                             Let
+                                                x14 type Int
+                                                Let
+                                                   Ti16 type Int
+                                                   1
+                                                   Add
+                                                      x13
+                                                      Ti16
+                                                Let
+                                                   x15 type Int
+                                                   Let
+                                                      Ti17 type Int
+                                                      1
+                                                      Add
+                                                         x14
+                                                         Ti17
+                                                   Let
+                                                      x16 type Int
+                                                      Let
+                                                         Ti18 type Int
+                                                         1
+                                                         Add
+                                                            x15
+                                                            Ti18
+                                                      Let
+                                                         x17 type Int
+                                                         Let
+                                                            Ti19 type Int
+                                                            1
+                                                            Add
+                                                               x16
+                                                               Ti19
+                                                         Let
+                                                            x18 type Int
+                                                            Let
+                                                               Ti20 type Int
+                                                               1
+                                                               Add
+                                                                  x17
+                                                                  Ti20
+                                                            Let
+                                                               x19 type Int
+                                                               Add
+                                                                  x18
+                                                                  x1
+                                                               Let
+                                                                  x20 type Int
+                                                                  Add
+                                                                     x19
+                                                                     x2
+                                                                  Let
+                                                                     x21 type Int
+                                                                     Add
+                                                                        x20
+                                                                        x3
+                                                                     Let
+                                                                        x22 type Int
+                                                                        Add
+                                                                           x21
+                                                                           x4
+                                                                        Let
+                                                                           x23 type Int
+                                                                           Add
+                                                                              x22
+                                                                              x5
+                                                                           Let
+                                                                              x24 type Int
+                                                                              Add
+                                                                                 x23
+                                                                                 x6
+                                                                              Let
+                                                                                 x25 type Int
+                                                                                 Add
+                                                                                    x24
+                                                                                    x7
+                                                                                 Let
+                                                                                    x26 type Int
+                                                                                    Add
+                                                                                       x25
+                                                                                       x8
+                                                                                    Let
+                                                                                       x27 type Int
+                                                                                       Add
+                                                                                          x26
+                                                                                          x9
+                                                                                       Let
+                                                                                          x28 type Int
+                                                                                          Add
+                                                                                             x27
+                                                                                             x10
+                                                                                          Let
+                                                                                             x29 type Int
+                                                                                             Add
+                                                                                                x28
+                                                                                                x11
+                                                                                             Let
+                                                                                                x30 type Int
+                                                                                                Add
+                                                                                                   x29
+                                                                                                   x12
+                                                                                                Let
+                                                                                                   x31 type Int
+                                                                                                   Add
+                                                                                                      x30
+                                                                                                      x13
+                                                                                                   Let
+                                                                                                      x32 type Int
+                                                                                                      Add
+                                                                                                         x31
+                                                                                                         x14
+                                                                                                      Let
+                                                                                                         x33 type Int
+                                                                                                         Add
+                                                                                                            x32
+                                                                                                            x15
+                                                                                                         Let
+                                                                                                            x34 type Int
+                                                                                                            Add
+                                                                                                               x33
+                                                                                                               x16
+                                                                                                            Let
+                                                                                                               x35 type Int
+                                                                                                               Add
+                                                                                                                  x34
+                                                                                                                  x17
+                                                                                                               Let
+                                                                                                                  x36 type Int
+                                                                                                                  Add
+                                                                                                                     x35
+                                                                                                                     x0
+                                                                                                                  Let
+                                                                                                                     Ti55 type Int
+                                                                                                                     Let
+                                                                                                                        Ti54 type Int
+                                                                                                                        Let
+                                                                                                                           Ti53 type Int
+                                                                                                                           Let
+                                                                                                                              Ti52 type Int
+                                                                                                                              Let
+                                                                                                                                 Ti51 type Int
+                                                                                                                                 Let
+                                                                                                                                    Ti50 type Int
+                                                                                                                                    Let
+                                                                                                                                       Ti49 type Int
+                                                                                                                                       Let
+                                                                                                                                          Ti48 type Int
+                                                                                                                                          Let
+                                                                                                                                             Ti47 type Int
+                                                                                                                                             Let
+                                                                                                                                                Ti46 type Int
+                                                                                                                                                Let
+                                                                                                                                                   Ti45 type Int
+                                                                                                                                                   Let
+                                                                                                                                                      Ti44 type Int
+                                                                                                                                                      Let
+                                                                                                                                                         Ti43 type Int
+                                                                                                                                                         Let
+                                                                                                                                                            Ti42 type Int
+                                                                                                                                                            Let
+                                                                                                                                                               Ti41 type Int
+                                                                                                                                                               Let
+                                                                                                                                                                  Ti40 type Int
+                                                                                                                                                                  Let
+                                                                                                                                                                     Ti39 type Int
+                                                                                                                                                                     Let
+                                                                                                                                                                        Ti38 type Int
+                                                                                                                                                                        Let
+                                                                                                                                                                           Ti37 type Int
+                                                                                                                                                                           Let
+                                                                                                                                                                              Ti36 type Int
+                                                                                                                                                                              Let
+                                                                                                                                                                                 Ti35 type Int
+                                                                                                                                                                                 Let
+                                                                                                                                                                                    Ti34 type Int
+                                                                                                                                                                                    Let
+                                                                                                                                                                                       Ti33 type Int
+                                                                                                                                                                                       Let
+                                                                                                                                                                                          Ti32 type Int
+                                                                                                                                                                                          Let
+                                                                                                                                                                                             Ti31 type Int
+                                                                                                                                                                                             Let
+                                                                                                                                                                                                Ti30 type Int
+                                                                                                                                                                                                Let
+                                                                                                                                                                                                   Ti29 type Int
+                                                                                                                                                                                                   Let
+                                                                                                                                                                                                      Ti28 type Int
+                                                                                                                                                                                                      Let
+                                                                                                                                                                                                         Ti27 type Int
+                                                                                                                                                                                                         Let
+                                                                                                                                                                                                            Ti26 type Int
+                                                                                                                                                                                                            Let
+                                                                                                                                                                                                               Ti25 type Int
+                                                                                                                                                                                                               Let
+                                                                                                                                                                                                                  Ti24 type Int
+                                                                                                                                                                                                                  Let
+                                                                                                                                                                                                                     Ti23 type Int
+                                                                                                                                                                                                                     Let
+                                                                                                                                                                                                                        Ti22 type Int
+                                                                                                                                                                                                                        Let
+                                                                                                                                                                                                                           Ti21 type Int
+                                                                                                                                                                                                                           Add
+                                                                                                                                                                                                                              x1
+                                                                                                                                                                                                                              x2
+                                                                                                                                                                                                                           Add
+                                                                                                                                                                                                                              Ti21
+                                                                                                                                                                                                                              x3
+                                                                                                                                                                                                                        Add
+                                                                                                                                                                                                                           Ti22
+                                                                                                                                                                                                                           x4
+                                                                                                                                                                                                                     Add
+                                                                                                                                                                                                                        Ti23
+                                                                                                                                                                                                                        x5
+                                                                                                                                                                                                                  Add
+                                                                                                                                                                                                                     Ti24
+                                                                                                                                                                                                                     x6
+                                                                                                                                                                                                               Add
+                                                                                                                                                                                                                  Ti25
+                                                                                                                                                                                                                  x7
+                                                                                                                                                                                                            Add
+                                                                                                                                                                                                               Ti26
+                                                                                                                                                                                                               x8
+                                                                                                                                                                                                         Add
+                                                                                                                                                                                                            Ti27
+                                                                                                                                                                                                            x9
+                                                                                                                                                                                                      Add
+                                                                                                                                                                                                         Ti28
+                                                                                                                                                                                                         x10
+                                                                                                                                                                                                   Add
+                                                                                                                                                                                                      Ti29
+                                                                                                                                                                                                      x11
+                                                                                                                                                                                                Add
+                                                                                                                                                                                                   Ti30
+                                                                                                                                                                                                   x12
+                                                                                                                                                                                             Add
+                                                                                                                                                                                                Ti31
+                                                                                                                                                                                                x13
+                                                                                                                                                                                          Add
+                                                                                                                                                                                             Ti32
+                                                                                                                                                                                             x14
+                                                                                                                                                                                       Add
+                                                                                                                                                                                          Ti33
+                                                                                                                                                                                          x15
+                                                                                                                                                                                    Add
+                                                                                                                                                                                       Ti34
+                                                                                                                                                                                       x16
+                                                                                                                                                                                 Add
+                                                                                                                                                                                    Ti35
+                                                                                                                                                                                    x17
+                                                                                                                                                                              Add
+                                                                                                                                                                                 Ti36
+                                                                                                                                                                                 x18
+                                                                                                                                                                           Add
+                                                                                                                                                                              Ti37
+                                                                                                                                                                              x19
+                                                                                                                                                                        Add
+                                                                                                                                                                           Ti38
+                                                                                                                                                                           x20
+                                                                                                                                                                     Add
+                                                                                                                                                                        Ti39
+                                                                                                                                                                        x21
+                                                                                                                                                                  Add
+                                                                                                                                                                     Ti40
+                                                                                                                                                                     x22
+                                                                                                                                                               Add
+                                                                                                                                                                  Ti41
+                                                                                                                                                                  x23
+                                                                                                                                                            Add
+                                                                                                                                                               Ti42
+                                                                                                                                                               x24
+                                                                                                                                                         Add
+                                                                                                                                                            Ti43
+                                                                                                                                                            x25
+                                                                                                                                                      Add
+                                                                                                                                                         Ti44
+                                                                                                                                                         x26
+                                                                                                                                                   Add
+                                                                                                                                                      Ti45
+                                                                                                                                                      x27
+                                                                                                                                                Add
+                                                                                                                                                   Ti46
+                                                                                                                                                   x28
+                                                                                                                                             Add
+                                                                                                                                                Ti47
+                                                                                                                                                x29
+                                                                                                                                          Add
+                                                                                                                                             Ti48
+                                                                                                                                             x30
+                                                                                                                                       Add
+                                                                                                                                          Ti49
+                                                                                                                                          x31
+                                                                                                                                    Add
+                                                                                                                                       Ti50
+                                                                                                                                       x32
+                                                                                                                                 Add
+                                                                                                                                    Ti51
+                                                                                                                                    x33
+                                                                                                                              Add
+                                                                                                                                 Ti52
+                                                                                                                                 x34
+                                                                                                                           Add
+                                                                                                                              Ti53
+                                                                                                                              x35
+                                                                                                                        Add
+                                                                                                                           Ti54
+                                                                                                                           x36
+                                                                                                                     Add
+                                                                                                                        Ti55
+                                                                                                                        x0
+      Let
+         Ti2 type Int
+         Let
+            Ti1 type Int
+            0
+            App
+               f
+               Ti1
+         ExtFunApp
+                 print_int
+                 Ti2

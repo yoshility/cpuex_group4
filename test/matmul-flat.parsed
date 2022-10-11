@@ -1,0 +1,380 @@
+LetRec
+      loop3:type Var type Fun:type Int,type Int,type Int,type Array type Array type Float,type Array type Array type Float,type Array type Array type Float,->type Unit
+      args:i:type Var type Int, k:type Var type Int, j:type Var type Int, a:type Var type Array type Array type Float, b:type Var type Array type Array type Float, c:type Var type Array type Array type Float, 
+      IF
+        Not LE
+              0
+              Var k
+        Unit
+        Let
+           Tu1
+           type Unit
+           Put
+              Get
+                 Var c
+                 Var i
+              Var j
+              FAdd
+                  Get
+                     Get
+                        Var c
+                        Var i
+                     Var j
+                  FMul
+                      Get
+                         Get
+                            Var a
+                            Var i
+                         Var k
+                      Get
+                         Get
+                            Var b
+                            Var k
+                         Var j
+           App
+              Var loop3
+              Var i
+              Sub
+                 Var k
+                 1
+              Var j
+              Var a
+              Var b
+              Var c
+      LetRec
+            loop2:type Var type Fun:type Int,type Int,type Int,type Array type Array type Float,type Array type Array type Float,type Array type Array type Float,->type Unit
+            args:i:type Var type Int, m:type Var type Int, j:type Var type Int, a:type Var type Array type Array type Float, b:type Var type Array type Array type Float, c:type Var type Array type Array type Float, 
+            IF
+              Not LE
+                    0
+                    Var j
+              Unit
+              Let
+                 Tu2
+                 type Unit
+                 App
+                    Var loop3
+                    Var i
+                    Sub
+                       Var m
+                       1
+                    Var j
+                    Var a
+                    Var b
+                    Var c
+                 App
+                    Var loop2
+                    Var i
+                    Var m
+                    Sub
+                       Var j
+                       1
+                    Var a
+                    Var b
+                    Var c
+            LetRec
+                  loop1:type Var type Fun:type Int,type Int,type Int,type Array type Array type Float,type Array type Array type Float,type Array type Array type Float,->type Unit
+                  args:i:type Var type Int, m:type Var type Int, n:type Var type Int, a:type Var type Array type Array type Float, b:type Var type Array type Array type Float, c:type Var type Array type Array type Float, 
+                  IF
+                    Not LE
+                          0
+                          Var i
+                    Unit
+                    Let
+                       Tu3
+                       type Unit
+                       App
+                          Var loop2
+                          Var i
+                          Var m
+                          Sub
+                             Var n
+                             1
+                          Var a
+                          Var b
+                          Var c
+                       App
+                          Var loop1
+                          Sub
+                             Var i
+                             1
+                          Var m
+                          Var n
+                          Var a
+                          Var b
+                          Var c
+                  LetRec
+                        mul:type Var type Fun:type Int,type Int,type Int,type Array type Array type Float,type Array type Array type Float,type Array type Array type Float,->type Unit
+                        args:l:type Var type Int, m:type Var type Int, n:type Var type Int, a:type Var type Array type Array type Float, b:type Var type Array type Array type Float, c:type Var type Array type Array type Float, 
+                        App
+                           Var loop1
+                           Sub
+                              Var l
+                              1
+                           Var m
+                           Var n
+                           Var a
+                           Var b
+                           Var c
+                        Let
+                           dummy
+                           type Var type Array type Float
+                           Array
+                                0
+                                0.
+                           LetRec
+                                 init:type Var type Fun:type Int,type Int,type Array type Array type Float,->type Unit
+                                 args:i:type Var type Int, n:type Var type Int, mat:type Var type Array type Array type Float, 
+                                 IF
+                                   Not LE
+                                         0
+                                         Var i
+                                   Unit
+                                   Let
+                                      Tu4
+                                      type Unit
+                                      Put
+                                         Var mat
+                                         Var i
+                                         Array
+                                              Var n
+                                              0.
+                                      App
+                                         Var init
+                                         Sub
+                                            Var i
+                                            1
+                                         Var n
+                                         Var mat
+                                 LetRec
+                                       make:type Var type Fun:type Int,type Int,type Array type Float,->type Array type Array type Float
+                                       args:m:type Var type Int, n:type Var type Int, dummy:type Var type Array type Float, 
+                                       Let
+                                          mat
+                                          type Var type Array type Array type Float
+                                          Array
+                                               Var m
+                                               Var dummy
+                                          Let
+                                             Tu5
+                                             type Unit
+                                             App
+                                                Var init
+                                                Sub
+                                                   Var m
+                                                   1
+                                                Var n
+                                                Var mat
+                                             Var mat
+                                       Let
+                                          a
+                                          type Var type Array type Array type Float
+                                          App
+                                             Var make
+                                             2
+                                             3
+                                             Var dummy
+                                          Let
+                                             b
+                                             type Var type Array type Array type Float
+                                             App
+                                                Var make
+                                                3
+                                                2
+                                                Var dummy
+                                             Let
+                                                c
+                                                type Var type Array type Array type Float
+                                                App
+                                                   Var make
+                                                   2
+                                                   2
+                                                   Var dummy
+                                                Let
+                                                   Tu25
+                                                   type Unit
+                                                   Put
+                                                      Get
+                                                         Var a
+                                                         0
+                                                      0
+                                                      1.
+                                                   Let
+                                                      Tu24
+                                                      type Unit
+                                                      Put
+                                                         Get
+                                                            Var a
+                                                            0
+                                                         1
+                                                         2.
+                                                      Let
+                                                         Tu23
+                                                         type Unit
+                                                         Put
+                                                            Get
+                                                               Var a
+                                                               0
+                                                            2
+                                                            3.
+                                                         Let
+                                                            Tu22
+                                                            type Unit
+                                                            Put
+                                                               Get
+                                                                  Var a
+                                                                  1
+                                                               0
+                                                               4.
+                                                            Let
+                                                               Tu21
+                                                               type Unit
+                                                               Put
+                                                                  Get
+                                                                     Var a
+                                                                     1
+                                                                  1
+                                                                  5.
+                                                               Let
+                                                                  Tu20
+                                                                  type Unit
+                                                                  Put
+                                                                     Get
+                                                                        Var a
+                                                                        1
+                                                                     2
+                                                                     6.
+                                                                  Let
+                                                                     Tu19
+                                                                     type Unit
+                                                                     Put
+                                                                        Get
+                                                                           Var b
+                                                                           0
+                                                                        0
+                                                                        7.
+                                                                     Let
+                                                                        Tu18
+                                                                        type Unit
+                                                                        Put
+                                                                           Get
+                                                                              Var b
+                                                                              0
+                                                                           1
+                                                                           8.
+                                                                        Let
+                                                                           Tu17
+                                                                           type Unit
+                                                                           Put
+                                                                              Get
+                                                                                 Var b
+                                                                                 1
+                                                                              0
+                                                                              9.
+                                                                           Let
+                                                                              Tu16
+                                                                              type Unit
+                                                                              Put
+                                                                                 Get
+                                                                                    Var b
+                                                                                    1
+                                                                                 1
+                                                                                 10.
+                                                                              Let
+                                                                                 Tu15
+                                                                                 type Unit
+                                                                                 Put
+                                                                                    Get
+                                                                                       Var b
+                                                                                       2
+                                                                                    0
+                                                                                    11.
+                                                                                 Let
+                                                                                    Tu14
+                                                                                    type Unit
+                                                                                    Put
+                                                                                       Get
+                                                                                          Var b
+                                                                                          2
+                                                                                       1
+                                                                                       12.
+                                                                                    Let
+                                                                                       Tu13
+                                                                                       type Unit
+                                                                                       App
+                                                                                          Var mul
+                                                                                          2
+                                                                                          3
+                                                                                          2
+                                                                                          Var a
+                                                                                          Var b
+                                                                                          Var c
+                                                                                       Let
+                                                                                          Tu12
+                                                                                          type Unit
+                                                                                          App
+                                                                                             Var print_int
+                                                                                             App
+                                                                                                Var truncate
+                                                                                                Get
+                                                                                                   Get
+                                                                                                      Var c
+                                                                                                      0
+                                                                                                   0
+                                                                                          Let
+                                                                                             Tu11
+                                                                                             type Unit
+                                                                                             App
+                                                                                                Var print_newline
+                                                                                                Unit
+                                                                                             Let
+                                                                                                Tu10
+                                                                                                type Unit
+                                                                                                App
+                                                                                                   Var print_int
+                                                                                                   App
+                                                                                                      Var truncate
+                                                                                                      Get
+                                                                                                         Get
+                                                                                                            Var c
+                                                                                                            0
+                                                                                                         1
+                                                                                                Let
+                                                                                                   Tu9
+                                                                                                   type Unit
+                                                                                                   App
+                                                                                                      Var print_newline
+                                                                                                      Unit
+                                                                                                   Let
+                                                                                                      Tu8
+                                                                                                      type Unit
+                                                                                                      App
+                                                                                                         Var print_int
+                                                                                                         App
+                                                                                                            Var truncate
+                                                                                                            Get
+                                                                                                               Get
+                                                                                                                  Var c
+                                                                                                                  1
+                                                                                                               0
+                                                                                                      Let
+                                                                                                         Tu7
+                                                                                                         type Unit
+                                                                                                         App
+                                                                                                            Var print_newline
+                                                                                                            Unit
+                                                                                                         Let
+                                                                                                            Tu6
+                                                                                                            type Unit
+                                                                                                            App
+                                                                                                               Var print_int
+                                                                                                               App
+                                                                                                                  Var truncate
+                                                                                                                  Get
+                                                                                                                     Get
+                                                                                                                        Var c
+                                                                                                                        1
+                                                                                                                     1
+                                                                                                            App
+                                                                                                               Var print_newline
+                                                                                                               Unit

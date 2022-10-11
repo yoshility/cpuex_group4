@@ -1,0 +1,392 @@
+LetRec
+      f:type Fun:type Int,type Int,type Int,type Int,->type Int
+      args:a:type Int, b:type Int, c:type Int, d:type Int, 
+      Let
+         e type Int
+         Add
+            a
+            b
+         Let
+            f type Int
+            Add
+               a
+               c
+            Let
+               g type Int
+               Add
+                  a
+                  d
+               Let
+                  h type Int
+                  Add
+                     b
+                     c
+                  Let
+                     i type Int
+                     Add
+                        b
+                        d
+                     Let
+                        j type Int
+                        Add
+                           c
+                           d
+                        Let
+                           k type Int
+                           Add
+                              e
+                              f
+                           Let
+                              l type Int
+                              Add
+                                 e
+                                 g
+                              Let
+                                 m type Int
+                                 Add
+                                    e
+                                    h
+                                 Let
+                                    n type Int
+                                    Add
+                                       e
+                                       i
+                                    Let
+                                       o type Int
+                                       Add
+                                          e
+                                          j
+                                       Let
+                                          p type Int
+                                          Add
+                                             f
+                                             g
+                                          Let
+                                             q type Int
+                                             Add
+                                                f
+                                                h
+                                             Let
+                                                r type Int
+                                                Add
+                                                   f
+                                                   i
+                                                Let
+                                                   s type Int
+                                                   Add
+                                                      f
+                                                      j
+                                                   Let
+                                                      t type Int
+                                                      Add
+                                                         g
+                                                         h
+                                                      Let
+                                                         u type Int
+                                                         Add
+                                                            g
+                                                            i
+                                                         Let
+                                                            v type Int
+                                                            Add
+                                                               g
+                                                               j
+                                                            Let
+                                                               w type Int
+                                                               Add
+                                                                  h
+                                                                  i
+                                                               Let
+                                                                  x type Int
+                                                                  Add
+                                                                     h
+                                                                     j
+                                                                  Let
+                                                                     y type Int
+                                                                     Add
+                                                                        i
+                                                                        j
+                                                                     Let
+                                                                        aa type Int
+                                                                        Add
+                                                                           k
+                                                                           l
+                                                                        Let
+                                                                           ab type Int
+                                                                           Add
+                                                                              k
+                                                                              m
+                                                                           Let
+                                                                              ac type Int
+                                                                              Add
+                                                                                 k
+                                                                                 n
+                                                                              Let
+                                                                                 ad type Int
+                                                                                 Add
+                                                                                    k
+                                                                                    o
+                                                                                 Let
+                                                                                    ae type Int
+                                                                                    Add
+                                                                                       k
+                                                                                       p
+                                                                                    Let
+                                                                                       af type Int
+                                                                                       Add
+                                                                                          k
+                                                                                          q
+                                                                                       Let
+                                                                                          ag type Int
+                                                                                          Add
+                                                                                             k
+                                                                                             r
+                                                                                          Let
+                                                                                             ah type Int
+                                                                                             Add
+                                                                                                k
+                                                                                                s
+                                                                                             Let
+                                                                                                ai type Int
+                                                                                                Add
+                                                                                                   k
+                                                                                                   t
+                                                                                                Let
+                                                                                                   aj type Int
+                                                                                                   Add
+                                                                                                      k
+                                                                                                      u
+                                                                                                   Let
+                                                                                                      ak type Int
+                                                                                                      Add
+                                                                                                         k
+                                                                                                         v
+                                                                                                      Let
+                                                                                                         al type Int
+                                                                                                         Add
+                                                                                                            k
+                                                                                                            w
+                                                                                                         Let
+                                                                                                            am type Int
+                                                                                                            Add
+                                                                                                               k
+                                                                                                               x
+                                                                                                            Let
+                                                                                                               an type Int
+                                                                                                               Add
+                                                                                                                  k
+                                                                                                                  y
+                                                                                                               Let
+                                                                                                                  z type Int
+                                                                                                                  Let
+                                                                                                                     Ti42 type Int
+                                                                                                                     Let
+                                                                                                                        Ti41 type Int
+                                                                                                                        Let
+                                                                                                                           Ti40 type Int
+                                                                                                                           Let
+                                                                                                                              Ti39 type Int
+                                                                                                                              Let
+                                                                                                                                 Ti38 type Int
+                                                                                                                                 Let
+                                                                                                                                    Ti37 type Int
+                                                                                                                                    Let
+                                                                                                                                       Ti36 type Int
+                                                                                                                                       Let
+                                                                                                                                          Ti35 type Int
+                                                                                                                                          Let
+                                                                                                                                             Ti34 type Int
+                                                                                                                                             Let
+                                                                                                                                                Ti33 type Int
+                                                                                                                                                Let
+                                                                                                                                                   Ti32 type Int
+                                                                                                                                                   Let
+                                                                                                                                                      Ti31 type Int
+                                                                                                                                                      Let
+                                                                                                                                                         Ti30 type Int
+                                                                                                                                                         Let
+                                                                                                                                                            Ti29 type Int
+                                                                                                                                                            Let
+                                                                                                                                                               Ti28 type Int
+                                                                                                                                                               Let
+                                                                                                                                                                  Ti27 type Int
+                                                                                                                                                                  Let
+                                                                                                                                                                     Ti26 type Int
+                                                                                                                                                                     Let
+                                                                                                                                                                        Ti25 type Int
+                                                                                                                                                                        Let
+                                                                                                                                                                           Ti24 type Int
+                                                                                                                                                                           Let
+                                                                                                                                                                              Ti23 type Int
+                                                                                                                                                                              Let
+                                                                                                                                                                                 Ti22 type Int
+                                                                                                                                                                                 Let
+                                                                                                                                                                                    Ti21 type Int
+                                                                                                                                                                                    Let
+                                                                                                                                                                                       Ti20 type Int
+                                                                                                                                                                                       Let
+                                                                                                                                                                                          Ti19 type Int
+                                                                                                                                                                                          Let
+                                                                                                                                                                                             Ti18 type Int
+                                                                                                                                                                                             Let
+                                                                                                                                                                                                Ti17 type Int
+                                                                                                                                                                                                Let
+                                                                                                                                                                                                   Ti16 type Int
+                                                                                                                                                                                                   Let
+                                                                                                                                                                                                      Ti15 type Int
+                                                                                                                                                                                                      Let
+                                                                                                                                                                                                         Ti14 type Int
+                                                                                                                                                                                                         Let
+                                                                                                                                                                                                            Ti13 type Int
+                                                                                                                                                                                                            Let
+                                                                                                                                                                                                               Ti12 type Int
+                                                                                                                                                                                                               Let
+                                                                                                                                                                                                                  Ti11 type Int
+                                                                                                                                                                                                                  Let
+                                                                                                                                                                                                                     Ti10 type Int
+                                                                                                                                                                                                                     Let
+                                                                                                                                                                                                                        Ti9 type Int
+                                                                                                                                                                                                                        Let
+                                                                                                                                                                                                                           Ti8 type Int
+                                                                                                                                                                                                                           Let
+                                                                                                                                                                                                                              Ti7 type Int
+                                                                                                                                                                                                                              Let
+                                                                                                                                                                                                                                 Ti6 type Int
+                                                                                                                                                                                                                                 Add
+                                                                                                                                                                                                                                    a
+                                                                                                                                                                                                                                    b
+                                                                                                                                                                                                                                 Add
+                                                                                                                                                                                                                                    Ti6
+                                                                                                                                                                                                                                    c
+                                                                                                                                                                                                                              Add
+                                                                                                                                                                                                                                 Ti7
+                                                                                                                                                                                                                                 d
+                                                                                                                                                                                                                           Add
+                                                                                                                                                                                                                              Ti8
+                                                                                                                                                                                                                              e
+                                                                                                                                                                                                                        Add
+                                                                                                                                                                                                                           Ti9
+                                                                                                                                                                                                                           f
+                                                                                                                                                                                                                     Add
+                                                                                                                                                                                                                        Ti10
+                                                                                                                                                                                                                        g
+                                                                                                                                                                                                                  Add
+                                                                                                                                                                                                                     Ti11
+                                                                                                                                                                                                                     h
+                                                                                                                                                                                                               Add
+                                                                                                                                                                                                                  Ti12
+                                                                                                                                                                                                                  i
+                                                                                                                                                                                                            Add
+                                                                                                                                                                                                               Ti13
+                                                                                                                                                                                                               j
+                                                                                                                                                                                                         Add
+                                                                                                                                                                                                            Ti14
+                                                                                                                                                                                                            k
+                                                                                                                                                                                                      Add
+                                                                                                                                                                                                         Ti15
+                                                                                                                                                                                                         l
+                                                                                                                                                                                                   Add
+                                                                                                                                                                                                      Ti16
+                                                                                                                                                                                                      m
+                                                                                                                                                                                                Add
+                                                                                                                                                                                                   Ti17
+                                                                                                                                                                                                   n
+                                                                                                                                                                                             Add
+                                                                                                                                                                                                Ti18
+                                                                                                                                                                                                o
+                                                                                                                                                                                          Add
+                                                                                                                                                                                             Ti19
+                                                                                                                                                                                             p
+                                                                                                                                                                                       Add
+                                                                                                                                                                                          Ti20
+                                                                                                                                                                                          q
+                                                                                                                                                                                    Add
+                                                                                                                                                                                       Ti21
+                                                                                                                                                                                       r
+                                                                                                                                                                                 Add
+                                                                                                                                                                                    Ti22
+                                                                                                                                                                                    s
+                                                                                                                                                                              Add
+                                                                                                                                                                                 Ti23
+                                                                                                                                                                                 t
+                                                                                                                                                                           Add
+                                                                                                                                                                              Ti24
+                                                                                                                                                                              u
+                                                                                                                                                                        Add
+                                                                                                                                                                           Ti25
+                                                                                                                                                                           v
+                                                                                                                                                                     Add
+                                                                                                                                                                        Ti26
+                                                                                                                                                                        w
+                                                                                                                                                                  Add
+                                                                                                                                                                     Ti27
+                                                                                                                                                                     x
+                                                                                                                                                               Add
+                                                                                                                                                                  Ti28
+                                                                                                                                                                  y
+                                                                                                                                                            Add
+                                                                                                                                                               Ti29
+                                                                                                                                                               aa
+                                                                                                                                                         Add
+                                                                                                                                                            Ti30
+                                                                                                                                                            ab
+                                                                                                                                                      Add
+                                                                                                                                                         Ti31
+                                                                                                                                                         ac
+                                                                                                                                                   Add
+                                                                                                                                                      Ti32
+                                                                                                                                                      ad
+                                                                                                                                                Add
+                                                                                                                                                   Ti33
+                                                                                                                                                   ae
+                                                                                                                                             Add
+                                                                                                                                                Ti34
+                                                                                                                                                af
+                                                                                                                                          Add
+                                                                                                                                             Ti35
+                                                                                                                                             ag
+                                                                                                                                       Add
+                                                                                                                                          Ti36
+                                                                                                                                          ah
+                                                                                                                                    Add
+                                                                                                                                       Ti37
+                                                                                                                                       ai
+                                                                                                                                 Add
+                                                                                                                                    Ti38
+                                                                                                                                    aj
+                                                                                                                              Add
+                                                                                                                                 Ti39
+                                                                                                                                 ak
+                                                                                                                           Add
+                                                                                                                              Ti40
+                                                                                                                              al
+                                                                                                                        Add
+                                                                                                                           Ti41
+                                                                                                                           am
+                                                                                                                     Add
+                                                                                                                        Ti42
+                                                                                                                        an
+                                                                                                                  Neg z
+      Let
+         Ti5 type Int
+         Let
+            Ti1 type Int
+            1
+            Let
+               Ti2 type Int
+               2
+               Let
+                  Ti3 type Int
+                  3
+                  Let
+                     Ti4 type Int
+                     4
+                     App
+                        f
+                        Ti1
+                        Ti2
+                        Ti3
+                        Ti4
+         ExtFunApp
+                 print_int
+                 Ti5

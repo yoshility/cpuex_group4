@@ -1,0 +1,30 @@
+LetRec
+      gcd:type Var type Fun:type Int,type Int,->type Int
+      args:m:type Var type Int, n:type Var type Int, 
+      IF
+        Eq
+          Var m
+          0
+        Var n
+        IF
+          LE
+            Var m
+            Var n
+          App
+             Var gcd
+             Var m
+             Sub
+                Var n
+                Var m
+          App
+             Var gcd
+             Var n
+             Sub
+                Var m
+                Var n
+      App
+         Var print_int
+         App
+            Var gcd
+            21600
+            337500
