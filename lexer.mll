@@ -5,12 +5,15 @@ open Type
 }
 
 (* 正規表現の略記 *)
-let space = [' ' '\t' '\n' '\r']
+let space = [' ' '\t' '\r']
 let digit = ['0'-'9']
 let lower = ['a'-'z']
 let upper = ['A'-'Z']
+let newline = ['\n'](*newlineを認識させるために追加。課題１。*)
 
 rule token = parse
+| newline(*newlineを認識させるために追加。課題１。*)
+{Lexing.new_line lexbuf; token lexbuf}
 | space+
     { token lexbuf }
 | "(*"
@@ -96,5 +99,7 @@ and comment = parse
       comment lexbuf }
 | eof
     { Format.eprintf "warning: unterminated comment@." }
+| newline(*newlineを認識させるために追加。課題１。*)
+{Lexing.new_line lexbuf; comment lexbuf}
 | _
     { comment lexbuf }

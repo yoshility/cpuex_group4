@@ -24,5 +24,6 @@ type t =
   | ExtFunApp of Id.t * Id.t list
 and fundef = { name : Id.t * Type.t; args : (Id.t * Type.t) list; body : t }
 
+val print_t : out_channel -> t -> unit(*出力用の関数。課題１*)
 val fv : t -> S.t
 val f : Syntax.t -> t

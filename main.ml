@@ -1,15 +1,19 @@
 let limit = ref 1000
 
-let rec iter n e = (* ºÇÅ¬²½½èÍý¤ò¤¯¤ê¤«¤¨¤¹ (caml2html: main_iter) *)
+let rec iter n e = (* æœ€é©åŒ–å‡¦ç†ã‚’ãã‚Šã‹ãˆã™ (caml2html: main_iter) *)
   Format.eprintf "iteration %d@." n;
   if n = 0 then e else
   let e' = Elim.f (ConstFold.f (Inline.f (Assoc.f (Beta.f e)))) in
   if e = e' then e else
   iter (n - 1) e'
 
-let lexbuf outchan l = (* ¥Ð¥Ã¥Õ¥¡¤ò¥³¥ó¥Ñ¥¤¥ë¤·¤Æ¥Á¥ã¥ó¥Í¥ë¤Ø½ÐÎÏ¤¹¤ë (caml2html: main_lexbuf) *)
+let lexbuf outchan out_parsed out_normalized l =(* ãƒãƒƒãƒ•ã‚¡ã‚’ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ã¦ãƒãƒ£ãƒ³ãƒãƒ«ã¸å‡ºåŠ›ã™ã‚‹ (caml2html: main_lexbuf) *)
   Id.counter := 0;
   Typing.extenv := M.empty;
+  let parsed = Parser.exp Lexer.token l in
+  let normalized = KNormal.f(Typing.f parsed) in
+  Syntax.print_t out_parsed parsed;(*ä¸­é–“çµæžœã®å‡ºåŠ›ã€‚èª²é¡Œï¼‘ã€‚*)
+  KNormal.print_t out_normalized normalized;
   Emit.f outchan
     (RegAlloc.f
        (Simm.f
@@ -17,22 +21,27 @@ let lexbuf outchan l = (* ¥Ð¥Ã¥Õ¥¡¤ò¥³¥ó¥Ñ¥¤¥ë¤·¤Æ¥Á¥ã¥ó¥Í¥ë¤Ø½ÐÎÏ¤¹¤ë (caml2htm
              (Closure.f
                 (iter !limit
                    (Alpha.f
-                      (KNormal.f
-                         (Typing.f
-                            (Parser.exp Lexer.token l)))))))))
+                      normalized))))))
 
-let string s = lexbuf stdout (Lexing.from_string s) (* Ê¸»úÎó¤ò¥³¥ó¥Ñ¥¤¥ë¤·¤ÆÉ¸½à½ÐÎÏ¤ËÉ½¼¨¤¹¤ë (caml2html: main_string) *)
+let string s = lexbuf stdout stdout stdout(Lexing.from_string s) (* æ–‡å­—åˆ—ã‚’ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ã¦æ¨™æº–å‡ºåŠ›ã«è¡¨ç¤ºã™ã‚‹ (caml2html: main_string) *)
 
-let file f = (* ¥Õ¥¡¥¤¥ë¤ò¥³¥ó¥Ñ¥¤¥ë¤·¤Æ¥Õ¥¡¥¤¥ë¤Ë½ÐÎÏ¤¹¤ë (caml2html: main_file) *)
+let file f = (* ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ã¦ãƒ•ã‚¡ã‚¤ãƒ«ã«å‡ºåŠ›ã™ã‚‹ (caml2html: main_file) *)
   let inchan = open_in (f ^ ".ml") in
   let outchan = open_out (f ^ ".s") in
+  let out_parsed = open_out (f ^ ".parsed") in
+  let out_normalized = open_out (f ^ ".normalized") in
+  let buf =Lexing.from_channel inchan in
   try
-    lexbuf outchan (Lexing.from_channel inchan);
+    lexbuf outchan out_parsed out_normalized buf;
     close_in inchan;
     close_out outchan;
-  with e -> (close_in inchan; close_out outchan; raise e)
+  with e -> 
+    (close_in inchan; close_out outchan; 
+    let p = buf.lex_curr_p in
+    Printf.fprintf stdout "line %d character %d\n" p.pos_lnum p.pos_bol;
+  raise e)
 
-let () = (* ¤³¤³¤«¤é¥³¥ó¥Ñ¥¤¥é¤Î¼Â¹Ô¤¬³«»Ï¤µ¤ì¤ë (caml2html: main_entry) *)
+let () = (* ã“ã“ã‹ã‚‰ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ã®å®Ÿè¡ŒãŒé–‹å§‹ã•ã‚Œã‚‹ (caml2html: main_entry) *)
   let files = ref [] in
   Arg.parse
     [("-inline", Arg.Int(fun i -> Inline.threshold := i), "maximum size of functions inlined");
