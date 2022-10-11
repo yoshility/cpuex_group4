@@ -35,10 +35,12 @@ let file f = (* ファイルをコンパイルしてファイルに出力する 
     lexbuf outchan out_parsed out_normalized buf;
     close_in inchan;
     close_out outchan;
-  with e -> 
+  with 
+  |Typing.Error(a,b,c) -> ((*Syntax.print_t stdout a;*)Type.print_t stdout b;Type.print_t stdout c;failwith "type error\n")
+  |e -> 
     (close_in inchan; close_out outchan; 
-    let p = buf.lex_curr_p in
-    Printf.fprintf stdout "line %d character %d\n" p.pos_lnum p.pos_bol;
+    (* let p = Lexing.lexeme_start_p buf in
+    Printf.fprintf stdout "line %d\n" p.pos_lnum; *)
   raise e)
 
 let () = (* ここからコンパイラの実行が開始される (caml2html: main_entry) *)

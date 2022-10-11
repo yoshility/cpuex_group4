@@ -1,6 +1,7 @@
 main.cmo : \
     virtual.cmi \
     typing.cmi \
+    type.cmo \
     syntax.cmo \
     simm.cmi \
     regAlloc.cmi \
@@ -21,6 +22,7 @@ main.cmo : \
 main.cmx : \
     virtual.cmx \
     typing.cmx \
+    type.cmx \
     syntax.cmx \
     simm.cmx \
     regAlloc.cmx \

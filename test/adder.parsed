@@ -1,0 +1,17 @@
+LetRec
+      make_adder:type Var type Fun:type Int,->type Fun:type Int,->type Int
+      args:x:type Var type Int, 
+      LetRec
+            adder:type Var type Fun:type Int,->type Int
+            args:y:type Var type Int, 
+            Add
+               Var x
+               Var y
+            Var adder
+      App
+         Var print_int
+         App
+            App
+               Var make_adder
+               3
+            7
