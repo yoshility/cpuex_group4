@@ -149,7 +149,7 @@ let rec g env e = (* 型推論ルーチン (caml2html: typing_g) *)
         unify (Type.Array(t)) (g env e1);
         unify Type.Int (g env e2);
         Type.Unit
-  with Unify(t1, t2) 
+  with Unify(t1, t2) (*エラー発生時の処理を変更。課題１。*)
   -> (match e with
   | Unit (p) -> Printf.fprintf stdout "line %d\n" p.pos_lnum
   | Bool (_,p)-> Printf.fprintf stdout "line %d\n" p.pos_lnum

@@ -2,32 +2,32 @@
 .balign	8
 .text
 foo.12:
-	movl	%edi, 0(%ebp)
-	movl	%esi, 4(%ebp)
-	movl	%edx, 8(%ebp)
-	movl	%ecx, 12(%ebp)
-	movl	%ebx, 16(%ebp)
-	addl	$24, %ebp
-	call	min_caml_print_int
-	subl	$24, %ebp
-	movl	16(%ebp), %eax
-	addl	$24, %ebp
-	call	min_caml_print_int
-	subl	$24, %ebp
-	movl	12(%ebp), %eax
-	addl	$24, %ebp
-	call	min_caml_print_int
-	subl	$24, %ebp
-	movl	8(%ebp), %eax
-	addl	$24, %ebp
-	call	min_caml_print_int
-	subl	$24, %ebp
-	movl	4(%ebp), %eax
-	addl	$24, %ebp
-	call	min_caml_print_int
-	subl	$24, %ebp
-	movl	0(%ebp), %eax
-	jmp	min_caml_print_int
+	movl	%edi, 0(%ebp) # 2
+	movl	%esi, 4(%ebp) # 2
+	movl	%edx, 8(%ebp) # 2
+	movl	%ecx, 12(%ebp) # 2
+	movl	%ebx, 16(%ebp) # 2
+	addl	$24, %ebp # 2
+	call	min_caml_print_int # 2
+	subl	$24, %ebp # 2
+	movl	16(%ebp), %eax # 3
+	addl	$24, %ebp # 3
+	call	min_caml_print_int # 3
+	subl	$24, %ebp # 3
+	movl	12(%ebp), %eax # 4
+	addl	$24, %ebp # 4
+	call	min_caml_print_int # 4
+	subl	$24, %ebp # 4
+	movl	8(%ebp), %eax # 5
+	addl	$24, %ebp # 5
+	call	min_caml_print_int # 5
+	subl	$24, %ebp # 5
+	movl	4(%ebp), %eax # 6
+	addl	$24, %ebp # 6
+	call	min_caml_print_int # 6
+	subl	$24, %ebp # 6
+	movl	0(%ebp), %eax # 7
+	jmp	min_caml_print_int # 7
 bar.19:
 	movl	%edi, 0(%ebp)
 	movl	%ecx, %edi
@@ -37,7 +37,7 @@ bar.19:
 	movl	%ebx, 0(%ebp)
 	movl	%eax, %ebx
 	movl	0(%ebp), %eax
-	jmp	foo.12
+	jmp	foo.12 # 9
 .globl	min_caml_start
 min_caml_start:
 .globl	_min_caml_start
@@ -52,13 +52,13 @@ _min_caml_start: # for cygwin
 	movl	32(%esp),%ebp
 	movl	36(%esp),%eax
 	movl	%eax,min_caml_hp
-	movl	$1, %eax
-	movl	$2, %ebx
-	movl	$3, %ecx
-	movl	$4, %edx
-	movl	$5, %esi
-	movl	$6, %edi
-	call	bar.19
+	movl	$1, %eax # 10
+	movl	$2, %ebx # 10
+	movl	$3, %ecx # 10
+	movl	$4, %edx # 10
+	movl	$5, %esi # 10
+	movl	$6, %edi # 10
+	call	bar.19 # 10
 	popl	%ebp
 	popl	%edi
 	popl	%esi

@@ -2,86 +2,86 @@
 .balign	8
 .text
 g.52:
-	movl	40(%edi), %ebx
-	movl	36(%edi), %ecx
-	movl	32(%edi), %edx
-	movl	28(%edi), %esi
-	movl	%eax, 0(%ebp)
-	movl	24(%edi), %eax
-	movl	%ebx, 4(%ebp)
-	movl	20(%edi), %ebx
-	movl	%ecx, 8(%ebp)
-	movl	16(%edi), %ecx
-	movl	%edx, 12(%ebp)
-	movl	12(%edi), %edx
-	movl	%esi, 16(%ebp)
-	movl	8(%edi), %esi
-	movl	%edi, 20(%ebp)
-	movl	4(%edi), %edi
-	addl	%edx, %edi
-	addl	%ecx, %edi
-	addl	%ebx, %edi
-	addl	%eax, %edi
-	movl	16(%ebp), %eax
-	addl	%eax, %edi
-	movl	12(%ebp), %eax
-	addl	%eax, %edi
-	movl	8(%ebp), %eax
-	addl	%eax, %edi
-	movl	4(%ebp), %eax
-	addl	%eax, %edi
-	movl	%edi, %eax
-	addl	%esi, %eax
-	movl	0(%ebp), %ebx
-	cmpl	$0, %ebx
+	movl	40(%edi), %ebx # 5
+	movl	36(%edi), %ecx # 5
+	movl	32(%edi), %edx # 5
+	movl	28(%edi), %esi # 5
+	movl	%eax, 0(%ebp) # 5
+	movl	24(%edi), %eax # 5
+	movl	%ebx, 4(%ebp) # 5
+	movl	20(%edi), %ebx # 5
+	movl	%ecx, 8(%ebp) # 5
+	movl	16(%edi), %ecx # 5
+	movl	%edx, 12(%ebp) # 5
+	movl	12(%edi), %edx # 5
+	movl	%esi, 16(%ebp) # 5
+	movl	8(%edi), %esi # 5
+	movl	%edi, 20(%ebp) # 5
+	movl	4(%edi), %edi # 5
+	addl	%edx, %edi # 5
+	addl	%ecx, %edi # 5
+	addl	%ebx, %edi # 5
+	addl	%eax, %edi # 5
+	movl	16(%ebp), %eax # 5
+	addl	%eax, %edi # 5
+	movl	12(%ebp), %eax # 5
+	addl	%eax, %edi # 5
+	movl	8(%ebp), %eax # 5
+	addl	%eax, %edi # 5
+	movl	4(%ebp), %eax # 5
+	addl	%eax, %edi # 5
+	movl	%edi, %eax # 5
+	addl	%esi, %eax # 5
+	movl	0(%ebp), %ebx # 6
+	cmpl	$0, %ebx # 6
 	jg	jle_else.107
-	movl	%ebx, %eax
-	negl	%eax
-	movl	20(%ebp), %edi
-	jmp	*(%edi)
+	movl	%ebx, %eax # 6
+	negl	%eax # 6
+	movl	20(%ebp), %edi # 6
+	jmp	*(%edi) # 6
 jle_else.107:
-	ret
+	ret # 6
 h.26:
-	movl	36(%eax), %ebx
-	movl	32(%eax), %ecx
-	movl	28(%eax), %edx
-	movl	24(%eax), %esi
-	movl	20(%eax), %edi
-	movl	%ebx, 0(%ebp)
-	movl	16(%eax), %ebx
-	movl	%ebx, 4(%ebp)
-	movl	12(%eax), %ebx
-	movl	%ebx, 8(%ebp)
-	movl	8(%eax), %ebx
-	movl	%ebx, 12(%ebp)
-	movl	4(%eax), %ebx
-	movl	0(%eax), %eax
-	movl	%eax, 16(%ebp)
-	movl	min_caml_hp, %eax
-	addl	$48, min_caml_hp
-	movl	%ebx, 20(%ebp)
-	movl	$g.52, %ebx
-	movl	%ebx, 0(%eax)
-	movl	%ecx, 40(%eax)
-	movl	%edx, 36(%eax)
-	movl	%esi, 32(%eax)
-	movl	%edi, 28(%eax)
-	movl	4(%ebp), %ebx
-	movl	%ebx, 24(%eax)
-	movl	8(%ebp), %ebx
-	movl	%ebx, 20(%eax)
-	movl	12(%ebp), %ebx
-	movl	%ebx, 16(%eax)
-	movl	20(%ebp), %ebx
-	movl	%ebx, 12(%eax)
-	movl	0(%ebp), %ebx
-	movl	%ebx, 8(%eax)
-	movl	16(%ebp), %ebx
-	movl	%ebx, 4(%eax)
-	movl	$1, %ebx
+	movl	36(%eax), %ebx # 3
+	movl	32(%eax), %ecx # 3
+	movl	28(%eax), %edx # 3
+	movl	24(%eax), %esi # 3
+	movl	20(%eax), %edi # 3
+	movl	%ebx, 0(%ebp) # 3
+	movl	16(%eax), %ebx # 3
+	movl	%ebx, 4(%ebp) # 3
+	movl	12(%eax), %ebx # 3
+	movl	%ebx, 8(%ebp) # 3
+	movl	8(%eax), %ebx # 3
+	movl	%ebx, 12(%ebp) # 3
+	movl	4(%eax), %ebx # 3
+	movl	0(%eax), %eax # 3
+	movl	%eax, 16(%ebp) # 4
+	movl	min_caml_hp, %eax # 4
+	addl	$48, min_caml_hp # 4
+	movl	%ebx, 20(%ebp) # 4
+	movl	$g.52, %ebx # 4
+	movl	%ebx, 0(%eax) # 4
+	movl	%ecx, 40(%eax) # 4
+	movl	%edx, 36(%eax) # 4
+	movl	%esi, 32(%eax) # 4
+	movl	%edi, 28(%eax) # 4
+	movl	4(%ebp), %ebx # 4
+	movl	%ebx, 24(%eax) # 4
+	movl	8(%ebp), %ebx # 4
+	movl	%ebx, 20(%eax) # 4
+	movl	12(%ebp), %ebx # 4
+	movl	%ebx, 16(%eax) # 4
+	movl	20(%ebp), %ebx # 4
+	movl	%ebx, 12(%eax) # 4
+	movl	0(%ebp), %ebx # 4
+	movl	%ebx, 8(%eax) # 4
+	movl	16(%ebp), %ebx # 4
+	movl	%ebx, 4(%eax) # 4
+	movl	$1, %ebx # 7
 	movl	%eax, %edi
 	movl	%ebx, %eax
-	jmp	*(%edi)
+	jmp	*(%edi) # 7
 .globl	min_caml_start
 min_caml_start:
 .globl	_min_caml_start
@@ -96,48 +96,48 @@ _min_caml_start: # for cygwin
 	movl	32(%esp),%ebp
 	movl	36(%esp),%eax
 	movl	%eax,min_caml_hp
-	movl	$1, %eax
-	movl	$2, %ebx
-	movl	$3, %ecx
-	movl	$4, %edx
-	movl	$5, %esi
-	movl	$6, %edi
-	movl	%eax, 0(%ebp)
-	movl	$7, %eax
-	movl	%ebx, 4(%ebp)
-	movl	$8, %ebx
-	movl	%ecx, 8(%ebp)
-	movl	$9, %ecx
-	movl	%edx, 12(%ebp)
-	movl	$10, %edx
-	movl	%esi, 16(%ebp)
-	movl	min_caml_hp, %esi
-	addl	$40, min_caml_hp
-	movl	%edx, 36(%esi)
-	movl	%ecx, 32(%esi)
-	movl	%ebx, 28(%esi)
-	movl	%eax, 24(%esi)
-	movl	%edi, 20(%esi)
-	movl	16(%ebp), %eax
-	movl	%eax, 16(%esi)
-	movl	12(%ebp), %eax
-	movl	%eax, 12(%esi)
-	movl	8(%ebp), %eax
-	movl	%eax, 8(%esi)
-	movl	4(%ebp), %eax
-	movl	%eax, 4(%esi)
-	movl	0(%ebp), %eax
-	movl	%eax, 0(%esi)
-	movl	%esi, %eax
-	addl	$24, %ebp
-	call	h.26
-	subl	$24, %ebp
-	addl	$24, %ebp
-	call	min_caml_print_int
-	subl	$24, %ebp
-	addl	$24, %ebp
-	call	min_caml_print_newline
-	subl	$24, %ebp
+	movl	$1, %eax # 8
+	movl	$2, %ebx # 8
+	movl	$3, %ecx # 8
+	movl	$4, %edx # 8
+	movl	$5, %esi # 8
+	movl	$6, %edi # 8
+	movl	%eax, 0(%ebp) # 8
+	movl	$7, %eax # 8
+	movl	%ebx, 4(%ebp) # 8
+	movl	$8, %ebx # 8
+	movl	%ecx, 8(%ebp) # 8
+	movl	$9, %ecx # 8
+	movl	%edx, 12(%ebp) # 8
+	movl	$10, %edx # 8
+	movl	%esi, 16(%ebp) # 8
+	movl	min_caml_hp, %esi # 8
+	addl	$40, min_caml_hp # 8
+	movl	%edx, 36(%esi) # 8
+	movl	%ecx, 32(%esi) # 8
+	movl	%ebx, 28(%esi) # 8
+	movl	%eax, 24(%esi) # 8
+	movl	%edi, 20(%esi) # 8
+	movl	16(%ebp), %eax # 8
+	movl	%eax, 16(%esi) # 8
+	movl	12(%ebp), %eax # 8
+	movl	%eax, 12(%esi) # 8
+	movl	8(%ebp), %eax # 8
+	movl	%eax, 8(%esi) # 8
+	movl	4(%ebp), %eax # 8
+	movl	%eax, 4(%esi) # 8
+	movl	0(%ebp), %eax # 8
+	movl	%eax, 0(%esi) # 8
+	movl	%esi, %eax # 8
+	addl	$24, %ebp # 8
+	call	h.26 # 8
+	subl	$24, %ebp # 8
+	addl	$24, %ebp # 8
+	call	min_caml_print_int # 8
+	subl	$24, %ebp # 8
+	addl	$24, %ebp # 9
+	call	min_caml_print_newline # 9
+	subl	$24, %ebp # 9
 	popl	%ebp
 	popl	%edi
 	popl	%esi

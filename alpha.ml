@@ -4,7 +4,9 @@ open KNormal
 
 let find x env = try M.find x env with Not_found -> x
 
-let rec g env = function (* α変換ルーチン本体 (caml2html: alpha_g) *)
+let rec g env x =  (* α変換ルーチン本体 (caml2html: alpha_g) *)
+let fs =
+(match fst x with 
   | Unit -> Unit
   | Int(i) -> Int(i)
   | Float(d) -> Float(d)
@@ -41,6 +43,7 @@ let rec g env = function (* α変換ルーチン本体 (caml2html: alpha_g) *)
   | Get(x, y) -> Get(find x env, find y env)
   | Put(x, y, z) -> Put(find x env, find y env, find z env)
   | ExtArray(x) -> ExtArray(x)
-  | ExtFunApp(x, ys) -> ExtFunApp(x, List.map (fun y -> find y env) ys)
+  | ExtFunApp(x, ys) -> ExtFunApp(x, List.map (fun y -> find y env) ys))
+in (fs,snd x)
 
 let f = g M.empty

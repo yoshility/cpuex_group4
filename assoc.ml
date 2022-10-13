@@ -2,17 +2,21 @@
 
 open KNormal
 
-let rec f = function (* ¥Í¥¹¥È¤·¤¿let¤Î´ÊÌó (caml2html: assoc_f) *)
+let rec f xx=(* ï¿½Í¥ï¿½ï¿½È¤ï¿½ï¿½ï¿½letï¿½Î´ï¿½ï¿½ï¿½ (caml2html: assoc_f) *)
+  let fs = 
+    (match fst xx with 
   | IfEq(x, y, e1, e2) -> IfEq(x, y, f e1, f e2)
   | IfLE(x, y, e1, e2) -> IfLE(x, y, f e1, f e2)
-  | Let(xt, e1, e2) -> (* let¤Î¾ì¹ç (caml2html: assoc_let) *)
-      let rec insert = function
-        | Let(yt, e3, e4) -> Let(yt, e3, insert e4)
-        | LetRec(fundefs, e) -> LetRec(fundefs, insert e)
-        | LetTuple(yts, z, e) -> LetTuple(yts, z, insert e)
-        | e -> Let(xt, e, f e2) in
-      insert (f e1)
+  | Let(xt, e1, e2) -> (* letï¿½Î¾ï¿½ï¿? (caml2html: assoc_let) *)
+      let rec insert tt= 
+      match fst tt with 
+        | Let(yt, e3, e4) -> (Let(yt, e3, insert e4),snd tt)
+        | LetRec(fundefs, e) -> (LetRec(fundefs, insert e),snd tt)
+        | LetTuple(yts, z, e) -> (LetTuple(yts, z, insert e),snd tt)
+        | e -> (Let(xt, (e,snd tt), f e2),snd tt) in
+      fst (insert (f e1))
   | LetRec({ name = xt; args = yts; body = e1 }, e2) ->
       LetRec({ name = xt; args = yts; body = f e1 }, f e2)
   | LetTuple(xts, y, e) -> LetTuple(xts, y, f e)
-  | e -> e
+  | e -> e) in
+  (fs,snd xx)

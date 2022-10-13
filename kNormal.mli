@@ -1,4 +1,7 @@
-type t =
+(* give names to intermediate values (K-normalization) *)
+type p = Lexing.position
+
+type tt = (* K正規化後の式 (caml2html: knormal_t) *)
   | Unit
   | Int of int
   | Float of float
@@ -10,8 +13,8 @@ type t =
   | FSub of Id.t * Id.t
   | FMul of Id.t * Id.t
   | FDiv of Id.t * Id.t
-  | IfEq of Id.t * Id.t * t * t
-  | IfLE of Id.t * Id.t * t * t
+  | IfEq of Id.t * Id.t * t * t (* 比較 + 分岐 (caml2html: knormal_branch) *)
+  | IfLE of Id.t * Id.t * t * t (* 比較 + 分岐 *)
   | Let of (Id.t * Type.t) * t * t
   | Var of Id.t
   | LetRec of fundef * t
@@ -23,6 +26,7 @@ type t =
   | ExtArray of Id.t
   | ExtFunApp of Id.t * Id.t list
 and fundef = { name : Id.t * Type.t; args : (Id.t * Type.t) list; body : t }
+and t = tt*p
 
 val print_t : out_channel -> t -> unit(*出力用の関数。課題１*)
 val fv : t -> S.t

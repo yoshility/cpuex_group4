@@ -1,5 +1,5 @@
 type closure = { entry : Id.l; actual_fv : Id.t list }
-type t =
+type tt = (* ???????????????μ? (caml2html: closure_t) *)
   | Unit
   | Int of int
   | Float of float
@@ -23,10 +23,11 @@ type t =
   | Get of Id.t * Id.t
   | Put of Id.t * Id.t * Id.t
   | ExtArray of Id.l
-type fundef = { name : Id.l * Type.t;
+and fundef = { name : Id.l * Type.t;
                 args : (Id.t * Type.t) list;
                 formal_fv : (Id.t * Type.t) list;
                 body : t }
+and t = tt*KNormal.p
 type prog = Prog of fundef list * t
 
 val fv : t -> S.t

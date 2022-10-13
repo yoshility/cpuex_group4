@@ -4,7 +4,7 @@ type id_or_imm = V of Id.t | C of int
 type t = (* 命令の列 (caml2html: sparcasm_t) *)
   | Ans of exp
   | Let of (Id.t * Type.t) * exp * t
-and exp = (* 一つ一つの命令に対応する式 (caml2html: sparcasm_exp) *)
+and exp' = (* 一つ一つの命令に対応する式 (caml2html: sparcasm_exp) *)
   | Nop
   | Set of int
   | SetL of Id.l
@@ -34,6 +34,7 @@ and exp = (* 一つ一つの命令に対応する式 (caml2html: sparcasm_exp) *)
   | CallDir of Id.l * Id.t list * Id.t list
   | Save of Id.t * Id.t (* レジスタ変数の値をスタック変数へ保存 (caml2html: sparcasm_save) *)
   | Restore of Id.t (* スタック変数から値を復元 (caml2html: sparcasm_restore) *)
+and  exp = exp'*KNormal.p(*位置を表す型を追加。課題１。*)
 type fundef = { name : Id.l; args : Id.t list; fargs : Id.t list; body : t; ret : Type.t }
 (* プログラム全体 = 浮動小数点数テーブル + トップレベル関数 + メインの式 (caml2html: sparcasm_prog) *)
 type prog = Prog of (Id.l * float) list * fundef list * t
@@ -75,9 +76,9 @@ let rec fv_exp = function
   | CallCls(x, ys, zs) -> x :: ys @ zs
   | CallDir(_, ys, zs) -> ys @ zs
 and fv = function
-  | Ans(exp) -> fv_exp exp
+  | Ans(exp) -> fv_exp (fst exp)
   | Let((x, t), exp, e) ->
-      fv_exp exp @ remove_and_uniq (S.singleton x) (fv e)
+      fv_exp (fst exp) @ remove_and_uniq (S.singleton x) (fv e)
 let fv e = remove_and_uniq S.empty (fv e)
 
 let rec concat e1 xt e2 =
@@ -86,3 +87,9 @@ let rec concat e1 xt e2 =
   | Let(yt, exp, e1') -> Let(yt, exp, concat e1' xt e2)
 
 let align i = (if i mod 8 = 0 then i else i + 4)
+
+let get_position t =(*位置を取り出す関数*)
+  match t with
+  | Ans ((_,p)) -> p
+  | Let (_,exp,_) -> snd exp
+

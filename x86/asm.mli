@@ -1,8 +1,8 @@
 type id_or_imm = V of Id.t | C of int
-type t =
+type t = (* 命令の列 (caml2html: sparcasm_t) *)
   | Ans of exp
   | Let of (Id.t * Type.t) * exp * t
-and exp =
+and exp' = (* 一つ一つの命令に対応する式 (caml2html: sparcasm_exp) *)
   | Nop
   | Set of int
   | SetL of Id.l
@@ -24,15 +24,17 @@ and exp =
   (* virtual instructions *)
   | IfEq of Id.t * id_or_imm * t * t
   | IfLE of Id.t * id_or_imm * t * t
-  | IfGE of Id.t * id_or_imm * t * t
+  | IfGE of Id.t * id_or_imm * t * t (* 左右対称ではないので必要 *)
   | IfFEq of Id.t * Id.t * t * t
   | IfFLE of Id.t * Id.t * t * t
   (* closure address, integer arguments, and float arguments *)
   | CallCls of Id.t * Id.t list * Id.t list
   | CallDir of Id.l * Id.t list * Id.t list
-  | Save of Id.t * Id.t (* レジスタ変数の値をスタック変数へ保存 *)
-  | Restore of Id.t (* スタック変数から値を復元 *)
+  | Save of Id.t * Id.t (* レジスタ変数の値をスタック変数へ保存 (caml2html: sparcasm_save) *)
+  | Restore of Id.t (* スタック変数から値を復元 (caml2html: sparcasm_restore) *)
+and  exp = exp'*KNormal.p
 type fundef = { name : Id.l; args : Id.t list; fargs : Id.t list; body : t; ret : Type.t }
+(* プログラム全体 = 浮動小数点数テーブル + トップレベル関数 + メインの式 (caml2html: sparcasm_prog) *)
 type prog = Prog of (Id.l * float) list * fundef list * t
 
 val fletd : Id.t * exp * t -> t (* shorthand of Let for float *)
@@ -56,3 +58,4 @@ val fv : t -> Id.t list
 val concat : t -> Id.t * Type.t -> t -> t
 
 val align : int -> int
+val get_position : t -> KNormal.p

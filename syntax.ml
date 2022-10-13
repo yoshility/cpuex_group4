@@ -1,6 +1,7 @@
 type p = Lexing.position
 
 type t = (* MinCamlの構文を表現するデータ型 (caml2html: syntax_t) *)
+   (*位置を表す型pを追加。課題１。*)
   | Unit of p 
   | Bool of bool*p
   | Int of int*p

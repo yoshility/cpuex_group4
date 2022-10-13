@@ -24,48 +24,48 @@ _min_caml_start: # for cygwin
 	movl	32(%esp),%ebp
 	movl	36(%esp),%eax
 	movl	%eax,min_caml_hp
-	movl	$l.28, %eax
-	movsd	0(%eax), %xmm0
-	call	min_caml_truncate
-	movl	$l.30, %ebx
-	movsd	0(%ebx), %xmm0
-	movl	%eax, 0(%ebp)
-	addl	$8, %ebp
-	call	min_caml_truncate
-	subl	$8, %ebp
-	movl	$l.32, %ebx
-	movsd	0(%ebx), %xmm0
-	movl	%eax, 4(%ebp)
-	addl	$8, %ebp
-	call	min_caml_truncate
-	subl	$8, %ebp
-	cmpl	$0, %eax
+	movl	$l.28, %eax # 1
+	movsd	0(%eax), %xmm0 # 1
+	call	min_caml_truncate # 1
+	movl	$l.30, %ebx # 2
+	movsd	0(%ebx), %xmm0 # 2
+	movl	%eax, 0(%ebp) # 2
+	addl	$8, %ebp # 2
+	call	min_caml_truncate # 2
+	subl	$8, %ebp # 2
+	movl	$l.32, %ebx # 3
+	movsd	0(%ebx), %xmm0 # 3
+	movl	%eax, 4(%ebp) # 3
+	addl	$8, %ebp # 3
+	call	min_caml_truncate # 3
+	subl	$8, %ebp # 3
+	cmpl	$0, %eax # 5
 	jl	jge_else.37
-	movl	0(%ebp), %ebx
+	movl	0(%ebp), %ebx # 5
 	jmp	jge_cont.38
 jge_else.37:
-	movl	4(%ebp), %ebx
+	movl	4(%ebp), %ebx # 5
 jge_cont.38:
-	movl	0(%ebp), %ecx
-	cmpl	$0, %ecx
+	movl	0(%ebp), %ecx # 6
+	cmpl	$0, %ecx # 6
 	jg	jle_else.39
-	movl	4(%ebp), %edx
+	movl	4(%ebp), %edx # 6
 	jmp	jle_cont.40
 jle_else.39:
-	movl	%eax, %edx
+	movl	%eax, %edx # 6
 jle_cont.40:
-	addl	%edx, %ebx
-	movl	4(%ebp), %edx
-	cmpl	$0, %edx
+	addl	%edx, %ebx # 5
+	movl	4(%ebp), %edx # 7
+	cmpl	$0, %edx # 7
 	jl	jge_else.41
 	jmp	jge_cont.42
 jge_else.41:
-	movl	%ecx, %eax
+	movl	%ecx, %eax # 7
 jge_cont.42:
-	addl	%ebx, %eax
-	addl	$8, %ebp
-	call	min_caml_print_int
-	subl	$8, %ebp
+	addl	%ebx, %eax # 5
+	addl	$8, %ebp # 4
+	call	min_caml_print_int # 4
+	subl	$8, %ebp # 4
 	popl	%ebp
 	popl	%edi
 	popl	%esi

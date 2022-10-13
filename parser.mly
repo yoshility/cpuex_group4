@@ -136,7 +136,7 @@ exp: /* (* 一般の式 (caml2html: parser_exp) *) */
 | ARRAY_CREATE simple_exp simple_exp
     %prec prec_app
     { Array($2, $3,Parsing.symbol_start_pos()) }
-| error
+| error //エラー発生時の処理を変更。課題１。
     { Printf.fprintf stdout "line %d\n" (Parsing.symbol_start_pos()).pos_lnum;
     failwith
         (Printf.sprintf "parse error near characters %d-%d"

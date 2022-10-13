@@ -2,14 +2,14 @@
 .balign	8
 .text
 f.12:
-	movl	$123, %eax
-	ret
+	movl	$123, %eax # 1
+	ret # 1
 g.14:
-	movl	$456, %eax
-	ret
+	movl	$456, %eax # 2
+	ret # 2
 h.16:
-	movl	$789, %eax
-	ret
+	movl	$789, %eax # 3
+	ret # 3
 .globl	min_caml_start
 min_caml_start:
 .globl	_min_caml_start
@@ -24,28 +24,28 @@ _min_caml_start: # for cygwin
 	movl	32(%esp),%ebp
 	movl	36(%esp),%eax
 	movl	%eax,min_caml_hp
-	call	f.12
-	cmpl	$0, %eax
+	call	f.12 # 5
+	cmpl	$0, %eax # 6
 	jg	jle_else.30
-	movl	%eax, 0(%ebp)
-	addl	$8, %ebp
-	call	g.14
-	subl	$8, %ebp
-	movl	0(%ebp), %ebx
-	addl	%ebx, %eax
+	movl	%eax, 0(%ebp) # 6
+	addl	$8, %ebp # 6
+	call	g.14 # 6
+	subl	$8, %ebp # 6
+	movl	0(%ebp), %ebx # 6
+	addl	%ebx, %eax # 6
 	jmp	jle_cont.31
 jle_else.30:
-	movl	%eax, 0(%ebp)
-	addl	$8, %ebp
-	call	h.16
-	subl	$8, %ebp
-	movl	0(%ebp), %ebx
-	subl	%ebx, %eax
+	movl	%eax, 0(%ebp) # 6
+	addl	$8, %ebp # 6
+	call	h.16 # 6
+	subl	$8, %ebp # 6
+	movl	0(%ebp), %ebx # 6
+	subl	%ebx, %eax # 6
 jle_cont.31:
-	addl	%ebx, %eax
-	addl	$8, %ebp
-	call	min_caml_print_int
-	subl	$8, %ebp
+	addl	%ebx, %eax # 6
+	addl	$8, %ebp # 6
+	call	min_caml_print_int # 6
+	subl	$8, %ebp # 6
 	popl	%ebp
 	popl	%edi
 	popl	%esi
