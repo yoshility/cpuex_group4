@@ -1,29 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "./helper.h"
 
-// アセンブリのコンマを除去
-char* eliminate_comma(char* line) {
-    int n = strlen(line);
-    for (int i=0; i<n; i++) {
-        if (line[i] == ',') {
-            line[i] = ' ';
-        }
-    }
-    return line;
-}
-
-// レジスタ名をレジスタ番号に変換 
-// ex) a0 : char* -> 1010 : int(2進数を装った10進数)
-int reg(char *reg) {
-    if (strncmp(reg, "a0", 2) == 0) {
-        return 1010;
-    } else if (strncmp(reg, "a1", 2) == 0) {
-        return 1011;
-    } else { // todo
-        return 11111;
-    }
-}
+#define BUFSIZE 100
 
 int main(int argc, char* argv[]) {
     FILE *in, *out;
@@ -36,7 +16,7 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
 
-    char line[100];
+    char line[BUFSIZE];
     char opcode[10];
     char r0[30];
     char r1[30];
@@ -51,7 +31,7 @@ int main(int argc, char* argv[]) {
     int addr = -4;
     char label[1000][10]; // ラベル保管庫
 
-    while (fgets(line, 100, in) != NULL) {
+    while (fgets(line, BUFSIZE, in) != NULL) {
         addr += 4;
 
         strcpy(r0, "\0");
@@ -59,18 +39,25 @@ int main(int argc, char* argv[]) {
         strcpy(r2, "\0");
         inst = eliminate_comma(line);
         res = sscanf(inst, "%s%s%s%s", opcode, r0, r1, r2);
-        // 命令アドレスを出力
-        printf("%02d %s %s %s %s\n", addr, opcode, r0, r1, r2);
 
         if (opcode[strlen(opcode)-1] == ':') {
             // 配列のaddr番目にラベル名を保管
             strcpy(label[addr], opcode);
+            // 命令アドレスも一緒に出力
+            printf("%02d %s\n", addr, opcode);
             addr -= 4;
+            continue;
         }
+
+        // 命令アドレスも一緒に出力
+        printf("%02d\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
     }
 
+    addr = -4
     // 2回目の読みでバイナリに変換
     while (fgets(line, 100, in) != NULL) {
+        addr += 4; //?
+
         strcpy(r0, "\0");
         strcpy(r1, "\0");
         strcpy(r2, "\0");
@@ -82,15 +69,37 @@ int main(int argc, char* argv[]) {
         if (strncmp(opcode, "addi", 4) == 0) {
             int rd = reg(r0);
             int rs1 = reg(r1);
-            long long int imm = 1; // テキトー
+            long long int imm = imm_11_0(r2);
             sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, 0, rd, 10011);
+            printf("%012lld%05d%03d%05d%07d", imm, rs1, 0, rd, 10011);
             // fprintf(out, "%s\n", str);
         }
         // bge
         else if (strncmp(opcode, "bge", 3) == 0) {
             int rs1 = reg(r0);
             int rs2 = reg(r1);
-            // pcが飛ぶためのbit数が足りないとき
+            // まずラベルr2をアドレスオフセットに変換する
+            int jmp_addr;
+            for (int i=0; i<1000; i++) {
+                // ラベルの最後のコロンを消去
+                for (int j=0; j<strlen(label[i]); j++) {
+                    if (label[i][j] == ':') {
+                        label[i][j] == '\0';
+                    }
+                }
+                // ラベル名が見つかったら、そのアドレスを返す
+                if (strncmp(label[i], r2, strlen(r2)) == 0) {
+                    jmp_addr = i;
+                    break;
+                }
+            }
+            // オフセットは(分岐先アドレス-分岐命令自体のpc) / 2
+            int imm = (jmp_addr - addr) / 2;
+            // imm[12|10:5]
+            long long int imm1 = imm_12_10_5(imm);
+            // imm[4:1|11]
+            long long int imm2 = imm_4_1_11(imm);
+            sprintf(str, "", imm1, rs2, rs1, 101, imm2, 1100011);
         }
     }
 
