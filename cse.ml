@@ -3,8 +3,6 @@ open KNormal
 let rec equal (ap,bp) =(*aとbが同じ部分式かどうかを判定する関数*)
 let a=fst ap in
 let b=fst bp in
-let p1=snd ap in
-let p2=snd bp in  
 match (a,b) with
   | (Add(x1,y1),Add(x2,y2)) 
   |(FAdd(x1,y1),FAdd(x2,y2)) |(FMul(x1,y1),FMul(x2,y2))
