@@ -5,7 +5,7 @@
     addi a4, x0, 0 # f2
     addi a0, a0, -1 # a0 = 9にする
 fib:
-    bge a1, a0, L1
+    beq a1, a0, L1
     add a4, a2, a3
     add a2, x0, a3
     add a3, x0, a4

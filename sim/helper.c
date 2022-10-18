@@ -1,4 +1,7 @@
-#include "./helper.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "helper.h"
 
 // アセンブリのコンマを除去
 char* eliminate_comma(char* line) {
@@ -14,12 +17,73 @@ char* eliminate_comma(char* line) {
 // レジスタ名をレジスタ番号に変換 
 // ex) a0 : char* -> 1010 : int(2進数を装った10進数)
 int reg(char *reg) {
-    if (strncmp(reg, "a0", 2) == 0) {
+    if (strncmp(reg, "x0", 2) == 0) {
+        return 0;
+    } else if (strncmp(reg, "ra", 2) == 0) {
+        return 1;
+    } else if (strncmp(reg, "sp", 2) == 0) {
+        return 10;
+    } else if (strncmp(reg, "gp", 2) == 0) {
+        return 11;
+    } else if (strncmp(reg, "tp", 2) == 0) {
+        return 100;
+    } else if (strncmp(reg, "t0", 2) == 0) {
+        return 101;
+    } else if (strncmp(reg, "t1", 2) == 0) {
+        return 110;
+    } else if (strncmp(reg, "t2", 2) == 0) {
+        return 111;
+    } else if ((strncmp(reg, "s0", 2) == 0) || (strncmp(reg, "fp", 2) == 0)) {
+        return 1000;
+    } else if (strncmp(reg, "s1", 2) == 0) {
+        return 1001;
+    } else if (strncmp(reg, "a0", 2) == 0) {
         return 1010;
     } else if (strncmp(reg, "a1", 2) == 0) {
         return 1011;
-    } else { // todo
+    } else if (strncmp(reg, "a2", 2) == 0) {
+        return 1100;
+    } else if (strncmp(reg, "a3", 2) == 0) {
+        return 1101;
+    } else if (strncmp(reg, "a4", 2) == 0) {
+        return 1110;
+    } else if (strncmp(reg, "a5", 2) == 0) {
+        return 1111;
+    } else if (strncmp(reg, "a6", 2) == 0) {
+        return 10000;
+    } else if (strncmp(reg, "a7", 2) == 0) {
+        return 10001;
+    } else if (strncmp(reg, "s2", 2) == 0) {
+        return 10010;
+    } else if (strncmp(reg, "s3", 2) == 0) {
+        return 10011;
+    } else if (strncmp(reg, "s4", 2) == 0) {
+        return 10100;
+    } else if (strncmp(reg, "s5", 2) == 0) {
+        return 10101;
+    } else if (strncmp(reg, "s6", 2) == 0) {
+        return 10110;
+    } else if (strncmp(reg, "s7", 2) == 0) {
+        return 10111;
+    } else if (strncmp(reg, "s8", 2) == 0) {
+        return 11000;
+    } else if (strncmp(reg, "s9", 2) == 0) {
+        return 11001;
+    } else if (strncmp(reg, "s10", 3) == 0) {
+        return 11010;
+    } else if (strncmp(reg, "s11", 2) == 0) {
+        return 11011;
+    } else if (strncmp(reg, "t3", 2) == 0) {
+        return 11100;
+    } else if (strncmp(reg, "t4", 2) == 0) {
+        return 11101;
+    } else if (strncmp(reg, "t5", 2) == 0) {
+        return 11110;
+    } else if (strncmp(reg, "t6", 2) == 0) {
         return 11111;
+    } else {
+        printf("Error: register name\n");
+        return 0;
     }
 }
 

@@ -1,16 +1,17 @@
-#define OP_ADD   110011
-#define OP_ADDI   10011
-#define OP_BGE  1100011
-#define OP_JALR 1100111
-#define OP_JAL  1101111
+#define OP_ADD   (110011)
+#define OP_ADDI   (10011)
+#define OP_BGE  (1100011)
+#define OP_JALR (1100111)
+#define OP_JAL  (1101111)
+#define OP_BEQ  (1100011)
 
-#define F7_ADD 0
+#define F7_ADD (0)
 
-#define F3_ADD  000
-#define F3_ADDI 000
-#define F3_BGE  101
-#define F3_JALR 000
-
+#define F3_ADD  (000)
+#define F3_ADDI (000)
+#define F3_BGE  (101)
+#define F3_JALR (000)
+#define F3_BEQ  (000)
 
 char* eliminate_comma(char*);
 int reg(char*);
