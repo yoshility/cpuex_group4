@@ -1,3 +1,5 @@
+#include "./helper.h"
+
 // アセンブリのコンマを除去
 char* eliminate_comma(char* line) {
     int n = strlen(line);
@@ -33,6 +35,71 @@ long long int imm_11_0(char* imm) {
         n /= 2;
         base *= 10;
     }
+
+    return binary;
+}
+
+// 即値imm[12|10:5]
+long long int imm_12_10_5(long long int imm) {
+    int m = imm / 2;
+    int n = (m < 0) ? ((1 << 12) + m) : m;
+
+    long long int binary = 0;
+
+    binary += ((n >> 11) % 2) * 1000 * 1000;
+    binary += ((n >> 9) % 2) * 1000 * 100;
+    binary += ((n >> 8) % 2) * 1000 * 10;
+    binary += ((n >> 7) % 2) * 1000;
+    binary += ((n >> 6) % 2) * 100;
+    binary += ((n >> 5) % 2) * 10;
+    binary += ((n >> 4) % 2);
+
+    return binary;
+}
+
+// 即値imm[4:1|11]
+int imm_4_1_11(long long int imm) {
+    int m = imm / 2;
+    int n = (m < 0) ? ((1 << 12) + m) : m;
+
+    long long int binary = 0;
+
+    binary += ((n >> 3) % 2) * 10000;
+    binary += ((n >> 2) % 2) * 1000;
+    binary += ((n >> 1) % 2) * 100;
+    binary += (n % 2) * 10;
+    binary += ((n >> 10) % 2);
+
+    return binary;
+}
+
+// 即値imm[20,]
+unsigned long long int imm_20_10_1_11_19_12(long long int imm) {
+    int m = imm / 2;
+    unsigned long int n = (m < 0) ? ((1 << 20) + m) : m;
+
+    unsigned long long int binary = 0;
+
+    binary += ((n >> 19) % 2) * 10000 * 10000 * 10000 * 10000 * 1000;  
+    binary += ((n >> 9) % 2) * 10000 * 10000 * 10000 * 10000 * 100;
+    binary += ((n >> 8) % 2) * 10000 * 10000 * 10000 * 10000 * 10; 
+    binary += ((n >> 7) % 2) * 10000 * 10000 * 10000 * 10000;
+    binary += ((n >> 6) % 2) * 10000 * 10000 * 10000 * 1000;    
+    binary += ((n >> 5) % 2) * 10000 * 10000 * 10000 * 100; 
+    binary += ((n >> 4) % 2) * 10000 * 10000 * 10000 * 10; 
+    binary += ((n >> 3) % 2) * 10000 * 10000 * 10000; 
+    binary += ((n >> 2) % 2) * 10000 * 10000 * 1000; 
+    binary += ((n >> 1) % 2) * 10000 * 10000 * 100; 
+    binary += (n % 2) * 10000 * 10000 * 10; 
+    binary += ((n >> 10) % 2) * 10000 * 10000;
+    binary += ((n >> 18) % 2) * 10000 * 1000;
+    binary += ((n >> 17) % 2) * 10000 * 100;
+    binary += ((n >> 16) % 2) * 10000 * 10;
+    binary += ((n >> 15) % 2) * 10000;
+    binary += ((n >> 14) % 2) * 1000;
+    binary += ((n >> 13) % 2) * 100;
+    binary += ((n >> 12) % 2) * 10;
+    binary += ((n >> 11) % 2);
 
     return binary;
 }

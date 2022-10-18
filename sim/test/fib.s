@@ -13,5 +13,4 @@ fib:
     jal x0, fib
 L1:
     add a0, x0, a4
-    ret
-    #jalr x0, x1, 0
+    jalr x0, ra, 0 # retのかわり

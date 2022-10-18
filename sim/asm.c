@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
         printf("%02d\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
     }
 
-    addr = -4
+    addr = -4;
     // 2回目の読みでバイナリに変換
     while (fgets(line, 100, in) != NULL) {
         addr += 4; //?
@@ -70,16 +70,23 @@ int main(int argc, char* argv[]) {
             int rd = reg(r0);
             int rs1 = reg(r1);
             long long int imm = imm_11_0(r2);
-            sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, 0, rd, 10011);
-            printf("%012lld%05d%03d%05d%07d", imm, rs1, 0, rd, 10011);
-            // fprintf(out, "%s\n", str);
+            sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_ADDI, rd, OP_ADDI);
+            fprintf(stdout, "%s\n", str);
+        }
+        // add
+        else if (strncmp(opcode, "add", 3) == 0) {
+            int rd = reg(r0);
+            int rs1 = reg(r1);
+            int rs2 = reg(r2);
+            sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_ADD, rs2, rs1, F3_ADD, rd, OP_ADD);
+            fprintf(stdout, "%s\n", str);
         }
         // bge
         else if (strncmp(opcode, "bge", 3) == 0) {
             int rs1 = reg(r0);
             int rs2 = reg(r1);
             // まずラベルr2をアドレスオフセットに変換する
-            int jmp_addr;
+            long long int jmp_addr;
             for (int i=0; i<1000; i++) {
                 // ラベルの最後のコロンを消去
                 for (int j=0; j<strlen(label[i]); j++) {
@@ -93,13 +100,42 @@ int main(int argc, char* argv[]) {
                     break;
                 }
             }
-            // オフセットは(分岐先アドレス-分岐命令自体のpc) / 2
-            int imm = (jmp_addr - addr) / 2;
+            // オフセットは(分岐先アドレス-分岐命令自体のアドレス) -> 本当は/2
+            long long int imm = jmp_addr - addr;
             // imm[12|10:5]
             long long int imm1 = imm_12_10_5(imm);
             // imm[4:1|11]
-            long long int imm2 = imm_4_1_11(imm);
-            sprintf(str, "", imm1, rs2, rs1, 101, imm2, 1100011);
+            int imm2 = imm_4_1_11(imm);
+            sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_BGE, imm2, OP_BGE);
+            fprintf(stdout, "%s\n", str);
+        }
+        // jal
+        else if (strncmp(opcode, "jal", 3) == 0) {
+            int rd = reg(r0);
+            long long int jmp_addr;
+            for (int i=0; i<1000; i++) {
+                for (int j=0; j<strlen(label[i]); j++) {
+                    if (label[i][j] == ':') {
+                        label[i][j] == '\0';
+                    }
+                }
+                if (strncmp(label[i], r2, strlen(r2)) == 0) {
+                    jmp_addr = i;
+                    break;
+                }
+            }
+            // imm[20,10:1,11,19:12]
+            long long int imm = imm_20_10_1_11_19_12(jmp_addr - addr);
+            sprintf(str, "%020llu%05d%07d", imm, rd, OP_JAL);
+            fprintf(stdout, "%s\n", str);
+        }
+        // jalr
+        else if (strncmp(opcode, "jalr", 4) == 0) {
+            int rd = reg(r0);
+            int rs1 = reg(r1);
+            long long int imm = imm_11_0(r2);
+            sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_JALR, rd, OP_JALR);
+            fprintf(stdout, "%s\n", str);
         }
     }
 
