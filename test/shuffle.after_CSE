@@ -1,0 +1,68 @@
+LetRec
+      foo:type Fun:type Int,type Int,type Int,type Int,type Int,type Int,->type Unit
+      args:a:type Int, b:type Int, c:type Int, d:type Int, e:type Int, f:type Int, 
+      Let
+         Tu5 type Unit
+         ExtFunApp
+                 print_int
+                 a
+         Let
+            Tu4 type Unit
+            ExtFunApp
+                    print_int
+                    b
+            Let
+               Tu3 type Unit
+               ExtFunApp
+                       print_int
+                       c
+               Let
+                  Tu2 type Unit
+                  ExtFunApp
+                          print_int
+                          d
+                  Let
+                     Tu1 type Unit
+                     ExtFunApp
+                             print_int
+                             e
+                     ExtFunApp
+                             print_int
+                             f
+      LetRec
+            bar:type Fun:type Int,type Int,type Int,type Int,type Int,type Int,->type Unit
+            args:a:type Int, b:type Int, c:type Int, d:type Int, e:type Int, f:type Int, 
+            App
+               foo
+               b
+               a
+               d
+               e
+               f
+               c
+            Let
+               Ti6 type Int
+               1
+               Let
+                  Ti7 type Int
+                  2
+                  Let
+                     Ti8 type Int
+                     3
+                     Let
+                        Ti9 type Int
+                        4
+                        Let
+                           Ti10 type Int
+                           5
+                           Let
+                              Ti11 type Int
+                              6
+                              App
+                                 bar
+                                 Ti6
+                                 Ti7
+                                 Ti8
+                                 Ti9
+                                 Ti10
+                                 Ti11

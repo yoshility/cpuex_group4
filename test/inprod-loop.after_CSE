@@ -1,0 +1,96 @@
+LetRec
+      inprod:type Fun:type Array type Float,type Array type Float,type Float,type Int,->type Float
+      args:v1:type Array type Float, v2:type Array type Float, acc:type Float, i:type Int, 
+      Let
+         Ti11 type Int
+         0
+         IfLE
+             Ti11
+             i
+             Let
+                Td15 type Float
+                Let
+                   Td14 type Float
+                   Let
+                      Td12 type Float
+                      Get
+                         v1                         i
+                      Let
+                         Td13 type Float
+                         Get
+                            v2                            i
+                         FMul
+                             Td12
+                             Td13
+                   FAdd
+                       acc
+                       Td14
+                Let
+                   Ti17 type Int
+                   Let
+                      Ti16 type Int
+                      1
+                      Sub
+                         i
+                         Ti16
+                   App
+                      inprod
+                      v1
+                      v2
+                      Td15
+                      Ti17
+             Var acc
+      Let
+         v1 type Array type Float
+         Let
+            Ti1 type Int
+            3
+            Let
+               Td2 type Float
+               1.23
+               ExtFunApp
+                       create_float_array
+                       Ti1
+                       Td2
+         Let
+            v2 type Array type Float
+            Let
+               Ti3 type Int
+               3
+               Let
+                  Td4 type Float
+                  4.56
+                  ExtFunApp
+                          create_float_array
+                          Ti3
+                          Td4
+            Let
+               Ti10 type Int
+               Let
+                  Td9 type Float
+                  Let
+                     Td5 type Float
+                     1000000.
+                     Let
+                        Td8 type Float
+                        Let
+                           Td6 type Float
+                           0.
+                           Let
+                              Ti7 type Int
+                              2
+                              App
+                                 inprod
+                                 v1
+                                 v2
+                                 Td6
+                                 Ti7
+                        FMul
+                            Td5
+                            Td8
+                  ExtFunApp
+                          truncate
+                          Td9
+               ExtFunApp
+                       print_int
+                       Ti10

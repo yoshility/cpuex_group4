@@ -1,0 +1,141 @@
+LetRec
+      h:type Fun:type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,),->type Int
+      args:p:type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,), 
+      LetTuple
+              v1 type Int
+              v2 type Int
+              v3 type Int
+              v4 type Int
+              v5 type Int
+              v6 type Int
+              v7 type Int
+              v8 type Int
+              v9 type Int
+              v10 type Int
+              p
+              LetRec
+                    g:type Fun:type Int,->type Int
+                    args:z:type Int, 
+                    Let
+                       r type Int
+                       Let
+                          Ti23 type Int
+                          Let
+                             Ti22 type Int
+                             Let
+                                Ti21 type Int
+                                Let
+                                   Ti20 type Int
+                                   Let
+                                      Ti19 type Int
+                                      Let
+                                         Ti18 type Int
+                                         Let
+                                            Ti17 type Int
+                                            Let
+                                               Ti16 type Int
+                                               Add
+                                                  v1
+                                                  v2
+                                               Add
+                                                  Ti16
+                                                  v3
+                                            Add
+                                               Ti17
+                                               v4
+                                         Add
+                                            Ti18
+                                            v5
+                                      Add
+                                         Ti19
+                                         v6
+                                   Add
+                                      Ti20
+                                      v7
+                                Add
+                                   Ti21
+                                   v8
+                             Add
+                                Ti22
+                                v9
+                          Add
+                             Ti23
+                             v10
+                       Let
+                          Ti24 type Int
+                          0
+                          IfLE
+                              z
+                              Ti24
+                              Let
+                                 Ti25 type Int
+                                 Neg z
+                                 App
+                                    g
+                                    Ti25
+                              Var r
+                    Let
+                       Ti15 type Int
+                       1
+                       App
+                          g
+                          Ti15
+      Let
+         Tu1 type Unit
+         Let
+            Ti13 type Int
+            Let
+               Tt12 type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,)
+               Let
+                  Ti2 type Int
+                  1
+                  Let
+                     Ti3 type Int
+                     2
+                     Let
+                        Ti4 type Int
+                        3
+                        Let
+                           Ti5 type Int
+                           4
+                           Let
+                              Ti6 type Int
+                              5
+                              Let
+                                 Ti7 type Int
+                                 6
+                                 Let
+                                    Ti8 type Int
+                                    7
+                                    Let
+                                       Ti9 type Int
+                                       8
+                                       Let
+                                          Ti10 type Int
+                                          9
+                                          Let
+                                             Ti11 type Int
+                                             10
+                                             Tuple
+                                                  Ti2
+                                                  Ti3
+                                                  Ti4
+                                                  Ti5
+                                                  Ti6
+                                                  Ti7
+                                                  Ti8
+                                                  Ti9
+                                                  Ti10
+                                                  Ti11
+               App
+                  h
+                  Tt12
+            ExtFunApp
+                    print_int
+                    Ti13
+         Let
+            Tu14 type Unit
+            Unit
+            ExtFunApp
+                    print_newline
+                    Tu14

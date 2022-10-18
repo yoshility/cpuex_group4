@@ -1,0 +1,63 @@
+Let
+   x type Tuple(type Int,type Int,type Int,)
+   Let
+      Ti1 type Int
+      1
+      Let
+         Ti2 type Int
+         2
+         Let
+            Ti3 type Int
+            3
+            Tuple
+                 Ti1
+                 Ti2
+                 Ti3
+   Let
+      y type Tuple(type Int,type Int,type Int,)
+      Let
+         Ti4 type Int
+         1
+         Let
+            Ti5 type Int
+            2
+            Let
+               Ti6 type Int
+               3
+               Tuple
+                    Ti4
+                    Ti5
+                    Ti6
+      LetTuple
+              a type Int
+              b type Int
+              c type Int
+              x
+              Let
+                 d type Int
+                 Let
+                    Ti7 type Int
+                    1
+                    Let
+                       Ti8 type Int
+                       2
+                       Add
+                          Ti7
+                          Ti8
+                 Let
+                    e type Int
+                    Let
+                       Ti9 type Int
+                       2
+                       Let
+                          Ti10 type Int
+                          1
+                          Add
+                             Ti9
+                             Ti10
+                    Let
+                       v type Tuple(type Int,type Int,type Int,)
+                       Var x
+                       ExtFunApp
+                               print_int
+                               a

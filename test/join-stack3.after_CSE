@@ -1,0 +1,48 @@
+LetRec
+      f:type Fun:type Unit,->type Int
+      args:Tu1:type Unit, 
+      123
+      LetRec
+            g:type Fun:type Unit,->type Int
+            args:Tu2:type Unit, 
+            456
+            LetRec
+                  h:type Fun:type Unit,->type Int
+                  args:Tu3:type Unit, 
+                  789
+                  Let
+                     x type Int
+                     Let
+                        Tu4 type Unit
+                        Unit
+                        App
+                           f
+                           Tu4
+                     Let
+                        Ti9 type Int
+                        Let
+                           Ti8 type Int
+                           Let
+                              Ti5 type Int
+                              0
+                              IfLE
+                                  x
+                                  Ti5
+                                  Let
+                                     Tu6 type Unit
+                                     Unit
+                                     App
+                                        g
+                                        Tu6
+                                  Let
+                                     Tu7 type Unit
+                                     Unit
+                                     App
+                                        h
+                                        Tu7
+                           Add
+                              Ti8
+                              x
+                        ExtFunApp
+                                print_int
+                                Ti9

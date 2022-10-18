@@ -1,0 +1,599 @@
+LetRec
+      mul:type Fun:type Int,type Int,type Int,type Array type Array type Float,type Array type Array type Float,type Array type Array type Float,->type Unit
+      args:l:type Int, m:type Int, n:type Int, a:type Array type Array type Float, b:type Array type Array type Float, c:type Array type Array type Float, 
+      LetRec
+            loop1:type Fun:type Int,->type Unit
+            args:i:type Int, 
+            Let
+               Ti118 type Int
+               0
+               IfLE
+                   Ti118
+                   i
+                   LetRec
+                         loop2:type Fun:type Int,->type Unit
+                         args:j:type Int, 
+                         Let
+                            Ti123 type Int
+                            0
+                            IfLE
+                                Ti123
+                                j
+                                LetRec
+                                      loop3:type Fun:type Int,->type Unit
+                                      args:k:type Int, 
+                                      Let
+                                         Ti128 type Int
+                                         0
+                                         IfLE
+                                             Ti128
+                                             k
+                                             Let
+                                                Tu1 type Unit
+                                                Let
+                                                   Ta129 type Array type Float
+                                                   Get
+                                                      c                                                      i
+                                                   Let
+                                                      Td137 type Float
+                                                      Let
+                                                         Td131 type Float
+                                                         Let
+                                                            Ta130 type Array type Float
+                                                            Get
+                                                               c                                                               i
+                                                            Get
+                                                               Ta130                                                               j
+                                                         Let
+                                                            Td136 type Float
+                                                            Let
+                                                               Td133 type Float
+                                                               Let
+                                                                  Ta132 type Array type Float
+                                                                  Get
+                                                                     a                                                                     i
+                                                                  Get
+                                                                     Ta132                                                                     k
+                                                               Let
+                                                                  Td135 type Float
+                                                                  Let
+                                                                     Ta134 type Array type Float
+                                                                     Get
+                                                                        b                                                                        k
+                                                                     Get
+                                                                        Ta134                                                                        j
+                                                                  FMul
+                                                                      Td133
+                                                                      Td135
+                                                            FAdd
+                                                                Td131
+                                                                Td136
+                                                      Put
+                                                         Ta129                                                         j                                                         Td137
+                                                Let
+                                                   Ti139 type Int
+                                                   Let
+                                                      Ti138 type Int
+                                                      1
+                                                      Sub
+                                                         k
+                                                         Ti138
+                                                   App
+                                                      loop3
+                                                      Ti139
+                                             Unit
+                                      Let
+                                         Tu2 type Unit
+                                         Let
+                                            Ti125 type Int
+                                            Let
+                                               Ti124 type Int
+                                               1
+                                               Sub
+                                                  m
+                                                  Ti124
+                                            App
+                                               loop3
+                                               Ti125
+                                         Let
+                                            Ti127 type Int
+                                            Let
+                                               Ti126 type Int
+                                               1
+                                               Sub
+                                                  j
+                                                  Ti126
+                                            App
+                                               loop2
+                                               Ti127
+                                Unit
+                         Let
+                            Tu3 type Unit
+                            Let
+                               Ti120 type Int
+                               Let
+                                  Ti119 type Int
+                                  1
+                                  Sub
+                                     n
+                                     Ti119
+                               App
+                                  loop2
+                                  Ti120
+                            Let
+                               Ti122 type Int
+                               Let
+                                  Ti121 type Int
+                                  1
+                                  Sub
+                                     i
+                                     Ti121
+                               App
+                                  loop1
+                                  Ti122
+                   Unit
+            Let
+               Ti117 type Int
+               Let
+                  Ti116 type Int
+                  1
+                  Sub
+                     l
+                     Ti116
+               App
+                  loop1
+                  Ti117
+      Let
+         dummy type Array type Float
+         Let
+            Ti26 type Int
+            0
+            Let
+               Td27 type Float
+               0.
+               ExtFunApp
+                       create_float_array
+                       Ti26
+                       Td27
+         LetRec
+               make:type Fun:type Int,type Int,->type Array type Array type Float
+               args:m:type Int, n:type Int, 
+               Let
+                  mat type Array type Array type Float
+                  ExtFunApp
+                          create_array
+                          m
+                          dummy
+                  LetRec
+                        init:type Fun:type Int,->type Unit
+                        args:i:type Int, 
+                        Let
+                           Ti111 type Int
+                           0
+                           IfLE
+                               Ti111
+                               i
+                               Let
+                                  Tu4 type Unit
+                                  Let
+                                     Ta113 type Array type Float
+                                     Let
+                                        Td112 type Float
+                                        0.
+                                        ExtFunApp
+                                                create_float_array
+                                                n
+                                                Td112
+                                     Put
+                                        mat                                        i                                        Ta113
+                                  Let
+                                     Ti115 type Int
+                                     Let
+                                        Ti114 type Int
+                                        1
+                                        Sub
+                                           i
+                                           Ti114
+                                     App
+                                        init
+                                        Ti115
+                               Unit
+                        Let
+                           Tu5 type Unit
+                           Let
+                              Ti110 type Int
+                              Let
+                                 Ti109 type Int
+                                 1
+                                 Sub
+                                    m
+                                    Ti109
+                              App
+                                 init
+                                 Ti110
+                           Var mat
+               Let
+                  a type Array type Array type Float
+                  Let
+                     Ti28 type Int
+                     2
+                     Let
+                        Ti29 type Int
+                        3
+                        App
+                           make
+                           Ti28
+                           Ti29
+                  Let
+                     b type Array type Array type Float
+                     Let
+                        Ti30 type Int
+                        3
+                        Let
+                           Ti31 type Int
+                           2
+                           App
+                              make
+                              Ti30
+                              Ti31
+                     Let
+                        c type Array type Array type Float
+                        Let
+                           Ti32 type Int
+                           2
+                           Let
+                              Ti33 type Int
+                              2
+                              App
+                                 make
+                                 Ti32
+                                 Ti33
+                        Let
+                           Tu25 type Unit
+                           Let
+                              Ta35 type Array type Float
+                              Let
+                                 Ti34 type Int
+                                 0
+                                 Get
+                                    a                                    Ti34
+                              Let
+                                 Ti36 type Int
+                                 0
+                                 Let
+                                    Td37 type Float
+                                    1.
+                                    Put
+                                       Ta35                                       Ti36                                       Td37
+                           Let
+                              Tu24 type Unit
+                              Let
+                                 Ta39 type Array type Float
+                                 Let
+                                    Ti38 type Int
+                                    0
+                                    Get
+                                       a                                       Ti38
+                                 Let
+                                    Ti40 type Int
+                                    1
+                                    Let
+                                       Td41 type Float
+                                       2.
+                                       Put
+                                          Ta39                                          Ti40                                          Td41
+                              Let
+                                 Tu23 type Unit
+                                 Let
+                                    Ta43 type Array type Float
+                                    Let
+                                       Ti42 type Int
+                                       0
+                                       Get
+                                          a                                          Ti42
+                                    Let
+                                       Ti44 type Int
+                                       2
+                                       Let
+                                          Td45 type Float
+                                          3.
+                                          Put
+                                             Ta43                                             Ti44                                             Td45
+                                 Let
+                                    Tu22 type Unit
+                                    Let
+                                       Ta47 type Array type Float
+                                       Let
+                                          Ti46 type Int
+                                          1
+                                          Get
+                                             a                                             Ti46
+                                       Let
+                                          Ti48 type Int
+                                          0
+                                          Let
+                                             Td49 type Float
+                                             4.
+                                             Put
+                                                Ta47                                                Ti48                                                Td49
+                                    Let
+                                       Tu21 type Unit
+                                       Let
+                                          Ta51 type Array type Float
+                                          Let
+                                             Ti50 type Int
+                                             1
+                                             Get
+                                                a                                                Ti50
+                                          Let
+                                             Ti52 type Int
+                                             1
+                                             Let
+                                                Td53 type Float
+                                                5.
+                                                Put
+                                                   Ta51                                                   Ti52                                                   Td53
+                                       Let
+                                          Tu20 type Unit
+                                          Let
+                                             Ta55 type Array type Float
+                                             Let
+                                                Ti54 type Int
+                                                1
+                                                Get
+                                                   a                                                   Ti54
+                                             Let
+                                                Ti56 type Int
+                                                2
+                                                Let
+                                                   Td57 type Float
+                                                   6.
+                                                   Put
+                                                      Ta55                                                      Ti56                                                      Td57
+                                          Let
+                                             Tu19 type Unit
+                                             Let
+                                                Ta59 type Array type Float
+                                                Let
+                                                   Ti58 type Int
+                                                   0
+                                                   Get
+                                                      b                                                      Ti58
+                                                Let
+                                                   Ti60 type Int
+                                                   0
+                                                   Let
+                                                      Td61 type Float
+                                                      7.
+                                                      Put
+                                                         Ta59                                                         Ti60                                                         Td61
+                                             Let
+                                                Tu18 type Unit
+                                                Let
+                                                   Ta63 type Array type Float
+                                                   Let
+                                                      Ti62 type Int
+                                                      0
+                                                      Get
+                                                         b                                                         Ti62
+                                                   Let
+                                                      Ti64 type Int
+                                                      1
+                                                      Let
+                                                         Td65 type Float
+                                                         8.
+                                                         Put
+                                                            Ta63                                                            Ti64                                                            Td65
+                                                Let
+                                                   Tu17 type Unit
+                                                   Let
+                                                      Ta67 type Array type Float
+                                                      Let
+                                                         Ti66 type Int
+                                                         1
+                                                         Get
+                                                            b                                                            Ti66
+                                                      Let
+                                                         Ti68 type Int
+                                                         0
+                                                         Let
+                                                            Td69 type Float
+                                                            9.
+                                                            Put
+                                                               Ta67                                                               Ti68                                                               Td69
+                                                   Let
+                                                      Tu16 type Unit
+                                                      Let
+                                                         Ta71 type Array type Float
+                                                         Let
+                                                            Ti70 type Int
+                                                            1
+                                                            Get
+                                                               b                                                               Ti70
+                                                         Let
+                                                            Ti72 type Int
+                                                            1
+                                                            Let
+                                                               Td73 type Float
+                                                               10.
+                                                               Put
+                                                                  Ta71                                                                  Ti72                                                                  Td73
+                                                      Let
+                                                         Tu15 type Unit
+                                                         Let
+                                                            Ta75 type Array type Float
+                                                            Let
+                                                               Ti74 type Int
+                                                               2
+                                                               Get
+                                                                  b                                                                  Ti74
+                                                            Let
+                                                               Ti76 type Int
+                                                               0
+                                                               Let
+                                                                  Td77 type Float
+                                                                  11.
+                                                                  Put
+                                                                     Ta75                                                                     Ti76                                                                     Td77
+                                                         Let
+                                                            Tu14 type Unit
+                                                            Let
+                                                               Ta79 type Array type Float
+                                                               Let
+                                                                  Ti78 type Int
+                                                                  2
+                                                                  Get
+                                                                     b                                                                     Ti78
+                                                               Let
+                                                                  Ti80 type Int
+                                                                  1
+                                                                  Let
+                                                                     Td81 type Float
+                                                                     12.
+                                                                     Put
+                                                                        Ta79                                                                        Ti80                                                                        Td81
+                                                            Let
+                                                               Tu13 type Unit
+                                                               Let
+                                                                  Ti82 type Int
+                                                                  2
+                                                                  Let
+                                                                     Ti83 type Int
+                                                                     3
+                                                                     Let
+                                                                        Ti84 type Int
+                                                                        2
+                                                                        App
+                                                                           mul
+                                                                           Ti82
+                                                                           Ti83
+                                                                           Ti84
+                                                                           a
+                                                                           b
+                                                                           c
+                                                               Let
+                                                                  Tu12 type Unit
+                                                                  Let
+                                                                     Ti89 type Int
+                                                                     Let
+                                                                        Td88 type Float
+                                                                        Let
+                                                                           Ta86 type Array type Float
+                                                                           Let
+                                                                              Ti85 type Int
+                                                                              0
+                                                                              Get
+                                                                                 c                                                                                 Ti85
+                                                                           Let
+                                                                              Ti87 type Int
+                                                                              0
+                                                                              Get
+                                                                                 Ta86                                                                                 Ti87
+                                                                        ExtFunApp
+                                                                                truncate
+                                                                                Td88
+                                                                     ExtFunApp
+                                                                             print_int
+                                                                             Ti89
+                                                                  Let
+                                                                     Tu11 type Unit
+                                                                     Let
+                                                                        Tu90 type Unit
+                                                                        Unit
+                                                                        ExtFunApp
+                                                                                print_newline
+                                                                                Tu90
+                                                                     Let
+                                                                        Tu10 type Unit
+                                                                        Let
+                                                                           Ti95 type Int
+                                                                           Let
+                                                                              Td94 type Float
+                                                                              Let
+                                                                                 Ta92 type Array type Float
+                                                                                 Let
+                                                                                    Ti91 type Int
+                                                                                    0
+                                                                                    Get
+                                                                                       c                                                                                       Ti91
+                                                                                 Let
+                                                                                    Ti93 type Int
+                                                                                    1
+                                                                                    Get
+                                                                                       Ta92                                                                                       Ti93
+                                                                              ExtFunApp
+                                                                                      truncate
+                                                                                      Td94
+                                                                           ExtFunApp
+                                                                                   print_int
+                                                                                   Ti95
+                                                                        Let
+                                                                           Tu9 type Unit
+                                                                           Let
+                                                                              Tu96 type Unit
+                                                                              Unit
+                                                                              ExtFunApp
+                                                                                      print_newline
+                                                                                      Tu96
+                                                                           Let
+                                                                              Tu8 type Unit
+                                                                              Let
+                                                                                 Ti101 type Int
+                                                                                 Let
+                                                                                    Td100 type Float
+                                                                                    Let
+                                                                                       Ta98 type Array type Float
+                                                                                       Let
+                                                                                          Ti97 type Int
+                                                                                          1
+                                                                                          Get
+                                                                                             c                                                                                             Ti97
+                                                                                       Let
+                                                                                          Ti99 type Int
+                                                                                          0
+                                                                                          Get
+                                                                                             Ta98                                                                                             Ti99
+                                                                                    ExtFunApp
+                                                                                            truncate
+                                                                                            Td100
+                                                                                 ExtFunApp
+                                                                                         print_int
+                                                                                         Ti101
+                                                                              Let
+                                                                                 Tu7 type Unit
+                                                                                 Let
+                                                                                    Tu102 type Unit
+                                                                                    Unit
+                                                                                    ExtFunApp
+                                                                                            print_newline
+                                                                                            Tu102
+                                                                                 Let
+                                                                                    Tu6 type Unit
+                                                                                    Let
+                                                                                       Ti107 type Int
+                                                                                       Let
+                                                                                          Td106 type Float
+                                                                                          Let
+                                                                                             Ta104 type Array type Float
+                                                                                             Let
+                                                                                                Ti103 type Int
+                                                                                                1
+                                                                                                Get
+                                                                                                   c                                                                                                   Ti103
+                                                                                             Let
+                                                                                                Ti105 type Int
+                                                                                                1
+                                                                                                Get
+                                                                                                   Ta104                                                                                                   Ti105
+                                                                                          ExtFunApp
+                                                                                                  truncate
+                                                                                                  Td106
+                                                                                       ExtFunApp
+                                                                                               print_int
+                                                                                               Ti107
+                                                                                    Let
+                                                                                       Tu108 type Unit
+                                                                                       Unit
+                                                                                       ExtFunApp
+                                                                                               print_newline
+                                                                                               Tu108

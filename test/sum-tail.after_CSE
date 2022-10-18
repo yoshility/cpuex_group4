@@ -1,0 +1,42 @@
+LetRec
+      sum:type Fun:type Int,type Int,->type Int
+      args:acc:type Int, x:type Int, 
+      Let
+         Ti4 type Int
+         0
+         IfLE
+             x
+             Ti4
+             Var acc
+             Let
+                Ti5 type Int
+                Add
+                   acc
+                   x
+                Let
+                   Ti7 type Int
+                   Let
+                      Ti6 type Int
+                      1
+                      Sub
+                         x
+                         Ti6
+                   App
+                      sum
+                      Ti5
+                      Ti7
+      Let
+         Ti3 type Int
+         Let
+            Ti1 type Int
+            0
+            Let
+               Ti2 type Int
+               10000
+               App
+                  sum
+                  Ti1
+                  Ti2
+         ExtFunApp
+                 print_int
+                 Ti3

@@ -1,0 +1,48 @@
+LetRec
+      f:type Fun:type Int,->type Unit
+      args:n:type Int, 
+      Let
+         Ti3 type Int
+         0
+         IfLE
+             Ti3
+             n
+             Let
+                Tu1 type Unit
+                ExtFunApp
+                        print_int
+                        n
+                Let
+                   a type Array type Fun:type Int,->type Unit
+                   Let
+                      Ti4 type Int
+                      1
+                      ExtFunApp
+                              create_array
+                              Ti4
+                              f
+                   Let
+                      Tf6 type Fun:type Int,->type Unit
+                      Let
+                         Ti5 type Int
+                         0
+                         Get
+                            a                            Ti5
+                      Let
+                         Ti8 type Int
+                         Let
+                            Ti7 type Int
+                            1
+                            Sub
+                               n
+                               Ti7
+                         App
+                            Tf6
+                            Ti8
+             Unit
+      Let
+         Ti2 type Int
+         9
+         App
+            f
+            Ti2

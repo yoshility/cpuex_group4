@@ -1,0 +1,32 @@
+LetRec
+      f:type Fun:type Int,->type Int
+      args:x:type Int, 
+      Let
+         Ti5 type Int
+         123
+         Add
+            x
+            Ti5
+      LetRec
+            g:type Fun:type Int,->type Fun:type Int,->type Int
+            args:y:type Int, 
+            Var f
+            Let
+               Ti4 type Int
+               Let
+                  Tf2 type Fun:type Int,->type Int
+                  Let
+                     Ti1 type Int
+                     456
+                     App
+                        g
+                        Ti1
+                  Let
+                     Ti3 type Int
+                     789
+                     App
+                        Tf2
+                        Ti3
+               ExtFunApp
+                       print_int
+                       Ti4

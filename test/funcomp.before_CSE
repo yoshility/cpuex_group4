@@ -1,0 +1,62 @@
+LetRec
+      compose:type Fun:type Fun:type Int,->type Int,type Fun:type Int,->type Int,->type Fun:type Int,->type Int
+      args:f:type Fun:type Int,->type Int, g:type Fun:type Int,->type Int, 
+      LetRec
+            composed:type Fun:type Int,->type Int
+            args:x:type Int, 
+            Let
+               Ti6 type Int
+               App
+                  f
+                  x
+               App
+                  g
+                  Ti6
+            Var composed
+      LetRec
+            dbl:type Fun:type Int,->type Int
+            args:x:type Int, 
+            Add
+               x
+               x
+            LetRec
+                  inc:type Fun:type Int,->type Int
+                  args:x:type Int, 
+                  Let
+                     Ti5 type Int
+                     1
+                     Add
+                        x
+                        Ti5
+                  LetRec
+                        dec:type Fun:type Int,->type Int
+                        args:x:type Int, 
+                        Let
+                           Ti4 type Int
+                           1
+                           Sub
+                              x
+                              Ti4
+                        Let
+                           h type Fun:type Int,->type Int
+                           Let
+                              Tf1 type Fun:type Int,->type Int
+                              App
+                                 compose
+                                 dbl
+                                 dec
+                              App
+                                 compose
+                                 inc
+                                 Tf1
+                           Let
+                              Ti3 type Int
+                              Let
+                                 Ti2 type Int
+                                 123
+                                 App
+                                    h
+                                    Ti2
+                              ExtFunApp
+                                      print_int
+                                      Ti3

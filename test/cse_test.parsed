@@ -1,0 +1,25 @@
+Let
+   x
+   type Var type Int
+   3
+   Let
+      y
+      type Var type Int
+      3
+      Let
+         a
+         type Var type Int
+         Add
+            Var x
+            Var y
+         Let
+            b
+            type Var type Int
+            Add
+               Var y
+               Var x
+            App
+               Var print_int
+               Add
+                  Var x
+                  Var y

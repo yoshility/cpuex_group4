@@ -1,0 +1,40 @@
+Let
+   x type Int
+   10
+   LetRec
+         f:type Fun:type Int,->type Int
+         args:y:type Int, 
+         Let
+            Ti3 type Int
+            0
+            IfEq
+                y
+                Ti3
+                0
+                Let
+                   Ti6 type Int
+                   Let
+                      Ti5 type Int
+                      Let
+                         Ti4 type Int
+                         1
+                         Sub
+                            y
+                            Ti4
+                      App
+                         f
+                         Ti5
+                   Add
+                      x
+                      Ti6
+         Let
+            Ti2 type Int
+            Let
+               Ti1 type Int
+               123
+               App
+                  f
+                  Ti1
+            ExtFunApp
+                    print_int
+                    Ti2

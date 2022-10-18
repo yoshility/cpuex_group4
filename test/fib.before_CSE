@@ -1,0 +1,50 @@
+LetRec
+      fib:type Fun:type Int,->type Int
+      args:n:type Int, 
+      Let
+         Ti3 type Int
+         1
+         IfLE
+             n
+             Ti3
+             Var n
+             Let
+                Ti6 type Int
+                Let
+                   Ti5 type Int
+                   Let
+                      Ti4 type Int
+                      1
+                      Sub
+                         n
+                         Ti4
+                   App
+                      fib
+                      Ti5
+                Let
+                   Ti9 type Int
+                   Let
+                      Ti8 type Int
+                      Let
+                         Ti7 type Int
+                         2
+                         Sub
+                            n
+                            Ti7
+                      App
+                         fib
+                         Ti8
+                   Add
+                      Ti6
+                      Ti9
+      Let
+         Ti2 type Int
+         Let
+            Ti1 type Int
+            30
+            App
+               fib
+               Ti1
+         ExtFunApp
+                 print_int
+                 Ti2

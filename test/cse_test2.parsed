@@ -1,0 +1,41 @@
+Let
+   x
+   type Var type Tuple(type Int,type Int,type Int,)
+   Tuple
+        1
+        2
+        3
+   Let
+      y
+      type Var type Tuple(type Int,type Int,type Int,)
+      Tuple
+           1
+           2
+           3
+      LetTuple
+              a type Var type Int
+              b type Var type Int
+              c type Var type Int
+              Var x
+              Let
+                 d
+                 type Var type Int
+                 Add
+                    1
+                    2
+                 Let
+                    e
+                    type Var type Int
+                    Add
+                       2
+                       1
+                    Let
+                       v
+                       type Var type Tuple(type Int,type Int,type Int,)
+                       Tuple
+                            Var a
+                            Var b
+                            Var c
+                       App
+                          Var print_int
+                          Var a

@@ -7,32 +7,35 @@ let rec iter n e = (* 最適化処理をくりかえす (caml2html: main_iter) *
   if e = e' then e else
   iter (n - 1) e'
 
-let lexbuf outchan out_parsed out_normalized l =(* バッファをコンパイルしてチャンネルへ出力する (caml2html: main_lexbuf) *)
+let lexbuf outchan out_parsed out_before_cse out_after_cse l =(* バッファをコンパイルしてチャンネルへ出力する (caml2html: main_lexbuf) *)
   Id.counter := 0;
   Typing.extenv := M.empty;
   let parsed = Parser.exp Lexer.token l in
   let normalized = KNormal.f(Typing.f parsed) in
   Syntax.print_t out_parsed parsed;(*中間結果の出力。課題１。*)
-  KNormal.print_t out_normalized normalized;
+  KNormal.print_t out_before_cse normalized;
+  let cse = Cse.cse normalized in(*共通部分式削除。課題２。*)
+  KNormal.print_t out_after_cse cse;
   Emit.f outchan
     (RegAlloc.f
        (Simm.f
           (Virtual.f
              (Closure.f
-                (iter !limit
+                (iter !limit 
                    (Alpha.f
-                      normalized))))))
+                      cse))))))
 
-let string s = lexbuf stdout stdout stdout(Lexing.from_string s) (* 文字列をコンパイルして標準出力に表示する (caml2html: main_string) *)
+let string s = lexbuf stdout stdout stdout stdout (Lexing.from_string s) (* 文字列をコンパイルして標準出力に表示する (caml2html: main_string) *)
 
 let file f = (* ファイルをコンパイルしてファイルに出力する (caml2html: main_file) *)
   let inchan = open_in (f ^ ".ml") in
   let outchan = open_out (f ^ ".s") in
   let out_parsed = open_out (f ^ ".parsed") in
-  let out_normalized = open_out (f ^ ".normalized") in
+  let out_before_cse = open_out (f ^ ".before_CSE") in
+  let out_after_cse = open_out (f ^ ".after_CSE") in
   let buf =Lexing.from_channel inchan in
   try
-    lexbuf outchan out_parsed out_normalized buf;
+    lexbuf outchan out_parsed  out_before_cse out_after_cse buf;
     close_in inchan;
     close_out outchan;
   with 

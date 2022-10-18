@@ -1,0 +1,135 @@
+LetRec
+      getx:type Fun:type Tuple(type Float,type Float,type Float,),->type Float
+      args:v:type Tuple(type Float,type Float,type Float,), 
+      LetTuple
+              x type Float
+              y type Float
+              z type Float
+              v
+              Var x
+      LetRec
+            gety:type Fun:type Tuple(type Float,type Float,type Float,),->type Float
+            args:v:type Tuple(type Float,type Float,type Float,), 
+            LetTuple
+                    x type Float
+                    y type Float
+                    z type Float
+                    v
+                    Var y
+            LetRec
+                  getz:type Fun:type Tuple(type Float,type Float,type Float,),->type Float
+                  args:v:type Tuple(type Float,type Float,type Float,), 
+                  LetTuple
+                          x type Float
+                          y type Float
+                          z type Float
+                          v
+                          Var z
+                  LetRec
+                        inprod:type Fun:type Tuple(type Float,type Float,type Float,),type Tuple(type Float,type Float,type Float,),->type Float
+                        args:v1:type Tuple(type Float,type Float,type Float,), v2:type Tuple(type Float,type Float,type Float,), 
+                        Let
+                           Td19 type Float
+                           Let
+                              Td15 type Float
+                              Let
+                                 Td13 type Float
+                                 App
+                                    getx
+                                    v1
+                                 Let
+                                    Td14 type Float
+                                    App
+                                       getx
+                                       v2
+                                    FMul
+                                        Td13
+                                        Td14
+                              Let
+                                 Td18 type Float
+                                 Let
+                                    Td16 type Float
+                                    App
+                                       gety
+                                       v1
+                                    Let
+                                       Td17 type Float
+                                       App
+                                          gety
+                                          v2
+                                       FMul
+                                           Td16
+                                           Td17
+                                 FAdd
+                                     Td15
+                                     Td18
+                           Let
+                              Td22 type Float
+                              Let
+                                 Td20 type Float
+                                 App
+                                    getz
+                                    v1
+                                 Let
+                                    Td21 type Float
+                                    App
+                                       getz
+                                       v2
+                                    FMul
+                                        Td20
+                                        Td21
+                              FAdd
+                                  Td19
+                                  Td22
+                        Let
+                           Ti12 type Int
+                           Let
+                              Td11 type Float
+                              Let
+                                 Td1 type Float
+                                 1000000.
+                                 Let
+                                    Td10 type Float
+                                    Let
+                                       Tt5 type Tuple(type Float,type Float,type Float,)
+                                       Let
+                                          Td2 type Float
+                                          1.
+                                          Let
+                                             Td3 type Float
+                                             2.
+                                             Let
+                                                Td4 type Float
+                                                3.
+                                                Tuple
+                                                     Td2
+                                                     Td3
+                                                     Td4
+                                       Let
+                                          Tt9 type Tuple(type Float,type Float,type Float,)
+                                          Let
+                                             Td6 type Float
+                                             4.
+                                             Let
+                                                Td7 type Float
+                                                5.
+                                                Let
+                                                   Td8 type Float
+                                                   6.
+                                                   Tuple
+                                                        Td6
+                                                        Td7
+                                                        Td8
+                                          App
+                                             inprod
+                                             Tt5
+                                             Tt9
+                                    FMul
+                                        Td1
+                                        Td10
+                              ExtFunApp
+                                      truncate
+                                      Td11
+                           ExtFunApp
+                                   print_int
+                                   Ti12

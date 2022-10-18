@@ -1,0 +1,20 @@
+Let
+   x type Int
+   3
+   Let
+      y type Int
+      Var x
+      Let
+         a type Int
+         Add
+            x
+            y
+         Let
+            b type Int
+            Var a
+            Let
+               Ti1 type Int
+               Var a
+               ExtFunApp
+                       print_int
+                       Ti1

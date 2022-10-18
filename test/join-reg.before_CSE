@@ -1,0 +1,63 @@
+LetRec
+      f:type Fun:type Unit,->type Int
+      args:Tu1:type Unit, 
+      123
+      LetRec
+            g:type Fun:type Unit,->type Int
+            args:Tu2:type Unit, 
+            456
+            LetRec
+                  h:type Fun:type Unit,->type Int
+                  args:Tu3:type Unit, 
+                  789
+                  Let
+                     x type Int
+                     Let
+                        Tu4 type Unit
+                        Unit
+                        App
+                           f
+                           Tu4
+                     Let
+                        y type Int
+                        Let
+                           Tu5 type Unit
+                           Unit
+                           App
+                              g
+                              Tu5
+                        Let
+                           Ti11 type Int
+                           Let
+                              Ti10 type Int
+                              Let
+                                 Ti9 type Int
+                                 Let
+                                    Ti7 type Int
+                                    Let
+                                       Tu6 type Unit
+                                       Unit
+                                       App
+                                          h
+                                          Tu6
+                                    Let
+                                       Ti8 type Int
+                                       0
+                                       IfEq
+                                           Ti7
+                                           Ti8
+                                           Sub
+                                              x
+                                              y
+                                           Sub
+                                              y
+                                              x
+                                 Add
+                                    Ti9
+                                    x
+                              Add
+                                 Ti10
+                                 y
+                           ExtFunApp
+                                   print_int
+                                   Ti11

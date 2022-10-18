@@ -1,0 +1,77 @@
+LetRec
+      ack:type Fun:type Int,type Int,->type Int
+      args:x:type Int, y:type Int, 
+      Let
+         Ti4 type Int
+         0
+         IfLE
+             x
+             Ti4
+             Let
+                Ti5 type Int
+                1
+                Add
+                   y
+                   Ti5
+             Let
+                Ti6 type Int
+                0
+                IfLE
+                    y
+                    Ti6
+                    Let
+                       Ti8 type Int
+                       Let
+                          Ti7 type Int
+                          1
+                          Sub
+                             x
+                             Ti7
+                       Let
+                          Ti9 type Int
+                          1
+                          App
+                             ack
+                             Ti8
+                             Ti9
+                    Let
+                       Ti11 type Int
+                       Let
+                          Ti10 type Int
+                          1
+                          Sub
+                             x
+                             Ti10
+                       Let
+                          Ti14 type Int
+                          Let
+                             Ti13 type Int
+                             Let
+                                Ti12 type Int
+                                1
+                                Sub
+                                   y
+                                   Ti12
+                             App
+                                ack
+                                x
+                                Ti13
+                          App
+                             ack
+                             Ti11
+                             Ti14
+      Let
+         Ti3 type Int
+         Let
+            Ti1 type Int
+            3
+            Let
+               Ti2 type Int
+               10
+               App
+                  ack
+                  Ti1
+                  Ti2
+         ExtFunApp
+                 print_int
+                 Ti3

@@ -1,0 +1,33 @@
+Let
+   Tu2 type Unit
+   Let
+      Ti3 type Int
+      123
+      ExtFunApp
+              print_int
+              Ti3
+   Let
+      Tu1 type Unit
+      Let
+         Ti5 type Int
+         Let
+            Ti4 type Int
+            456
+            Neg Ti4
+         ExtFunApp
+                 print_int
+                 Ti5
+      Let
+         Ti8 type Int
+         Let
+            Ti6 type Int
+            789
+            Let
+               Ti7 type Int
+               0
+               Add
+                  Ti6
+                  Ti7
+         ExtFunApp
+                 print_int
+                 Ti8

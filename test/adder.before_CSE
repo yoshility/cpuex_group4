@@ -1,0 +1,29 @@
+LetRec
+      make_adder:type Fun:type Int,->type Fun:type Int,->type Int
+      args:x:type Int, 
+      LetRec
+            adder:type Fun:type Int,->type Int
+            args:y:type Int, 
+            Add
+               x
+               y
+            Var adder
+      Let
+         Ti4 type Int
+         Let
+            Tf2 type Fun:type Int,->type Int
+            Let
+               Ti1 type Int
+               3
+               App
+                  make_adder
+                  Ti1
+            Let
+               Ti3 type Int
+               7
+               App
+                  Tf2
+                  Ti3
+         ExtFunApp
+                 print_int
+                 Ti4

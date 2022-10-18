@@ -1,0 +1,15 @@
+Let
+   x type Int
+   Let
+      a type Int
+      1
+      Var a
+   Let
+      y type Int
+      Let
+         b type Int
+         1
+         Var b
+      ExtFunApp
+              print_int
+              x
