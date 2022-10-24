@@ -14,6 +14,17 @@ char* eliminate_comma(char* line) {
     return line;
 }
 
+// ラベルのコロンを除去
+char* eliminate_colon(char* line) {
+    int n = strlen(line);
+    for (int i=0; i<n; i++) {
+        if (line[i] == ':') {
+            line[i] = '\0';
+        }
+    }
+    return line;
+}
+
 // レジスタ名をレジスタ番号に変換 
 // ex) a0 : char* -> 1010 : int(2進数を装った10進数)
 int reg(char *reg) {
@@ -103,6 +114,38 @@ long long int imm_11_0(char* imm) {
     return binary;
 }
 
+// 即値imm[11:5]
+long long int imm_11_5(char* imm) {
+    int n = (atoi(imm) < 0) ? ((1 << 12) + atoi(imm)) : atoi(imm);
+
+    long long int binary = 0;
+    long long int base = 1;
+
+    while (n > 0) {
+        binary += (n % 2) * base;
+        n /= 2;
+        base *= 10;
+    }
+
+    return (binary / 100000);
+}
+
+// 即値imm[4:0]
+int imm_4_0(char* imm) {
+    int n = (atoi(imm) < 0) ? ((1 << 12) + atoi(imm)) : atoi(imm);
+
+    long long int binary = 0;
+    long long int base = 1;
+
+    while (n > 0) {
+        binary += (n % 2) * base;
+        n /= 2;
+        base *= 10;
+    }
+
+    return (binary % 100000);
+}
+
 // 即値imm[12|10:5]
 long long int imm_12_10_5(long long int imm) {
     int m = imm / 2;
@@ -137,7 +180,7 @@ int imm_4_1_11(long long int imm) {
     return binary;
 }
 
-// 即値imm[20,]
+// 即値imm[20,10:1,11,19:12]
 unsigned long long int imm_20_10_1_11_19_12(long long int imm) {
     int m = imm / 2;
     unsigned long int n = (m < 0) ? ((1 << 20) + m) : m;
