@@ -18,8 +18,8 @@ module test_fadd();
 
    assign x1 = x1i;
    assign x2 = x2i;
-   
-   fadd u1(x1,x2,y,ovf);
+
+   fadd u1(x1,x2,y);
 
    initial begin
       // $dumpfile("test_fadd.vcd");
@@ -73,7 +73,7 @@ module test_fadd();
                              end
                           end
                         endcase
-                        
+
                         x1i = {s1[0],i[7:0],m1};
                         x2i = {s2[0],j[7:0],m2};
 
@@ -88,18 +88,18 @@ module test_fadd();
 			end else begin
 			   fovf = 0;
 			end
-                        
+
                         #1;
 
-                        if (y !== fybit || ovf !== fovf) begin
+                        if (y !== fybit) begin
                            $display("x1 = %b %b %b, %3d",
 				    x1[31], x1[30:23], x1[22:0], x1[30:23]);
                            $display("x2 = %b %b %b, %3d",
 				    x2[31], x2[30:23], x2[22:0], x2[30:23]);
                            $display("%e %b,%3d,%b %b", fy,
-				    fybit[31], fybit[30:23], fybit[22:0], fovf);
+				    fybit[31], fybit[30:23], fybit[22:0]);
                            $display("%e %b,%3d,%b %b\n", $bitstoshortreal(y),
-				    y[31], y[30:23], y[22:0], ovf);
+				    y[31], y[30:23], y[22:0]);
                         end
                      end
                   end
@@ -130,7 +130,7 @@ module test_fadd();
                      fx2 = $bitstoshortreal(x2i);
                      fy = fx1 + fx2;
                      fybit = $shortrealtobits(fy);
-                     
+
 		     checkovf = i < 255;
 		     if (checkovf && fybit[30:23] == 255) begin
 			fovf = 1;
@@ -140,15 +140,15 @@ module test_fadd();
 
                      #1;
 
-                     if (y !== fybit || ovf !== fovf) begin
+                     if (y !== fybit) begin
                         $display("x1 = %b %b %b, %3d",
 				 x1[31], x1[30:23], x1[22:0], x1[30:23]);
                         $display("x2 = %b %b %b, %3d",
 				 x2[31], x2[30:23], x2[22:0], x2[30:23]);
-                        $display("%e %b,%3d,%b %b", fy,
-				 fybit[31], fybit[30:23], fybit[22:0], fovf);
-                        $display("%e %b,%3d,%b %b\n", $bitstoshortreal(y),
-				 y[31], y[30:23], y[22:0], ovf);
+                        $display("%e %b,%3d,%b", fy,
+				 fybit[31], fybit[30:23], fybit[22:0]);
+                        $display("%e %b,%3d,%b\n", $bitstoshortreal(y),
+				 y[31], y[30:23], y[22:0]);
                      end
                   end
                end
