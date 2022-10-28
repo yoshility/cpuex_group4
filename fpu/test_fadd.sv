@@ -96,9 +96,9 @@ module test_fadd();
 				    x1[31], x1[30:23], x1[22:0], x1[30:23]);
                            $display("x2 = %b %b %b, %3d",
 				    x2[31], x2[30:23], x2[22:0], x2[30:23]);
-                           $display("%e %b,%3d,%b %b", fy,
+                           $display("%e %b,%3d,%b", fy,
 				    fybit[31], fybit[30:23], fybit[22:0]);
-                           $display("%e %b,%3d,%b %b\n", $bitstoshortreal(y),
+                           $display("%e %b,%3d,%b\n", $bitstoshortreal(y),
 				    y[31], y[30:23], y[22:0]);
                         end
                      end

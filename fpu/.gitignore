@@ -1,3 +1,8 @@
 obj_dir/
 /scala
 memo.txt
+xsim*
+xelab*
+xvlog*
+*sim*
+test*
