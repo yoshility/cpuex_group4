@@ -3,12 +3,14 @@
 #include <string.h>
 #include "helper.h"
 
-// アセンブリのコンマを除去
-char* eliminate_comma(char* line) {
+// アセンブリのコンマとコメントを除去
+char* eliminate_comma_and_comment(char* line) {
     int n = strlen(line);
     for (int i=0; i<n; i++) {
         if (line[i] == ',') {
             line[i] = ' ';
+        } else if (line[i] == '#') {
+            line[i] = '\0';
         }
     }
     return line;

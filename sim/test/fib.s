@@ -7,8 +7,8 @@
 fib:
     beq a1, a0, L1
     add a4, a2, a3
-    add a2, x0, a3
-    add a3, x0, a4
+    add a2, x0, a3 # mv a2, a3 のかわり
+    add a3, x0, a4 # mv a3, a4 のかわり
     addi a1, a1, 1
     jal x0, fib
 L1:

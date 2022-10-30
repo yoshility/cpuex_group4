@@ -29,7 +29,7 @@
 #define F3_LW   (10)
 #define F3_SW   (10)
 
-char* eliminate_comma(char*);
+char* eliminate_comma_and_comment(char*);
 char* eliminate_colon(char*);
 int reg(char*);
 

@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
         strcpy(r0, "\0");
         strcpy(r1, "\0");
         strcpy(r2, "\0");
-        inst = eliminate_comma(line);
+        inst = eliminate_comma_and_comment(line);
         res = sscanf(inst, "%s%s%s%s", opcode, r0, r1, r2);
 
         if (opcode[strlen(opcode)-1] == ':') {
@@ -68,7 +68,7 @@ int main(int argc, char* argv[]) {
         strcpy(r0, "\0");
         strcpy(r1, "\0");
         strcpy(r2, "\0");
-        inst = eliminate_comma(line);
+        inst = eliminate_comma_and_comment(line);
         res = sscanf(inst, "%s%s%s%s", opcode, r0, r1, r2);
         // printf("%s %s %s %s\n", opcode, r0, r1, r2);
 
@@ -86,11 +86,27 @@ int main(int argc, char* argv[]) {
             sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_ADDI, rd, OP_ADDI);
             fprintf(out, "%s\n", str);
         }
+        // li
+        else if (strncmp(opcode, "li", 2) == 0) {
+            int rd = reg(r0);
+            int rs1 = 0;
+            long long int imm = imm_11_0(r1);
+            sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_ADDI, rd, OP_ADDI);
+            fprintf(out, "%s\n", str);
+        }
         // add
         else if (strncmp(opcode, "add", 3) == 0) {
             int rd = reg(r0);
             int rs1 = reg(r1);
             int rs2 = reg(r2);
+            sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_ADD, rs2, rs1, F3_ADD, rd, OP_ADD);
+            fprintf(out, "%s\n", str);
+        }
+        // mv
+        else if (strncmp(opcode, "mv", 2) == 0) {
+            int rd = reg(r0);
+            int rs1 = reg(r1);
+            int rs2 = 0;
             sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_ADD, rs2, rs1, F3_ADD, rd, OP_ADD);
             fprintf(out, "%s\n", str);
         }
@@ -196,6 +212,14 @@ int main(int argc, char* argv[]) {
             sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_JALR, rd, OP_JALR);
             fprintf(out, "%s\n", str);
         }
+        // ret
+        else if (strncmp(opcode, "ret", 3) == 0) {
+            int rd = 0;
+            int rs1 = 1; // ra
+            long long int imm = 0;
+            sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_JALR, rd, OP_JALR);
+            fprintf(out, "%s\n", str);
+        }
         // jal
         else if (strncmp(opcode, "jal", 3) == 0) {
             int rd = reg(r0);
@@ -211,6 +235,22 @@ int main(int argc, char* argv[]) {
             printf("[jal] jmp_addr = %lld, addr = %d\n", jmp_addr, addr);
             // imm[20,10:1,11,19:12]
             long long int imm = imm_20_10_1_11_19_12(jmp_addr - addr);
+            sprintf(str, "%020llu%05d%07d", imm, rd, OP_JAL);
+            fprintf(out, "%s\n", str);
+        }
+        // j
+        else if (strncmp(opcode, "j", 1) == 0) {
+            int rd = 0;
+            long long int jmp_addr;
+            for (int i=0; i<1000; i++) {
+                eliminate_colon(label[i]);
+                if (strncmp(label[i], r0, strlen(r0)) == 0) {
+                    jmp_addr = i;
+                    break;
+                }
+            }
+            long long int imm = imm_20_10_1_11_19_12(jmp_addr - addr);
+            printf("[j] jmp_addr = %lld, addr = %d\n", jmp_addr, addr);
             sprintf(str, "%020llu%05d%07d", imm, rd, OP_JAL);
             fprintf(out, "%s\n", str);
         }
