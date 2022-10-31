@@ -118,6 +118,11 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r1);
             int imm = atoi(r2);
             reg[rd] = ram[reg[rs1] + imm];
+            /******************* use cache *******************/
+            // まずキャッシュにアクセス
+            if (cache.read(reg[rs1] + imm) == 1) {
+                
+            }
         }
         // sw
         else if (strncmp(opcode, "sw", 2) == 0) {
