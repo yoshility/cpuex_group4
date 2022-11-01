@@ -84,7 +84,11 @@ int main() {
 
 	if (cache.read(82) == 1) {
 		cout << "Hit!" << endl;
-		printf("mem[82]: %d\n", memory.read(82));
+		// ヒットしたときはキャッシュから読みたい
+		unsigned int index = (82 >> 4) & 0b11;
+		unsigned int offset = 82 & 0xf;
+		printf("offset: %d\n", offset);
+		printf("mem[82]: %d\n", cache.data[index * 16 + offset]);
 	} else {
 		cout << "Miss!" << endl;
 		cache.write(82, memory.data);

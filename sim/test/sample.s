@@ -1,4 +1,6 @@
-    addi a0, x0, 10
-    beq a1, a0, L1
-L1:
-    jalr x0, ra, 0
+    li a0, 10
+    li a1, 82
+    sw a0, a1, 0
+    lw a2, a1, 0
+    lw a3, a1, 0
+    ret
