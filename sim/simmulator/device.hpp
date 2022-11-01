@@ -1,8 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define CLEAN 0
+#define DIRTY 1
+
 class Cache {
 	private:
+		int* status;
 		int* tags;
 	public:
 		int* data;
@@ -11,6 +15,7 @@ class Cache {
 		unsigned long long miss_times;
 		Cache() {
 			// ライン数4, ラインサイズ64byte
+			status = (int*)malloc(sizeof(int) * 4);
 			tags = (int*)malloc(sizeof(int) * 4);
 			data = (int*)malloc(sizeof(int) * 16 * 4);
 			accessed_times = 0;
@@ -18,28 +23,10 @@ class Cache {
 			miss_times = 0;
 		}
 		int read(unsigned int addr) {
-			// メモリの前に必ずキャッシュを読む
-			accessed_times++;
-			unsigned int index = (addr >> 4) & 0b11;
-			int tag = (addr >> 6);
-			if (tag == tags[index]) {
-				hit_times++;
-				return 1;
-			} else {
-				miss_times++;
-				return 0;
-			}
+			// いらない？
 		}
 		void write(unsigned int addr, int* memory) {
-			// ミスしたときにキャッシュに書く
-			// accessed_times++;
-			unsigned int index = (addr >> 4) & 0b11;
-			int tag = (addr >> 6);
-			tags[index] = tag;
-			// write back imcomplete
-			for (int i=0; i<16; i++) {
-				data[index * 16 + i] = memory[(addr & 0xfffffff0) + i]; 
-			}
+			// いらない？
 		}
 		void print(unsigned int index) {
 			for (unsigned int i=0; i<16; i++) {
