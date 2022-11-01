@@ -4,6 +4,8 @@
 using namespace std;
 
 #define BUFSIZE 100
+#define CLEAN 0
+#define DIRTY 1
 
 int reg[32] = {0}; // integer register
 float freg[32] = {0.0}; // float register
@@ -124,19 +126,29 @@ int main(int argc, char* argv[]) {
             // reg[rd] = ram[reg[rs1] + imm];
             /******************* use cache *******************/
             unsigned int data_addr = reg[rs1] + imm;
-            // まずキャッシュにアクセス
-            if (cache.read(data_addr) == 1) {
+            unsigned int index = (data_addr >> 4) & 0b11;
+            int tag = data_addr >> 6;
+            unsigned int offset = data_addr & 0xf;
+            cache.accessed_times++;
+            if (tag == cache.tags[index]) {
+                cache.hit_times++;
                 cout << "Hit!" << endl;
-                // ヒットしたときはキャッシュから読みたい
-                unsigned int index = (data_addr >> 4) & 0b11;
-                unsigned int offset = data_addr & 0xf;
-                printf("mem[%d]: %d\n", data_addr, cache.data[index * 16 + offset]);
                 reg[rd] = cache.data[index * 16 + offset];
             } else {
+                cache.miss_times++;
                 cout << "Miss!" << endl;
-                // ミスしたときはキャッシュに書き込む
-                cache.write(data_addr, memory.data);
-                reg[rd] = memory.data[data_addr];
+                // write back
+                if (status[index] == DIRTY) {
+                    for (int i=0; i<16; i++) {
+                        memory.data[(tags[index] << 6) + (index << 2) + i] = cache.data[index * 16 + i];
+                    }
+                }
+                // take data
+                tags[index] = tag;
+                for (int i=0; i<16; i++) {
+                    cache.data[index * 16 + i] = memory.data[(data_addr & 0xfffffff0) + i]; 
+                }
+                status[index] = CLEAN;
             }
         }
         // sw
@@ -145,8 +157,34 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r1);
             int imm = atoi(r2);
             // ram[reg[rs1] + imm] = reg[rs2];
+            /* use cache */
             unsigned int data_addr = reg[rs1] + imm;
-            memory.write(data_addr, reg[rs2]);
+            unsigned int index = (data_addr >> 4) & 0b11;
+            int tag = data_addr >> 6;
+            unsigned int offset = data_addr & 0xf;
+            // memory.write(data_addr, reg[rs2]);
+            // メモリに書くのではなくキャッシュに書く
+            cache.accessed_times++;
+            if (tag == cache.tags[index]) {
+                cout << "Hit!" << endl;
+                cache.data[index * 16 + offset] = reg[rs2];
+                cache.status[index] = DIRTY;
+            } else {
+                cout << "Miss!" << endl;
+                // write back
+                if (status[index] == DIRTY) {
+                    for (int i=0; i<16; i++) {
+                        memory.data[(tags[index] << 6) + (index << 2) + i] = cache.data[index * 16 + i];
+                    }
+                }
+                // take data
+                tags[index] = tag;
+                for (int i=0; i<16; i++) {
+                    cache.data[index * 16 + i] = memory.data[(data_addr & 0xfffffff0) + i]; 
+                }
+                cache.data[index * 16 + offset] = reg[rs2];
+                cache.status[index] = DIRTY;
+            }
         }
         // j
         else if (strncmp(opcode, "j", 1) == 0) {
