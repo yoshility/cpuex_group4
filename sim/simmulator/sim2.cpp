@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #include "./helper.hpp"
+#include "./device.hpp"
 using namespace std;
 
 #define BUFSIZE 100
@@ -7,7 +8,10 @@ using namespace std;
 int reg[32] = {0}; // integer register
 float freg[32] = {0.0}; // float register
 char rom[256][30]; // instr memory
-int ram[256]; // data memory
+// int ram[256]; // data memory
+
+Cache cache;
+Memory memory; // data memory
 
 int main(int argc, char* argv[]) {
     FILE *in;
@@ -117,11 +121,22 @@ int main(int argc, char* argv[]) {
             int rd = reg_num(r0);
             int rs1 = reg_num(r1);
             int imm = atoi(r2);
-            reg[rd] = ram[reg[rs1] + imm];
+            // reg[rd] = ram[reg[rs1] + imm];
             /******************* use cache *******************/
+            unsigned int data_addr = reg[rs1] + imm;
             // まずキャッシュにアクセス
-            if (cache.read(reg[rs1] + imm) == 1) {
-                
+            if (cache.read(data_addr) == 1) {
+                cout << "Hit!" << endl;
+                // ヒットしたときはキャッシュから読みたい
+                unsigned int index = (data_addr >> 4) & 0b11;
+                unsigned int offset = data_addr & 0xf;
+                printf("mem[%d]: %d\n", data_addr, cache.data[index * 16 + offset]);
+                reg[rd] = cache.data[index * 16 + offset];
+            } else {
+                cout << "Miss!" << endl;
+                // ミスしたときはキャッシュに書き込む
+                cache.write(data_addr, memory.data);
+                reg[rd] = memory.data[data_addr];
             }
         }
         // sw
@@ -129,7 +144,9 @@ int main(int argc, char* argv[]) {
             int rs2 = reg_num(r0);
             int rs1 = reg_num(r1);
             int imm = atoi(r2);
-            ram[reg[rs1] + imm] = reg[rs2];
+            // ram[reg[rs1] + imm] = reg[rs2];
+            unsigned int data_addr = reg[rs1] + imm;
+            memory.write(data_addr, reg[rs2]);
         }
         // j
         else if (strncmp(opcode, "j", 1) == 0) {
@@ -145,7 +162,13 @@ int main(int argc, char* argv[]) {
         }
     } while (!(strncmp(opcode, "ret", 3) == 0));
 
-    printf("reg[10] = %d\n", reg[10]);
+    for (int i=10; i<14; i++) {
+        printf("reg[%d] = %d\n", i, reg[i]);
+    }
+    cache.print(1);
+    printf("accessed_times: %lld\n", cache.accessed_times);
+    printf("hit_times: %lld\n", cache.hit_times);
+    printf("miss_times: %lld\n", cache.miss_times);
 
     return 0;
 }
