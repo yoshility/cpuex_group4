@@ -24,7 +24,7 @@ let rec get_idlist env (e,p) =
   | _ -> [] 
 
   let rec get_tlist t =
-    (*型を平坦化する*) 
+    (*組を平坦化したあとの型の配列を返す*) 
    match t with 
    | Type.Tuple(tlist) ->
    ( match tlist with 
@@ -33,6 +33,7 @@ let rec get_idlist env (e,p) =
    | _ -> [t]
 
 let rec flatten_type t =
+  (*組を平坦化した型を返す*)
   match t with 
   |Type.Tuple(tlist) -> Type.Tuple(get_tlist (Type.Tuple(tlist)))
   |Array(t) -> Array(flatten_type t)
@@ -56,6 +57,7 @@ let rec take l n =
     | _ -> ([],[])
   )
  let rec get_tuple itlist idlist env (e, p)=
+ (*変数と型の配列、変数の配列を受け取って一つ一つの組を表す変数をlet式で定義する関数*)
   match itlist with
   | [] -> (e,p) 
   | (id, t)::ll ->
@@ -79,6 +81,7 @@ let rec take l n =
     
 
 let rec flatten_args args tupleargs= 
+(*関数定義の引数を平坦化する関数。返り値は平坦化したあとの引数と新たに定義した変数名と型の組の配列の組*)
   match args with
   | [] -> ([],tupleargs)
   | (id,t)::arg1 ->
@@ -101,6 +104,7 @@ let rec flatten_args args tupleargs=
 
 
 let rec g env (t,p) =
+  (*型tに対して組の平坦化と不要な組の定義を行う関数*)
   match t with
   | Tuple(idlist) -> 
     let idlist2 = (List.map 
@@ -108,7 +112,6 @@ let rec g env (t,p) =
       try List.assoc id env 
     with Not_found -> [id]) idlist) in
   let idlist_f = List.concat idlist2 in (Tuple(idlist_f) ,p)
-
   | Let((id,ty), e1,e2) ->
     (match ty with
     | Type.Tuple(_) -> 
@@ -143,6 +146,7 @@ let rec g env (t,p) =
   | _ -> (t,p)
 
 let f (Prog(fl,e)) =
+  (*型Progに関しての平坦化と不要な組の定義を行う関数*)
   Prog(List.map (fun f -> 
     let (args0, tupleargs) = flatten_args f.args [] in
     let (fv, tupleargs2) =  flatten_args f.formal_fv tupleargs in

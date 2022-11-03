@@ -1,0 +1,32 @@
+Let
+   x type Int
+   Let
+      Tu4 type Unit
+      Unit
+      AppDir
+            Label: f Tu4,
+   Let
+      Ti9 type Int
+      Let
+         Ti8 type Int
+         Let
+            Ti5 type Int
+            0
+            IfLE
+                x
+                Ti5
+                Let
+                   Tu6 type Unit
+                   Unit
+                   AppDir
+                         Label: g Tu6,
+                Let
+                   Tu7 type Unit
+                   Unit
+                   AppDir
+                         Label: h Tu7,
+         Add
+            Ti8
+            x
+      AppDir
+            Label: min_caml_print_int Ti9,

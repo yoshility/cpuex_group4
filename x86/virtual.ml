@@ -152,7 +152,7 @@ let h { Closure.name = (Id.L(x), t); Closure.args = yts; Closure.formal_fv = zts
 
 (* プログラム全体の仮想マシンコード生成 (caml2html: virtual_f) *)
 let f (Closure.Prog(fundefs, e)) =
-  data := [];print_endline "virtual0";
-  let fundefs = List.map h fundefs in print_endline "virtual1";
-  let e = g M.empty e in print_endline "virtual";
+  data := [];
+  let fundefs = List.map h fundefs in 
+  let e = g M.empty e in 
   Prog(!data, fundefs, e)

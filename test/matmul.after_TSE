@@ -1,0 +1,14 @@
+Let
+   dummy type Array type Float
+   Let
+      Ti26 type Int
+      0
+      Let
+         Td27 type Float
+         0.
+         AppDir
+               Label: min_caml_create_float_array Ti26,Td27,
+   MakeCls
+          make: type Fun:type Int,type Int,->type Array type Array type FloatLabel:make
+          dummy, 
+          

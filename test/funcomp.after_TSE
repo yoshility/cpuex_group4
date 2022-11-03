@@ -1,0 +1,4 @@
+MakeCls
+       dbl: type Fun:type Int,->type IntLabel:dbl
+       
+       

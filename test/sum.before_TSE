@@ -1,0 +1,9 @@
+Let
+   Ti2 type Int
+   Let
+      Ti1 type Int
+      10000
+      AppDir
+            Label: sum Ti1,
+   AppDir
+         Label: min_caml_print_int Ti2,

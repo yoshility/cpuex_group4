@@ -19,9 +19,11 @@ let lexbuf outchan  before_flatten after_flatten out_before_tse out_after_tse l 
   KNormal.print_t out_after_cse cse; *)
   let cls = Closure.f normalized  in
   Closure.print_prog before_flatten cls;
+  Closure.print_prog out_before_tse cls;
   (*tupleの平坦化、4.2,3*)
   let cls2 = Flatten_tuple.f cls in
   Closure.print_prog after_flatten cls2;
+  Closure.print_prog out_after_tse cls2;
   Emit.f outchan
     (RegAlloc.f
        (Simm.f

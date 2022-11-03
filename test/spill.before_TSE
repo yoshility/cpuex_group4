@@ -1,0 +1,18 @@
+Let
+   Ti5 type Int
+   Let
+      Ti1 type Int
+      1
+      Let
+         Ti2 type Int
+         2
+         Let
+            Ti3 type Int
+            3
+            Let
+               Ti4 type Int
+               4
+               AppDir
+                     Label: f Ti1,Ti2,Ti3,Ti4,
+   AppDir
+         Label: min_caml_print_int Ti5,

@@ -1,0 +1,58 @@
+Let
+   a type Array type Tuple(type Int,type Tuple(type Int,type Int,),)
+   Let
+      Ti4 type Int
+      1
+      Let
+         Tt9 type Tuple(type Int,type Tuple(type Int,type Int,),)
+         Let
+            Ti5 type Int
+            1
+            Let
+               Tt8 type Tuple(type Int,type Int,)
+               Let
+                  Ti6 type Int
+                  2
+                  Let
+                     Ti7 type Int
+                     3
+                     Tuple
+                          Ti6
+                          Ti7
+               Tuple
+                    Ti5
+                    Tt8
+         AppDir
+               Label: min_caml_create_array Ti4,Tt9,
+   Let
+      i type Int
+      0
+      Let
+         b type Tuple(type Int,type Tuple(type Int,type Int,),)
+         Get
+            a            i
+         LetTuple
+                 x type Int
+                 c type Tuple(type Int,type Int,)
+                 b
+                 LetTuple
+                         y type Int
+                         z type Int
+                         c
+                         Let
+                            Tu3 type Unit
+                            AppDir
+                                  Label: min_caml_print_int x,
+                            Let
+                               Tu2 type Unit
+                               AppDir
+                                     Label: min_caml_print_int y,
+                               Let
+                                  Tu1 type Unit
+                                  AppDir
+                                        Label: min_caml_print_int z,
+                                  Let
+                                     Tu10 type Unit
+                                     Unit
+                                     AppDir
+                                           Label: min_caml_print_newline Tu10,
