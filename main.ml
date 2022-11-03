@@ -54,8 +54,8 @@ let file f = (* ファイルをコンパイルしてファイルに出力する 
   let outchan = open_out (f ^ ".s") in
   let closure_before = open_out (f ^ ".before_flatten") in
   let closure_after = open_out (f ^ ".after_flatten") in
-  let out_before_tse = open_out (f ^ ".before_TSE") in
-  let out_after_tse = open_out (f ^ ".after_TSE") in
+  let out_before_tse = open_out (f ^ ".before_TACE") in
+  let out_after_tse = open_out (f ^ ".after_TACE") in
   let buf =Lexing.from_channel inchan in
   try
     lexbuf outchan closure_before closure_after out_before_tse out_after_tse buf;
