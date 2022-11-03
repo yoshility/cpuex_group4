@@ -1,0 +1,7 @@
+Let
+   x.11 type Int
+   42
+   MakeCls
+          f.12: type Fun:type Int,type Int,type Int,type Int,type Int,->type UnitLabel:f.12
+          x.11, 
+          

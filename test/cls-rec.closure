@@ -1,0 +1,7 @@
+Let
+   x.7 type Int
+   10
+   MakeCls
+          f.8: type Fun:type Int,->type IntLabel:f.8
+          x.7, 
+          

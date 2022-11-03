@@ -1,0 +1,10 @@
+Let
+   t type Int
+   123
+   Let
+      f type Int
+      456
+      MakeCls
+             even: type Fun:type Int,->type IntLabel:even
+             f, t, 
+             

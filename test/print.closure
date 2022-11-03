@@ -1,0 +1,19 @@
+Let
+   Ti3.16 type Int
+   123
+   Let
+      Tu2.9 type Unit
+      AppDir
+            Label: min_caml_print_int Ti3.16,
+      Let
+         Ti5.14 type Int
+         -456
+         Let
+            Tu1.10 type Unit
+            AppDir
+                  Label: min_caml_print_int Ti5.14,
+            Let
+               Ti8.11 type Int
+               789
+               AppDir
+                     Label: min_caml_print_int Ti8.11,

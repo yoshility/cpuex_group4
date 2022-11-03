@@ -1,0 +1,66 @@
+Let
+   x type Int
+   Let
+      Td1 type Float
+      1.23
+      AppDir
+            Label: min_caml_truncate Td1,
+   Let
+      y type Int
+      Let
+         Td2 type Float
+         4.56
+         AppDir
+               Label: min_caml_truncate Td2,
+      Let
+         z type Int
+         Let
+            Td4 type Float
+            Let
+               Td3 type Float
+               7.89
+               FNeg Td3
+            AppDir
+                  Label: min_caml_truncate Td4,
+         Let
+            Ti12 type Int
+            Let
+               Ti9 type Int
+               Let
+                  Ti6 type Int
+                  Let
+                     Ti5 type Int
+                     0
+                     IfLE
+                         Ti5
+                         z
+                         Var x
+                         Var y
+                  Let
+                     Ti8 type Int
+                     Let
+                        Ti7 type Int
+                        0
+                        IfLE
+                            x
+                            Ti7
+                            Var y
+                            Var z
+                     Add
+                        Ti6
+                        Ti8
+               Let
+                  Ti11 type Int
+                  Let
+                     Ti10 type Int
+                     0
+                     IfLE
+                         Ti10
+                         y
+                         Var z
+                         Var x
+                  Add
+                     Ti9
+                     Ti11
+            AppDir
+                  Label: min_caml_print_int Ti12,

@@ -1,0 +1,53 @@
+Let
+   Ti2.26 type Int
+   10
+   Let
+      Ti3.27 type Int
+      3
+      Let
+         y.15 type Array type Int
+         AppDir
+               Label: min_caml_create_array Ti2.26,Ti3.27,
+         Let
+            x.16 type Int
+            67890
+            Let
+               Ti4.25 type Int
+               0
+               Let
+                  Ti5.18 type Int
+                  Get
+                     y.15                     Ti4.25
+                  Let
+                     Ti6.19 type Int
+                     3
+                     Let
+                        Ti12.17 type Int
+                        IfEq
+                            Ti5.18
+                            Ti6.19
+                            Let
+                               Tu7.24 type Unit
+                               Unit
+                               Let
+                                  Ti8.21 type Int
+                                  AppDir
+                                        Label: f.13 Tu7.24,
+                                  Let
+                                     Ti9.23 type Int
+                                     1
+                                     Let
+                                        Ti10.22 type Int
+                                        Get
+                                           y.15                                           Ti9.23
+                                        Let
+                                           Ti11.20 type Int
+                                           Add
+                                              Ti8.21
+                                              Ti10.22
+                                           Add
+                                              Ti11.20
+                                              x.16
+                            7
+                        AppDir
+                              Label: min_caml_print_int Ti12.17,

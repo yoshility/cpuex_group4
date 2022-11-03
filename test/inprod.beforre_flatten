@@ -1,0 +1,48 @@
+Let
+   Ti12 type Int
+   Let
+      Td11 type Float
+      Let
+         Td1 type Float
+         1000000.
+         Let
+            Td10 type Float
+            Let
+               Tt5 type Tuple(type Float,type Float,type Float,)
+               Let
+                  Td2 type Float
+                  1.
+                  Let
+                     Td3 type Float
+                     2.
+                     Let
+                        Td4 type Float
+                        3.
+                        Tuple
+                             Td2
+                             Td3
+                             Td4
+               Let
+                  Tt9 type Tuple(type Float,type Float,type Float,)
+                  Let
+                     Td6 type Float
+                     4.
+                     Let
+                        Td7 type Float
+                        5.
+                        Let
+                           Td8 type Float
+                           6.
+                           Tuple
+                                Td6
+                                Td7
+                                Td8
+                  AppDir
+                        Label: inprod Tt5,Tt9,
+            FMul
+                Td1
+                Td10
+      AppDir
+            Label: min_caml_truncate Td11,
+   AppDir
+         Label: min_caml_print_int Ti12,

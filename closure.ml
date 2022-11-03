@@ -1,5 +1,5 @@
 type closure = { entry : Id.l; actual_fv : Id.t list }
-type tt = (* ???????????????μ? (caml2html: closure_t) *)
+type tt = (* クロージャ変換後の式 (caml2html: closure_t) *)
   | Unit
   | Int of int
   | Float of float
@@ -107,5 +107,48 @@ let fs = (match fst xx with
 
 let f e =
   toplevel := [];
-  let e' = g M.empty S.empty e in
+  let e' = g M.empty S.empty e in 
   Prog(List.rev !toplevel, e')
+
+
+
+
+let rec indent n =
+    match n with
+    | 0 -> ""
+    | m -> " "^indent (m-1) 
+  
+let print_t outchan tt = (*Closure.t の変数を出力する関数*)
+let rec print_t_help  n e=
+match e with (ee, _) ->
+  (
+  match ee with 
+  | Unit -> Printf.fprintf outchan "Unit"
+  | Int a -> Printf.fprintf outchan "%s" (Int.to_string a)
+  | Float a -> Printf.fprintf outchan "%s" (Float.to_string a)
+  | Neg t -> Printf.fprintf outchan "Neg %s"t
+  | Add (a,b) -> Printf.fprintf outchan "Add\n%s%s\n%s%s" (indent (n+3)) a (indent (n+3)) b
+  | Sub (a,b) -> Printf.fprintf outchan "Sub\n%s%s\n%s%s" (indent (n+3)) a (indent (n+3)) b
+  | FNeg t -> Printf.fprintf outchan "FNeg %s" t
+  | FAdd (a,b) -> Printf.fprintf outchan "FAdd\n%s%s\n%s%s" (indent (n+4)) a (indent (n+4)) b
+  | FSub (a,b) -> Printf.fprintf outchan "FSub\n%s%s\n%s%s" (indent (n+4)) a (indent (n+4)) b
+  | FMul (a,b) -> Printf.fprintf outchan "FMul\n%s%s\n%s%s" (indent (n+4)) a (indent (n+4)) b
+  | FDiv (a,b) -> Printf.fprintf outchan "FDiv\n%s%s\n%s%s" (indent (n+4)) a (indent (n+4)) b
+  | IfEq (a,b,c,d) -> Printf.fprintf outchan "IfEq\n%s%s\n%s%s\n%s" (indent (n+4)) a (indent (n+4)) b (indent (n+4));print_t_help (n+4) c;Printf.fprintf outchan "\n%s" (indent (n+4));print_t_help (n+4) d
+  | IfLE (a,b,c,d) -> Printf.fprintf outchan "IfLE\n%s%s\n%s%s\n%s" (indent (n+4)) a (indent (n+4)) b (indent (n+4));print_t_help (n+4) c;Printf.fprintf outchan "\n%s" (indent (n+4));print_t_help (n+4) d
+  | Let ((id,t),a,b) -> Printf.fprintf outchan "Let\n%s%s " (indent (n+3)) id;Type.print_t outchan t;Printf.fprintf outchan "\n%s" (indent (n+3));print_t_help (n+3) a;Printf.fprintf outchan "\n%s" (indent (n+3));print_t_help (n+3) b
+  | Var t ->  Printf.fprintf outchan "Var %s" t
+  | Tuple l -> Printf.fprintf outchan "Tuple";List.iter (fun t -> Printf.fprintf outchan "\n%s%s" (indent (n+5)) t) l
+  | LetTuple (l,a,b) -> Printf.fprintf outchan "LetTuple";List.iter (fun (x,y)-> Printf.fprintf outchan "\n%s%s " (indent (n+8)) x;Type.print_t outchan y) l;Printf.fprintf outchan "\n%s%s" (indent (n+8)) a; Printf.fprintf outchan "\n%s" (indent (n+8));print_t_help (n+8) b
+  | Get (a,b) -> Printf.fprintf outchan "Get\n%s%s%s%s" (indent (n+3)) a (indent (n+3)) b
+  | Put (a,b,c) -> Printf.fprintf outchan "Put\n%s%s%s%s%s%s" (indent (n+3)) a (indent (n+3)) b (indent (n+3)) c
+  | ExtArray L(l) -> Printf.fprintf outchan "ExtArray\n%s%s" (indent (n+8)) l
+  | MakeCls ((x, t), { entry = L(f); actual_fv = l_fv }, (_, e2)) 
+  -> Printf.fprintf outchan "MakeCls\n%s%s: " (indent (n+7)) x;Type.print_t outchan t; Printf.fprintf outchan "Label:%s\n%s" f (indent (n+7)); List.iter (fun s -> Printf.fprintf outchan "%s, " s) l_fv;Printf.fprintf outchan "\n%s" (indent (n+7))(*;print_t_help  (n+7) e*)
+  | AppCls (t, t_list)
+  -> Printf.fprintf outchan "AppCls\n%s%s" (indent (n+6)) t; List.iter (fun s -> Printf.fprintf outchan " %s," s) t_list;
+  | AppDir (L(f) ,l_t) ->Printf.fprintf outchan "AppDir\n%sLabel: %s " (indent (n+6)) f; List.iter (fun s -> Printf.fprintf outchan "%s," s) l_t;
+  ) in 
+  print_t_help 0 tt
+
+let print_prog outchan (Prog(_, e)) = print_t outchan e  

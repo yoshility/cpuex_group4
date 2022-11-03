@@ -1,0 +1,23 @@
+Let
+   x type Int
+   3
+   Let
+      y type Int
+      3
+      Let
+         a type Int
+         Add
+            x
+            y
+         Let
+            b type Int
+            Add
+               y
+               x
+            Let
+               Ti1 type Int
+               Add
+                  x
+                  y
+               AppDir
+                     Label: min_caml_print_int Ti1,

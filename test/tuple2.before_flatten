@@ -1,0 +1,44 @@
+Let
+   a type Tuple(type Int,type Tuple(type Int,type Int,),)
+   Let
+      Ti4 type Int
+      1
+      Let
+         Tt7 type Tuple(type Int,type Int,)
+         Let
+            Ti5 type Int
+            2
+            Let
+               Ti6 type Int
+               3
+               Tuple
+                    Ti5
+                    Ti6
+         Tuple
+              Ti4
+              Tt7
+   LetTuple
+           x type Int
+           b type Tuple(type Int,type Int,)
+           a
+           LetTuple
+                   y type Int
+                   z type Int
+                   b
+                   Let
+                      Tu3 type Unit
+                      AppDir
+                            Label: min_caml_print_int x,
+                      Let
+                         Tu2 type Unit
+                         AppDir
+                               Label: min_caml_print_int y,
+                         Let
+                            Tu1 type Unit
+                            AppDir
+                                  Label: min_caml_print_int z,
+                            Let
+                               Tu8 type Unit
+                               Unit
+                               AppDir
+                                     Label: min_caml_print_newline Tu8,

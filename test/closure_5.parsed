@@ -1,0 +1,34 @@
+LetRec
+      i:type Var type Fun:type Int,->type Int
+      args:x:type Var type Int, 
+      Var x
+      Let
+         z
+         type Var type Int
+         4
+         LetRec
+               f:type Var type Fun:type Int,->type Int
+               args:x:type Var type Int, 
+               App
+                  Var i
+                  Sub
+                     Var z
+                     5
+               Let
+                  a
+                  type Var type Tuple(type Fun:type Int,->type Int,type Int,)
+                  IF
+                    Not LE
+                          6
+                          Var z
+                    Tuple
+                         Var i
+                         App
+                            Var f
+                            7
+                    Tuple
+                         Var f
+                         8
+                  App
+                     Var print_int
+                     3

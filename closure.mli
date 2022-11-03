@@ -32,3 +32,5 @@ type prog = Prog of fundef list * t
 
 val fv : t -> S.t
 val f : KNormal.t -> prog
+val print_t: out_channel -> t -> unit
+val print_prog: out_channel -> prog -> unit

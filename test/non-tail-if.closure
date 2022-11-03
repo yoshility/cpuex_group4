@@ -1,0 +1,63 @@
+Let
+   Td1.27 type Float
+   1.23
+   Let
+      x.13 type Int
+      AppDir
+            Label: min_caml_truncate Td1.27,
+      Let
+         Td2.26 type Float
+         4.56
+         Let
+            y.14 type Int
+            AppDir
+                  Label: min_caml_truncate Td2.26,
+            Let
+               Td4.24 type Float
+               -7.89
+               Let
+                  z.15 type Int
+                  AppDir
+                        Label: min_caml_truncate Td4.24,
+                  Let
+                     Ti5.23 type Int
+                     0
+                     Let
+                        Ti6.20 type Int
+                        IfLE
+                            Ti5.23
+                            z.15
+                            Var x.13
+                            Var y.14
+                        Let
+                           Ti7.22 type Int
+                           0
+                           Let
+                              Ti8.21 type Int
+                              IfLE
+                                  x.13
+                                  Ti7.22
+                                  Var y.14
+                                  Var z.15
+                              Let
+                                 Ti9.17 type Int
+                                 Add
+                                    Ti6.20
+                                    Ti8.21
+                                 Let
+                                    Ti10.19 type Int
+                                    0
+                                    Let
+                                       Ti11.18 type Int
+                                       IfLE
+                                           Ti10.19
+                                           y.14
+                                           Var z.15
+                                           Var x.13
+                                       Let
+                                          Ti12.16 type Int
+                                          Add
+                                             Ti9.17
+                                             Ti11.18
+                                          AppDir
+                                                Label: min_caml_print_int Ti12.16,

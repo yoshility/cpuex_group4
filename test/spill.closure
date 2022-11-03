@@ -1,0 +1,18 @@
+Let
+   Ti1.49 type Int
+   1
+   Let
+      Ti2.50 type Int
+      2
+      Let
+         Ti3.51 type Int
+         3
+         Let
+            Ti4.52 type Int
+            4
+            Let
+               Ti5.48 type Int
+               AppDir
+                     Label: f.43 Ti1.49,Ti2.50,Ti3.51,Ti4.52,
+               AppDir
+                     Label: min_caml_print_int Ti5.48,

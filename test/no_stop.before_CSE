@@ -1,0 +1,35 @@
+Let
+   x type Int
+   1
+   LetRec
+         g:type Fun:type Int,->type Int
+         args:a:type Int, 
+         Let
+            Ti5 type Int
+            0
+            App
+               g
+               Ti5
+         Let
+            Ti1 type Int
+            1
+            IfLE
+                x
+                Ti1
+                Let
+                   Ti3 type Int
+                   Let
+                      Ti2 type Int
+                      0
+                      App
+                         g
+                         Ti2
+                   ExtFunApp
+                           print_int
+                           Ti3
+                Let
+                   Ti4 type Int
+                   0
+                   ExtFunApp
+                           print_int
+                           Ti4

@@ -1,0 +1,22 @@
+Let
+   x
+   type Var type Int
+   1
+   LetRec
+         g:type Var type Fun:type Int,->type Int
+         args:a:type Var type Int, 
+         App
+            Var g
+            0
+         IF
+           Not LE
+                 Var x
+                 1
+           App
+              Var print_int
+              0
+           App
+              Var print_int
+              App
+                 Var g
+                 0

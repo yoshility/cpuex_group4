@@ -1,0 +1,56 @@
+Let
+   Ti2.32 type Int
+   1
+   Let
+      Ti3.33 type Int
+      2
+      Let
+         Ti4.34 type Int
+         3
+         Let
+            Ti5.35 type Int
+            4
+            Let
+               Ti6.36 type Int
+               5
+               Let
+                  Ti7.37 type Int
+                  6
+                  Let
+                     Ti8.38 type Int
+                     7
+                     Let
+                        Ti9.39 type Int
+                        8
+                        Let
+                           Ti10.40 type Int
+                           9
+                           Let
+                              Ti11.41 type Int
+                              10
+                              Let
+                                 Tt12.31 type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,)
+                                 Tuple
+                                      Ti2.32
+                                      Ti3.33
+                                      Ti4.34
+                                      Ti5.35
+                                      Ti6.36
+                                      Ti7.37
+                                      Ti8.38
+                                      Ti9.39
+                                      Ti10.40
+                                      Ti11.41
+                                 Let
+                                    Ti13.30 type Int
+                                    AppDir
+                                          Label: h.26 Tt12.31,
+                                    Let
+                                       Tu1.28 type Unit
+                                       AppDir
+                                             Label: min_caml_print_int Ti13.30,
+                                       Let
+                                          Tu14.29 type Unit
+                                          Unit
+                                          AppDir
+                                                Label: min_caml_print_newline Tu14.29,

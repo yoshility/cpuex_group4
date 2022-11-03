@@ -1,0 +1,9 @@
+Let
+   Ti2 type Int
+   Let
+      Ti1 type Int
+      0
+      AppDir
+            Label: f Ti1,
+   AppDir
+         Label: min_caml_print_int Ti2,

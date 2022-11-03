@@ -1,0 +1,12 @@
+Let
+   Ti3.17 type Int
+   7
+   Let
+      Ti4.16 type Int
+      AppDir
+            Label: f.11 Ti3.17,
+      Let
+         Ti5.14 type Int
+         3
+         AppDir
+               Label: min_caml_print_int Ti5.14,

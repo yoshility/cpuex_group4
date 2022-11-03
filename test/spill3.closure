@@ -1,0 +1,9 @@
+Let
+   Ti1.59 type Int
+   0
+   Let
+      Ti2.58 type Int
+      AppDir
+            Label: f.56 Ti1.59,
+      AppDir
+            Label: min_caml_print_int Ti2.58,

@@ -1,0 +1,49 @@
+Let
+   a
+   type Var type Array type Tuple(type Int,type Tuple(type Int,type Int,),)
+   Array
+        1
+        Tuple
+             1
+             Tuple
+                  2
+                  3
+   Let
+      i
+      type Var type Int
+      0
+      Let
+         b
+         type Var type Tuple(type Int,type Tuple(type Int,type Int,),)
+         Get
+            Var a
+            Var i
+         LetTuple
+                 x type Var type Int
+                 c type Var type Tuple(type Int,type Int,)
+                 Var b
+                 LetTuple
+                         y type Var type Int
+                         z type Var type Int
+                         Var c
+                         Let
+                            Tu3
+                            type Unit
+                            App
+                               Var print_int
+                               Var x
+                            Let
+                               Tu2
+                               type Unit
+                               App
+                                  Var print_int
+                                  Var y
+                               Let
+                                  Tu1
+                                  type Unit
+                                  App
+                                     Var print_int
+                                     Var z
+                                  App
+                                     Var print_newline
+                                     Unit

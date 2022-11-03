@@ -1,0 +1,20 @@
+Let
+   Ti6.26 type Int
+   1
+   Let
+      Ti7.27 type Int
+      2
+      Let
+         Ti8.28 type Int
+         3
+         Let
+            Ti9.29 type Int
+            4
+            Let
+               Ti10.30 type Int
+               5
+               Let
+                  Ti11.31 type Int
+                  6
+                  AppDir
+                        Label: bar.19 Ti6.26,Ti7.27,Ti8.28,Ti9.29,Ti10.30,Ti11.31,

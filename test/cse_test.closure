@@ -1,0 +1,5 @@
+Let
+   a.4 type Int
+   6
+   AppDir
+         Label: min_caml_print_int a.4,
