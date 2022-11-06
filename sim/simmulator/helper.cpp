@@ -29,7 +29,7 @@ char* eliminate_colon(char* line) {
 
 // レジスタ名をレジスタ番号に変換 
 int reg_num(char *reg) {
-    if (strncmp(reg, "x0", 2) == 0) {
+    if (strncmp(reg, "zero", 4) == 0 || strncmp(reg, "x0", 2) == 0) {
         return 0;
     } else if (strncmp(reg, "ra", 2) == 0) {
         return 1;
@@ -97,4 +97,17 @@ int reg_num(char *reg) {
         printf("Error: register name\n");
         return 0;
     }
+}
+
+// 10進数をd桁の2進数表記に変換
+long long int to_binary(int num, int d) {
+    int n = (num < 0) ? ((1 << d) + num) : num;
+    long long int binary = 0;
+    long long int base = 1;
+    while (n > 0) {
+        binary += (n % 2) * base;
+        n /= 2;
+        base *= 10;
+    }
+    return binary;
 }
