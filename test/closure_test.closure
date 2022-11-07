@@ -1,0 +1,46 @@
+Let
+   a1 type Int
+   Let
+      z type Int
+      4
+      MakeCls
+             f: type Fun:type Int,->type IntLabel:f
+             z, 
+             
+   Let
+      a2 type Int
+      Let
+         Ti2 type Int
+         6
+         AppDir
+               Label: g Ti2,
+      Let
+         a3 type Fun:type Int,->type Int
+         MakeCls
+                f: type Fun:type Int,->type IntLabel:f
+                
+                
+         Let
+            a4 type Fun:type Fun:type Int,->type Int,->type Fun:type Int,->type Int
+            MakeCls
+                   g: type Fun:type Fun:type Int,->type Int,->type Fun:type Int,->type IntLabel:g
+                   
+                   
+            Let
+               a5 type Tuple(type Fun:type Int,->type Int,type Int,)
+               MakeCls
+                      i: type Fun:type Int,->type IntLabel:i
+                      
+                      
+               Let
+                  a6 type Int
+                  Let
+                     Ti11 type Int
+                     6
+                     AppDir
+                           Label: sum Ti11,
+                  Let
+                     Ti16 type Int
+                     0
+                     AppDir
+                           Label: min_caml_print_int Ti16,

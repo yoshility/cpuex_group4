@@ -1,0 +1,58 @@
+Let
+   a1 type Int
+   Let
+      z type Int
+      4
+      Let
+         Ti1 type Int
+         8
+         Let
+            z type Int
+            4
+            AppDir
+                  Label: f Ti1,
+   Let
+      a2 type Int
+      Let
+         Ti2 type Int
+         6
+         AppDir
+               Label: g Ti2,
+      Let
+         a3 type Fun:type Int,->type Int
+         Var f
+         Let
+            a5 type Tuple(type Fun:type Int,->type Int,type Int,)
+            Let
+               z type Int
+               4
+               Let
+                  Ti5 type Int
+                  6
+                  IfLE
+                      Ti5
+                      z
+                      Let
+                         Ti6 type Int
+                         8
+                         Tuple
+                              f
+                              Ti6
+                      Let
+                         Ti8 type Int
+                         Let
+                            Ti7 type Int
+                            7
+                            Let
+                               z type Int
+                               4
+                               AppDir
+                                     Label: f Ti7,
+                         Tuple
+                              i
+                              Ti8
+            Let
+               Ti11 type Int
+               0
+               AppDir
+                     Label: min_caml_print_int Ti11,

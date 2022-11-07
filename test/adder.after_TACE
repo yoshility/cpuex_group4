@@ -1,0 +1,16 @@
+Let
+   Ti4 type Int
+   Let
+      Tf2 type Fun:type Int,->type Int
+      Let
+         Ti1 type Int
+         3
+         AppDir
+               Label: make_adder Ti1,
+      Let
+         Ti3 type Int
+         7
+         AppCls
+               Tf2 Ti3,
+   AppDir
+         Label: min_caml_print_int Ti4,

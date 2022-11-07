@@ -1,0 +1,44 @@
+Let
+   v1 type Array type Float
+   Let
+      Ti1 type Int
+      3
+      Let
+         Td2 type Float
+         1.23
+         AppDir
+               Label: min_caml_create_float_array Ti1,Td2,
+   Let
+      v2 type Array type Float
+      Let
+         Ti3 type Int
+         3
+         Let
+            Td4 type Float
+            4.56
+            AppDir
+                  Label: min_caml_create_float_array Ti3,Td4,
+      Let
+         Ti10 type Int
+         Let
+            Td9 type Float
+            Let
+               Td5 type Float
+               1000000.
+               Let
+                  Td8 type Float
+                  Let
+                     Td6 type Float
+                     0.
+                     Let
+                        Ti7 type Int
+                        2
+                        AppDir
+                              Label: inprod v1,v2,Td6,Ti7,
+                  FMul
+                      Td5
+                      Td8
+            AppDir
+                  Label: min_caml_truncate Td9,
+         AppDir
+               Label: min_caml_print_int Ti10,

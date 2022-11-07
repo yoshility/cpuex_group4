@@ -17,6 +17,7 @@ let lexbuf outchan  before_flatten after_flatten out_before_tse out_after_tse l 
   (* KNormal.print_t out_before_cse normalized;
   let cse = Cse.cse normalized in(*共通部分式削除。課題２。*)
   KNormal.print_t out_after_cse cse; *)
+  print_endline "closure\n";
   let cls = Closure.f normalized  in
   Closure.print_prog before_flatten cls;
   Closure.print_prog out_before_tse cls;
@@ -43,10 +44,6 @@ let debug_closure outchan  l =(* バッファをコンパイルしてチャン�
   let normalized = KNormal.f(Typing.f parsed) in
   KNormal.print_t outchan normalized
 
-
-
-
-
 let string s = lexbuf stdout stdout stdout stdout stdout(Lexing.from_string s) (* 文字列をコンパイルして標準出力に表示する (caml2html: main_string) *)
 
 let file f = (* ファイルをコンパイルしてファイルに出力する (caml2html: main_file) *)
@@ -70,7 +67,9 @@ let () = (* ここからコンパイラの実行が開始される (caml2html: m
   let files = ref [] in
   Arg.parse
     [("-inline", Arg.Int(fun i -> Inline.threshold := i), "maximum size of functions inlined");
-     ("-iter", Arg.Int(fun i -> limit := i), "maximum number of optimizations iterated")]
+     ("-iter", Arg.Int(fun i -> limit := i), "maximum number of optimizations iterated");
+     ("-lifting", Arg.Unit(fun () -> Closure.lifting := true), "maximum number of optimizations iterated")
+     ]
     (fun s -> files := !files @ [s])
     ("Mitou Min-Caml Compiler (C) Eijiro Sumii\n" ^
      Printf.sprintf "usage: %s [-inline m] [-iter n] ...filenames without \".ml\"..." Sys.argv.(0));

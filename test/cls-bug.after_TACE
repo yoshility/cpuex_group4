@@ -1,0 +1,4 @@
+MakeCls
+       f: type Fun:type Int,->type IntLabel:f
+       
+       

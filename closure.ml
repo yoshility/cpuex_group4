@@ -1,3 +1,4 @@
+let lifting =ref false
 type closure = { entry : Id.l; actual_fv : Id.t list }
 type tt = (* クロージャ変換後の式 (caml2html: closure_t) *)
   | Unit
@@ -47,6 +48,7 @@ let rec fv xx =
 )
 let toplevel : fundef list ref = ref []
 
+(*(known はId.t, envはId.t, 型*)
 let rec g env known xx=(* クロージャ変換ルーチン本体 (caml2html: closure_g) *)
 let fs = (match fst xx with
   | KNormal.Unit -> Unit
@@ -91,7 +93,7 @@ let fs = (match fst xx with
       if S.mem x (fv e2') then (* xが変数としてe2'に出現するか *)
         MakeCls((x, t), { entry = Id.L(x); actual_fv = zs }, e2') (* 出現していたら削除しない *)
       else
-        (Format.eprintf "eliminating closure(s) %s@." x;
+        (Format.eprintf "eliminating closure()s) %s@." x;
          fst e2') (* 出現しなければMakeClsを削除 *)
   | KNormal.App(x, ys) when S.mem x known -> (* 関数適用の場合 (caml2html: closure_app) *)
       Format.eprintf "directly applying %s@." x;
@@ -105,14 +107,95 @@ let fs = (match fst xx with
   | KNormal.ExtFunApp(x, ys) -> AppDir(Id.L("min_caml_" ^ x), ys))
       in (fs,snd xx)
 
+let partials = ref [](*部分関数を保存する環境*)
+
+(* 関数名と型の環境env, 定義した変数の環境vars, 関数内の自由変数の環境fvs *)
+let rec g_lifting env vars fvs (e,p) =
+  let fs = 
+  match e with
+  | KNormal.Unit -> Unit
+  | KNormal.Int(i) -> Int(i)
+  | KNormal.Float(d) -> Float(d)
+  | KNormal.Neg(x) -> Neg(x)
+  | KNormal.Add(x, y) -> Add(x, y)
+  | KNormal.Sub(x, y) -> Sub(x, y)
+  | KNormal.FNeg(x) -> FNeg(x)
+  | KNormal.FAdd(x, y) -> FAdd(x, y)
+  | KNormal.FSub(x, y) -> FSub(x, y)
+  | KNormal.FMul(x, y) -> FMul(x, y)
+  | KNormal.FDiv(x, y) -> FDiv(x, y)
+  | KNormal.IfEq(x, y, e1, e2) -> IfEq(x, y, g_lifting env vars fvs e1, g_lifting env vars fvs e2)
+  | KNormal.IfLE(x, y, e1, e2) -> IfLE(x, y, g_lifting env vars fvs e1, g_lifting env vars fvs e2)
+  | KNormal.Let((x, t), e1, e2) 
+  -> 
+    let e1' =g_lifting env vars fvs e1 in
+    let vars' = M.add x ((x,t) ,e1') vars in
+    Let((x, t), e1', g_lifting (M.add x t env) vars' fvs e2)
+  | KNormal.Var(x) -> Var(x)
+  | KNormal.LetRec({ KNormal.name = (x, t); KNormal.args = yts; KNormal.body = e1 }, e2) -> (* 関数定義の場合 (caml2html: closure_letrec) *)
+      (* 関数定義let rec x y1 ... yn = e1 in e2の場合は、
+         xに自由変数がない(closureを介さずdirectに呼び出せる)
+         と仮定し、追加してe1をクロージャ変換してみる *)
+      let env' = M.add x t env in
+      let e1' = g_lifting (M.add_list yts env')  vars fvs e1 in
+      (* 本当に自由変数がなかったか、変換結果e1'を確認する *)
+      (* 注意: e1'にx自身が変数として出現する場合はclosureが必要!
+         (thanks to nuevo-namasute and azounoman; test/cls-bug2.ml参照) *)
+      let zs = S.elements (S.diff (fv e1') (S.add x (S.of_list (List.map fst yts)))) in(*自由変数の集合*)
+      let zts = try List.map (fun z -> (z, M.find z env')) zs with Not_found -> failwith "line 146" in
+      toplevel := { name = (Id.L(x), t); args = yts; formal_fv = zts; body = e1' } :: !toplevel; (* トップレベル関数を追加 *)
+      let fvars = try List.map (fun y -> ( M.find y vars))zs with Not_found -> failwith "line148"in
+      let fvs' = M.add x fvars fvs in 
+      let e2' = g_lifting env'  vars fvs' e2 in
+      fst e2'
+  | KNormal.App(x, ys)  when List.mem_assoc x !partials ->(*部分関数の場合*)
+      let (f,args1) = try List.assoc x !partials with Not_found -> failwith "line153"in
+      let args2 = args1@ys in
+      if List.length (f.args) = List.length args2 then(*完全に適用された場合*)
+      (Format.eprintf "directly applying %s@." x;
+      (match fst f.name with Id.L(name) ->
+      let fvars = 
+        (try M.find name fvs with Not_found -> failwith ("line158\n")) in(*((y, t), ep)list*)  
+      fst (List.fold_right (fun (yt, ep) e2 ->(Let(yt, ep ,e2),p) )fvars (AppDir(Id.L(x), args2),p))))
+      else (*新しい部分関数となった場合*)
+      let newname = Id.genid "p" in 
+      partials := (newname, (f,args2))::(!partials);
+      Var(newname)
+| KNormal.App(x, ys)   when List.exists  (fun g-> (fst (g.name)) = Id.L(x)) !toplevel ->(*トップレベル関数の場合*)
+      let f =  List.find (fun g-> (fst (g.name)) = Id.L(x)) !toplevel in
+      (if List.length f.args = List.length ys then (*部分適用ではない場合*)
+        (((match fst f.name with Id.L(name) ->
+        let fvars = 
+          (try M.find name fvs with Not_found -> failwith "line 170\n")in(*((y, t), ep)list*) 
+      fst (List.fold_right (fun (yt, ep) e2 ->(Let(yt, ep, e2),p) )fvars (AppDir(Id.L(x), ys),p)))))
+      else 
+        (let newname = Id.genid "p" in
+        partials := (newname, (f,ys))::(!partials);
+        Var(newname)))
+  | KNormal.App(x, ys) -> print_endline x;failwith "recursive or args function"
+  | KNormal.Tuple(xs) -> Tuple(xs)
+  | KNormal.LetTuple(xts, y, e) -> LetTuple(xts, y, g_lifting (M.add_list xts env) vars fvs e)
+  | KNormal.Get(x, y) -> Get(x, y)
+  | KNormal.Put(x, y, z) -> Put(x, y, z)
+  | KNormal.ExtArray(x) -> ExtArray(Id.L(x))
+  | KNormal.ExtFunApp(x, ys) -> AppDir(Id.L("min_caml_" ^ x), ys)
+      in (fs,p)
+(*lambda liftingを行う関数*)
+    let f_lifting e =
+      toplevel := [];
+      let e' = g_lifting M.empty M.empty M.empty e in 
+      Prog(List.rev !toplevel, e')
+      let partials = ref []
+      (*known はId.t, envはId.t, 型, fvsは(fun (Id.t), fvs([((Id.t, 型),(e,p))のリスト]))*)
+      
+
 let f e =
-  toplevel := [];
+  if !lifting then
+    (f_lifting e) 
+  else 
+  (toplevel := [];
   let e' = g M.empty S.empty e in 
-  Prog(List.rev !toplevel, e')
-
-
-
-
+  Prog(List.rev !toplevel, e'))
 let rec indent n =
     match n with
     | 0 -> ""

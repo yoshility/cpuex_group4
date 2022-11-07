@@ -1,0 +1,2 @@
+assoc.cmi : \
+    kNormal.cmi
