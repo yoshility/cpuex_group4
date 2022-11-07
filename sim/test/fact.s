@@ -1,5 +1,5 @@
 main:
-    li a0, 5
+    li a0, 9
     jal fact
     ret
 fact:

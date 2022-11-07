@@ -6,12 +6,10 @@ using namespace std;
 #define BUFSIZE 100
 
 /*todo:
-  fibの再帰版を動かす
-  レジスタをクラスにする
+  fibの再帰版->fib(10)でない
+  fact(9)もでない
   fpuのシミュレートとは
-  キャッシュのテスト
-  命令キャッシュどうする
-  パイプライン勉強*/
+  命令キャッシュどうする*/
 
 int reg[32] = {0}; // integer register
 float freg[32] = {0.0}; // float register
@@ -73,7 +71,8 @@ int main(int argc, char* argv[]) {
 
     // あとは命令メモリを逐次実行
     int pc = 0;
-    reg[2] = 256;
+    reg[2] = MEMORY_SIZE; // sp = MEMORY_SIZE
+    int sw_count = 0;
     do {
         strcpy(r0, "\0");
         strcpy(r1, "\0");
@@ -179,7 +178,7 @@ int main(int argc, char* argv[]) {
             cache.accessed_times++;
             if (tag == cache.tags[index]) {
                 cache.hit_times++;
-                cout << "[lw] Hit!" << endl;
+                cout << "[lw]  Hit!" << endl;
                 reg[rd] = cache.data[index * 16 + offset];
             } else {
                 cache.miss_times++;
@@ -207,13 +206,15 @@ int main(int argc, char* argv[]) {
             // ram[reg[rs1] + imm] = reg[rs2];
             /******************* use cache *******************/
             unsigned int data_addr = reg[rs1] + imm;
+            printf("sw address = %d\n", data_addr);
             unsigned int index = (data_addr >> 4) & 0b11;
             int tag = data_addr >> 6;
             unsigned int offset = data_addr & 0xf;
             cache.accessed_times++;
+            sw_count++;
             if (tag == cache.tags[index]) {
                 cache.hit_times++;
-                cout << "[sw] Hit!" << endl;
+                cout << "[sw]  Hit!" << endl;
                 cache.data[index * 16 + offset] = reg[rs2];
                 cache.status[index] = DIRTY;
             } else {
@@ -289,7 +290,7 @@ int main(int argc, char* argv[]) {
     // for (int i=10; i<14; i++) {
     //     printf("reg[%d] = %d\n", i, reg[i]);
     // }
-    // cache.print();
+    cache.print();
     // cache.print(1);
     // printf("accessed_times: %lld\n", cache.accessed_times);
     // printf("hit_times: %lld\n", cache.hit_times);

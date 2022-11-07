@@ -59,7 +59,7 @@ class Memory {
 	public:
 		int* data;
 		Memory() {
-			data = (int*)malloc(sizeof(int) * 256);
+			data = (int*)malloc(sizeof(int) * MEMORY_SIZE);
 		}
 		int read(unsigned int addr) {
 			return data[addr];
