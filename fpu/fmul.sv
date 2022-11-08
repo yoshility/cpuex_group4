@@ -9,8 +9,11 @@ module fmul (
   input wire       rstn
 );
 	wire  			sign = x1[31] ^ x2[31];
-	wire [ 7:0] exp_sum = x1[30:23] + x2[30:23] + 129;
+	wire [ 7:0] exp_x1 = (|x1[30:23]) ? x1[30:23] : 8'b1 ;
+  wire [ 7:0] exp_x2 = (|x2[30:23]) ? x2[30:23] : 8'b1 ;
+	wire [ 7:0] exp_sum = x1[30:23] + x2[30:23];
 	wire [ 7:0] exp_add1 = exp_sum + 1;
+	wire [ 7:0] exp_sub1 = exp_sum - 1;
 	wire [12:0] x1_h, x2_h;
 	wire [10:0] x1_l, x2_l;
 	assign {x1_h, x1_l} = (|x1[30:23]) ? {1'b1, x1[22:0]} : {1'b0, x1[22:0]};
@@ -20,11 +23,16 @@ module fmul (
 	assign hh = x1_h * x2_h;
 	assign hl = x1_h * x2_l;
 	assign lh = x1_l * x2_h;
-	wire [25:0] fraction = hh + {hl, 2'b0}>>11 + {lh, 2'b0}>>11 + 26'b10;
-	assign y =
-		(~(|(x1) || |(x2))) ? 32'b0:
-		(fraction[25] == 1) ? {sign, exp_add1, fraction[24:2]} :
-		{sign, exp_sum, fraction[23:1]} ;
+	wire [25:0] frac_calc = hh + {hl, 2'b0}>>11 + {lh, 2'b0}>>11 + 26'b10;
+	wire [22:0] fraction =
+		(frac_calc[25] == 1) ? frac_calc[24:2] :
+		(frac_calc[24] == 1) ? frac_calc[23:1] :
+		frac_calc[22:0];
+	wire [22:0] exponent =
+		(frac_calc[25] == 1) ? exp_add1 :
+		(frac_calc[24] == 1) ? exp_sum :
+		exp_sub1;
+	assign y = (~(|(x1) || |(x2))) ? 32'b0: {sign, exponent, fraction};
 endmodule
 
 
