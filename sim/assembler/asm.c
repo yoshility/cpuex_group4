@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
         printf("cannot open file\n");
         exit(1);
     }
-    if ((out = fopen("./test/fib.txt", "w")) == NULL) {
+    if ((out = fopen("../test/fib_iter.txt", "w")) == NULL) {
         printf("cannot open file\n");
         exit(1);
     }
@@ -41,8 +41,8 @@ int main(int argc, char* argv[]) {
         res = sscanf(inst, "%s%s%s%s", opcode, r0, r1, r2);
 
         if (opcode[strlen(opcode)-1] == ':') {
-            // 配列のaddr番目にラベル名を保管
-            strcpy(label[addr], opcode);
+            // 配列のaddr/4番目にラベル名を保管
+            strcpy(label[addr/4], opcode);
             // 命令アドレスも一緒に出力
             printf("%02d %s\n", addr, opcode);
             addr -= 4;
@@ -149,7 +149,7 @@ int main(int argc, char* argv[]) {
             for (int i=0; i<1000; i++) {
                 eliminate_colon(label[i]);
                 if (strncmp(label[i], r2, strlen(r2)) == 0) {
-                    jmp_addr = i;
+                    jmp_addr = i*4;
                     break;
                 }
             }
@@ -174,7 +174,7 @@ int main(int argc, char* argv[]) {
                 eliminate_colon(label[i]);
                 // ラベル名が見つかったら、そのアドレスを返す
                 if (strncmp(label[i], r2, strlen(r2)) == 0) {
-                    jmp_addr = i;
+                    jmp_addr = i*4;
                     break;
                 }
             }
@@ -185,6 +185,30 @@ int main(int argc, char* argv[]) {
             // imm[4:1|11]
             int imm2 = imm_4_1_11(imm);
             sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_BGE, imm2, OP_BGE);
+            fprintf(out, "%s\n", str);
+        }
+        // bgt rs1, rs2, label = blt rs2, rs1, label
+        else if (strncmp(opcode, "bgt", 3) == 0) {
+            int rs2 = reg(r0);
+            int rs1 = reg(r1);
+            // まずラベルr2をアドレスオフセットに変換する
+            long long int jmp_addr;
+            for (int i=0; i<1000; i++) {
+                // ラベルの最後のコロンを消去
+                eliminate_colon(label[i]);
+                // ラベル名が見つかったら、そのアドレスを返す
+                if (strncmp(label[i], r2, strlen(r2)) == 0) {
+                    jmp_addr = i*4;
+                    break;
+                }
+            }
+            // オフセットは(分岐先アドレス-分岐命令自体のアドレス) -> 本当は/2
+            long long int imm = jmp_addr - addr;
+            // imm[12|10:5]
+            long long int imm1 = imm_12_10_5(imm);
+            // imm[4:1|11]
+            int imm2 = imm_4_1_11(imm);
+            sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_BLT, imm2, OP_BLT);
             fprintf(out, "%s\n", str);
         }
         // lw
@@ -212,7 +236,7 @@ int main(int argc, char* argv[]) {
             sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_JALR, rd, OP_JALR);
             fprintf(out, "%s\n", str);
         }
-        // ret
+        // ret = jalr x0, ra, 0
         else if (strncmp(opcode, "ret", 3) == 0) {
             int rd = 0;
             int rs1 = 1; // ra
@@ -227,7 +251,7 @@ int main(int argc, char* argv[]) {
             for (int i=0; i<1000; i++) {
                 eliminate_colon(label[i]);
                 if (strncmp(label[i], r1, strlen(r1)) == 0) {
-                    jmp_addr = i;
+                    jmp_addr = i*4;
                     break;
                 }
             }
@@ -238,6 +262,14 @@ int main(int argc, char* argv[]) {
             sprintf(str, "%020llu%05d%07d", imm, rd, OP_JAL);
             fprintf(out, "%s\n", str);
         }
+        // jr rs1 = jalr x0, rs1, 0
+        else if (strncmp(opcode, "jr", 2) == 0) {
+            int rd = 0;
+            int rs1 = reg(r0);
+            long long int imm = 0;
+            sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_JALR, rd, OP_JALR);
+            fprintf(out, "%s\n", str);
+        }
         // j
         else if (strncmp(opcode, "j", 1) == 0) {
             int rd = 0;
@@ -245,7 +277,7 @@ int main(int argc, char* argv[]) {
             for (int i=0; i<1000; i++) {
                 eliminate_colon(label[i]);
                 if (strncmp(label[i], r0, strlen(r0)) == 0) {
-                    jmp_addr = i;
+                    jmp_addr = i*4;
                     break;
                 }
             }
