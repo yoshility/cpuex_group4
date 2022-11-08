@@ -73,14 +73,24 @@ int main(int argc, char* argv[]) {
     int pc = 0;
     reg[2] = MEMORY_SIZE; // sp = MEMORY_SIZE
     int sw_count = 0;
+    int first_ra = 1025;
+    int pre_ra = 0;
+    // int pre_pc = 0;
+    // int is_first_jal = 0;
     do {
         strcpy(r0, "\0");
         strcpy(r1, "\0");
         strcpy(r2, "\0"); 
-        printf("pc now: %d\n", pc); // pc*4が真のアドレス
         sscanf(rom[pc], "%s%s%s%s", opcode, r0, r1, r2);
+        printf("-----[pc: %02d | %s %s %s %s]----------------------------------------------\n", pc, opcode, r0, r1, r2);
         // pc = pc + 1;
         // rom中にラベルはないので、ラベル避けの作業は不要
+
+        // 書き変わる前のraを保持
+        pre_ra = reg[1];
+
+        // 書き変わる前のpcを保持
+        // pre_pc = pc;
 
         // addi
         if (strncmp(opcode, "addi", 4) == 0) {
@@ -146,8 +156,8 @@ int main(int argc, char* argv[]) {
                 pc = pc + 4;
             }
         }
-        // bgt rs1, rs2, label
-        else if (strncmp(opcode, "bgt", 3) == 0) {
+        // blt rs1, rs2, label
+        else if (strncmp(opcode, "blt", 3) == 0) {
             int rs1 = reg_num(r0);
             int rs2 = reg_num(r1);
             int jmp_addr;
@@ -158,8 +168,9 @@ int main(int argc, char* argv[]) {
                     break;
                 }
             }
-            if (reg[rs1] > reg[rs2]) {
+            if (reg[rs1] < reg[rs2]) {
                 pc = jmp_addr;
+                printf("[blt] jmp_addr: %d\n", jmp_addr);
             } else {
                 pc = pc + 4;
             }
@@ -178,11 +189,11 @@ int main(int argc, char* argv[]) {
             cache.accessed_times++;
             if (tag == cache.tags[index]) {
                 cache.hit_times++;
-                cout << "[lw]  Hit!" << endl;
+                cout << "\t[lw]  Hit!" << endl;
                 reg[rd] = cache.data[index * 16 + offset];
             } else {
                 cache.miss_times++;
-                cout << "[lw] Miss!" << endl;
+                cout << "\t[lw] Miss!" << endl;
                 // if dirty, write back
                 if (cache.status[index] == DIRTY) {
                     for (int i=0; i<16; i+=4) {
@@ -195,6 +206,7 @@ int main(int argc, char* argv[]) {
                     cache.data[index * 16 + i] = memory.data[(data_addr & 0xfffffff0) + i]; 
                 }
                 cache.status[index] = CLEAN;
+                reg[rd] = cache.data[index * 16 + offset];
             }
             pc = pc + 4;
         }
@@ -206,7 +218,7 @@ int main(int argc, char* argv[]) {
             // ram[reg[rs1] + imm] = reg[rs2];
             /******************* use cache *******************/
             unsigned int data_addr = reg[rs1] + imm;
-            printf("sw address = %d\n", data_addr);
+            printf("\tsw address = %d\n", data_addr);
             unsigned int index = (data_addr >> 4) & 0b11;
             int tag = data_addr >> 6;
             unsigned int offset = data_addr & 0xf;
@@ -214,12 +226,12 @@ int main(int argc, char* argv[]) {
             sw_count++;
             if (tag == cache.tags[index]) {
                 cache.hit_times++;
-                cout << "[sw]  Hit!" << endl;
+                cout << "\t[sw]  Hit!" << endl;
                 cache.data[index * 16 + offset] = reg[rs2];
                 cache.status[index] = DIRTY;
             } else {
                 cache.miss_times++;
-                cout << "[sw] Miss!" << endl;
+                cout << "\t[sw] Miss!" << endl;
                 // if dirty, write back
                 if (cache.status[index] == DIRTY) {
                     for (int i=0; i<16; i+=4) {
@@ -236,37 +248,60 @@ int main(int argc, char* argv[]) {
             }
             pc = pc + 4;
         }
-        // jal
-        else if (strncmp(opcode, "jal", 3) == 0) {
-            // jal rd, label 整数命令
-            if (strncmp(r1, "\0", 1) != 0) {
-                int rd = reg_num(r0);
-                int jmp_addr;
-                for (int i=0; i<1000; i+=4) {
-                    eliminate_colon(label[i]);
-                    if (strncmp(label[i], r1, strlen(r1)) == 0) {
-                        jmp_addr = i;
-                        break;
-                    }
-                }
+        // jalr rd, rs1, imm
+        else if (strncmp(opcode, "jalr", 4) == 0) {
+            int rd = reg_num(r0);
+            int rs1 = reg_num(r1);
+            int imm = atoi(r2);
+            if (rd != 0) {
                 reg[rd] = pc + 4;
-                pc = jmp_addr;
             }
-            // jal label 疑似命令
-            else {
-                int jmp_addr;
-                for (int i=0; i<1000; i+=4) {
-                    eliminate_colon(label[i]);
-                    if (strncmp(label[i], r0, strlen(r0)) == 0) {
-                        jmp_addr = i;
-                        break;
-                    }
+            pc = reg[rs1] + imm;
+        }
+        // jal rd, label
+        else if (strncmp(opcode, "jal", 3) == 0) {
+            int rd = reg_num(r0);
+            int jmp_addr;
+            for (int i=0; i<1000; i+=4) {
+                eliminate_colon(label[i]);
+                if (strncmp(label[i], r1, strlen(r1)) == 0) {
+                    jmp_addr = i;
+                    break;
                 }
-                // raは1番レジスタ
-                reg[1] = pc + 4;
-                printf("pc+4 = %d\n", reg[1]);
-                pc = jmp_addr;
             }
+            if (rd != 0) {
+                reg[rd] = pc + 4;
+            }
+            pc = jmp_addr;
+            // jal rd, label 整数命令
+            // if (strncmp(r1, "\0", 1) != 0) {
+            //     int rd = reg_num(r0);
+            //     int jmp_addr;
+            //     for (int i=0; i<1000; i+=4) {
+            //         eliminate_colon(label[i]);
+            //         if (strncmp(label[i], r1, strlen(r1)) == 0) {
+            //             jmp_addr = i;
+            //             break;
+            //         }
+            //     }
+            //     reg[rd] = pc + 4;
+            //     pc = jmp_addr;
+            // }
+            // jal label 疑似命令
+        //     else {
+        //         int jmp_addr;
+        //         for (int i=0; i<1000; i+=4) {
+        //             eliminate_colon(label[i]);
+        //             if (strncmp(label[i], r0, strlen(r0)) == 0) {
+        //                 jmp_addr = i;
+        //                 break;
+        //             }
+        //         }
+        //         // raは1番レジスタ
+        //         reg[1] = pc + 4;
+        //         printf("\tpc + 4 = %d\n", reg[1]);
+        //         pc = jmp_addr;
+        //     }
         }
         // jr rs1 = jalr x0, rs1, 0
         else if (strncmp(opcode, "jr", 2) == 0) {
@@ -285,12 +320,27 @@ int main(int argc, char* argv[]) {
             }
             pc = jmp_addr;
         }
-    } while (!(strncmp(opcode, "ret", 3) == 0));
+        printf("\ta0 = %d\n", reg[10]);
+        printf("\tt0 = %d\n", reg[5]);
+        printf("\tra = %d\n", reg[1]);
+        // raが変わっていたら
+        if (pre_ra == 0 && reg[1] != 0) {
+            first_ra = reg[1];
+        }
+        printf("\tfirst_ra = %d\n", first_ra);
+
+        printf("\n");
+        cache.print();
+
+        // char enter;
+        // scanf("%c", &enter);
+
+    } while (pc != first_ra); // raが最初の場所に戻ってきたら終わり
 
     // for (int i=10; i<14; i++) {
     //     printf("reg[%d] = %d\n", i, reg[i]);
     // }
-    cache.print();
+    // cache.print();
     // cache.print(1);
     // printf("accessed_times: %lld\n", cache.accessed_times);
     // printf("hit_times: %lld\n", cache.hit_times);

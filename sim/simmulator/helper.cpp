@@ -29,7 +29,7 @@ char* eliminate_colon(char* line) {
 
 // レジスタ名をレジスタ番号に変換 
 int reg_num(char *reg) {
-    if (strncmp(reg, "zero", 4) == 0 || strncmp(reg, "x0", 2) == 0) {
+    if (strncmp(reg, "x0", 2) == 0) {
         return 0;
     } else if (strncmp(reg, "ra", 2) == 0) {
         return 1;

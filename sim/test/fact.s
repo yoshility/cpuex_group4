@@ -6,9 +6,9 @@ fact:
     addi sp, sp, -8
     sw a0, sp, 4
     sw ra, sp, 0
-    addi t0, zero, 1
+    addi t0, x0, 1
     bgt a0, t0, else
-    addi a0, zero, 1
+    addi a0, x0, 1
     addi sp, sp, 8
     jr ra
 else:
