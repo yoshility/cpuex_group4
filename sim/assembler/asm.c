@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
         printf("cannot open file\n");
         exit(1);
     }
-    if ((out = fopen("../test/fib_iter.txt", "w")) == NULL) {
+    if ((out = fopen("../test/binary.txt", "w")) == NULL) {
         printf("cannot open file\n");
         exit(1);
     }
@@ -23,7 +23,6 @@ int main(int argc, char* argv[]) {
     char r2[30];
 
     char* inst;
-    int res;
 
     char str[50];
 
@@ -38,7 +37,7 @@ int main(int argc, char* argv[]) {
         strcpy(r1, "\0");
         strcpy(r2, "\0");
         inst = eliminate_comma_and_comment(line);
-        res = sscanf(inst, "%s%s%s%s", opcode, r0, r1, r2);
+        sscanf(inst, "%s%s%s%s", opcode, r0, r1, r2);
 
         if (opcode[strlen(opcode)-1] == ':') {
             // 配列のaddr/4番目にラベル名を保管
@@ -56,21 +55,20 @@ int main(int argc, char* argv[]) {
     // 一回閉じてもう一回開く
     fclose(in);
     if ((in = fopen(argv[1], "r")) == NULL) {
-        printf("cannot open file\n");
+        printf("[in] cannot open file\n");
         exit(1);
     }
 
     addr = -4;
     // 2回目の読みでバイナリに変換 /////////////////////////////////////////////////////////////////////
-    while (fgets(line, 100, in) != NULL) {
-        addr += 4; //?
+    while (fgets(line, BUFSIZE, in) != NULL) {
+        addr += 4;
 
         strcpy(r0, "\0");
         strcpy(r1, "\0");
         strcpy(r2, "\0");
         inst = eliminate_comma_and_comment(line);
-        res = sscanf(inst, "%s%s%s%s", opcode, r0, r1, r2);
-        // printf("%s %s %s %s\n", opcode, r0, r1, r2);
+        sscanf(inst, "%s%s%s%s", opcode, r0, r1, r2);
 
         // labelだったら
         if (opcode[strlen(opcode)-1] == ':') {
