@@ -20,15 +20,15 @@ class Cache {
 			miss_times = 0;
 		}
 		// キャッシュ全部出力
-		void print() {
-			printf("\t---- Data Cache ----\n\n");
-			printf("     Status  |            Tag             |                      Data\n");
-			printf("             |                            | ");
+		void print(FILE* out_debug) {
+			fprintf(out_debug, "\t---- Data Cache ---------------------------------------------------------------------------\n\n");
+			fprintf(out_debug, "\t     Status  |            Tag             |                      Data\n");
+			fprintf(out_debug, "\t             |                            | ");
 			for (int i=0; i<16; i++) {
-				printf("%02d ", i);
+				fprintf(out_debug, "%02d ", i);
 			}
-			printf("\n");
-			printf("-------------|----------------------------|------------------------------------------------ \n");
+			fprintf(out_debug, "\n");
+			fprintf(out_debug, "\t-------------|----------------------------|------------------------------------------------ \n");
 			char sta[10];
 			for (int i=0; i<4; i++) {
 				if (status[i] == 0) {
@@ -40,12 +40,13 @@ class Cache {
 				} else {
 					strcpy(sta, "  ?????");
 				}
-				printf("[%02lld] %s | %026lld | ", to_binary(i, 2), sta, to_binary(tags[i], 26));
+				fprintf(out_debug, "\t[%02lld] %s | %026lld | ", to_binary(i, 2), sta, to_binary(tags[i], 26));
 				for (int j=0; j<16; j++) {
-					printf("%02d ", data[i * 16 + j]);
+					fprintf(out_debug, "%02d ", data[i * 16 + j]);
 				}
-				printf("\n");
+				fprintf(out_debug, "\n");
 			}
+			fprintf(out_debug, "\n");
 		}
 		// ある行だけ出力
 		void print(unsigned int index) {

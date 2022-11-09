@@ -15,8 +15,14 @@ long long int to_binary(int num, int d) {
 }
 
 int main() {
-	long long int res = to_binary(0, 5);
-	printf("res = %05lld\n", res);
+	char a[10];
+    scanf("%s", a);
+    if (strncmp(a, "%x0", 3) == 0) {
+        printf("ok!\n");
+    } else {
+        printf("NG!\n");
+    }
+    printf("%s\n", a);
 	return 0;
 }
 

@@ -1,0 +1,24 @@
+00 main:
+00	addi %a0 %x0 4
+04	jal %ra fib 
+08	jalr %x0 %ra 0
+12 fib:
+12	addi %t0 %x0 1
+16	blt %t0 %a0 else
+20	addi %a0 %a0 0
+24	jalr %x0 %ra 0
+28 else:
+28	addi %sp %sp -8
+32	sw %a0 0 %sp
+36	sw %ra 4 %sp
+40	addi %a0 %a0 -1
+44	jal %ra fib 
+48	lw %t0 0 %sp
+52	sw %a0 0 %sp
+56	addi %a0 %t0 -2
+60	jal %ra fib 
+64	lw %t0 0 %sp
+68	add %a0 %a0 %t0
+72	lw %ra 4 %sp
+76	addi %sp %sp 8
+80	jalr %x0 %ra 0

@@ -18,8 +18,13 @@ long long int imm_11_0(char* imm) {
 }
 
 int main() {
-    char imm[10];
-    scanf("%s", imm);
-    printf("%lld\n", imm_11_0(imm));
-    return 0;
+    char a[10];
+    scanf("%s", a);
+    if (strncmp(a, "%r0", 3) == 0) {
+        printf("ok!\n");
+    } else {
+        printf("NG!\n");
+    }
+    printf("%s\n", a);
+	return 0;
 }
