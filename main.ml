@@ -36,13 +36,6 @@ let lexbuf outchan  before_flatten after_flatten out_before_tse out_after_tse l 
           )))
           
              
-  
-let debug_closure outchan  l =(* バッファをコンパイルしてチャンネルへ出力する (caml2html: main_lexbuf) *)
-  Id.counter := 0;
-  Typing.extenv := M.empty;
-  let parsed = Parser.exp Lexer.token l in
-  let normalized = KNormal.f(Typing.f parsed) in
-  KNormal.print_t outchan normalized
 
 let string s = lexbuf stdout stdout stdout stdout stdout(Lexing.from_string s) (* 文字列をコンパイルして標準出力に表示する (caml2html: main_string) *)
 

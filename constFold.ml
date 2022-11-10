@@ -23,6 +23,8 @@ let fs =
   | Neg(x) when memi x env -> Int(-(findi x env))
   | Add(x, y) when memi x env && memi y env -> Int(findi x env + findi y env) (* 足し算のケース (caml2html: constfold_add) *)
   | Sub(x, y) when memi x env && memi y env -> Int(findi x env - findi y env)
+  | Mul(x, y) when memi x env && memi y env -> Int(findi x env * findi y env)
+  | Div(x, y) when memi x env && memi y env -> Int(findi x env / findi y env)
   | FNeg(x) when memf x env -> Float(-.(findf x env))
   | FAdd(x, y) when memf x env && memf y env -> Float(findf x env +. findf y env)
   | FSub(x, y) when memf x env && memf y env -> Float(findf x env -. findf y env)

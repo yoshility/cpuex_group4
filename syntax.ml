@@ -10,6 +10,8 @@ type t = (* MinCamlの構文を表現するデータ型 (caml2html: syntax_t) *)
   | Neg of t*p
   | Add of t * t*p
   | Sub of t * t*p
+  | Mul of t * t*p
+  | Div of t * t*p
   | FNeg of t*p
   | FAdd of t * t*p
   | FSub of t * t*p
@@ -45,6 +47,8 @@ let rec print_t outchan tt =
   | Neg (t,p) -> Printf.fprintf outchan "Neg ";print_t_help (n+4) t
   | Add (a,b,p) -> Printf.fprintf outchan "Add\n%s" (indent (n+3));print_t_help (n+3) a;Printf.fprintf outchan "\n%s" (indent (n+3));print_t_help (n+3) b
   | Sub (a,b,p) -> Printf.fprintf outchan "Sub\n%s" (indent (n+3));print_t_help (n+3) a;Printf.fprintf outchan "\n%s" (indent (n+3));print_t_help (n+3) b
+  | Mul (a,b,p) -> Printf.fprintf outchan "Mul\n%s" (indent (n+3));print_t_help (n+3) a;Printf.fprintf outchan "\n%s" (indent (n+3));print_t_help (n+3) b
+  | Div (a,b,p) -> Printf.fprintf outchan "Div\n%s" (indent (n+3));print_t_help (n+3) a;Printf.fprintf outchan "\n%s" (indent (n+3));print_t_help (n+3) b
   | FNeg (t,p) -> Printf.fprintf outchan "FNeg ";print_t_help (n+5) t
   | FAdd (a,b,p) -> Printf.fprintf outchan "FAdd\n%s" (indent (n+4));print_t_help (n+4) a;Printf.fprintf outchan "\n%s" (indent (n+4));print_t_help (n+4) b
   | FSub (a,b,p) -> Printf.fprintf outchan "FSub\n%s" (indent (n+4));print_t_help (n+4) a;Printf.fprintf outchan "\n%s" (indent (n+4));print_t_help (n+4) b

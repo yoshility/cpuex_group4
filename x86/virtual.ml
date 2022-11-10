@@ -105,9 +105,9 @@ let p = snd xx in
           (0, Ans((Mov(y),p)))
           (fun x offset store -> seq((StDF(x, y, C(offset), 1),p), store))
           (fun x _ offset store -> seq((St(x, y, C(offset), 1),p), store)) in
-      Let((y, Type.Tuple(List.map (fun x -> M.find x env) xs)), (Mov(reg_hp),p),
-          Let((reg_hp, Type.Int), (Add(reg_hp, C(align offset)),p),
-              store))
+      Let((y, Type.Tuple(List.map (fun x -> M.find x env) xs)), 
+      (Mov(reg_hp),p),
+          Let((reg_hp, Type.Int), (Add(reg_hp, C(align offset)),p),store))
   | Closure.LetTuple(xts, y, e2) ->
       let s = Closure.fv e2 in
       let (offset, load) =

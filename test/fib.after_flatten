@@ -1,9 +1,8 @@
 Let
-   Ti2 type Int
+   a type Int
    Let
       Ti1 type Int
       30
       AppDir
             Label: fib Ti1,
-   AppDir
-         Label: min_caml_print_int Ti2,
+   Unit

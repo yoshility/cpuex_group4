@@ -3,8 +3,8 @@ open Asm
 external gethi : float -> int32 = "gethi"
 external getlo : float -> int32 = "getlo"
 
-let stackset = ref S.empty (* ¤¹¤Ç¤ËSave¤µ¤ì¤¿ÊÑ¿ô¤Î½¸¹ç (caml2html: emit_stackset) *)
-let stackmap = ref [] (* Save¤µ¤ì¤¿ÊÑ¿ô¤Î¡¢¥¹¥¿¥Ã¥¯¤Ë¤ª¤±¤ë°ÌÃÖ (caml2html: emit_stackmap) *)
+let stackset = ref S.empty  (* ã™ã§ã«Saveã•ã‚ŒãŸå¤‰æ•°ã®é›†åˆ (caml2html: emit_stackset) *)
+let stackmap = ref []   (* Saveã•ã‚ŒãŸå¤‰æ•°ã®ã€ã‚¹ã‚¿ãƒƒã‚¯ã«ãŠã‘ã‚‹ä½ç½® (caml2html: emit_stackmap) *)
 let save x =
   stackset := S.add x !stackset;
   if not (List.mem x !stackmap) then
@@ -13,7 +13,7 @@ let savef x =
   stackset := S.add x !stackset;
   if not (List.mem x !stackmap) then
     (let pad =
-      if List.length !stackmap mod 2 = 0 then [] else [Id.gentmp Type.Int] in(*pad¤Ïalignment¤Î¤¿¤á¡©*)
+      if List.length !stackmap mod 2 = 0 then [] else [Id.gentmp Type.Int] in(*padï¿½ï¿½alignmentï¿½Î¤ï¿½ï¿½á¡©*)
     stackmap := !stackmap @ pad @ [x; x])
 let locate x =
   let rec loc = function
@@ -28,7 +28,7 @@ let pp_id_or_imm = function
   | V(x) -> x
   | C(i) -> string_of_int i
 
-(* ´Ø¿ô¸Æ¤Ó½Ð¤·¤Î¤¿¤á¤Ë°ú¿ô¤òÊÂ¤ÙÂØ¤¨¤ë(register shuffling) (caml2html: emit_shuffle) *)
+(* é–¢æ•°å‘¼ã³å‡ºã—ã®ãŸã‚ã«å¼•æ•°ã‚’ä¸¦ã¹æ›¿ãˆã‚‹(register shuffling) (caml2html: emit_shuffle) *)
 let rec shuffle sw xys =
   (* remove identical moves *)
   let _, xys = List.partition (fun (x, y) -> x = y) xys in
@@ -43,159 +43,182 @@ let rec shuffle sw xys =
                                          xys)
   | xys, acyc -> acyc @ shuffle sw xys
 
-type dest = Tail | NonTail of Id.t (* ËöÈø¤«¤É¤¦¤«¤òÉ½¤¹¥Ç¡¼¥¿·¿ (caml2html: emit_dest) *)
-let rec g oc = function (* Ì¿ÎáÎó¤Î¥¢¥»¥ó¥Ö¥êÀ¸À® (caml2html: emit_g) *)
+type dest = Tail | NonTail of Id.t  (* æœ«å°¾ã‹ã©ã†ã‹ã‚’è¡¨ã™ãƒ‡ãƒ¼ã‚¿åž‹ (caml2html: emit_dest) *)
+let rec g oc = function   (* å‘½ä»¤åˆ—ã®ã‚¢ã‚»ãƒ³ãƒ–ãƒªç”Ÿæˆ (caml2html: emit_g) *)
   | dest, Ans(exp) -> g' oc (dest, exp)
   | dest, Let((x, t), exp, e) ->
       g' oc (NonTail(x), exp);
       g oc (dest, e)
-and g' oc = function (* ³ÆÌ¿Îá¤Î¥¢¥»¥ó¥Ö¥êÀ¸À® (caml2html: emit_gprime) *)
-  (* ËöÈø¤Ç¤Ê¤«¤Ã¤¿¤é·×»»·ë²Ì¤òdest¤Ë¥»¥Ã¥È (caml2html: emit_nontail) *)
+and g' oc (tail, (exp,p))=  (* å„å‘½ä»¤ã®ã‚¢ã‚»ãƒ³ãƒ–ãƒªç”Ÿæˆ (caml2html: emit_gprime) *)
+match (tail,exp) with
+(* æœ«å°¾ã§ãªã‹ã£ãŸã‚‰è¨ˆç®—çµæžœã‚’destã«ã‚»ãƒƒãƒˆ (caml2html: emit_nontail) *)
   | NonTail(_), Nop -> ()
-  | NonTail(x), Set(i) -> Printf.fprintf oc "\taddi\t%s, x0, %d\n" x i
+  | NonTail(x), Set(i) -> (Printf.fprintf oc "\taddi\t%s, %%x0, %d\n" x i)
   | NonTail(x), SetL(Id.L(y)) -> Printf.fprintf oc "\taddi\t%s, %s, 0\n"  x y  
   | NonTail(x), Mov(y) when x = y -> ()
   | NonTail(x), Mov(y) -> Printf.fprintf oc "\taddi\t%s, %s 0\n"  x y 
-  | NonTail(x), Neg(y) -> Printf.fprintf oc "\tsub\t%s, x0, %s\n" x y
+  | NonTail(x), Neg(y) -> Printf.fprintf oc "\tsub\t%s, %%x0, %s\n" x y
   | NonTail(x), Add(y, z') 
   -> (match z' with 
   |V(t) -> Printf.fprintf oc "\tadd\t%s, %s, %s\n" x y t
   |C(i) -> Printf.fprintf oc "\taddi\t%s, %s, %d\n" x y i)
   | NonTail(x), Sub(y, z') 
-  -> match z' with 
+  -> (match z' with 
   |V(t) -> Printf.fprintf oc "\tsub\t%s, %s, %s\n" x y t
-  |C(i) -> Printf.fprintf oc "\tsubi\t%s, %s, %d\n" x y i
+  |C(i) -> Printf.fprintf oc "\taddi\t%s, %s, %d\n" x y (-i))
+  | NonTail(x), Mul(y, z) ->  Printf.fprintf oc "\tmul\t%s, %s, %s\n" x y z
+  | NonTail(x), Div(y, z) ->  Printf.fprintf oc "\tdiv\t%s, %s, %s\n" x y z
   | NonTail(x), SLL(y, z') 
   -> (match z' with 
   |V(t) -> Printf.fprintf oc "\tsll\t%s, %s, %s\n" x y t
   |C(i) -> Printf.fprintf oc "\tslli\t%s, %s, %d\n" x y i)
-  | NonTail(x), Ld(y, z') 
-  -> (match z' with   
-  |V(t) -> Printf.fprintf oc "\tlw\t%s, %s, %s\n" x y t 
-  |C(i) -> Printf.fprintf oc "\tlw\t%s, %d(%s)\n" x  i y)
-  | NonTail(_), St(x, y, z') 
-  -> (match z' with   
-  |V(t) -> Printf.fprintf oc "\tsw\t%s, %s, %s\n" x y t 
-  |C(i) -> Printf.fprintf oc "\tsw\t%s, %d(%s)\n" x  i y)
+  | NonTail(x), Ld(y, i) -> Printf.fprintf oc "\tlw\t%s, %d(%s)\n" x  i y
+  | NonTail(_), St(x, y, i) ->Printf.fprintf oc "\tsw\t%s,%d(%s)\n" x i y  
   | NonTail(x), FMovD(y) when x = y -> ()
-  | NonTail(x), FMovD(y)  -> Printf.fprintf oc "\tfsgnj.s\t%s, %s %s\n"  x y y 
-  | NonTail(x), FNegD(y) ->Printf.fprintf oc "\tfsgnjx.s\t%s, %s\n"  x y y;
+  | NonTail(x), FMovD(y)  -> Printf.fprintf oc "\tfsgnj.s\t%s, %s, %s\n"  x y y 
+  | NonTail(x), FNegD(y) ->Printf.fprintf oc "\tfsgnjx.s\t%s, %s, %s\n"  x y y;
   | NonTail(x), FAddD(y, z) -> Printf.fprintf oc "\tfadd.s\t%s, %s, %s\n" x y z
   | NonTail(x), FSubD(y, z) -> Printf.fprintf oc "\tfsub.s\t%s, %s, %s\n" x y z
   | NonTail(x), FMulD(y, z) -> Printf.fprintf oc "\tfmul.s\t%s, %s, %s\n" x y z
   | NonTail(x), FDivD(y, z) -> Printf.fprintf oc "\tfdiv.s\t%s, %s, %s\n" x y z
-  | NonTail(x), LdDF(y, z') 
-  -> (match z' with   
-  |V(t) -> Printf.fprintf oc "\tflw\t%s, %s, %s\n" x y t 
-  |C(i) -> Printf.fprintf oc "\tflw\t%s, %d(%s)\n" x  i y)
-  | NonTail(_), StDF(x, y, z') 
-  -> (match z' with   
-  |V(t) -> Printf.fprintf oc "\tfsw\t%s, %s, %s\n" x y t 
-  |C(i) -> Printf.fprintf oc "\tfsw\t%s, %d(%s)\n" x  i y)
+  | NonTail(x), LdDF(y, i)  -> Printf.fprintf oc "\tflw\t%s, %d(%s)\n" x  i y
+  | NonTail(_), StDF(x, y, i) -> Printf.fprintf oc "\tfsw\t%s, %d(%s)\n" x i y
   | NonTail(_), Comment(s) -> Printf.fprintf oc "\t# %s\n" s
-  (* ÂàÈò¤Î²¾ÁÛÌ¿Îá¤Î¼ÂÁõ (caml2html: emit_save) *)
+   (* é€€é¿ã®ä»®æƒ³å‘½ä»¤ã®å®Ÿè£… (caml2html: emit_save) *)
   | NonTail(_), Save(x, y) when List.mem x allregs && not (S.mem y !stackset) ->
       save y;
-      Printf.fprintf oc "\tsw\t%s, %d(%s)\n" x (offset y) reg_sp
+      Printf.fprintf oc "\tsw\t%s, %d(%s)\n" x (offset y) reg_sp 
   | NonTail(_), Save(x, y) when List.mem x allfregs && not (S.mem y !stackset) ->
       savef y;
       Printf.fprintf oc "\tsw\t%s, %d(%s)\n" x (offset y) reg_sp
-  | NonTail(_), Save(x, y) -> assert (S.mem y !stackset); ()(*¤¹¤Ç¤ËsaveºÑ¤ß*)
-  (* Éüµ¢¤Î²¾ÁÛÌ¿Îá¤Î¼ÂÁõ (caml2html: emit_restore) *)
+  | NonTail(_), Save(x, y) -> assert (S.mem y !stackset); ()(*ï¿½ï¿½ï¿½Ç¤ï¿½saveï¿½Ñ¤ï¿½*)
+    (* å¾©å¸°ã®ä»®æƒ³å‘½ä»¤ã®å®Ÿè£… (caml2html: emit_restore) *)
   | NonTail(x), Restore(y) when List.mem x allregs ->
       Printf.fprintf oc "\tlw\t%s, %d(%s)\n" x (offset y) reg_sp
   | NonTail(x), Restore(y) ->
       assert (List.mem x allfregs);
       Printf.fprintf oc "\tlw\t%s, %d(%s)\n" x (offset y) reg_sp
-  (* ËöÈø¤À¤Ã¤¿¤é·×»»·ë²Ì¤òÂè°ì¥ì¥¸¥¹¥¿¤Ë¥»¥Ã¥È¤·¤Æ¥ê¥¿¡¼¥ó (caml2html: emit_tailret) *)
-  | Tail, (Nop | St _ | StDF _ | Comment _ | Save _ as exp) ->
-      g' oc (NonTail(Id.gentmp Type.Unit), exp);
-      Printf.fprintf oc "\tjalr x0, x1, 0\n";
-      Printf.fprintf oc "\taddi\tx0, x0, 0\n"
+ (* æœ«å°¾ã ã£ãŸã‚‰è¨ˆç®—çµæžœã‚’ç¬¬ä¸€ãƒ¬ã‚¸ã‚¹ã‚¿ã«ã‚»ãƒƒãƒˆã—ã¦ãƒªã‚¿ãƒ¼ãƒ³ (caml2html: emit_tailret) *)
+ | Tail, (Nop | St _ | StDF _ | Comment _ | Save _ as exp) ->
+      g' oc (NonTail(Id.gentmp Type.Unit), (exp,p));
+      Printf.fprintf oc "\tjalr\t%%x0, %%ra, 0\n";
+      Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n"
   | Tail, (Set _ | SetL _ | Mov _ | Neg _ | Add _ | Sub _ | SLL _ | Ld _ as exp) ->
-      g' oc (NonTail(regs.(0)), exp);
-      Printf.fprintf oc "\tjalr x0, x1, 0\n";
-      Printf.fprintf oc "\taddi\tx0, x0, 0\n"
+      g' oc (NonTail(regs.(0)), (exp,p));
+      Printf.fprintf oc "\tjalr\t%%x0, %%ra, 0\n";
+      Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n"
   | Tail, (FMovD _ | FNegD _ | FAddD _ | FSubD _ | FMulD _ | FDivD _ | LdDF _ as exp) ->
-      g' oc (NonTail(fregs.(0)), exp);
-      Printf.fprintf oc "\tjalr x0, x1, 0\n";
-      Printf.fprintf oc "\taddi\tx0, x0, 0\n"
+      g' oc (NonTail(fregs.(0)), (exp,p));
+      Printf.fprintf oc "\tjalr\t%%x0, %%ra, 0\n";
+      Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n"
   | Tail, (Restore(x) as exp) ->
       (match locate x with
-      | [i] -> g' oc (NonTail(regs.(0)), exp)
-      | [i; j] when i + 1 = j -> g' oc (NonTail(fregs.(0)), exp)
+      | [i] -> g' oc (NonTail(regs.(0)), (exp,p))
+      | [i; j] when i + 1 = j -> g' oc (NonTail(fregs.(0)), (exp,p))
       | _ -> assert false);
-      Printf.fprintf oc "\tjalr x0, x1, 0\n";
-      Printf.fprintf oc "\taddi\tx0, x0, 0\n"
+      Printf.fprintf oc "\tjalr\t%%x0, %%ra, 0\n";
+      Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n"
   | Tail, IfEq(x, y', e1, e2) ->
-      g'_tail_if oc x (pp_id_or_imm y') e1 e2 "be" "bne"
+    let y = 
+    (match y' with 
+    | V(yy)-> yy
+    | C(i)-> Printf.fprintf oc "\taddi\t%s, %%x0, %d\n" reg_sw  i;
+    reg_sw) in
+      g'_tail_if oc x y e1 e2 "be" "bne"
   | Tail, IfLE(x, y', e1, e2) ->
-      g'_tail_if (pp_id_or_imm y') x  oc e1 e2 "bg" "blt"
+    let y = 
+    (match y' with 
+    | V(yy)-> yy
+    | C(i)-> Printf.fprintf oc "\taddi\t%s, %%x0, %d\n" reg_sw  i;
+    reg_sw) in
+      g'_tail_if oc y x  e1 e2 "bg" "blt"
   | Tail, IfGE(x, y', e1, e2) ->
-      g'_tail_if oc x (pp_id_or_imm y') e1 e2 "bg" "blt"
+    let y = 
+    (match y' with 
+    | V(yy)-> yy
+    | C(i)-> Printf.fprintf oc "\taddi\t%s, %%x0, %d\n" reg_sw  i;
+    reg_sw) in
+      g'_tail_if oc x y e1 e2 "bg" "blt"
   | Tail, IfFEq(x, y, e1, e2) ->
       Printf.fprintf oc "\tfeq.s\t%s, %s, %s\n" reg_sw  x y;
-      Printf.fprintf oc "\taddi\tx0, x0, 0\n"
-      g'_tail_if reg_sw x0 oc e1 e2 "bne" "beq"
+      Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n";
+      g'_tail_if oc reg_sw reg_zero e1 e2 "bne" "beq"
   | Tail, IfFLE(x, y, e1, e2) ->
     Printf.fprintf oc "\tfle.s\t%s, %s, %s\n" reg_sw  x y;
-    Printf.fprintf oc "\taddi\tx0, x0, 0\n"
-    g'_tail_if reg_sw x0 oc e1 e2 "bne" "beq"
+    Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n";
+    g'_tail_if oc reg_sw reg_zero  e1 e2 "bne" "beq"
 | NonTail(z), IfEq(x, y', e1, e2) ->
-      g'_non_tail_if oc (NonTail(z)) x (pp_id_or_imm y') e1 e2 "be" "bne"
+  let y = 
+  (match y' with 
+    | V(yy)-> yy
+    | C(i)-> Printf.fprintf oc "\taddi\t%s, %%x0, %d\n" reg_sw  i;
+    reg_sw) in
+      g'_non_tail_if oc (NonTail(z)) x y e1 e2 "be" "bne"
   | NonTail(z), IfLE(x, y', e1, e2) ->
-      g'_non_tail_if oc (NonTail(z)) (pp_id_or_imm y') x  oc e1 e2 "bg" "blt"
+    let y = 
+    (match y' with 
+    | V(yy)-> yy
+    | C(i)-> Printf.fprintf oc "\taddi\t%s, %%x0, %d\n" reg_sw  i;
+    reg_sw) in
+      g'_non_tail_if oc (NonTail(z)) y x e1 e2 "bg" "blt"
   | NonTail(z), IfGE(x, y', e1, e2) ->
-    g'_non_tail_if oc (NonTail(z)) x (pp_id_or_imm y') e1 e2 "bg" "blt"
+    let y = 
+    (match y' with 
+    | V(yy)-> yy
+    | C(i)-> Printf.fprintf oc "\taddi\t%s, %%x0, %d\n" reg_sw  i;
+    reg_sw) in
+    g'_non_tail_if oc (NonTail(z)) x y e1 e2 "bg" "blt"
   | NonTail(z), IfFEq(x, y, e1, e2) ->
     Printf.fprintf oc "\tfeq.s\t%s, %s, %s\n" reg_sw  x y;
-    Printf.fprintf oc "\taddi\tx0, x0, 0\n"
-    g'_non_tail_if oc (NonTail(z)) reg_sw x0 oc e1 e2 "bne" "beq"
+    Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n";
+    g'_non_tail_if oc (NonTail(z)) reg_sw reg_zero e1 e2 "bne" "beq"
   | NonTail(z), IfFLE(x, y, e1, e2) ->
     Printf.fprintf oc "\tfle.s\t%s, %s, %s\n" reg_sw  x y;
-      Printf.fprintf oc "\taddi\tx0, x0, 0\n"
-      g'_non_tail_if oc (NonTail(z)) reg_sw x0 oc e1 e2 "bne" "beq"
-  (* ´Ø¿ô¸Æ¤Ó½Ð¤·¤Î²¾ÁÛÌ¿Îá¤Î¼ÂÁõ (caml2html: emit_call) *)
-  | Tail, CallCls(x, ys, zs) -> (* ËöÈø¸Æ¤Ó½Ð¤· (caml2html: emit_tailcall) *)(*¤³¤³¤«¤é*)
+      Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n";
+      g'_non_tail_if oc (NonTail(z)) reg_sw reg_zero e1 e2 "bne" "beq"
+   (* é–¢æ•°å‘¼ã³å‡ºã—ã®ä»®æƒ³å‘½ä»¤ã®å®Ÿè£… (caml2html: emit_call) *)
+  | Tail, CallCls(x, ys, zs) ->  (* æœ«å°¾å‘¼ã³å‡ºã— (caml2html: emit_tailcall) *)
       g'_args oc [(x, reg_cl)] ys zs;
-      Printf.fprintf oc "\tld\t[%s + 0], %s\n" reg_cl reg_sw;
-      Printf.fprintf oc "\tjmp\t%s\n" reg_sw;
-      Printf.fprintf oc "\taddi\tx0, x0, 0\n"
-  | Tail, CallDir(Id.L(x), ys, zs) -> (* ËöÈø¸Æ¤Ó½Ð¤· *)
+      Printf.fprintf oc "\tlw\t%s, 0(%s)\n" reg_sw reg_cl;
+      Printf.fprintf oc "\tjalr\t%%x0, %s, 0\n" reg_sw;
+      Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n"
+  | Tail, CallDir(Id.L(x), ys, zs) -> (* æœ«å°¾å‘¼ã³å‡ºã— *)
       g'_args oc [] ys zs;
-      Printf.fprintf oc "\tb\t%s\n" x;
-      Printf.fprintf oc "\taddi\tx0, x0, 0\n"
+      Printf.fprintf oc "\tjal\t%%x0, %s\n" x;
+      Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n"
   | NonTail(a), CallCls(x, ys, zs) ->
       g'_args oc [(x, reg_cl)] ys zs;
       let ss = stacksize () in
-      Printf.fprintf oc "\tst\t%s, [%s + %d]\n" reg_ra reg_sp (ss - 4);
-      Printf.fprintf oc "\tld\t[%s + 0], %s\n" reg_cl reg_sw;
-      Printf.fprintf oc "\tcall\t%s\n" reg_sw;
-      Printf.fprintf oc "\tadd\t%s, %d, %s\t! delay slot\n" reg_sp ss reg_sp;
-      Printf.fprintf oc "\tsub\t%s, %d, %s\n" reg_sp ss reg_sp;
-      Printf.fprintf oc "\tld\t[%s + %d], %s\n" reg_sp (ss - 4) reg_ra;
+      Printf.fprintf oc "\tsw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp;
+      Printf.fprintf oc "\tlw\t%s, 0(%s)\n" reg_sw reg_cl;
+      Printf.fprintf oc "\taddi\t%%ra, %s, 0\n" reg_sw;(*call ??*)
+      Printf.fprintf oc "\tjalr\t%%ra, %%ra, 0\n";(*call ??*)
+      Printf.fprintf oc "\taddi\t%s, %s %d\t! delay slot\n" reg_sp reg_sp ss;
+      Printf.fprintf oc "\tsub\t%s, %s, -%d\n" reg_sp reg_sp ss;
+      Printf.fprintf oc "\tlw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp;
       if List.mem a allregs && a <> regs.(0) then
-        Printf.fprintf oc "\tmov\t%s, %s\n" regs.(0) a
+        Printf.fprintf oc "\taddi\t%s, %s, 0\n" a regs.(0)
       else if List.mem a allfregs && a <> fregs.(0) then
-        (Printf.fprintf oc "\tfmovs\t%s, %s\n" fregs.(0) a;
-         Printf.fprintf oc "\tfmovs\t%s, %s\n" (co_freg fregs.(0)) (co_freg a))
+        (Printf.fprintf oc "\tfsgnj.s\t%s, %s\n"  a fregs.(0);
+         Printf.fprintf oc "\tfsgnj.s\t%s, %s\n"  (co_freg a) (co_freg fregs.(0)))
   | NonTail(a), CallDir(Id.L(x), ys, zs) ->
       g'_args oc [] ys zs;
       let ss = stacksize () in
-      Printf.fprintf oc "\tst\t%s, [%s + %d]\n" reg_ra reg_sp (ss - 4);
-      Printf.fprintf oc "\tcall\t%s\n" x;
-      Printf.fprintf oc "\tadd\t%s, %d, %s\t! delay slot\n" reg_sp ss reg_sp;
-      Printf.fprintf oc "\tsub\t%s, %d, %s\n" reg_sp ss reg_sp;
-      Printf.fprintf oc "\tld\t[%s + %d], %s\n" reg_sp (ss - 4) reg_ra;
+      Printf.fprintf oc "\tsw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp;
+      Printf.fprintf oc "\taddi\t%%ra, %s, 0\n" reg_sw;(*call ??*)
+      Printf.fprintf oc "\tjalr\t%%ra, %%ra, 0\n";(*call ??*)
+      Printf.fprintf oc "\taddi\t%s, %s, %d\t! delay slot\n" reg_sp reg_sp ss ;
+      Printf.fprintf oc "\taddi\t%s, %s, -%d\n" reg_sp reg_sp ss;
+      Printf.fprintf oc "\tlw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp;
       if List.mem a allregs && a <> regs.(0) then
-        Printf.fprintf oc "\tmov\t%s, %s\n" regs.(0) a
+        Printf.fprintf oc "\taddi\t%s, %s, 0\n" a regs.(0)
       else if List.mem a allfregs && a <> fregs.(0) then
-        (Printf.fprintf oc "\tfmovs\t%s, %s\n" fregs.(0) a;
-         Printf.fprintf oc "\tfmovs\t%s, %s\n" (co_freg fregs.(0)) (co_freg a))
+        (Printf.fprintf oc "\tfsgnj.s\t%s, %s\n"  a fregs.(0);
+         Printf.fprintf oc "\tfsgnj.s\t%s, %s\n"  (co_freg a) (co_freg fregs.(0)))
 and g'_tail_if oc x y e1 e2 b bn =
   let b_else = Id.genid (b ^ "_else") in
   Printf.fprintf oc "\t%s\t%s, %s, %s\n" bn x y b_else;
-  Printf.fprintf oc "\taddi\tx0, x0, 0\n"
+  Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n";
   let stackset_back = !stackset in
   g oc (Tail, e1);
   Printf.fprintf oc "%s:\n" b_else;
@@ -205,12 +228,12 @@ and g'_non_tail_if oc dest x y e1 e2 b bn =
   let b_else = Id.genid (b ^ "_else") in
   let b_cont = Id.genid (b ^ "_cont") in
   Printf.fprintf oc "\t%s\t%s, %s, %s\n" bn x y b_else;
-      Printf.fprintf oc "\taddi\tx0, x0, 0\n"
+      Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n";
   let stackset_back = !stackset in
   g oc (dest, e1);
   let stackset1 = !stackset in
-  Printf.fprintf oc "\tb\t%s\n" b_cont;
-      Printf.fprintf oc "\taddi\tx0, x0, 0\n"
+  Printf.fprintf oc "\tjal\t%%x0, %s\n" b_cont;
+    Printf.fprintf oc "\taddi\t%%x0, %%x0, 0\n";
   Printf.fprintf oc "%s:\n" b_else;
   stackset := stackset_back;
   g oc (dest, e2);
@@ -224,7 +247,7 @@ and g'_args oc x_reg_cl ys zs =
       (0, x_reg_cl)
       ys in
   List.iter
-    (fun (y, r) -> Printf.fprintf oc "\tmov\t%s, %s\n" y r)
+    (fun (y, r) -> Printf.fprintf oc "\taddi\t%s, %s, 0\n" r y)
     (shuffle reg_sw yrs);
   let (d, zfrs) =
     List.fold_left
@@ -233,8 +256,8 @@ and g'_args oc x_reg_cl ys zs =
       zs in
   List.iter
     (fun (z, fr) ->
-      Printf.fprintf oc "\tfmovs\t%s, %s\n" z fr;
-      Printf.fprintf oc "\tfmovs\t%s, %s\n" (co_freg z) (co_freg fr))
+      Printf.fprintf oc "\tfsgnj.s\t%s, %s\n" fr z;
+      Printf.fprintf oc "\tfsgnj.s\t%s, %s\n" (co_freg fr) (co_freg z))
     (shuffle reg_fsw zfrs)
 
 let h oc { name = Id.L(x); args = _; fargs = _; body = e; ret = _ } =
@@ -257,9 +280,8 @@ let f oc (Prog(data, fundefs, e)) =
   List.iter (fun fundef -> h oc fundef) fundefs;
   Printf.fprintf oc ".global\tmin_caml_start\n";
   Printf.fprintf oc "min_caml_start:\n";
-  Printf.fprintf oc "\tsave\t%%sp, -112, %%sp\n"; (* from gcc; why 112? *)
+  Printf.fprintf oc "\taddi\t%%sp, %%x0 -112\n"; (* from gcc; why 112? *)
   stackset := S.empty;
   stackmap := [];
-  g oc (NonTail("%g0"), e);
-  Printf.fprintf oc "\tret\n";
-  Printf.fprintf oc "\trestore\n"
+  g oc (Tail, e);
+  Printf.fprintf oc "\tjalr\t%%x0, %%ra, 0\n";
