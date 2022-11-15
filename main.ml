@@ -12,12 +12,11 @@ let lexbuf outchan  before_flatten after_flatten out_before_tse out_after_tse l 
   Id.counter := 0;
   Typing.extenv := M.empty;
   let parsed = Parser.exp Lexer.token l in
-  let normalized = KNormal.f(Typing.f parsed) in
+  let normalized = try (KNormal.f(Typing.f parsed) ) with Not_found ->failwith "knormal"  in
   (* Syntax.print_t out_parsed parsed;中間結果の出力。課題１。 *)
   (* KNormal.print_t out_before_cse normalized;
   let cse = Cse.cse normalized in(*共通部分式削除。課題２。*)
   KNormal.print_t out_after_cse cse; *)
-  print_endline "closure\n";
   let cls = Closure.f normalized  in
   Closure.print_prog before_flatten cls;
   Closure.print_prog out_before_tse cls;
@@ -61,7 +60,9 @@ let () = (* ここからコンパイラの実行が開始される (caml2html: m
   Arg.parse
     [("-inline", Arg.Int(fun i -> Inline.threshold := i), "maximum size of functions inlined");
      ("-iter", Arg.Int(fun i -> limit := i), "maximum number of optimizations iterated");
-     ("-lifting", Arg.Unit(fun () -> Closure.lifting := true), "maximum number of optimizations iterated")
+     ("-lifting", Arg.Unit(fun () -> Closure.lifting := true), "lambda lifting");
+     ("-type_check_c", Arg.Unit(fun () -> Closure.type_check_c := true), "type check of closure");
+     ("-no_typing", Arg.Unit(fun () -> Typing.typing := false), "type check of min-caml")
      ]
     (fun s -> files := !files @ [s])
     ("Mitou Min-Caml Compiler (C) Eijiro Sumii\n" ^

@@ -37,3 +37,4 @@ val f : KNormal.t -> prog
 val print_t: out_channel -> t -> unit
 val print_prog: out_channel -> prog -> unit
 val lifting : bool ref
+val type_check_c : bool ref
