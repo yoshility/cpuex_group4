@@ -193,7 +193,7 @@ match (tail,exp) with
       Printf.fprintf oc "\tlw\t%s, 0(%s)\n" reg_sw reg_cl;
       Printf.fprintf oc "\taddi\t%%ra, %s, 0\n" reg_sw;(*call ??*)
       Printf.fprintf oc "\tjalr\t%%ra, %%ra, 0\n";(*call ??*)
-      Printf.fprintf oc "\taddi\t%s, %s %d\t! delay slot\n" reg_sp reg_sp ss;
+      Printf.fprintf oc "\taddi\t%s, %s %d\t# delay slot\n" reg_sp reg_sp ss;
       Printf.fprintf oc "\tsub\t%s, %s, -%d\n" reg_sp reg_sp ss;
       Printf.fprintf oc "\tlw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp;
       if List.mem a allregs && a <> regs.(0) then
@@ -280,7 +280,7 @@ let f oc (Prog(data, fundefs, e)) =
   List.iter (fun fundef -> h oc fundef) fundefs;
   Printf.fprintf oc ".global\tmin_caml_start\n";
   Printf.fprintf oc "min_caml_start:\n";
-  Printf.fprintf oc "\taddi\t%%sp, %%x0 -112\n"; (* from gcc; why 112? *)
+  Printf.fprintf oc "\taddi\t%%sp, %%x0, 256\n"; (* from gcc; why 112? *)
   stackset := S.empty;
   stackmap := [];
   g oc (Tail, e);

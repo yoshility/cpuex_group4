@@ -1,4 +1,5 @@
 let lifting =ref false
+let type_check_c =ref false
 type closure = { entry : Id.l; actual_fv : Id.t list }
 type tt = (* クロージャ変換後の式 (caml2html: closure_t) *)
   | Unit
@@ -194,19 +195,11 @@ let rec g_lifting env vars fvs (e,p) =
       let partials = ref []
       (*known はId.t, envはId.t, 型, fvsは(fun (Id.t), fvs([((Id.t, 型),(e,p))のリスト]))*)
       
-
-let f e =
-  if !lifting then
-    (f_lifting e) 
-  else 
-  (toplevel := [];
-  let e' = g M.empty S.empty e in 
-  Prog(List.rev !toplevel, e'))
 let rec indent n =
-    match n with
-    | 0 -> ""
-    | m -> " "^indent (m-1) 
-  
+  match n with
+  | 0 -> ""
+  | m -> " "^indent (m-1) 
+
 let print_t outchan tt = (*Closure.t の変数を出力する関数*)
 let rec print_t_help  n e=
 match e with (ee, _) ->
@@ -243,3 +236,103 @@ match e with (ee, _) ->
   print_t_help 0 tt
 
 let print_prog outchan (Prog(_, e)) = print_t outchan e  
+
+
+let rec tycheck env tp =
+  let p = snd tp in
+  match (fst tp) with
+  | Unit  -> Type.Unit
+  | Int(_) -> Type.Int
+  | Float(_) -> Type.Float
+  | Neg(t) ->
+      Typing.unify Type.Int (tycheck env (Var(t),p));
+      Type.Int
+  | Add(t1, t2) | Sub(t1, t2) | Mul(t1, t2) | Div(t1, t2)-> (* 足し算（と引き算）の型推論 (caml2html: typing_add) *)
+      Typing.unify Type.Int (tycheck env (Var(t1),p));
+      Typing.unify Type.Int (tycheck env (Var(t2),p));
+      Type.Int
+  | FNeg(t) ->
+      Typing.unify Type.Float (tycheck env (Var(t),p));
+      Type.Float
+  | FAdd(t1, t2) | FSub(t1, t2) | FMul(t1, t2) | FDiv(t1, t2) ->
+      Typing.unify Type.Float (tycheck env (Var(t1),p));
+      Typing.unify Type.Float (tycheck env (Var(t2),p));
+      Type.Float
+  | IfEq(i1, i2, t1, t2) | IfLE(i1, i2, t1, t2) ->
+      Typing.unify (tycheck env (Var(i1),p)) (tycheck env (Var(i2),p));
+      let t0 = tycheck env t1 in
+      Typing.unify t0 (tycheck env t2);
+      t0
+  | Let ((i , t) , e1 , e2) ->
+    Typing.unify t (tycheck env e1);
+    tycheck (M.add i t env) e2
+  | Var(x) when M.mem x env -> M.find x env (* 変数の型推論 (caml2html: typing_var) *)
+  | Var(x) when M.mem x !Typing.extenv -> M.find x !Typing.extenv
+  | Var(x) -> (* 外部変数の型推論 (caml2html: typing_extvar) *)
+      Format.eprintf "free variable %s assumed as external@." x;
+      let t = Type.gentyp () in
+      Typing.extenv := M.add x t !Typing.extenv;
+      t
+  | MakeCls ((f , t1) , cls , t2)->
+    let ff =  try List.find (fun g -> fst (g.name) = Id.L(f)) !toplevel with Not_found -> failwith "not found makecls" in
+    let argt = List.fold_right (fun (y,tt) envv-> M.add y tt envv) ff.args env in
+    let fvt = List.fold_right (fun (y,tt) envv-> M.add y tt envv) ff.formal_fv argt in
+    (match t1 with 
+    |Type.Fun(l,tt) 
+    -> Typing.unify tt (tycheck fvt ff.body); List.iter2 (fun id (_,t) -> Typing.unify(tycheck env (Var(id),p)) t) cls.actual_fv ff.formal_fv
+    | _ -> failwith "type must be function");
+    tycheck (M.add f t1 env) t2         
+  | AppCls (f ,args)
+  -> (try (match M.find f env with 
+  |Type.Fun(l,t) -> List.iter2 (fun arg tt-> Typing.unify tt (tycheck env (Var(arg),p)))args l  ;t
+  |_ -> failwith "type must be function (appcls)")
+  with Not_found -> 
+    let t = Type.gentyp () in
+  Typing.unify (tycheck env (Var(f),p)) (Type.Fun(List.map (fun arg -> tycheck env (Var(arg),p)) args, t));t)
+  | AppDir (l, args) ->
+    (try 
+    (let ff =   List.find (fun g ->  fst (g.name) = l) !toplevel  in
+    (match snd(ff.name) with 
+    |Type.Fun(tl,tt) -> List.iter2 (fun arg ttt -> Typing.unify (tycheck env (Var(arg),p)) ttt) args tl; tt
+    |_ -> failwith "type must be function (appdir)"))
+  with Not_found -> let t = Type.gentyp () in
+  (match l with 
+  |Id.L(x) ->
+  Typing.unify (tycheck env (Var(x),p)) (Type.Fun(List.map (fun arg -> tycheck env (Var(arg),p)) args, t));t)
+  |_ -> assert false)
+  | Tuple(idl) -> Type.Tuple(List.map (fun id -> tycheck env (Var(id),p)) idl)
+  | LetTuple (idtl, tuple, e) ->
+    (match tycheck env (Var(tuple),p) with 
+    |Type.Tuple(tl) 
+    -> List.iter2 (fun (_,ttt) tt -> Typing.unify ttt tt) idtl tl;
+    tycheck (List.fold_right (fun (y,tt) envv-> M.add y tt envv) idtl env) e
+    | _ -> failwith "type must be tuple")
+  | Get(t1, num) ->
+    (try Typing.unify (tycheck env (Var(num),p)) Type.Int with _ -> print_endline num; failwith "get"); 
+   (match tycheck env (Var(t1),p) with 
+   |Type.Array(tt) -> tt
+   | _ -> failwith "type must be array")
+   | Put (t1,num,t2)->
+    (try Typing.unify (tycheck env (Var(num),p)) Type.Int with _ -> print_endline num; failwith "put"); 
+   (match tycheck env (Var(t1),p) with 
+   |Type.Array(tt) -> (try Typing.unify tt (tycheck env (Var(t2),p)) with _ -> print_endline num; failwith "put2") ;Unit
+   | _ -> failwith "type must be array")
+  | ExtArray(Id.L(x)) 
+  -> try Type.Array(M.find x !Typing.extenv) with Not_found -> failwith "Not found Extarray"
+
+  let f e =
+    toplevel := [];
+    let e' = 
+      (if !lifting then
+         (g_lifting M.empty M.empty M.empty e) 
+      else 
+      ( g M.empty S.empty e)) in 
+      (if !type_check_c then
+        try 
+        (Typing.unify (tycheck M.empty e')  Type.Unit)
+    with Typing.Unify (a,b) -> Type.print_t stdout a;print_newline();Type.print_t stdout b;print_newline();failwith "Unify Error (closure)"
+    );
+    
+      Prog(List.rev !toplevel, e')
+
+      

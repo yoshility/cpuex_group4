@@ -2,11 +2,12 @@
 
 open Syntax
 
+let typing = ref true
+
 exception Unify of Type.t * Type.t
 exception Error of t * Type.t * Type.t
 
-let extenv = ref M
-.empty
+let extenv = ref M.empty
 
 (* for pretty printing (and type normalization) *)
 let rec deref_typ = function (* 型変数を中身でおきかえる関数 (caml2html: typing_deref) *)
@@ -94,7 +95,7 @@ let rec g env e = (* 型推論ルーチン (caml2html: typing_g) *)
     | Neg(e,_) ->
         unify Type.Int (g env e);
         Type.Int
-    | Add(e1, e2,_) | Sub(e1, e2,_) -> (* 足し算（と引き算）の型推論 (caml2html: typing_add) *)
+    | Add(e1, e2,_) | Sub(e1, e2,_) | Mul(e1, e2,_) | Div(e1, e2,_)-> (* 足し算（と引き算）の型推論 (caml2html: typing_add) *)
         unify Type.Int (g env e1);
         unify Type.Int (g env e2);
         Type.Int
@@ -157,7 +158,7 @@ let rec g env e = (* 型推論ルーチン (caml2html: typing_g) *)
   | Float (_,p)-> Printf.fprintf stdout "line %d\n" p.pos_lnum
   | Not (_,p)-> Printf.fprintf stdout "line %d\n" p.pos_lnum
   | Neg (_,p)-> Printf.fprintf stdout "line %d\n" p.pos_lnum
-  | Add  (_ , _,p)-> Printf.fprintf stdout "line %d\n" p.pos_lnum
+  | Add  (_ , _,p) | Mul(_ , _,p) |Div(_ , _,p) -> Printf.fprintf stdout "line %d\n" p.pos_lnum
   | Sub (_ ,_,p)-> Printf.fprintf stdout "line %d\n" p.pos_lnum
   | FNeg (_,p)-> Printf.fprintf stdout "line %d\n" p.pos_lnum
   | FAdd (_, _,p)-> Printf.fprintf stdout "line %d\n" p.pos_lnum
@@ -186,8 +187,10 @@ let f e =
   | Type.Unit -> ()
   | _ -> Format.eprintf "warning: final result does not have type unit@.");
 *)
-  (try unify Type.Unit
+if !typing then
+  ((try unify Type.Unit
   (g M.empty e)
-  with Unify _ -> failwith "top level does not have type unit");
+  with Unify _ ->  failwith "top level does not have type unit");
   extenv := M.map deref_typ !extenv;
-  deref_term e
+  deref_term e)
+else e

@@ -1,1 +1,1 @@
-riscv/toomanyargs.ml
+x86/toomanyargs.ml
