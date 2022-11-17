@@ -190,7 +190,7 @@ let f e =
 if !typing then
   ((try unify Type.Unit
   (g M.empty e)
-  with Unify _ ->  failwith "top level does not have type unit");
+  with Unify _ ->  print_endline "top level does not have type unit");
   extenv := M.map deref_typ !extenv;
   deref_term e)
 else e

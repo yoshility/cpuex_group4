@@ -1,8 +1,5 @@
 Let
-   a type Int
-   Let
-      Ti1 type Int
-      30
-      AppDir
-            Label: fib Ti1,
-   Unit
+   Ti1 type Int
+   10
+   AppDir
+         Label: fib Ti1,

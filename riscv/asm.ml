@@ -46,27 +46,33 @@ let fletd(x, e1, e2) = Let((x, Type.Float), e1, e2)
 let seq(e1, e2) = Let((Id.gentmp Type.Unit, Type.Unit), e1, e2)
 
 let regs = (* Array.init 16 (fun i -> Printf.sprintf "%%r%d" i) *)
-  [| "%a0"; "%a1"; "%a2"; "%a3"; "%a4"; "%a5"; "%a6"; "%a7";
-  "%t0"; "%t1"; "%t2"; "%t3"; "%t4"; "%t5"; "%t6"; 
+  [| "a0"; "a1"; "a2"; "a3"; "a4"; "a5"; "a6"; "a7";
+  "t0"; "t1"; "t2"; "t3"; "t4"; "t5"; "t6"; 
   |]
-let fregs = Array.init 31 (fun i -> Printf.sprintf "%%f%d" (i * 2))
+let fregs = 
+  (* Array.init 31 (fun i -> Printf.sprintf "f%d" (i * 2)) *)
+  [| "fa0"; "fa1"; "fa2"; "fa3"; "fa4"; "fa5"; "fa6"; "fa7"; 
+  "ft0"; "ft1"; "ft2"; "ft3"; "ft4"; "ft5"; "ft6"; "ft7"; "ft8"; "ft9"; "ft10"; "ft11"; 
+  "fs0"; "fs1"; "fs2"; "fs3"; "fs4"; "fs5"; "fs6"; "fs7"; "fs8"; "fs9"; "fs10"; "fs11"; 
+  |]
 let allregs = Array.to_list regs
 let allfregs = Array.to_list fregs
 let reg_cl = regs.(Array.length regs - 2) (* closure address (caml2html: sparcasm_regcl) *)
 let reg_sw = regs.(Array.length regs - 1) (* temporary for swap *)
 let reg_fsw = fregs.(Array.length fregs - 1) (* temporary for swap *)
-let reg_zero = "%x0" (* zero register *)
-let reg_sp = "%sp" (* stack pointer *)
-let reg_hp = "%hp" (* heap pointer (caml2html: sparcasm_reghp) *)
-let reg_ra = "%ra" (* return address *)
-let is_reg x = (x.[0] = '%')
+let reg_zero = "x0" (* zero register *)
+let reg_sp = "sp" (* stack pointer *)
+let reg_hp = "hp" (* heap pointer (caml2html: sparcasm_reghp) *)
+let reg_ra = "ra" (* return address *)
+let is_reg x = (x.[0] = 'a' || x.[0] = 't'||x.[0] = 't'||x.[0] = 'f'||x= reg_zero || x= reg_sp ||x= reg_hp || x= reg_ra )
+
 let co_freg_table =
   let ht = Hashtbl.create 16 in
   for i = 0 to 15 do
     Hashtbl.add
       ht
-      (Printf.sprintf "%%f%d" (i * 2))
-      (Printf.sprintf "%%f%d" (i * 2 + 1))
+      (Printf.sprintf "f%d" (i * 2))
+      (Printf.sprintf "f%d" (i * 2 + 1))
   done;
   ht
 let co_freg freg = Hashtbl.find co_freg_table freg (* "companion" freg *)
@@ -83,7 +89,7 @@ let rec fv_exp = function
   | Nop | Set(_) | SetL(_) | Comment(_) | Restore(_) -> []
   | Mov(x) | Neg(x) | FMovD(x) | FNegD(x) | Save(x, _) | Ld(x, _) | LdDF(x, _)  -> [x]
   | Add(x, y') | Sub(x, y') | SLL(x, y')  -> x :: fv_id_or_imm y'
-  | St(x, y, _) | StDF(x, y, _)| FAddD(x, y) | FSubD(x, y) | FMulD(x, y) | FDivD(x, y) -> [x; y]
+  | Mul(x,y) | Div(x,y)| St(x, y, _) | StDF(x, y, _)| FAddD(x, y) | FSubD(x, y) | FMulD(x, y) | FDivD(x, y) -> [x; y]
   | IfEq(x, y', e1, e2) | IfLE(x, y', e1, e2) | IfGE(x, y', e1, e2) -> x :: fv_id_or_imm y' @ remove_and_uniq S.empty (fv e1 @ fv e2) (* uniq here just for efficiency *)
   | IfFEq(x, y, e1, e2) | IfFLE(x, y, e1, e2) -> x :: y :: remove_and_uniq S.empty (fv e1 @ fv e2) (* uniq here just for efficiency *)
   | CallCls(x, ys, zs) -> x :: ys @ zs

@@ -1,1 +1,1 @@
-x86/asm.mli
+riscv/asm.mli
