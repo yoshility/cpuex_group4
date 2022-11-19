@@ -95,7 +95,8 @@ int reg(char *reg) {
     } else if (strncmp(reg, "%t6", 3) == 0) {
         return 11111;
     } else {
-        printf("Error: register name\n");
+        printf("Error: register name ");
+        printf("%s\n", reg);
         return 0;
     }
 }
