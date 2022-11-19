@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <bits/stdc++.h>
+using namespace std;
 #include "helper.hpp"
 
 // アセンブリのコンマとコメントと括弧を除去
@@ -25,6 +24,55 @@ char* eliminate_colon(char* line) {
         }
     }
     return line;
+}
+
+// レジスタ名
+map<int, string> reg_name {
+    {0, "x0"},
+    {1, "ra"},
+    {2, "sp"},
+    {3, "gp"},
+    {4, "tp"},
+    {5, "t0"},
+    {6, "t1"},
+    {7, "t2"},
+    {8, "s0/fp"},
+    {9, "s1"},
+    {10, "a0"},
+    {11, "a1"},
+    {12, "a2"},
+    {13, "a3"},
+    {14, "a4"},
+    {15, "a5"},
+    {16, "a6"},
+    {17, "a7"},
+    {18, "s2"},
+    {19, "s3"},
+    {20, "s4"},
+    {21, "s5"},
+    {22, "s6"},
+    {23, "s7"},
+    {24, "s8"},
+    {25, "s9"},
+    {26, "s10"},
+    {27, "s11"},
+    {28, "t3"},
+    {29, "t4"},
+    {30, "t5"},
+    {31, "t6"}
+};
+
+// レジスタ全出力
+void print_reg(int* reg) {
+    printf("\n\t---- Integer Register -------------------------------------------------------------------------------------\n\n");
+    for (int i=0; i<32; i++) {
+        printf("\t");
+        cout << reg_name.at(i) << ":" << reg[i];
+        if ((i+1) % 8 == 0) {
+            printf("\n");
+        }
+    }
+    printf("\n");
 }
 
 // レジスタ名をレジスタ番号に変換 

@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #include "./helper.hpp"
-#include "./device.hpp"
+#include "./memory.hpp"
 using namespace std;
 
 #define BUFSIZE 100
@@ -8,13 +8,9 @@ using namespace std;
 /*todo:
   命令キャッシュ*/
 
-int reg[32] = {0}; // integer register
-float freg[32] = {0.0}; // float register
-char rom[256][30]; // instr memory
-// int ram[256]; // data memory
-
-Cache cache;
-Memory memory; // data memory
+int reg[32] = {0};          // integer register
+float freg[32] = {0.0};     // float register
+char rom[256][30];          // instr memory
 
 int main(int argc, char* argv[]) {
     FILE *in, *out_code, *out_debug;
@@ -31,20 +27,30 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
 
+    // オプション一覧
+    bool debug_to_file = atoi(argv[2]); // デバッグ内容をファイルに出力するか
+    bool use_cache = atoi(argv[3]);     // キャッシュを使うか
+    bool step_by_step = atoi(argv[4]);  // 1命令ずつ実行するか 
+
+    Cache cache;
+    Memory memory;          // data memory
+
     char line[BUFSIZE];
-    char opcode[10];
+    char opcode[30];
     char r0[30];
     char r1[30];
     char r2[30];
 
-    // char* inst_no_comment;
     char* inst_cleaned;
 
-    char str[100];
+    char str[150];
+    char global_func[25];   // min_caml_start
+    strcpy(global_func, "hoge");
 
     // 1回目の読みでラベルを探して全命令を命令メモリに格納
     int addr = -4;
-    char label[1000][15]; // labels
+    char label[1000][25]; // labels
+    int pc = 0;
 
     while (fgets(line, BUFSIZE, in) != NULL) {
         addr += 4;
@@ -55,17 +61,38 @@ int main(int argc, char* argv[]) {
         inst_cleaned = eliminate_comma_and_comment(line);
         sscanf(inst_cleaned, "%s%s%s%s", opcode, r0, r1, r2);
 
+        // ラベル
         if (opcode[strlen(opcode)-1] == ':') {
             // 配列のaddr番目にラベル名を保管
             strcpy(label[addr], opcode);
             // 命令アドレスも一緒に出力(ラベル自体をメモリに保管する必要はない)
-            fprintf(out_code, "%02d %s\n", addr, opcode);
+            // fprintf(out_code, "%02d %s\n", addr, opcode);
+            printf("0x%08X %s\n", addr, opcode);
+            // ラベルがmin_caml_startなら、このときのaddrをpcの初期値にする
+            if (strncmp(opcode, global_func, strlen(global_func)) == 0) {
+                pc = addr;
+                printf("first pc: %d\n", pc);
+            } 
+            addr -= 4;
+            continue;
+        }
+        // 指令 .global
+        else if (strncmp(opcode, ".global", 7) == 0) {
+            strncpy(global_func, r0, strlen(r0)); // global_func <= "min_caml_start"
+            // ignore
+            addr -= 4;
+            continue;
+        }
+        // そのほかの指令
+        else if (opcode[0] == '.') {
+            // ignore
             addr -= 4;
             continue;
         }
 
         // 命令アドレスも一緒に出力
-        fprintf(out_code, "%02d\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+        // fprintf(out_code, "%02d\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+        printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
 
         // 命令メモリのaddr番目に命令列を保管（addrは真のアドレス）
         sprintf(str, "%s %s %s %s", opcode, r0, r1, r2);
@@ -75,8 +102,7 @@ int main(int argc, char* argv[]) {
     fclose(in);
 
     // あとは命令メモリを逐次実行
-    int pc = 0;
-    reg[2] = MEMORY_SIZE; // sp = MEMORY_SIZE
+    reg[2] = MEMORY_SIZE; // sp = MEMORY_SIZE?
     int sw_count = 0;
     int first_ra = 1025;
     int pre_ra = 0;
@@ -87,7 +113,11 @@ int main(int argc, char* argv[]) {
         strcpy(r1, "\0");
         strcpy(r2, "\0"); 
         sscanf(rom[pc], "%s%s%s%s", opcode, r0, r1, r2);
-        fprintf(out_debug, "####[pc: %02d | %s %s %s %s]########################################################################################\n", pc, opcode, r0, r1, r2);
+        if (debug_to_file) {
+            fprintf(out_debug, "####[pc: 0x%08X | %s %s %s %s]##############################################################################\n", pc, opcode, r0, r1, r2);
+        } else {
+            printf("####[pc: 0x%08X | %s %s %s %s]##############################################################################\n", pc, opcode, r0, r1, r2);
+        }
         // pc = pc + 1;
         // rom中にラベルはないので、ラベル避けの作業は不要
 
@@ -175,7 +205,11 @@ int main(int argc, char* argv[]) {
             }
             if (reg[rs1] < reg[rs2]) {
                 pc = jmp_addr;
-                fprintf(out_debug, "[blt] jmp_addr: %d\n", jmp_addr);
+                if (debug_to_file) {
+                    fprintf(out_debug, "\t[blt] jmp_addr: %d\n", jmp_addr);
+                } else {
+                    printf("\t[blt] jmp_addr: %d\n", jmp_addr);
+                }
             } else {
                 pc = pc + 4;
             }
@@ -185,33 +219,46 @@ int main(int argc, char* argv[]) {
             int rd = reg_num(r0);
             int imm = atoi(r1);
             int rs1 = reg_num(r2);
-            // reg[rd] = ram[reg[rs1] + imm];
-            /******************* use cache *******************/
-            unsigned int data_addr = reg[rs1] + imm;
-            unsigned int index = (data_addr >> 4) & 0b11;
-            int tag = data_addr >> 6;
-            unsigned int offset = data_addr & 0xf;
-            cache.accessed_times++;
-            if (tag == cache.tags[index]) {
-                cache.hit_times++;
-                fprintf(out_debug, "\t[lw]  Hit!\n");
-                reg[rd] = cache.data[index * 16 + offset];
-            } else {
-                cache.miss_times++;
-                fprintf(out_debug, "\t[lw] Miss!\n");
-                // if dirty, write back
-                if (cache.status[index] == DIRTY) {
-                    for (int i=0; i<16; i+=4) {
-                        memory.data[(cache.tags[index] << 6) + (index << 4) + i] = cache.data[index * 16 + i];
+            // use cache
+            if (use_cache) {
+                unsigned int data_addr = reg[rs1] + imm;
+                unsigned int index = (data_addr >> 4) & 0b11;
+                int tag = data_addr >> 6;
+                unsigned int offset = data_addr & 0xf;
+                cache.accessed_times++;
+                if (tag == cache.tags[index]) {
+                    cache.hit_times++;
+                    if (debug_to_file) {
+                        fprintf(out_debug, "\t[lw]  Hit!\n");
+                    } else {
+                        printf("\t[lw]  Hit!\n");
                     }
+                    reg[rd] = cache.data[index * 16 + offset];
+                } else {
+                    cache.miss_times++;
+                    if (debug_to_file) {
+                        fprintf(out_debug, "\t[lw] Miss!\n");
+                    } else {
+                        printf("\t[lw] Miss!\n");
+                    }
+                    // if dirty, write back
+                    if (cache.status[index] == DIRTY) {
+                        for (int i=0; i<16; i+=4) {
+                            memory.data[(cache.tags[index] << 6) + (index << 4) + i] = cache.data[index * 16 + i];
+                        }
+                    }
+                    // take data
+                    cache.tags[index] = tag;
+                    for (int i=0; i<16; i+=4) {
+                        cache.data[index * 16 + i] = memory.data[(data_addr & 0xfffffff0) + i]; 
+                    }
+                    cache.status[index] = CLEAN;
+                    reg[rd] = cache.data[index * 16 + offset];
                 }
-                // take data
-                cache.tags[index] = tag;
-                for (int i=0; i<16; i+=4) {
-                    cache.data[index * 16 + i] = memory.data[(data_addr & 0xfffffff0) + i]; 
-                }
-                cache.status[index] = CLEAN;
-                reg[rd] = cache.data[index * 16 + offset];
+            }
+            // no cache
+            else {
+                reg[rd] = memory.data[reg[rs1] + imm];
             }
             pc = pc + 4;
         }
@@ -220,36 +267,53 @@ int main(int argc, char* argv[]) {
             int rs2 = reg_num(r0);
             int imm = atoi(r1);
             int rs1 = reg_num(r2);
-            // ram[reg[rs1] + imm] = reg[rs2];
-            /******************* use cache *******************/
-            unsigned int data_addr = reg[rs1] + imm;
-            fprintf(out_debug, "\tsw address = %d\n", data_addr);
-            unsigned int index = (data_addr >> 4) & 0b11;
-            int tag = data_addr >> 6;
-            unsigned int offset = data_addr & 0xf;
-            cache.accessed_times++;
-            sw_count++;
-            if (tag == cache.tags[index]) {
-                cache.hit_times++;
-                fprintf(out_debug, "\t[sw]  Hit!\n");
-                cache.data[index * 16 + offset] = reg[rs2];
-                cache.status[index] = DIRTY;
-            } else {
-                cache.miss_times++;
-                fprintf(out_debug, "\t[sw] Miss!\n");
-                // if dirty, write back
-                if (cache.status[index] == DIRTY) {
-                    for (int i=0; i<16; i+=4) {
-                        memory.data[(cache.tags[index] << 6) + (index << 4) + i] = cache.data[index * 16 + i];
+            // use cache
+            if (use_cache) {
+                unsigned int data_addr = reg[rs1] + imm;
+                if (debug_to_file) {
+                    fprintf(out_debug, "\tsw address = %d\n", data_addr);
+                } else {
+                    printf("\tsw address = %d\n", data_addr);
+                }
+                unsigned int index = (data_addr >> 4) & 0b11;
+                int tag = data_addr >> 6;
+                unsigned int offset = data_addr & 0xf;
+                cache.accessed_times++;
+                sw_count++;
+                if (tag == cache.tags[index]) {
+                    cache.hit_times++;
+                    if (debug_to_file) {
+                        fprintf(out_debug, "\t[sw]  Hit!\n");
+                    } else {
+                        printf("\t[sw]  Hit!\n");
                     }
+                    cache.data[index * 16 + offset] = reg[rs2];
+                    cache.status[index] = DIRTY;
+                } else {
+                    cache.miss_times++;
+                    if (debug_to_file) {
+                        fprintf(out_debug, "\t[sw] Miss!\n");
+                    } else {
+                        printf("\t[sw] Miss!\n");
+                    }
+                    // if dirty, write back
+                    if (cache.status[index] == DIRTY) {
+                        for (int i=0; i<16; i+=4) {
+                            memory.data[(cache.tags[index] << 6) + (index << 4) + i] = cache.data[index * 16 + i];
+                        }
+                    }
+                    // take data
+                    cache.tags[index] = tag;
+                    for (int i=0; i<16; i+=4) {
+                        cache.data[index * 16 + i] = memory.data[(data_addr & 0xfffffff0) + i]; 
+                    }
+                    cache.data[index * 16 + offset] = reg[rs2];
+                    cache.status[index] = DIRTY;
                 }
-                // take data
-                cache.tags[index] = tag;
-                for (int i=0; i<16; i+=4) {
-                    cache.data[index * 16 + i] = memory.data[(data_addr & 0xfffffff0) + i]; 
-                }
-                cache.data[index * 16 + offset] = reg[rs2];
-                cache.status[index] = DIRTY;
+            }
+            // no cache
+            else {
+                memory.data[reg[rs1] + imm] = reg[rs2];
             }
             pc = pc + 4;
         }
@@ -258,10 +322,11 @@ int main(int argc, char* argv[]) {
             int rd = reg_num(r0);
             int rs1 = reg_num(r1);
             int imm = atoi(r2);
-            if (rd != 0) {
-                reg[rd] = pc + 4;
-            }
             pc = reg[rs1] + imm;
+            if (rd != 0) {
+                reg[rd] = pre_pc + 4;
+            }
+            
         }
         // jal rd, label
         else if (strncmp(opcode, "jal", 3) == 0) {
@@ -296,21 +361,29 @@ int main(int argc, char* argv[]) {
             }
             pc = jmp_addr;
         }
-        fprintf(out_debug, "\ta0 = %d\n", reg[10]);
-        fprintf(out_debug, "\tt0 = %d\n", reg[5]);
-        fprintf(out_debug, "\tra = %d\n", reg[1]);
-        fprintf(out_debug, "\tsp = %d\n", reg[2]);
+        printf("\ta0 = %d\n", reg[10]);
+        printf("\tt0 = %d\n", reg[5]);
+        printf("\tra = %d\n", reg[1]);
+        printf("\tsp = %d\n", reg[2]);
         // raが変わっていたら
         if (pre_ra == 0 && reg[1] != 0) {
             first_ra = reg[1];
         }
-        fprintf(out_debug, "\tfirst_ra = %d\n", first_ra);
+        printf("\tfirst_ra = %d\n", first_ra);
 
-        fprintf(out_debug, "\n");
-        cache.print(out_debug);
+        printf("\n");
+        print_reg(reg);
 
-        // char enter;
-        // scanf("%c", &enter);
+        if (use_cache) {
+            cache.print();
+        } else {
+            memory.print(1024, 996);
+        }
+
+        if (step_by_step) {
+            char enter;
+            scanf("%c", &enter);
+        }
 
         if (pre_pc == first_ra) {
             break;
@@ -322,6 +395,9 @@ int main(int argc, char* argv[]) {
 
     printf("Finished!\n");
     printf("a0 = %d\n", reg[10]);
+    if (use_cache) {
+        cache.print_stat();
+    }
 
     return 0;
 }
