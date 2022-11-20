@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
     }
 
     // options
-    int debug = atoi(argv[2]);
+    int debug = (argv[2] == NULL) ? 0 : 1; // default: no debug
 
     char line[BUFSIZE];
     char opcode[10];
@@ -46,13 +46,13 @@ int main(int argc, char* argv[]) {
             // 配列のaddr/4番目にラベル名を保管
             strcpy(label[addr/4], opcode);
             // 命令アドレスも一緒に出力
-            printf("0x%08X %s\n", addr, opcode);
+            printf("%08X %s\n", addr, opcode);
             addr -= 4;
             continue;
         }
 
         // 命令アドレスも一緒に出力
-        printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+        printf("%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
     }
 
     // 一回閉じてもう一回開く
@@ -85,7 +85,7 @@ int main(int argc, char* argv[]) {
             int rs1 = reg(r1);
             long long int imm = imm_11_0(r2);
             if (debug) {
-                sprintf(str, "0x%08X | %012lld %05d %03d %05d %07d", addr, imm, rs1, F3_ADDI, rd, OP_ADDI);
+                sprintf(str, "%08X %s %012lld %05d %03d %05d %07d", addr, opcode, imm, rs1, F3_ADDI, rd, OP_ADDI);
             } else {
                 sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_ADDI, rd, OP_ADDI);  
             }
@@ -105,7 +105,7 @@ int main(int argc, char* argv[]) {
             int rs1 = reg(r1);
             int rs2 = reg(r2);
             if (debug) {
-                sprintf(str, "0x%08X | %07d %05d %05d %03d %05d %07d", addr, F7_ADD, rs2, rs1, F3_ADD, rd, OP_ADD);
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_ADD, rs2, rs1, F3_ADD, rd, OP_ADD);
             } else {
                 sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_ADD, rs2, rs1, F3_ADD, rd, OP_ADD);
             }
@@ -125,7 +125,7 @@ int main(int argc, char* argv[]) {
             int rs1 = reg(r1);
             int rs2 = reg(r2);
             if (debug) {
-                sprintf(str, "0x%08X | %07d %05d %05d %03d %05d %07d", addr, F7_SUB, rs2, rs1, F3_SUB, rd, OP_SUB);
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_SUB, rs2, rs1, F3_SUB, rd, OP_SUB);
             } else {
                 sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_SUB, rs2, rs1, F3_SUB, rd, OP_SUB);
             }
@@ -137,7 +137,7 @@ int main(int argc, char* argv[]) {
             int rs1 = reg(r1);
             int rs2 = reg(r2);
             if (debug) {
-                sprintf(str, "0x%08X | %07d %05d %05d %03d %05d %07d", addr, F7_FMUL, rs2, rs1, F3_FMUL, rd, OP_FMUL);
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_FMUL, rs2, rs1, F3_FMUL, rd, OP_FMUL);
             } else {
                 sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_FMUL, rs2, rs1, F3_FMUL, rd, OP_FMUL);
             }
@@ -149,7 +149,7 @@ int main(int argc, char* argv[]) {
             int rs1 = reg(r1);
             int rs2 = reg(r2);
             if (debug) {
-                sprintf(str, "0x%08X | %07d %05d %05d %03d %05d %07d", addr, F7_FDIV, rs2, rs1, F3_FDIV, rd, OP_FDIV);
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_FDIV, rs2, rs1, F3_FDIV, rd, OP_FDIV);
             } else {
                 sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_FDIV, rs2, rs1, F3_FDIV, rd, OP_FDIV);
             }
@@ -161,7 +161,7 @@ int main(int argc, char* argv[]) {
             int rs1 = reg(r1);
             int rs2 = reg(r2);
             if (debug) {
-                sprintf(str, "0x%08X | %07d %05d %05d %03d %05d %07d", addr, F7_AND, rs2, rs1, F3_AND, rd, OP_AND);
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_AND, rs2, rs1, F3_AND, rd, OP_AND);
             } else {
                 sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_AND, rs2, rs1, F3_AND, rd, OP_AND);
             }
@@ -187,7 +187,7 @@ int main(int argc, char* argv[]) {
             // imm[4:1|11]
             int imm2 = imm_4_1_11(imm);
             if (debug) {
-                sprintf(str, "0x%08X | %07lld %05d %05d %03d %05d %07d", addr, imm1, rs2, rs1, F3_BEQ, imm2, OP_BEQ);
+                sprintf(str, "%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, rs2, rs1, F3_BEQ, imm2, OP_BEQ);
             } else {
                 sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_BEQ, imm2, OP_BEQ);
             }
@@ -210,7 +210,7 @@ int main(int argc, char* argv[]) {
             long long int imm1 = imm_12_10_5(imm);
             int imm2 = imm_4_1_11(imm);
             if (debug) {
-                sprintf(str, "0x%08X | %07lld %05d %05d %03d %05d %07d", addr, imm1, rs2, rs1, F3_BLT, imm2, OP_BLT);
+                sprintf(str, "%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, rs2, rs1, F3_BLT, imm2, OP_BLT);
             } else {
                 sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_BLT, imm2, OP_BLT);
             }
@@ -238,7 +238,7 @@ int main(int argc, char* argv[]) {
             // imm[4:1|11]
             int imm2 = imm_4_1_11(imm);
             if (debug) {
-                sprintf(str, "0x%08X | %07lld %05d %05d %03d %05d %07d", addr, imm1, rs2, rs1, F3_BGE, imm2, OP_BGE);
+                sprintf(str, "%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, rs2, rs1, F3_BGE, imm2, OP_BGE);
             } else {
                 sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_BGE, imm2, OP_BGE);
             }
@@ -266,7 +266,7 @@ int main(int argc, char* argv[]) {
             // imm[4:1|11]
             int imm2 = imm_4_1_11(imm);
             if (debug) {
-                sprintf(str, "0x%08X | %07lld %05d %05d %03d %05d %07d", addr, imm1, rs2, rs1, F3_BLT, imm2, OP_BLT);
+                sprintf(str, "%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, rs2, rs1, F3_BLT, imm2, OP_BLT);
             } else {
                 sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_BLT, imm2, OP_BLT);
             }
@@ -278,7 +278,7 @@ int main(int argc, char* argv[]) {
             long long int imm = imm_11_0(r1);
             int rs1 = reg(r2);
             if (debug) {
-                sprintf(str, "0x%08X | %012lld %05d %03d %05d %07d", addr, imm, rs1, F3_LW, rd, OP_LW);
+                sprintf(str, "%08X %s %012lld %05d %03d %05d %07d", addr, opcode, imm, rs1, F3_LW, rd, OP_LW);
             } else {
                 sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_LW, rd, OP_LW);
             }
@@ -291,7 +291,7 @@ int main(int argc, char* argv[]) {
             int imm2 = imm_4_0(r1);
             int rs1 = reg(r2);
             if (debug) {
-                sprintf(str, "0x%08X | %07lld %05d %05d %03d %05d %07d", addr, imm1, rs2, rs1, F3_SW, imm2, OP_SW);
+                sprintf(str, "%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, rs2, rs1, F3_SW, imm2, OP_SW);
             } else {
                 sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_SW, imm2, OP_SW);
             }
@@ -303,7 +303,7 @@ int main(int argc, char* argv[]) {
             int rs1 = reg(r1);
             long long int imm = imm_11_0(r2);
             if (debug) {
-                sprintf(str, "0x%08X | %012lld %05d %03d %05d %07d", addr, imm, rs1, F3_JALR, rd, OP_JALR);
+                sprintf(str, "%08X %s %012lld %05d %03d %05d %07d", addr, opcode, imm, rs1, F3_JALR, rd, OP_JALR);
             } else {
                 sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_JALR, rd, OP_JALR);
             }
@@ -333,7 +333,7 @@ int main(int argc, char* argv[]) {
             // imm[20,10:1,11,19:12]
             long long int imm = imm_20_10_1_11_19_12(jmp_addr - addr);
             if (debug) {
-                sprintf(str, "0x%08X | %020llu %05d %07d", addr, imm, rd, OP_JAL);
+                sprintf(str, "%08X %s %020llu %05d %07d", addr, opcode, imm, rd, OP_JAL);
             } else {
                 sprintf(str, "%020llu%05d%07d", imm, rd, OP_JAL);
             }

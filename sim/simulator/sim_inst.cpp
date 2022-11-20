@@ -28,9 +28,9 @@ int main(int argc, char* argv[]) {
     }
 
     // オプション一覧
-    bool debug_to_file = atoi(argv[2]); // デバッグ内容をファイルに出力するか
+    bool debug_to_file = atoi(argv[2]); // デバッグ内容をファイルに出力するか->不要。後で消す
     bool use_cache = atoi(argv[3]);     // キャッシュを使うか
-    bool step_by_step = atoi(argv[4]);  // 1命令ずつ実行するか 
+    bool step_by_step = atoi(argv[4]);  // 1命令ずつ実行するか
 
     Cache cache;
     Memory memory;          // data memory
@@ -107,6 +107,7 @@ int main(int argc, char* argv[]) {
     int first_ra = 1025;
     int pre_ra = 0;
     int pre_pc = 0;
+    long long unsigned inst_count = 0;
     // int is_first_jal = 0;
     while (1) {
         strcpy(r0, "\0");
@@ -326,7 +327,6 @@ int main(int argc, char* argv[]) {
             if (rd != 0) {
                 reg[rd] = pre_pc + 4;
             }
-            
         }
         // jal rd, label
         else if (strncmp(opcode, "jal", 3) == 0) {
@@ -385,6 +385,8 @@ int main(int argc, char* argv[]) {
             scanf("%c", &enter);
         }
 
+        inst_count++;
+
         if (pre_pc == first_ra) {
             break;
         }
@@ -398,6 +400,7 @@ int main(int argc, char* argv[]) {
     if (use_cache) {
         cache.print_stat();
     }
+    printf("inst_count: %lld\n", inst_count);
 
     return 0;
 }

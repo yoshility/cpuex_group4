@@ -17,14 +17,8 @@ long long int imm_11_0(char* imm) {
     return binary;
 }
 
-int main() {
-    char a[10];
-    scanf("%s", a);
-    if (strncmp(a, "%r0", 3) == 0) {
-        printf("ok!\n");
-    } else {
-        printf("NG!\n");
-    }
-    printf("%s\n", a);
+int main(int argc, char* argv[]) {
+    int debug = (argv[1] == NULL) ? 0 : 1;
+    printf("debug: %d\n", debug);
 	return 0;
 }
