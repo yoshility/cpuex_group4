@@ -210,7 +210,8 @@ let regenv = M.add x reg_cl M.empty in
         let fr = fregs.(d) in
         (d + 1,
          farg_regs @ [fr],
-         (assert (not (is_reg z));
+          (
+            (* print_endline z;assert (not (is_reg z)); *)
           M.add z fr regenv)))
       (0, [], regenv)
       zs in
