@@ -1,2 +1,0 @@
-simm.cmi : \
-    asm.cmi

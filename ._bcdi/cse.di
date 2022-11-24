@@ -1,2 +1,0 @@
-cse.cmi : \
-    kNormal.cmi

@@ -24,34 +24,77 @@ let rec deref_typ = function (* 型変数を中身でおきかえる関数 (caml2html: typing_
       t'
   | t -> t
 let rec deref_id_typ (x, t) = (x, deref_typ t)
-let rec deref_term = function
-  | Not(e,p) -> Not(deref_term e,p)
-  | Neg(e,p) -> Neg(deref_term e,p)
-  | Add(e1, e2,p) -> Add(deref_term e1, deref_term e2,p)
-  | Sub(e1, e2,p) -> Sub(deref_term e1, deref_term e2,p)
-  | Eq(e1, e2,p) -> Eq(deref_term e1, deref_term e2,p)
-  | LE(e1, e2,p) -> LE(deref_term e1, deref_term e2,p)
-  | FNeg(e,p) -> FNeg(deref_term e,p)
-  | FAdd(e1, e2,p) -> FAdd(deref_term e1, deref_term e2,p)
-  | FSub(e1, e2,p) -> FSub(deref_term e1, deref_term e2,p)
-  | FMul(e1, e2,p) -> FMul(deref_term e1, deref_term e2,p)
-  | FDiv(e1, e2,p) -> FDiv(deref_term e1, deref_term e2,p)
-  | If(e1, e2, e3,p) -> If(deref_term e1, deref_term e2, deref_term e3,p)
-  | Let(xt, e1, e2,p) -> Let(deref_id_typ xt, deref_term e1, deref_term e2,p)
+let rec deref_term env = function
+  | Not(e,p) -> Not(deref_term env e,p)
+  | Neg(e,p) -> Neg(deref_term env e,p)
+  | Add(e1, e2,p) -> 
+    ( try (
+        unify Type.Int (g env e1);
+        unify Type.Int (g env e2);
+        Add(deref_term env e1, deref_term env e2,p)
+        )
+  with Unify(_) -> 
+    unify Type.Float (g env e1);
+    unify Type.Float (g env e2);
+    FAdd(deref_term env e1, deref_term env e2,p)
+        )
+    
+  | Sub(e1, e2,p) -> 
+    ( try (
+        unify Type.Int (g env e1);
+        unify Type.Int (g env e2);
+        Sub(deref_term env e1, deref_term env e2,p)
+        )
+  with Unify(_) -> 
+    unify Type.Float (g env e1);
+    unify Type.Float (g env e2);
+    FSub(deref_term env e1, deref_term env e2,p)
+        )
+  | Mul(e1, e2,p) ->
+    ( try (
+        unify Type.Int (g env e1);
+        unify Type.Int (g env e2);
+        Mul(deref_term env e1, deref_term env e2,p)
+        )
+  with Unify(_) -> 
+    unify Type.Float (g env e1);
+    unify Type.Float (g env e2);
+    FMul(deref_term env e1, deref_term env e2,p)
+        )
+  | Div(e1, e2,p) ->
+    ( try (
+        unify Type.Int (g env e1);
+        unify Type.Int (g env e2);
+        Div(deref_term env e1, deref_term env e2,p)
+        )
+  with Unify(_) -> 
+    unify Type.Float (g env e1);
+    unify Type.Float (g env e2);
+    FDiv(deref_term env e1, deref_term env e2,p)
+        )
+  | Eq(e1, e2,p) -> Eq(deref_term env e1, deref_term env e2,p)
+  | LE(e1, e2,p) -> LE(deref_term env e1, deref_term env e2,p)
+  | FNeg(e,p) -> FNeg(deref_term env e,p)
+  | FAdd(e1, e2,p) -> FAdd(deref_term env e1, deref_term env e2,p)
+  | FSub(e1, e2,p) -> FSub(deref_term env e1, deref_term env e2,p)
+  | FMul(e1, e2,p) -> FMul(deref_term env e1, deref_term env e2,p)
+  | FDiv(e1, e2,p) -> FDiv(deref_term env e1, deref_term env e2,p)
+  | If(e1, e2, e3,p) -> If(deref_term env e1, deref_term env e2, deref_term env e3,p)
+  | Let(xt, e1, e2,p) -> Let(deref_id_typ xt, deref_term env e1, deref_term (M.add (fst xt) (snd xt) env) e2,p)
   | LetRec({ name = xt; args = yts; body = e1 }, e2,p) ->
       LetRec({ name = deref_id_typ xt;
                args = List.map deref_id_typ yts;
-               body = deref_term e1 },
-             deref_term e2,p)
-  | App(e, es,p) -> App(deref_term e, List.map deref_term es,p)
-  | Tuple(es,p) -> Tuple(List.map deref_term es,p)
-  | LetTuple(xts, e1, e2,p) -> LetTuple(List.map deref_id_typ xts, deref_term e1, deref_term e2,p)
-  | Array(e1, e2,p) -> Array(deref_term e1, deref_term e2,p)
-  | Get(e1, e2,p) -> Get(deref_term e1, deref_term e2,p)
-  | Put(e1, e2, e3,p) -> Put(deref_term e1, deref_term e2, deref_term e3,p)
+               body = deref_term (M.add_list yts env) e1 },
+               deref_term (M.add (fst xt) (snd xt) env) e2,p)
+  | App(e, es,p) -> App(deref_term env e, List.map (deref_term env) es,p)
+  | Tuple(es,p) -> Tuple(List.map (deref_term env) es,p)
+  | LetTuple(xts, e1, e2,p) -> LetTuple(List.map deref_id_typ xts, deref_term env e1, deref_term (M.add_list xts env)e2,p)
+  | Array(e1, e2,p) -> Array(deref_term env e1, deref_term env e2,p)
+  | Get(e1, e2,p) -> Get(deref_term env e1, deref_term env e2,p)
+  | Put(e1, e2, e3,p) -> Put(deref_term env e1, deref_term env e2, deref_term env e3,p)
   | e -> e
-
-let rec occur r1 = function (* occur check (caml2html: typing_occur) *)
+and 
+occur r1 = function (* occur check (caml2html: typing_occur) *)
   | Type.Fun(t2s, t2) -> List.exists (occur r1) t2s || occur r1 t2
   | Type.Tuple(t2s) -> List.exists (occur r1) t2s
   | Type.Array(t2) -> occur r1 t2
@@ -59,8 +102,8 @@ let rec occur r1 = function (* occur check (caml2html: typing_occur) *)
   | Type.Var({ contents = None }) -> false
   | Type.Var({ contents = Some(t2) }) -> occur r1 t2
   | _ -> false
-
-let rec unify t1 t2 = (* 型が合うように、型変数への代入をする (caml2html: typing_unify) *)
+and
+unify t1 t2 = (* 型が合うように、型変数への代入をする (caml2html: typing_unify) *)
   match t1, t2 with
   | Type.Unit, Type.Unit | Type.Bool, Type.Bool | Type.Int, Type.Int | Type.Float, Type.Float -> ()
   | Type.Fun(t1s, t1'), Type.Fun(t2s, t2') ->
@@ -81,8 +124,8 @@ let rec unify t1 t2 = (* 型が合うように、型変数への代入をする (caml2html: typing
       if occur r2 t1 then raise (Unify(t1, t2));
       r2 := Some(t1)
   | _, _ -> raise (Unify(t1, t2))
-
-let rec g env e = (* 型推論ルーチン (caml2html: typing_g) *)
+and
+g env e = (* 型推論ルーチン (caml2html: typing_g) *)
   try
     match e with
     | Unit _ -> Type.Unit
@@ -96,9 +139,16 @@ let rec g env e = (* 型推論ルーチン (caml2html: typing_g) *)
         unify Type.Int (g env e);
         Type.Int
     | Add(e1, e2,_) | Sub(e1, e2,_) | Mul(e1, e2,_) | Div(e1, e2,_)-> (* 足し算（と引き算）の型推論 (caml2html: typing_add) *)
+       ( try (
         unify Type.Int (g env e1);
         unify Type.Int (g env e2);
         Type.Int
+        )
+    with Unify(_) ->(
+        unify Type.Float (g env e1);
+        unify Type.Float (g env e2);
+        Type.Float
+    ))
     | FNeg(e,_) ->
         unify Type.Float (g env e);
         Type.Float
@@ -178,7 +228,7 @@ let rec g env e = (* 型推論ルーチン (caml2html: typing_g) *)
   | Get (_, _,p)-> Printf.fprintf stdout "line %d\n" p.pos_lnum
   | Put (_, _, _,p)-> Printf.fprintf stdout "line %d\n" p.pos_lnum
   );
-  raise (Error(deref_term e, deref_typ t1, deref_typ t2))
+  raise (Error(deref_term env e, deref_typ t1, deref_typ t2))
 
 let f e =
   extenv := M.empty;
@@ -192,5 +242,5 @@ if !typing then
   (g M.empty e)
   with Unify _ ->  print_endline "top level does not have type unit");
   extenv := M.map deref_typ !extenv;
-  deref_term e)
+  deref_term M.empty e)
 else e

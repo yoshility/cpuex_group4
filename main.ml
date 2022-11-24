@@ -15,18 +15,20 @@ let lexbuf outchan  before_flatten after_flatten out_before_tse out_parsed l =(*
   print_endline "solve start";
   let parsed_solved = Solve_partial.f parsed in
   print_endline "solved";
+  let typed = Typing.f parsed_solved in
   let normalized = try (
     KNormal.f(
-      Typing.f parsed_solved
+      typed
       ) )
    with Not_found ->failwith "knormal"  in
-  Syntax.print_t out_parsed parsed_solved;(*中間結果の出力。課題１。*)
+  Syntax.print_t out_parsed typed;(*中間結果の出力。課題１。*)
+  Syntax.print_t out_before_tse parsed_solved;
   (* KNormal.print_t out_before_cse normalized;
   let cse = Cse.cse normalized in(*共通部分式削除。課題２。*)
   KNormal.print_t out_after_cse cse; *)
   let cls = Closure.f normalized  in
   Closure.print_prog before_flatten cls;
-  Closure.print_prog out_before_tse cls;
+  (* Closure.print_prog out_before_tse cls; *)
   (*tupleの平坦化、4.2,3*)
   let cls2 = Flatten_tuple.f cls in
   Closure.print_prog after_flatten cls2;
@@ -51,8 +53,8 @@ let file f = (* ファイルをコンパイルしてファイルに出力する 
   let outchan = open_out (f ^ ".s") in
   let closure_before = open_out (f ^ ".before_flatten") in
   let closure_after = open_out (f ^ ".after_flatten") in
-  let out_before_tse = open_out (f ^ ".before_TACE") in
-  let out_parsed = open_out (f ^ ".parsed") in
+  let out_before_tse = open_out (f ^ ".parsed") in
+  let out_parsed = open_out (f ^ ".typed") in
   let buf =Lexing.from_channel inchan in
   try
     lexbuf outchan closure_before closure_after out_before_tse out_parsed buf;
