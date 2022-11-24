@@ -6,6 +6,9 @@
 
 char* eliminate_comma_and_comment(char*);
 char* eliminate_colon(char*);
-int reg_num(char*);
-long long int to_binary(int, int);
 void print_reg(int*);
+void print_freg(float*);
+int reg_num(char*);
+int freg_num(char*);
+long long int to_binary(int, int);
+float sign(float);
