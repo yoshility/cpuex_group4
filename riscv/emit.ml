@@ -189,13 +189,13 @@ match (tail,exp) with
       g'_args oc [(x, reg_cl)] ys zs;
       let ss = stacksize () in
       (* Printf.fprintf oc "\tlw\t%s, 0(%s)\n" reg_sw reg_cl; *)
-      Printf.fprintf oc "\taddi\tsp, sp, -8\n" ;
-      Printf.fprintf oc "\tsw\tra, 4(sp)\n" ;
+      Printf.fprintf oc "\taddi\tsp, sp, -16\n" ;
+      Printf.fprintf oc "\tsw\tra, 8(sp)\n" ;
       Printf.fprintf oc "\tsw\ts0, 0(sp)\n" ;
       Printf.fprintf oc "\tjalr\tra, %s, 0\n" reg_sw;
-      Printf.fprintf oc "\tlw\tra, 4(sp)\n" ;
+      Printf.fprintf oc "\tlw\tra, 8(sp)\n" ;
       Printf.fprintf oc "\tlw\ts0, 0(sp)\n" ;
-      Printf.fprintf oc "\taddi\tsp, sp, 8\n" ;
+      Printf.fprintf oc "\taddi\tsp, sp, 16\n" ;
       if List.mem a allregs && a <> regs.(0) then
         Printf.fprintf oc "\taddi\t%s, %s, 0\n" a regs.(0)
       else if List.mem a allfregs && a <> fregs.(0) then
@@ -208,13 +208,13 @@ match (tail,exp) with
       (* Printf.fprintf oc "\tsw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp; *)
       Printf.fprintf oc "\t#\t%s\n"  x;
       (* Printf.fprintf oc "\taddi\tra, %s, 0\n" reg_sw;call ?? *)
-      Printf.fprintf oc "\taddi\tsp, sp, -8\n" ;
-      Printf.fprintf oc "\tsw\tra, 4(sp)\n" ;
+      Printf.fprintf oc "\taddi\tsp, sp, -16\n" ;
+      Printf.fprintf oc "\tsw\tra, 8(sp)\n" ;
       Printf.fprintf oc "\tsw\ts0, 0(sp)\n" ;
       Printf.fprintf oc "\tjal\tra, %s\n" x;(*call ??*)
-      Printf.fprintf oc "\tlw\tra, 4(sp)\n" ;
+      Printf.fprintf oc "\tlw\tra, 8(sp)\n" ;
       Printf.fprintf oc "\tlw\ts0, 0(sp)\n" ;
-      Printf.fprintf oc "\taddi\tsp, sp, 8\n" ;
+      Printf.fprintf oc "\taddi\tsp, sp, 16\n" ;
       (* Printf.fprintf oc "\taddi\t%s, %s, %d\t# delay slot\n" reg_sp reg_sp ss ;
       Printf.fprintf oc "\taddi\t%s, %s, -%d\n" reg_sp reg_sp ss;
       Printf.fprintf oc "\tlw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp; *)
