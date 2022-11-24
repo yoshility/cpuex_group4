@@ -38,6 +38,8 @@ let addtyp x = (x, Type.gentyp ())
 %token LPAREN
 %token RPAREN
 %token EOF
+%token FUN
+%token RIGHTARROW
 
 /* (* 優先順位とassociativityの定義（低い方から高い方へ） (caml2html: parser_prior) *) */
 %nonassoc IN
@@ -127,6 +129,10 @@ exp: /* (* 一般の式 (caml2html: parser_exp) *) */
 | LET REC fundef IN exp
     %prec prec_let
     { LetRec($3, $5,Parsing.symbol_start_pos()) }
+| FUN  formal_args RIGHTARROW exp
+// (*課題6 lambda*)
+    %prec prec_let
+    { LetRec({name = addtyp (Id.genid2 "f"); args = $2; body = $4}, Var((Id.genid "f"),Parsing.symbol_start_pos()),Parsing.symbol_start_pos()) }
 | simple_exp actual_args
     %prec prec_app
     { App($1, $2,Parsing.symbol_start_pos()) }
@@ -142,6 +148,9 @@ exp: /* (* 一般の式 (caml2html: parser_exp) *) */
 | ARRAY_CREATE simple_exp simple_exp
     %prec prec_app
     { Array($2, $3,Parsing.symbol_start_pos()) }
+| LET IDENT EQUAL exp IN exp
+    %prec prec_let
+    { Let(addtyp $2, $4, $6,Parsing.symbol_start_pos()) }    
 | error //エラー発生時の処理を変更。課題１。
     { Printf.fprintf stdout "line %d\n" (Parsing.symbol_start_pos()).pos_lnum;
     failwith
@@ -153,7 +162,6 @@ exp: /* (* 一般の式 (caml2html: parser_exp) *) */
 fundef:
 | IDENT formal_args EQUAL exp
     { { name = addtyp $1; args = $2; body = $4 } }
-
 formal_args:
 | IDENT formal_args
     { addtyp $1 :: $2 }

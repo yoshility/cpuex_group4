@@ -73,6 +73,8 @@ rule token = parse
     { IN }
 | "rec"
     { REC }
+| "fun"
+    { FUN }
 | ','
     { COMMA }
 | '_'
@@ -83,6 +85,8 @@ rule token = parse
     { DOT }
 | "<-"
     { LESS_MINUS }
+| "->"
+    { RIGHTARROW }
 | ';'
     { SEMICOLON }
 | eof

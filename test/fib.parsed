@@ -18,7 +18,5 @@ LetRec
                  Var n
                  2
       App
-         Var print_int
-         App
-            Var fib
-            30
+         Var fib
+         10

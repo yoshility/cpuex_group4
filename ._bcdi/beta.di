@@ -1,0 +1,2 @@
+beta.cmi : \
+    kNormal.cmi

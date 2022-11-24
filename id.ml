@@ -10,6 +10,10 @@ let genid s =
   incr counter;
   Printf.sprintf "%s.%d" s !counter
 
+let genid2 s =
+  Printf.sprintf "%s.%d" s !counter
+(* counterをincrementしないで前と同じcounterを使う *)
+
 let rec id_of_typ = function
   | Type.Unit -> "u"
   | Type.Bool -> "b"

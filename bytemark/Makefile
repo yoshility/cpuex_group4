@@ -1,1 +1,1 @@
-riscv/Makefile
+x86/Makefile

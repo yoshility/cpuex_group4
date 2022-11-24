@@ -8,12 +8,19 @@ let rec iter n e = (* 最適化処理をくりかえす (caml2html: main_iter) *
   if e = e' then e else
   iter (n - 1) e'
 
-let lexbuf outchan  before_flatten after_flatten out_before_tse out_after_tse l =(* バッファをコンパイルしてチャンネルへ出力する (caml2html: main_lexbuf) *)
+let lexbuf outchan  before_flatten after_flatten out_before_tse out_parsed l =(* バッファをコンパイルしてチャンネルへ出力する (caml2html: main_lexbuf) *)
   Id.counter := 0;
   Typing.extenv := M.empty;
   let parsed = Parser.exp Lexer.token l in
-  let normalized = try (KNormal.f(Typing.f parsed) ) with Not_found ->failwith "knormal"  in
-  (* Syntax.print_t out_parsed parsed;中間結果の出力。課題１。 *)
+  print_endline "solve start";
+  let parsed_solved = Solve_partial.f parsed in
+  print_endline "solved";
+  let normalized = try (
+    KNormal.f(
+      Typing.f parsed_solved
+      ) )
+   with Not_found ->failwith "knormal"  in
+  Syntax.print_t out_parsed parsed_solved;(*中間結果の出力。課題１。*)
   (* KNormal.print_t out_before_cse normalized;
   let cse = Cse.cse normalized in(*共通部分式削除。課題２。*)
   KNormal.print_t out_after_cse cse; *)
@@ -23,7 +30,7 @@ let lexbuf outchan  before_flatten after_flatten out_before_tse out_after_tse l 
   (*tupleの平坦化、4.2,3*)
   let cls2 = Flatten_tuple.f cls in
   Closure.print_prog after_flatten cls2;
-  Closure.print_prog out_after_tse cls2;
+  (* Closure.print_prog out_after_tse cls2; *)
   Emit.f outchan
     (RegAlloc.f
        (Simm.f
@@ -45,10 +52,10 @@ let file f = (* ファイルをコンパイルしてファイルに出力する 
   let closure_before = open_out (f ^ ".before_flatten") in
   let closure_after = open_out (f ^ ".after_flatten") in
   let out_before_tse = open_out (f ^ ".before_TACE") in
-  let out_after_tse = open_out (f ^ ".after_TACE") in
+  let out_parsed = open_out (f ^ ".parsed") in
   let buf =Lexing.from_channel inchan in
   try
-    lexbuf outchan closure_before closure_after out_before_tse out_after_tse buf;
+    lexbuf outchan closure_before closure_after out_before_tse out_parsed buf;
     close_in inchan;
     close_out outchan;
   with 

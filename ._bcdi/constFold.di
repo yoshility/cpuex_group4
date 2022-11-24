@@ -1,0 +1,2 @@
+constFold.cmi : \
+    kNormal.cmi

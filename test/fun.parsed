@@ -1,0 +1,47 @@
+Let
+   a
+   type Var type Array type Int
+   Array
+        2
+        1
+   Let
+      Tu3
+      type Unit
+      Put
+         Var a
+         1
+         3
+      Let
+         x
+         type Var type Int
+         Get
+            Var a
+            0
+         Let
+            y
+            type Var type Int
+            Get
+               Var a
+               1
+            Let
+               z
+               type Var type Int
+               App
+                  LetRec
+                        f.1:type Var type Fun:type Int,type Int,->type Int
+                        args:s:type Var type Int, t:type Var type Int, 
+                        Add
+                           Var s
+                           Var t
+                        Var f.1
+                  Var x
+                  Var y
+               Let
+                  Tu2
+                  type Unit
+                  App
+                     Var print_int
+                     Var z
+                  App
+                     Var print_newline
+                     Unit

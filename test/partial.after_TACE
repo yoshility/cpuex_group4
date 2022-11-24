@@ -1,0 +1,53 @@
+Let
+   a type Array type Int
+   Let
+      Ti4 type Int
+      2
+      Let
+         Ti5 type Int
+         1
+         AppDir
+               Label: min_caml_create_array Ti4,Ti5,
+   Let
+      Tu2 type Unit
+      Let
+         Ti6 type Int
+         1
+         Let
+            Ti7 type Int
+            3
+            Put
+               a               Ti6               Ti7
+      Let
+         x type Int
+         Let
+            Ti8 type Int
+            0
+            Get
+               a               Ti8
+         Let
+            y type Int
+            Let
+               Ti9 type Int
+               1
+               Get
+                  a                  Ti9
+            Let
+               g type Fun:type Int,->type Int
+               MakeCls
+                      f.3: type Fun:type Int,->type IntLabel:f.3
+                      x, 
+                      
+               Let
+                  Tu1 type Unit
+                  Let
+                     Ti10 type Int
+                     AppCls
+                           g y,
+                     AppDir
+                           Label: min_caml_print_int Ti10,
+                  Let
+                     Tu11 type Unit
+                     Unit
+                     AppDir
+                           Label: min_caml_print_newline Tu11,
