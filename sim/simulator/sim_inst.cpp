@@ -13,22 +13,14 @@ float freg[32] = {0.0};     // float register
 char rom[256][30];          // instr memory
 
 int main(int argc, char* argv[]) {
-    FILE *in, *out_code, *out_debug;
+    FILE *in;
     if ((in = fopen(argv[1], "r")) == NULL) {
         printf("[in] cannot open file\n");
         exit(1);
     }
-    if ((out_code = fopen("../test/result_code.txt", "w")) == NULL) {
-        printf("[out_code] cannot open file\n");
-        exit(1);
-    }
-    if ((out_debug = fopen("../test/result_debug.txt", "w")) == NULL) {
-        printf("[out_debug] cannot open file\n");
-        exit(1);
-    }
 
     // options
-    bool debug_to_file = atoi(argv[2]);
+    bool debug = atoi(argv[2]);
     bool use_cache = atoi(argv[3]);
     bool step_by_step = atoi(argv[4]);
 
@@ -63,20 +55,22 @@ int main(int argc, char* argv[]) {
 
         // ラベル
         if (opcode[strlen(opcode)-1] == ':') {
-            // 配列のaddr番目にラベル名を保管
+            // 配列のaddr番目にラベル名を保管（少し無駄）
             strcpy(label[addr], opcode);
-            // 命令アドレスも一緒に出力(ラベル自体をメモリに保管する必要はない)
-            // fprintf(out_code, "%02d %s\n", addr, opcode);
-            printf("0x%08X %s\n", addr, opcode);
+            // 命令アドレスも一緒に出力(ラベル自体を命令メモリに保管する必要はない)
+            if (debug) {
+                printf("0x%08X %s\n", addr, opcode);
+            }
             // ラベルがmin_caml_startなら、このときのaddrをpcの初期値にする
             if (strncmp(opcode, global_func, strlen(global_func)) == 0) {
                 pc = addr;
-                printf("first pc: %d\n", pc);
-            } 
+                printf("initial pc: %d\n", pc);
+            }
+            // ignore
             addr -= 4;
             continue;
         }
-        // 指令 .global
+        // アセンブラ指令 .global
         else if (strncmp(opcode, ".global", 7) == 0) {
             strncpy(global_func, r0, strlen(r0)); // global_func <= "min_caml_start"
             // ignore
@@ -91,8 +85,9 @@ int main(int argc, char* argv[]) {
         }
 
         // 命令アドレスも一緒に出力
-        // fprintf(out_code, "%02d\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
-        printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+        if (debug) {
+            printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+        }
 
         // 命令メモリのaddr番目に命令列を保管（addrは真のアドレス）
         sprintf(str, "%s %s %s %s", opcode, r0, r1, r2);
@@ -102,14 +97,20 @@ int main(int argc, char* argv[]) {
     fclose(in);
 
     // あとは命令メモリを逐次実行
-    reg[2] = MEMORY_SIZE; // sp = MEMORY_SIZE?
     reg[1] = 1025;
+    reg[2] = MEMORY_SIZE; // sp = MEMORY_SIZE? -> depend to input
     int sw_count = 0;
     int first_ra = 1025;
     int pre_ra = 0;
     int pre_pc = 0;
-    long long unsigned inst_count = 0;
+    bool pre_inst_is_lw = 0;    // 前の命令がlwかどうか
+    bool pre_inst_is_flw = 0;   // 前の命令がflwかどうか
+    int pre_lw_rd = 0;          // 前の命令のlwのディスティネーションレジスタ番号
+    int pre_flw_rd = 0;         // 前の命令のflwのディスティネーションレジスタ番号
+    unsigned long long inst_count = 0;
+    unsigned long long clk = 4;
     // int is_first_jal = 0;
+    printf("Processing...\n");
     while (1) {
         if (pc == 1025) { // 大元のra
             break;
@@ -118,9 +119,7 @@ int main(int argc, char* argv[]) {
         strcpy(r1, "\0");
         strcpy(r2, "\0"); 
         sscanf(rom[pc], "%s%s%s%s", opcode, r0, r1, r2);
-        if (debug_to_file) {
-            fprintf(out_debug, "####[pc: 0x%08X | %s %s %s %s]##############################################################################\n", pc, opcode, r0, r1, r2);
-        } else {
+        if (debug) {
             printf("####[pc: 0x%08X | %s %s %s %s]##############################################################################\n", pc, opcode, r0, r1, r2);
         }
         // pc = pc + 1;
@@ -139,6 +138,13 @@ int main(int argc, char* argv[]) {
             int imm = atoi(r2);
             reg[rd] = reg[rs1] + imm;
             pc = pc + 4;
+            // data hazard by lw
+            if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) { // x0のときstallするかどうか:coreにたしかめ
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
         }
         // li
         // else if (strncmp(opcode, "li", 2) == 0) {
@@ -154,6 +160,12 @@ int main(int argc, char* argv[]) {
             int rs2 = reg_num(r2);
             reg[rd] = reg[rs1] + reg[rs2];
             pc = pc + 4;
+            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
         }
         // mv
         // else if (strncmp(opcode, "mv", 2) == 0) {
@@ -169,6 +181,12 @@ int main(int argc, char* argv[]) {
             int rs2 = reg_num(r2);
             reg[rd] = reg[rs1] - reg[rs2];
             pc = pc + 4;
+            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
         }
         // mul rd, rs1, rs2
         else if (strncmp(opcode, "mul", 3) == 0) {
@@ -177,6 +195,68 @@ int main(int argc, char* argv[]) {
             int rs2 = reg_num(r2);
             reg[rd] = reg[rs1] * reg[rs2];
             pc = pc + 4;
+            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
+        }
+        // div rd, rs1, rs2
+        else if (strncmp(opcode, "div", 3) == 0) {
+            int rd = reg_num(r0);
+            int rs1 = reg_num(r1);
+            int rs2 = reg_num(r2);
+            reg[rd] = reg[rs1] / reg[rs2];
+            pc = pc + 4;
+            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
+        }
+        // and rd, rs1, rs2
+        else if (strncmp(opcode, "and", 3) == 0) {
+            int rd = reg_num(r0);
+            int rs1 = reg_num(r1);
+            int rs2 = reg_num(r2);
+            reg[rd] = reg[rs1] & reg[rs2];
+            pc = pc + 4;
+            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
+        }
+        // or rd, rs1, rs2
+        else if (strncmp(opcode, "or", 2) == 0) {
+            int rd = reg_num(r0);
+            int rs1 = reg_num(r1);
+            int rs2 = reg_num(r2);
+            reg[rd] = reg[rs1] | reg[rs2];
+            pc = pc + 4;
+            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
+        }
+        // slt rd, rs1, rs2
+        else if (strncmp(opcode, "slt", 3) == 0) {
+            int rd = reg_num(r0);
+            int rs1 = reg_num(r1);
+            int rs2 = reg_num(r2);
+            reg[rd] = (reg[rs1] < reg[rs2]);
+            pc = pc + 4;
+            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
         }
         // lui rd, upimm
         else if (strncmp(opcode, "lui", 3) == 0) {
@@ -184,6 +264,7 @@ int main(int argc, char* argv[]) {
             int upimm = atoi(r1);
             reg[rd] = upimm << 12;
             pc = pc + 4;
+            clk++;
         }
         // beq rs1, rs2, label
         else if (strncmp(opcode, "beq", 3) == 0) {
@@ -202,6 +283,12 @@ int main(int argc, char* argv[]) {
             } else {
                 pc = pc + 4;
             }
+            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
         }
         // blt rs1, rs2, label
         else if (strncmp(opcode, "blt", 3) == 0) {
@@ -217,13 +304,17 @@ int main(int argc, char* argv[]) {
             }
             if (reg[rs1] < reg[rs2]) {
                 pc = jmp_addr;
-                if (debug_to_file) {
-                    fprintf(out_debug, "\t[blt] jmp_addr: %d\n", jmp_addr);
-                } else {
-                    printf("\t[blt] jmp_addr: %d\n", jmp_addr);
+                if (debug) {
+                    printf("\t[blt] jump to: %d\n", jmp_addr);
                 }
             } else {
                 pc = pc + 4;
+            }
+            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
             }
         }
         // lw rd, imm(rs1)
@@ -240,11 +331,15 @@ int main(int argc, char* argv[]) {
                 cache.accessed_times++;
                 if (tag == cache.tags[index]) {
                     cache.hit_times++;
-                    printf("\t[lw]  Hit!\n");
+                    if (debug) {
+                        printf("\t[lw]  Hit!\n");
+                    }
                     reg[rd] = cache.d[index*16+offset].i;
                 } else {
                     cache.miss_times++;
-                    printf("\t[lw] Miss!\n");
+                    if (debug) {
+                        printf("\t[lw] Miss!\n");
+                    }
                     // if dirty, write back
                     if (cache.status[index] == DIRTY) {
                         for (int i=0; i<16; i+=4) {
@@ -265,6 +360,13 @@ int main(int argc, char* argv[]) {
                 reg[rd] = memory.d[reg[rs1]+imm].i;
             }
             pc = pc + 4;
+            if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+                clk += 2;
+            } else {
+                clk++;
+            }
+            pre_inst_is_lw = 1;
+            pre_lw_rd = rd;
         }
         // sw rs2, imm(rs1)
         else if (strncmp(opcode, "sw", 2) == 0) {
@@ -274,7 +376,6 @@ int main(int argc, char* argv[]) {
             // use cache
             if (use_cache) {
                 unsigned int data_addr = reg[rs1] + imm;
-                printf("\tsw address = %d\n", data_addr);
                 unsigned int index = (data_addr >> 4) & 0b11;
                 int tag = data_addr >> 6;
                 unsigned int offset = data_addr & 0xf;
@@ -282,12 +383,16 @@ int main(int argc, char* argv[]) {
                 sw_count++;
                 if (tag == cache.tags[index]) {
                     cache.hit_times++;
-                    printf("\t[sw]  Hit!\n");
+                    if (debug) {
+                        printf("\t[sw]  Hit!\n");
+                    }
                     cache.d[index*16+offset].i = reg[rs2];
                     cache.status[index] = DIRTY;
                 } else {
                     cache.miss_times++;
-                    printf("\t[sw] Miss!\n");
+                    if (debug) {
+                        printf("\t[sw] Miss!\n");
+                    }
                     // if dirty, write back
                     if (cache.status[index] == DIRTY) {
                         for (int i=0; i<16; i+=4) {
@@ -308,6 +413,12 @@ int main(int argc, char* argv[]) {
                 memory.d[reg[rs1]+imm].i = reg[rs2];
             }
             pc = pc + 4;
+            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
         }
         // fadd fd, fs1, fs2
         else if (strncmp(opcode, "fadd", 4) == 0) {
@@ -316,6 +427,12 @@ int main(int argc, char* argv[]) {
             int fs2 = freg_num(r2);
             freg[fd] = freg[fs1] + freg[fs2];
             pc = pc + 4;
+            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
         }
         // fsub fd, fs1, fs2
         else if (strncmp(opcode, "fsub", 4) == 0) {
@@ -324,6 +441,12 @@ int main(int argc, char* argv[]) {
             int fs2 = freg_num(r2);
             freg[fd] = freg[fs1] - freg[fs2];
             pc = pc + 4;
+            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
         }
         // fmul fd, fs1, fs2
         else if (strncmp(opcode, "fmul", 4) == 0) {
@@ -332,6 +455,12 @@ int main(int argc, char* argv[]) {
             int fs2 = freg_num(r2);
             freg[fd] = freg[fs1] * freg[fs2];
             pc = pc + 4;
+            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
         }
         // fdiv fd, fs1, fs2
         else if (strncmp(opcode, "fdiv", 4) == 0) {
@@ -340,6 +469,12 @@ int main(int argc, char* argv[]) {
             int fs2 = freg_num(r2);
             freg[fd] = freg[fs1] / freg[fs2];
             pc = pc + 4;
+            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
         }
         // flw fd, imm(rs1)
         else if (strncmp(opcode, "flw", 3) == 0) {
@@ -348,18 +483,22 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r2);
             // use cache
             if (use_cache) {
-                uint32_t data_addr = reg[rs1] + imm;
-                uint32_t index = (data_addr >> 4) & 0b11;
-                int32_t tag = data_addr >> 6;
-                uint32_t offset = data_addr & 0xf;
+                unsigned int data_addr = reg[rs1] + imm;
+                unsigned int index = (data_addr >> 4) & 0b11;
+                int tag = data_addr >> 6;
+                unsigned int offset = data_addr & 0xf;
                 cache.accessed_times++;
                 if (tag == cache.tags[index]) {
                     cache.hit_times++;
-                    printf("\t[flw] Hit!\n");
+                    if (debug) {
+                        printf("\t[flw] Hit!\n");
+                    }
                     freg[fd] = cache.d[index*16+offset].f;
                 } else {
                     cache.miss_times++;
-                    printf("\t[flw] Miss!\n");
+                    if (debug) {
+                        printf("\t[flw] Miss!\n");
+                    }
                     // if dirty, write back
                     if (cache.status[index] == DIRTY) {
                         for (int i=0; i<16; i+=4) {
@@ -380,28 +519,39 @@ int main(int argc, char* argv[]) {
                 freg[fd] = memory.d[reg[rs1]+imm].f;
             }
             pc = pc + 4;
+            if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
+            pre_inst_is_flw = 1;
+            pre_flw_rd = fd;
         }
         // fsw fs2, imm(rs1)
         else if (strncmp(opcode, "fsw", 3) == 0) {
-            int32_t fs2 = freg_num(r0);
-            int32_t imm = atoi(r1);
-            int32_t rs1 = reg_num(r2);
+            int fs2 = freg_num(r0);
+            int imm = atoi(r1);
+            int rs1 = reg_num(r2);
             // use cache
             if (use_cache) {
-                uint32_t data_addr = reg[rs1] + imm;
-                printf("\tfsw address = %d\n", data_addr);
-                uint32_t index = (data_addr >> 4) & 0b11;
-                int32_t tag = data_addr >> 6;
-                uint32_t offset = data_addr & 0xf;
+                unsigned int data_addr = reg[rs1] + imm;
+                unsigned int index = (data_addr >> 4) & 0b11;
+                int tag = data_addr >> 6;
+                unsigned int offset = data_addr & 0xf;
                 cache.accessed_times++;
                 if (tag == cache.tags[index]) {
                     cache.hit_times++;
-                    printf("\t[fsw] Hit!\n");
+                    if (debug) {
+                        printf("\t[fsw] Hit!\n");
+                    }
                     cache.d[index*16+offset].f = freg[fs2];
                     cache.status[index] = DIRTY;
                 } else {
                     cache.miss_times++;
-                    printf("\t[fsw] Miss!\n");
+                    if (debug) {
+                        printf("\t[fsw] Miss!\n");
+                    }
                     // if dirty, write back
                     if (cache.status[index] == DIRTY) {
                         for (int i=0; i<16; i+=4) {
@@ -422,6 +572,13 @@ int main(int argc, char* argv[]) {
                 memory.d[reg[rs1]+imm].f = freg[fs2];
             }
             pc = pc + 4;
+            if ((pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) || (pre_inst_is_flw && (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
         }
         // fsqrt fd, fs1
         else if (strncmp(opcode, "fsqrt", 5) == 0) {
@@ -429,6 +586,13 @@ int main(int argc, char* argv[]) {
             int fs1 = freg_num(r1);
             freg[fd] = sqrt(freg[fs1]);
             pc = pc + 4;
+            if (pre_inst_is_flw && (fs1==pre_flw_rd)) {
+                clk += 2;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
+            // fsqrt自体のストールは？
         }
         // fsgnjn fd, fs1, fs2
         else if (strncmp(opcode, "fsgnjn", 6) == 0) {
@@ -437,6 +601,12 @@ int main(int argc, char* argv[]) {
             int fs2 = freg_num(r2);
             freg[fd] = fabs(freg[fs1]) * (-sign(freg[fs2]));
             pc = pc + 4;
+            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
         }
         // fsgnjx fd, fs1, fs2
         else if (strncmp(opcode, "fsgnjn", 6) == 0) {
@@ -445,6 +615,12 @@ int main(int argc, char* argv[]) {
             int fs2 = freg_num(r2);
             freg[fd] = freg[fs1] * sign(freg[fs2]);
             pc = pc + 4;
+            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
         }
         // fsgnj fd, fs1, fs2
         else if (strncmp(opcode, "fsgnj", 5) == 0) {
@@ -453,6 +629,12 @@ int main(int argc, char* argv[]) {
             int fs2 = freg_num(r2);
             freg[fd] = fabs(freg[fs1]) * sign(freg[fs2]);
             pc = pc + 4;
+            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
         }
         // fcvtsw fd, rs1
         else if (strncmp(opcode, "fcvtsw", 6) == 0) {
@@ -465,7 +647,7 @@ int main(int argc, char* argv[]) {
         else if (strncmp(opcode, "fcvtws", 6) == 0) {
             int rd = reg_num(r0);
             int fs1 = freg_num(r1);
-            reg[rd] = (int32_t)round(freg[fs1]); // 最近傍
+            reg[rd] = (int)round(freg[fs1]); // 最近傍
             pc = pc + 4;
         }
         // feq rd, fs1, fs2
@@ -475,6 +657,12 @@ int main(int argc, char* argv[]) {
             int fs2 = freg_num(r2);
             reg[rd] = (freg[fs1] == freg[fs2]);
             pc = pc + 4;
+            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            } // is feq stall 0 clk?
         }
         // flt rd, fs1, fs2
         else if (strncmp(opcode, "flt", 3) == 0) {
@@ -483,6 +671,12 @@ int main(int argc, char* argv[]) {
             int fs2 = freg_num(r2);
             reg[rd] = (freg[fs1] < freg[fs2]);
             pc = pc + 4;
+            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
         }
         // fle rd, fs1, fs2
         else if (strncmp(opcode, "fle", 3) == 0) {
@@ -491,6 +685,12 @@ int main(int argc, char* argv[]) {
             int fs2 = freg_num(r2);
             reg[rd] = (freg[fs1] <= freg[fs2]);
             pc = pc + 4;
+            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
         }
         // jalr rd, rs1, imm
         else if (strncmp(opcode, "jalr", 4) == 0) {
@@ -500,6 +700,12 @@ int main(int argc, char* argv[]) {
             pc = reg[rs1] + imm;
             if (rd != 0) {
                 reg[rd] = pre_pc + 4;
+            }
+            if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
             }
         }
         // jal rd, label
@@ -540,13 +746,19 @@ int main(int argc, char* argv[]) {
         if (pre_ra == 0 && reg[1] != 0) {
             first_ra = reg[1];
         }
-        printf("\tfirst_ra = 0x%X\n", first_ra);
+        if (debug) {
+            printf("\tfirst_ra = 0x%X\n", first_ra);
+        }
 
         // print integer register
-        print_reg(reg);
+        if (debug) {
+            print_reg(reg);
+        }
 
         // print float register
-        print_freg(freg);
+        if (debug) {
+            print_freg(freg);
+        }
 
         // print memory
         // if (use_cache) {
@@ -554,7 +766,7 @@ int main(int argc, char* argv[]) {
         // } else {
         //     memory.print(1024, 992);
         // }
-        if (!use_cache) {
+        if (debug && !use_cache) {
             memory.print(1024, 992);
         }
 
@@ -570,15 +782,16 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    fclose(out_code);
-    fclose(out_debug);
-
     printf("Finished!\n");
-    printf("ft0 = %f\n", freg[0]);
-    if (use_cache) {
+    if (!debug) {
+        print_reg(reg);
+        print_freg(freg);
+    }
+    if (debug && use_cache) {
         cache.print_stat();
     }
     printf("inst_count: %lld\n", inst_count);
+    printf("clk: %lld\n", clk);
 
     return 0;
 }
