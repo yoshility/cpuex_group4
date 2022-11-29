@@ -28,7 +28,8 @@ let rec deref_term env = function
   | Not(e,p) -> Not(deref_term env e,p)
   | Neg(e,p) -> Neg(deref_term env e,p)
   | Add(e1, e2,p) -> 
-    ( try (
+    ( 
+    try (
         unify Type.Int (g env e1);
         unify Type.Int (g env e2);
         Add(deref_term env e1, deref_term env e2,p)
@@ -115,8 +116,20 @@ unify t1 t2 = (* 型が合うように、型変数への代入をする (caml2html: typing_unify) 
       with Invalid_argument(_) -> raise (Unify(t1, t2)))
   | Type.Array(t1), Type.Array(t2) -> unify t1 t2
   | Type.Var(r1), Type.Var(r2) when r1 == r2 -> ()
-  | Type.Var({ contents = Some(t1') }), _ -> unify t1' t2
-  | _, Type.Var({ contents = Some(t2') }) -> unify t1 t2'
+  | Type.Var({ contents = Some(t1') } as r), _ ->
+   (try (unify t1' t2) 
+with (Unify(_)) as e  ->
+    (match t1', t2 with
+    | Type.Int, Type.Float -> r := Some(Type.Float)
+    | Type.Float, Type.Int -> r := Some(Type.Int)
+    | _ -> raise e ))
+  | _, Type.Var({ contents = Some(t2') }as r) -> 
+    (try unify t1 t2'
+  with (Unify(_)) as e  ->
+    (match t1, t2' with
+    | Type.Int, Type.Float -> r := Some(Type.Float)
+    | Type.Float, Type.Int -> r := Some(Type.Int)
+    | _ -> raise e ))
   | Type.Var({ contents = None } as r1), _ -> (* 一方が未定義の型変数の場合 (caml2html: typing_undef) *)
       if occur r1 t2 then raise (Unify(t1, t2));
       r1 := Some(t2)

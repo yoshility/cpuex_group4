@@ -110,21 +110,53 @@ let rec g env = function (* K正規化ルーチン本体 (caml2html: knormal_g) *)
       insert_let (g env e)
         (fun x -> (Neg(x),p), Type.Int)
   | Syntax.Add(e1, e2,p) -> (* 足し算のK正規化 (caml2html: knormal_add) *)
-      insert_let (g env e1)
+  let (a,t) = g env e1 in
+  (match t with
+  | Type.Int -> 
+      insert_let (a,t)
         (fun x -> insert_let (g env e2)
             (fun y -> (Add(x, y),p), Type.Int))
+  | Type.Float ->
+    insert_let (a,t)
+        (fun x -> insert_let (g env e2)
+            (fun y -> (FAdd(x, y),p), Type.Float))
+  | _ -> assert false)
   | Syntax.Sub(e1, e2,p) ->
-      insert_let (g env e1)
-        (fun x -> insert_let (g env e2)
-            (fun y -> (Sub(x, y),p), Type.Int))
+    let (a,t) = g env e1 in
+    (match t with
+    | Type.Int -> 
+        insert_let (a,t)
+          (fun x -> insert_let (g env e2)
+              (fun y -> (Sub(x, y),p), Type.Int))
+    | Type.Float ->
+      insert_let (a,t)
+          (fun x -> insert_let (g env e2)
+              (fun y -> (FSub(x, y),p), Type.Float))
+    | _ -> assert false)
   | Syntax.Mul(e1, e2,p) ->
-      insert_let (g env e1)
-        (fun x -> insert_let (g env e2)
-            (fun y -> (Mul(x, y),p), Type.Int))
+    let (a,t) = g env e1 in
+    (match t with
+    | Type.Int -> 
+        insert_let (a,t)
+          (fun x -> insert_let (g env e2)
+              (fun y -> (Mul(x, y),p), Type.Int))
+    | Type.Float ->
+      insert_let (a,t)
+          (fun x -> insert_let (g env e2)
+              (fun y -> (FMul(x, y),p), Type.Float))
+    | _ -> assert false)
 | Syntax.Div(e1, e2,p) ->
-      insert_let (g env e1)
+  let (a,t) = g env e1 in
+  (match t with
+  | Type.Int -> 
+      insert_let (a,t)
         (fun x -> insert_let (g env e2)
-            (fun y -> (Div(x, y),p), Type.Int))  
+            (fun y -> (Div(x, y),p), Type.Int))
+  | Type.Float ->
+    insert_let (a,t)
+        (fun x -> insert_let (g env e2)
+            (fun y -> (FDiv(x, y),p), Type.Float))
+  | _ -> assert false)
 | Syntax.FNeg(e,p) ->
       insert_let (g env e)
         (fun x -> (FNeg(x),p), Type.Float)
@@ -175,7 +207,11 @@ let rec g env = function (* K正規化ルーチン本体 (caml2html: knormal_g) *)
       let env' = M.add x t env in
       let e2', t2 = g env' e2 in
       let e1', t1 = g (M.add_list yts env') e1 in
-      (LetRec({ name = (x, t); args = yts; body = e1' }, e2'),p), t2
+      (match t with 
+      |Type.Fun(l,_) ->
+        let tt = Type.Fun(l,t1) in
+      (LetRec({ name = (x, tt); args = yts; body = e1' }, e2'),p), t2
+      | _ -> assert false)
   | Syntax.App(Syntax.Var(f,_), e2s,p) when not (M.mem f env) -> (* 外部関数の呼び出し (caml2html: knormal_extfunapp) *)
       (match M.find f !Typing.extenv with
       | Type.Fun(_, t) ->

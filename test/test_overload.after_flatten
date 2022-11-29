@@ -1,0 +1,24 @@
+Let
+   Ti6 type Int
+   Let
+      Td5 type Float
+      Let
+         Ti3 type Int
+         Let
+            Td1 type Float
+            1.5
+            Let
+               Td2 type Float
+               8.5
+               AppDir
+                     Label: add Td1,Td2,
+         Let
+            Td4 type Float
+            5.
+            FMul
+                Ti3
+                Td4
+      AppDir
+            Label: min_caml_int_of_float Td5,
+   AppDir
+         Label: min_caml_print_int Ti6,

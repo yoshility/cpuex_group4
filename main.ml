@@ -12,9 +12,7 @@ let lexbuf outchan  before_flatten after_flatten out_before_tse out_parsed l =(*
   Id.counter := 0;
   Typing.extenv := M.empty;
   let parsed = Parser.exp Lexer.token l in
-  print_endline "solve start";
   let parsed_solved = Solve_partial.f parsed in
-  print_endline "solved";
   let typed = Typing.f parsed_solved in
   let normalized = try (
     KNormal.f(

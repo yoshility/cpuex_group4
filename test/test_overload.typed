@@ -1,0 +1,16 @@
+LetRec
+      add:type Fun:type Float,type Float,->type Int
+      args:a:type Float, b:type Float, 
+      Add
+         Var a
+         Var b
+      App
+         Var print_int
+         App
+            Var int_of_float
+            FMul
+                App
+                   Var add
+                   1.5
+                   8.5
+                5.

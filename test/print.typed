@@ -1,0 +1,17 @@
+Let
+   Tu2
+   type Unit
+   App
+      Var print_int
+      123
+   Let
+      Tu1
+      type Unit
+      App
+         Var print_int
+         Neg 456
+      App
+         Var print_int
+         Add
+            789
+            0
