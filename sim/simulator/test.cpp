@@ -37,9 +37,15 @@ class CLK {
         }
 };
 
+union data {
+    int32_t i;
+    float f;
+};
+
 int main() {
-    int a = atoi("C");
-    printf("a: %d\n", a);
+    int a = 5;
+    double b = 2.0;
+    printf("%f\n", a / b);
 	return 0;
 }
 
