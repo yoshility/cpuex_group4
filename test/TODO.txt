@@ -3,3 +3,6 @@
 - IO周りの確認
 - test scriptを通す
 - 特に小数点に注意
+- label と即値
+- a0にクロージャのメモリ番地を入れる
+- make closure

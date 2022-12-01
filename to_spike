@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+ln -sf spike/{*.ml{,i},libmincaml.S} .
+cd test; ln -sf spike/{,too}manyargs.ml .; cd ..
+cd shootout; ln -sf spike/Makefile .; cd ..
+cd bytemark; ln -sf spike/Makefile .; cd ..
+cd min-rt; ln -sf spike/globals.s .; cd ..

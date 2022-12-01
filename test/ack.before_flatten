@@ -1,12 +1,8 @@
 Let
-   Ti3 type Int
+   Ti1 type Int
+   2
    Let
-      Ti1 type Int
-      3
-      Let
-         Ti2 type Int
-         10
-         AppDir
-               Label: ack Ti1,Ti2,
-   AppDir
-         Label: min_caml_print_int Ti3,
+      Ti2 type Int
+      4
+      AppDir
+            Label: ack Ti1,Ti2,

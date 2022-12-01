@@ -1,6 +1,6 @@
 LetRec
-      ack:type Var type Fun:type Int,type Int,->type Int
-      args:x:type Var type Int, y:type Var type Int, 
+      ack:type Fun:type Int,type Int,->type Int
+      args:x:type Int, y:type Int, 
       IF
         LE
           Var x

@@ -34,7 +34,7 @@ min_caml_read_int:
 
 .global min_caml_read_float
 min_caml_read_float:
-	flw	 fa0, 0(inp)
+	lw	 fa0, 0(inp)
 	jalr x0, ra, 0
 	addi x0, x0, 0
 .global min_caml_int_of_float

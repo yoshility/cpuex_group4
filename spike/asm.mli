@@ -61,7 +61,3 @@ val concat : t -> Id.t * Type.t -> t -> t
 
 val align : int -> int
 val get_position : t -> KNormal.p
-val pc : int ref
-val print_asm : out_channel -> ('a, out_channel, unit) format-> 'a
-val getaddress : string -> int
-val setaddress : string -> int -> unit

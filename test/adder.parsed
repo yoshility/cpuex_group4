@@ -9,9 +9,7 @@ LetRec
                Var y
             Var adder
       App
-         Var print_int
          App
-            App
-               Var make_adder
-               3
-            7
+            Var make_adder
+            3
+         7

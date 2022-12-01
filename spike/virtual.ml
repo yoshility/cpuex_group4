@@ -75,25 +75,21 @@ match e with
       (match M.find x env with
       | Type.Unit -> Ans((Nop,p))
       | Type.Float -> Ans((FMovD(x),p))
-      (* | Type.Fun(_) -> (try (let address = getaddress x in  Ans(Mov(x), p)) with |Not_found -> Ans((Mov(x),p))) *)
-      | Type.Fun(_) -> Ans((Mov(reg_cl), p))
-
       | _ -> Ans((Mov(x),p)))
   | Closure.MakeCls((x, t), { Closure.entry = l; Closure.actual_fv = ys }, e2) -> (* クロージャの生成 (caml2html: virtual_makecls) *)
       (* Closureのアドレスをセットしてから、自由変数の値をストア *)
-      Type.print_t stdout t;Printf.printf "%s Closure type!!!!!!!!!!!!!\n" x;
       let e2' = g (M.add x t env) e2 in
       let offset, store_fv =
         expand
           (List.map (fun y -> (y, M.find y env)) ys)
           (4, e2')
-          (fun y offset store_fv -> seq((StDF(y, reg_cl, offset),p), store_fv))
-          (fun y _ offset store_fv -> seq(((St(y, reg_cl, offset),p)), store_fv)) in
-      Let((reg_cl, t), (Mov(reg_hp),p),(*ここだ*)
+          (fun y offset store_fv -> seq((StDF(y, x, offset),p), store_fv))
+          (fun y _ offset store_fv -> seq(((St(y, x, offset),p)), store_fv)) in
+      Let((x, t), (Mov(reg_hp),p),
           Let((reg_hp, Type.Int), (Add(reg_hp, C(align offset)),p),
               let z = Id.genid "l" in
               Let((z, Type.Int), (SetL(l), p),
-                  seq((St(z, reg_cl, 0),p),
+                  seq((St(z, x, 0),p),
                       store_fv))))
   | Closure.AppCls(x, ys) ->
       let (int, float) = separate (List.map (fun y -> (y, M.find y env)) ys) in
@@ -168,11 +164,11 @@ let h { Closure.name = (Id.L(x), t); Closure.args = yts; Closure.formal_fv = zts
     expand
       zts
       (4, g (M.add x t (M.add_list yts (M.add_list zts M.empty))) e)
-      (fun z offset load -> fletd(z, (LdDF(reg_cl, offset),p), load))
-      (fun z t offset load -> Let((z, t), (Ld(reg_cl, offset),p), load)) in
+      (fun z offset load -> fletd(z, (LdDF(x, offset),p), load))
+      (fun z t offset load -> Let((z, t), (Ld(x, offset),p), load)) in
   match t with
   | Type.Fun(_, t2) ->
-      { name = Id.L(x); args = int; fargs = float; body = Let((reg_cl, t), (SetL(L(x)),p), load); ret = t2 }
+      { name = Id.L(x); args = int; fargs = float; body = load; ret = t2 }
   | _ -> assert false
 
 (* プログラム全体の仮想マシンコード生成 (caml2html: virtual_f) *)

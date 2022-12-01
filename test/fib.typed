@@ -1,0 +1,22 @@
+LetRec
+      fib:type Fun:type Int,->type Int
+      args:n:type Int, 
+      IF
+        LE
+          Var n
+          1
+        Var n
+        Add
+           App
+              Var fib
+              Sub
+                 Var n
+                 1
+           App
+              Var fib
+              Sub
+                 Var n
+                 2
+      App
+         Var fib
+         10

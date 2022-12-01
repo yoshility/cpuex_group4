@@ -1,10 +1,4 @@
 (* SPARC assembly with a few virtual instructions *)
-let pc = ref 0
-let print_asm  oc s = pc := !pc + 1 ; Printf.fprintf oc s
-let  addresses = ref M.empty
-let getaddress s = Printf.printf "%s:%d\n" s  (M.find s !addresses)  ;M.find s !addresses 
-let setaddress s  d = addresses := (M.add s d (!addresses))
-
 
 type id_or_imm = V of Id.t | C of int
 type t = (* Ì¿Îá¤ÎÎó (caml2html: sparcasm_t) *)
@@ -53,14 +47,13 @@ let seq(e1, e2) = Let((Id.gentmp Type.Unit, Type.Unit), e1, e2)
 
 let regs = (* Array.init 16 (fun i -> Printf.sprintf "%%r%d" i) *)
   [| "a0"; "a1"; "a2"; "a3"; "a4"; "a5"; "a6"; "a7";
-  (* [| "a2"; "a3"; "a4"; "a5"; "a6"; "a7"; *)
   "t0"; "t1"; "t2"; "t3"; "t4"; "t5"; "t6"; 
   |]
 let fregs = 
   (* Array.init 31 (fun i -> Printf.sprintf "f%d" (i * 2)) *)
   [| "fa0"; "fa1"; "fa2"; "fa3"; "fa4"; "fa5"; "fa6"; "fa7"; 
   "ft0"; "ft1"; "ft2"; "ft3"; "ft4"; "ft5"; "ft6"; "ft7"; "ft8"; "ft9"; "ft10"; "ft11"; 
-  "fs0"; "fs1"; "fs2"; "fs3"; "fs4"; "fs5"; "fs6"; "fs7"; "fs8"; "fs9"; "fs10"; 
+  "fs0"; "fs1"; "fs2"; "fs3"; "fs4"; "fs5"; "fs6"; "fs7"; "fs8"; "fs9"; "fs10"; "fs11"; 
   |]
 let allregs = Array.to_list regs
 let allfregs = Array.to_list fregs
