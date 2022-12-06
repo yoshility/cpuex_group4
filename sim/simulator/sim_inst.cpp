@@ -10,22 +10,35 @@ using namespace std;
 
 int reg[32] = {0};          // integer register
 float freg[32] = {0.0};     // float register
-char rom[256][30];          // instr memory
+char inst_memory[2048][30];  // instr memory
 
 int main(int argc, char* argv[]) {
-    FILE *in;
+    FILE *in, *in_sld, *out_ppm;
+    // assembly
     if ((in = fopen(argv[1], "r")) == NULL) {
         printf("[in] cannot open file\n");
         exit(1);
     }
+    // sld
+    if ((in_sld = fopen(argv[2], "r")) == NULL) {
+        printf("[in] cannot open file\n");
+        exit(1);
+    }
+    // ppm
+    if ((out_ppm = fopen(argv[3], "wb")) == NULL) {
+        printf("[out] cannot open file\n");
+        exit(1);
+    }
 
     // options
-    bool debug = atoi(argv[2]);
-    bool use_cache = atoi(argv[3]);
-    bool step_by_step = atoi(argv[4]);
+    bool debug = atoi(argv[4]);
+    bool use_cache = atoi(argv[5]);
+    bool step_by_step = atoi(argv[6]);
 
-    Cache cache;
-    Memory memory;
+    Memory memory;         // data memory
+    Cache cache(2, 6);           // data cache
+
+    // Cache inst_cache;           // inst cache
 
     char line[BUFSIZE];
     char opcode[30];
@@ -36,7 +49,7 @@ int main(int argc, char* argv[]) {
     char* inst_cleaned;
 
     char str[150];
-    char global_func[25];   // min_caml_start
+    char global_func[25];       // min_caml_start
     strcpy(global_func, "hoge");
 
     // 1回目の読みでラベルを探して全命令を命令メモリに格納
@@ -89,19 +102,16 @@ int main(int argc, char* argv[]) {
             printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
         }
 
-        // 命令メモリのaddr番目に命令列を保管（addrは真のアドレス）
+        // 命令メモリのaddr/4番目に命令列を保管（addrは真のアドレス）
         sprintf(str, "%s %s %s %s", opcode, r0, r1, r2);
-        strcpy(rom[addr], str);
+        strcpy(inst_memory[addr/4], str);
     }
 
     fclose(in);
 
     // あとは命令メモリを逐次実行
-    reg[1] = 1025;
-    reg[2] = MEMORY_SIZE; // sp = MEMORY_SIZE? -> depend to input
-    int sw_count = 0;
-    int first_ra = 1025;
-    int pre_ra = 0;
+    reg[1] = 1025;              // first ra = 1025
+    reg[2] = MEMORY_SIZE;       // sp = MEMORY_SIZE?
     int pre_pc = 0;
     bool pre_inst_is_lw = 0;    // 前の命令がlwかどうか
     bool pre_inst_is_flw = 0;   // 前の命令がflwかどうか
@@ -109,7 +119,6 @@ int main(int argc, char* argv[]) {
     int pre_flw_rd = 0;         // 前の命令のflwのディスティネーションレジスタ番号
     unsigned long long inst_count = 0;
     unsigned long long clk = 4;
-    // int is_first_jal = 0;
     printf("Processing...\n");
     while (1) {
         if (pc == 1025) { // 大元のra
@@ -118,15 +127,18 @@ int main(int argc, char* argv[]) {
         strcpy(r0, "\0");
         strcpy(r1, "\0");
         strcpy(r2, "\0"); 
-        sscanf(rom[pc], "%s%s%s%s", opcode, r0, r1, r2);
+        sscanf(inst_memory[pc/4], "%s%s%s%s", opcode, r0, r1, r2);
+
+        // 命令キャッシュ更新
+        
+
         if (debug) {
             printf("####[pc: 0x%08X | %s %s %s %s]##############################################################################\n", pc, opcode, r0, r1, r2);
         }
-        // pc = pc + 1;
-        // rom中にラベルはないので、ラベル避けの作業は不要
+        // inst_memory中にラベルはないので、ラベル避けの作業は不要
 
         // 書き変わる前のraを保持
-        pre_ra = reg[1];
+        // pre_ra = reg[1];
 
         // 書き変わる前のpcを保持
         pre_pc = pc;
@@ -317,108 +329,130 @@ int main(int argc, char* argv[]) {
                 clk++;
             }
         }
-        // lw rd, imm(rs1)
+        // lw rd, imm(rs1) (input=s11/x27)
         else if (strncmp(opcode, "lw", 2) == 0) {
             int rd = reg_num(r0);
             int imm = atoi(r1);
             int rs1 = reg_num(r2);
-            // use cache
-            if (use_cache) {
-                unsigned int data_addr = reg[rs1] + imm;
-                unsigned int index = (data_addr >> 4) & 0b11;
-                int tag = data_addr >> 6;
-                unsigned int offset = data_addr & 0xf;
-                cache.accessed_times++;
-                if (tag == cache.tags[index]) {
-                    cache.hit_times++;
-                    if (debug) {
-                        printf("\t[lw]  Hit!\n");
-                    }
-                    reg[rd] = cache.d[index*16+offset].i;
+            printf("\tlw address: %d\n", reg[rs1]+imm);
+            printf("\tM[%d]: %d\n", reg[rs1]+imm, memory.d[reg[rs1]+imm].i);
+            // input
+            if (rs1 == 27) {
+                char i[10];
+                if ((fscanf(in_sld, "%s", i)) != EOF) {
+                    reg[rd] = atoi(i);
                 } else {
-                    cache.miss_times++;
-                    if (debug) {
-                        printf("\t[lw] Miss!\n");
-                    }
-                    // if dirty, write back
-                    if (cache.status[index] == DIRTY) {
-                        for (int i=0; i<16; i+=4) {
-                            memory.d[(cache.tags[index]<<6) + (index<<4) + i] = cache.d[index*16+i];
-                        }
-                    }
-                    // take data
-                    cache.tags[index] = tag;
-                    for (int i=0; i<16; i+=4) {
-                        cache.d[index*16+i] = memory.d[(data_addr & 0xfffffff0) + i]; 
-                    }
-                    cache.status[index] = CLEAN;
-                    reg[rd] = cache.d[index*16+offset].i;
+                    perror("sld file is over!\n");
                 }
+                clk++;
+                pre_inst_is_lw = 0; // lw扱いにならない
             }
-            // no cache
+            // regular lw
             else {
-                reg[rd] = memory.d[reg[rs1]+imm].i;
+                // use cache
+                if (use_cache) {
+                    unsigned int data_addr = reg[rs1] + imm;
+                    unsigned int index = (data_addr >> OFFSET_WIDTH) & ((1<<INDEX_WIDTH)-1);
+                    int tag = data_addr >> (INDEX_WIDTH + OFFSET_WIDTH);
+                    unsigned int offset = data_addr & ((1<<OFFSET_WIDTH)-1);
+                    cache.accessed_times++;
+                    if (tag == cache.tags[index]) {
+                        cache.hit_times++;
+                        if (debug) {
+                            printf("\t[lw]  Hit!\n");
+                        }
+                        reg[rd] = cache.d[index][offset/4].i;
+                    } else {
+                        cache.miss_times++;
+                        if (debug) {
+                            printf("\t[lw] Miss!\n");
+                        }
+                        // if dirty, write back
+                        if (cache.status[index] == DIRTY) {
+                            for (int i=0; i<(1<<OFFSET_WIDTH); i+=4) {
+                                memory.d[((cache.tags[index]<<(INDEX_WIDTH+OFFSET_WIDTH)) + (index<<OFFSET_WIDTH) + i) / 4] = cache.d[index][i/4];
+                            }
+                        }
+                        // take data
+                        cache.tags[index] = tag;
+                        for (int i=0; i<(1<<OFFSET_WIDTH); i+=4) {
+                            cache.d[index][i/4] = memory.d[((data_addr & (((1<<(32-OFFSET_WIDTH))-1)<<OFFSET_WIDTH)) + i) / 4]; 
+                        }
+                        cache.status[index] = CLEAN;
+                        reg[rd] = cache.d[index][offset/4].i;
+                    }
+                }
+                // no cache
+                else {
+                    reg[rd] = memory.d[(reg[rs1]+imm)/4].i;
+                }
+                if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+                    clk += 2;
+                } else {
+                    clk++;
+                }
+                pre_inst_is_lw = 1;
+                pre_lw_rd = rd;
             }
             pc = pc + 4;
-            if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 1;
-            pre_lw_rd = rd;
         }
-        // sw rs2, imm(rs1)
+        // sw rs2, imm(rs1) (output=s11/x27)
         else if (strncmp(opcode, "sw", 2) == 0) {
             int rs2 = reg_num(r0);
             int imm = atoi(r1);
             int rs1 = reg_num(r2);
-            // use cache
-            if (use_cache) {
-                unsigned int data_addr = reg[rs1] + imm;
-                unsigned int index = (data_addr >> 4) & 0b11;
-                int tag = data_addr >> 6;
-                unsigned int offset = data_addr & 0xf;
-                cache.accessed_times++;
-                sw_count++;
-                if (tag == cache.tags[index]) {
-                    cache.hit_times++;
-                    if (debug) {
-                        printf("\t[sw]  Hit!\n");
-                    }
-                    cache.d[index*16+offset].i = reg[rs2];
-                    cache.status[index] = DIRTY;
-                } else {
-                    cache.miss_times++;
-                    if (debug) {
-                        printf("\t[sw] Miss!\n");
-                    }
-                    // if dirty, write back
-                    if (cache.status[index] == DIRTY) {
-                        for (int i=0; i<16; i+=4) {
-                            memory.d[(cache.tags[index]<<6) + (index<<4) + i] = cache.d[index*16+i];
+            // output
+            if (rs1 == 27) {
+                fprintf(out_ppm, "%d", reg[rs2]);
+            }
+            // regular sw
+            else {
+                // use cache
+                if (use_cache) {
+                    unsigned int data_addr = reg[rs1] + imm;
+                    unsigned int index = (data_addr >> OFFSET_WIDTH) & ((1<<INDEX_WIDTH)-1);
+                    int tag = data_addr >> (INDEX_WIDTH + OFFSET_WIDTH);
+                    unsigned int offset = data_addr & ((1<<OFFSET_WIDTH)-1);
+                    cache.accessed_times++;
+                    if (tag == cache.tags[index]) {
+                        cache.hit_times++;
+                        if (debug) {
+                            printf("\t[sw]  Hit!\n");
                         }
+                        cache.d[index][offset/4].i = reg[rs2];
+                        cache.status[index] = DIRTY;
+                    } else {
+                        cache.miss_times++;
+                        if (debug) {
+                            printf("\t[sw] Miss!\n");
+                        }
+                        // if dirty, write back
+                        if (cache.status[index] == DIRTY) {
+                            for (int i=0; i<(1<<OFFSET_WIDTH); i+=4) {
+                                memory.d[((cache.tags[index]<<(INDEX_WIDTH+OFFSET_WIDTH)) + (index<<OFFSET_WIDTH) + i) / 4] = cache.d[index][i/4];
+                            }
+                        }
+                        // take data
+                        cache.tags[index] = tag;
+                        for (int i=0; i<(1<<OFFSET_WIDTH); i+=4) {
+                            cache.d[index][i/4] = memory.d[((data_addr & (((1<<(32-OFFSET_WIDTH))-1)<<OFFSET_WIDTH)) + i) / 4]; 
+                        }
+                        cache.d[index][offset/4].i = reg[rs2];
+                        cache.status[index] = DIRTY;
                     }
-                    // take data
-                    cache.tags[index] = tag;
-                    for (int i=0; i<16; i+=4) {
-                        cache.d[index*16+i] = memory.d[(data_addr & 0xfffffff0)+i]; 
-                    }
-                    cache.d[index*16+offset].i = reg[rs2];
-                    cache.status[index] = DIRTY;
+                }
+                // no cache
+                else {
+                    memory.d[(reg[rs1]+imm)/4].i = reg[rs2];
+                }
+                if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                    clk += 2;
+                    pre_inst_is_lw = 0;
+                } else {
+                    clk++;
                 }
             }
-            // no cache
-            else {
-                memory.d[reg[rs1]+imm].i = reg[rs2];
-            }
             pc = pc + 4;
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-                pre_inst_is_lw = 0;
-            } else {
-                clk++;
-            }
         }
         // fadd fd, fs1, fs2
         else if (strncmp(opcode, "fadd", 4) == 0) {
@@ -477,109 +511,109 @@ int main(int argc, char* argv[]) {
             }
         }
         // flw fd, imm(rs1)
-        else if (strncmp(opcode, "flw", 3) == 0) {
-            int fd = freg_num(r0);
-            int imm = atoi(r1);
-            int rs1 = reg_num(r2);
-            // use cache
-            if (use_cache) {
-                unsigned int data_addr = reg[rs1] + imm;
-                unsigned int index = (data_addr >> 4) & 0b11;
-                int tag = data_addr >> 6;
-                unsigned int offset = data_addr & 0xf;
-                cache.accessed_times++;
-                if (tag == cache.tags[index]) {
-                    cache.hit_times++;
-                    if (debug) {
-                        printf("\t[flw] Hit!\n");
-                    }
-                    freg[fd] = cache.d[index*16+offset].f;
-                } else {
-                    cache.miss_times++;
-                    if (debug) {
-                        printf("\t[flw] Miss!\n");
-                    }
-                    // if dirty, write back
-                    if (cache.status[index] == DIRTY) {
-                        for (int i=0; i<16; i+=4) {
-                            memory.d[(cache.tags[index]<<6) + (index<<4) + i] = cache.d[index*16+i];
-                        }
-                    }
-                    // take data
-                    cache.tags[index] = tag;
-                    for (int i=0; i<16; i+=4) {
-                        cache.d[index*16+i] = memory.d[(data_addr & 0xfffffff0)+i];
-                    }
-                    cache.status[index] = CLEAN;
-                    freg[fd] = cache.d[index*16+offset].f;
-                }
-            }
-            // no cache
-            else {
-                freg[fd] = memory.d[reg[rs1]+imm].f;
-            }
-            pc = pc + 4;
-            if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
-                clk += 2;
-                pre_inst_is_lw = 0;
-            } else {
-                clk++;
-            }
-            pre_inst_is_flw = 1;
-            pre_flw_rd = fd;
-        }
+        // else if (strncmp(opcode, "flw", 3) == 0) {
+        //     int fd = freg_num(r0);
+        //     int imm = atoi(r1);
+        //     int rs1 = reg_num(r2);
+        //     // use cache
+        //     if (use_cache) {
+        //         unsigned int data_addr = reg[rs1] + imm;
+        //         unsigned int index = (data_addr >> 4) & 0b11;
+        //         int tag = data_addr >> 6;
+        //         unsigned int offset = data_addr & 0xf;
+        //         cache.accessed_times++;
+        //         if (tag == cache.tags[index]) {
+        //             cache.hit_times++;
+        //             if (debug) {
+        //                 printf("\t[flw] Hit!\n");
+        //             }
+        //             freg[fd] = cache.d[index*16+offset].f;
+        //         } else {
+        //             cache.miss_times++;
+        //             if (debug) {
+        //                 printf("\t[flw] Miss!\n");
+        //             }
+        //             // if dirty, write back
+        //             if (cache.status[index] == DIRTY) {
+        //                 for (int i=0; i<16; i+=4) {
+        //                     memory.d[(cache.tags[index]<<6) + (index<<4) + i] = cache.d[index*16+i];
+        //                 }
+        //             }
+        //             // take data
+        //             cache.tags[index] = tag;
+        //             for (int i=0; i<16; i+=4) {
+        //                 cache.d[index*16+i] = memory.d[(data_addr & 0xfffffff0)+i];
+        //             }
+        //             cache.status[index] = CLEAN;
+        //             freg[fd] = cache.d[index*16+offset].f;
+        //         }
+        //     }
+        //     // no cache
+        //     else {
+        //         freg[fd] = memory.d[reg[rs1]+imm].f;
+        //     }
+        //     pc = pc + 4;
+        //     if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+        //         clk += 2;
+        //         pre_inst_is_lw = 0;
+        //     } else {
+        //         clk++;
+        //     }
+        //     pre_inst_is_flw = 1;
+        //     pre_flw_rd = fd;
+        // }
         // fsw fs2, imm(rs1)
-        else if (strncmp(opcode, "fsw", 3) == 0) {
-            int fs2 = freg_num(r0);
-            int imm = atoi(r1);
-            int rs1 = reg_num(r2);
-            // use cache
-            if (use_cache) {
-                unsigned int data_addr = reg[rs1] + imm;
-                unsigned int index = (data_addr >> 4) & 0b11;
-                int tag = data_addr >> 6;
-                unsigned int offset = data_addr & 0xf;
-                cache.accessed_times++;
-                if (tag == cache.tags[index]) {
-                    cache.hit_times++;
-                    if (debug) {
-                        printf("\t[fsw] Hit!\n");
-                    }
-                    cache.d[index*16+offset].f = freg[fs2];
-                    cache.status[index] = DIRTY;
-                } else {
-                    cache.miss_times++;
-                    if (debug) {
-                        printf("\t[fsw] Miss!\n");
-                    }
-                    // if dirty, write back
-                    if (cache.status[index] == DIRTY) {
-                        for (int i=0; i<16; i+=4) {
-                            memory.d[(cache.tags[index]<<6) + (index<<4) + i] = cache.d[index*16+i];
-                        }
-                    }
-                    // take data
-                    cache.tags[index] = tag;
-                    for (int i=0; i<16; i+=4) {
-                        cache.d[index*16+i] = memory.d[(data_addr & 0xfffffff0)+i];
-                    }
-                    cache.d[index*16+offset].f = freg[fs2];
-                    cache.status[index] = DIRTY;
-                }
-            }
-            // no cache
-            else {
-                memory.d[reg[rs1]+imm].f = freg[fs2];
-            }
-            pc = pc + 4;
-            if ((pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) || (pre_inst_is_flw && (fs2==pre_flw_rd))) {
-                clk += 2;
-                pre_inst_is_lw = 0;
-                pre_inst_is_flw = 0;
-            } else {
-                clk++;
-            }
-        }
+        // else if (strncmp(opcode, "fsw", 3) == 0) {
+        //     int fs2 = freg_num(r0);
+        //     int imm = atoi(r1);
+        //     int rs1 = reg_num(r2);
+        //     // use cache
+        //     if (use_cache) {
+        //         unsigned int data_addr = reg[rs1] + imm;
+        //         unsigned int index = (data_addr >> 4) & 0b11;
+        //         int tag = data_addr >> 6;
+        //         unsigned int offset = data_addr & 0xf;
+        //         cache.accessed_times++;
+        //         if (tag == cache.tags[index]) {
+        //             cache.hit_times++;
+        //             if (debug) {
+        //                 printf("\t[fsw] Hit!\n");
+        //             }
+        //             cache.d[index*16+offset].f = freg[fs2];
+        //             cache.status[index] = DIRTY;
+        //         } else {
+        //             cache.miss_times++;
+        //             if (debug) {
+        //                 printf("\t[fsw] Miss!\n");
+        //             }
+        //             // if dirty, write back
+        //             if (cache.status[index] == DIRTY) {
+        //                 for (int i=0; i<16; i+=4) {
+        //                     memory.d[(cache.tags[index]<<6) + (index<<4) + i] = cache.d[index*16+i];
+        //                 }
+        //             }
+        //             // take data
+        //             cache.tags[index] = tag;
+        //             for (int i=0; i<16; i+=4) {
+        //                 cache.d[index*16+i] = memory.d[(data_addr & 0xfffffff0)+i];
+        //             }
+        //             cache.d[index*16+offset].f = freg[fs2];
+        //             cache.status[index] = DIRTY;
+        //         }
+        //     }
+        //     // no cache
+        //     else {
+        //         memory.d[reg[rs1]+imm].f = freg[fs2];
+        //     }
+        //     pc = pc + 4;
+        //     if ((pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) || (pre_inst_is_flw && (fs2==pre_flw_rd))) {
+        //         clk += 2;
+        //         pre_inst_is_lw = 0;
+        //         pre_inst_is_flw = 0;
+        //     } else {
+        //         clk++;
+        //     }
+        // }
         // fsqrt fd, fs1
         else if (strncmp(opcode, "fsqrt", 5) == 0) {
             int fd = freg_num(r0);
@@ -743,12 +777,12 @@ int main(int argc, char* argv[]) {
         // }
         
         // raが0から変わっていたら
-        if (pre_ra == 0 && reg[1] != 0) {
-            first_ra = reg[1];
-        }
-        if (debug) {
-            printf("\tfirst_ra = 0x%X\n", first_ra);
-        }
+        // if (pre_ra == 0 && reg[1] != 0) {
+        //     first_ra = reg[1];
+        // }
+        // if (debug) {
+        //     printf("\tfirst_ra = 0x%X\n", first_ra);
+        // }
 
         // print integer register
         if (debug) {
@@ -767,7 +801,7 @@ int main(int argc, char* argv[]) {
         //     memory.print(1024, 992);
         // }
         if (debug && !use_cache) {
-            memory.print(1024, 992);
+            memory.print(1024, 0);
         }
 
         if (step_by_step) {
@@ -777,7 +811,9 @@ int main(int argc, char* argv[]) {
 
         inst_count++;
 
-        if (pc == pre_pc) {
+        reg[0] = 0;
+
+        if (pc == pre_pc) { // ループするのはおかしい？
             break;
         }
     }
