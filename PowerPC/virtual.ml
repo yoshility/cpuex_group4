@@ -31,7 +31,8 @@ let expand xts ini addf addi =
     (fun (offset, acc) x t ->
       (offset + 4, addi x t offset acc))
 
-let rec g env = function (* 式の仮想マシンコード生成 (caml2html: virtual_g) *)
+let rec g env clp = match fst clp with
+ (* 式の仮想マシンコード生成 (caml2html: virtual_g) *)
   | Closure.Unit -> Ans(Nop)
   | Closure.Int(i) -> Ans(Li(i))
   | Closure.Float(d) ->
@@ -71,7 +72,7 @@ let rec g env = function (* 式の仮想マシンコード生成 (caml2html: virtual_g) *)
       (match M.find x env with
       | Type.Unit -> Ans(Nop)
       | Type.Float -> Ans(FMr(x))
-      | _ -> Ans(Mr(x)))
+      | _ -> seq(Comment("###Var:"^x),Ans(Mr(x))))
   | Closure.MakeCls((x, t), { Closure.entry = l; Closure.actual_fv = ys }, e2) -> (* クロージャの生成 (caml2html: virtual_makecls) *)
       (* Closureのアドレスをセットしてから、自由変数の値をストア *)
       let e2' = g (M.add x t env) e2 in

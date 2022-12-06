@@ -1,0 +1,39 @@
+.section	".rodata"
+.align	8
+.section	".text"
+adder.9:
+	addi	t5, x0, 4
+	addi	t6, t5, 0 # SETL
+	lw	a1, 4(t6)
+	add	a0, a1, a0
+	jalr	x0, ra, 0
+	addi	x0, x0, 0
+make_adder.4:
+	addi	t5, x0, 11
+	addi	t6, t5, 0 # SETL
+	addi	t6, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 4
+	addi	a1, t5, 0 # SETL
+	sw	a1,0(t6) # ST
+	sw	a0,4(t6) # ST
+	addi	a0, t6 0
+	jalr	x0, ra, 0
+	addi	x0, x0, 0
+.global	min_caml_start
+min_caml_start:
+	addi	a0, x0, 3
+	addi	sp, sp, -24
+	sw	t6, 16(sp)
+	sw	ra, 8(sp)
+	sw	fp, 0(sp)
+	jal	ra, make_adder.4
+	lw	t6, 16(sp)
+	lw	ra, 8(sp)
+	lw	fp, 0(sp)
+	addi	sp, sp, 24
+	addi	t6, a0, 0
+	addi	a0, x0, 7
+	lw	t5, 0(t6) # CallCls
+	jalr	x0, t5, 0 # CallCls
+	jalr	x0, ra, 0

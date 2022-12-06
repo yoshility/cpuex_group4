@@ -1,7 +1,11 @@
 (* SPARC assembly with a few virtual instructions *)
 let pc = ref 0
-let print_asm  oc s = pc := !pc + 1 ; Printf.fprintf oc s
+let heapaddress = ref 0
+let print_asm  oc s = pc := !pc + 4 ; Printf.fprintf oc s
+let  labelnum = ref M.empty
 let  addresses = ref M.empty
+let getlabelnum s = Printf.printf "%s:%d\n" s  ((M.find s !labelnum)) ;(M.find s !labelnum)
+let setlabelnum s  d = labelnum := (M.add s d (!labelnum))
 let getaddress s = Printf.printf "%s:%d\n" s  (M.find s !addresses)  ;M.find s !addresses 
 let setaddress s  d = addresses := (M.add s d (!addresses))
 
@@ -14,6 +18,7 @@ and exp' = (* 一つ一つの命令に対応する式 (caml2html: sparcasm_exp) *)
   | Nop(**)
   | Set of int
   | SetL of Id.l
+  | Address of Id.t
   | Mov of Id.t(**)
   | Neg of Id.t(**)
   | Add of Id.t * id_or_imm
@@ -54,7 +59,8 @@ let seq(e1, e2) = Let((Id.gentmp Type.Unit, Type.Unit), e1, e2)
 let regs = (* Array.init 16 (fun i -> Printf.sprintf "%%r%d" i) *)
   [| "a0"; "a1"; "a2"; "a3"; "a4"; "a5"; "a6"; "a7";
   (* [| "a2"; "a3"; "a4"; "a5"; "a6"; "a7"; *)
-  "t0"; "t1"; "t2"; "t3"; "t4"; "t5"; "t6"; 
+  (* "t0";  *)
+  "t1"; "t2"; "t3"; "t4"; "t5"; "t6"; 
   |]
 let fregs = 
   (* Array.init 31 (fun i -> Printf.sprintf "f%d" (i * 2)) *)
@@ -64,12 +70,13 @@ let fregs =
   |]
 let allregs = Array.to_list regs
 let allfregs = Array.to_list fregs
-let reg_cl = regs.(Array.length regs - 2) (* closure address (caml2html: sparcasm_regcl) *)
-let reg_sw = regs.(Array.length regs - 1) (* temporary for swap *)
+let reg_cl = regs.(Array.length regs - 1) (* closure address (caml2html: sparcasm_regcl) *)
+let reg_sw = regs.(Array.length regs - 2) (* temporary for swap *)
+let reg_tm = regs.(Array.length regs - 3) (* temporary 2 *)
 let reg_fsw = fregs.(Array.length fregs - 1) (* temporary for swap *)
 let reg_zero = "x0" (* zero register *)
 let reg_sp = "sp" (* stack pointer *)
-let reg_hp = "hp" (* heap pointer (caml2html: sparcasm_reghp) *)
+let reg_hp = "t0" (* heap pointer (caml2html: sparcasm_reghp) *)
 let reg_ra = "ra" (* return address *)
 let is_reg x = (x.[0] = 'a' || x.[0] = 't'||x.[0] = 't'||x.[0] = 'f'||x= reg_zero || x= reg_sp ||x= reg_hp || x= reg_ra )
 
@@ -94,7 +101,7 @@ let rec remove_and_uniq xs = function
 let fv_id_or_imm = function V(x) -> [x] | _ -> []
 let rec fv_exp = function
   | Nop | Set(_) | SetL(_) | Comment(_) | Restore(_) -> []
-  | Mov(x) | Neg(x) | FMovD(x) | FNegD(x) | Save(x, _) | Ld(x, _) | LdDF(x, _)  -> [x]
+  | Mov(x) | Neg(x) | FMovD(x) | FNegD(x) | Save(x, _) | Ld(x, _) | LdDF(x, _)|Address(x)  -> [x]
   | Add(x, y') | Sub(x, y') | SLL(x, y')  -> x :: fv_id_or_imm y'
   | Mul(x,y) | Div(x,y)| St(x, y, _) | StDF(x, y, _)| FAddD(x, y) | FSubD(x, y) | FMulD(x, y) | FDivD(x, y) -> [x; y]
   | IfEq(x, y', e1, e2) | IfLE(x, y', e1, e2) | IfGE(x, y', e1, e2) -> x :: fv_id_or_imm y' @ remove_and_uniq S.empty (fv e1 @ fv e2) (* uniq here just for efficiency *)

@@ -6,6 +6,7 @@ and exp' = (* 一つ一つの命令に対応する式 (caml2html: sparcasm_exp) *)
 | Nop(**)
 | Set of int
 | SetL of Id.l
+| Address of Id.t
 | Mov of Id.t(**)
 | Neg of Id.t(**)
 | Add of Id.t * id_or_imm
@@ -50,6 +51,7 @@ val reg_cl : Id.t
 val reg_zero : Id.t
 val reg_sw : Id.t
 val reg_fsw : Id.t
+val reg_tm : Id.t
 val reg_ra : Id.t
 val reg_hp : Id.t
 val reg_sp : Id.t
@@ -62,6 +64,10 @@ val concat : t -> Id.t * Type.t -> t -> t
 val align : int -> int
 val get_position : t -> KNormal.p
 val pc : int ref
+val addresses : int M.t ref
+val heapaddress : int ref
 val print_asm : out_channel -> ('a, out_channel, unit) format-> 'a
+val getlabelnum : string -> int
+val setlabelnum : string -> int -> unit
 val getaddress : string -> int
 val setaddress : string -> int -> unit

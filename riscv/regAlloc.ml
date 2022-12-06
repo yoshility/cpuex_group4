@@ -121,7 +121,7 @@ and g'_and_restore dest cont regenv (exp,p) = (* »ÈÍÑ¤µ¤ì¤ëÊÑ¿ô¤ò¥¹¥¿¥Ã¥¯¤«¤é¥ì¥
 and g' dest cont regenv exp=  (* ³ÆÌ¿Îá¤Î¥ì¥¸¥¹¥¿³ä¤êÅö¤Æ (caml2html: regalloc_gprime) *)
 let p = snd exp in
 match fst exp with  
-| Nop | Set _ | SetL _ | Comment _ | Restore _ -> (Ans(exp), regenv)
+| Nop | Address _| Set _ | SetL _ | Comment _ | Restore _ -> (Ans(exp), regenv)
   | Mov(x) -> (Ans((Mov(find x Type.Int regenv),p)), regenv)
   | Neg(x) -> (Ans((Neg(find x Type.Int regenv),p)), regenv)
   | Add(x, y') -> (Ans((Add(find x Type.Int regenv, find' y' regenv),p)), regenv)

@@ -76,7 +76,8 @@ match e with
       | Type.Unit -> Ans((Nop,p))
       | Type.Float -> Ans((FMovD(x),p))
       (* | Type.Fun(_) -> (try (let address = getaddress x in  Ans(Mov(x), p)) with |Not_found -> Ans((Mov(x),p))) *)
-      | Type.Fun(_) -> Ans((Mov(reg_cl), p))
+      (* | Type.Fun(_) -> Printf.printf "Address of Fun %s\n" x;Ans((Address( x), p)) *)
+      | Type.Fun(_) -> Printf.printf "Address of Fun %s\n" x;Ans((Mov(reg_cl), p))(*この実装は間違っているけどraytracerなら大丈夫か？*)
 
       | _ -> Ans((Mov(x),p)))
   | Closure.MakeCls((x, t), { Closure.entry = l; Closure.actual_fv = ys }, e2) -> (* クロージャの生成 (caml2html: virtual_makecls) *)
@@ -89,8 +90,11 @@ match e with
           (4, e2')
           (fun y offset store_fv -> seq((StDF(y, reg_cl, offset),p), store_fv))
           (fun y _ offset store_fv -> seq(((St(y, reg_cl, offset),p)), store_fv)) in
+          setaddress x !heapaddress;
+          let offset_correct = align offset in
+          heapaddress := !heapaddress + offset_correct; 
       Let((reg_cl, t), (Mov(reg_hp),p),(*ここだ*)
-          Let((reg_hp, Type.Int), (Add(reg_hp, C(align offset)),p),
+          Let((reg_hp, Type.Int), (Add(reg_hp, C(offset_correct)),p),
               let z = Id.genid "l" in
               Let((z, Type.Int), (SetL(l), p),
                   seq((St(z, reg_cl, 0),p),
@@ -109,12 +113,14 @@ match e with
           (0, Ans((Mov(y),p)))
           (fun x offset store -> seq((StDF(x, y, offset),p), store))
           (fun x _ offset store -> seq((St(x, y, offset),p), store)) in
+          let offset_correct = align offset in
+          heapaddress := !heapaddress + offset_correct;
       Let(
         (y, Type.Tuple(List.map (fun x -> M.find x env) xs)),
        (Mov(reg_hp),p),
         Let(
           (reg_hp, Type.Int), 
-          (Add(reg_hp, C(align offset)),p),
+          (Add(reg_hp, C(offset_correct)),p),
           store)
           )
   | Closure.LetTuple(xts, y, e2) ->
@@ -172,7 +178,7 @@ let h { Closure.name = (Id.L(x), t); Closure.args = yts; Closure.formal_fv = zts
       (fun z t offset load -> Let((z, t), (Ld(reg_cl, offset),p), load)) in
   match t with
   | Type.Fun(_, t2) ->
-      { name = Id.L(x); args = int; fargs = float; body = Let((reg_cl, t), (SetL(L(x)),p), load); ret = t2 }
+      { name = Id.L(x); args = int; fargs = float; body = load; ret = t2 }
   | _ -> assert false
 
 (* プログラム全体の仮想マシンコード生成 (caml2html: virtual_f) *)

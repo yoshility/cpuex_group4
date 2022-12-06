@@ -54,10 +54,11 @@ match (tail,exp) with
 (* 末尾でなかったら計算結果をdestにセット (caml2html: emit_nontail) *)
   | NonTail(_), Nop -> ()
   | NonTail(x), Set(i) -> (print_asm oc "\taddi\t%s, x0, %d\n" x i)
+  | NonTail(x), Address(y) -> Printf.printf "Address of %s\n" y;(print_asm oc "\taddi\t%s, x0, %d # address\n" x (Asm.getaddress y))
   | NonTail(x), SetL(Id.L(y)) 
   -> 
-    let address = getaddress y in
-    print_asm oc "\taddi\t%s, x0, %d\n"  reg_sw address;
+    let labelnum = getlabelnum y in
+    print_asm oc "\taddi\t%s, x0, %d\n"  reg_sw labelnum;
     print_asm oc "\taddi\t%s, %s, 0 # SETL\n"  x reg_sw  (*closure のアドレス*)
   | NonTail(x), Mov(y) when x = y -> ()
   | NonTail(x), Mov(y) -> print_asm oc "\taddi\t%s, %s 0\n"  x y 
@@ -107,7 +108,7 @@ match (tail,exp) with
       g' oc (NonTail(Id.gentmp Type.Unit), (exp,p));
       print_asm oc "\tjalr\tx0, ra, 0\n";
       print_asm oc "\taddi\tx0, x0, 0\n"
-  | Tail, (Set _ | SetL _ | Mov _ | Neg _ | Add _ | Sub _ |Mul _ | Div _| SLL _ | Ld _ as exp) ->
+  | Tail, (Set _ | SetL _ | Address _| Mov _ | Neg _ | Add _ | Sub _ |Mul _ | Div _| SLL _ | Ld _ as exp) ->
       g' oc (NonTail(regs.(0)), (exp,p));
       print_asm oc "\tjalr\tx0, ra, 0\n";
       print_asm oc "\taddi\tx0, x0, 0\n"
@@ -193,10 +194,12 @@ match (tail,exp) with
       g'_args oc [(x, reg_cl)] ys zs;
       let ss = stacksize () in
       print_asm oc "\tlw\t%s, 0(%s)\n" reg_sw reg_cl;
-      print_asm oc "\taddi\tsp, sp, -16 # callcls\n" ;
+      print_asm oc "\taddi\tsp, sp, -24 # callcls\n" ;
+      print_asm oc "\tsw\t%s, 16(sp)\n" reg_cl;
       print_asm oc "\tsw\tra, 8(sp)\n" ;
       print_asm oc "\tsw\tfp, 0(sp)\n" ;
       print_asm oc "\tjalr\tra, %s, 0\n" reg_sw;
+      print_asm oc "\tlw\t%s, 16(sp)\n" reg_cl;
       print_asm oc "\tlw\tra, 8(sp)\n" ;
       print_asm oc "\tlw\tfp, 0(sp)\n" ;
       print_asm oc "\taddi\tsp, sp, 16 # callcls end\n" ;
@@ -212,13 +215,15 @@ match (tail,exp) with
       (* print_asm oc "\tsw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp; *)
       (* print_asm oc "\t#\t%s\n"  x; *)
       (* print_asm oc "\taddi\tra, %s, 0\n" reg_sw;call ?? *)
-      print_asm oc "\taddi\tsp, sp, -16\n" ;
+      print_asm oc "\taddi\tsp, sp, -24\n" ;
+      print_asm oc "\tsw\t%s, 16(sp)\n" reg_cl;
       print_asm oc "\tsw\tra, 8(sp)\n" ;
       print_asm oc "\tsw\tfp, 0(sp)\n" ;
       print_asm oc "\tjal\tra, %s\n" x;(*call ??*)
+      print_asm oc "\tlw\t%s, 16(sp)\n" reg_cl;
       print_asm oc "\tlw\tra, 8(sp)\n" ;
       print_asm oc "\tlw\tfp, 0(sp)\n" ;
-      print_asm oc "\taddi\tsp, sp, 16\n" ;
+      print_asm oc "\taddi\tsp, sp, 24\n" ;
       (* print_asm oc "\taddi\t%s, %s, %d\t# delay slot\n" reg_sp reg_sp ss ;
       print_asm oc "\taddi\t%s, %s, -%d\n" reg_sp reg_sp ss;
       print_asm oc "\tlw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp; *)
@@ -277,28 +282,29 @@ and g'_args oc x_reg_cl ys zs =
     (shuffle reg_fsw zfrs)
 
 let h oc { name = Id.L(x); args = _; fargs = _; body = e; ret = _ } =
-  print_asm oc "%s:\n" x;(* pc を利用するように変更*)
-  setaddress x (!pc);
+  Printf.fprintf oc "%s:\n" x;(* pc を利用するように変更*)
+  setlabelnum x (!pc);
   stackset := S.empty;
   stackmap := [];
   g oc (Tail, e)
 
 let f oc (Prog(data, fundefs, e)) =
-  pc := 0;(*addressの初期値。ライブラリ関数などに注意。*)
+  pc := 0;(*labelnumの初期値。ライブラリ関数などに注意。*)
   Format.eprintf "generating assembly...@.";
-  print_asm oc ".section\t\".rodata\"\n";
-  print_asm oc ".align\t8\n";
+  Printf.fprintf oc(* print_asm oc*) ".section\t\".rodata\"\n"; 
+  Printf.fprintf oc(* print_asm oc*) ".align\t8\n"; 
   List.iter
     (fun (Id.L(x), d) ->
       print_asm oc "%s:\t! %f\n" x d;
       print_asm oc "\t.long\t0x%lx\n" (gethi d);
       print_asm oc "\t.long\t0x%lx\n" (getlo d))
     data;
-  print_asm oc ".section\t\".text\"\n";
+    Printf.fprintf oc(* print_asm oc*) ".section\t\".text\"\n"; 
   List.iter (fun fundef -> h oc fundef) fundefs;
   print_asm oc ".global\tmin_caml_start\n";
   print_asm oc "min_caml_start:\n";
-  (* print_asm oc "\taddi\tsp, x0, 256\n"; from gcc; why 112? *)
+  print_asm oc "\taddi\tsp, x0, 256\n"; 
+  print_asm oc "\taddi\tt0, x0, 10\n"; 
   stackset := S.empty;
   stackmap := [];
   g oc (Tail, e);

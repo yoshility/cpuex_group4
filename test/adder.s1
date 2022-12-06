@@ -1,0 +1,40 @@
+.section	".rodata"
+.align	8
+.section	".text"
+adder.11:
+	lw	a1, 4(adder.11)
+	add	a0, a1, a0
+	jalr	x0, ra, 0
+	addi	x0, x0, 0
+make_adder.5:
+	addi	t5, hp 0
+	addi	hp, hp, 8
+	addi	t6, x0, 104
+	addi	a1, t6, 0 # SETL
+	sw	a1,0(t5) # ST
+	sw	a0,4(t5) # ST
+	addi	a0, adder.11 0
+	jalr	x0, ra, 0
+	addi	x0, x0, 0
+.global	min_caml_start
+min_caml_start:
+	addi	a0, x0, 3
+	addi	sp, sp, -16
+	sw	ra, 8(sp)
+	sw	fp, 0(sp)
+	jal	ra, make_adder.5
+	lw	ra, 8(sp)
+	lw	fp, 0(sp)
+	addi	sp, sp, 16
+	addi	t5, a0, 0
+	addi	a0, x0, 7
+	lw	t6, 0(t5)
+	addi	sp, sp, -16 # callcls
+	sw	ra, 8(sp)
+	sw	fp, 0(sp)
+	jalr	ra, t6, 0
+	lw	ra, 8(sp)
+	lw	fp, 0(sp)
+	addi	sp, sp, 16 # callcls end
+	jal	ra, min_caml_print_int
+	jalr	x0, ra, 0
