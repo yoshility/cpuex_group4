@@ -11,16 +11,26 @@ class Cache {
 	public:
 		int* status;
 		int* tags;
-		// int* data;
-		union data* d; // dはunion data型の配列
+		// union data d[1<<INDEX_WIDTH][1<<(OFFSET_WIDTH-2)];
+		union data** d;
 		unsigned long long accessed_times;
 		unsigned long long hit_times;
 		unsigned long long miss_times;
-		Cache() {
-			// ライン数4, ラインサイズ64byte
-			status = (int*)malloc(sizeof(int) * 4);
-			tags = (int*)malloc(sizeof(int) * 4);
-			d = (union data*)malloc(sizeof(union data) * 16 * 4);
+		// Cache() {
+		// 	status = (int*)malloc(sizeof(int) * 4);
+		// 	tags = (int*)malloc(sizeof(int) * 4);
+		// 	d = (union data*)malloc(sizeof(union data) * 16 * 4);
+		// 	accessed_times = 0;
+		// 	hit_times = 0;
+		// 	miss_times = 0;
+		// }
+		Cache(unsigned int index_width, unsigned int offset_width) {
+			status = (int*)malloc(sizeof(int) * (index_width<<4));
+			tags = (int*)malloc(sizeof(int) * (index_width<<4));
+			for (int i=0; i<(1<<index_width); i++) {
+				d[i] = (union data*)malloc(sizeof(union data) * (1<<(offset_width-2)));
+			}
+			// d = (union data*)malloc(sizeof(union data) * 16 * 4);
 			accessed_times = 0;
 			hit_times = 0;
 			miss_times = 0;
@@ -31,13 +41,13 @@ class Cache {
 		// 	printf("\n\t---- Data Cache -------------------------------------------------------------------------------------------\n\n");
 		// 	printf("\t     Status  |            Tag             |                          Data\n");
 		// 	printf("\t             |                            | ");
-		// 	for (int i=0; i<16; i++) {
+		// 	for (int i=0; i<(1<<OFFSET_WIDTH); i+=4) {
 		// 		printf("%03d ", i);
 		// 	}
 		// 	printf("\n");
 		// 	printf("\t-------------|----------------------------|----------------------------------------------------------------\n");
 		// 	char sta[10];
-		// 	for (int i=0; i<4; i++) {
+		// 	for (int i=0; i<(1<<INDEX_WIDTH); i++) {
 		// 		if (status[i] == 0) {
 		// 			strcpy(sta, "INVALID");
 		// 		} else if (status[i] == 1) {
@@ -47,9 +57,9 @@ class Cache {
 		// 		} else {
 		// 			strcpy(sta, "  ?????");
 		// 		}
-		// 		printf("\t[%02lld] %s | %026lld | ", to_binary(i, 2), sta, to_binary(tags[i], 26));
-		// 		for (int j=0; j<16; j++) {
-		// 			printf("%03d ", data[i * 16 + j]); // todo
+		// 		printf("\t[%02lld] %s | %26lld | ", to_binary(i, 2), sta, to_binary(tags[i], (32-INDEX_WIDTH-OFFSET_WIDTH)));
+		// 		for (int j=0; j<(1<<(OFFSET_WIDTH-2)); j++) {
+		// 			printf("%3d ", d[i][j]);
 		// 		}
 		// 		printf("\n");
 		// 	}
@@ -73,7 +83,6 @@ class Cache {
 
 class Memory {
 	public:
-		// int* data;
 		union data* d;
 		Memory() {
 			d = (union data*)malloc(sizeof(union data) * MEMORY_SIZE);
@@ -82,7 +91,7 @@ class Memory {
 			printf("\n\t---- Data Memory -------------------------------------------------------------------------------------------\n\n");
 			printf("\t[Addr]  [Data(i)]   [Data(i_0x)]   [Data(f)]\n");
 			for (int i=start; i>=end; i-=4) {
-				printf("\t0x%04X     %04d        %04X        %f\n", i, d[i].i, d[i].i, d[i].f);
+				printf("\t0x%04X     %04d        %04X        %f\n", i/4, d[i/4].i, d[i/4].i, d[i/4].f);
 			}
 			printf("\n");
 		}

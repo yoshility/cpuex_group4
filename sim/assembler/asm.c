@@ -131,6 +131,30 @@ int main(int argc, char* argv[]) {
             }
             fprintf(out, "%s\n", str);
         }
+        // mul rd, rs1, rs2
+        else if (strncmp(opcode, "mul", 3) == 0) {
+            int rd = reg(r0);
+            int rs1 = reg(r1);
+            int rs2 = reg(r2);
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_MUL, rs2, rs1, F3_MUL, rd, OP_MUL);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_MUL, rs2, rs1, F3_MUL, rd, OP_MUL);
+            }
+            fprintf(out, "%s\n", str);
+        }
+        // div rd, rs1, rs2
+        else if (strncmp(opcode, "div", 3) == 0) {
+            int rd = reg(r0);
+            int rs1 = reg(r1);
+            int rs2 = reg(r2);
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_DIV, rs2, rs1, F3_DIV, rd, OP_DIV);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_DIV, rs2, rs1, F3_DIV, rd, OP_DIV);
+            }
+            fprintf(out, "%s\n", str);
+        }
         // and
         else if (strncmp(opcode, "and", 3) == 0) {
             int rd = reg(r0);
@@ -151,6 +175,18 @@ int main(int argc, char* argv[]) {
                 sprintf(str, "%08X %s %020llu %05d %07d", addr, opcode, imm, rd, OP_LUI);
             } else {
                 sprintf(str, "%020llu%05d%07d", imm, rd, OP_LUI);
+            }
+            fprintf(out, "%s\n", str);
+        }
+        // slt rd, rs1, rs2
+        else if (strncmp(opcode, "slt", 3) == 0) {
+            int rd = reg(r0);
+            int rs1 = reg(r1);
+            int rs2 = reg(r2);
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_SLT, rs2, rs1, F3_SLT, rd, OP_SLT);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_SLT, rs2, rs1, F3_SLT, rd, OP_SLT);
             }
             fprintf(out, "%s\n", str);
         }
@@ -260,28 +296,44 @@ int main(int argc, char* argv[]) {
             }
             fprintf(out, "%s\n", str);
         }
-        // lw rd, imm(rs1)
+        // lw rd, imm(rs1) (input=s11/x27)
         else if (strncmp(opcode, "lw", 2) == 0) {
             int rd = reg(r0);
             long long int imm = imm_11_0(r1);
             int rs1 = reg(r2);
             if (debug) {
-                sprintf(str, "%08X %s %012lld %05d %03d %05d %07d", addr, opcode, imm, rs1, F3_LW, rd, OP_LW);
+                if (rs1 == 27) {
+                    sprintf(str, "%08X %s %012lld %05d %03d %05d %07d", addr, opcode, imm, rs1, F3_LW, rd, OP_LW-1);
+                } else {
+                    sprintf(str, "%08X %s %012lld %05d %03d %05d %07d", addr, opcode, imm, rs1, F3_LW, rd, OP_LW);
+                }
             } else {
-                sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_LW, rd, OP_LW);
+                if (rs1 == 27) {
+                    sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_LW, rd, OP_LW-1);
+                } else {
+                    sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_LW, rd, OP_LW);
+                }
             }
             fprintf(out, "%s\n", str);
         }
-        // sw rs2, imm(rs1)
+        // sw rs2, imm(rs1) (output=s11/x27)
         else if (strncmp(opcode, "sw", 2) == 0) {
             int rs2 = reg(r0);
             long long int imm1 = imm_11_5(r1);
             int imm2 = imm_4_0(r1);
             int rs1 = reg(r2);
             if (debug) {
-                sprintf(str, "%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, rs2, rs1, F3_SW, imm2, OP_SW);
+                if (rs1 == 27) {
+                    sprintf(str, "%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, rs2, rs1, F3_SW, imm2, OP_SW-1);
+                } else {
+                    sprintf(str, "%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, rs2, rs1, F3_SW, imm2, OP_SW);
+                }
             } else {
-                sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_SW, imm2, OP_SW);
+                if (rs1 == 27) {
+                    sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_SW, imm2, OP_SW-1);
+                } else {
+                    sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_SW, imm2, OP_SW);
+                }
             }
             fprintf(out, "%s\n", str);
         }
@@ -333,28 +385,152 @@ int main(int argc, char* argv[]) {
             }
             fprintf(out, "%s\n", str);
         }
-        // flw fd, imm(rs1)
+        // flw fd, imm(rs1) (input=s11/x27)
         else if (strncmp(opcode, "flw", 3) == 0) {
             int fd = freg(r0);
             long long int imm = imm_11_0(r1);
             int rs1 = reg(r2);
             if (debug) {
-                sprintf(str, "%08X %s %012lld %05d %03d %05d %07d", addr, opcode, imm, rs1, F3_FLW, fd, OP_FLW);
+                if (rs1 == 27) {
+                    sprintf(str, "%08X %s %012lld %05d %03d %05d %07d", addr, opcode, imm, rs1, F3_FLW, fd, OP_FLW-1);
+                } else {
+                    sprintf(str, "%08X %s %012lld %05d %03d %05d %07d", addr, opcode, imm, rs1, F3_FLW, fd, OP_FLW);
+                }
             } else {
-                sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_FLW, fd, OP_FLW);
+                if (rs1 == 27) {
+                    sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_FLW, fd, OP_FLW-1);
+                } else {
+                    sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_FLW, fd, OP_FLW);
+                }
             }
             fprintf(out, "%s\n", str);
         }
-        // fsw fs2, imm(rs1)
+        // fsw fs2, imm(rs1) (output=s11/x27)
         else if (strncmp(opcode, "sw", 2) == 0) {
             int fs2 = freg(r0);
             long long int imm1 = imm_11_5(r1);
             int imm2 = imm_4_0(r1);
             int rs1 = reg(r2);
             if (debug) {
-                sprintf(str, "%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, fs2, rs1, F3_FSW, imm2, OP_FSW);
+                if (rs1 == 27) {
+                    sprintf(str, "%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, fs2, rs1, F3_FSW, imm2, OP_FSW-1);
+                } else {
+                    sprintf(str, "%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, fs2, rs1, F3_FSW, imm2, OP_FSW);
+                }
             } else {
-                sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, fs2, rs1, F3_FSW, imm2, OP_FSW);
+                if (rs1 == 27) {
+                    sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, fs2, rs1, F3_FSW, imm2, OP_FSW-1);
+                } else {
+                    sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, fs2, rs1, F3_FSW, imm2, OP_FSW);
+                }
+            }
+            fprintf(out, "%s\n", str);
+        }
+        // fsqrt fd, fs1
+        else if (strncmp(opcode, "fsqrt", 5) == 0) {
+            int rd = freg(r0);
+            int rs1 = freg(r1);
+            int rs2 = 0;
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_FSQRT, rs2, rs1, F3_FSQRT, rd, OP_FSQRT);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_FSQRT, rs2, rs1, F3_FSQRT, rd, OP_FSQRT);
+            }
+            fprintf(out, "%s\n", str);
+        }
+        // fsgnjn fd, fs1, fs2
+        else if (strncmp(opcode, "fsgnjn", 6) == 0) {
+            int rd = freg(r0);
+            int rs1 = freg(r1);
+            int rs2 = freg(r2);
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_FSGNJN, rs2, rs1, F3_FSGNJN, rd, OP_FSGNJN);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_FSGNJN, rs2, rs1, F3_FSGNJN, rd, OP_FSGNJN);
+            }
+            fprintf(out, "%s\n", str);
+        }
+        // fsgnjx fd, fs1, fs2
+        else if (strncmp(opcode, "fsgnjx", 6) == 0) {
+            int rd = freg(r0);
+            int rs1 = freg(r1);
+            int rs2 = freg(r2);
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_FSGNJX, rs2, rs1, F3_FSGNJX, rd, OP_FSGNJX);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_FSGNJX, rs2, rs1, F3_FSGNJX, rd, OP_FSGNJX);
+            }
+            fprintf(out, "%s\n", str);
+        }
+        // fsgnj fd, fs1, fs2
+        else if (strncmp(opcode, "fsgnj", 5) == 0) {
+            int rd = freg(r0);
+            int rs1 = freg(r1);
+            int rs2 = freg(r2);
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_FSGNJ, rs2, rs1, F3_FSGNJ, rd, OP_FSGNJ);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_FSGNJ, rs2, rs1, F3_FSGNJ, rd, OP_FSGNJ);
+            }
+            fprintf(out, "%s\n", str);
+        }
+        // fcvtsw fd, rs1
+        else if (strncmp(opcode, "fcvtsw", 6) == 0) {
+            int rd = freg(r0);
+            int rs1 = reg(r1);
+            int rs2 = 0;
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_FCVTSW, rs2, rs1, F3_FCVTSW, rd, OP_FCVTSW);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_FCVTSW, rs2, rs1, F3_FCVTSW, rd, OP_FCVTSW);
+            }
+            fprintf(out, "%s\n", str);
+        }
+        // fcvtws rd, fs1
+        else if (strncmp(opcode, "fcvtws", 6) == 0) {
+            int rd = reg(r0);
+            int rs1 = freg(r1);
+            int rs2 = 0;
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_FCVTWS, rs2, rs1, F3_FCVTWS, rd, OP_FCVTWS);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_FCVTWS, rs2, rs1, F3_FCVTWS, rd, OP_FCVTWS);
+            }
+            fprintf(out, "%s\n", str);
+        }
+        // feq rd, fs1, fs2
+        else if (strncmp(opcode, "feq", 3) == 0) {
+            int rd = reg(r0);
+            int rs1 = freg(r1);
+            int rs2 = freg(r2);
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_FEQ, rs2, rs1, F3_FEQ, rd, OP_FEQ);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_FEQ, rs2, rs1, F3_FEQ, rd, OP_FEQ);
+            }
+            fprintf(out, "%s\n", str);
+        }
+        // flt rd, fs1, fs2
+        else if (strncmp(opcode, "flt", 3) == 0) {
+            int rd = reg(r0);
+            int rs1 = freg(r1);
+            int rs2 = freg(r2);
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_FLT, rs2, rs1, F3_FLT, rd, OP_FLT);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_FLT, rs2, rs1, F3_FLT, rd, OP_FLT);
+            }
+            fprintf(out, "%s\n", str);
+        }
+        // fle rd, fs1, fs2
+        else if (strncmp(opcode, "fle", 3) == 0) {
+            int rd = reg(r0);
+            int rs1 = freg(r1);
+            int rs2 = freg(r2);
+            if (debug) {
+                sprintf(str, "%08X %s %07d %05d %05d %03d %05d %07d", addr, opcode, F7_FLE, rs2, rs1, F3_FLE, rd, OP_FLE);
+            } else {
+                sprintf(str, "%07d%05d%05d%03d%05d%07d", F7_FLE, rs2, rs1, F3_FLE, rd, OP_FLE);
             }
             fprintf(out, "%s\n", str);
         }
