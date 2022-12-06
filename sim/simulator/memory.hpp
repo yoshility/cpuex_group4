@@ -3,7 +3,7 @@
 using namespace std;
 
 union data {
-	int32_t i;
+	int i;
 	float f;
 };
 
@@ -12,7 +12,7 @@ class Cache {
 		int* status;
 		int* tags;
 		// union data d[1<<INDEX_WIDTH][1<<(OFFSET_WIDTH-2)];
-		union data** d;
+		union data *d[4];
 		unsigned long long accessed_times;
 		unsigned long long hit_times;
 		unsigned long long miss_times;
@@ -25,11 +25,18 @@ class Cache {
 		// 	miss_times = 0;
 		// }
 		Cache(unsigned int index_width, unsigned int offset_width) {
-			status = (int*)malloc(sizeof(int) * (index_width<<4));
-			tags = (int*)malloc(sizeof(int) * (index_width<<4));
-			for (int i=0; i<(1<<index_width); i++) {
-				d[i] = (union data*)malloc(sizeof(union data) * (1<<(offset_width-2)));
+			int line_size = 1 << (offset_width - 2);
+			cout << line_size << endl;
+			
+			for (int i=0; i<4; i++) {
+				d[i] = (union data*)malloc(sizeof(union data) * line_size);
 			}
+			
+			status = (int*)malloc(sizeof(int) * 4);
+			tags = (int*)malloc(sizeof(int) * 4);
+			
+			printf("hello\n");
+			
 			// d = (union data*)malloc(sizeof(union data) * 16 * 4);
 			accessed_times = 0;
 			hit_times = 0;

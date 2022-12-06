@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
         exit(1);
     }
     // sld
-    if ((in_sld = fopen(argv[2], "r")) == NULL) {
+    if ((in_sld = fopen(argv[2], "rb")) == NULL) {
         printf("[in] cannot open file\n");
         exit(1);
     }
@@ -37,6 +37,7 @@ int main(int argc, char* argv[]) {
 
     Memory memory;         // data memory
     Cache cache(2, 6);           // data cache
+    // printf("hello\n");
 
     // Cache inst_cache;           // inst cache
 
@@ -49,12 +50,12 @@ int main(int argc, char* argv[]) {
     char* inst_cleaned;
 
     char str[150];
-    char global_func[25];       // min_caml_start
-    strcpy(global_func, "hoge");
+    // char global_func[25];       // min_caml_start
+    // strcpy(global_func, "hoge");
 
     // 1回目の読みでラベルを探して全命令を命令メモリに格納
     int addr = -4;
-    char label[1000][25]; // labels
+    char label[1000][25]; // labels （1/4に圧縮）
     int pc = 0;
 
     while (fgets(line, BUFSIZE, in) != NULL) {
@@ -68,14 +69,14 @@ int main(int argc, char* argv[]) {
 
         // ラベル
         if (opcode[strlen(opcode)-1] == ':') {
-            // 配列のaddr番目にラベル名を保管（少し無駄）
-            strcpy(label[addr], opcode);
+            // 配列のaddr番目にラベル名を保管
+            strcpy(label[addr/4], opcode);
             // 命令アドレスも一緒に出力(ラベル自体を命令メモリに保管する必要はない)
             if (debug) {
                 printf("0x%08X %s\n", addr, opcode);
             }
             // ラベルがmin_caml_startなら、このときのaddrをpcの初期値にする
-            if (strncmp(opcode, global_func, strlen(global_func)) == 0) {
+            if (strncmp(opcode, "min_caml_start", 14) == 0) {
                 pc = addr;
                 printf("initial pc: %d\n", pc);
             }
@@ -84,12 +85,12 @@ int main(int argc, char* argv[]) {
             continue;
         }
         // アセンブラ指令 .global
-        else if (strncmp(opcode, ".global", 7) == 0) {
-            strncpy(global_func, r0, strlen(r0)); // global_func <= "min_caml_start"
-            // ignore
-            addr -= 4;
-            continue;
-        }
+        // else if (strncmp(opcode, ".global", 7) == 0) {
+        //     strncpy(global_func, r0, strlen(r0)); // global_func <= "min_caml_start"
+        //     // ignore
+        //     addr -= 4;
+        //     continue;
+        // }
         // そのほかの指令
         else if (opcode[0] == '.') {
             // ignore
@@ -283,15 +284,42 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r0);
             int rs2 = reg_num(r1);
             int jmp_addr;
-            for (int i=0; i<1000; i+=4) {
+            for (int i=0; i<1000; i++) {
                 eliminate_colon(label[i]);
                 if (strncmp(label[i], r2, strlen(r2)) == 0) {
-                    jmp_addr = i;
+                    jmp_addr = i*4;
                     break;
                 }
             }
             if (reg[rs1] == reg[rs2]) {
                 pc = jmp_addr;
+            } else {
+                pc = pc + 4;
+            }
+            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+            } else {
+                clk++;
+            }
+        }
+        // bne rs1, rs2, label
+        else if (strncmp(opcode, "bne", 3) == 0) {
+            int rs1 = reg_num(r0);
+            int rs2 = reg_num(r1);
+            int jmp_addr;
+            for (int i=0; i<1000; i+=4) {
+                eliminate_colon(label[i]);
+                if (strncmp(label[i], r2, strlen(r2)) == 0) {
+                    jmp_addr = i*4;
+                    break;
+                }
+            }
+            if (reg[rs1] != reg[rs2]) {
+                pc = jmp_addr;
+                if (debug) {
+                    printf("\t[blt] jump to: %d\n", jmp_addr);
+                }
             } else {
                 pc = pc + 4;
             }
@@ -310,7 +338,7 @@ int main(int argc, char* argv[]) {
             for (int i=0; i<1000; i+=4) {
                 eliminate_colon(label[i]);
                 if (strncmp(label[i], r2, strlen(r2)) == 0) {
-                    jmp_addr = i;
+                    jmp_addr = i*4;
                     break;
                 }
             }
@@ -749,7 +777,7 @@ int main(int argc, char* argv[]) {
             for (int i=0; i<1000; i+=4) {
                 eliminate_colon(label[i]);
                 if (strncmp(label[i], r1, strlen(r1)) == 0) {
-                    jmp_addr = i;
+                    jmp_addr = i*4;
                     break;
                 }
             }
@@ -769,7 +797,7 @@ int main(int argc, char* argv[]) {
         //     for (int i=0; i<1000; i+=4) {
         //         eliminate_colon(label[i]);
         //         if (strncmp(label[i], r0, strlen(r0)) == 0) {
-        //             jmp_addr = i;
+        //             jmp_addr = i*4;
         //             break;
         //         }
         //     }
@@ -801,7 +829,7 @@ int main(int argc, char* argv[]) {
         //     memory.print(1024, 992);
         // }
         if (debug && !use_cache) {
-            memory.print(1024, 0);
+            memory.print(1024, 1000);
         }
 
         if (step_by_step) {
