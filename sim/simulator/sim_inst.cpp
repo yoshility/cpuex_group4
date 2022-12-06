@@ -749,7 +749,7 @@ int main(int argc, char* argv[]) {
         if (debug) {
             printf("\tfirst_ra = 0x%X\n", first_ra);
         }
-
+        reg[0]=0;
         // print integer register
         if (debug) {
             print_reg(reg);
