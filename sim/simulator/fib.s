@@ -6,32 +6,36 @@ fib.9:
 	blt	t6, a0, bg_else.22
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
+	 # tail then end:
 bg_else.22:
 	addi	a1, a0, -1
 	sw	a0, 0(sp)
 	addi	a0, a1, 0
+	#	fib.9
 	addi	sp, sp, -16
-	sw	ra, 4(sp)
+	sw	ra, 8(sp)
 	sw	s0, 0(sp)
 	jal	ra, fib.9
-	lw	ra, 4(sp)
+	lw	ra, 8(sp)
 	lw	s0, 0(sp)
 	addi	sp, sp, 16
 	lw	a1, 0(sp)
 	addi	a1, a1, -2
 	sw	a0, 4(sp)
 	addi	a0, a1, 0
+	#	fib.9
 	addi	sp, sp, -16
-	sw	ra, 4(sp)
+	sw	ra, 8(sp)
 	sw	s0, 0(sp)
 	jal	ra, fib.9
-	lw	ra, 4(sp)
+	lw	ra, 8(sp)
 	lw	s0, 0(sp)
 	addi	sp, sp, 16
 	lw	a1, 4(sp)
 	add	a0, a1, a0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
+	 # tail else end:
 .global	min_caml_start
 min_caml_start:
 	addi	a0, x0, 10
