@@ -17,7 +17,7 @@
 - even-odd 
 - adder done
 - funcomp 
-- cls-rec 
+- cls-rec ?
 - cls-bug 
 - cls-bug2 
 - cls-reg-bug 

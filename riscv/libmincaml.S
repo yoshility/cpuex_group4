@@ -2,23 +2,23 @@
 .global min_caml_print_newline
 min_caml_print_newline:
 	addi a0, x0, 10
-	sw	 a0, 0(out)
+	sw	 a0, 0(s11)
 	jalr x0, ra, 0
 	addi x0, x0, 0
 .global min_caml_print_int
 min_caml_print_int:
 	addi a0, a0, 48
-	sw	 a0, 0(out)
+	sw	 a0, 0(s11)
 	jalr x0, ra, 0
 	addi x0, x0, 0
 .global min_caml_print_char
 min_caml_print_char:
-	sw	 a0, 0(out)
+	sw	 a0, 0(s11)
 	jalr x0, ra, 0
 	addi x0, x0, 0
 .global min_caml_read_int
 min_caml_read_int:
-	lw	 a0, 0(inp)
+	lw	 a0, 0(s11)
 	jalr x0, ra, 0
 	addi x0, x0, 0
 	# addi	t0, x0, 1
@@ -34,7 +34,7 @@ min_caml_read_int:
 
 .global min_caml_read_float
 min_caml_read_float:
-	flw	 fa0, 0(inp)
+	flw	 fa0, 0(fs11)
 	jalr x0, ra, 0
 	addi x0, x0, 0
 .global min_caml_int_of_float

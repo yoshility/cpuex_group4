@@ -4,7 +4,7 @@ let heapaddress = ref 0
 let print_asm  oc s = pc := !pc + 4 ; Printf.fprintf oc s
 let  labelnum = ref M.empty
 let  addresses = ref M.empty
-let getlabelnum s = Printf.printf "%s:%d\n" s  ((M.find s !labelnum)) ;(M.find s !labelnum)
+let getlabelnum s = try ((M.find s !labelnum)) with Not_found -> (Printf.printf "error with %s\n" s  ; raise Not_found) 
 let setlabelnum s  d = labelnum := (M.add s d (!labelnum))
 let getaddress s = Printf.printf "%s:%d\n" s  (M.find s !addresses)  ;M.find s !addresses 
 let setaddress s  d = addresses := (M.add s d (!addresses))
@@ -78,7 +78,11 @@ let reg_zero = "x0" (* zero register *)
 let reg_sp = "sp" (* stack pointer *)
 let reg_hp = "t0" (* heap pointer (caml2html: sparcasm_reghp) *)
 let reg_ra = "ra" (* return address *)
-let is_reg x = (x.[0] = 'a' || x.[0] = 't'||x.[0] = 't'||x.[0] = 'f'||x= reg_zero || x= reg_sp ||x= reg_hp || x= reg_ra )
+let is_reg x = (
+  (* Str.string_match (Str.regexp "?f[a,t,s]+[0-9]") x 0  *)
+  Array.mem x regs|| Array.mem x fregs
+||x= reg_zero || x= reg_sp ||x= reg_hp || x= reg_ra 
+)
 
 let co_freg_table =
   let ht = Hashtbl.create 16 in

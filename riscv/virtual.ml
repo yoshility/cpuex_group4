@@ -77,7 +77,7 @@ match e with
       | Type.Float -> Ans((FMovD(x),p))
       (* | Type.Fun(_) -> (try (let address = getaddress x in  Ans(Mov(x), p)) with |Not_found -> Ans((Mov(x),p))) *)
       (* | Type.Fun(_) -> Printf.printf "Address of Fun %s\n" x;Ans((Address( x), p)) *)
-      | Type.Fun(_) -> Printf.printf "Address of Fun %s\n" x;Ans((Mov(reg_cl), p))(*この実装は間違っているけどraytracerなら大丈夫か？*)
+      (* | Type.Fun(_) -> Printf.printf "Address of Fun %s\n" x;Ans((Mov(reg_cl), p))この実装は間違っているけどraytracerなら大丈夫か？ *)
 
       | _ -> Ans((Mov(x),p)))
   | Closure.MakeCls((x, t), { Closure.entry = l; Closure.actual_fv = ys }, e2) -> (* クロージャの生成 (caml2html: virtual_makecls) *)
@@ -88,16 +88,14 @@ match e with
         expand
           (List.map (fun y -> (y, M.find y env)) ys)
           (4, e2')
-          (fun y offset store_fv -> seq((StDF(y, reg_cl, offset),p), store_fv))
-          (fun y _ offset store_fv -> seq(((St(y, reg_cl, offset),p)), store_fv)) in
-          setaddress x !heapaddress;
+          (fun y offset store_fv -> seq((StDF(y, x, offset),p), store_fv))
+          (fun y _ offset store_fv -> seq(((St(y, x, offset),p)), store_fv)) in
           let offset_correct = align offset in
-          heapaddress := !heapaddress + offset_correct; 
-      Let((reg_cl, t), (Mov(reg_hp),p),(*ここだ*)
+      Let((x, t), (Mov(reg_hp),p),(*ここだ*)
           Let((reg_hp, Type.Int), (Add(reg_hp, C(offset_correct)),p),
               let z = Id.genid "l" in
               Let((z, Type.Int), (SetL(l), p),
-                  seq((St(z, reg_cl, 0),p),
+                  seq((St(z, x, 0),p),
                       store_fv))))
   | Closure.AppCls(x, ys) ->
       let (int, float) = separate (List.map (fun y -> (y, M.find y env)) ys) in

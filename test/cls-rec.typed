@@ -1,10 +1,10 @@
 Let
    x
-   type Var type Int
+   type Int
    10
    LetRec
-         f:type Var type Fun:type Int,->type Int
-         args:y:type Var type Int, 
+         f:type Fun:type Int,->type Int
+         args:y:type Int, 
          IF
            Eq
              Var y

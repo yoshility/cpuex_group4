@@ -8,6 +8,7 @@ let stackmap = ref []   (* Saveされた変数の、スタックにおける位�
 let save x =
   stackset := S.add x !stackset;
   if not (List.mem x !stackmap) then
+    Printf.printf "stackset : %s\n" x;
     stackmap := !stackmap @ [x]
 let savef x =
   stackset := S.add x !stackset;
@@ -21,7 +22,7 @@ let locate x =
     | y :: zs when x = y -> 0 :: List.map succ (loc zs)
     | y :: zs -> List.map succ (loc zs) in
   loc !stackmap
-let offset x = 4 * List.hd (locate x)
+let offset x = Printf.printf "offset %s\n" x; try 4 * List.hd (locate x) with e -> Printf.printf "error hd %s\n" x; raise e
 let stacksize () = align ((List.length !stackmap + 1) * 4)
 
 let pp_id_or_imm = function
@@ -183,7 +184,9 @@ match (tail,exp) with
       g'_non_tail_if oc (NonTail(z)) reg_sw reg_zero e1 e2 "bne" "beq"
    (* 関数呼び出しの仮想命令の実装 (caml2html: emit_call) *)
   | Tail, CallCls(x, ys, zs) ->  (* 末尾呼び出し (caml2html: emit_tailcall) *)
-      g'_args oc [(x, reg_cl)] ys zs;
+  (if is_reg x then (g'_args oc [(x, reg_cl)] ys zs)
+  else (print_asm oc "\taddi\t%s, x0, %d" reg_cl (getlabelnum x);
+  g'_args oc [] ys zs));
       print_asm oc "\tlw\t%s, 0(%s) # CallCls\n" reg_sw reg_cl;
       print_asm oc "\tjalr\tx0, %s, 0 # CallCls\n" reg_sw;
   | Tail, CallDir(Id.L(x), ys, zs) -> (* 末尾呼び出し *)
@@ -191,7 +194,10 @@ match (tail,exp) with
       print_asm oc "\tjal\tra, %s\n" x;
       (* print_asm oc "\taddi\tx0, x0, 0\n" *)
   | NonTail(a), CallCls(x, ys, zs) ->
-      g'_args oc [(x, reg_cl)] ys zs;
+    (if is_reg x then (g'_args oc [(x, reg_cl)] ys zs)
+    else (print_asm oc "\taddi\t%s, x0, %d" reg_cl (getlabelnum x);
+    g'_args oc [] ys zs));
+      
       let ss = stacksize () in
       print_asm oc "\tlw\t%s, 0(%s)\n" reg_sw reg_cl;
       print_asm oc "\taddi\tsp, sp, -24 # callcls\n" ;
