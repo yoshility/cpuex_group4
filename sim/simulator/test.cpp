@@ -1,42 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class IF {
-    public:
-        int pc;
-        void set(int addr) {
-            pc = addr;
-        }
-        void print() {
-            printf("Hello! I'm IF! pc = %d\n", pc);
-        }
-};
-
-class ID {
-    public:
-        int op;
-        void set(int opcode) {
-            op = opcode;
-        }
-        void print() {
-            printf("Hello! I'm ID! op = %d\n", op);
-        }
-};
-
-class CLK {
-    public:
-        IF If;
-        ID Id;
-        CLK(int addr, int opcode) {
-            If.set(addr);
-            Id.set(opcode);
-        }
-        void print() {
-            If.print();
-            Id.print();
-        }
-};
-
 union data {
     int32_t i;
     float f;
@@ -44,16 +8,16 @@ union data {
 
 class TEST {
     public:
-        int** d;
+        union data** d;
         TEST(int height, int width) {
             for (int i=0; i<height; i++) {
-                d[i] = (int*)malloc(sizeof(int)*width);
+                d[i] = (union data*)malloc(sizeof(union data) * width);
             }
         }
         void print(int H, int W) {
             for (int i=0; i<H; i++) {
                 for (int j=0; j<W; j++) {
-                    printf("%d ", d[i][j]);
+                    printf("%f ", d[i][j].f);
                 }
                 printf("\n");
             }
@@ -76,8 +40,13 @@ int main(int argc, char* argv[]) {
     // }
     // fclose(in);
     // fclose(out);
-    TEST test(5, 7);
-    test.print(5, 7);
+
+    TEST test(4, 16);
+    test.print(4, 16);
+
+    int a = 10;
+    printf("%c\n", a);
+
 	return 0;
 }
 

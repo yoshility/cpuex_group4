@@ -149,6 +149,10 @@ int reg_num(char *reg) {
         return 7;
     } else if ((strncmp(reg, "s0", 2) == 0) || (strncmp(reg, "fp", 2) == 0)) {
         return 8;
+    } else if (strncmp(reg, "s10", 3) == 0) {
+        return 26;
+    } else if (strncmp(reg, "s11", 3) == 0) {
+        return 27;
     } else if (strncmp(reg, "s1", 2) == 0) {
         return 9;
     } else if (strncmp(reg, "a0", 2) == 0) {
@@ -183,10 +187,6 @@ int reg_num(char *reg) {
         return 24;
     } else if (strncmp(reg, "s9", 2) == 0) {
         return 25;
-    } else if (strncmp(reg, "s10", 3) == 0) {
-        return 26;
-    } else if (strncmp(reg, "s11", 3) == 0) {
-        return 27;
     } else if (strncmp(reg, "t3", 2) == 0) {
         return 28;
     } else if (strncmp(reg, "t4", 2) == 0) {
