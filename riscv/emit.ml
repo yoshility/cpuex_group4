@@ -60,7 +60,7 @@ match (tail,exp) with
   -> 
     let labelnum = getlabelnum y in
     print_asm oc "\taddi\t%s, x0, %d\n"  reg_sw labelnum;
-    print_asm oc "\taddi\t%s, %s, 0 # SETL\n"  x reg_sw  (*closure のアドレス*)
+    print_asm oc "\taddi\t%s, %s, 0\n"  x reg_sw  (*closure のアドレス*)
   | NonTail(x), Mov(y) when x = y -> ()
   | NonTail(x), Mov(y) -> print_asm oc "\taddi\t%s, %s 0\n"  x y 
   | NonTail(x), Neg(y) -> print_asm oc "\tsub\t%s, x0, %s\n" x y
@@ -79,7 +79,7 @@ match (tail,exp) with
   |V(t) -> print_asm oc "\tsll\t%s, %s, %s\n" x y t
   |C(i) -> print_asm oc "\tslli\t%s, %s, %d\n" x y i)
   | NonTail(x), Ld(y, i) -> print_asm oc "\tlw\t%s, %d(%s)\n" x  i y
-  | NonTail(_), St(x, y, i) ->print_asm oc "\tsw\t%s,%d(%s) # ST\n" x i y  
+  | NonTail(_), St(x, y, i) ->print_asm oc "\tsw\t%s,%d(%s) \n" x i y  
   | NonTail(x), FMovD(y) when x = y -> ()
   | NonTail(x), FMovD(y)  -> print_asm oc "\tfsgnj\t%s, %s, %s\n"  x y y 
   | NonTail(x), FNegD(y) ->print_asm oc "\tfsgnjx\t%s, %s, %s\n"  x y y;
@@ -88,7 +88,7 @@ match (tail,exp) with
   | NonTail(x), FMulD(y, z) -> print_asm oc "\tfmul\t%s, %s, %s\n" x y z
   | NonTail(x), FDivD(y, z) -> print_asm oc "\tfdiv\t%s, %s, %s\n" x y z
   | NonTail(x), LdDF(y, i)  -> print_asm oc "\tflw\t%s, %d(%s)\n" x  i y
-  | NonTail(_), StDF(x, y, i) -> print_asm oc "\tfsw\t%s, %d(%s) # STDF\n" x i y
+  | NonTail(_), StDF(x, y, i) -> print_asm oc "\tfsw\t%s, %d(%s) \n" x i y
   | NonTail(_), Comment(s) -> print_asm oc "\t# %s\n" s
    (* 退避の仮想命令の実装 (caml2html: emit_save) *)
   | NonTail(_), Save(x, y) when List.mem x allregs && not (S.mem y !stackset) ->
@@ -187,11 +187,12 @@ match (tail,exp) with
   (if is_reg x then (g'_args oc [(x, reg_cl)] ys zs)
   else (print_asm oc "\taddi\t%s, x0, %d" reg_cl (getlabelnum x);
   g'_args oc [] ys zs));
-      print_asm oc "\tlw\t%s, 0(%s) # CallCls\n" reg_sw reg_cl;
-      print_asm oc "\tjalr\tx0, %s, 0 # CallCls\n" reg_sw;
+      print_asm oc "\tlw\t%s, 0(%s) \n" reg_sw reg_cl;
+      print_asm oc "\tjalr\tx0, %s, 0 \n" reg_sw;
   | Tail, CallDir(Id.L(x), ys, zs) -> (* 末尾呼び出し *)
       g'_args oc [] ys zs;
-      print_asm oc "\tjal\tra, %s\n" x;
+      (* print_asm oc "\tjal\tra, %s\n" x; *)
+      print_asm oc "\tjal\tx0, %s \n" x;
       (* print_asm oc "\taddi\tx0, x0, 0\n" *)
   | NonTail(a), CallCls(x, ys, zs) ->
     (if is_reg x then (g'_args oc [(x, reg_cl)] ys zs)
@@ -200,7 +201,7 @@ match (tail,exp) with
       
       let ss = stacksize () in
       print_asm oc "\tlw\t%s, 0(%s)\n" reg_sw reg_cl;
-      print_asm oc "\taddi\tsp, sp, -24 # callcls\n" ;
+      print_asm oc "\taddi\tsp, sp, -24\n" ;
       print_asm oc "\tsw\t%s, 16(sp)\n" reg_cl;
       print_asm oc "\tsw\tra, 8(sp)\n" ;
       print_asm oc "\tsw\tfp, 0(sp)\n" ;
@@ -208,11 +209,11 @@ match (tail,exp) with
       print_asm oc "\tlw\t%s, 16(sp)\n" reg_cl;
       print_asm oc "\tlw\tra, 8(sp)\n" ;
       print_asm oc "\tlw\tfp, 0(sp)\n" ;
-      print_asm oc "\taddi\tsp, sp, 16 # callcls end\n" ;
+      print_asm oc "\taddi\tsp, sp, 16 \n" ;
       if List.mem a allregs && a <> regs.(0) then
-        print_asm oc "\taddi\t%s, %s, 0# callcls end\n"  a regs.(0)
+        print_asm oc "\taddi\t%s, %s, 0\n"  a regs.(0)
       else if List.mem a allfregs && a <> fregs.(0) then
-        (print_asm oc "\tfsgnj\t%s, %s # callcls end\n"  a fregs.(0);
+        (print_asm oc "\tfsgnj\t%s, %s\n"  a fregs.(0);
          (* print_asm oc "\tfsgnj\t%s, %s\n"  (co_freg a) (co_freg fregs.(0)) *)
          )
   | NonTail(a), CallDir(Id.L(x), ys, zs) ->
@@ -246,7 +247,7 @@ and g'_tail_if oc x y e1 e2 b bn =
   let stackset_back = !stackset in
   g oc (Tail, e1);
   (* print_asm oc "\t # tail then end:\n"; *)
-  print_asm oc "%s:\n" b_else;
+  Printf.fprintf oc "%s:\n" b_else;
   stackset := stackset_back;
   g oc (Tail, e2);
   (* print_asm oc "\t # tail else end:\n" *)
@@ -260,10 +261,10 @@ and g'_non_tail_if oc dest x y e1 e2 b bn =
   let stackset1 = !stackset in
   print_asm oc "\tjal\tx0, %s\n" b_cont;
     print_asm oc "\taddi\tx0, x0, 0\n";
-  print_asm oc "%s:\n" b_else;
+  Printf.fprintf oc "%s:\n" b_else;
   stackset := stackset_back;
   g oc (dest, e2);
-  print_asm oc "%s:\n" b_cont;
+  Printf.fprintf oc "%s:\n" b_cont;
   let stackset2 = !stackset in
   stackset := S.inter stackset1 stackset2
 and g'_args oc x_reg_cl ys zs =
@@ -301,7 +302,7 @@ let f oc (Prog(data, fundefs, e)) =
   Printf.fprintf oc(* print_asm oc*) ".align\t8\n"; 
   List.iter
     (fun (Id.L(x), d) ->
-      print_asm oc "%s:\t! %f\n" x d;
+      Printf.fprintf oc "%s:\t! %f\n" x d;
       print_asm oc "\t.long\t0x%lx\n" (gethi d);
       print_asm oc "\t.long\t0x%lx\n" (getlo d))
     data;

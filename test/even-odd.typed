@@ -1,17 +1,17 @@
 Let
    t
-   type Var type Int
+   type Int
    123
    Let
       f
-      type Var type Int
+      type Int
       456
       LetRec
-            even:type Var type Fun:type Int,->type Int
-            args:x:type Var type Int, 
+            even:type Fun:type Int,->type Int
+            args:x:type Int, 
             LetRec
-                  odd:type Var type Fun:type Int,->type Int
-                  args:x:type Var type Int, 
+                  odd:type Fun:type Int,->type Int
+                  args:x:type Int, 
                   IF
                     Not LE
                           Var x

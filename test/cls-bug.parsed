@@ -9,9 +9,7 @@ LetRec
             args:y:type Var type Int, 
             Var f
             App
-               Var print_int
                App
-                  App
-                     Var g
-                     456
-                  789
+                  Var g
+                  456
+               789

@@ -1,12 +1,8 @@
 Let
-   Ti3 type Int
+   Ti1 type Int
+   18
    Let
-      Ti1 type Int
-      21600
-      Let
-         Ti2 type Int
-         337500
-         AppDir
-               Label: gcd Ti1,Ti2,
-   AppDir
-         Label: min_caml_print_int Ti3,
+      Ti2 type Int
+      12
+      AppDir
+            Label: gcd Ti1,Ti2,

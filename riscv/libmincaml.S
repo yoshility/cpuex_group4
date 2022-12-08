@@ -8,7 +8,7 @@ min_caml_print_newline:
 .global min_caml_print_int
 min_caml_print_int:
 	addi a0, a0, 48
-	sw	 a0, 0(s11)
+	sw	 a0, 0(s10)
 	jalr x0, ra, 0
 	addi x0, x0, 0
 .global min_caml_print_char

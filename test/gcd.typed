@@ -1,6 +1,6 @@
 LetRec
-      gcd:type Var type Fun:type Int,type Int,->type Int
-      args:m:type Var type Int, n:type Var type Int, 
+      gcd:type Fun:type Int,type Int,->type Int
+      args:m:type Int, n:type Int, 
       IF
         Eq
           Var m

@@ -1,0 +1,20 @@
+LetRec
+      sum:type Fun:type Int,->type Int
+      args:x:type Int, 
+      IF
+        LE
+          Var x
+          0
+        0
+        Add
+           App
+              Var sum
+              Sub
+                 Var x
+                 1
+           Var x
+      App
+         Var print_int
+         App
+            Var sum
+            10000

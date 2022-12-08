@@ -1,9 +1,9 @@
 LetRec
-      compose:type Var type Fun:type Fun:type Int,->type Int,type Fun:type Int,->type Int,->type Fun:type Int,->type Int
-      args:f:type Var type Fun:type Int,->type Int, g:type Var type Fun:type Int,->type Int, 
+      compose:type Fun:type Fun:type Int,->type Int,type Fun:type Int,->type Int,->type Fun:type Int,->type Int
+      args:f:type Fun:type Int,->type Int, g:type Fun:type Int,->type Int, 
       LetRec
-            composed:type Var type Fun:type Int,->type Int
-            args:x:type Var type Int, 
+            composed:type Fun:type Int,->type Int
+            args:x:type Int, 
             App
                Var g
                App
@@ -11,26 +11,26 @@ LetRec
                   Var x
             Var composed
       LetRec
-            dbl:type Var type Fun:type Int,->type Int
-            args:x:type Var type Int, 
+            dbl:type Fun:type Int,->type Int
+            args:x:type Int, 
             Add
                Var x
                Var x
             LetRec
-                  inc:type Var type Fun:type Int,->type Int
-                  args:x:type Var type Int, 
+                  inc:type Fun:type Int,->type Int
+                  args:x:type Int, 
                   Add
                      Var x
                      1
                   LetRec
-                        dec:type Var type Fun:type Int,->type Int
-                        args:x:type Var type Int, 
+                        dec:type Fun:type Int,->type Int
+                        args:x:type Int, 
                         Sub
                            Var x
                            1
                         Let
                            h
-                           type Var type Fun:type Int,->type Int
+                           type Fun:type Int,->type Int
                            App
                               Var compose
                               Var inc

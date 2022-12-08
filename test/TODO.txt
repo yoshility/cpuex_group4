@@ -8,17 +8,17 @@
 - make closure
 
 ## test
-- print 
-- sum-tail 
-- gcd 
-- sum 
+- print ?
+- sum-tail done maybe 
+- gcd ?
+- sum done maybe
 - fib done
-- ack 
-- even-odd 
+- ack done
+- even-odd done
 - adder done
-- funcomp 
+- funcomp bug
 - cls-rec ?
-- cls-bug 
+- cls-bug bug
 - cls-bug2 
 - cls-reg-bug 
 - shuffle 
