@@ -285,8 +285,7 @@ int main(int argc, char* argv[]) {
             int rs2 = reg_num(r1);
             int jmp_addr;
             for (int i=0; i<1000; i++) {
-                eliminate_colon(label[i]);
-                if (strncmp(label[i], r2, strlen(r2)) == 0) {
+                if (strncmp(eliminate_colon(label[i]), r2, strlen(r2)) == 0) {
                     jmp_addr = i*4;
                     break;
                 }
@@ -308,9 +307,8 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r0);
             int rs2 = reg_num(r1);
             int jmp_addr;
-            for (int i=0; i<1000; i+=4) {
-                eliminate_colon(label[i]);
-                if (strncmp(label[i], r2, strlen(r2)) == 0) {
+            for (int i=0; i<1000; i++) {
+                if (strncmp(eliminate_colon(label[i]), r2, strlen(r2)) == 0) {
                     jmp_addr = i*4;
                     break;
                 }
@@ -335,9 +333,8 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r0);
             int rs2 = reg_num(r1);
             int jmp_addr;
-            for (int i=0; i<1000; i+=4) {
-                eliminate_colon(label[i]);
-                if (strncmp(label[i], r2, strlen(r2)) == 0) {
+            for (int i=0; i<1000; i++) {
+                if (strncmp(eliminate_colon(label[i]), r2, strlen(r2)) == 0) {
                     jmp_addr = i*4;
                     break;
                 }
@@ -774,9 +771,8 @@ int main(int argc, char* argv[]) {
         else if (strncmp(opcode, "jal", 3) == 0) {
             int rd = reg_num(r0);
             int jmp_addr;
-            for (int i=0; i<1000; i+=4) {
-                eliminate_colon(label[i]);
-                if (strncmp(label[i], r1, strlen(r1)) == 0) {
+            for (int i=0; i<1000; i++) {
+                if (strncmp(eliminate_colon(label[i]), r2, strlen(r2)) == 0) {
                     jmp_addr = i*4;
                     break;
                 }
