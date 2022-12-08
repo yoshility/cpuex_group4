@@ -1,56 +1,45 @@
 Let
-   Tu1 type Unit
+   Tt11 type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,)
    Let
-      Ti13 type Int
+      Ti1 type Int
+      1
       Let
-         Tt12 type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,)
+         Ti2 type Int
+         2
          Let
-            Ti2 type Int
-            1
+            Ti3 type Int
+            3
             Let
-               Ti3 type Int
-               2
+               Ti4 type Int
+               4
                Let
-                  Ti4 type Int
-                  3
+                  Ti5 type Int
+                  5
                   Let
-                     Ti5 type Int
-                     4
+                     Ti6 type Int
+                     6
                      Let
-                        Ti6 type Int
-                        5
+                        Ti7 type Int
+                        7
                         Let
-                           Ti7 type Int
-                           6
+                           Ti8 type Int
+                           8
                            Let
-                              Ti8 type Int
-                              7
+                              Ti9 type Int
+                              9
                               Let
-                                 Ti9 type Int
-                                 8
-                                 Let
-                                    Ti10 type Int
-                                    9
-                                    Let
-                                       Ti11 type Int
-                                       10
-                                       Tuple
-                                            Ti2
-                                            Ti3
-                                            Ti4
-                                            Ti5
-                                            Ti6
-                                            Ti7
-                                            Ti8
-                                            Ti9
-                                            Ti10
-                                            Ti11
-         AppDir
-               Label: h Tt12,
-      AppDir
-            Label: min_caml_print_int Ti13,
-   Let
-      Tu14 type Unit
-      Unit
-      AppDir
-            Label: min_caml_print_newline Tu14,
+                                 Ti10 type Int
+                                 10
+                                 Tuple
+                                      Ti1
+                                      Ti2
+                                      Ti3
+                                      Ti4
+                                      Ti5
+                                      Ti6
+                                      Ti7
+                                      Ti8
+                                      Ti9
+                                      Ti10
+   AppDir
+         Label: h Tt11,

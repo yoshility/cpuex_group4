@@ -209,7 +209,7 @@ match (tail,exp) with
       print_asm oc "\tlw\t%s, 16(sp)\n" reg_cl;
       print_asm oc "\tlw\tra, 8(sp)\n" ;
       print_asm oc "\tlw\tfp, 0(sp)\n" ;
-      print_asm oc "\taddi\tsp, sp, 16 \n" ;
+      print_asm oc "\taddi\tsp, sp, 24 \n" ;
       if List.mem a allregs && a <> regs.(0) then
         print_asm oc "\taddi\t%s, %s, 0\n"  a regs.(0)
       else if List.mem a allfregs && a <> fregs.(0) then
@@ -297,7 +297,7 @@ let h oc { name = Id.L(x); args = _; fargs = _; body = e; ret = _ } =
 
 let f oc (Prog(data, fundefs, e)) =
   pc := 0;(*labelnumの初期値。ライブラリ関数などに注意。*)
-  Format.eprintf "generating assembly...@.";
+  Format.eprintf "generating assembly...@."; (*244?*)
   Printf.fprintf oc(* print_asm oc*) ".section\t\".rodata\"\n"; 
   Printf.fprintf oc(* print_asm oc*) ".align\t8\n"; 
   List.iter

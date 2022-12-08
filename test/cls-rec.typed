@@ -1,7 +1,7 @@
 Let
    x
    type Int
-   10
+   7
    LetRec
          f:type Fun:type Int,->type Int
          args:y:type Int, 
@@ -19,4 +19,4 @@ Let
                     1
          App
             Var f
-            123
+            5

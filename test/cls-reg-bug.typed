@@ -1,24 +1,24 @@
 LetRec
-      h:type Var type Fun:type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,),->type Int
-      args:p:type Var type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,), 
+      h:type Fun:type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,),->type Int
+      args:p:type Tuple(type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,), 
       LetTuple
-              v1 type Var type Int
-              v2 type Var type Int
-              v3 type Var type Int
-              v4 type Var type Int
-              v5 type Var type Int
-              v6 type Var type Int
-              v7 type Var type Int
-              v8 type Var type Int
-              v9 type Var type Int
-              v10 type Var type Int
+              v1 type Int
+              v2 type Int
+              v3 type Int
+              v4 type Int
+              v5 type Int
+              v6 type Int
+              v7 type Int
+              v8 type Int
+              v9 type Int
+              v10 type Int
               Var p
               LetRec
-                    g:type Var type Fun:type Int,->type Int
-                    args:z:type Var type Int, 
+                    g:type Fun:type Int,->type Int
+                    args:z:type Int, 
                     Let
                        r
-                       type Var type Int
+                       type Int
                        Add
                           Add
                              Add

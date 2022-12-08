@@ -4,23 +4,22 @@
 - test scriptを通す
 - 特に小数点に注意
 - label と即値
-- a0にクロージャのメモリ番地を入れる
-- make closure
+- array??
 
 ## test
 - print ?
 - sum-tail done maybe 
-- gcd ?
+- gcd done
 - sum done maybe
 - fib done
 - ack done
 - even-odd done
 - adder done
 - funcomp bug
-- cls-rec ?
-- cls-bug bug
-- cls-bug2 
-- cls-reg-bug 
+- cls-rec done
+- cls-bug done
+- cls-bug2 array
+- cls-reg-bug なぞのえらー。10少ない
 - shuffle 
 - spill 
 - spill2 

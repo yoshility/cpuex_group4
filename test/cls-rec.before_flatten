@@ -1,6 +1,6 @@
 Let
    x type Int
-   10
+   7
    MakeCls
           f: type Fun:type Int,->type IntLabel:f
           x, 
