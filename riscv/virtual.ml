@@ -146,7 +146,7 @@ match e with
       | Type.Array(_) ->
         Let((offset, Type.Int), (SLL(y, C(2)),p),
         Let((offset2, Type.Int), (Add(offset, V(x)),p),
-            Ans((LdDF(offset2, 0),p))))(**)
+            Ans((Ld(offset2, 0),p))))(**)
       | _ -> assert false)
   | Closure.Put(x, y, z) ->
       let offset = Id.genid "o" in

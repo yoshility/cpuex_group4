@@ -296,13 +296,14 @@ let h oc { name = Id.L(x); args = _; fargs = _; body = e; ret = _ } =
   g oc (Tail, e)
 
 let f oc (Prog(data, fundefs, e)) =
-  pc := 0;(*labelnumの初期値。ライブラリ関数などに注意。*)
+  pc := 32;(*labelnumの初期値。ライブラリ関数などに注意。*)
   Format.eprintf "generating assembly...@."; (*244?*)
   Printf.fprintf oc(* print_asm oc*) ".section\t\".rodata\"\n"; 
   Printf.fprintf oc(* print_asm oc*) ".align\t8\n"; 
   List.iter
     (fun (Id.L(x), d) ->
       Printf.fprintf oc "%s:\t! %f\n" x d;
+      setlabelnum x (!pc);
       print_asm oc "\t.long\t0x%lx\n" (gethi d);
       print_asm oc "\t.long\t0x%lx\n" (getlo d))
     data;

@@ -74,3 +74,32 @@ min_caml_floor:
 	sub	a0, a0, t0  
 	jalr x0, ra, 0
 	addi x0, x0, 0
+.global min_caml_create_array
+min_caml_create_array:
+	addi s9, t0, 0 
+create_array_loop:
+	bne	a0, x0, create_array_cont
+	addi a0, s9, x0
+	jalr x0, ra, 0
+	addi x0, x0, 0
+create_array_cont:
+	sw	a1, 0(t0)
+	addi t0, t0, 4
+	addi a0, a0, -1
+	jal	x0, create_array_loop
+.global min_caml_create_float_array
+min_caml_create_float_array:
+	addi s9, t0, 0 
+create_float_array_loop:
+	bne	a0, x0, create_float_array_cont
+	addi a0, s9, x0
+	jalr x0, ra, 0
+	addi x0, x0, 0
+create_float_array_cont:
+	sw	a1, 0(t0)
+	addi t0, t0, 8
+	addi a0, a0, -1
+	jal	x0, create_array_loop
+
+
+
