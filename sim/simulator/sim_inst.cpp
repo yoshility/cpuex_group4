@@ -36,7 +36,10 @@ int main(int argc, char* argv[]) {
     bool step_by_step = atoi(argv[6]);
 
     Memory memory;         // data memory
-    Cache cache(2, 6);           // data cache
+    Cache cache;           // data cache
+    int line_num = 1 << INDEX_WIDTH;
+    int line_size = 1 << (OFFSET_WIDTH - 2);
+    int LRU = 0;           // 使われていないほうのway番号（2wayのみ対応）
     // printf("hello\n");
 
     // Cache inst_cache;           // inst cache
@@ -285,7 +288,7 @@ int main(int argc, char* argv[]) {
             int rs2 = reg_num(r1);
             int jmp_addr;
             for (int i=0; i<1000; i++) {
-                eliminate_colon(label[i]);
+                // eliminate_colon(label[i]);
                 if (strncmp(label[i], r2, strlen(r2)) == 0) {
                     jmp_addr = i*4;
                     break;
@@ -308,8 +311,8 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r0);
             int rs2 = reg_num(r1);
             int jmp_addr;
-            for (int i=0; i<1000; i+=4) {
-                eliminate_colon(label[i]);
+            for (int i=0; i<1000; i++) {
+                // eliminate_colon(label[i]);
                 if (strncmp(label[i], r2, strlen(r2)) == 0) {
                     jmp_addr = i*4;
                     break;
@@ -335,8 +338,8 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r0);
             int rs2 = reg_num(r1);
             int jmp_addr;
-            for (int i=0; i<1000; i+=4) {
-                eliminate_colon(label[i]);
+            for (int i=0; i<1000; i++) {
+                // eliminate_colon(label[i]);
                 if (strncmp(label[i], r2, strlen(r2)) == 0) {
                     jmp_addr = i*4;
                     break;
@@ -362,8 +365,6 @@ int main(int argc, char* argv[]) {
             int rd = reg_num(r0);
             int imm = atoi(r1);
             int rs1 = reg_num(r2);
-            printf("\tlw address: %d\n", reg[rs1]+imm);
-            printf("\tM[%d]: %d\n", reg[rs1]+imm, memory.d[reg[rs1]+imm].i);
             // input
             if (rs1 == 27) {
                 char i[10];
@@ -384,30 +385,37 @@ int main(int argc, char* argv[]) {
                     int tag = data_addr >> (INDEX_WIDTH + OFFSET_WIDTH);
                     unsigned int offset = data_addr & ((1<<OFFSET_WIDTH)-1);
                     cache.accessed_times++;
-                    if (tag == cache.tags[index]) {
-                        cache.hit_times++;
-                        if (debug) {
-                            printf("\t[lw]  Hit!\n");
-                        }
-                        reg[rd] = cache.d[index][offset/4].i;
-                    } else {
-                        cache.miss_times++;
-                        if (debug) {
-                            printf("\t[lw] Miss!\n");
-                        }
-                        // if dirty, write back
-                        if (cache.status[index] == DIRTY) {
-                            for (int i=0; i<(1<<OFFSET_WIDTH); i+=4) {
-                                memory.d[((cache.tags[index]<<(INDEX_WIDTH+OFFSET_WIDTH)) + (index<<OFFSET_WIDTH) + i) / 4] = cache.d[index][i/4];
+
+                    for (int i=0; i<=WAY_NUM; i++) {
+                        if (i == WAY_NUM) {
+                            cache.miss_times++;
+                            if (debug) {
+                                cout << "\t[lw] Miss!" << endl;
                             }
+                            // if dirty, write back
+                            if (cache.status[LRU * line_num + index] == DIRTY) {
+                                for (int j=0; j<(1<<OFFSET_WIDTH); j+=4) {
+                                    memory.d[((cache.tags[LRU * line_num + index]<<(INDEX_WIDTH+OFFSET_WIDTH)) + (index<<OFFSET_WIDTH) + j) / 4] = cache.d[LRU][index * line_size + j/4];
+                                }
+                            }
+                            // take data
+                            cache.tags[LRU * line_num + index] = tag;
+                            for (int j=0; j<(1<<OFFSET_WIDTH); j+=4) {
+                                cache.d[LRU][index * line_size + j/4] = memory.d[((data_addr & (((1<<(32-OFFSET_WIDTH))-1)<<OFFSET_WIDTH)) + j) / 4]; 
+                            }
+                            cache.status[LRU * line_num + index] = CLEAN;
+                            reg[rd] = cache.d[LRU][index * line_size + offset/4].i;
+                            LRU = 1 - LRU;
                         }
-                        // take data
-                        cache.tags[index] = tag;
-                        for (int i=0; i<(1<<OFFSET_WIDTH); i+=4) {
-                            cache.d[index][i/4] = memory.d[((data_addr & (((1<<(32-OFFSET_WIDTH))-1)<<OFFSET_WIDTH)) + i) / 4]; 
+                        else if (tag == cache.tags[i * line_num + index]) {
+                            cache.hit_times++;
+                            if (debug) {
+                                cout << "\t[lw] Hit at way " << i << "!" << endl;
+                            }
+                            reg[rd] = cache.d[i][index * line_size + offset/4].i;
+                            LRU = 1 - i;
+                            break;
                         }
-                        cache.status[index] = CLEAN;
-                        reg[rd] = cache.d[index][offset/4].i;
                     }
                 }
                 // no cache
@@ -424,14 +432,18 @@ int main(int argc, char* argv[]) {
             }
             pc = pc + 4;
         }
-        // sw rs2, imm(rs1) (output=s11/x27)
+        // sw rs2, imm(rs1) (int output=s10/x26; char output=s11/x27)
         else if (strncmp(opcode, "sw", 2) == 0) {
             int rs2 = reg_num(r0);
             int imm = atoi(r1);
             int rs1 = reg_num(r2);
-            // output
-            if (rs1 == 27) {
+            // int output
+            if (rs1 == 26) {
                 fprintf(out_ppm, "%d", reg[rs2]);
+            }
+            // char output
+            else if (rs1 == 27) {
+                fprintf(out_ppm, "%c", reg[rs2]);
             }
             // regular sw
             else {
@@ -442,31 +454,38 @@ int main(int argc, char* argv[]) {
                     int tag = data_addr >> (INDEX_WIDTH + OFFSET_WIDTH);
                     unsigned int offset = data_addr & ((1<<OFFSET_WIDTH)-1);
                     cache.accessed_times++;
-                    if (tag == cache.tags[index]) {
-                        cache.hit_times++;
-                        if (debug) {
-                            printf("\t[sw]  Hit!\n");
-                        }
-                        cache.d[index][offset/4].i = reg[rs2];
-                        cache.status[index] = DIRTY;
-                    } else {
-                        cache.miss_times++;
-                        if (debug) {
-                            printf("\t[sw] Miss!\n");
-                        }
-                        // if dirty, write back
-                        if (cache.status[index] == DIRTY) {
-                            for (int i=0; i<(1<<OFFSET_WIDTH); i+=4) {
-                                memory.d[((cache.tags[index]<<(INDEX_WIDTH+OFFSET_WIDTH)) + (index<<OFFSET_WIDTH) + i) / 4] = cache.d[index][i/4];
+
+                    for (int i=0; i<=WAY_NUM; i++) {
+                        if (i == WAY_NUM) {
+                            cache.miss_times++;
+                            if (debug) {
+                                cout << "\t[sw] Miss!" << endl;
                             }
+                            // if dirty, write back
+                            if (cache.status[LRU * line_num + index] == DIRTY) {
+                                for (int j=0; j<(1<<OFFSET_WIDTH); j+=4) {
+                                    memory.d[((cache.tags[LRU * line_num + index]<<(INDEX_WIDTH+OFFSET_WIDTH)) + (index<<OFFSET_WIDTH) + j) / 4] = cache.d[LRU][index * line_size + j/4];
+                                }
+                            }
+                            // take data
+                            cache.tags[LRU * line_num + index] = tag;
+                            for (int j=0; j<(1<<OFFSET_WIDTH); j+=4) {
+                                cache.d[LRU][index * line_size + j/4] = memory.d[((data_addr & (((1<<(32-OFFSET_WIDTH))-1)<<OFFSET_WIDTH)) + j) / 4]; 
+                            }
+                            cache.d[LRU][index * line_size + offset/4].i = reg[rs2];
+                            cache.status[LRU * line_num + index] = DIRTY;
+                            LRU = 1 - LRU;
                         }
-                        // take data
-                        cache.tags[index] = tag;
-                        for (int i=0; i<(1<<OFFSET_WIDTH); i+=4) {
-                            cache.d[index][i/4] = memory.d[((data_addr & (((1<<(32-OFFSET_WIDTH))-1)<<OFFSET_WIDTH)) + i) / 4]; 
+                        else if (tag == cache.tags[i * line_num + index]) {
+                            cache.hit_times++;
+                            if (debug) {
+                                cout << "\t[sw] Hit at way " << i << "!" << endl;
+                            }
+                            cache.d[i][index * line_size + offset/4].i = reg[rs2];
+                            cache.status[i * line_num + index] = DIRTY;
+                            LRU = 1 - i;
+                            break;
                         }
-                        cache.d[index][offset/4].i = reg[rs2];
-                        cache.status[index] = DIRTY;
                     }
                 }
                 // no cache
@@ -538,110 +557,138 @@ int main(int argc, char* argv[]) {
                 clk++;
             }
         }
-        // flw fd, imm(rs1)
-        // else if (strncmp(opcode, "flw", 3) == 0) {
-        //     int fd = freg_num(r0);
-        //     int imm = atoi(r1);
-        //     int rs1 = reg_num(r2);
-        //     // use cache
-        //     if (use_cache) {
-        //         unsigned int data_addr = reg[rs1] + imm;
-        //         unsigned int index = (data_addr >> 4) & 0b11;
-        //         int tag = data_addr >> 6;
-        //         unsigned int offset = data_addr & 0xf;
-        //         cache.accessed_times++;
-        //         if (tag == cache.tags[index]) {
-        //             cache.hit_times++;
-        //             if (debug) {
-        //                 printf("\t[flw] Hit!\n");
-        //             }
-        //             freg[fd] = cache.d[index*16+offset].f;
-        //         } else {
-        //             cache.miss_times++;
-        //             if (debug) {
-        //                 printf("\t[flw] Miss!\n");
-        //             }
-        //             // if dirty, write back
-        //             if (cache.status[index] == DIRTY) {
-        //                 for (int i=0; i<16; i+=4) {
-        //                     memory.d[(cache.tags[index]<<6) + (index<<4) + i] = cache.d[index*16+i];
-        //                 }
-        //             }
-        //             // take data
-        //             cache.tags[index] = tag;
-        //             for (int i=0; i<16; i+=4) {
-        //                 cache.d[index*16+i] = memory.d[(data_addr & 0xfffffff0)+i];
-        //             }
-        //             cache.status[index] = CLEAN;
-        //             freg[fd] = cache.d[index*16+offset].f;
-        //         }
-        //     }
-        //     // no cache
-        //     else {
-        //         freg[fd] = memory.d[reg[rs1]+imm].f;
-        //     }
-        //     pc = pc + 4;
-        //     if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
-        //         clk += 2;
-        //         pre_inst_is_lw = 0;
-        //     } else {
-        //         clk++;
-        //     }
-        //     pre_inst_is_flw = 1;
-        //     pre_flw_rd = fd;
-        // }
-        // fsw fs2, imm(rs1)
-        // else if (strncmp(opcode, "fsw", 3) == 0) {
-        //     int fs2 = freg_num(r0);
-        //     int imm = atoi(r1);
-        //     int rs1 = reg_num(r2);
-        //     // use cache
-        //     if (use_cache) {
-        //         unsigned int data_addr = reg[rs1] + imm;
-        //         unsigned int index = (data_addr >> 4) & 0b11;
-        //         int tag = data_addr >> 6;
-        //         unsigned int offset = data_addr & 0xf;
-        //         cache.accessed_times++;
-        //         if (tag == cache.tags[index]) {
-        //             cache.hit_times++;
-        //             if (debug) {
-        //                 printf("\t[fsw] Hit!\n");
-        //             }
-        //             cache.d[index*16+offset].f = freg[fs2];
-        //             cache.status[index] = DIRTY;
-        //         } else {
-        //             cache.miss_times++;
-        //             if (debug) {
-        //                 printf("\t[fsw] Miss!\n");
-        //             }
-        //             // if dirty, write back
-        //             if (cache.status[index] == DIRTY) {
-        //                 for (int i=0; i<16; i+=4) {
-        //                     memory.d[(cache.tags[index]<<6) + (index<<4) + i] = cache.d[index*16+i];
-        //                 }
-        //             }
-        //             // take data
-        //             cache.tags[index] = tag;
-        //             for (int i=0; i<16; i+=4) {
-        //                 cache.d[index*16+i] = memory.d[(data_addr & 0xfffffff0)+i];
-        //             }
-        //             cache.d[index*16+offset].f = freg[fs2];
-        //             cache.status[index] = DIRTY;
-        //         }
-        //     }
-        //     // no cache
-        //     else {
-        //         memory.d[reg[rs1]+imm].f = freg[fs2];
-        //     }
-        //     pc = pc + 4;
-        //     if ((pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) || (pre_inst_is_flw && (fs2==pre_flw_rd))) {
-        //         clk += 2;
-        //         pre_inst_is_lw = 0;
-        //         pre_inst_is_flw = 0;
-        //     } else {
-        //         clk++;
-        //     }
-        // }
+        // flw fd, imm(rs1) (input=s11/x27)
+        else if (strncmp(opcode, "flw", 3) == 0) {
+            int fd = freg_num(r0);
+            int imm = atoi(r1);
+            int rs1 = reg_num(r2);
+            // input
+            if (rs1 == 27) {
+                char i[10];
+                if ((fscanf(in_sld, "%s", i)) != EOF) {
+                    freg[fd] = atof(i);
+                } else {
+                    perror("sld file is over!\n");
+                }
+                clk++;
+                pre_inst_is_flw = 0;
+            }
+            // regular flw
+            else {
+                // use cache
+                if (use_cache) {
+                    unsigned int data_addr = reg[rs1] + imm;
+                    unsigned int index = (data_addr >> OFFSET_WIDTH) & ((1<<INDEX_WIDTH)-1);
+                    int tag = data_addr >> (INDEX_WIDTH + OFFSET_WIDTH);
+                    unsigned int offset = data_addr & ((1<<OFFSET_WIDTH)-1);
+                    cache.accessed_times++;
+
+                    for (int i=0; i<=WAY_NUM; i++) {
+                        if (i == WAY_NUM) {
+                            cache.miss_times++;
+                            if (debug) {
+                               cout << "\t[flw] Miss!" << endl;
+                            }
+                            // if dirty, write back
+                            if (cache.status[LRU * line_num + index] == DIRTY) {
+                                for (int j=0; j<(1<<OFFSET_WIDTH); j+=4) {
+                                    memory.d[((cache.tags[LRU * line_num + index]<<(INDEX_WIDTH+OFFSET_WIDTH)) + (index<<OFFSET_WIDTH) + j) / 4] = cache.d[LRU][index * line_size + j/4];
+                                }
+                            }
+                            // take data
+                            cache.tags[LRU * line_num + index] = tag;
+                            for (int j=0; j<(1<<OFFSET_WIDTH); j+=4) {
+                                cache.d[LRU][index * line_size + j/4] = memory.d[((data_addr & (((1<<(32-OFFSET_WIDTH))-1)<<OFFSET_WIDTH)) + j) / 4]; 
+                            }
+                            cache.status[LRU * line_num + index] = CLEAN;
+                            freg[fd] = cache.d[LRU][index * line_size + offset/4].f;
+                            LRU = 1 - LRU;
+                        }
+                        else if (tag == cache.tags[i * line_num + index]) {
+                            cache.hit_times++;
+                            if (debug) {
+                                cout << "\t[flw] Hit at way " << i << "!" << endl;
+                            }
+                            freg[fd] = cache.d[i][index * line_size + offset/4].f;
+                            LRU = 1 - i;
+                            break;
+                        }
+                    }
+                }
+                // no cache
+                else {
+                    freg[fd] = memory.d[reg[rs1]+imm].f;
+                }
+                if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+                    clk += 2;
+                    pre_inst_is_lw = 0;
+                } else {
+                    clk++;
+                }
+                pre_inst_is_flw = 1;
+                pre_flw_rd = fd;
+            }
+            pc = pc + 4;
+        }
+        // fsw fs2, imm(rs1) (outputには使わない)
+        else if (strncmp(opcode, "fsw", 3) == 0) {
+            int fs2 = freg_num(r0);
+            int imm = atoi(r1);
+            int rs1 = reg_num(r2);
+            // use cache
+            if (use_cache) {
+                unsigned int data_addr = reg[rs1] + imm;
+                unsigned int index = (data_addr >> OFFSET_WIDTH) & ((1<<INDEX_WIDTH)-1);
+                int tag = data_addr >> (INDEX_WIDTH + OFFSET_WIDTH);
+                unsigned int offset = data_addr & ((1<<OFFSET_WIDTH)-1);
+                cache.accessed_times++;
+
+                for (int i=0; i<=WAY_NUM; i++) {
+                    if (i == WAY_NUM) {
+                        cache.miss_times++;
+                        if (debug) {
+                            cout << "\t[fsw] Miss!" << endl;
+                        }
+                        // if dirty, write back
+                        if (cache.status[LRU * line_num + index] == DIRTY) {
+                            for (int j=0; j<(1<<OFFSET_WIDTH); j+=4) {
+                                memory.d[((cache.tags[LRU * line_num + index]<<(INDEX_WIDTH+OFFSET_WIDTH)) + (index<<OFFSET_WIDTH) + j) / 4] = cache.d[LRU][index * line_size + j/4];
+                            }
+                        }
+                        // take data
+                        cache.tags[LRU * line_num + index] = tag;
+                        for (int j=0; j<(1<<OFFSET_WIDTH); j+=4) {
+                            cache.d[LRU][index * line_size + j/4] = memory.d[((data_addr & (((1<<(32-OFFSET_WIDTH))-1)<<OFFSET_WIDTH)) + j) / 4]; 
+                        }
+                        cache.d[LRU][index * line_size + offset/4].f = freg[fs2];
+                        cache.status[LRU * line_num + index] = DIRTY;
+                        LRU = 1 - LRU;
+                    }
+                    else if (tag == cache.tags[i * line_num + index]) {
+                        cache.hit_times++;
+                        if (debug) {
+                            cout << "\t[fsw] Hit at way " << i << "!" << endl;
+                        }
+                        cache.d[i][index * line_size + offset/4].f = freg[fs2];
+                        cache.status[i * line_num + index] = DIRTY;
+                        LRU = 1 - i;
+                        break;
+                    }
+                }
+            }
+            // no cache
+            else {
+                memory.d[reg[rs1]+imm].f = freg[fs2];
+            }
+            if ((pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) || (pre_inst_is_flw && (fs2==pre_flw_rd))) {
+                clk += 2;
+                pre_inst_is_lw = 0;
+                pre_inst_is_flw = 0;
+            } else {
+                clk++;
+            }
+            pc = pc + 4;
+        }
         // fsqrt fd, fs1
         else if (strncmp(opcode, "fsqrt", 5) == 0) {
             int fd = freg_num(r0);
@@ -775,7 +822,7 @@ int main(int argc, char* argv[]) {
             int rd = reg_num(r0);
             int jmp_addr;
             for (int i=0; i<1000; i+=4) {
-                eliminate_colon(label[i]);
+                // eliminate_colon(label[i]);
                 if (strncmp(label[i], r1, strlen(r1)) == 0) {
                     jmp_addr = i*4;
                     break;

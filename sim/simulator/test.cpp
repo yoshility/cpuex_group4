@@ -8,18 +8,32 @@ union data {
 
 class TEST {
     public:
-        union data** d;
-        TEST(int height, int width) {
-            for (int i=0; i<height; i++) {
-                d[i] = (union data*)malloc(sizeof(union data) * width);
+        union data **d;
+        TEST() {
+            d = (union data**)malloc(sizeof(union data*) * 2);
+            for (int i=0; i<2; i++) {
+                cout << "hello" << endl;
+                d[i] = (union data*)malloc(sizeof(union data) * 4 * 16);
             }
         }
-        void print(int H, int W) {
-            for (int i=0; i<H; i++) {
-                for (int j=0; j<W; j++) {
-                    printf("%f ", d[i][j].f);
+        void set() {
+            for (int i=0; i<2; i++) {
+                for (int j=0; j<4; j++) {
+                    for (int k=0; k<16; k++) {
+                        d[i][j*16+k].i = j*16+k;
+                    }
                 }
-                printf("\n");
+            }
+        }
+        void print() {
+            for (int i=0; i<2; i++) {
+                for (int j=0; j<4; j++) {
+                    for (int k=0; k<16; k++) {
+                        cout << d[i][j*16+k].i << " ";
+                    }
+                    cout << endl;
+                }
+                cout << endl << endl;
             }
         }
 };
@@ -41,11 +55,10 @@ int main(int argc, char* argv[]) {
     // fclose(in);
     // fclose(out);
 
-    TEST test(4, 16);
-    test.print(4, 16);
-
-    int a = 10;
-    printf("%c\n", a);
+    
+    TEST test;
+    test.set();
+    test.print();
 
 	return 0;
 }

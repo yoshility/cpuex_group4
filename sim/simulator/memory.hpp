@@ -11,33 +11,23 @@ class Cache {
 	public:
 		int* status;
 		int* tags;
-		// union data d[1<<INDEX_WIDTH][1<<(OFFSET_WIDTH-2)];
-		union data *d[4];
+		union data **d;
 		unsigned long long accessed_times;
 		unsigned long long hit_times;
 		unsigned long long miss_times;
-		// Cache() {
-		// 	status = (int*)malloc(sizeof(int) * 4);
-		// 	tags = (int*)malloc(sizeof(int) * 4);
-		// 	d = (union data*)malloc(sizeof(union data) * 16 * 4);
-		// 	accessed_times = 0;
-		// 	hit_times = 0;
-		// 	miss_times = 0;
-		// }
-		Cache(unsigned int index_width, unsigned int offset_width) {
-			int line_size = 1 << (offset_width - 2);
-			cout << line_size << endl;
+
+		Cache() {
+			int line_size = 1 << (OFFSET_WIDTH - 2);
+			int line_num = 1 << INDEX_WIDTH;
 			
-			for (int i=0; i<4; i++) {
-				d[i] = (union data*)malloc(sizeof(union data) * line_size);
+			d = (union data**)malloc(sizeof(union data*) * WAY_NUM);
+			for (int i=0; i<WAY_NUM; i++) {
+				d[i] = (union data*)malloc(sizeof(union data) * line_num * line_size);
 			}
 			
-			status = (int*)malloc(sizeof(int) * 4);
-			tags = (int*)malloc(sizeof(int) * 4);
+			status = (int*)malloc(sizeof(int) * WAY_NUM * line_num);
+			tags = (int*)malloc(sizeof(int) * WAY_NUM * line_num);
 			
-			printf("hello\n");
-			
-			// d = (union data*)malloc(sizeof(union data) * 16 * 4);
 			accessed_times = 0;
 			hit_times = 0;
 			miss_times = 0;
