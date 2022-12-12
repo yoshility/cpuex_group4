@@ -772,7 +772,7 @@ int main(int argc, char* argv[]) {
             int rd = reg_num(r0);
             int jmp_addr;
             for (int i=0; i<1000; i++) {
-                if (strncmp(eliminate_colon(label[i]), r2, strlen(r2)) == 0) {
+                if (strncmp(eliminate_colon(label[i]), r1, strlen(r1)) == 0) {
                     jmp_addr = i*4;
                     break;
                 }
