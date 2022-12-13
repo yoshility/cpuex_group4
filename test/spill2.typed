@@ -1,122 +1,122 @@
 LetRec
-      f:type Var type Fun:type Unit,->type Int
-      args:Tu1:type Var type Unit, 
+      f:type Fun:type Unit,->type Int
+      args:Tu1:type Unit, 
       12345
       LetRec
-            g:type Var type Fun:type Int,->type Int
-            args:y:type Var type Int, 
+            g:type Fun:type Int,->type Int
+            args:y:type Int, 
             Add
                Var y
                1
             Let
                z
-               type Var type Array type Int
+               type Array type Int
                Array
                     10
                     1
                Let
                   x
-                  type Var type Int
+                  type Int
                   App
                      Var f
                      Unit
                   Let
                      y
-                     type Var type Int
+                     type Int
                      67890
                      Let
                         z0
-                        type Var type Int
+                        type Int
                         Get
                            Var z
                            0
                         Let
                            z1
-                           type Var type Int
+                           type Int
                            Add
                               Var z0
                               Var z0
                            Let
                               z2
-                              type Var type Int
+                              type Int
                               Add
                                  Var z1
                                  Var z1
                               Let
                                  z3
-                                 type Var type Int
+                                 type Int
                                  Add
                                     Var z2
                                     Var z2
                                  Let
                                     z4
-                                    type Var type Int
+                                    type Int
                                     Add
                                        Var z3
                                        Var z3
                                     Let
                                        z5
-                                       type Var type Int
+                                       type Int
                                        Add
                                           Var z4
                                           Var z4
                                        Let
                                           z6
-                                          type Var type Int
+                                          type Int
                                           Add
                                              Var z5
                                              Var z5
                                           Let
                                              z7
-                                             type Var type Int
+                                             type Int
                                              Add
                                                 Var z6
                                                 Var z6
                                              Let
                                                 z8
-                                                type Var type Int
+                                                type Int
                                                 Add
                                                    Var z7
                                                    Var z7
                                                 Let
                                                    z9
-                                                   type Var type Int
+                                                   type Int
                                                    Add
                                                       Var z8
                                                       Var z8
                                                    Let
                                                       z10
-                                                      type Var type Int
+                                                      type Int
                                                       Add
                                                          Var z9
                                                          Var z9
                                                       Let
                                                          z11
-                                                         type Var type Int
+                                                         type Int
                                                          Add
                                                             Var z10
                                                             Var z10
                                                          Let
                                                             z12
-                                                            type Var type Int
+                                                            type Int
                                                             Add
                                                                Var z11
                                                                Var z11
                                                             Let
                                                                z13
-                                                               type Var type Int
+                                                               type Int
                                                                Add
                                                                   Var z12
                                                                   Var z12
                                                                Let
                                                                   z14
-                                                                  type Var type Int
+                                                                  type Int
                                                                   Add
                                                                      Var z13
                                                                      Var z13
                                                                   Let
                                                                      z15
-                                                                     type Var type Int
+                                                                     type Int
                                                                      Add
                                                                         Var z14
                                                                         Var z14

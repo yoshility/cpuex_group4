@@ -10,7 +10,7 @@
 - print ?
 - sum-tail done maybe 
 - gcd done
-- sum done maybe
+- sum done
 - fib done
 - ack done
 - even-odd done
@@ -19,10 +19,10 @@
 - cls-rec done
 - cls-bug done
 - cls-bug2 array
-- cls-reg-bug なぞのえらー。10少ない
-- shuffle 
-- spill 
-- spill2 
+- cls-reg-bug done
+- shuffle ? print
+- spill done
+- spill2 array
 - spill3 
 - join-stack 
 - join-stack2 

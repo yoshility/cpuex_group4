@@ -46,7 +46,7 @@ match e with
           data := (l, d) :: !data;
           l in
       let x = Id.genid "l" in
-      Let((x, Type.Int), (SetL(l),p), Ans((LdDF(x, 0),p)))
+      Let((x, Type.Int), (Flabel(l),p), Ans((LdDF(x, 0),p)))
   | Closure.Neg(x) -> Ans((Neg(x),p))
   | Closure.Add(x, y) -> Ans((Add(x, V(y)),p))
   | Closure.Sub(x, y) -> Ans((Sub(x, V(y)),p))

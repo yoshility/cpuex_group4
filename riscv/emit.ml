@@ -55,8 +55,10 @@ match (tail,exp) with
 (* 末尾でなかったら計算結果をdestにセット (caml2html: emit_nontail) *)
   | NonTail(_), Nop -> ()
   | NonTail(x), Set(i) -> (print_asm oc "\taddi\t%s, x0, %d\n" x i)
-  | NonTail(x), Address(y) -> Printf.printf "Address of %s\n" y;(print_asm oc "\taddi\t%s, x0, %d # address\n" x (Asm.getaddress y))
-  | NonTail(x), SetL(Id.L(y)) 
+  | NonTail(x), Flabel(Id.L(y)) 
+  -> print_asm oc "\tlui\t%s, hi(%s)\n" x y;
+   print_asm oc "\tori\t%s, %s, lo(%s)\n" x x y;
+   | NonTail(x), SetL(Id.L(y)) 
   -> 
     let labelnum = getlabelnum y in
     print_asm oc "\taddi\t%s, x0, %d\n"  reg_sw labelnum;
@@ -109,7 +111,7 @@ match (tail,exp) with
       g' oc (NonTail(Id.gentmp Type.Unit), (exp,p));
       print_asm oc "\tjalr\tx0, ra, 0\n";
       print_asm oc "\taddi\tx0, x0, 0\n"
-  | Tail, (Set _ | SetL _ | Address _| Mov _ | Neg _ | Add _ | Sub _ |Mul _ | Div _| SLL _ | Ld _ as exp) ->
+  | Tail, (Set _ | SetL _ | Flabel _| Mov _ | Neg _ | Add _ | Sub _ |Mul _ | Div _| SLL _ | Ld _ as exp) ->
       g' oc (NonTail(regs.(0)), (exp,p));
       print_asm oc "\tjalr\tx0, ra, 0\n";
       print_asm oc "\taddi\tx0, x0, 0\n"
@@ -302,10 +304,11 @@ let f oc (Prog(data, fundefs, e)) =
   Printf.fprintf oc(* print_asm oc*) ".align\t8\n"; 
   List.iter
     (fun (Id.L(x), d) ->
-      Printf.fprintf oc "%s:\t! %f\n" x d;
+      Printf.fprintf oc "%s:\t# %f\n" x d;
       setlabelnum x (!pc);
       print_asm oc "\t.long\t0x%lx\n" (gethi d);
-      print_asm oc "\t.long\t0x%lx\n" (getlo d))
+      (* print_asm oc "\t.long\t0x%lx\n" (getlo d)) *)
+    )
     data;
     Printf.fprintf oc(* print_asm oc*) ".section\t\".text\"\n"; 
   List.iter (fun fundef -> h oc fundef) fundefs;

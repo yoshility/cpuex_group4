@@ -18,7 +18,7 @@ and exp' = (* 一つ一つの命令に対応する式 (caml2html: sparcasm_exp) *)
   | Nop(**)
   | Set of int
   | SetL of Id.l
-  | Address of Id.t
+  | Flabel of Id.l
   | Mov of Id.t(**)
   | Neg of Id.t(**)
   | Add of Id.t * id_or_imm
@@ -105,8 +105,8 @@ let rec remove_and_uniq xs = function
 (* free variables in the order of use (for spilling) (caml2html: sparcasm_fv) *)
 let fv_id_or_imm = function V(x) -> [x] | _ -> []
 let rec fv_exp = function
-  | Nop | Set(_) | SetL(_) | Comment(_) | Restore(_) -> []
-  | Mov(x) | Neg(x) | FMovD(x) | FNegD(x) | Save(x, _) | Ld(x, _) | LdDF(x, _)|Address(x)  -> [x]
+  | Nop | Set(_) | SetL(_) | Comment(_) | Restore(_) | Flabel(_)-> []
+  | Mov(x) | Neg(x) | FMovD(x) | FNegD(x) | Save(x, _) | Ld(x, _) | LdDF(x, _) -> [x]
   | Add(x, y') | Sub(x, y') | SLL(x, y')  -> x :: fv_id_or_imm y'
   | Mul(x,y) | Div(x,y)| St(x, y, _) | StDF(x, y, _)| FAddD(x, y) | FSubD(x, y) | FMulD(x, y) | FDivD(x, y) -> [x; y]
   | IfEq(x, y', e1, e2) | IfLE(x, y', e1, e2) | IfGE(x, y', e1, e2) -> x :: fv_id_or_imm y' @ remove_and_uniq S.empty (fv e1 @ fv e2) (* uniq here just for efficiency *)

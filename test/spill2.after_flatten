@@ -101,99 +101,95 @@ Let
                                                             z14
                                                             z14
                                                          Let
-                                                            Ti24 type Int
+                                                            Ti7 type Int
                                                             Let
-                                                               Ti7 type Int
-                                                               Let
-                                                                  Ti6 type Int
-                                                                  1
-                                                                  Get
-                                                                     z                                                                     Ti6
-                                                               Let
-                                                                  Ti8 type Int
-                                                                  0
-                                                                  IfEq
-                                                                      Ti7
-                                                                      Ti8
-                                                                      AppDir
-                                                                            Label: g y,
+                                                               Ti6 type Int
+                                                               1
+                                                               Get
+                                                                  z                                                                  Ti6
+                                                            Let
+                                                               Ti8 type Int
+                                                               0
+                                                               IfEq
+                                                                   Ti7
+                                                                   Ti8
+                                                                   AppDir
+                                                                         Label: g y,
+                                                                   Let
+                                                                      Ti23 type Int
                                                                       Let
-                                                                         Ti23 type Int
+                                                                         Ti22 type Int
                                                                          Let
-                                                                            Ti22 type Int
+                                                                            Ti21 type Int
                                                                             Let
-                                                                               Ti21 type Int
+                                                                               Ti20 type Int
                                                                                Let
-                                                                                  Ti20 type Int
+                                                                                  Ti19 type Int
                                                                                   Let
-                                                                                     Ti19 type Int
+                                                                                     Ti18 type Int
                                                                                      Let
-                                                                                        Ti18 type Int
+                                                                                        Ti17 type Int
                                                                                         Let
-                                                                                           Ti17 type Int
+                                                                                           Ti16 type Int
                                                                                            Let
-                                                                                              Ti16 type Int
+                                                                                              Ti15 type Int
                                                                                               Let
-                                                                                                 Ti15 type Int
+                                                                                                 Ti14 type Int
                                                                                                  Let
-                                                                                                    Ti14 type Int
+                                                                                                    Ti13 type Int
                                                                                                     Let
-                                                                                                       Ti13 type Int
+                                                                                                       Ti12 type Int
                                                                                                        Let
-                                                                                                          Ti12 type Int
+                                                                                                          Ti11 type Int
                                                                                                           Let
-                                                                                                             Ti11 type Int
+                                                                                                             Ti10 type Int
                                                                                                              Let
-                                                                                                                Ti10 type Int
-                                                                                                                Let
-                                                                                                                   Ti9 type Int
-                                                                                                                   Add
-                                                                                                                      z0
-                                                                                                                      z1
-                                                                                                                   Add
-                                                                                                                      Ti9
-                                                                                                                      z2
+                                                                                                                Ti9 type Int
                                                                                                                 Add
-                                                                                                                   Ti10
-                                                                                                                   z3
+                                                                                                                   z0
+                                                                                                                   z1
+                                                                                                                Add
+                                                                                                                   Ti9
+                                                                                                                   z2
                                                                                                              Add
-                                                                                                                Ti11
-                                                                                                                z4
+                                                                                                                Ti10
+                                                                                                                z3
                                                                                                           Add
-                                                                                                             Ti12
-                                                                                                             z5
+                                                                                                             Ti11
+                                                                                                             z4
                                                                                                        Add
-                                                                                                          Ti13
-                                                                                                          z6
+                                                                                                          Ti12
+                                                                                                          z5
                                                                                                     Add
-                                                                                                       Ti14
-                                                                                                       z7
+                                                                                                       Ti13
+                                                                                                       z6
                                                                                                  Add
-                                                                                                    Ti15
-                                                                                                    z8
+                                                                                                    Ti14
+                                                                                                    z7
                                                                                               Add
-                                                                                                 Ti16
-                                                                                                 z9
+                                                                                                 Ti15
+                                                                                                 z8
                                                                                            Add
-                                                                                              Ti17
-                                                                                              z10
+                                                                                              Ti16
+                                                                                              z9
                                                                                         Add
-                                                                                           Ti18
-                                                                                           z11
+                                                                                           Ti17
+                                                                                           z10
                                                                                      Add
-                                                                                        Ti19
-                                                                                        z12
+                                                                                        Ti18
+                                                                                        z11
                                                                                   Add
-                                                                                     Ti20
-                                                                                     z13
+                                                                                     Ti19
+                                                                                     z12
                                                                                Add
-                                                                                  Ti21
-                                                                                  z14
+                                                                                  Ti20
+                                                                                  z13
                                                                             Add
-                                                                               Ti22
-                                                                               z15
+                                                                               Ti21
+                                                                               z14
                                                                          Add
-                                                                            Ti23
-                                                                            x
-                                                            AppDir
-                                                                  Label: min_caml_print_int Ti24,
+                                                                            Ti22
+                                                                            z15
+                                                                      Add
+                                                                         Ti23
+                                                                         x

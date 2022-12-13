@@ -6,7 +6,7 @@ and exp' = (* 一つ一つの命令に対応する式 (caml2html: sparcasm_exp) *)
 | Nop(**)
 | Set of int
 | SetL of Id.l
-| Address of Id.t
+| Flabel of Id.l
 | Mov of Id.t(**)
 | Neg of Id.t(**)
 | Add of Id.t * id_or_imm

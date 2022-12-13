@@ -1,0 +1,55 @@
+LetRec
+      foo:type Fun:type Int,type Int,type Int,type Int,type Int,type Int,->type Unit
+      args:a:type Int, b:type Int, c:type Int, d:type Int, e:type Int, f:type Int, 
+      Let
+         Tu5
+         type Unit
+         App
+            Var print_int
+            Var a
+         Let
+            Tu4
+            type Unit
+            App
+               Var print_int
+               Var b
+            Let
+               Tu3
+               type Unit
+               App
+                  Var print_int
+                  Var c
+               Let
+                  Tu2
+                  type Unit
+                  App
+                     Var print_int
+                     Var d
+                  Let
+                     Tu1
+                     type Unit
+                     App
+                        Var print_int
+                        Var e
+                     App
+                        Var print_int
+                        Var f
+      LetRec
+            bar:type Fun:type Int,type Int,type Int,type Int,type Int,type Int,->type Unit
+            args:a:type Int, b:type Int, c:type Int, d:type Int, e:type Int, f:type Int, 
+            App
+               Var foo
+               Var b
+               Var a
+               Var d
+               Var e
+               Var f
+               Var c
+            App
+               Var bar
+               1
+               2
+               3
+               4
+               5
+               6

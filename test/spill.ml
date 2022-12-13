@@ -42,4 +42,4 @@ let rec f a b c d =
       k + l + m + n + o + p + q + r + s + t + u + v + w + x + y +
       aa + ab + ac + ad + ae + af + ag + ah + ai + aj + ak + al + am + an in
   -z in
-print_int (f 1 2 3 4)
+(*print_int*) (f 1 2 3 4)

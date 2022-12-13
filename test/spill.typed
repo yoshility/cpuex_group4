@@ -1,219 +1,219 @@
 LetRec
-      f:type Var type Fun:type Int,type Int,type Int,type Int,->type Int
-      args:a:type Var type Int, b:type Var type Int, c:type Var type Int, d:type Var type Int, 
+      f:type Fun:type Int,type Int,type Int,type Int,->type Int
+      args:a:type Int, b:type Int, c:type Int, d:type Int, 
       Let
          e
-         type Var type Int
+         type Int
          Add
             Var a
             Var b
          Let
             f
-            type Var type Int
+            type Int
             Add
                Var a
                Var c
             Let
                g
-               type Var type Int
+               type Int
                Add
                   Var a
                   Var d
                Let
                   h
-                  type Var type Int
+                  type Int
                   Add
                      Var b
                      Var c
                   Let
                      i
-                     type Var type Int
+                     type Int
                      Add
                         Var b
                         Var d
                      Let
                         j
-                        type Var type Int
+                        type Int
                         Add
                            Var c
                            Var d
                         Let
                            k
-                           type Var type Int
+                           type Int
                            Add
                               Var e
                               Var f
                            Let
                               l
-                              type Var type Int
+                              type Int
                               Add
                                  Var e
                                  Var g
                               Let
                                  m
-                                 type Var type Int
+                                 type Int
                                  Add
                                     Var e
                                     Var h
                                  Let
                                     n
-                                    type Var type Int
+                                    type Int
                                     Add
                                        Var e
                                        Var i
                                     Let
                                        o
-                                       type Var type Int
+                                       type Int
                                        Add
                                           Var e
                                           Var j
                                        Let
                                           p
-                                          type Var type Int
+                                          type Int
                                           Add
                                              Var f
                                              Var g
                                           Let
                                              q
-                                             type Var type Int
+                                             type Int
                                              Add
                                                 Var f
                                                 Var h
                                              Let
                                                 r
-                                                type Var type Int
+                                                type Int
                                                 Add
                                                    Var f
                                                    Var i
                                                 Let
                                                    s
-                                                   type Var type Int
+                                                   type Int
                                                    Add
                                                       Var f
                                                       Var j
                                                    Let
                                                       t
-                                                      type Var type Int
+                                                      type Int
                                                       Add
                                                          Var g
                                                          Var h
                                                       Let
                                                          u
-                                                         type Var type Int
+                                                         type Int
                                                          Add
                                                             Var g
                                                             Var i
                                                          Let
                                                             v
-                                                            type Var type Int
+                                                            type Int
                                                             Add
                                                                Var g
                                                                Var j
                                                             Let
                                                                w
-                                                               type Var type Int
+                                                               type Int
                                                                Add
                                                                   Var h
                                                                   Var i
                                                                Let
                                                                   x
-                                                                  type Var type Int
+                                                                  type Int
                                                                   Add
                                                                      Var h
                                                                      Var j
                                                                   Let
                                                                      y
-                                                                     type Var type Int
+                                                                     type Int
                                                                      Add
                                                                         Var i
                                                                         Var j
                                                                      Let
                                                                         aa
-                                                                        type Var type Int
+                                                                        type Int
                                                                         Add
                                                                            Var k
                                                                            Var l
                                                                         Let
                                                                            ab
-                                                                           type Var type Int
+                                                                           type Int
                                                                            Add
                                                                               Var k
                                                                               Var m
                                                                            Let
                                                                               ac
-                                                                              type Var type Int
+                                                                              type Int
                                                                               Add
                                                                                  Var k
                                                                                  Var n
                                                                               Let
                                                                                  ad
-                                                                                 type Var type Int
+                                                                                 type Int
                                                                                  Add
                                                                                     Var k
                                                                                     Var o
                                                                                  Let
                                                                                     ae
-                                                                                    type Var type Int
+                                                                                    type Int
                                                                                     Add
                                                                                        Var k
                                                                                        Var p
                                                                                     Let
                                                                                        af
-                                                                                       type Var type Int
+                                                                                       type Int
                                                                                        Add
                                                                                           Var k
                                                                                           Var q
                                                                                        Let
                                                                                           ag
-                                                                                          type Var type Int
+                                                                                          type Int
                                                                                           Add
                                                                                              Var k
                                                                                              Var r
                                                                                           Let
                                                                                              ah
-                                                                                             type Var type Int
+                                                                                             type Int
                                                                                              Add
                                                                                                 Var k
                                                                                                 Var s
                                                                                              Let
                                                                                                 ai
-                                                                                                type Var type Int
+                                                                                                type Int
                                                                                                 Add
                                                                                                    Var k
                                                                                                    Var t
                                                                                                 Let
                                                                                                    aj
-                                                                                                   type Var type Int
+                                                                                                   type Int
                                                                                                    Add
                                                                                                       Var k
                                                                                                       Var u
                                                                                                    Let
                                                                                                       ak
-                                                                                                      type Var type Int
+                                                                                                      type Int
                                                                                                       Add
                                                                                                          Var k
                                                                                                          Var v
                                                                                                       Let
                                                                                                          al
-                                                                                                         type Var type Int
+                                                                                                         type Int
                                                                                                          Add
                                                                                                             Var k
                                                                                                             Var w
                                                                                                          Let
                                                                                                             am
-                                                                                                            type Var type Int
+                                                                                                            type Int
                                                                                                             Add
                                                                                                                Var k
                                                                                                                Var x
                                                                                                             Let
                                                                                                                an
-                                                                                                               type Var type Int
+                                                                                                               type Int
                                                                                                                Add
                                                                                                                   Var k
                                                                                                                   Var y
                                                                                                                Let
                                                                                                                   z
-                                                                                                                  type Var type Int
+                                                                                                                  type Int
                                                                                                                   Add
                                                                                                                      Add
                                                                                                                         Add
