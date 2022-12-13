@@ -56,9 +56,17 @@ int main(int argc, char* argv[]) {
     // fclose(out);
 
     
-    TEST test;
-    test.set();
-    test.print();
+    // TEST test;
+    // test.set();
+    // test.print();
+
+    // union data a;
+    // a.i = atof("0x40900000");
+    // cout << a.i << endl;
+    // printf("%f\n", a.f);
+
+    int a = 64;
+    printf("%c\n", a);
 
 	return 0;
 }

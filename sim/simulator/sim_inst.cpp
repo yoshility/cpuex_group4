@@ -437,12 +437,15 @@ int main(int argc, char* argv[]) {
             int rs2 = reg_num(r0);
             int imm = atoi(r1);
             int rs1 = reg_num(r2);
+            cout << "\trs1 = " << rs1 << endl;
             // int output
             if (rs1 == 26) {
+                cout << "print_int!" << endl;
                 fprintf(out_ppm, "%d", reg[rs2]);
             }
             // char output
             else if (rs1 == 27) {
+                cout << "print_char!" << endl;
                 fprintf(out_ppm, "%c", reg[rs2]);
             }
             // regular sw
@@ -821,7 +824,7 @@ int main(int argc, char* argv[]) {
         else if (strncmp(opcode, "jal", 3) == 0) {
             int rd = reg_num(r0);
             int jmp_addr;
-            for (int i=0; i<1000; i+=4) {
+            for (int i=0; i<1000; i++) {
                 // eliminate_colon(label[i]);
                 if (strncmp(label[i], r1, strlen(r1)) == 0) {
                     jmp_addr = i*4;

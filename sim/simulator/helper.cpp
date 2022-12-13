@@ -33,7 +33,7 @@ map<int, string> reg_name {
     {2, "sp"},
     {3, "gp"},
     {4, "tp"},
-    {5, "t0"},
+    {5, "t0/hp"},
     {6, "t1"},
     {7, "t2"},
     {8, "s0/fp"},
@@ -141,7 +141,7 @@ int reg_num(char *reg) {
         return 3;
     } else if (strncmp(reg, "tp", 2) == 0) {
         return 4;
-    } else if (strncmp(reg, "t0", 2) == 0) {
+    } else if (strncmp(reg, "t0", 2) == 0 || (strncmp(reg, "hp", 2) == 0)) {
         return 5;
     } else if (strncmp(reg, "t1", 2) == 0) {
         return 6;
