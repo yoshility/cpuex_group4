@@ -1,5 +1,12 @@
 obj_dir/
 /scala
+/test_*
+/project*
+/.Xil
+/ddr2
+/finv*
+/xsim
+*.log
 memo.txt
 xsim*
 xelab*
