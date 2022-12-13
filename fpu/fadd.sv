@@ -147,39 +147,39 @@ module naive_pe (
     5'd26;
 endmodule
 
-module priority_encoder_8 (
-  input   wire [ 7:0]  obj,
-  output  wire        v,
-  output  wire        z2,
-  output  wire        z1,
-  output  wire        z0
-  );
-  assign v  = ~|obj[7:0];
-  assign z2 = ~|obj[7:4];
-  assign z1 = !(obj[7] || obj[6] || (~obj[5] && ~obj[4] && (obj[3] || obj[2])));
-  assign z1 = !(obj[7] || (~obj[6] && obj[5]) || (~obj[6] && ~obj[4] && obj[3]) || (~obj[6] && ~obj[4] && ~obj[2] && obj[1]));
-endmodule
-
-module priority_encoder_32 (
-  input   wire [31:0]  obj,
-  output  wire        v,
-  output  wire        z4,
-  output  wire        z3,
-  output  wire        z2,
-  output  wire        z1,
-  output  wire        z0
-  );
-  wire pe0_z0, pe0_z1, pe0_z2, pe0_v, pe1_z0, pe1_z1, pe1_z2, pe1_v, pe2_z0, pe2_z1, pe2_z2, pe2_v, pe3_z0, pe3_z1, pe3_z2, pe3_v;
-  priority_encoder_8 pe0(obj[7:0], pe0_v, pe0_z2, pe0_z1, pe0_z0);
-  priority_encoder_8 pe1(obj[7:0], pe1_v, pe1_z2, pe1_z1, pe1_z0);
-  priority_encoder_8 pe2(obj[7:0], pe2_v, pe2_z2, pe2_z1, pe2_z0);
-  priority_encoder_8 pe3(obj[7:0], pe3_v, pe3_z2, pe3_z1, pe3_z0);
-
-  assign v  = !(pe0_v || pe1_v || pe2_v || pe3_v);
-  assign z4 =  (pe2_v || pe3_v);
-  assign z3 =  ((pe1_v && ~pe2_v) || pe3_v);
-  assign z2 =  !((pe0_z2 && pe1_v) || ~pe1_z2) || !(pe2_v || pe3_v) && !((pe2_z2 && pe3_v) || pe3_z2);
-  assign z1 =  !((pe0_z1 && pe1_v) || ~pe1_z1) || !(pe2_v || pe3_v) && !((pe2_z1 && pe3_v) || pe3_z1);
-  assign z0 =  !((pe0_z0 && pe1_v) || ~pe1_z0) || !(pe2_v || pe3_v) && !((pe2_z0 && pe3_v) || pe3_z0);
-endmodule
 `default_nettype wire
+
+module fadd_1clock (
+  input wire [31:0]  x1,
+  input wire [31:0]  x2,
+  output wire [31:0] y,
+  //output wire        ovf,
+  input wire       clk,
+  input wire       rstn
+  );
+
+  wire flag_bigger = (x1[30:0] >= x2[30:0]) ? 1 : 0 ;
+  wire [31:0] x_large = (flag_bigger) ? x1 : x2 ;
+  wire [31:0] x_small = (!flag_bigger) ? x1 : x2 ;
+  wire        sign_large = x_large[31];
+  wire [ 7:0] exp_large = (|x_large[30:23]) ? x_large[30:23] : 8'b1 ;
+  wire [ 7:0] exp_small = (|x_small[30:23]) ? x_small[30:23] : 8'b1 ;
+  wire [26:0] frac_large = (|x_large[30:23]) ? {2'b01, x_large[22:0], 2'b00} : {2'b00, x_large[22:0], 2'b00};
+  wire [ 7:0] exp_diff = exp_large - exp_small;
+  wire [24:0] frac_small_carry = (|x_small[30:23]) ? {2'b01, x_small[22:0]} : {2'b00, x_small[22:0]};
+  wire [26:0] frac_small;
+  wire        round_bit;
+  rshift4frac r4f(frac_small_carry, exp_diff, frac_small, round_bit);
+  wire        flag_add = (x_large[31] == x_small[31]) ? 1 : 0;
+
+  wire [26:0] frac_calc = (flag_add) ? frac_large + frac_small : frac_large - frac_small;
+  wire [ 4:0] significant;
+  naive_pe npe(frac_calc[25:0], significant);
+  wire        round_carry = &frac_calc[26:2] || &frac_calc[25:1];
+  wire [26:0] frac_calc_s = frac_calc << significant;
+  wire        guard_bit = frac_calc_s[1];
+  wire        ulp = frac_calc_s[2];
+  wire [24:0] frac_calc_r = (guard_bit && (round_bit || ulp)) ? frac_calc_s[26:2] + 25'b1 : frac_calc_s[26:2];
+  wire [ 7:0] exponent = (frac_calc_r[24]) ? exp_large - {3'b0, significant} + 8'b1 : exp_large - {3'b0, significant};
+  assign y = (frac_calc_r[24]) ? {sign_large, exponent, frac_calc_r[23:1]} : {sign_large, exponent, frac_calc_r[22:0]};
+endmodule
