@@ -1,0 +1,30 @@
+LetRec
+      f:type Fun:type Int,->type Unit
+      args:n:type Int, 
+      IF
+        Not LE
+              0
+              Var n
+        Unit
+        Let
+           Tu1
+           type Unit
+           App
+              Var print_int
+              Var n
+           Let
+              a
+              type Array type Fun:type Int,->type Unit
+              Array
+                   1
+                   Var f
+              App
+                 Get
+                    Var a
+                    0
+                 Sub
+                    Var n
+                    1
+      App
+         Var f
+         9

@@ -15,7 +15,7 @@
 - ack done
 - even-odd done
 - adder done
-- funcomp bug
+- funcomp done
 - cls-rec done
 - cls-bug done
 - cls-bug2 array
