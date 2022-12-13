@@ -1,1 +1,1 @@
-let a = 1.5 in a
+print_int(5)

@@ -1,4 +1,5 @@
 Let
-   a type Float
-   1.5
-   Var a
+   Ti1 type Int
+   5
+   AppDir
+         Label: min_caml_print_int Ti1,

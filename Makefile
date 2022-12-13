@@ -38,10 +38,12 @@ manyargs
 do_test: $(TESTS:%=test/%.cmp)
 
 .PRECIOUS: test/%.s test/% test/%.res test/%.ans test/%.cmp
-TRASH = $(TESTS:%=test/%.s) $(TESTS:%=test/%) $(TESTS:%=test/%.res) $(TESTS:%=test/%.ans) $(TESTS:%=test/%.cmp)
+TRASH = $(TESTS:%=test/%.s) $(TESTS:%=test/%) $(TESTS:%=test/%.res) $(TESTS:%=test/%.ans) $(TESTS:%=test/%.cmp)$(TESTS:%=test/%_.s)
 
 test/%.s: $(RESULT) test/%.ml
 	./$(RESULT) test/$*
+test/%_.s: $(RESULT) test/%.s linker.py 
+	python3 linker.py test/$*.s test/$*_.s ./libmincaml.S
 test/%: test/%.s libmincaml.S stub.c
 	$(CC) $(CFLAGS) -m32 $^ -lm -o $@
 test/%.res: test/%
@@ -50,6 +52,15 @@ test/%.ans: test/%.ml
 	ocaml $< > $@
 test/%.cmp: test/%.res test/%.ans
 	diff $^ > $@
+../../cpuex-v1.4/raytracer/minrt__.s: $(RESULT) ../../cpuex-v1.4/raytracer/minrt.ml ../../cpuex-v1.4/raytracer/globals.ml concat.py linker.py ./libmincaml.S
+	python3 concat.py ../../cpuex-v1.4/raytracer/globals.ml ../../cpuex-v1.4/raytracer/minrt.ml ../../cpuex-v1.4/raytracer/minrt_.ml
+	./$(RESULT) ../../cpuex-v1.4/raytracer/minrt_
+	python3 linker.py ../../cpuex-v1.4/raytracer/minrt_.s ../../cpuex-v1.4/raytracer/minrt__.s ./libmincaml.S
+	rm ../../cpuex-v1.4/raytracer/minrt_.ml
+	rm ../../cpuex-v1.4/raytracer/minrt_.s
+
+
+	
 
 min-caml.html: main.mli main.ml id.ml m.ml s.ml \
 		syntax.ml type.ml parser.mly lexer.mll typing.mli typing.ml kNormal.mli kNormal.ml \

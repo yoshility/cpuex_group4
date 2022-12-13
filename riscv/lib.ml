@@ -62,10 +62,10 @@ let rec atan x =
   let flag1 = if fispos x then 1 else -1 in
   let x0 = if fispos x then x else -1.*.x in
   let y = if fispos (0.4375 -. x0) then ker_atan x0 
-  else if   fispos (2.4375 -. x0) then pi/.4. +. ker_atan((x0-.1.0)/.x0+.1.0)
-  else pi/.2. -. ker_atan (1./.x0) in
+  else (if   fispos (2.4375 -. x0) then pi/.4. +. ker_atan((x0-.1.0)/.x0+.1.0)
+  else pi/.2. -. ker_atan (1./.x0)) in
   let flag2 = if fispos y then 1 else -1 in
   if flag1=flag2 then y else -1.*.y in
-let fhalf x = x *. 0.5 in
-let fsqr x = x *. x in
-in ()
+let rec fhalf x = x *. 0.5 in
+let rec fsqr x = x *. x in
+1
