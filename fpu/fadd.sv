@@ -1,4 +1,4 @@
-`default_nettype none
+`default_nettype wire
 
 module fadd_multi (
   input wire [31:0]  x1,

@@ -1,4 +1,4 @@
-`default_nettype none
+`default_nettype wire
 module finv (
 	input wire [31:0]  x,
   output wire [31:0] y,
@@ -25,6 +25,18 @@ module finv (
 	wire [ 7:0] exp_y = exp_y_unbiased + 8'd127;
 
 	assign y = {sign , exp_y, frac_y};
+endmodule
+
+module fdiv (
+	input  [31:0] x1,
+	input  [31:0] x2,
+	output [31:0] y,
+	input 				clk,
+	input					rstn
+);
+	wire [31:0] inv_x2;
+	finv finv_in_fdiv(x2,inv_x2,clk,rstn);
+	fmul fmul_in_fdiv(x1,inv_x2,y,clk,rstn);
 endmodule
 
 module finv_table (
