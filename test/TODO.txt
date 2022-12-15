@@ -18,9 +18,9 @@
 - funcomp done
 - cls-rec done
 - cls-bug done
-- cls-bug2 array
+- cls-bug2 done
 - cls-reg-bug done
-- shuffle ? print
+- shuffle done
 - spill done
 - spill2 array
 - spill3 

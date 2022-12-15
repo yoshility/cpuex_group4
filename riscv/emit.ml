@@ -97,14 +97,14 @@ match (tail,exp) with
       print_asm oc "\tsw\t%s, %d(%s)\n" x (offset y) reg_sp 
   | NonTail(_), Save(x, y) when List.mem x allfregs && not (S.mem y !stackset) ->
       savef y;
-      print_asm oc "\tsw\t%s, %d(%s)\n" x (offset y) reg_sp
+      print_asm oc "\tfsw\t%s, %d(%s)\n" x (offset y) reg_sp
   | NonTail(_), Save(x, y) -> assert (S.mem y !stackset); ()(*���Ǥ�save�Ѥ�*)
     (* 復帰の仮想命令の実装 (caml2html: emit_restore) *)
   | NonTail(x), Restore(y) when List.mem x allregs ->
       print_asm oc "\tlw\t%s, %d(%s)\n" x (offset y) reg_sp
   | NonTail(x), Restore(y) ->
       assert (List.mem x allfregs);
-      print_asm oc "\tlw\t%s, %d(%s)\n" x (offset y) reg_sp
+      print_asm oc "\tflw\t%s, %d(%s)\n" x (offset y) reg_sp
  (* 末尾だったら計算結果を第一レジスタにセットしてリターン (caml2html: emit_tailret) *)
  | Tail, (Nop | St _ | StDF _ | Comment _ | Save _ as exp) ->
       g' oc (NonTail(Id.gentmp Type.Unit), (exp,p));
@@ -196,6 +196,7 @@ match (tail,exp) with
       print_asm oc "\tjal\tx0, %s \n" x;
       (* print_asm oc "\taddi\tx0, x0, 0\n" *)
   | NonTail(a), CallCls(x, ys, zs) ->
+    (* print_asm oc "\t#\tCallCls\n"; *)
     (if is_reg x then (g'_args oc [(x, reg_cl)] ys zs)
     else (print_asm oc "\taddi\t%s, x0, %d" reg_cl (getlabelnum x);
     g'_args oc [] ys zs));
@@ -214,7 +215,7 @@ match (tail,exp) with
       if List.mem a allregs && a <> regs.(0) then
         print_asm oc "\taddi\t%s, %s, 0\n"  a regs.(0)
       else if List.mem a allfregs && a <> fregs.(0) then
-        (print_asm oc "\tfsgnj\t%s, %s\n"  a fregs.(0);
+        (print_asm oc "\tfsgnj\t%s, %s, %s\n"  a fregs.(0) fregs.(0);
          (* print_asm oc "\tfsgnj\t%s, %s\n"  (co_freg a) (co_freg fregs.(0)) *)
          )
   | NonTail(a), CallDir(Id.L(x), ys, zs) ->
@@ -222,7 +223,7 @@ match (tail,exp) with
       let ss = stacksize () in
       (* print_asm oc "\tsw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp; *)
       (* print_asm oc "\t#\t%s\n"  x; *)
-      (* print_asm oc "\taddi\tra, %s, 0\n" reg_sw;call ?? *)
+      (* print_asm oc "\t#\tCallDir\n"; *)
       print_asm oc "\taddi\tsp, sp, -24\n" ;
       print_asm oc "\tsw\t%s, 16(sp)\n" reg_cl;
       print_asm oc "\tsw\tra, 8(sp)\n" ;
@@ -238,7 +239,7 @@ match (tail,exp) with
       if List.mem a allregs && a <> regs.(0) then
         print_asm oc "\taddi\t%s, %s, 0\n" a regs.(0)
       else if List.mem a allfregs && a <> fregs.(0) then
-        (print_asm oc "\tfsgnj\t%s, %s\n"  a fregs.(0);
+        (print_asm oc "\tfsgnj\t%s, %s, %s\n"  a fregs.(0) fregs.(0);
          (* print_asm oc "\tfsgnj\t%s, %s\n"  (co_freg a) (co_freg fregs.(0)) *)
          )
 and g'_tail_if oc x y e1 e2 b bn =
@@ -284,7 +285,7 @@ and g'_args oc x_reg_cl ys zs =
       zs in
   List.iter
     (fun (z, fr) ->
-      print_asm oc "\tfsgnj\t%s, %s\n" fr z;
+      print_asm oc "\tfsgnj\t%s, %s, %s\n" fr z z;
       (* print_asm oc "\tfsgnj\t%s, %s\n" (co_freg fr) (co_freg z) *)
       )
     (shuffle reg_fsw zfrs)

@@ -156,7 +156,7 @@ match e with
       | Type.Array(Type.Float) ->
         Let((offset, Type.Int), (SLL(y, C(3)),p),
         Let((offset2, Type.Int), (Add(x, V(offset)),p),
-            Ans((St(z, offset2, 0),p))))
+            Ans((StDF(z, offset2, 0),p))))
       | Type.Array(_) ->
           Let((offset, Type.Int), (SLL(y, C(2)),p),
           Let((offset2, Type.Int), (Add(x, V(offset)),p),

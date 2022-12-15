@@ -58,7 +58,7 @@ test/%.cmp: test/%.res test/%.ans
 	python3 linker.py ../../cpuex-v1.4/raytracer/minrt_.s ../../cpuex-v1.4/raytracer/minrt__.s ./libmincaml.S
 	rm ../../cpuex-v1.4/raytracer/minrt_.ml
 	rm ../../cpuex-v1.4/raytracer/minrt_.s
-	cp ../../cpuex-v1.4/raytracer/minrt__.s test/minrt.s
+	cp ../../cpuex-v1.4/raytracer/minrt__.s ../minrt.s
 	cp ../../cpuex-v1.4/raytracer/minrt__.s ../../sim/test/minrt.s
 
 
