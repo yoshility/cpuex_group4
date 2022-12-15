@@ -298,7 +298,7 @@ let h oc { name = Id.L(x); args = _; fargs = _; body = e; ret = _ } =
   g oc (Tail, e)
 
 let f oc (Prog(data, fundefs, e)) =
-  pc := 0;(*labelnumの初期値。ライブラリ関数などに注意。*)(*256+3020=3276?*)
+  pc := 3080;(*labelnumの初期値。ライブラリ関数などに注意。*)(*(841-71)*4=3080?*)
   Format.eprintf "generating assembly...@."; 
   Printf.fprintf oc(* print_asm oc*) ".section\t\".rodata\"\n"; 
   Printf.fprintf oc(* print_asm oc*) ".align\t8\n"; 
