@@ -12,7 +12,7 @@ module fabs (
 		if (~rstn) begin
 			y_reg <= 32'b0;
 		end else begin
-			y_reg = {0'b0,x[30:0]};
+			y_reg <= {1'b0,x[30:0]};
 		end
 	end
 endmodule
@@ -30,7 +30,7 @@ module fneg (
 		if (~rstn) begin
 			y_reg <= 32'b0;
 		end else begin
-			y_reg = {~x[31],x[30:0]};
+			y_reg <= {~x[31],x[30:0]};
 		end
 	end
 endmodule
@@ -50,7 +50,7 @@ module fsgnj (
 		if (~rstn) begin
 			y_reg <= 32'b0;
 		end else begin
-			y_reg = {x2[31],x1[30:0]};
+			y_reg <= {x2[31],x1[30:0]};
 		end
 	end
 endmodule
@@ -70,7 +70,7 @@ module fsgnjn (
 		if (~rstn) begin
 			y_reg <= 32'b0;
 		end else begin
-			y_reg = {~x2[31],x1[30:0]};
+			y_reg <= {~x2[31],x1[30:0]};
 		end
 	end
 endmodule
@@ -90,7 +90,7 @@ module fsgnjx (
 		if (~rstn) begin
 			y_reg <= 32'b0;
 		end else begin
-			y_reg = {x1[31]^x2[31],x2[30:0]};
+			y_reg <= {x1[31]^x2[31],x2[30:0]};
 		end
 	end
 endmodule
