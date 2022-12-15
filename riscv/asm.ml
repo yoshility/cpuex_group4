@@ -77,7 +77,7 @@ let reg_tm = regs.(Array.length regs - 3) (* temporary 2 *)
 let reg_fsw = fregs.(Array.length fregs - 1) (* temporary for swap *)
 let reg_zero = "x0" (* zero register *)
 let reg_sp = "sp" (* stack pointer *)
-let reg_hp = "t0" (* heap pointer (caml2html: sparcasm_reghp) *)
+let reg_hp = "hp" (* heap pointer (caml2html: sparcasm_reghp) *)
 let reg_ra = "ra" (* return address *)
 let is_reg x = (
   (* Str.string_match (Str.regexp "?f[a,t,s]+[0-9]") x 0  *)

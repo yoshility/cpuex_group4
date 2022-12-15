@@ -56,8 +56,7 @@ match (tail,exp) with
   | NonTail(_), Nop -> ()
   | NonTail(x), Set(i) -> (print_asm oc "\taddi\t%s, x0, %d\n" x i)
   | NonTail(x), Flabel(Id.L(y)) 
-  -> print_asm oc "\tlui\t%s, hi(%s)\n" x y;
-   print_asm oc "\tori\t%s, %s, lo(%s)\n" x x y;
+  -> print_asm oc "\tlui\t%s, %s\n" x y;
    | NonTail(x), SetL(Id.L(y)) 
   -> 
     let labelnum = getlabelnum y in
@@ -314,7 +313,7 @@ let f oc (Prog(data, fundefs, e)) =
   print_asm oc ".global\tmin_caml_start\n";
   print_asm oc "min_caml_start:\n";
   print_asm oc "\taddi\tsp, x0, 8188\n"; 
-  print_asm oc "\taddi\tt0, x0, 64\n"; 
+  print_asm oc "\taddi\t%s, x0, 64\n" reg_hp; 
   stackset := S.empty;
   stackmap := [];
   g oc (Tail, e);

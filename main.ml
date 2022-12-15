@@ -16,16 +16,14 @@ let lexbuf outchan  before_flatten after_flatten out_before_tse out_parsed l =(*
   let parsed = Parser.exp Lexer.token l in
   let parsed_solved = Solve_partial.f parsed in
   let typed = Typing.f parsed_solved in
-  let normalized = try (
-    KNormal.f(
-      typed
-      ) )
-   with Not_found ->failwith "knormal"  in
+  let normalized = 
+    KNormal.f
+      typed   in
   Syntax.print_t out_parsed typed;(*中間結果の出力。課題１。*)
   Syntax.print_t out_before_tse parsed_solved;
-  (* KNormal.print_t out_before_cse normalized;
+   KNormal.print_t out_before_cse normalized;
   let cse = Cse.cse normalized in(*共通部分式削除。課題２。*)
-  KNormal.print_t out_after_cse cse; *)
+  KNormal.print_t out_after_cse cse; 
   let cls = Closure.f normalized  in
   Closure.print_prog before_flatten cls;
   (* Closure.print_prog out_before_tse cls; *)
@@ -38,11 +36,11 @@ let lexbuf outchan  before_flatten after_flatten out_before_tse out_parsed l =(*
        (Simm.f
           (Virtual.f
           (Closure.f
-  (* (iter !limit  *)
+  (iter !limit 
      (Alpha.f
         normalized)))
           ))
-          (* ) *)
+          )
           
              
 
