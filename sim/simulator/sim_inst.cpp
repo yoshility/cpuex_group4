@@ -714,7 +714,7 @@ int main(int argc, char* argv[]) {
             }
             // no cache
             else {
-                memory.d[reg[rs1]+imm].f = freg[fs2];
+                memory.d[(reg[rs1]+imm)/4].f = freg[fs2];
             }
             if ((pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) || (pre_inst_is_flw && (fs2==pre_flw_rd))) {
                 clk += 2;
@@ -847,6 +847,7 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
             if(fs1 == 100)reg[rd] = 0 < freg[fs2];
+            else if(fs2 == 100)reg[rd] = freg[fs1] < 0;
             else reg[rd] = (freg[fs1] < freg[fs2]);
             pc = pc + 4;
             if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
