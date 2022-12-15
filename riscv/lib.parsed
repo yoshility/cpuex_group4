@@ -145,20 +145,20 @@ Let
                                              args:x:type Var type Float, 
                                              Let
                                                 flag0
-                                                type Var type Float
+                                                type Var type Int
                                                 IF
                                                   App
                                                      Var fispos
                                                      Var x
-                                                  1.
-                                                  -1.
+                                                  1
+                                                  0
                                                 Let
                                                    x0
                                                    type Var type Float
                                                    IF
-                                                     App
-                                                        Var fispos
-                                                        Var x
+                                                     Eq
+                                                       Var flag0
+                                                       1
                                                      Var x
                                                      FMul
                                                          -1.
@@ -184,17 +184,15 @@ Let
                                                            Var x00
                                                          Let
                                                             flag1
-                                                            type Var type Float
+                                                            type Var type Int
                                                             IF
-                                                              App
-                                                                 Var fispos
-                                                                 FSub
-                                                                     Var x00
-                                                                     Var pi
-                                                              FMul
-                                                                  -1.
-                                                                  Var flag0
+                                                              Eq
+                                                                Var x1
+                                                                Var x00
                                                               Var flag0
+                                                              Sub
+                                                                 1
+                                                                 Var flag0
                                                             Let
                                                                x2
                                                                type Var type Float
@@ -231,9 +229,14 @@ Let
                                                                                Var pi
                                                                                2.
                                                                            Var x2
-                                                                  FMul
-                                                                      Var x3
+                                                                  IF
+                                                                    Eq
                                                                       Var flag1
+                                                                      1
+                                                                    Var x3
+                                                                    FMul
+                                                                        -1.
+                                                                        Var x3
                                              LetRec
                                                    cos:type Var type Fun:type Float,->type Float
                                                    args:x:type Var type Float, 
@@ -269,15 +272,13 @@ Let
                                                               Var x00
                                                             Let
                                                                flag0
-                                                               type Var type Float
+                                                               type Var type Int
                                                                IF
-                                                                 App
-                                                                    Var fispos
-                                                                    FSub
-                                                                        Var x00
-                                                                        Var pi
-                                                                 -1.
-                                                                 1.
+                                                                 Eq
+                                                                   Var x1
+                                                                   Var x00
+                                                                 1
+                                                                 0
                                                                Let
                                                                   x2
                                                                   type Var type Float
@@ -295,19 +296,15 @@ Let
                                                                     Var x1
                                                                   Let
                                                                      flag1
-                                                                     type Var type Float
+                                                                     type Var type Int
                                                                      IF
-                                                                       App
-                                                                          Var fispos
-                                                                          FSub
-                                                                              FMul
-                                                                                  2.
-                                                                                  Var x1
-                                                                              Var pi
-                                                                       FMul
-                                                                           -1.
-                                                                           Var flag0
+                                                                       Eq
+                                                                         Var x2
+                                                                         Var x1
                                                                        Var flag0
+                                                                       Sub
+                                                                          1
+                                                                          Var flag0
                                                                      Let
                                                                         x3
                                                                         type Var type Float
@@ -329,9 +326,14 @@ Let
                                                                                      Var pi
                                                                                      2.
                                                                                  Var x2
-                                                                        FMul
-                                                                            Var x3
+                                                                        IF
+                                                                          Eq
                                                                             Var flag1
+                                                                            1
+                                                                          Var x3
+                                                                          FMul
+                                                                              -1.
+                                                                              Var x3
                                                    Let
                                                       a3
                                                       type Var type Float

@@ -28,26 +28,26 @@ let rec kernel_cos x =
     (((0.-.c6)*.x2+.c4)*.x2-.c2)*.x2+.1. 
 in
 let rec sin x =
-  let flag0 = if fispos x then 1. else -1. in
-  let x0 = if fispos x then x else (-1.)*.x in
+  let flag0 = if fispos x then 1 else 0 in
+  let x0 = if flag0 = 1 then x else (-1.)*.x in
   let x00 = reduction_2pi(x0) in
   let x1 = if fispos(x00-.pi) then x00-.pi else x00 in
-  let flag1 = if fispos(x00-.pi) then (-1.)*.flag0 else flag0 in
+  let flag1 = if x1 = x00 then flag0 else 1-flag0 in
   let x2 = if fispos(2.*.x1-.pi) then pi-.x1 else x1 in
   let x3 = if fispos(pi-.4.*.x2) then kernel_sin x2 
             else kernel_cos(pi/.2.-.x2) in
-      x3*.flag1
+      if flag1=1 then x3 else (-1.)*.x3
 in
 let rec cos x = 
   let x0 = if fispos x then x else (-1.)*.x in
   let x00 = reduction_2pi x0 in
   let x1 = if fispos(x00-.pi) then x00-.pi else x00 in
-  let flag0 = if fispos(x00-.pi) then -1. else 1. in
+  let flag0 = if x1=x00 then 1 else 0 in
   let x2 = if fispos(2.*.x1-.pi) then pi-.x1 else x1 in
-  let flag1 = if fispos(2.*.x1-.pi) then (-1.)*.flag0 else flag0 in
+  let flag1 = if x2=x1 then flag0 else 1-flag0 in
   let x3 = if fispos(pi-.4.*.x2) then kernel_sin x2 
   else kernel_cos(pi/.2.-.x2) in
-  x3*.flag1
+  if flag1 = 1 then x3 else (-1.)*.x3
 in
 let a3 = 0.33333333 in
 let a5 = 0.2 in 

@@ -298,15 +298,14 @@ let h oc { name = Id.L(x); args = _; fargs = _; body = e; ret = _ } =
   g oc (Tail, e)
 
 let f oc (Prog(data, fundefs, e)) =
-  pc := 3276;(*labelnumの初期値。ライブラリ関数などに注意。*)
-  Format.eprintf "generating assembly...@."; (*256+3020=3276?*)
+  pc := 0;(*labelnumの初期値。ライブラリ関数などに注意。*)(*256+3020=3276?*)
+  Format.eprintf "generating assembly...@."; 
   Printf.fprintf oc(* print_asm oc*) ".section\t\".rodata\"\n"; 
   Printf.fprintf oc(* print_asm oc*) ".align\t8\n"; 
   List.iter
     (fun (Id.L(x), d) ->
       Printf.fprintf oc "%s:\t# %f\n" x d;
-      setlabelnum x (!pc);
-      print_asm oc "\t.long\t0x%lx\n" (gethi d);
+      Printf.fprintf oc "\t.long\t0x%lx\n" (gethi d);
       (* print_asm oc "\t.long\t0x%lx\n" (getlo d)) *)
     )
     data;
@@ -315,7 +314,7 @@ let f oc (Prog(data, fundefs, e)) =
   print_asm oc ".global\tmin_caml_start\n";
   print_asm oc "min_caml_start:\n";
   print_asm oc "\taddi\tsp, x0, 8188\n"; 
-  print_asm oc "\taddi\tt0, x0, 0\n"; 
+  print_asm oc "\taddi\tt0, x0, 64\n"; 
   stackset := S.empty;
   stackmap := [];
   g oc (Tail, e);
