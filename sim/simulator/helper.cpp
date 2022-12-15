@@ -221,6 +221,10 @@ int freg_num(char *reg) {
         return 7;
     } else if (strncmp(reg, "fs0", 3) == 0) {
         return 8;
+    } else if (strncmp(reg, "fs10", 4) == 0) {
+        return 26;
+    } else if (strncmp(reg, "fs11", 4) == 0) {
+        return 27;
     } else if (strncmp(reg, "fs1", 3) == 0) {
         return 9;
     } else if (strncmp(reg, "fa0", 3) == 0) {
@@ -255,10 +259,6 @@ int freg_num(char *reg) {
         return 24;
     } else if (strncmp(reg, "fs9", 3) == 0) {
         return 25;
-    } else if (strncmp(reg, "fs10", 4) == 0) {
-        return 26;
-    } else if (strncmp(reg, "fs11", 4) == 0) {
-        return 27;
     } else if (strncmp(reg, "ft8", 3) == 0) {
         return 28;
     } else if (strncmp(reg, "ft9", 3) == 0) {

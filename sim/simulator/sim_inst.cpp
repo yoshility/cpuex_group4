@@ -10,7 +10,6 @@ using namespace std;
 
 int reg[32] = {0};          // integer register
 float freg[32] = {0.0};     // float register
-char inst_memory[2048][30];  // instr memory
 
 int main(int argc, char* argv[]) {
     FILE *in, *in_sld, *out_ppm;
@@ -35,14 +34,16 @@ int main(int argc, char* argv[]) {
     bool use_cache = atoi(argv[5]);
     bool step_by_step = atoi(argv[6]);
 
-    Memory memory;         // data memory
-    Cache cache;           // data cache
+    char **inst_memory;     // instr memory
+    inst_memory = (char**)malloc(sizeof(char*) * INST_MEMORY_SIZE);
+    for (int i=0; i<INST_MEMORY_SIZE; i++) {
+        inst_memory[i] = (char*)malloc(sizeof(char) * 30);
+    }
+    Memory memory;          // data memory
+    Cache cache;            // data cache
     int line_num = 1 << INDEX_WIDTH;
     int line_size = 1 << (OFFSET_WIDTH - 2);
-    int LRU = 0;           // 使われていないほうのway番号（2wayのみ対応）
-    // printf("hello\n");
-
-    // Cache inst_cache;           // inst cache
+    int LRU = 0;            // 使われていないほうのway番号（2wayのみ対応）
 
     char line[BUFSIZE];
     char opcode[30];
@@ -52,26 +53,26 @@ int main(int argc, char* argv[]) {
 
     char* inst_cleaned;
 
-    char str[150];
-    // char global_func[25];       // min_caml_start
-    // strcpy(global_func, "hoge");
+    // char str[150];
 
-    // 1回目の読みでラベルを探して全命令を命令メモリに格納
-    int addr = -4;
-    char label[1000][25]; // labels （1/4に圧縮）
+    // 1回目の読みでラベルを探してデータをデータ領域に、命令を命令メモリに格納
+    int addr = 0;               // 命令アドレス
+    int data_addr = 0;          // データセクションでのアドレス
+    char label[1000][25];       // labels （1/4に圧縮）
+    char data_label[64][10];    // l.394:などのラベルを保管(indexがアドレスになる) (1/4に圧縮)
     int pc = 0;
+    bool is_data = 0;
 
     while (fgets(line, BUFSIZE, in) != NULL) {
-        addr += 4;
-        
+        // addr += 4;
         strcpy(r0, "\0");
         strcpy(r1, "\0");
         strcpy(r2, "\0");       
         inst_cleaned = eliminate_comma_and_comment(line);
         sscanf(inst_cleaned, "%s%s%s%s", opcode, r0, r1, r2);
 
-        // ラベル
-        if (opcode[strlen(opcode)-1] == ':') {
+        // 関数のラベル
+        if (opcode[strlen(opcode)-1] == ':' && (!is_data)) {
             // 配列のaddr番目にラベル名を保管
             strcpy(label[addr/4], opcode);
             // 命令アドレスも一緒に出力(ラベル自体を命令メモリに保管する必要はない)
@@ -84,20 +85,25 @@ int main(int argc, char* argv[]) {
                 printf("initial pc: %d\n", pc);
             }
             // ignore
-            addr -= 4;
+            // addr -= 4;
             continue;
         }
-        // アセンブラ指令 .global
-        // else if (strncmp(opcode, ".global", 7) == 0) {
-        //     strncpy(global_func, r0, strlen(r0)); // global_func <= "min_caml_start"
-        //     // ignore
-        //     addr -= 4;
-        //     continue;
-        // }
-        // そのほかの指令
+        // データのラベル
+        else if (opcode[strlen(opcode)-1] == ':' && (is_data)) {
+            strcpy(data_label[data_addr/4], opcode);
+            continue;
+        }
+        // アセンブリ指令
         else if (opcode[0] == '.') {
-            // ignore
-            addr -= 4;
+            if (strcmp(r0, "\".rodata\"") == 0) {
+                is_data = 1;
+            } else if (strcmp(r0, "\".text\"") == 0) {
+                is_data = 0;
+            } else if (strcmp(opcode, ".long") == 0) {
+                memory.d[data_addr/4].i = atof(r0);
+                data_addr += 4;
+            }
+            // addr -= 4;
             continue;
         }
 
@@ -107,8 +113,10 @@ int main(int argc, char* argv[]) {
         }
 
         // 命令メモリのaddr/4番目に命令列を保管（addrは真のアドレス）
-        sprintf(str, "%s %s %s %s", opcode, r0, r1, r2);
-        strcpy(inst_memory[addr/4], str);
+        // sprintf(str, "%s %s %s %s", opcode, r0, r1, r2);
+        // strcpy(inst_memory[addr/4], str);
+        strcpy(inst_memory[addr/4], inst_cleaned);
+        addr += 4;
     }
 
     fclose(in);
@@ -132,9 +140,6 @@ int main(int argc, char* argv[]) {
         strcpy(r1, "\0");
         strcpy(r2, "\0"); 
         sscanf(inst_memory[pc/4], "%s%s%s%s", opcode, r0, r1, r2);
-
-        // 命令キャッシュ更新
-        
 
         if (debug) {
             printf("####[pc: 0x%08X | %s %s %s %s]##############################################################################\n", pc, opcode, r0, r1, r2);
@@ -274,11 +279,17 @@ int main(int argc, char* argv[]) {
                 clk++;
             }
         }
-        // lui rd, upimm
+        // lui rd, upimm / lui rd, label
         else if (strncmp(opcode, "lui", 3) == 0) {
             int rd = reg_num(r0);
-            int upimm = atoi(r1);
-            reg[rd] = upimm << 12;
+            int d_addr;
+            for (int i=0; i<64; i++) {
+                if (strncmp(data_label[i], r1, strlen(r1)) == 0) {
+                    d_addr = i*4;
+                    break;
+                }
+            }
+            reg[rd] = d_addr;
             pc = pc + 4;
             clk++;
         }
@@ -360,13 +371,13 @@ int main(int argc, char* argv[]) {
                 clk++;
             }
         }
-        // lw rd, imm(rs1) (input=s11/x27)
+        // lw rd, imm(rs1) (input=s10/x26)
         else if (strncmp(opcode, "lw", 2) == 0) {
             int rd = reg_num(r0);
             int imm = atoi(r1);
             int rs1 = reg_num(r2);
             // input
-            if (rs1 == 27) {
+            if (rs1 == 26) {
                 char i[10];
                 if ((fscanf(in_sld, "%s", i)) != EOF) {
                     reg[rd] = atoi(i);
@@ -437,15 +448,12 @@ int main(int argc, char* argv[]) {
             int rs2 = reg_num(r0);
             int imm = atoi(r1);
             int rs1 = reg_num(r2);
-            cout << "\trs1 = " << rs1 << endl;
             // int output
             if (rs1 == 26) {
-                cout << "print_int!" << endl;
                 fprintf(out_ppm, "%d", reg[rs2]);
             }
             // char output
             else if (rs1 == 27) {
-                cout << "print_char!" << endl;
                 fprintf(out_ppm, "%c", reg[rs2]);
             }
             // regular sw
@@ -620,7 +628,7 @@ int main(int argc, char* argv[]) {
                 }
                 // no cache
                 else {
-                    freg[fd] = memory.d[reg[rs1]+imm].f;
+                    freg[fd] = memory.d[(reg[rs1]+imm)/4].f;
                 }
                 if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
                     clk += 2;
@@ -836,31 +844,11 @@ int main(int argc, char* argv[]) {
             }
             pc = jmp_addr;
         }
-        // jr rs1 = jalr x0, rs1, 0
-        // else if (strncmp(opcode, "jr", 2) == 0) {
-        //     int rs1 = reg_num(r0);
-        //     pc = reg[rs1];
-        // }
-        // j
-        // else if (strncmp(opcode, "j", 1) == 0) {
-        //     int jmp_addr;
-        //     for (int i=0; i<1000; i+=4) {
-        //         eliminate_colon(label[i]);
-        //         if (strncmp(label[i], r0, strlen(r0)) == 0) {
-        //             jmp_addr = i*4;
-        //             break;
-        //         }
-        //     }
-        //     pc = jmp_addr;
-        // }
-        
-        // raが0から変わっていたら
-        // if (pre_ra == 0 && reg[1] != 0) {
-        //     first_ra = reg[1];
-        // }
-        // if (debug) {
-        //     printf("\tfirst_ra = 0x%X\n", first_ra);
-        // }
+        // others
+        else {
+            cout << "Error: unknown inst: " << opcode << endl;
+            exit(1);
+        }
 
         // print integer register
         if (debug) {
@@ -903,6 +891,10 @@ int main(int argc, char* argv[]) {
     }
     if (debug && use_cache) {
         cache.print_stat();
+    }
+    // print float table
+    for (int i=0; i<64; i++) {
+        cout << i << ": " << data_label[i] << endl;
     }
     printf("inst_count: %lld\n", inst_count);
     printf("clk: %lld\n", clk);
