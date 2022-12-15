@@ -6,25 +6,32 @@ module finv (
   input wire       clk,
   input wire       rstn
 );
-	wire [  : ] sign = x[31];
+	wire      	sign = x[31];
 	wire [ 7:0] exp_x = x[30:23];
 	wire [22:0] frac_x = x[22:0];
+
 	wire [ 9:0] addr = x[22:13];
 	wire [12:0] dx = x[12:0];
 	wire [35:0] dout;
 	finv_table finv_table1(addr, dout, clk, rstn);
+
 	wire [22:0] constant = dout[35:13];
 	wire [12:0] gradient = dout[12:0];
 	wire [25:0] dy_calc = gradient * dx;
-	wire [13:0] dy = dy_calc
-	wire [ 7:0] exp =
+	wire [22:0] frac_y = constant - dy_calc[25:3];
+
+	wire [ 7:0] exp_x_unbiased = exp_x - 8'd127;
+	wire [ 7:0] exp_y_unbiased = ~exp_x_unbiased + 8'd1;
+	wire [ 7:0] exp_y = exp_y_unbiased + 8'd127;
+
+	assign y = {sign , exp_y, frac_y};
 endmodule
 
 module finv_table (
-	input		wire [ 9:0]	addr;
-	output	reg  [35:0] dout;
-	input 	wire 				clk;
-	input 	wire 				rstn;
+	input		wire [ 9:0]	addr,
+	output	reg  [35:0] dout,
+	input 	wire 				clk,
+	input 	wire 				rstn
 );
 	(*ram_style = "BLOCK"*) logic [35:0] finv_table [1023:0];
 	always @(posedge clk) begin

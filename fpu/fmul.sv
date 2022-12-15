@@ -1,6 +1,6 @@
 `default_nettype wire
 
-module fmul (
+module fmul_multi (
   input wire [31:0]  x1,
   input wire [31:0]  x2,
   output wire [31:0] y,
@@ -34,7 +34,7 @@ module fmul (
 	end
 endmodule
 
-module fmul_1clock (
+module fmul (
   input wire [31:0]  x1,
   input wire [31:0]  x2,
   output wire [31:0] y,
