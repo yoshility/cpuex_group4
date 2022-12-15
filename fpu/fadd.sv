@@ -1,6 +1,6 @@
 `default_nettype none
 
-module fadd (
+module fadd_multi (
   input wire [31:0]  x1,
   input wire [31:0]  x2,
   output wire [31:0] y,
@@ -149,7 +149,7 @@ endmodule
 
 `default_nettype wire
 
-module fadd_1clock (
+module fadd (
   input wire [31:0]  x1,
   input wire [31:0]  x2,
   output wire [31:0] y,
