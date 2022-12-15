@@ -27,7 +27,7 @@ be_else.19:
 	addi	x0, x0, 0
 .global	min_caml_start
 min_caml_start:
-	addi	sp, x0, 256
+	addi	sp, x0, 8188
 	addi	t0, x0, 10
 	addi	a0, x0, 7
 	addi	t6, t0 0
