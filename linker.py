@@ -18,12 +18,13 @@ with open(args.asm, mode = 'r') as asm:
             while ".text" not in line:
                 targ.write(f"{line}")
                 line = asm.readline()
+            tmp = line
             targ.write(f"{line}") # .section	".text"
             line = lib.readline()
             while line:
                 targ.write(f"{line}")
                 line = lib.readline()
-            line = asm.readline()
+            line = tmp
             while line:
                 line = asm.readline()
                 targ.write(f"{line}")

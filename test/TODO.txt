@@ -7,7 +7,7 @@
 - array??
 
 ## test
-- print ?
+- print done
 - sum-tail done maybe 
 - gcd done
 - sum done
