@@ -40,22 +40,22 @@ l.319:	# 0.000000
 	.long	0x0
 l.310:	# 2.000000
 	.long	0x40000000
-l.7129:	# 128.000000
+l.7128:	# 128.000000
 	.long	0x43000000
-l.7055:	# 0.900000
+l.7054:	# 0.900000
 	.long	0x3f666666
-l.7053:	# 0.200000
+l.7052:	# 0.200000
 	.long	0x3e4ccccd
-l.6856:	# 150.000000
+l.6855:	# 150.000000
 	.long	0x43160000
-l.6852:	# -150.000000
+l.6851:	# -150.000000
 	.long	0xc3160000
-l.6818:	# 0.100000
+l.6817:	# 0.100000
 	.long	0x3dcccccd
-l.6812:	# -2.000000
+l.6811:	# -2.000000
 	.long	0xc0000000
-l.6808:	# 256.000000
-	.long	0x43800000
+l.6807:	# 0.003906
+	.long	0x3b800000
 l.6754:	# 20.000000
 	.long	0x41a00000
 l.6752:	# 0.050000
@@ -947,17 +947,17 @@ create_float_array_cont:
 	addi a0, a0, -1
 	jal	x0, create_array_loop
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9230
+	bne	a0, t5, be_else.9229
 	addi	a0, a1 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9230:
+be_else.9229:
 	addi	t5, x0, 0
-	bne	a1, t5, be_else.9231
+	bne	a1, t5, be_else.9230
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9231:
+be_else.9230:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -973,7 +973,7 @@ sgn.2406:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9232
+	bne	a0, t5, be_else.9231
 	lw	fa0, 0(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -985,39 +985,36 @@ sgn.2406:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9233
-	lui	a0, hi(l.5880)
-	ori	a0, a0, lo(l.5880)
-	flw	fa0, 0(a0)
-	jalr	x0, ra, 0
-	addi	x0, x0, 0
-be_else.9233:
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+	bne	a0, t5, be_else.9232
+	lui	a0, l.5880
 	flw	fa0, 0(a0)
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 be_else.9232:
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+	lui	a0, l.5878
+	flw	fa0, 0(a0)
+	jalr	x0, ra, 0
+	addi	x0, x0, 0
+be_else.9231:
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 fneg_cond.2408:
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9234
+	bne	a0, t5, be_else.9233
 	jal	x0, min_caml_fneg 
-be_else.9234:
+be_else.9233:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 add_mod5.2411:
 	add	a0, a0, a1
 	addi	t5, x0, 5
-	blt	a0, t5, bg_else.9235
+	blt	a0, t5, bg_else.9234
 	addi	a0, a0, -5
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-bg_else.9235:
+bg_else.9234:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 vecset.2414:
@@ -1039,8 +1036,7 @@ vecfill.2419:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 vecbzero.2422:
-	lui	a1, hi(l.5876)
-	ori	a1, a1, lo(l.5876)
+	lui	a1, l.5876
 	flw	fa0, 0(a1)
 	jal	x0, vecfill.2419 
 veccpy.2424:
@@ -1124,33 +1120,30 @@ vecunit_sgn.2427:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9239
+	bne	a0, t5, beq_else.9238
 	addi	x0, x0, 0
 	lw	a0, 0(sp)
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9241
+	bne	a0, t5, beq_else.9240
 	addi	x0, x0, 0
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+	lui	a0, l.5878
 	flw	fa0, 0(a0)
 	lw	fa1, 24(sp)
 	fdiv	fa0, fa0, fa1
-	jal	x0, beq_cont.9242
+	jal	x0, beq_cont.9241
 	addi	x0, x0, 0
-beq_else.9241:
-	lui	a0, hi(l.5880)
-	ori	a0, a0, lo(l.5880)
+beq_else.9240:
+	lui	a0, l.5880
 	flw	fa0, 0(a0)
 	lw	fa1, 24(sp)
 	fdiv	fa0, fa0, fa1
-beq_cont.9242:
-	jal	x0, beq_cont.9240
+beq_cont.9241:
+	jal	x0, beq_cont.9239
 	addi	x0, x0, 0
-beq_else.9239:
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+beq_else.9238:
+	lui	a0, l.5878
 	flw	fa0, 0(a0)
-beq_cont.9240:
+beq_cont.9239:
 	lw	a0, 4(sp)
 	addi	a1, a0, 0
 	flw	fa1, 0(a1)
@@ -1478,8 +1471,7 @@ r_bright.2521:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 rad.2523:
-	lui	a0, hi(l.6050)
-	ori	a0, a0, lo(l.6050)
+	lui	a0, l.6050
 	flw	fa1, 0(a0)
 	fmul	fa0, fa0, fa1
 	jalr	x0, ra, 0
@@ -1614,15 +1606,13 @@ read_screen_settings.2525:
 	addi	sp, sp, 24
 	lw	fa1, 32(sp)
 	fmul	fa2, fa1, fa0
-	lui	a0, hi(l.6058)
-	ori	a0, a0, lo(l.6058)
+	lui	a0, l.6058
 	flw	fa3, 0(a0)
 	fmul	fa2, fa2, fa3
 	lw	a0, 12(sp)
 	addi	a1, a0, 0
 	sw	fa2,0(a1) 
-	lui	a1, hi(l.6062)
-	ori	a1, a1, lo(l.6062)
+	lui	a1, l.6062
 	flw	fa2, 0(a1)
 	lw	fa3, 40(sp)
 	fmul	fa2, fa3, fa2
@@ -1630,8 +1620,7 @@ read_screen_settings.2525:
 	sw	fa2,0(a1) 
 	lw	fa2, 56(sp)
 	fmul	fa4, fa1, fa2
-	lui	a1, hi(l.6058)
-	ori	a1, a1, lo(l.6058)
+	lui	a1, l.6058
 	flw	fa5, 0(a1)
 	fmul	fa4, fa4, fa5
 	addi	a1, a0, 16
@@ -1639,8 +1628,7 @@ read_screen_settings.2525:
 	lw	a1, 8(sp)
 	addi	a2, a1, 0
 	sw	fa2,0(a2) 
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa4, 0(a2)
 	addi	a2, a1, 8
 	sw	fa4,0(a2) 
@@ -2139,8 +2127,7 @@ rotate_quadratic_matrix.2529:
 	lw	a0, 0(sp)
 	addi	a0, a0, 16
 	sw	fa0,0(a0) 
-	lui	a0, hi(l.6132)
-	ori	a0, a0, lo(l.6132)
+	lui	a0, l.6132
 	flw	fa0, 0(a0)
 	lw	fa2, 72(sp)
 	lw	fa3, 136(sp)
@@ -2162,8 +2149,7 @@ rotate_quadratic_matrix.2529:
 	lw	a0, 4(sp)
 	addi	a1, a0, 0
 	sw	fa0,0(a1) 
-	lui	a1, hi(l.6132)
-	ori	a1, a1, lo(l.6132)
+	lui	a1, l.6132
 	flw	fa0, 0(a1)
 	lw	fa4, 88(sp)
 	fmul	ft2, fa3, fa4
@@ -2179,8 +2165,7 @@ rotate_quadratic_matrix.2529:
 	fmul	fa0, fa0, fa5
 	addi	a1, a0, 8
 	sw	fa0,0(a1) 
-	lui	a1, hi(l.6132)
-	ori	a1, a1, lo(l.6132)
+	lui	a1, l.6132
 	flw	fa0, 0(a1)
 	fmul	fa3, fa3, fa4
 	fmul	fa2, fa3, fa2
@@ -2208,13 +2193,12 @@ read_nth_object.2532:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	addi	a1, x0, 1
-	sub	a1, x0, a1
-	bne	a0, a1, be_else.9253
+	addi	t5, x0, -1
+	bne	a0, t5, be_else.9252
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9253:
+be_else.9252:
 	sw	a0, 8(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -2246,8 +2230,7 @@ be_else.9253:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 20(sp)
 	addi	a0, a1, 0
@@ -2298,8 +2281,7 @@ be_else.9253:
 	addi	a1, a0, 16
 	sw	fa0,0(a1) 
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	addi	a0, a1, 0
 	addi	sp, sp, -24
@@ -2367,8 +2349,7 @@ be_else.9253:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 2
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 32(sp)
 	addi	a0, a1, 0
@@ -2407,8 +2388,7 @@ be_else.9253:
 	addi	a1, a0, 8
 	sw	fa0,0(a1) 
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	addi	a0, a1, 0
 	addi	sp, sp, -24
@@ -2458,8 +2438,7 @@ be_else.9253:
 	addi	a1, a0, 16
 	sw	fa0,0(a1) 
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	addi	a0, a1, 0
 	addi	sp, sp, -24
@@ -2473,11 +2452,11 @@ be_else.9253:
 	addi	sp, sp, 24
 	lw	a1, 20(sp)
 	addi	t5, x0, 0
-	bne	a1, t5, beq_else.9254
+	bne	a1, t5, beq_else.9253
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9255
+	jal	x0, beq_cont.9254
 	addi	x0, x0, 0
-beq_else.9254:
+beq_else.9253:
 	sw	a0, 44(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -2542,20 +2521,19 @@ beq_else.9254:
 	lw	a0, 44(sp)
 	addi	a1, a0, 16
 	sw	fa0,0(a1) 
-beq_cont.9255:
+beq_cont.9254:
 	lw	a1, 12(sp)
 	addi	t5, x0, 2
-	bne	a1, t5, beq_else.9256
+	bne	a1, t5, beq_else.9255
 	addi	x0, x0, 0
 	addi	a2, x0, 1
-	jal	x0, beq_cont.9257
+	jal	x0, beq_cont.9256
 	addi	x0, x0, 0
-beq_else.9256:
+beq_else.9255:
 	lw	a2, 32(sp)
-beq_cont.9257:
+beq_cont.9256:
 	addi	a3, x0, 4
-	lui	a4, hi(l.5876)
-	ori	a4, a4, lo(l.5876)
+	lui	a4, l.5876
 	flw	fa0, 0(a4)
 	sw	a2, 48(sp)
 	sw	a0, 44(sp)
@@ -2569,8 +2547,8 @@ beq_cont.9257:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	addi	a1, t0 0
-	addi	t0, t0, 48
+	addi	a1, hp 0
+	addi	hp, hp, 48
 	sw	a0,40(a1) 
 	lw	a0, 44(sp)
 	sw	a0,36(a1) 
@@ -2598,7 +2576,7 @@ beq_cont.9257:
 	add	a5, a6, a5
 	sw	a1,0(a5) 
 	addi	t5, x0, 3
-	bne	a4, t5, beq_else.9258
+	bne	a4, t5, beq_else.9257
 	addi	x0, x0, 0
 	addi	a1, a2, 0
 	flw	fa0, 0(a1)
@@ -2613,7 +2591,7 @@ beq_cont.9257:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9260
+	bne	a0, t5, beq_else.9259
 	addi	x0, x0, 0
 	lw	fa0, 56(sp)
 	addi	sp, sp, -24
@@ -2639,13 +2617,12 @@ beq_cont.9257:
 	addi	sp, sp, 24
 	lw	fa1, 64(sp)
 	fdiv	fa0, fa1, fa0
-	jal	x0, beq_cont.9261
+	jal	x0, beq_cont.9260
 	addi	x0, x0, 0
-beq_else.9260:
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+beq_else.9259:
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
-beq_cont.9261:
+beq_cont.9260:
 	lw	a0, 24(sp)
 	addi	a1, a0, 0
 	sw	fa0,0(a1) 
@@ -2662,7 +2639,7 @@ beq_cont.9261:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9262
+	bne	a0, t5, beq_else.9261
 	addi	x0, x0, 0
 	lw	fa0, 72(sp)
 	addi	sp, sp, -24
@@ -2688,13 +2665,12 @@ beq_cont.9261:
 	addi	sp, sp, 24
 	lw	fa1, 80(sp)
 	fdiv	fa0, fa1, fa0
-	jal	x0, beq_cont.9263
+	jal	x0, beq_cont.9262
 	addi	x0, x0, 0
-beq_else.9262:
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+beq_else.9261:
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
-beq_cont.9263:
+beq_cont.9262:
 	lw	a0, 24(sp)
 	addi	a1, a0, 8
 	sw	fa0,0(a1) 
@@ -2711,7 +2687,7 @@ beq_cont.9263:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9264
+	bne	a0, t5, beq_else.9263
 	addi	x0, x0, 0
 	lw	fa0, 88(sp)
 	addi	sp, sp, -24
@@ -2737,32 +2713,31 @@ beq_cont.9263:
 	addi	sp, sp, 24
 	lw	fa1, 96(sp)
 	fdiv	fa0, fa1, fa0
-	jal	x0, beq_cont.9265
+	jal	x0, beq_cont.9264
 	addi	x0, x0, 0
-beq_else.9264:
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+beq_else.9263:
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
-beq_cont.9265:
+beq_cont.9264:
 	lw	a0, 24(sp)
 	addi	a1, a0, 16
 	sw	fa0,0(a1) 
-	jal	x0, beq_cont.9259
+	jal	x0, beq_cont.9258
 	addi	x0, x0, 0
-beq_else.9258:
+beq_else.9257:
 	addi	t5, x0, 2
-	bne	a4, t5, beq_else.9266
+	bne	a4, t5, beq_else.9265
 	addi	x0, x0, 0
 	lw	a1, 32(sp)
 	addi	t5, x0, 0
-	bne	a1, t5, beq_else.9268
+	bne	a1, t5, beq_else.9267
 	addi	x0, x0, 0
 	addi	a1, x0, 1
-	jal	x0, beq_cont.9269
+	jal	x0, beq_cont.9268
 	addi	x0, x0, 0
-beq_else.9268:
+beq_else.9267:
 	addi	a1, x0, 0
-beq_cont.9269:
+beq_cont.9268:
 	addi	a0, a2, 0
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -2773,18 +2748,18 @@ beq_cont.9269:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	jal	x0, beq_cont.9267
+	jal	x0, beq_cont.9266
 	addi	x0, x0, 0
-beq_else.9266:
-beq_cont.9267:
-beq_cont.9259:
+beq_else.9265:
+beq_cont.9266:
+beq_cont.9258:
 	lw	a0, 20(sp)
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9270
+	bne	a0, t5, beq_else.9269
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9271
+	jal	x0, beq_cont.9270
 	addi	x0, x0, 0
-beq_else.9270:
+beq_else.9269:
 	lw	a0, 24(sp)
 	lw	a1, 44(sp)
 	addi	sp, sp, -24
@@ -2796,7 +2771,7 @@ beq_else.9270:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-beq_cont.9271:
+beq_cont.9270:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -2804,10 +2779,10 @@ read_object.2534:
 	lw	a1, 8(t6)
 	lw	a2, 4(t6)
 	addi	t5, x0, 60
-	blt	a0, t5, bg_else.9272
+	blt	a0, t5, bg_else.9271
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-bg_else.9272:
+bg_else.9271:
 	sw	t6, 0(sp)
 	sw	a0, 4(sp)
 	sw	a2, 8(sp)
@@ -2823,14 +2798,14 @@ bg_else.9272:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9274
+	bne	a0, t5, be_else.9273
 	lw	a0, 8(sp)
 	addi	a0, a0, 0
 	lw	a1, 4(sp)
 	sw	a1,0(a0) 
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9274:
+be_else.9273:
 	lw	a0, 4(sp)
 	addi	a0, a0, 1
 	lw	t6, 0(sp)
@@ -2852,15 +2827,13 @@ read_net_item.2538:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	addi	a1, x0, 1
-	sub	a1, x0, a1
-	bne	a0, a1, be_else.9276
+	addi	t5, x0, -1
+	bne	a0, t5, be_else.9275
 	lw	a0, 0(sp)
 	addi	a0, a0, 1
-	addi	a1, x0, 1
-	sub	a1, x0, a1
+	addi	a1, x0, -1
 	jal	x0, min_caml_create_array 
-be_else.9276:
+be_else.9275:
 	lw	a1, 0(sp)
 	addi	a2, a1, 1
 	sw	a0, 4(sp)
@@ -2897,13 +2870,12 @@ read_or_network.2540:
 	addi	a1, a0, 0
 	addi	a0, a1, 0
 	lw	a0, 0(a0)
-	addi	a2, x0, 1
-	sub	a2, x0, a2
-	bne	a0, a2, be_else.9277
+	addi	t5, x0, -1
+	bne	a0, t5, be_else.9276
 	lw	a0, 0(sp)
 	addi	a0, a0, 1
 	jal	x0, min_caml_create_array 
-be_else.9277:
+be_else.9276:
 	lw	a0, 0(sp)
 	addi	a2, a0, 1
 	sw	a1, 4(sp)
@@ -2942,12 +2914,11 @@ read_and_network.2542:
 	addi	sp, sp, 24
 	addi	a1, a0, 0
 	lw	a1, 0(a1)
-	addi	a2, x0, 1
-	sub	a2, x0, a2
-	bne	a1, a2, be_else.9278
+	addi	t5, x0, -1
+	bne	a1, t5, be_else.9277
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9278:
+be_else.9277:
 	lw	a1, 8(sp)
 	slli	a2, a1, 2
 	lw	a3, 4(sp)
@@ -3052,7 +3023,7 @@ solver_rect_surface.2546:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9284
+	bne	a0, t5, be_else.9283
 	lw	a0, 56(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -3156,11 +3127,11 @@ solver_rect_surface.2546:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9286
+	bne	a0, t5, be_else.9285
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9286:
+be_else.9285:
 	lw	a0, 16(sp)
 	slli	a1, a0, 3
 	lw	a2, 48(sp)
@@ -3194,11 +3165,11 @@ be_else.9286:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9287
+	bne	a0, t5, be_else.9286
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9287:
+be_else.9286:
 	lw	a0, 0(sp)
 	addi	a0, a0, 0
 	lw	a1, 72(sp)
@@ -3206,7 +3177,7 @@ be_else.9287:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9284:
+be_else.9283:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -3232,7 +3203,7 @@ solver_rect.2555:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9288
+	bne	a0, t5, be_else.9287
 	addi	a2, x0, 1
 	addi	a3, x0, 2
 	addi	a4, x0, 0
@@ -3253,7 +3224,7 @@ solver_rect.2555:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9289
+	bne	a0, t5, be_else.9288
 	addi	a2, x0, 2
 	addi	a3, x0, 0
 	addi	a4, x0, 1
@@ -3274,19 +3245,19 @@ solver_rect.2555:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9290
+	bne	a0, t5, be_else.9289
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9290:
+be_else.9289:
 	addi	a0, x0, 3
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9289:
+be_else.9288:
 	addi	a0, x0, 2
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9288:
+be_else.9287:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -3329,11 +3300,11 @@ solver_surface.2561:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9292
+	bne	a0, t5, be_else.9291
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9292:
+be_else.9291:
 	lw	fa0, 24(sp)
 	lw	fa1, 16(sp)
 	lw	fa2, 8(sp)
@@ -3457,11 +3428,11 @@ quadratic.2567:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9294
+	bne	a0, t5, be_else.9293
 	lw	fa0, 72(sp)
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9294:
+be_else.9293:
 	lw	fa0, 8(sp)
 	lw	fa1, 16(sp)
 	fmul	fa2, fa1, fa0
@@ -3591,11 +3562,11 @@ bilinear.2572:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9296
+	bne	a0, t5, be_else.9295
 	lw	fa0, 96(sp)
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9296:
+be_else.9295:
 	lw	fa0, 40(sp)
 	lw	fa1, 24(sp)
 	fmul	fa2, fa1, fa0
@@ -3712,7 +3683,7 @@ solver_second.2580:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9298
+	bne	a0, t5, be_else.9297
 	lw	a0, 36(sp)
 	addi	a1, a0, 0
 	flw	fa0, 0(a1)
@@ -3762,18 +3733,17 @@ solver_second.2580:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 3
-	bne	a0, t5, beq_else.9299
+	bne	a0, t5, beq_else.9298
 	addi	x0, x0, 0
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+	lui	a0, l.5878
 	flw	fa0, 0(a0)
 	lw	fa1, 56(sp)
 	fsub	fa0, fa1, fa0
-	jal	x0, beq_cont.9300
+	jal	x0, beq_cont.9299
 	addi	x0, x0, 0
-beq_else.9299:
+beq_else.9298:
 	lw	fa0, 56(sp)
-beq_cont.9300:
+beq_cont.9299:
 	lw	fa1, 48(sp)
 	sw	fa0, 64(sp)
 	fsgnj	fa0, fa1
@@ -3801,11 +3771,11 @@ beq_cont.9300:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9301
+	bne	a0, t5, be_else.9300
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9301:
+be_else.9300:
 	lw	fa0, 72(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -3828,7 +3798,7 @@ be_else.9301:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9302
+	bne	a0, t5, beq_else.9301
 	addi	x0, x0, 0
 	lw	fa0, 80(sp)
 	addi	sp, sp, -24
@@ -3840,11 +3810,11 @@ be_else.9301:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	jal	x0, beq_cont.9303
+	jal	x0, beq_cont.9302
 	addi	x0, x0, 0
-beq_else.9302:
+beq_else.9301:
 	lw	fa0, 80(sp)
-beq_cont.9303:
+beq_cont.9302:
 	lw	fa1, 48(sp)
 	fsub	fa0, fa0, fa1
 	lw	fa1, 40(sp)
@@ -3855,7 +3825,7 @@ beq_cont.9303:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9298:
+be_else.9297:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -3934,7 +3904,7 @@ solver.2586:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 1
-	bne	a0, t5, be_else.9304
+	bne	a0, t5, be_else.9303
 	lw	fa0, 32(sp)
 	lw	fa1, 48(sp)
 	lw	fa2, 64(sp)
@@ -3943,9 +3913,9 @@ solver.2586:
 	lw	t6, 12(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9304:
+be_else.9303:
 	addi	t5, x0, 2
-	bne	a0, t5, be_else.9305
+	bne	a0, t5, be_else.9304
 	lw	fa0, 32(sp)
 	lw	fa1, 48(sp)
 	lw	fa2, 64(sp)
@@ -3954,7 +3924,7 @@ be_else.9304:
 	lw	t6, 4(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9305:
+be_else.9304:
 	lw	fa0, 32(sp)
 	lw	fa1, 48(sp)
 	lw	fa2, 64(sp)
@@ -4016,12 +3986,12 @@ solver_rect_fast.2590:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9308
+	bne	a0, t5, beq_else.9307
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9309
+	jal	x0, beq_cont.9308
 	addi	x0, x0, 0
-beq_else.9308:
+beq_else.9307:
 	lw	a0, 48(sp)
 	addi	a1, a0, 16
 	flw	fa0, 0(a1)
@@ -4061,12 +4031,12 @@ beq_else.9308:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9310
+	bne	a0, t5, beq_else.9309
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9311
+	jal	x0, beq_cont.9310
 	addi	x0, x0, 0
-beq_else.9310:
+beq_else.9309:
 	lw	a0, 24(sp)
 	addi	a1, a0, 8
 	flw	fa0, 0(a1)
@@ -4080,18 +4050,18 @@ beq_else.9310:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9312
+	bne	a0, t5, beq_else.9311
 	addi	x0, x0, 0
 	addi	a0, x0, 1
-	jal	x0, beq_cont.9313
+	jal	x0, beq_cont.9312
 	addi	x0, x0, 0
-beq_else.9312:
+beq_else.9311:
 	addi	a0, x0, 0
-beq_cont.9313:
-beq_cont.9311:
-beq_cont.9309:
+beq_cont.9312:
+beq_cont.9310:
+beq_cont.9308:
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9314
+	bne	a0, t5, be_else.9313
 	lw	a0, 24(sp)
 	addi	a1, a0, 16
 	flw	fa0, 0(a1)
@@ -4140,12 +4110,12 @@ beq_cont.9309:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9315
+	bne	a0, t5, beq_else.9314
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9316
+	jal	x0, beq_cont.9315
 	addi	x0, x0, 0
-beq_else.9315:
+beq_else.9314:
 	lw	a0, 48(sp)
 	addi	a1, a0, 16
 	flw	fa0, 0(a1)
@@ -4185,12 +4155,12 @@ beq_else.9315:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9317
+	bne	a0, t5, beq_else.9316
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9318
+	jal	x0, beq_cont.9317
 	addi	x0, x0, 0
-beq_else.9317:
+beq_else.9316:
 	lw	a0, 24(sp)
 	addi	a1, a0, 24
 	flw	fa0, 0(a1)
@@ -4204,18 +4174,18 @@ beq_else.9317:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9319
+	bne	a0, t5, beq_else.9318
 	addi	x0, x0, 0
 	addi	a0, x0, 1
-	jal	x0, beq_cont.9320
+	jal	x0, beq_cont.9319
 	addi	x0, x0, 0
-beq_else.9319:
+beq_else.9318:
 	addi	a0, x0, 0
-beq_cont.9320:
-beq_cont.9318:
-beq_cont.9316:
+beq_cont.9319:
+beq_cont.9317:
+beq_cont.9315:
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9321
+	bne	a0, t5, be_else.9320
 	lw	a0, 24(sp)
 	addi	a1, a0, 32
 	flw	fa0, 0(a1)
@@ -4264,12 +4234,12 @@ beq_cont.9316:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9322
+	bne	a0, t5, beq_else.9321
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9323
+	jal	x0, beq_cont.9322
 	addi	x0, x0, 0
-beq_else.9322:
+beq_else.9321:
 	lw	a0, 48(sp)
 	addi	a0, a0, 8
 	flw	fa0, 0(a0)
@@ -4309,12 +4279,12 @@ beq_else.9322:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9324
+	bne	a0, t5, beq_else.9323
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9325
+	jal	x0, beq_cont.9324
 	addi	x0, x0, 0
-beq_else.9324:
+beq_else.9323:
 	lw	a0, 24(sp)
 	addi	a0, a0, 40
 	flw	fa0, 0(a0)
@@ -4328,22 +4298,22 @@ beq_else.9324:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9326
+	bne	a0, t5, beq_else.9325
 	addi	x0, x0, 0
 	addi	a0, x0, 1
-	jal	x0, beq_cont.9327
+	jal	x0, beq_cont.9326
 	addi	x0, x0, 0
-beq_else.9326:
+beq_else.9325:
 	addi	a0, x0, 0
-beq_cont.9327:
-beq_cont.9325:
-beq_cont.9323:
+beq_cont.9326:
+beq_cont.9324:
+beq_cont.9322:
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9328
+	bne	a0, t5, be_else.9327
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9328:
+be_else.9327:
 	lw	a0, 0(sp)
 	addi	a0, a0, 0
 	lw	a1, 96(sp)
@@ -4351,7 +4321,7 @@ be_else.9328:
 	addi	a0, x0, 3
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9321:
+be_else.9320:
 	lw	a0, 0(sp)
 	addi	a0, a0, 0
 	lw	a1, 72(sp)
@@ -4359,7 +4329,7 @@ be_else.9321:
 	addi	a0, x0, 2
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9314:
+be_else.9313:
 	lw	a0, 0(sp)
 	addi	a0, a0, 0
 	lw	a1, 40(sp)
@@ -4387,11 +4357,11 @@ solver_surface_fast.2597:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9330
+	bne	a0, t5, be_else.9329
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9330:
+be_else.9329:
 	lw	a0, 32(sp)
 	addi	a1, a0, 8
 	flw	fa0, 0(a1)
@@ -4435,7 +4405,7 @@ solver_second_fast.2603:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9333
+	bne	a0, t5, be_else.9332
 	lw	a0, 48(sp)
 	addi	a1, a0, 8
 	flw	fa0, 0(a1)
@@ -4478,18 +4448,17 @@ solver_second_fast.2603:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 3
-	bne	a0, t5, beq_else.9335
+	bne	a0, t5, beq_else.9334
 	addi	x0, x0, 0
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+	lui	a0, l.5878
 	flw	fa0, 0(a0)
 	lw	fa1, 64(sp)
 	fsub	fa0, fa1, fa0
-	jal	x0, beq_cont.9336
+	jal	x0, beq_cont.9335
 	addi	x0, x0, 0
-beq_else.9335:
+beq_else.9334:
 	lw	fa0, 64(sp)
-beq_cont.9336:
+beq_cont.9335:
 	lw	fa1, 56(sp)
 	sw	fa0, 72(sp)
 	fsgnj	fa0, fa1
@@ -4517,11 +4486,11 @@ beq_cont.9336:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9337
+	bne	a0, t5, be_else.9336
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9337:
+be_else.9336:
 	lw	a0, 16(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -4533,7 +4502,7 @@ be_else.9337:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9338
+	bne	a0, t5, beq_else.9337
 	addi	x0, x0, 0
 	lw	fa0, 80(sp)
 	addi	sp, sp, -24
@@ -4554,9 +4523,9 @@ be_else.9337:
 	lw	a0, 0(sp)
 	addi	a0, a0, 0
 	sw	fa0,0(a0) 
-	jal	x0, beq_cont.9339
+	jal	x0, beq_cont.9338
 	addi	x0, x0, 0
-beq_else.9338:
+beq_else.9337:
 	lw	fa0, 80(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -4576,11 +4545,11 @@ beq_else.9338:
 	lw	a0, 0(sp)
 	addi	a0, a0, 0
 	sw	fa0,0(a0) 
-beq_cont.9339:
+beq_cont.9338:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9333:
+be_else.9332:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -4677,7 +4646,7 @@ solver_fast.2609:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 1
-	bne	a0, t5, be_else.9341
+	bne	a0, t5, be_else.9340
 	lw	a0, 16(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -4697,9 +4666,9 @@ solver_fast.2609:
 	lw	t6, 8(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9341:
+be_else.9340:
 	addi	t5, x0, 2
-	bne	a0, t5, be_else.9342
+	bne	a0, t5, be_else.9341
 	lw	fa0, 40(sp)
 	lw	fa1, 56(sp)
 	lw	fa2, 72(sp)
@@ -4708,7 +4677,7 @@ be_else.9341:
 	lw	t6, 4(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9342:
+be_else.9341:
 	lw	fa0, 40(sp)
 	lw	fa1, 56(sp)
 	lw	fa2, 72(sp)
@@ -4734,11 +4703,11 @@ solver_surface_fast2.2613:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9343
+	bne	a0, t5, be_else.9342
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9343:
+be_else.9342:
 	lw	a0, 8(sp)
 	addi	a0, a0, 0
 	flw	fa0, 0(a0)
@@ -4775,7 +4744,7 @@ solver_second_fast2.2620:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9345
+	bne	a0, t5, be_else.9344
 	lw	a0, 48(sp)
 	addi	a1, a0, 8
 	flw	fa0, 0(a1)
@@ -4820,11 +4789,11 @@ solver_second_fast2.2620:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9347
+	bne	a0, t5, be_else.9346
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9347:
+be_else.9346:
 	lw	a0, 4(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -4836,7 +4805,7 @@ be_else.9347:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9348
+	bne	a0, t5, beq_else.9347
 	addi	x0, x0, 0
 	lw	fa0, 72(sp)
 	addi	sp, sp, -24
@@ -4857,9 +4826,9 @@ be_else.9347:
 	lw	a0, 0(sp)
 	addi	a0, a0, 0
 	sw	fa0,0(a0) 
-	jal	x0, beq_cont.9349
+	jal	x0, beq_cont.9348
 	addi	x0, x0, 0
-beq_else.9348:
+beq_else.9347:
 	lw	fa0, 72(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -4879,11 +4848,11 @@ beq_else.9348:
 	lw	a0, 0(sp)
 	addi	a0, a0, 0
 	sw	fa0,0(a0) 
-beq_cont.9349:
+beq_cont.9348:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9345:
+be_else.9344:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -4949,7 +4918,7 @@ solver_fast2.2627:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 1
-	bne	a0, t5, be_else.9351
+	bne	a0, t5, be_else.9350
 	lw	a0, 20(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -4969,9 +4938,9 @@ solver_fast2.2627:
 	lw	t6, 8(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9351:
+be_else.9350:
 	addi	t5, x0, 2
-	bne	a0, t5, be_else.9352
+	bne	a0, t5, be_else.9351
 	lw	fa0, 48(sp)
 	lw	fa1, 40(sp)
 	lw	fa2, 32(sp)
@@ -4981,7 +4950,7 @@ be_else.9351:
 	lw	t6, 4(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9352:
+be_else.9351:
 	lw	fa0, 48(sp)
 	lw	fa1, 40(sp)
 	lw	fa2, 32(sp)
@@ -4993,8 +4962,7 @@ be_else.9352:
 	jalr	x0, t5, 0 
 setup_rect_table.2630:
 	addi	a2, x0, 6
-	lui	a3, hi(l.5876)
-	ori	a3, a3, lo(l.5876)
+	lui	a3, l.5876
 	flw	fa0, 0(a3)
 	sw	a1, 0(sp)
 	sw	a0, 4(sp)
@@ -5022,7 +4990,7 @@ setup_rect_table.2630:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9353
+	bne	a0, t5, beq_else.9352
 	addi	x0, x0, 0
 	lw	a0, 0(sp)
 	addi	sp, sp, -24
@@ -5083,8 +5051,7 @@ setup_rect_table.2630:
 	lw	a0, 8(sp)
 	addi	a1, a0, 0
 	sw	fa0,0(a1) 
-	lui	a1, hi(l.5878)
-	ori	a1, a1, lo(l.5878)
+	lui	a1, l.5878
 	flw	fa0, 0(a1)
 	lw	a1, 4(sp)
 	addi	a2, a1, 0
@@ -5092,16 +5059,15 @@ setup_rect_table.2630:
 	fdiv	fa0, fa0, fa1
 	addi	a2, a0, 8
 	sw	fa0,0(a2) 
-	jal	x0, beq_cont.9354
+	jal	x0, beq_cont.9353
 	addi	x0, x0, 0
-beq_else.9353:
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+beq_else.9352:
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
 	lw	a0, 8(sp)
 	addi	a1, a0, 8
 	sw	fa0,0(a1) 
-beq_cont.9354:
+beq_cont.9353:
 	lw	a1, 4(sp)
 	addi	a2, a1, 8
 	flw	fa0, 0(a2)
@@ -5115,7 +5081,7 @@ beq_cont.9354:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9355
+	bne	a0, t5, beq_else.9354
 	addi	x0, x0, 0
 	lw	a0, 0(sp)
 	addi	sp, sp, -24
@@ -5176,8 +5142,7 @@ beq_cont.9354:
 	lw	a0, 8(sp)
 	addi	a1, a0, 16
 	sw	fa0,0(a1) 
-	lui	a1, hi(l.5878)
-	ori	a1, a1, lo(l.5878)
+	lui	a1, l.5878
 	flw	fa0, 0(a1)
 	lw	a1, 4(sp)
 	addi	a2, a1, 8
@@ -5185,16 +5150,15 @@ beq_cont.9354:
 	fdiv	fa0, fa0, fa1
 	addi	a2, a0, 24
 	sw	fa0,0(a2) 
-	jal	x0, beq_cont.9356
+	jal	x0, beq_cont.9355
 	addi	x0, x0, 0
-beq_else.9355:
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+beq_else.9354:
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
 	lw	a0, 8(sp)
 	addi	a1, a0, 24
 	sw	fa0,0(a1) 
-beq_cont.9356:
+beq_cont.9355:
 	lw	a1, 4(sp)
 	addi	a2, a1, 16
 	flw	fa0, 0(a2)
@@ -5208,7 +5172,7 @@ beq_cont.9356:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9357
+	bne	a0, t5, beq_else.9356
 	addi	x0, x0, 0
 	lw	a0, 0(sp)
 	addi	sp, sp, -24
@@ -5269,8 +5233,7 @@ beq_cont.9356:
 	lw	a0, 8(sp)
 	addi	a1, a0, 32
 	sw	fa0,0(a1) 
-	lui	a1, hi(l.5878)
-	ori	a1, a1, lo(l.5878)
+	lui	a1, l.5878
 	flw	fa0, 0(a1)
 	lw	a1, 4(sp)
 	addi	a1, a1, 16
@@ -5278,22 +5241,20 @@ beq_cont.9356:
 	fdiv	fa0, fa0, fa1
 	addi	a1, a0, 40
 	sw	fa0,0(a1) 
-	jal	x0, beq_cont.9358
+	jal	x0, beq_cont.9357
 	addi	x0, x0, 0
-beq_else.9357:
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+beq_else.9356:
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
 	lw	a0, 8(sp)
 	addi	a1, a0, 40
 	sw	fa0,0(a1) 
-beq_cont.9358:
+beq_cont.9357:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 setup_surface_table.2633:
 	addi	a2, x0, 4
-	lui	a3, hi(l.5876)
-	ori	a3, a3, lo(l.5876)
+	lui	a3, l.5876
 	flw	fa0, 0(a3)
 	sw	a1, 0(sp)
 	sw	a0, 4(sp)
@@ -5375,19 +5336,17 @@ setup_surface_table.2633:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9360
+	bne	a0, t5, beq_else.9359
 	addi	x0, x0, 0
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
 	lw	a0, 8(sp)
 	addi	a1, a0, 0
 	sw	fa0,0(a1) 
-	jal	x0, beq_cont.9361
+	jal	x0, beq_cont.9360
 	addi	x0, x0, 0
-beq_else.9360:
-	lui	a0, hi(l.5880)
-	ori	a0, a0, lo(l.5880)
+beq_else.9359:
+	lui	a0, l.5880
 	flw	fa0, 0(a0)
 	lw	fa1, 56(sp)
 	fdiv	fa0, fa0, fa1
@@ -5469,13 +5428,12 @@ beq_else.9360:
 	lw	a0, 8(sp)
 	addi	a1, a0, 24
 	sw	fa0,0(a1) 
-beq_cont.9361:
+beq_cont.9360:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 setup_second_table.2636:
 	addi	a2, x0, 5
-	lui	a3, hi(l.5876)
-	ori	a3, a3, lo(l.5876)
+	lui	a3, l.5876
 	flw	fa0, 0(a3)
 	sw	a1, 0(sp)
 	sw	a0, 4(sp)
@@ -5606,7 +5564,7 @@ setup_second_table.2636:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9363
+	bne	a0, t5, beq_else.9362
 	addi	x0, x0, 0
 	lw	a0, 8(sp)
 	addi	a1, a0, 8
@@ -5618,9 +5576,9 @@ setup_second_table.2636:
 	addi	a1, a0, 24
 	lw	a2, 64(sp)
 	sw	a2,0(a1) 
-	jal	x0, beq_cont.9364
+	jal	x0, beq_cont.9363
 	addi	x0, x0, 0
-beq_else.9363:
+beq_else.9362:
 	lw	a0, 4(sp)
 	addi	a1, a0, 16
 	flw	fa0, 0(a1)
@@ -5773,7 +5731,7 @@ beq_else.9363:
 	lw	a0, 8(sp)
 	addi	a1, a0, 24
 	sw	fa0,0(a1) 
-beq_cont.9364:
+beq_cont.9363:
 	lw	fa0, 16(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -5785,27 +5743,26 @@ beq_cont.9364:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9365
+	bne	a0, t5, beq_else.9364
 	addi	x0, x0, 0
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+	lui	a0, l.5878
 	flw	fa0, 0(a0)
 	lw	fa1, 16(sp)
 	fdiv	fa0, fa0, fa1
 	lw	a0, 8(sp)
 	addi	a1, a0, 32
 	sw	fa0,0(a1) 
-	jal	x0, beq_cont.9366
+	jal	x0, beq_cont.9365
 	addi	x0, x0, 0
-beq_else.9365:
-beq_cont.9366:
+beq_else.9364:
+beq_cont.9365:
 	lw	a0, 8(sp)
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 iter_setup_dirvec_constants.2639:
 	lw	a2, 4(t6)
 	addi	t5, x0, 0
-	blt	a1, t5, bg_else.9367
+	blt	a1, t5, bg_else.9366
 	slli	a3, a1, 2
 	add	a2, a3, a2
 	lw	a2, 0(a2)
@@ -5847,7 +5804,7 @@ iter_setup_dirvec_constants.2639:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 1
-	bne	a0, t5, beq_else.9368
+	bne	a0, t5, beq_else.9367
 	addi	x0, x0, 0
 	lw	a0, 20(sp)
 	lw	a1, 8(sp)
@@ -5865,11 +5822,11 @@ iter_setup_dirvec_constants.2639:
 	lw	a3, 16(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
-	jal	x0, beq_cont.9369
+	jal	x0, beq_cont.9368
 	addi	x0, x0, 0
-beq_else.9368:
+beq_else.9367:
 	addi	t5, x0, 2
-	bne	a0, t5, beq_else.9370
+	bne	a0, t5, beq_else.9369
 	addi	x0, x0, 0
 	lw	a0, 20(sp)
 	lw	a1, 8(sp)
@@ -5887,9 +5844,9 @@ beq_else.9368:
 	lw	a3, 16(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
-	jal	x0, beq_cont.9371
+	jal	x0, beq_cont.9370
 	addi	x0, x0, 0
-beq_else.9370:
+beq_else.9369:
 	lw	a0, 20(sp)
 	lw	a1, 8(sp)
 	addi	sp, sp, -24
@@ -5906,14 +5863,14 @@ beq_else.9370:
 	lw	a3, 16(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
-beq_cont.9371:
-beq_cont.9369:
+beq_cont.9370:
+beq_cont.9368:
 	addi	a1, a1, -1
 	lw	a0, 12(sp)
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9367:
+bg_else.9366:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 setup_dirvec_constants.2642:
@@ -5927,7 +5884,7 @@ setup_dirvec_constants.2642:
 setup_startp_constants.2644:
 	lw	a2, 4(t6)
 	addi	t5, x0, 0
-	blt	a1, t5, bg_else.9373
+	blt	a1, t5, bg_else.9372
 	slli	a3, a1, 2
 	add	a2, a3, a2
 	lw	a2, 0(a2)
@@ -6020,7 +5977,7 @@ setup_startp_constants.2644:
 	sw	fa0,0(a1) 
 	lw	a1, 20(sp)
 	addi	t5, x0, 2
-	bne	a1, t5, beq_else.9374
+	bne	a1, t5, beq_else.9373
 	addi	x0, x0, 0
 	lw	a1, 12(sp)
 	addi	a0, a1, 0
@@ -6052,15 +6009,15 @@ setup_startp_constants.2644:
 	lw	a0, 16(sp)
 	addi	a0, a0, 24
 	sw	fa0,0(a0) 
-	jal	x0, beq_cont.9375
+	jal	x0, beq_cont.9374
 	addi	x0, x0, 0
-beq_else.9374:
+beq_else.9373:
 	addi	t5, x0, 2
-	blt	t5, a1, bg_else.9376
+	blt	t5, a1, bg_else.9375
 	addi	x0, x0, 0
-	jal	x0, bg_cont.9377
+	jal	x0, bg_cont.9376
 	addi	x0, x0, 0
-bg_else.9376:
+bg_else.9375:
 	addi	a2, a0, 0
 	flw	fa0, 0(a2)
 	addi	a2, a0, 8
@@ -6080,28 +6037,27 @@ bg_else.9376:
 	addi	sp, sp, 24
 	lw	a0, 20(sp)
 	addi	t5, x0, 3
-	bne	a0, t5, beq_else.9378
+	bne	a0, t5, beq_else.9377
 	addi	x0, x0, 0
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+	lui	a0, l.5878
 	flw	fa1, 0(a0)
 	fsub	fa0, fa0, fa1
-	jal	x0, beq_cont.9379
+	jal	x0, beq_cont.9378
 	addi	x0, x0, 0
-beq_else.9378:
-beq_cont.9379:
+beq_else.9377:
+beq_cont.9378:
 	lw	a0, 16(sp)
 	addi	a0, a0, 24
 	sw	fa0,0(a0) 
-bg_cont.9377:
-beq_cont.9375:
+bg_cont.9376:
+beq_cont.9374:
 	lw	a0, 4(sp)
 	addi	a1, a0, -1
 	lw	a0, 8(sp)
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9373:
+bg_else.9372:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 setup_startp.2647:
@@ -6167,12 +6123,12 @@ is_rect_outside.2649:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9382
+	bne	a0, t5, beq_else.9381
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9383
+	jal	x0, beq_cont.9382
 	addi	x0, x0, 0
-beq_else.9382:
+beq_else.9381:
 	lw	fa0, 8(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -6206,12 +6162,12 @@ beq_else.9382:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9384
+	bne	a0, t5, beq_else.9383
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9385
+	jal	x0, beq_cont.9384
 	addi	x0, x0, 0
-beq_else.9384:
+beq_else.9383:
 	lw	fa0, 0(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -6244,10 +6200,10 @@ beq_else.9384:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-beq_cont.9385:
-beq_cont.9383:
+beq_cont.9384:
+beq_cont.9382:
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9386
+	bne	a0, t5, be_else.9385
 	lw	a0, 16(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -6259,15 +6215,15 @@ beq_cont.9383:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9387
+	bne	a0, t5, be_else.9386
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9387:
+be_else.9386:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9386:
+be_else.9385:
 	lw	a0, 16(sp)
 	jal	x0, o_isinvert.2458 
 is_plane_outside.2654:
@@ -6330,11 +6286,11 @@ is_plane_outside.2654:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9389
+	bne	a0, t5, be_else.9388
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9389:
+be_else.9388:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -6361,18 +6317,17 @@ is_second_outside.2659:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 3
-	bne	a0, t5, beq_else.9391
+	bne	a0, t5, beq_else.9390
 	addi	x0, x0, 0
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+	lui	a0, l.5878
 	flw	fa0, 0(a0)
 	lw	fa1, 8(sp)
 	fsub	fa0, fa1, fa0
-	jal	x0, beq_cont.9392
+	jal	x0, beq_cont.9391
 	addi	x0, x0, 0
-beq_else.9391:
+beq_else.9390:
 	lw	fa0, 8(sp)
-beq_cont.9392:
+beq_cont.9391:
 	lw	a0, 0(sp)
 	sw	fa0, 16(sp)
 	addi	sp, sp, -24
@@ -6407,11 +6362,11 @@ beq_cont.9392:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9393
+	bne	a0, t5, be_else.9392
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9393:
+be_else.9392:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -6469,21 +6424,21 @@ is_outside.2664:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 1
-	bne	a0, t5, be_else.9395
+	bne	a0, t5, be_else.9394
 	lw	fa0, 32(sp)
 	lw	fa1, 40(sp)
 	lw	fa2, 48(sp)
 	lw	a0, 16(sp)
 	jal	x0, is_rect_outside.2649 
-be_else.9395:
+be_else.9394:
 	addi	t5, x0, 2
-	bne	a0, t5, be_else.9396
+	bne	a0, t5, be_else.9395
 	lw	fa0, 32(sp)
 	lw	fa1, 40(sp)
 	lw	fa2, 48(sp)
 	lw	a0, 16(sp)
 	jal	x0, is_plane_outside.2654 
-be_else.9396:
+be_else.9395:
 	lw	fa0, 32(sp)
 	lw	fa1, 40(sp)
 	lw	fa2, 48(sp)
@@ -6494,13 +6449,12 @@ check_all_inside.2669:
 	slli	a3, a0, 2
 	add	a3, a3, a1
 	lw	a3, 0(a3)
-	addi	a4, x0, 1
-	sub	a4, x0, a4
-	bne	a3, a4, be_else.9397
+	addi	t5, x0, -1
+	bne	a3, t5, be_else.9396
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9397:
+be_else.9396:
 	slli	a3, a3, 2
 	add	a2, a3, a2
 	lw	a2, 0(a2)
@@ -6521,7 +6475,7 @@ be_else.9397:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9398
+	bne	a0, t5, be_else.9397
 	lw	a0, 32(sp)
 	addi	a0, a0, 1
 	lw	fa0, 16(sp)
@@ -6531,7 +6485,7 @@ be_else.9397:
 	lw	t6, 28(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9398:
+be_else.9397:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -6546,13 +6500,12 @@ shadow_check_and_group.2675:
 	slli	s2, a0, 2
 	add	s2, s2, a1
 	lw	s2, 0(s2)
-	addi	s3, x0, 1
-	sub	s3, x0, s3
-	bne	s2, s3, be_else.9399
+	addi	t5, x0, -1
+	bne	s2, t5, be_else.9398
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9399:
+be_else.9398:
 	slli	s2, a0, 2
 	add	s2, s2, a1
 	lw	s2, 0(s2)
@@ -6584,14 +6537,13 @@ be_else.9399:
 	flw	fa0, 0(a1)
 	sw	fa0, 40(sp)
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9401
+	bne	a0, t5, beq_else.9400
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9402
+	jal	x0, beq_cont.9401
 	addi	x0, x0, 0
-beq_else.9401:
-	lui	a0, hi(l.6529)
-	ori	a0, a0, lo(l.6529)
+beq_else.9400:
+	lui	a0, l.6529
 	flw	fa1, 0(a0)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -6602,9 +6554,9 @@ beq_else.9401:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-beq_cont.9402:
+beq_cont.9401:
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9403
+	bne	a0, t5, be_else.9402
 	lw	a0, 28(sp)
 	slli	a0, a0, 2
 	lw	a1, 24(sp)
@@ -6620,20 +6572,19 @@ beq_cont.9402:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9404
+	bne	a0, t5, be_else.9403
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9404:
+be_else.9403:
 	lw	a0, 20(sp)
 	addi	a0, a0, 1
 	lw	a1, 12(sp)
 	lw	t6, 16(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9403:
-	lui	a0, hi(l.6531)
-	ori	a0, a0, lo(l.6531)
+be_else.9402:
+	lui	a0, l.6531
 	flw	fa0, 0(a0)
 	lw	fa1, 40(sp)
 	fadd	fa0, fa1, fa0
@@ -6675,14 +6626,14 @@ be_else.9403:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9405
+	bne	a0, t5, be_else.9404
 	lw	a0, 20(sp)
 	addi	a0, a0, 1
 	lw	a1, 12(sp)
 	lw	t6, 16(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9405:
+be_else.9404:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -6692,13 +6643,12 @@ shadow_check_one_or_group.2678:
 	slli	a4, a0, 2
 	add	a4, a4, a1
 	lw	a4, 0(a4)
-	addi	a5, x0, 1
-	sub	a5, x0, a5
-	bne	a4, a5, be_else.9406
+	addi	t5, x0, -1
+	bne	a4, t5, be_else.9405
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9406:
+be_else.9405:
 	slli	a4, a4, 2
 	add	a3, a4, a3
 	lw	a3, 0(a3)
@@ -6720,14 +6670,14 @@ be_else.9406:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9407
+	bne	a0, t5, be_else.9406
 	lw	a0, 8(sp)
 	addi	a0, a0, 1
 	lw	a1, 0(sp)
 	lw	t6, 4(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9407:
+be_else.9406:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -6742,25 +6692,24 @@ shadow_check_one_or_matrix.2681:
 	lw	a7, 0(a7)
 	addi	s1, a7, 0
 	lw	s1, 0(s1)
-	addi	s2, x0, 1
-	sub	s2, x0, s2
-	bne	s1, s2, be_else.9408
+	addi	t5, x0, -1
+	bne	s1, t5, be_else.9407
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9408:
+be_else.9407:
 	sw	a7, 0(sp)
 	sw	a4, 4(sp)
 	sw	a1, 8(sp)
 	sw	t6, 12(sp)
 	sw	a0, 16(sp)
 	addi	t5, x0, 99
-	bne	s1, t5, beq_else.9409
+	bne	s1, t5, beq_else.9408
 	addi	x0, x0, 0
 	addi	a0, x0, 1
-	jal	x0, beq_cont.9410
+	jal	x0, beq_cont.9409
 	addi	x0, x0, 0
-beq_else.9409:
+beq_else.9408:
 	sw	a3, 20(sp)
 	addi	a1, a5, 0
 	addi	a0, s1, 0
@@ -6777,17 +6726,16 @@ beq_else.9409:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9411
+	bne	a0, t5, beq_else.9410
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9412
+	jal	x0, beq_cont.9411
 	addi	x0, x0, 0
-beq_else.9411:
+beq_else.9410:
 	lw	a0, 20(sp)
 	addi	a0, a0, 0
 	flw	fa0, 0(a0)
-	lui	a0, hi(l.6557)
-	ori	a0, a0, lo(l.6557)
+	lui	a0, l.6557
 	flw	fa1, 0(a0)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -6799,12 +6747,12 @@ beq_else.9411:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9413
+	bne	a0, t5, beq_else.9412
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9414
+	jal	x0, beq_cont.9413
 	addi	x0, x0, 0
-beq_else.9413:
+beq_else.9412:
 	addi	a0, x0, 1
 	lw	a1, 0(sp)
 	lw	t6, 4(sp)
@@ -6819,17 +6767,39 @@ beq_else.9413:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9415
+	bne	a0, t5, beq_else.9414
 	addi	x0, x0, 0
 	addi	a0, x0, 0
-	jal	x0, beq_cont.9416
+	jal	x0, beq_cont.9415
 	addi	x0, x0, 0
-beq_else.9415:
+beq_else.9414:
 	addi	a0, x0, 1
-beq_cont.9416:
-beq_cont.9414:
-beq_cont.9412:
-beq_cont.9410:
+beq_cont.9415:
+beq_cont.9413:
+beq_cont.9411:
+beq_cont.9409:
+	addi	t5, x0, 0
+	bne	a0, t5, be_else.9416
+	lw	a0, 16(sp)
+	addi	a0, a0, 1
+	lw	a1, 8(sp)
+	lw	t6, 12(sp)
+	lw	t5, 0(t6) 
+	jalr	x0, t5, 0 
+be_else.9416:
+	addi	a0, x0, 1
+	lw	a1, 0(sp)
+	lw	t6, 4(sp)
+	lw	t5, 0(t6)
+	addi	sp, sp, -24
+	sw	t6, 16(sp)
+	sw	ra, 8(sp)
+	sw	fp, 0(sp)
+	jalr	ra, t5, 0
+	lw	t6, 16(sp)
+	lw	ra, 8(sp)
+	lw	fp, 0(sp)
+	addi	sp, sp, 24 
 	addi	t5, x0, 0
 	bne	a0, t5, be_else.9417
 	lw	a0, 16(sp)
@@ -6839,28 +6809,6 @@ beq_cont.9410:
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
 be_else.9417:
-	addi	a0, x0, 1
-	lw	a1, 0(sp)
-	lw	t6, 4(sp)
-	lw	t5, 0(t6)
-	addi	sp, sp, -24
-	sw	t6, 16(sp)
-	sw	ra, 8(sp)
-	sw	fp, 0(sp)
-	jalr	ra, t5, 0
-	lw	t6, 16(sp)
-	lw	ra, 8(sp)
-	lw	fp, 0(sp)
-	addi	sp, sp, 24 
-	addi	t5, x0, 0
-	bne	a0, t5, be_else.9418
-	lw	a0, 16(sp)
-	addi	a0, a0, 1
-	lw	a1, 8(sp)
-	lw	t6, 12(sp)
-	lw	t5, 0(t6) 
-	jalr	x0, t5, 0 
-be_else.9418:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -6877,12 +6825,11 @@ solve_each_element.2684:
 	slli	s5, a0, 2
 	add	s5, s5, a1
 	lw	s5, 0(s5)
-	addi	s6, x0, 1
-	sub	s6, x0, s6
-	bne	s5, s6, be_else.9419
+	addi	t5, x0, -1
+	bne	s5, t5, be_else.9418
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9419:
+be_else.9418:
 	sw	s1, 0(sp)
 	sw	s3, 4(sp)
 	sw	s2, 8(sp)
@@ -6911,7 +6858,7 @@ be_else.9419:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9421
+	bne	a0, t5, be_else.9420
 	lw	a0, 48(sp)
 	slli	a0, a0, 2
 	lw	a1, 44(sp)
@@ -6927,10 +6874,10 @@ be_else.9419:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9422
+	bne	a0, t5, be_else.9421
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9422:
+be_else.9421:
 	lw	a0, 40(sp)
 	addi	a0, a0, 1
 	lw	a1, 32(sp)
@@ -6938,12 +6885,11 @@ be_else.9422:
 	lw	t6, 36(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9421:
+be_else.9420:
 	lw	a1, 24(sp)
 	addi	a1, a1, 0
 	flw	fa1, 0(a1)
-	lui	a1, hi(l.5876)
-	ori	a1, a1, lo(l.5876)
+	lui	a1, l.5876
 	flw	fa0, 0(a1)
 	sw	a0, 52(sp)
 	sw	fa1, 56(sp)
@@ -6957,11 +6903,11 @@ be_else.9421:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9424
+	bne	a0, t5, beq_else.9423
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9425
+	jal	x0, beq_cont.9424
 	addi	x0, x0, 0
-beq_else.9424:
+beq_else.9423:
 	lw	a0, 20(sp)
 	addi	a1, a0, 0
 	flw	fa1, 0(a1)
@@ -6976,13 +6922,12 @@ beq_else.9424:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9426
+	bne	a0, t5, beq_else.9425
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9427
+	jal	x0, beq_cont.9426
 	addi	x0, x0, 0
-beq_else.9426:
-	lui	a0, hi(l.6531)
-	ori	a0, a0, lo(l.6531)
+beq_else.9425:
+	lui	a0, l.6531
 	flw	fa0, 0(a0)
 	lw	fa1, 56(sp)
 	fadd	fa0, fa1, fa0
@@ -7029,11 +6974,11 @@ beq_else.9426:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9428
+	bne	a0, t5, beq_else.9427
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9429
+	jal	x0, beq_cont.9428
 	addi	x0, x0, 0
-beq_else.9428:
+beq_else.9427:
 	lw	a0, 20(sp)
 	addi	a0, a0, 0
 	lw	a1, 88(sp)
@@ -7059,9 +7004,9 @@ beq_else.9428:
 	addi	a0, a0, 0
 	lw	a1, 52(sp)
 	sw	a1,0(a0) 
-beq_cont.9429:
-beq_cont.9427:
-beq_cont.9425:
+beq_cont.9428:
+beq_cont.9426:
+beq_cont.9424:
 	lw	a0, 40(sp)
 	addi	a0, a0, 1
 	lw	a1, 32(sp)
@@ -7075,12 +7020,11 @@ solve_one_or_network.2688:
 	slli	a5, a0, 2
 	add	a5, a5, a1
 	lw	a5, 0(a5)
-	addi	a6, x0, 1
-	sub	a6, x0, a6
-	bne	a5, a6, be_else.9430
+	addi	t5, x0, -1
+	bne	a5, t5, be_else.9429
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9430:
+be_else.9429:
 	slli	a5, a5, 2
 	add	a4, a5, a4
 	lw	a4, 0(a4)
@@ -7120,18 +7064,17 @@ trace_or_matrix.2692:
 	lw	s1, 0(s1)
 	addi	s2, s1, 0
 	lw	s2, 0(s2)
-	addi	s3, x0, 1
-	sub	s3, x0, s3
-	bne	s2, s3, be_else.9432
+	addi	t5, x0, -1
+	bne	s2, t5, be_else.9431
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9432:
+be_else.9431:
 	sw	a2, 0(sp)
 	sw	a1, 4(sp)
 	sw	t6, 8(sp)
 	sw	a0, 12(sp)
 	addi	t5, x0, 99
-	bne	s2, t5, beq_else.9434
+	bne	s2, t5, beq_else.9433
 	addi	x0, x0, 0
 	addi	a3, x0, 1
 	addi	a1, s1, 0
@@ -7147,9 +7090,9 @@ be_else.9432:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-	jal	x0, beq_cont.9435
+	jal	x0, beq_cont.9434
 	addi	x0, x0, 0
-beq_else.9434:
+beq_else.9433:
 	sw	s1, 16(sp)
 	sw	a7, 20(sp)
 	sw	a3, 24(sp)
@@ -7169,11 +7112,11 @@ beq_else.9434:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9436
+	bne	a0, t5, beq_else.9435
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9437
+	jal	x0, beq_cont.9436
 	addi	x0, x0, 0
-beq_else.9436:
+beq_else.9435:
 	lw	a0, 28(sp)
 	addi	a0, a0, 0
 	flw	fa0, 0(a0)
@@ -7190,11 +7133,11 @@ beq_else.9436:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9438
+	bne	a0, t5, beq_else.9437
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9439
+	jal	x0, beq_cont.9438
 	addi	x0, x0, 0
-beq_else.9438:
+beq_else.9437:
 	addi	a0, x0, 1
 	lw	a1, 16(sp)
 	lw	a2, 0(sp)
@@ -7209,9 +7152,9 @@ beq_else.9438:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-beq_cont.9439:
-beq_cont.9437:
-beq_cont.9435:
+beq_cont.9438:
+beq_cont.9436:
+beq_cont.9434:
 	lw	a0, 12(sp)
 	addi	a0, a0, 1
 	lw	a1, 4(sp)
@@ -7223,8 +7166,7 @@ judge_intersection.2696:
 	lw	a1, 12(t6)
 	lw	a2, 8(t6)
 	lw	a3, 4(t6)
-	lui	a4, hi(l.6599)
-	ori	a4, a4, lo(l.6599)
+	lui	a4, l.6599
 	flw	fa0, 0(a4)
 	addi	a4, a2, 0
 	sw	fa0,0(a4) 
@@ -7249,8 +7191,7 @@ judge_intersection.2696:
 	lw	a0, 0(sp)
 	addi	a0, a0, 0
 	flw	fa1, 0(a0)
-	lui	a0, hi(l.6557)
-	ori	a0, a0, lo(l.6557)
+	lui	a0, l.6557
 	flw	fa0, 0(a0)
 	sw	fa1, 8(sp)
 	addi	sp, sp, -24
@@ -7263,13 +7204,12 @@ judge_intersection.2696:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9441
+	bne	a0, t5, be_else.9440
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9441:
-	lui	a0, hi(l.6608)
-	ori	a0, a0, lo(l.6608)
+be_else.9440:
+	lui	a0, l.6608
 	flw	fa1, 0(a0)
 	lw	fa0, 8(sp)
 	jal	x0, min_caml_fless 
@@ -7311,12 +7251,11 @@ solve_each_element_fast.2698:
 	lw	a3, 44(sp)
 	add	a2, a2, a3
 	lw	a2, 0(a2)
-	addi	a4, x0, 1
-	sub	a4, x0, a4
-	bne	a2, a4, be_else.9442
+	addi	t5, x0, -1
+	bne	a2, t5, be_else.9441
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9442:
+be_else.9441:
 	lw	a4, 36(sp)
 	lw	t6, 40(sp)
 	sw	a0, 52(sp)
@@ -7334,7 +7273,7 @@ be_else.9442:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9444
+	bne	a0, t5, be_else.9443
 	lw	a0, 56(sp)
 	slli	a0, a0, 2
 	lw	a1, 32(sp)
@@ -7350,10 +7289,10 @@ be_else.9442:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9445
+	bne	a0, t5, be_else.9444
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9445:
+be_else.9444:
 	lw	a0, 48(sp)
 	addi	a0, a0, 1
 	lw	a1, 44(sp)
@@ -7361,12 +7300,11 @@ be_else.9445:
 	lw	t6, 28(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9444:
+be_else.9443:
 	lw	a1, 24(sp)
 	addi	a1, a1, 0
 	flw	fa1, 0(a1)
-	lui	a1, hi(l.5876)
-	ori	a1, a1, lo(l.5876)
+	lui	a1, l.5876
 	flw	fa0, 0(a1)
 	sw	a0, 60(sp)
 	sw	fa1, 64(sp)
@@ -7380,11 +7318,11 @@ be_else.9444:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9447
+	bne	a0, t5, beq_else.9446
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9448
+	jal	x0, beq_cont.9447
 	addi	x0, x0, 0
-beq_else.9447:
+beq_else.9446:
 	lw	a0, 20(sp)
 	addi	a1, a0, 0
 	flw	fa1, 0(a1)
@@ -7399,13 +7337,12 @@ beq_else.9447:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9449
+	bne	a0, t5, beq_else.9448
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9450
+	jal	x0, beq_cont.9449
 	addi	x0, x0, 0
-beq_else.9449:
-	lui	a0, hi(l.6531)
-	ori	a0, a0, lo(l.6531)
+beq_else.9448:
+	lui	a0, l.6531
 	flw	fa0, 0(a0)
 	lw	fa1, 64(sp)
 	fadd	fa0, fa1, fa0
@@ -7450,11 +7387,11 @@ beq_else.9449:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9451
+	bne	a0, t5, beq_else.9450
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9452
+	jal	x0, beq_cont.9451
 	addi	x0, x0, 0
-beq_else.9451:
+beq_else.9450:
 	lw	a0, 20(sp)
 	addi	a0, a0, 0
 	lw	a1, 96(sp)
@@ -7480,9 +7417,9 @@ beq_else.9451:
 	addi	a0, a0, 0
 	lw	a1, 60(sp)
 	sw	a1,0(a0) 
-beq_cont.9452:
-beq_cont.9450:
-beq_cont.9448:
+beq_cont.9451:
+beq_cont.9449:
+beq_cont.9447:
 	lw	a0, 48(sp)
 	addi	a0, a0, 1
 	lw	a1, 44(sp)
@@ -7496,12 +7433,11 @@ solve_one_or_network_fast.2702:
 	slli	a5, a0, 2
 	add	a5, a5, a1
 	lw	a5, 0(a5)
-	addi	a6, x0, 1
-	sub	a6, x0, a6
-	bne	a5, a6, be_else.9453
+	addi	t5, x0, -1
+	bne	a5, t5, be_else.9452
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9453:
+be_else.9452:
 	slli	a5, a5, 2
 	add	a4, a5, a4
 	lw	a4, 0(a4)
@@ -7540,18 +7476,17 @@ trace_or_matrix_fast.2706:
 	lw	a7, 0(a7)
 	addi	s1, a7, 0
 	lw	s1, 0(s1)
-	addi	s2, x0, 1
-	sub	s2, x0, s2
-	bne	s1, s2, be_else.9455
+	addi	t5, x0, -1
+	bne	s1, t5, be_else.9454
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9455:
+be_else.9454:
 	sw	a2, 0(sp)
 	sw	a1, 4(sp)
 	sw	t6, 8(sp)
 	sw	a0, 12(sp)
 	addi	t5, x0, 99
-	bne	s1, t5, beq_else.9457
+	bne	s1, t5, beq_else.9456
 	addi	x0, x0, 0
 	addi	a3, x0, 1
 	addi	a1, a7, 0
@@ -7567,9 +7502,9 @@ be_else.9455:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-	jal	x0, beq_cont.9458
+	jal	x0, beq_cont.9457
 	addi	x0, x0, 0
-beq_else.9457:
+beq_else.9456:
 	sw	a7, 16(sp)
 	sw	a6, 20(sp)
 	sw	a3, 24(sp)
@@ -7588,11 +7523,11 @@ beq_else.9457:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9459
+	bne	a0, t5, beq_else.9458
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9460
+	jal	x0, beq_cont.9459
 	addi	x0, x0, 0
-beq_else.9459:
+beq_else.9458:
 	lw	a0, 28(sp)
 	addi	a0, a0, 0
 	flw	fa0, 0(a0)
@@ -7609,11 +7544,11 @@ beq_else.9459:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9461
+	bne	a0, t5, beq_else.9460
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9462
+	jal	x0, beq_cont.9461
 	addi	x0, x0, 0
-beq_else.9461:
+beq_else.9460:
 	addi	a0, x0, 1
 	lw	a1, 16(sp)
 	lw	a2, 0(sp)
@@ -7628,9 +7563,9 @@ beq_else.9461:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-beq_cont.9462:
-beq_cont.9460:
-beq_cont.9458:
+beq_cont.9461:
+beq_cont.9459:
+beq_cont.9457:
 	lw	a0, 12(sp)
 	addi	a0, a0, 1
 	lw	a1, 4(sp)
@@ -7642,8 +7577,7 @@ judge_intersection_fast.2710:
 	lw	a1, 12(t6)
 	lw	a2, 8(t6)
 	lw	a3, 4(t6)
-	lui	a4, hi(l.6599)
-	ori	a4, a4, lo(l.6599)
+	lui	a4, l.6599
 	flw	fa0, 0(a4)
 	addi	a4, a2, 0
 	sw	fa0,0(a4) 
@@ -7668,8 +7602,7 @@ judge_intersection_fast.2710:
 	lw	a0, 0(sp)
 	addi	a0, a0, 0
 	flw	fa1, 0(a0)
-	lui	a0, hi(l.6557)
-	ori	a0, a0, lo(l.6557)
+	lui	a0, l.6557
 	flw	fa0, 0(a0)
 	sw	fa1, 8(sp)
 	addi	sp, sp, -24
@@ -7682,13 +7615,12 @@ judge_intersection_fast.2710:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9464
+	bne	a0, t5, be_else.9463
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9464:
-	lui	a0, hi(l.6608)
-	ori	a0, a0, lo(l.6608)
+be_else.9463:
+	lui	a0, l.6608
 	flw	fa1, 0(a0)
 	lw	fa0, 8(sp)
 	jal	x0, min_caml_fless 
@@ -7922,7 +7854,7 @@ get_nvector_second.2716:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9468
+	bne	a0, t5, beq_else.9467
 	addi	x0, x0, 0
 	lw	a0, 0(sp)
 	addi	a1, a0, 0
@@ -7934,9 +7866,9 @@ get_nvector_second.2716:
 	addi	a1, a0, 16
 	lw	a2, 80(sp)
 	sw	a2,0(a1) 
-	jal	x0, beq_cont.9469
+	jal	x0, beq_cont.9468
 	addi	x0, x0, 0
-beq_else.9468:
+beq_else.9467:
 	lw	a0, 4(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -8062,7 +7994,7 @@ beq_else.9468:
 	lw	a0, 0(sp)
 	addi	a1, a0, 16
 	sw	fa0,0(a1) 
-beq_cont.9469:
+beq_cont.9468:
 	lw	a1, 4(sp)
 	addi	a0, a1, 0
 	addi	sp, sp, -24
@@ -8096,19 +8028,19 @@ get_nvector.2718:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 1
-	bne	a0, t5, be_else.9470
+	bne	a0, t5, be_else.9469
 	lw	a0, 12(sp)
 	lw	t6, 16(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9470:
+be_else.9469:
 	addi	t5, x0, 2
-	bne	a0, t5, be_else.9471
+	bne	a0, t5, be_else.9470
 	lw	a0, 4(sp)
 	lw	t6, 8(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9471:
+be_else.9470:
 	lw	a0, 4(sp)
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
@@ -8172,7 +8104,7 @@ utexture.2721:
 	sw	fa0,0(a1) 
 	lw	a1, 12(sp)
 	addi	t5, x0, 1
-	bne	a1, t5, be_else.9472
+	bne	a1, t5, be_else.9471
 	lw	a1, 0(sp)
 	addi	a2, a1, 0
 	flw	fa0, 0(a2)
@@ -8190,8 +8122,7 @@ utexture.2721:
 	addi	sp, sp, 24
 	lw	fa1, 16(sp)
 	fsub	fa0, fa1, fa0
-	lui	a0, hi(l.6752)
-	ori	a0, a0, lo(l.6752)
+	lui	a0, l.6752
 	flw	fa1, 0(a0)
 	fmul	fa1, fa0, fa1
 	sw	fa0, 24(sp)
@@ -8205,14 +8136,12 @@ utexture.2721:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.6754)
-	ori	a0, a0, lo(l.6754)
+	lui	a0, l.6754
 	flw	fa1, 0(a0)
 	fmul	fa0, fa0, fa1
 	lw	fa1, 24(sp)
 	fsub	fa0, fa1, fa0
-	lui	a0, hi(l.6729)
-	ori	a0, a0, lo(l.6729)
+	lui	a0, l.6729
 	flw	fa1, 0(a0)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -8241,8 +8170,7 @@ utexture.2721:
 	addi	sp, sp, 24
 	lw	fa1, 40(sp)
 	fsub	fa0, fa1, fa0
-	lui	a0, hi(l.6752)
-	ori	a0, a0, lo(l.6752)
+	lui	a0, l.6752
 	flw	fa1, 0(a0)
 	fmul	fa1, fa0, fa1
 	sw	fa0, 48(sp)
@@ -8256,14 +8184,12 @@ utexture.2721:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.6754)
-	ori	a0, a0, lo(l.6754)
+	lui	a0, l.6754
 	flw	fa1, 0(a0)
 	fmul	fa0, fa0, fa1
 	lw	fa1, 48(sp)
 	fsub	fa0, fa1, fa0
-	lui	a0, hi(l.6729)
-	ori	a0, a0, lo(l.6729)
+	lui	a0, l.6729
 	flw	fa1, 0(a0)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -8276,51 +8202,46 @@ utexture.2721:
 	addi	sp, sp, 24
 	lw	a1, 32(sp)
 	addi	t5, x0, 0
-	bne	a1, t5, beq_else.9474
+	bne	a1, t5, beq_else.9473
 	addi	x0, x0, 0
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9476
+	bne	a0, t5, beq_else.9475
 	addi	x0, x0, 0
-	lui	a0, hi(l.6719)
-	ori	a0, a0, lo(l.6719)
+	lui	a0, l.6719
 	flw	fa0, 0(a0)
-	jal	x0, beq_cont.9477
+	jal	x0, beq_cont.9476
 	addi	x0, x0, 0
-beq_else.9476:
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+beq_else.9475:
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
-beq_cont.9477:
-	jal	x0, beq_cont.9475
+beq_cont.9476:
+	jal	x0, beq_cont.9474
 	addi	x0, x0, 0
-beq_else.9474:
+beq_else.9473:
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9478
+	bne	a0, t5, beq_else.9477
 	addi	x0, x0, 0
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
-	jal	x0, beq_cont.9479
+	jal	x0, beq_cont.9478
 	addi	x0, x0, 0
-beq_else.9478:
-	lui	a0, hi(l.6719)
-	ori	a0, a0, lo(l.6719)
+beq_else.9477:
+	lui	a0, l.6719
 	flw	fa0, 0(a0)
-beq_cont.9479:
-beq_cont.9475:
+beq_cont.9478:
+beq_cont.9474:
 	lw	a0, 4(sp)
 	addi	a0, a0, 8
 	sw	fa0,0(a0) 
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9472:
+be_else.9471:
 	addi	t5, x0, 2
-	bne	a1, t5, be_else.9481
+	bne	a1, t5, be_else.9480
 	lw	a1, 0(sp)
 	addi	a1, a1, 8
 	flw	fa0, 0(a1)
-	lui	a1, hi(l.6741)
-	ori	a1, a1, lo(l.6741)
+	lui	a1, l.6741
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
 	addi	sp, sp, -24
@@ -8341,18 +8262,15 @@ be_else.9472:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.6719)
-	ori	a0, a0, lo(l.6719)
+	lui	a0, l.6719
 	flw	fa1, 0(a0)
 	fmul	fa1, fa1, fa0
 	lw	a0, 4(sp)
 	addi	a1, a0, 0
 	sw	fa1,0(a1) 
-	lui	a1, hi(l.6719)
-	ori	a1, a1, lo(l.6719)
+	lui	a1, l.6719
 	flw	fa1, 0(a1)
-	lui	a1, hi(l.5878)
-	ori	a1, a1, lo(l.5878)
+	lui	a1, l.5878
 	flw	fa2, 0(a1)
 	fsub	fa0, fa2, fa0
 	fmul	fa0, fa1, fa0
@@ -8360,9 +8278,9 @@ be_else.9472:
 	sw	fa0,0(a0) 
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9481:
+be_else.9480:
 	addi	t5, x0, 3
-	bne	a1, t5, be_else.9483
+	bne	a1, t5, be_else.9482
 	lw	a1, 0(sp)
 	addi	a2, a1, 0
 	flw	fa0, 0(a2)
@@ -8432,8 +8350,7 @@ be_else.9481:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.6729)
-	ori	a0, a0, lo(l.6729)
+	lui	a0, l.6729
 	flw	fa1, 0(a0)
 	fdiv	fa0, fa0, fa1
 	sw	fa0, 96(sp)
@@ -8448,8 +8365,7 @@ be_else.9481:
 	addi	sp, sp, 24
 	lw	fa1, 96(sp)
 	fsub	fa0, fa1, fa0
-	lui	a0, hi(l.6705)
-	ori	a0, a0, lo(l.6705)
+	lui	a0, l.6705
 	flw	fa1, 0(a0)
 	fmul	fa0, fa0, fa1
 	addi	sp, sp, -24
@@ -8470,28 +8386,25 @@ be_else.9481:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.6719)
-	ori	a0, a0, lo(l.6719)
+	lui	a0, l.6719
 	flw	fa1, 0(a0)
 	fmul	fa1, fa0, fa1
 	lw	a0, 4(sp)
 	addi	a1, a0, 8
 	sw	fa1,0(a1) 
-	lui	a1, hi(l.5878)
-	ori	a1, a1, lo(l.5878)
+	lui	a1, l.5878
 	flw	fa1, 0(a1)
 	fsub	fa0, fa1, fa0
-	lui	a1, hi(l.6719)
-	ori	a1, a1, lo(l.6719)
+	lui	a1, l.6719
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
 	addi	a0, a0, 16
 	sw	fa0,0(a0) 
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9483:
+be_else.9482:
 	addi	t5, x0, 4
-	bne	a1, t5, be_else.9485
+	bne	a1, t5, be_else.9484
 	lw	a1, 0(sp)
 	addi	a2, a1, 0
 	flw	fa0, 0(a2)
@@ -8609,8 +8522,7 @@ be_else.9483:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.6699)
-	ori	a0, a0, lo(l.6699)
+	lui	a0, l.6699
 	flw	fa1, 0(a0)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -8622,7 +8534,7 @@ be_else.9483:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9486
+	bne	a0, t5, beq_else.9485
 	addi	x0, x0, 0
 	lw	fa0, 120(sp)
 	lw	fa1, 144(sp)
@@ -8645,21 +8557,18 @@ be_else.9483:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.6703)
-	ori	a0, a0, lo(l.6703)
+	lui	a0, l.6703
 	flw	fa1, 0(a0)
 	fmul	fa0, fa0, fa1
-	lui	a0, hi(l.6705)
-	ori	a0, a0, lo(l.6705)
+	lui	a0, l.6705
 	flw	fa1, 0(a0)
 	fdiv	fa0, fa0, fa1
-	jal	x0, beq_cont.9487
+	jal	x0, beq_cont.9486
 	addi	x0, x0, 0
-beq_else.9486:
-	lui	a0, hi(l.6701)
-	ori	a0, a0, lo(l.6701)
+beq_else.9485:
+	lui	a0, l.6701
 	flw	fa0, 0(a0)
-beq_cont.9487:
+beq_cont.9486:
 	sw	fa0, 168(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -8723,8 +8632,7 @@ beq_cont.9487:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.6699)
-	ori	a0, a0, lo(l.6699)
+	lui	a0, l.6699
 	flw	fa1, 0(a0)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -8736,7 +8644,7 @@ beq_cont.9487:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9488
+	bne	a0, t5, beq_else.9487
 	addi	x0, x0, 0
 	lw	fa0, 160(sp)
 	lw	fa1, 200(sp)
@@ -8759,21 +8667,18 @@ beq_cont.9487:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.6703)
-	ori	a0, a0, lo(l.6703)
+	lui	a0, l.6703
 	flw	fa1, 0(a0)
 	fmul	fa0, fa0, fa1
-	lui	a0, hi(l.6705)
-	ori	a0, a0, lo(l.6705)
+	lui	a0, l.6705
 	flw	fa1, 0(a0)
 	fdiv	fa0, fa0, fa1
-	jal	x0, beq_cont.9489
+	jal	x0, beq_cont.9488
 	addi	x0, x0, 0
-beq_else.9488:
-	lui	a0, hi(l.6701)
-	ori	a0, a0, lo(l.6701)
+beq_else.9487:
+	lui	a0, l.6701
 	flw	fa0, 0(a0)
-beq_cont.9489:
+beq_cont.9488:
 	sw	fa0, 208(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -8786,11 +8691,9 @@ beq_cont.9489:
 	addi	sp, sp, 24
 	lw	fa1, 208(sp)
 	fsub	fa0, fa1, fa0
-	lui	a0, hi(l.6713)
-	ori	a0, a0, lo(l.6713)
+	lui	a0, l.6713
 	flw	fa1, 0(a0)
-	lui	a0, hi(l.6715)
-	ori	a0, a0, lo(l.6715)
+	lui	a0, l.6715
 	flw	fa2, 0(a0)
 	lw	fa3, 176(sp)
 	fsub	fa2, fa2, fa3
@@ -8808,8 +8711,7 @@ beq_cont.9489:
 	addi	sp, sp, 24
 	lw	fa1, 224(sp)
 	fsub	fa0, fa1, fa0
-	lui	a0, hi(l.6715)
-	ori	a0, a0, lo(l.6715)
+	lui	a0, l.6715
 	flw	fa1, 0(a0)
 	lw	fa2, 216(sp)
 	fsub	fa1, fa1, fa2
@@ -8837,22 +8739,19 @@ beq_cont.9489:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9490
+	bne	a0, t5, beq_else.9489
 	addi	x0, x0, 0
 	lw	fa0, 240(sp)
-	jal	x0, beq_cont.9491
+	jal	x0, beq_cont.9490
 	addi	x0, x0, 0
-beq_else.9490:
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+beq_else.9489:
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
-beq_cont.9491:
-	lui	a0, hi(l.6719)
-	ori	a0, a0, lo(l.6719)
+beq_cont.9490:
+	lui	a0, l.6719
 	flw	fa1, 0(a0)
 	fmul	fa0, fa1, fa0
-	lui	a0, hi(l.6721)
-	ori	a0, a0, lo(l.6721)
+	lui	a0, l.6721
 	flw	fa1, 0(a0)
 	fdiv	fa0, fa0, fa1
 	lw	a0, 4(sp)
@@ -8860,7 +8759,7 @@ beq_cont.9491:
 	sw	fa0,0(a0) 
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9485:
+be_else.9484:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 add_light.2724:
@@ -8881,11 +8780,11 @@ add_light.2724:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9494
+	bne	a0, t5, beq_else.9493
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9495
+	jal	x0, beq_cont.9494
 	addi	x0, x0, 0
-beq_else.9494:
+beq_else.9493:
 	lw	fa0, 16(sp)
 	lw	a0, 28(sp)
 	lw	a1, 24(sp)
@@ -8898,7 +8797,7 @@ beq_else.9494:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-beq_cont.9495:
+beq_cont.9494:
 	lw	fa0, 8(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -8910,10 +8809,10 @@ beq_cont.9495:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9496
+	bne	a0, t5, be_else.9495
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9496:
+be_else.9495:
 	lw	fa0, 8(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -8963,7 +8862,7 @@ trace_reflections.2728:
 	lw	s1, 8(t6)
 	lw	s2, 4(t6)
 	addi	t5, x0, 0
-	blt	a0, t5, bg_else.9499
+	blt	a0, t5, bg_else.9498
 	slli	s3, a0, 2
 	add	a3, s3, a3
 	lw	a3, 0(a3)
@@ -9003,11 +8902,11 @@ trace_reflections.2728:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9500
+	bne	a0, t5, beq_else.9499
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9501
+	jal	x0, beq_cont.9500
 	addi	x0, x0, 0
-beq_else.9500:
+beq_else.9499:
 	lw	a0, 52(sp)
 	addi	a0, a0, 0
 	lw	a0, 0(a0)
@@ -9030,7 +8929,7 @@ beq_else.9500:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	lw	a1, 64(sp)
-	bne	a1, a0, beq_else.9502
+	bne	a1, a0, beq_else.9501
 	addi	x0, x0, 0
 	addi	a0, x0, 0
 	lw	a1, 40(sp)
@@ -9048,7 +8947,7 @@ beq_else.9500:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9504
+	bne	a0, t5, beq_else.9503
 	addi	x0, x0, 0
 	lw	a0, 60(sp)
 	addi	sp, sp, -24
@@ -9124,15 +9023,15 @@ beq_else.9500:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-	jal	x0, beq_cont.9505
+	jal	x0, beq_cont.9504
 	addi	x0, x0, 0
-beq_else.9504:
-beq_cont.9505:
-	jal	x0, beq_cont.9503
+beq_else.9503:
+beq_cont.9504:
+	jal	x0, beq_cont.9502
 	addi	x0, x0, 0
-beq_else.9502:
-beq_cont.9503:
-beq_cont.9501:
+beq_else.9501:
+beq_cont.9502:
+beq_cont.9500:
 	lw	a0, 4(sp)
 	addi	a0, a0, -1
 	lw	fa0, 24(sp)
@@ -9141,7 +9040,7 @@ beq_cont.9501:
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9499:
+bg_else.9498:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 trace_ray.2733:
@@ -9167,7 +9066,7 @@ trace_ray.2733:
 	sw	t6, 0(sp)
 	lw	t6, 4(t6)
 	addi	t5, x0, 4
-	blt	t5, a0, bg_else.9508
+	blt	t5, a0, bg_else.9507
 	sw	fa1, 8(sp)
 	sw	a5, 16(sp)
 	sw	a4, 20(sp)
@@ -9218,19 +9117,18 @@ trace_ray.2733:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9511
-	addi	a0, x0, 1
-	sub	a0, x0, a0
+	bne	a0, t5, be_else.9510
+	addi	a0, x0, -1
 	lw	a1, 108(sp)
 	slli	a2, a1, 2
 	lw	a3, 120(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
 	addi	t5, x0, 0
-	bne	a1, t5, be_else.9512
+	bne	a1, t5, be_else.9511
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9512:
+be_else.9511:
 	lw	a0, 112(sp)
 	lw	a1, 104(sp)
 	addi	sp, sp, -24
@@ -9262,10 +9160,10 @@ be_else.9512:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9515
+	bne	a0, t5, be_else.9514
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9515:
+be_else.9514:
 	lw	fa0, 128(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -9302,7 +9200,7 @@ be_else.9515:
 	sw	fa0,0(a0) 
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9511:
+be_else.9510:
 	lw	a0, 80(sp)
 	addi	a0, a0, 0
 	lw	a0, 0(a0)
@@ -9433,8 +9331,7 @@ be_else.9511:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.6715)
-	ori	a0, a0, lo(l.6715)
+	lui	a0, l.6715
 	flw	fa1, 0(a0)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -9446,7 +9343,7 @@ be_else.9511:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9519
+	bne	a0, t5, beq_else.9518
 	addi	x0, x0, 0
 	addi	a0, x0, 1
 	lw	a1, 108(sp)
@@ -9486,13 +9383,8 @@ be_else.9511:
 	lw	a2, 164(sp)
 	add	a1, a1, a2
 	lw	a1, 0(a1)
-	lui	a2, hi(l.5878)
-	ori	a2, a2, lo(l.5878)
+	lui	a2, l.6807
 	flw	fa0, 0(a2)
-	lui	a2, hi(l.6808)
-	ori	a2, a2, lo(l.6808)
-	flw	fa1, 0(a2)
-	fdiv	fa0, fa0, fa1
 	lw	fa1, 152(sp)
 	fmul	fa0, fa0, fa1
 	addi	a0, a1, 0
@@ -9530,18 +9422,17 @@ be_else.9511:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	jal	x0, beq_cont.9520
+	jal	x0, beq_cont.9519
 	addi	x0, x0, 0
-beq_else.9519:
+beq_else.9518:
 	addi	a0, x0, 0
 	lw	a1, 108(sp)
 	slli	a2, a1, 2
 	lw	a3, 160(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
-beq_cont.9520:
-	lui	a0, hi(l.6812)
-	ori	a0, a0, lo(l.6812)
+beq_cont.9519:
+	lui	a0, l.6811
 	flw	fa0, 0(a0)
 	lw	a0, 112(sp)
 	lw	a1, 44(sp)
@@ -9597,7 +9488,7 @@ beq_cont.9520:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9521
+	bne	a0, t5, beq_else.9520
 	addi	x0, x0, 0
 	lw	a0, 44(sp)
 	lw	a1, 104(sp)
@@ -9656,10 +9547,10 @@ beq_cont.9520:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-	jal	x0, beq_cont.9522
+	jal	x0, beq_cont.9521
 	addi	x0, x0, 0
-beq_else.9521:
-beq_cont.9522:
+beq_else.9520:
+beq_cont.9521:
 	lw	a0, 64(sp)
 	lw	t6, 28(sp)
 	lw	t5, 0(t6)
@@ -9690,8 +9581,7 @@ beq_cont.9522:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-	lui	a0, hi(l.6818)
-	ori	a0, a0, lo(l.6818)
+	lui	a0, l.6817
 	flw	fa0, 0(a0)
 	lw	fa1, 96(sp)
 	addi	sp, sp, -24
@@ -9704,30 +9594,28 @@ beq_cont.9522:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9523
+	bne	a0, t5, be_else.9522
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9523:
+be_else.9522:
 	lw	a0, 108(sp)
 	addi	t5, x0, 4
-	blt	a0, t5, bg_else.9525
+	blt	a0, t5, bg_else.9524
 	addi	x0, x0, 0
-	jal	x0, bg_cont.9526
+	jal	x0, bg_cont.9525
 	addi	x0, x0, 0
-bg_else.9525:
+bg_else.9524:
 	addi	a1, a0, 1
-	addi	a2, x0, 1
-	sub	a2, x0, a2
+	addi	a2, x0, -1
 	slli	a1, a1, 2
 	lw	a3, 120(sp)
 	add	a1, a3, a1
 	sw	a2,0(a1) 
-bg_cont.9526:
+bg_cont.9525:
 	lw	a1, 144(sp)
 	addi	t5, x0, 2
-	bne	a1, t5, be_else.9527
-	lui	a1, hi(l.5878)
-	ori	a1, a1, lo(l.5878)
+	bne	a1, t5, be_else.9526
+	lui	a1, l.5878
 	flw	fa0, 0(a1)
 	lw	a1, 140(sp)
 	sw	fa0, 192(sp)
@@ -9757,10 +9645,10 @@ bg_cont.9526:
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9527:
+be_else.9526:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-bg_else.9508:
+bg_else.9507:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 trace_diffuse_ray.2739:
@@ -9801,10 +9689,10 @@ trace_diffuse_ray.2739:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9530
+	bne	a0, t5, be_else.9529
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9530:
+be_else.9529:
 	lw	a0, 52(sp)
 	addi	a0, a0, 0
 	lw	a0, 0(a0)
@@ -9866,7 +9754,7 @@ be_else.9530:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9532
+	bne	a0, t5, be_else.9531
 	lw	a0, 20(sp)
 	lw	a1, 16(sp)
 	addi	sp, sp, -24
@@ -9898,16 +9786,15 @@ be_else.9530:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9534
+	bne	a0, t5, beq_else.9533
 	addi	x0, x0, 0
-	lui	a0, hi(l.5876)
-	ori	a0, a0, lo(l.5876)
+	lui	a0, l.5876
 	flw	fa0, 0(a0)
-	jal	x0, beq_cont.9535
+	jal	x0, beq_cont.9534
 	addi	x0, x0, 0
-beq_else.9534:
+beq_else.9533:
 	lw	fa0, 64(sp)
-beq_cont.9535:
+beq_cont.9534:
 	lw	fa1, 8(sp)
 	fmul	fa0, fa1, fa0
 	lw	a0, 56(sp)
@@ -9926,13 +9813,13 @@ beq_cont.9535:
 	lw	a0, 4(sp)
 	lw	a1, 0(sp)
 	jal	x0, vecaccum.2438 
-be_else.9532:
+be_else.9531:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 iter_trace_diffuse_rays.2742:
 	lw	a4, 4(t6)
 	addi	t5, x0, 0
-	blt	a3, t5, bg_else.9537
+	blt	a3, t5, bg_else.9536
 	slli	a5, a3, 2
 	add	a5, a5, a0
 	lw	a5, 0(a5)
@@ -9973,15 +9860,14 @@ iter_trace_diffuse_rays.2742:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9538
+	bne	a0, t5, beq_else.9537
 	addi	x0, x0, 0
 	lw	a0, 16(sp)
 	slli	a1, a0, 2
 	lw	a2, 12(sp)
 	add	a1, a1, a2
 	lw	a1, 0(a1)
-	lui	a3, hi(l.6856)
-	ori	a3, a3, lo(l.6856)
+	lui	a3, l.6855
 	flw	fa0, 0(a3)
 	lw	fa1, 24(sp)
 	fdiv	fa0, fa1, fa0
@@ -9997,17 +9883,16 @@ iter_trace_diffuse_rays.2742:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-	jal	x0, beq_cont.9539
+	jal	x0, beq_cont.9538
 	addi	x0, x0, 0
-beq_else.9538:
+beq_else.9537:
 	lw	a0, 16(sp)
 	addi	a1, a0, 1
 	slli	a1, a1, 2
 	lw	a2, 12(sp)
 	add	a1, a1, a2
 	lw	a1, 0(a1)
-	lui	a3, hi(l.6852)
-	ori	a3, a3, lo(l.6852)
+	lui	a3, l.6851
 	flw	fa0, 0(a3)
 	lw	fa1, 24(sp)
 	fdiv	fa0, fa1, fa0
@@ -10023,7 +9908,7 @@ beq_else.9538:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-beq_cont.9539:
+beq_cont.9538:
 	lw	a0, 16(sp)
 	addi	a3, a0, -2
 	lw	a0, 12(sp)
@@ -10032,7 +9917,7 @@ beq_cont.9539:
 	lw	t6, 4(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9537:
+bg_else.9536:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 trace_diffuse_rays.2747:
@@ -10070,11 +9955,11 @@ trace_diffuse_ray_80percent.2751:
 	sw	a4, 12(sp)
 	sw	a0, 16(sp)
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9541
+	bne	a0, t5, beq_else.9540
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9542
+	jal	x0, beq_cont.9541
 	addi	x0, x0, 0
-beq_else.9541:
+beq_else.9540:
 	addi	a5, a4, 0
 	lw	a5, 0(a5)
 	addi	a0, a5, 0
@@ -10089,14 +9974,14 @@ beq_else.9541:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-beq_cont.9542:
+beq_cont.9541:
 	lw	a0, 16(sp)
 	addi	t5, x0, 1
-	bne	a0, t5, beq_else.9543
+	bne	a0, t5, beq_else.9542
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9544
+	jal	x0, beq_cont.9543
 	addi	x0, x0, 0
-beq_else.9543:
+beq_else.9542:
 	lw	a1, 12(sp)
 	addi	a2, a1, 4
 	lw	a2, 0(a2)
@@ -10116,14 +10001,14 @@ beq_else.9543:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-beq_cont.9544:
+beq_cont.9543:
 	lw	a0, 16(sp)
 	addi	t5, x0, 2
-	bne	a0, t5, beq_else.9545
+	bne	a0, t5, beq_else.9544
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9546
+	jal	x0, beq_cont.9545
 	addi	x0, x0, 0
-beq_else.9545:
+beq_else.9544:
 	lw	a1, 12(sp)
 	addi	a2, a1, 8
 	lw	a2, 0(a2)
@@ -10143,14 +10028,14 @@ beq_else.9545:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-beq_cont.9546:
+beq_cont.9545:
 	lw	a0, 16(sp)
 	addi	t5, x0, 3
-	bne	a0, t5, beq_else.9547
+	bne	a0, t5, beq_else.9546
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9548
+	jal	x0, beq_cont.9547
 	addi	x0, x0, 0
-beq_else.9547:
+beq_else.9546:
 	lw	a1, 12(sp)
 	addi	a2, a1, 12
 	lw	a2, 0(a2)
@@ -10170,13 +10055,13 @@ beq_else.9547:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-beq_cont.9548:
+beq_cont.9547:
 	lw	a0, 16(sp)
 	addi	t5, x0, 4
-	bne	a0, t5, be_else.9549
+	bne	a0, t5, be_else.9548
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9549:
+be_else.9548:
 	lw	a0, 12(sp)
 	addi	a0, a0, 16
 	lw	a0, 0(a0)
@@ -10491,7 +10376,7 @@ calc_diffuse_using_5points.2758:
 do_without_neighbors.2764:
 	lw	a2, 4(t6)
 	addi	t5, x0, 4
-	blt	t5, a1, bg_else.9551
+	blt	t5, a1, bg_else.9550
 	sw	t6, 0(sp)
 	sw	a2, 4(sp)
 	sw	a0, 8(sp)
@@ -10510,7 +10395,7 @@ do_without_neighbors.2764:
 	add	a0, a2, a0
 	lw	a0, 0(a0)
 	addi	t5, x0, 0
-	blt	a0, t5, bg_else.9552
+	blt	a0, t5, bg_else.9551
 	lw	a0, 8(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -10526,11 +10411,11 @@ do_without_neighbors.2764:
 	add	a0, a2, a0
 	lw	a0, 0(a0)
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9553
+	bne	a0, t5, beq_else.9552
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9554
+	jal	x0, beq_cont.9553
 	addi	x0, x0, 0
-beq_else.9553:
+beq_else.9552:
 	lw	a0, 8(sp)
 	lw	t6, 4(sp)
 	lw	t5, 0(t6)
@@ -10543,17 +10428,17 @@ beq_else.9553:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-beq_cont.9554:
+beq_cont.9553:
 	lw	a0, 12(sp)
 	addi	a1, a0, 1
 	lw	a0, 8(sp)
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9552:
+bg_else.9551:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-bg_else.9551:
+bg_else.9550:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 neighbors_exist.2767:
@@ -10561,31 +10446,31 @@ neighbors_exist.2767:
 	addi	a3, a2, 4
 	lw	a3, 0(a3)
 	addi	a4, a1, 1
-	blt	a4, a3, bg_else.9557
+	blt	a4, a3, bg_else.9556
+	addi	a0, x0, 0
+	jalr	x0, ra, 0
+	addi	x0, x0, 0
+bg_else.9556:
+	addi	t5, x0, 0
+	blt	t5, a1, bg_else.9557
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 bg_else.9557:
-	addi	t5, x0, 0
-	blt	t5, a1, bg_else.9558
+	addi	a1, a2, 0
+	lw	a1, 0(a1)
+	addi	a2, a0, 1
+	blt	a2, a1, bg_else.9558
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 bg_else.9558:
-	addi	a1, a2, 0
-	lw	a1, 0(a1)
-	addi	a2, a0, 1
-	blt	a2, a1, bg_else.9559
+	addi	t5, x0, 0
+	blt	t5, a0, bg_else.9559
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 bg_else.9559:
-	addi	t5, x0, 0
-	blt	t5, a0, bg_else.9560
-	addi	a0, x0, 0
-	jalr	x0, ra, 0
-	addi	x0, x0, 0
-bg_else.9560:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
@@ -10645,7 +10530,7 @@ neighbors_are_available.2774:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	lw	a1, 20(sp)
-	bne	a0, a1, be_else.9561
+	bne	a0, a1, be_else.9560
 	lw	a0, 16(sp)
 	slli	a2, a0, 2
 	lw	a3, 4(sp)
@@ -10664,7 +10549,7 @@ neighbors_are_available.2774:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	lw	a1, 20(sp)
-	bne	a0, a1, be_else.9562
+	bne	a0, a1, be_else.9561
 	lw	a0, 16(sp)
 	addi	a2, a0, -1
 	slli	a2, a2, 2
@@ -10684,7 +10569,7 @@ neighbors_are_available.2774:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	lw	a1, 20(sp)
-	bne	a0, a1, be_else.9563
+	bne	a0, a1, be_else.9562
 	lw	a0, 16(sp)
 	addi	a0, a0, 1
 	slli	a0, a0, 2
@@ -10703,12 +10588,8 @@ neighbors_are_available.2774:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	lw	a1, 20(sp)
-	bne	a0, a1, be_else.9564
+	bne	a0, a1, be_else.9563
 	addi	a0, x0, 1
-	jalr	x0, ra, 0
-	addi	x0, x0, 0
-be_else.9564:
-	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 be_else.9563:
@@ -10723,6 +10604,10 @@ be_else.9561:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
+be_else.9560:
+	addi	a0, x0, 0
+	jalr	x0, ra, 0
+	addi	x0, x0, 0
 try_exploit_neighbors.2780:
 	lw	a6, 8(t6)
 	lw	a7, 4(t6)
@@ -10730,7 +10615,7 @@ try_exploit_neighbors.2780:
 	add	s1, s1, a3
 	lw	s1, 0(s1)
 	addi	t5, x0, 4
-	blt	t5, a5, bg_else.9565
+	blt	t5, a5, bg_else.9564
 	sw	a1, 0(sp)
 	sw	t6, 4(sp)
 	sw	a7, 8(sp)
@@ -10753,7 +10638,7 @@ try_exploit_neighbors.2780:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	blt	a0, t5, bg_else.9566
+	blt	a0, t5, bg_else.9565
 	lw	a0, 36(sp)
 	lw	a1, 32(sp)
 	lw	a2, 28(sp)
@@ -10769,7 +10654,7 @@ try_exploit_neighbors.2780:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9567
+	bne	a0, t5, be_else.9566
 	lw	a0, 36(sp)
 	slli	a0, a0, 2
 	lw	a1, 28(sp)
@@ -10779,7 +10664,7 @@ try_exploit_neighbors.2780:
 	lw	t6, 16(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9567:
+be_else.9566:
 	lw	a0, 12(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -10795,11 +10680,11 @@ be_else.9567:
 	add	a0, a1, a0
 	lw	a0, 0(a0)
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9568
+	bne	a0, t5, beq_else.9567
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9569
+	jal	x0, beq_cont.9568
 	addi	x0, x0, 0
-beq_else.9568:
+beq_else.9567:
 	lw	a0, 36(sp)
 	lw	a1, 32(sp)
 	lw	a2, 28(sp)
@@ -10815,7 +10700,7 @@ beq_else.9568:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-beq_cont.9569:
+beq_cont.9568:
 	lw	a0, 20(sp)
 	addi	a5, a0, 1
 	lw	a0, 36(sp)
@@ -10826,10 +10711,10 @@ beq_cont.9569:
 	lw	t6, 4(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9566:
+bg_else.9565:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-bg_else.9565:
+bg_else.9564:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 write_ppm_header.2787:
@@ -10936,21 +10821,21 @@ write_rgb_element_int.2789:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 255
-	blt	t5, a0, bg_else.9572
+	blt	t5, a0, bg_else.9571
 	addi	x0, x0, 0
 	addi	t5, x0, 0
-	blt	a0, t5, bg_else.9574
+	blt	a0, t5, bg_else.9573
 	addi	x0, x0, 0
-	jal	x0, bg_cont.9575
+	jal	x0, bg_cont.9574
 	addi	x0, x0, 0
-bg_else.9574:
+bg_else.9573:
 	addi	a0, x0, 0
-bg_cont.9575:
-	jal	x0, bg_cont.9573
+bg_cont.9574:
+	jal	x0, bg_cont.9572
 	addi	x0, x0, 0
-bg_else.9572:
+bg_else.9571:
 	addi	a0, x0, 255
-bg_cont.9573:
+bg_cont.9572:
 	jal	x0, min_caml_print_int 
 write_rgb_element_char.2791:
 	addi	sp, sp, -24
@@ -10963,26 +10848,26 @@ write_rgb_element_char.2791:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 255
-	blt	t5, a0, bg_else.9576
+	blt	t5, a0, bg_else.9575
 	addi	x0, x0, 0
 	addi	t5, x0, 0
-	blt	a0, t5, bg_else.9578
+	blt	a0, t5, bg_else.9577
 	addi	x0, x0, 0
-	jal	x0, bg_cont.9579
+	jal	x0, bg_cont.9578
 	addi	x0, x0, 0
-bg_else.9578:
+bg_else.9577:
 	addi	a0, x0, 0
-bg_cont.9579:
-	jal	x0, bg_cont.9577
+bg_cont.9578:
+	jal	x0, bg_cont.9576
 	addi	x0, x0, 0
-bg_else.9576:
+bg_else.9575:
 	addi	a0, x0, 255
-bg_cont.9577:
+bg_cont.9576:
 	jal	x0, min_caml_print_char 
 write_rgb.2793:
 	lw	a1, 4(t6)
 	addi	t5, x0, 3
-	bne	a0, t5, be_else.9580
+	bne	a0, t5, be_else.9579
 	addi	a0, a1, 0
 	flw	fa0, 0(a0)
 	sw	a1, 0(sp)
@@ -11041,7 +10926,7 @@ write_rgb.2793:
 	addi	sp, sp, 24
 	addi	a0, x0, 10
 	jal	x0, min_caml_print_char 
-be_else.9580:
+be_else.9579:
 	addi	a0, a1, 0
 	flw	fa0, 0(a0)
 	sw	a1, 0(sp)
@@ -11075,7 +10960,7 @@ pretrace_diffuse_rays.2795:
 	lw	a3, 8(t6)
 	lw	a4, 4(t6)
 	addi	t5, x0, 4
-	blt	t5, a1, bg_else.9581
+	blt	t5, a1, bg_else.9580
 	sw	t6, 0(sp)
 	sw	a2, 4(sp)
 	sw	a3, 8(sp)
@@ -11092,7 +10977,7 @@ pretrace_diffuse_rays.2795:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	blt	a0, t5, bg_else.9582
+	blt	a0, t5, bg_else.9581
 	lw	a0, 20(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -11108,11 +10993,11 @@ pretrace_diffuse_rays.2795:
 	add	a0, a2, a0
 	lw	a0, 0(a0)
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9583
+	bne	a0, t5, beq_else.9582
 	addi	x0, x0, 0
-	jal	x0, beq_cont.9584
+	jal	x0, beq_cont.9583
 	addi	x0, x0, 0
-beq_else.9583:
+beq_else.9582:
 	lw	a0, 20(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -11209,17 +11094,17 @@ beq_else.9583:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-beq_cont.9584:
+beq_cont.9583:
 	lw	a0, 16(sp)
 	addi	a1, a0, 1
 	lw	a0, 20(sp)
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9582:
+bg_else.9581:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-bg_else.9581:
+bg_else.9580:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 pretrace_pixels.2798:
@@ -11233,7 +11118,7 @@ pretrace_pixels.2798:
 	lw	s3, 8(t6)
 	lw	s4, 4(t6)
 	addi	t5, x0, 0
-	blt	a1, t5, bg_else.9587
+	blt	a1, t5, bg_else.9586
 	addi	a7, a7, 0
 	flw	fa3, 0(a7)
 	addi	a7, s4, 0
@@ -11324,16 +11209,14 @@ pretrace_pixels.2798:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a0, x0, 0
-	lui	a1, hi(l.5878)
-	ori	a1, a1, lo(l.5878)
+	lui	a1, l.5878
 	flw	fa0, 0(a1)
 	lw	a1, 20(sp)
 	slli	a2, a1, 2
 	lw	a3, 16(sp)
 	add	a2, a2, a3
 	lw	a2, 0(a2)
-	lui	a4, hi(l.5876)
-	ori	a4, a4, lo(l.5876)
+	lui	a4, l.5876
 	flw	fa1, 0(a4)
 	lw	a4, 56(sp)
 	lw	t6, 12(sp)
@@ -11433,7 +11316,7 @@ pretrace_pixels.2798:
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9587:
+bg_else.9586:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 pretrace_line.2805:
@@ -11509,10 +11392,10 @@ scan_pixel.2809:
 	lw	s4, 4(t6)
 	addi	s3, s3, 0
 	lw	s3, 0(s3)
-	blt	a0, s3, bg_else.9592
+	blt	a0, s3, bg_else.9591
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-bg_else.9592:
+bg_else.9591:
 	slli	s3, a0, 2
 	add	s3, s3, a3
 	lw	s3, 0(s3)
@@ -11564,7 +11447,7 @@ bg_else.9592:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
 	addi	t5, x0, 0
-	bne	a0, t5, beq_else.9594
+	bne	a0, t5, beq_else.9593
 	addi	x0, x0, 0
 	lw	a0, 36(sp)
 	slli	a1, a0, 2
@@ -11585,9 +11468,9 @@ bg_else.9592:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-	jal	x0, beq_cont.9595
+	jal	x0, beq_cont.9594
 	addi	x0, x0, 0
-beq_else.9594:
+beq_else.9593:
 	addi	a5, x0, 0
 	lw	a0, 36(sp)
 	lw	a1, 32(sp)
@@ -11605,7 +11488,7 @@ beq_else.9594:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-beq_cont.9595:
+beq_cont.9594:
 	lw	a0, 4(sp)
 	lw	t6, 8(sp)
 	lw	t5, 0(t6)
@@ -11634,10 +11517,10 @@ scan_line.2816:
 	lw	s1, 4(t6)
 	addi	s2, s1, 4
 	lw	s2, 0(s2)
-	blt	a0, s2, bg_else.9596
+	blt	a0, s2, bg_else.9595
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-bg_else.9596:
+bg_else.9595:
 	addi	s1, s1, 4
 	lw	s1, 0(s1)
 	addi	s1, s1, -1
@@ -11649,11 +11532,11 @@ bg_else.9596:
 	sw	a1, 20(sp)
 	sw	a0, 24(sp)
 	sw	a6, 28(sp)
-	blt	a0, s1, bg_else.9598
+	blt	a0, s1, bg_else.9597
 	addi	x0, x0, 0
-	jal	x0, bg_cont.9599
+	jal	x0, bg_cont.9598
 	addi	x0, x0, 0
-bg_else.9598:
+bg_else.9597:
 	addi	s1, a0, 1
 	addi	a2, a4, 0
 	addi	a1, s1, 0
@@ -11669,7 +11552,7 @@ bg_else.9598:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-bg_cont.9599:
+bg_cont.9598:
 	addi	a0, x0, 0
 	lw	a1, 24(sp)
 	lw	a2, 20(sp)
@@ -11713,8 +11596,7 @@ bg_cont.9599:
 	jalr	x0, t5, 0 
 create_float5x3array.2823:
 	addi	a0, x0, 3
-	lui	a1, hi(l.5876)
-	ori	a1, a1, lo(l.5876)
+	lui	a1, l.5876
 	flw	fa0, 0(a1)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -11737,8 +11619,7 @@ create_float5x3array.2823:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 0(sp)
 	addi	a0, a1, 0
@@ -11755,8 +11636,7 @@ create_float5x3array.2823:
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -11771,8 +11651,7 @@ create_float5x3array.2823:
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -11787,8 +11666,7 @@ create_float5x3array.2823:
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -11807,8 +11685,7 @@ create_float5x3array.2823:
 	addi	x0, x0, 0
 create_pixel.2825:
 	addi	a0, x0, 3
-	lui	a1, hi(l.5876)
-	ori	a1, a1, lo(l.5876)
+	lui	a1, l.5876
 	flw	fa0, 0(a1)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -11901,8 +11778,8 @@ create_pixel.2825:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	addi	a1, t0 0
-	addi	t0, t0, 32
+	addi	a1, hp 0
+	addi	hp, hp, 32
 	sw	a0,28(a1) 
 	lw	a0, 24(sp)
 	sw	a0,24(a1) 
@@ -11923,7 +11800,7 @@ create_pixel.2825:
 	addi	x0, x0, 0
 init_line_elements.2827:
 	addi	t5, x0, 0
-	blt	a1, t5, bg_else.9600
+	blt	a1, t5, bg_else.9599
 	sw	a0, 0(sp)
 	sw	a1, 4(sp)
 	addi	sp, sp, -24
@@ -11943,7 +11820,7 @@ init_line_elements.2827:
 	addi	a1, a1, -1
 	addi	a0, a3, 0
 	jal	x0, init_line_elements.2827 
-bg_else.9600:
+bg_else.9599:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 create_pixelline.2830:
@@ -12006,8 +11883,7 @@ tan.2832:
 	addi	x0, x0, 0
 adjust_position.2834:
 	fmul	fa0, fa0, fa0
-	lui	a0, hi(l.6818)
-	ori	a0, a0, lo(l.6818)
+	lui	a0, l.6817
 	flw	fa2, 0(a0)
 	fadd	fa0, fa0, fa2
 	sw	fa1, 0(sp)
@@ -12020,8 +11896,7 @@ adjust_position.2834:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+	lui	a0, l.5878
 	flw	fa1, 0(a0)
 	fdiv	fa1, fa1, fa0
 	sw	fa0, 8(sp)
@@ -12053,7 +11928,7 @@ adjust_position.2834:
 calc_dirvec.2837:
 	lw	a3, 4(t6)
 	addi	t5, x0, 5
-	blt	a0, t5, bg_else.9601
+	blt	a0, t5, bg_else.9600
 	sw	a2, 0(sp)
 	sw	a3, 4(sp)
 	sw	a1, 8(sp)
@@ -12082,8 +11957,7 @@ calc_dirvec.2837:
 	addi	sp, sp, 24
 	lw	fa1, 32(sp)
 	fadd	fa0, fa1, fa0
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+	lui	a0, l.5878
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
 	addi	sp, sp, -24
@@ -12099,8 +11973,7 @@ calc_dirvec.2837:
 	fdiv	fa1, fa1, fa0
 	lw	fa2, 24(sp)
 	fdiv	fa2, fa2, fa0
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+	lui	a0, l.5878
 	flw	fa3, 0(a0)
 	fdiv	fa0, fa3, fa0
 	lw	a0, 8(sp)
@@ -12376,7 +12249,7 @@ calc_dirvec.2837:
 	lw	fa2, 56(sp)
 	lw	a0, 128(sp)
 	jal	x0, vecset.2414 
-bg_else.9601:
+bg_else.9600:
 	sw	fa2, 136(sp)
 	sw	a2, 0(sp)
 	sw	a1, 8(sp)
@@ -12421,7 +12294,7 @@ bg_else.9601:
 calc_dirvecs.2845:
 	lw	a3, 4(t6)
 	addi	t5, x0, 0
-	blt	a0, t5, bg_else.9609
+	blt	a0, t5, bg_else.9608
 	sw	t6, 0(sp)
 	sw	a0, 4(sp)
 	sw	fa0, 8(sp)
@@ -12437,20 +12310,16 @@ calc_dirvecs.2845:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.7053)
-	ori	a0, a0, lo(l.7053)
+	lui	a0, l.7052
 	flw	fa1, 0(a0)
 	fmul	fa0, fa0, fa1
-	lui	a0, hi(l.7055)
-	ori	a0, a0, lo(l.7055)
+	lui	a0, l.7054
 	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	addi	a0, x0, 0
-	lui	a1, hi(l.5876)
-	ori	a1, a1, lo(l.5876)
+	lui	a1, l.5876
 	flw	fa0, 0(a1)
-	lui	a1, hi(l.5876)
-	ori	a1, a1, lo(l.5876)
+	lui	a1, l.5876
 	flw	fa1, 0(a1)
 	lw	fa3, 8(sp)
 	lw	a1, 20(sp)
@@ -12476,20 +12345,16 @@ calc_dirvecs.2845:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.7053)
-	ori	a0, a0, lo(l.7053)
+	lui	a0, l.7052
 	flw	fa1, 0(a0)
 	fmul	fa0, fa0, fa1
-	lui	a0, hi(l.6818)
-	ori	a0, a0, lo(l.6818)
+	lui	a0, l.6817
 	flw	fa1, 0(a0)
 	fadd	fa2, fa0, fa1
 	addi	a0, x0, 0
-	lui	a1, hi(l.5876)
-	ori	a1, a1, lo(l.5876)
+	lui	a1, l.5876
 	flw	fa0, 0(a1)
-	lui	a1, hi(l.5876)
-	ori	a1, a1, lo(l.5876)
+	lui	a1, l.5876
 	flw	fa1, 0(a1)
 	lw	a1, 16(sp)
 	addi	a2, a1, 2
@@ -12529,13 +12394,13 @@ calc_dirvecs.2845:
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9609:
+bg_else.9608:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 calc_dirvec_rows.2850:
 	lw	a3, 4(t6)
 	addi	t5, x0, 0
-	blt	a0, t5, bg_else.9611
+	blt	a0, t5, bg_else.9610
 	sw	t6, 0(sp)
 	sw	a0, 4(sp)
 	sw	a2, 8(sp)
@@ -12550,12 +12415,10 @@ calc_dirvec_rows.2850:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.7053)
-	ori	a0, a0, lo(l.7053)
+	lui	a0, l.7052
 	flw	fa1, 0(a0)
 	fmul	fa0, fa0, fa1
-	lui	a0, hi(l.7055)
-	ori	a0, a0, lo(l.7055)
+	lui	a0, l.7054
 	flw	fa1, 0(a0)
 	fsub	fa0, fa0, fa1
 	addi	a0, x0, 4
@@ -12594,14 +12457,13 @@ calc_dirvec_rows.2850:
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9611:
+bg_else.9610:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 create_dirvec.2854:
 	lw	a0, 4(t6)
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 0(sp)
 	addi	a0, a1, 0
@@ -12628,8 +12490,8 @@ create_dirvec.2854:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	addi	a1, t0 0
-	addi	t0, t0, 8
+	addi	a1, hp 0
+	addi	hp, hp, 8
 	sw	a0,4(a1) 
 	lw	a0, 4(sp)
 	sw	a0,0(a1) 
@@ -12639,7 +12501,7 @@ create_dirvec.2854:
 create_dirvec_elements.2856:
 	lw	a2, 4(t6)
 	addi	t5, x0, 0
-	blt	a1, t5, bg_else.9613
+	blt	a1, t5, bg_else.9612
 	sw	t6, 0(sp)
 	sw	a0, 4(sp)
 	sw	a1, 8(sp)
@@ -12664,7 +12526,7 @@ create_dirvec_elements.2856:
 	addi	a0, a3, 0
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9613:
+bg_else.9612:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 create_dirvecs.2859:
@@ -12672,7 +12534,7 @@ create_dirvecs.2859:
 	lw	a2, 8(t6)
 	lw	a3, 4(t6)
 	addi	t5, x0, 0
-	blt	a0, t5, bg_else.9615
+	blt	a0, t5, bg_else.9614
 	addi	a4, x0, 120
 	sw	t6, 0(sp)
 	sw	a2, 4(sp)
@@ -12727,13 +12589,13 @@ create_dirvecs.2859:
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9615:
+bg_else.9614:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 init_dirvec_constants.2861:
 	lw	a2, 4(t6)
 	addi	t5, x0, 0
-	blt	a1, t5, bg_else.9617
+	blt	a1, t5, bg_else.9616
 	slli	a3, a1, 2
 	add	a3, a3, a0
 	lw	a3, 0(a3)
@@ -12758,14 +12620,14 @@ init_dirvec_constants.2861:
 	lw	t6, 4(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9617:
+bg_else.9616:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 init_vecset_constants.2864:
 	lw	a1, 8(t6)
 	lw	a2, 4(t6)
 	addi	t5, x0, 0
-	blt	a0, t5, bg_else.9619
+	blt	a0, t5, bg_else.9618
 	slli	a3, a0, 2
 	add	a2, a3, a2
 	lw	a2, 0(a2)
@@ -12790,7 +12652,7 @@ init_vecset_constants.2864:
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-bg_else.9619:
+bg_else.9618:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 init_dirvecs.2866:
@@ -12886,8 +12748,8 @@ add_reflection.2868:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24 
-	addi	a0, t0 0
-	addi	t0, t0, 16
+	addi	a0, hp 0
+	addi	hp, hp, 16
 	lw	fa0, 16(sp)
 	fsw	fa0, 8(a0) 
 	lw	a1, 56(sp)
@@ -12909,8 +12771,7 @@ setup_rect_reflection.2875:
 	mul	a0, a0, a5
 	addi	a5, a2, 0
 	lw	a5, 0(a5)
-	lui	a6, hi(l.5878)
-	ori	a6, a6, lo(l.5878)
+	lui	a6, l.5878
 	flw	fa0, 0(a6)
 	sw	a2, 0(sp)
 	sw	a5, 4(sp)
@@ -13056,8 +12917,7 @@ setup_surface_reflection.2878:
 	addi	a0, a0, 1
 	addi	a5, a2, 0
 	lw	a5, 0(a5)
-	lui	a6, hi(l.5878)
-	ori	a6, a6, lo(l.5878)
+	lui	a6, l.5878
 	flw	fa0, 0(a6)
 	sw	a2, 0(sp)
 	sw	a0, 4(sp)
@@ -13100,8 +12960,7 @@ setup_surface_reflection.2878:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.6132)
-	ori	a0, a0, lo(l.6132)
+	lui	a0, l.6132
 	flw	fa1, 0(a0)
 	lw	a0, 20(sp)
 	sw	fa0, 40(sp)
@@ -13123,8 +12982,7 @@ setup_surface_reflection.2878:
 	addi	a1, a0, 0
 	flw	fa2, 0(a1)
 	fsub	fa0, fa0, fa2
-	lui	a1, hi(l.6132)
-	ori	a1, a1, lo(l.6132)
+	lui	a1, l.6132
 	flw	fa2, 0(a1)
 	lw	a1, 20(sp)
 	sw	fa0, 56(sp)
@@ -13147,8 +13005,7 @@ setup_surface_reflection.2878:
 	addi	a1, a0, 8
 	flw	fa2, 0(a1)
 	fsub	fa0, fa0, fa2
-	lui	a1, hi(l.6132)
-	ori	a1, a1, lo(l.6132)
+	lui	a1, l.6132
 	flw	fa2, 0(a1)
 	lw	a1, 20(sp)
 	sw	fa0, 72(sp)
@@ -13199,7 +13056,7 @@ setup_reflections.2881:
 	lw	a2, 8(t6)
 	lw	a3, 4(t6)
 	addi	t5, x0, 0
-	blt	a0, t5, bg_else.9627
+	blt	a0, t5, bg_else.9626
 	slli	a4, a0, 2
 	add	a3, a4, a3
 	lw	a3, 0(a3)
@@ -13218,7 +13075,7 @@ setup_reflections.2881:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 2
-	bne	a0, t5, be_else.9628
+	bne	a0, t5, be_else.9627
 	lw	a0, 12(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -13229,8 +13086,7 @@ setup_reflections.2881:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	lui	a0, hi(l.5878)
-	ori	a0, a0, lo(l.5878)
+	lui	a0, l.5878
 	flw	fa1, 0(a0)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -13242,10 +13098,10 @@ setup_reflections.2881:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 0
-	bne	a0, t5, be_else.9629
+	bne	a0, t5, be_else.9628
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9629:
+be_else.9628:
 	lw	a0, 12(sp)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
@@ -13257,27 +13113,27 @@ be_else.9629:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	t5, x0, 1
-	bne	a0, t5, be_else.9631
+	bne	a0, t5, be_else.9630
 	lw	a0, 4(sp)
 	lw	a1, 12(sp)
 	lw	t6, 8(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9631:
+be_else.9630:
 	addi	t5, x0, 2
-	bne	a0, t5, be_else.9632
+	bne	a0, t5, be_else.9631
 	lw	a0, 4(sp)
 	lw	a1, 12(sp)
 	lw	t6, 0(sp)
 	lw	t5, 0(t6) 
 	jalr	x0, t5, 0 
-be_else.9632:
+be_else.9631:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-be_else.9628:
+be_else.9627:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-bg_else.9627:
+bg_else.9626:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 rt.2883:
@@ -13307,8 +13163,7 @@ rt.2883:
 	div	a1, a1, s7
 	addi	s7, s8, 4
 	sw	a1,0(s7) 
-	lui	a1, hi(l.7129)
-	ori	a1, a1, lo(l.7129)
+	lui	a1, l.7128
 	flw	fa0, 0(a1)
 	sw	a7, 0(sp)
 	sw	s2, 4(sp)
@@ -13481,7 +13336,7 @@ rt.2883:
 .global	min_caml_start
 min_caml_start:
 	addi	sp, x0, 8188
-	addi	t0, x0, 64
+	addi	hp, x0, 64
 	addi	a0, x0, 1
 	addi	a1, x0, 0
 	addi	sp, sp, -24
@@ -13494,8 +13349,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 0
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 0(sp)
 	addi	a0, a1, 0
@@ -13514,8 +13368,8 @@ min_caml_start:
 	addi	a4, x0, 0
 	addi	a5, x0, 0
 	addi	a6, x0, 0
-	addi	a7, t0 0
-	addi	t0, t0, 48
+	addi	a7, hp 0
+	addi	hp, hp, 48
 	sw	a0,40(a7) 
 	sw	a0,36(a7) 
 	sw	a0,32(a7) 
@@ -13541,8 +13395,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 4(sp)
 	addi	a0, a1, 0
@@ -13556,8 +13409,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 8(sp)
 	addi	a0, a1, 0
@@ -13571,8 +13423,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 12(sp)
 	addi	a0, a1, 0
@@ -13586,8 +13437,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 1
-	lui	a2, hi(l.6719)
-	ori	a2, a2, lo(l.6719)
+	lui	a2, l.6719
 	flw	fa0, 0(a2)
 	sw	a0, 16(sp)
 	addi	a0, a1, 0
@@ -13602,8 +13452,7 @@ min_caml_start:
 	addi	sp, sp, 24
 	addi	a1, x0, 50
 	addi	a2, x0, 1
-	addi	a3, x0, 1
-	sub	a3, x0, a3
+	addi	a3, x0, -1
 	sw	a0, 20(sp)
 	sw	a1, 24(sp)
 	addi	a1, a3, 0
@@ -13657,8 +13506,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 1
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 36(sp)
 	addi	a0, a1, 0
@@ -13686,8 +13534,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 1
-	lui	a2, hi(l.6599)
-	ori	a2, a2, lo(l.6599)
+	lui	a2, l.6599
 	flw	fa0, 0(a2)
 	sw	a0, 44(sp)
 	addi	a0, a1, 0
@@ -13701,8 +13548,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 48(sp)
 	addi	a0, a1, 0
@@ -13730,8 +13576,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 56(sp)
 	addi	a0, a1, 0
@@ -13745,8 +13590,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 60(sp)
 	addi	a0, a1, 0
@@ -13760,8 +13604,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 64(sp)
 	addi	a0, a1, 0
@@ -13775,8 +13618,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 68(sp)
 	addi	a0, a1, 0
@@ -13818,8 +13660,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 1
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 80(sp)
 	addi	a0, a1, 0
@@ -13833,8 +13674,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 84(sp)
 	addi	a0, a1, 0
@@ -13848,8 +13688,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 88(sp)
 	addi	a0, a1, 0
@@ -13863,8 +13702,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 92(sp)
 	addi	a0, a1, 0
@@ -13878,8 +13716,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 96(sp)
 	addi	a0, a1, 0
@@ -13893,8 +13730,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 100(sp)
 	addi	a0, a1, 0
@@ -13908,8 +13744,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 104(sp)
 	addi	a0, a1, 0
@@ -13923,8 +13758,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 0
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 108(sp)
 	addi	a0, a1, 0
@@ -13950,8 +13784,8 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 0
-	addi	a2, t0 0
-	addi	t0, t0, 8
+	addi	a2, hp 0
+	addi	hp, hp, 8
 	sw	a0,4(a2) 
 	lw	a0, 112(sp)
 	sw	a0,0(a2) 
@@ -13980,8 +13814,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 0
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 116(sp)
 	addi	a0, a1, 0
@@ -13995,8 +13828,7 @@ min_caml_start:
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
 	addi	a1, x0, 3
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 120(sp)
 	addi	a0, a1, 0
@@ -14023,15 +13855,14 @@ min_caml_start:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	addi	a1, t0 0
-	addi	t0, t0, 8
+	addi	a1, hp 0
+	addi	hp, hp, 8
 	sw	a0,4(a1) 
 	lw	a0, 124(sp)
 	sw	a0,0(a1) 
 	addi	a0, a1 0
 	addi	a1, x0, 0
-	lui	a2, hi(l.5876)
-	ori	a2, a2, lo(l.5876)
+	lui	a2, l.5876
 	flw	fa0, 0(a2)
 	sw	a0, 128(sp)
 	addi	a0, a1, 0
@@ -14056,19 +13887,18 @@ min_caml_start:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	addi	a1, t0 0
-	addi	t0, t0, 8
+	addi	a1, hp 0
+	addi	hp, hp, 8
 	sw	a0,4(a1) 
 	lw	a0, 132(sp)
 	sw	a0,0(a1) 
 	addi	a0, a1 0
 	addi	a1, x0, 180
 	addi	a2, x0, 0
-	lui	a3, hi(l.5876)
-	ori	a3, a3, lo(l.5876)
+	lui	a3, l.5876
 	flw	fa0, 0(a3)
-	addi	a3, t0 0
-	addi	t0, t0, 16
+	addi	a3, hp 0
+	addi	hp, hp, 16
 	fsw	fa0, 8(a3) 
 	sw	a0,4(a3) 
 	sw	a2,0(a3) 
@@ -14099,9 +13929,9 @@ min_caml_start:
 	lw	ra, 8(sp)
 	lw	fp, 0(sp)
 	addi	sp, sp, 24
-	addi	a1, t0 0
-	addi	t0, t0, 24
-	addi	t5, x0, 4992
+	addi	a1, hp 0
+	addi	hp, hp, 24
+	addi	t5, x0, 4960
 	addi	a2, t5, 0
 	sw	a2,0(a1) 
 	lw	a2, 12(sp)
@@ -14114,46 +13944,46 @@ min_caml_start:
 	sw	a5,8(a1) 
 	lw	a6, 8(sp)
 	sw	a6,4(a1) 
-	addi	a6, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 5956
+	addi	a6, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 5908
 	addi	a7, t5, 0
 	sw	a7,0(a6) 
 	lw	a7, 16(sp)
 	sw	a7,8(a6) 
 	lw	s1, 20(sp)
 	sw	s1,4(a6) 
-	addi	s2, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 7824
+	addi	s2, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 7764
 	addi	s3, t5, 0
 	sw	s3,0(s2) 
 	lw	s3, 4(sp)
 	sw	s3,4(s2) 
-	addi	s4, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 10164
+	addi	s4, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 10064
 	addi	s5, t5, 0
 	sw	s5,0(s4) 
 	sw	s2,8(s4) 
 	lw	s2, 0(sp)
 	sw	s2,4(s4) 
-	addi	s5, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 10296
+	addi	s5, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 10196
 	addi	s6, t5, 0
 	sw	s6,0(s5) 
 	sw	s4,4(s5) 
-	addi	s4, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 10628
+	addi	s4, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 10516
 	addi	s6, t5, 0
 	sw	s6,0(s4) 
 	lw	s6, 28(sp)
 	sw	s6,4(s4) 
-	addi	s7, t0 0
-	addi	t0, t0, 24
-	addi	t5, x0, 10752
+	addi	s7, hp 0
+	addi	hp, hp, 24
+	addi	t5, x0, 10636
 	addi	s8, t5, 0
 	sw	s8,0(s7) 
 	sw	a1,20(s7) 
@@ -14162,125 +13992,125 @@ min_caml_start:
 	sw	s5,8(s7) 
 	lw	a1, 36(sp)
 	sw	a1,4(s7) 
-	addi	a6, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 11028
+	addi	a6, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 10912
 	addi	s4, t5, 0
 	sw	s4,0(a6) 
 	lw	s4, 40(sp)
 	sw	s4,4(a6) 
-	addi	s5, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 11744
+	addi	s5, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 11628
 	addi	s8, t5, 0
 	sw	s8,0(s5) 
 	sw	a6,4(s5) 
-	addi	a6, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 12048
+	addi	a6, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 11932
 	addi	s8, t5, 0
 	sw	s8,0(a6) 
 	sw	s4,4(a6) 
-	addi	s8, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 13564
+	addi	s8, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 13448
 	addi	s9, t5, 0
 	sw	s9,0(s8) 
 	sw	s4,4(s8) 
-	addi	s9, t0 0
-	addi	t0, t0, 24
-	addi	t5, x0, 14272
+	addi	s9, hp 0
+	addi	hp, hp, 24
+	addi	t5, x0, 14152
 	addi	t1, t5, 0
 	sw	t1,0(s9) 
 	sw	a6,16(s9) 
 	sw	s8,12(s9) 
 	sw	s5,8(s9) 
 	sw	s3,4(s9) 
-	addi	a6, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 14676
+	addi	a6, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 14556
 	addi	s5, t5, 0
 	sw	s5,0(a6) 
 	sw	s4,4(a6) 
-	addi	s5, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 16204
+	addi	s5, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 16084
 	addi	s8, t5, 0
 	sw	s8,0(s5) 
 	sw	s4,4(s5) 
-	addi	s8, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 16380
+	addi	s8, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 16260
 	addi	t1, t5, 0
 	sw	t1,0(s8) 
 	sw	s4,4(s8) 
-	addi	t1, t0 0
-	addi	t0, t0, 24
-	addi	t5, x0, 17036
+	addi	t1, hp 0
+	addi	hp, hp, 24
+	addi	t5, x0, 16912
 	addi	t2, t5, 0
 	sw	t2,0(t1) 
 	sw	s5,16(t1) 
 	sw	s8,12(t1) 
 	sw	a6,8(t1) 
 	sw	s3,4(t1) 
-	addi	s5, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 17556
+	addi	s5, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 17432
 	addi	s8, t5, 0
 	sw	s8,0(s5) 
 	sw	s4,4(s5) 
-	addi	s8, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 17688
+	addi	s8, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 17564
 	addi	t2, t5, 0
 	sw	t2,0(s8) 
 	sw	s4,4(s8) 
-	addi	t2, t0 0
-	addi	t0, t0, 24
-	addi	t5, x0, 18208
+	addi	t2, hp 0
+	addi	hp, hp, 24
+	addi	t5, x0, 18084
 	addi	t3, t5, 0
 	sw	t3,0(t2) 
 	sw	s5,16(t2) 
 	sw	s8,12(t2) 
 	sw	a6,8(t2) 
 	sw	s3,4(t2) 
-	addi	a6, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 21796
+	addi	a6, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 21624
 	addi	s5, t5, 0
 	sw	s5,0(a6) 
 	sw	s3,4(a6) 
-	addi	s5, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 22228
+	addi	s5, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 22056
 	addi	s8, t5, 0
 	sw	s8,0(s5) 
 	sw	s2,8(s5) 
 	sw	a6,4(s5) 
-	addi	a6, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 22256
+	addi	a6, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 22084
 	addi	s8, t5, 0
 	sw	s8,0(a6) 
 	sw	s3,4(a6) 
-	addi	s8, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 22944
+	addi	s8, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 22768
 	addi	t3, t5, 0
 	sw	t3,0(s8) 
 	lw	t3, 92(sp)
 	sw	t3,12(s8) 
 	sw	a6,8(s8) 
 	sw	s2,4(s8) 
-	addi	a6, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 24416
+	addi	a6, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 24236
 	addi	t4, t5, 0
 	sw	t4,0(a6) 
 	sw	s3,4(a6) 
-	addi	t4, t0 0
-	addi	t0, t0, 32
-	addi	t5, x0, 24588
+	addi	t4, hp 0
+	addi	hp, hp, 32
+	addi	t5, x0, 24404
 	addi	t5, t5, 0
 	sw	t5,0(t4) 
 	sw	t1,28(t4) 
@@ -14293,17 +14123,17 @@ min_caml_start:
 	sw	t6,8(t4) 
 	sw	a6,4(t4) 
 	sw	s7, 140(sp)
-	addi	s7, t0 0
-	addi	t0, t0, 16
+	addi	s7, hp 0
+	addi	hp, hp, 16
 	sw	s5, 144(sp)
-	addi	t5, x0, 25164
+	addi	t5, x0, 24968
 	addi	s5, t5, 0
 	sw	s5,0(s7) 
 	sw	t4,8(s7) 
 	sw	s6,4(s7) 
-	addi	s5, t0 0
-	addi	t0, t0, 24
-	addi	t5, x0, 25332
+	addi	s5, hp 0
+	addi	hp, hp, 24
+	addi	t5, x0, 25132
 	addi	t4, t5, 0
 	sw	t4,0(s5) 
 	sw	t1,20(s5) 
@@ -14311,9 +14141,9 @@ min_caml_start:
 	sw	s7,12(s5) 
 	sw	t5,8(s5) 
 	sw	t6,4(s5) 
-	addi	s7, t0 0
-	addi	t0, t0, 40
-	addi	t5, x0, 25816
+	addi	s7, hp 0
+	addi	hp, hp, 40
+	addi	t5, x0, 25608
 	addi	t1, t5, 0
 	sw	t1,0(s7) 
 	lw	t1, 48(sp)
@@ -14329,16 +14159,16 @@ min_caml_start:
 	lw	s2, 56(sp)
 	sw	s2,8(s7) 
 	sw	a6,4(s7) 
-	addi	a4, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 26596
+	addi	a4, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 26376
 	addi	a3, t5, 0
 	sw	a3,0(a4) 
 	sw	s7,8(a4) 
 	sw	s6,4(a4) 
-	addi	a3, t0 0
-	addi	t0, t0, 24
-	addi	t5, x0, 26748
+	addi	a3, hp 0
+	addi	hp, hp, 24
+	addi	t5, x0, 26524
 	addi	s7, t5, 0
 	sw	s7,0(a3) 
 	sw	t1,20(a3) 
@@ -14346,17 +14176,17 @@ min_caml_start:
 	sw	s4,12(a3) 
 	sw	s9,8(a3) 
 	sw	a4,4(a3) 
-	addi	a4, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 27156
+	addi	a4, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 26928
 	addi	s7, t5, 0
 	sw	s7,0(a4) 
 	sw	a3,12(a4) 
 	sw	t1,8(a4) 
 	sw	a1,4(a4) 
-	addi	a3, t0 0
-	addi	t0, t0, 40
-	addi	t5, x0, 27364
+	addi	a3, hp 0
+	addi	hp, hp, 40
+	addi	t5, x0, 27124
 	addi	s7, t5, 0
 	sw	s7,0(a3) 
 	sw	t1,36(a3) 
@@ -14368,77 +14198,77 @@ min_caml_start:
 	sw	t6,12(a3) 
 	sw	s2,8(a3) 
 	sw	a6,4(a3) 
-	addi	a6, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 28192
+	addi	a6, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 27940
 	addi	s7, t5, 0
 	sw	s7,0(a6) 
 	sw	a3,8(a6) 
 	sw	s6,4(a6) 
-	addi	a3, t0 0
-	addi	t0, t0, 24
-	addi	t5, x0, 28344
+	addi	a3, hp 0
+	addi	hp, hp, 24
+	addi	t5, x0, 28088
 	addi	s6, t5, 0
 	sw	s6,0(a3) 
 	sw	t1,16(a3) 
 	sw	t2,12(a3) 
 	sw	s4,8(a3) 
 	sw	a6,4(a3) 
-	addi	a6, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 28744
+	addi	a6, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 28484
 	addi	s4, t5, 0
 	sw	s4,0(a6) 
 	sw	a3,12(a6) 
 	sw	t1,8(a6) 
 	sw	a1,4(a6) 
-	addi	a3, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 28952
+	addi	a3, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 28680
 	addi	s4, t5, 0
 	sw	s4,0(a3) 
 	lw	s4, 60(sp)
 	sw	s4,8(a3) 
 	sw	t5,4(a3) 
-	addi	s6, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 29152
+	addi	s6, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 28880
 	addi	s7, t5, 0
 	sw	s7,0(s6) 
 	sw	s4,4(s6) 
-	addi	s7, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 29440
+	addi	s7, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 29168
 	addi	s9, t5, 0
 	sw	s9,0(s7) 
 	sw	s4,8(s7) 
 	sw	t6,4(s7) 
-	addi	s9, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 30472
+	addi	s9, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 30200
 	addi	t2, t5, 0
 	sw	t2,0(s9) 
 	sw	s7,12(s9) 
 	sw	a3,8(s9) 
 	sw	s6,4(s9) 
-	addi	a3, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 30604
+	addi	a3, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 30332
 	addi	s6, t5, 0
 	sw	s6,0(a3) 
 	lw	s6, 64(sp)
 	sw	s6,4(a3) 
-	addi	s7, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 33536
+	addi	s7, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 33132
 	addi	t2, t5, 0
 	sw	t2,0(s7) 
 	sw	s6,8(s7) 
 	lw	t2, 72(sp)
 	sw	t2,4(s7) 
-	addi	t3, t0 0
-	addi	t0, t0, 40
-	addi	t5, x0, 33880
+	addi	t3, hp 0
+	addi	hp, hp, 40
+	addi	t5, x0, 33476
 	addi	a5, t5, 0
 	sw	a5,0(t3) 
 	sw	s5,32(t3) 
@@ -14450,9 +14280,9 @@ min_caml_start:
 	sw	t5,12(t3) 
 	sw	s2,8(t3) 
 	sw	s7,4(t3) 
-	addi	a5, t0 0
-	addi	t0, t0, 88
-	addi	t5, x0, 34612
+	addi	a5, hp 0
+	addi	hp, hp, 88
+	addi	t5, x0, 34208
 	addi	a2, t5, 0
 	sw	a2,0(a5) 
 	sw	a3,80(a5) 
@@ -14475,9 +14305,9 @@ min_caml_start:
 	sw	s9,12(a5) 
 	sw	s1,8(a5) 
 	sw	s7,4(a5) 
-	addi	a2, t0 0
-	addi	t0, t0, 56
-	addi	t5, x0, 37036
+	addi	a2, hp 0
+	addi	hp, hp, 56
+	addi	t5, x0, 36588
 	addi	a4, t5, 0
 	sw	a4,0(a2) 
 	sw	a3,48(a2) 
@@ -14493,85 +14323,85 @@ min_caml_start:
 	sw	s9,8(a2) 
 	lw	a1, 68(sp)
 	sw	a1,4(a2) 
-	addi	a3, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 37680
+	addi	a3, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 37228
 	addi	a4, t5, 0
 	sw	a4,0(a3) 
 	sw	a2,4(a3) 
-	addi	a2, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 38088
+	addi	a2, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 37628
 	addi	a4, t5, 0
 	sw	a4,0(a2) 
 	sw	s8,8(a2) 
 	sw	a3,4(a2) 
-	addi	a3, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 38188
+	addi	a3, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 37728
 	addi	a4, t5, 0
 	sw	a4,0(a3) 
 	sw	a2,8(a3) 
 	lw	a4, 116(sp)
 	sw	a4,4(a3) 
-	addi	a6, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 38644
+	addi	a6, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 38184
 	addi	s1, t5, 0
 	sw	s1,0(a6) 
 	sw	a3,12(a6) 
 	sw	t2,8(a6) 
 	sw	a1,4(a6) 
-	addi	a3, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 39088
+	addi	a3, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 38628
 	addi	s1, t5, 0
 	sw	s1,0(a3) 
 	sw	t2,8(a3) 
 	sw	a1,4(a3) 
-	addi	s1, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 39848
+	addi	s1, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 39388
 	addi	s2, t5, 0
 	sw	s2,0(s1) 
 	sw	a6,4(s1) 
-	addi	a6, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 40100
+	addi	a6, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 39640
 	addi	s2, t5, 0
 	sw	s2,0(a6) 
 	lw	s2, 76(sp)
 	sw	s2,4(a6) 
-	addi	s4, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 40724
+	addi	s4, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 40264
 	addi	s5, t5, 0
 	sw	s5,0(s4) 
 	sw	s1,8(s4) 
 	sw	a3,4(s4) 
-	addi	a3, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 41136
+	addi	a3, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 40676
 	addi	s5, t5, 0
 	sw	s5,0(a3) 
 	sw	s2,4(a3) 
-	addi	s5, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 41680
+	addi	s5, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 41220
 	addi	s6, t5, 0
 	sw	s6,0(s5) 
 	sw	t2,4(s5) 
-	addi	s6, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 42036
+	addi	s6, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 41576
 	addi	s7, t5, 0
 	sw	s7,0(s6) 
 	sw	a2,12(s6) 
 	sw	a4,8(s6) 
 	sw	a1,4(s6) 
-	addi	a1, t0 0
-	addi	t0, t0, 40
-	addi	t5, x0, 42624
+	addi	a1, hp 0
+	addi	hp, hp, 40
+	addi	t5, x0, 42164
 	addi	a2, t5, 0
 	sw	a2,0(a1) 
 	lw	a2, 12(sp)
@@ -14588,9 +14418,9 @@ min_caml_start:
 	sw	s6,8(a1) 
 	lw	a5, 80(sp)
 	sw	a5,4(a1) 
-	addi	s6, t0 0
-	addi	t0, t0, 32
-	addi	t5, x0, 43472
+	addi	s6, hp 0
+	addi	hp, hp, 32
+	addi	t5, x0, 43004
 	addi	s7, t5, 0
 	sw	s7,0(s6) 
 	lw	s7, 104(sp)
@@ -14601,9 +14431,9 @@ min_caml_start:
 	sw	a1,12(s6) 
 	sw	s2,8(s6) 
 	sw	a5,4(s6) 
-	addi	a1, t0 0
-	addi	t0, t0, 32
-	addi	t5, x0, 43724
+	addi	a1, hp 0
+	addi	hp, hp, 32
+	addi	t5, x0, 43256
 	addi	s7, t5, 0
 	sw	s7,0(a1) 
 	sw	s5,24(a1) 
@@ -14612,117 +14442,117 @@ min_caml_start:
 	sw	a6,12(a1) 
 	sw	s2,8(a1) 
 	sw	s1,4(a1) 
-	addi	a6, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 44220
+	addi	a6, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 43752
 	addi	s1, t5, 0
 	sw	s1,0(a6) 
 	sw	a1,12(a6) 
 	sw	s6,8(a6) 
 	sw	s2,4(a6) 
-	addi	a1, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 45460
+	addi	a1, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 44968
 	addi	s1, t5, 0
 	sw	s1,0(a1) 
 	sw	s2,4(a1) 
-	addi	s1, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 45864
+	addi	s1, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 45364
 	addi	s4, t5, 0
 	sw	s4,0(s1) 
 	sw	a4,4(s1) 
-	addi	s4, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 47328
+	addi	s4, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 46820
 	addi	s5, t5, 0
 	sw	s5,0(s4) 
 	sw	s1,4(s4) 
-	addi	s1, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 47776
+	addi	s1, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 47236
 	addi	s5, t5, 0
 	sw	s5,0(s1) 
 	sw	s4,4(s1) 
-	addi	s4, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 48028
+	addi	s4, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 47480
 	addi	s5, t5, 0
 	sw	s5,0(s4) 
 	lw	s5, 0(sp)
 	sw	s5,4(s4) 
-	addi	s7, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 48180
+	addi	s7, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 47628
 	addi	s8, t5, 0
 	sw	s8,0(s7) 
 	sw	s4,4(s7) 
-	addi	s8, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 48296
+	addi	s8, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 47744
 	addi	s9, t5, 0
 	sw	s9,0(s8) 
 	sw	a4,12(s8) 
 	sw	s7,8(s8) 
 	sw	s4,4(s8) 
-	addi	s7, t0 0
-	addi	t0, t0, 8
-	addi	t5, x0, 48540
+	addi	s7, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 47988
 	addi	s9, t5, 0
 	sw	s9,0(s7) 
 	lw	s9, 144(sp)
 	sw	s9,4(s7) 
-	addi	t1, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 48656
+	addi	t1, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 48104
 	addi	t2, t5, 0
 	sw	t2,0(t1) 
 	sw	s7,8(t1) 
 	sw	a4,4(t1) 
-	addi	a4, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 48776
+	addi	a4, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 48224
 	addi	s7, t5, 0
 	sw	s7,0(a4) 
 	sw	t1,12(a4) 
 	sw	s8,8(a4) 
 	sw	s1,4(a4) 
-	addi	s1, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 48920
+	addi	s1, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 48368
 	addi	s7, t5, 0
 	sw	s7,0(s1) 
 	sw	s9,12(s1) 
 	lw	s7, 136(sp)
 	sw	s7,8(s1) 
 	sw	s4,4(s1) 
-	addi	s4, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 49200
+	addi	s4, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 48648
 	addi	s7, t5, 0
 	sw	s7,0(s4) 
 	sw	a0,12(s4) 
 	sw	a7,8(s4) 
 	sw	s1,4(s4) 
-	addi	s7, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 49780
+	addi	s7, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 49224
 	addi	s8, t5, 0
 	sw	s8,0(s7) 
 	sw	a0,12(s7) 
 	sw	a7,8(s7) 
 	sw	s1,4(s7) 
-	addi	a0, t0 0
-	addi	t0, t0, 16
-	addi	t5, x0, 50364
+	addi	a0, hp 0
+	addi	hp, hp, 16
+	addi	t5, x0, 49792
 	addi	s1, t5, 0
 	sw	s1,0(a0) 
 	sw	s7,12(a0) 
 	sw	s4,8(a0) 
 	sw	s3,4(a0) 
-	addi	t6, t0 0
-	addi	t0, t0, 64
-	addi	t5, x0, 50684
+	addi	t6, hp 0
+	addi	hp, hp, 64
+	addi	t5, x0, 50108
 	addi	s1, t5, 0
 	sw	s1,0(t6) 
 	sw	a3,56(t6) 
