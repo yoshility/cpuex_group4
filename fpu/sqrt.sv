@@ -1,34 +1,40 @@
 `default_nettype none
-module sqrt_table (
+module sqrt (
 	input wire [31:0]  x,
   output wire [31:0] y,
   //output wire        ovf,
   input wire       clk,
   input wire       rstn
 );
-	wire [  : ] sign = x[31];
+	wire     	 	sign = x[31];
 	wire [ 7:0] exp_x = x[30:23];
 	wire [22:0] frac_x = x[22:0];
 	wire [ 9:0] addr = x[22:13];
 	wire [12:0] dx = x[12:0];
 	wire [35:0] dout;
-	sqrt_table_table sqrt_table_table1(addr, dout, clk, rstn);
+	sqrt_table sqrt_table1(addr, dout, clk, rstn);
+
 	wire [22:0] constant = dout[35:13];
 	wire [12:0] gradient = dout[12:0];
 	wire [25:0] dy_calc = gradient * dx;
-	wire [13:0] dy = dy_calc
-	wire [ 7:0] exp =
+	wire [22:0] frac_y = constant + dy_calc[25:3];
+
+	wire [ 7:0] exp_x_unbiased = exp_x - 8'd127;
+	wire [ 7:0] exp_y_unbiased = exp_x_unbiased >> 1;
+	wire [ 7:0] exp_y = exp_y_unbiased + 8'd127;
+
+	assign y = {sign , exp_y, frac_y};
 endmodule
 
-module sqrt_table_table (
-	input		wire [ 9:0]	addr;
-	output	reg  [35:0] dout;
-	input 	wire 				clk;
-	input 	wire 				rstn;
+module sqrt_table (
+	input		wire [ 9:0]	addr,
+	output	reg  [35:0] dout,
+	input 	wire 				clk,
+	input 	wire 				rstn
 );
-	(*ram_style = "BLOCK"*) logic [35:0] sqrt_table_table [1023:0];
+	(*ram_style = "BLOCK"*) logic [35:0] sqrt_table [1023:0];
 	always @(posedge clk) begin
-		dout <= sqrt_table_table[addr];
+		dout <= sqrt_table[addr];
 	end
 	initial begin
 		sqrt_table[   0] = 36'b100000000001100000000010111111111101;

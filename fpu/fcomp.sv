@@ -75,4 +75,3 @@ module fle (
 		end
 	end
 endmodule
-`default_nettype wire

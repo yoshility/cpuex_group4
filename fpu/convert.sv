@@ -8,9 +8,9 @@ module ftoi (
 	wire [ 8:0] exp = {1'b0, float_x[30:23]} + 9'd129;
 	wire [ 4:0] shift = (exp[8]) ? exp[4:0] : 5'b0;
 	wire [30:0] frac = {1'b1, float_x[22:0], 7'b0};
-	wire [30:0] frac_shift = frac >> (5'd30 - exp);
-	wire [ 5:0] round_bit = (5'd54 - exp);
-	wire [30:0] pos_fraction = (round_bit[5]) ? (frac[round_bit[4:0]]) ? frac_shift + 30'b1 : frac_shift;
+	wire [30:0] frac_shift = frac >> (9'd30 - exp);
+	wire [ 8:0] round_bit = (9'd54 - exp);
+	wire [30:0] pos_fraction = (round_bit[5]) ? (frac[round_bit[4:0]] ? frac_shift + 30'b1 : frac_shift) : frac_shift ;
 	wire [30:0] fraction = (float_x[31]) ? ~pos_fraction + 30'b1 : pos_fraction;
 
 	logic [31:0] x_reg;

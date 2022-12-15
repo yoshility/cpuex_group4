@@ -55,18 +55,22 @@ int main(int argc, char* argv[]) {
     // fclose(in);
     // fclose(out);
 
-    
     // TEST test;
     // test.set();
     // test.print();
 
-    // union data a;
-    // a.i = atof("0x40900000");
-    // cout << a.i << endl;
-    // printf("%f\n", a.f);
+    union data a;
+    a.i = atof("0x40900000");
+    cout << a.i << endl;
+    printf("%f\n", a.f);
 
-    int a = 64;
-    printf("%c\n", a);
+    // string inst = "add a0 t1 t2";
+    // string opcode, r0, r1, r2;
+    // sscanf(inst, "%s%s%s%s", opcode, r0, r1, r2);
+    // cout << opcode << endl;
+    // cout << r0 << endl;
+    // cout << r1 << endl;
+    // cout << r2 << endl;
 
 	return 0;
 }
