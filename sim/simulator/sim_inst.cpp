@@ -518,6 +518,10 @@ int main(int argc, char* argv[]) {
             int fd = freg_num(r0);
             int fs1 = freg_num(r1);
             int fs2 = freg_num(r2);
+            if(fd < 0 || fs1 < 0 || fs2 < 0){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             freg[fd] = freg[fs1] + freg[fs2];
             pc = pc + 4;
             if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
@@ -532,6 +536,10 @@ int main(int argc, char* argv[]) {
             int fd = freg_num(r0);
             int fs1 = freg_num(r1);
             int fs2 = freg_num(r2);
+             if(fd < 0 || fs1 < 0 || fs2 < 0){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             freg[fd] = freg[fs1] - freg[fs2];
             pc = pc + 4;
             if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
@@ -546,6 +554,10 @@ int main(int argc, char* argv[]) {
             int fd = freg_num(r0);
             int fs1 = freg_num(r1);
             int fs2 = freg_num(r2);
+             if(fd < 0 || fs1 < 0 || fs2 < 0){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             freg[fd] = freg[fs1] * freg[fs2];
             pc = pc + 4;
             if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
@@ -560,6 +572,10 @@ int main(int argc, char* argv[]) {
             int fd = freg_num(r0);
             int fs1 = freg_num(r1);
             int fs2 = freg_num(r2);
+             if(fd < 0 || fs1 < 0 || fs2 < 0){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             freg[fd] = freg[fs1] / freg[fs2];
             pc = pc + 4;
             if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
@@ -572,6 +588,10 @@ int main(int argc, char* argv[]) {
         // flw fd, imm(rs1) (input=s11/x27)
         else if (strncmp(opcode, "flw", 3) == 0) {
             int fd = freg_num(r0);
+             if(fd < 0 ){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             int imm = atoi(r1);
             int rs1 = reg_num(r2);
             // input
@@ -647,6 +667,10 @@ int main(int argc, char* argv[]) {
             int fs2 = freg_num(r0);
             int imm = atoi(r1);
             int rs1 = reg_num(r2);
+            if(fs2 < 0 ){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             // use cache
             if (use_cache) {
                 unsigned int data_addr = reg[rs1] + imm;
@@ -705,6 +729,10 @@ int main(int argc, char* argv[]) {
         else if (strncmp(opcode, "fsqrt", 5) == 0) {
             int fd = freg_num(r0);
             int fs1 = freg_num(r1);
+            if(fd < 0 || fs1 < 0 ){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             freg[fd] = sqrt(freg[fs1]);
             pc = pc + 4;
             if (pre_inst_is_flw && (fs1==pre_flw_rd)) {
@@ -720,6 +748,10 @@ int main(int argc, char* argv[]) {
             int fd = freg_num(r0);
             int fs1 = freg_num(r1);
             int fs2 = freg_num(r2);
+            if(fd < 0 || fs1 < 0 || fs2 < 0){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             freg[fd] = fabs(freg[fs1]) * (-sign(freg[fs2]));
             pc = pc + 4;
             if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
@@ -734,6 +766,10 @@ int main(int argc, char* argv[]) {
             int fd = freg_num(r0);
             int fs1 = freg_num(r1);
             int fs2 = freg_num(r2);
+            if(fd < 0 || fs1 < 0 || fs2 < 0){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             freg[fd] = freg[fs1] * sign(freg[fs2]);
             pc = pc + 4;
             if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
@@ -748,6 +784,10 @@ int main(int argc, char* argv[]) {
             int fd = freg_num(r0);
             int fs1 = freg_num(r1);
             int fs2 = freg_num(r2);
+            if(fd < 0 || fs1 < 0 || fs2 < 0){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             freg[fd] = fabs(freg[fs1]) * sign(freg[fs2]);
             pc = pc + 4;
             if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
@@ -760,6 +800,10 @@ int main(int argc, char* argv[]) {
         // fcvtsw fd, rs1
         else if (strncmp(opcode, "fcvtsw", 6) == 0) {
             int fd = freg_num(r0);
+            if(fd < 0 ){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             int rs1 = reg_num(r1);
             freg[fd] = (float)(reg[rs1]);
             pc = pc + 4;
@@ -768,6 +812,10 @@ int main(int argc, char* argv[]) {
         else if (strncmp(opcode, "fcvtws", 6) == 0) {
             int rd = reg_num(r0);
             int fs1 = freg_num(r1);
+            if( fs1 < 0){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             reg[rd] = (int)round(freg[fs1]); // 最近傍
             pc = pc + 4;
         }
@@ -776,6 +824,10 @@ int main(int argc, char* argv[]) {
             int rd = reg_num(r0);
             int fs1 = freg_num(r1);
             int fs2 = freg_num(r2);
+            if(fs1 < 0 || fs2 < 0){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             reg[rd] = (freg[fs1] == freg[fs2]);
             pc = pc + 4;
             if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
@@ -790,7 +842,12 @@ int main(int argc, char* argv[]) {
             int rd = reg_num(r0);
             int fs1 = freg_num(r1);
             int fs2 = freg_num(r2);
-            reg[rd] = (freg[fs1] < freg[fs2]);
+            if(fs1 < 0 || fs2 < 0){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
+            if(fs1 == 100)reg[rd] = 0 < freg[fs2];
+            else reg[rd] = (freg[fs1] < freg[fs2]);
             pc = pc + 4;
             if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
                 clk += 2;
@@ -804,6 +861,10 @@ int main(int argc, char* argv[]) {
             int rd = reg_num(r0);
             int fs1 = freg_num(r1);
             int fs2 = freg_num(r2);
+            if(fs1 < 0 || fs2 < 0){
+                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                return 1;
+            }
             reg[rd] = (freg[fs1] <= freg[fs2]);
             pc = pc + 4;
             if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
