@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
     // 1回目の読みでラベルを探してデータをデータ領域に、命令を命令メモリに格納
     int addr = 0;               // 命令アドレス
     int data_addr = 0;          // データセクションでのアドレス
-    char label[1000][25];       // labels （1/4に圧縮）
+    char label[20000][50];       // labels （1/4に圧縮）
     char data_label[64][10];    // l.394:などのラベルを保管(indexがアドレスになる) (1/4に圧縮)
     int pc = 0;
     bool is_data = 0;
@@ -134,6 +134,7 @@ int main(int argc, char* argv[]) {
     printf("Processing...\n");
     while (1) {
         if (pc == 1025) { // 大元のra
+            cout << "pc = 1025 !" << endl;
             break;
         }
         strcpy(r0, "\0");
@@ -879,7 +880,12 @@ int main(int argc, char* argv[]) {
 
         reg[0] = 0;
 
+        if (inst_count % 100000 == 0) {
+            cout << "now inst count: " << inst_count << endl;
+        }
+
         if (pc == pre_pc) { // ループするのはおかしい？
+            cout << "same pc!" << endl;
             break;
         }
     }
