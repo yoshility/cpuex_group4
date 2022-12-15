@@ -30,11 +30,12 @@ int main(int argc, char* argv[]) {
     char str[100];
 
     // 1回目の読みでラベルを探してアドレスを振る /////////////////////////////////////////////////////////////////////
-    int addr = -4;
+    // 
+    int addr = 0;
     char label[1000][10]; // ラベル保管庫
 
     while (fgets(line, BUFSIZE, in) != NULL) {
-        addr += 4;
+        // addr += 4;
 
         strcpy(r0, "\0");
         strcpy(r1, "\0");
@@ -47,12 +48,13 @@ int main(int argc, char* argv[]) {
             strcpy(label[addr/4], opcode);
             // 命令アドレスも一緒に出力
             printf("%08X %s\n", addr, opcode);
-            addr -= 4;
+            // addr -= 4;
             continue;
         }
 
         // 命令アドレスも一緒に出力
         printf("%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+        addr += 4;
     }
 
     // 一回閉じてもう一回開く
@@ -167,14 +169,33 @@ int main(int argc, char* argv[]) {
             }
             fprintf(out, "%s\n", str);
         }
-        // lui rd, upimm
+        // lui rd, upimm / lui rd, label
+        /* lui rd, hi(label)
+           ori rd, rd, lo(label) に直す */
         else if (strncmp(opcode, "lui", 3) == 0) {
             int rd = reg(r0);
-            unsigned long long int imm = imm_31_12(r1);
+            int d_addr;
+            for (int i=0; i<1000; i++) {
+                if (strncmp(data_label[i], r1, strlen(r1)) == 0) {
+                    d_addr = i*4;
+                    break;
+                }
+            }
+            // lui
+            unsigned long long int imm = imm_31_12(d_addr);
             if (debug) {
                 sprintf(str, "%08X %s %020llu %05d %07d", addr, opcode, imm, rd, OP_LUI);
             } else {
                 sprintf(str, "%020llu%05d%07d", imm, rd, OP_LUI);
+            }
+            fprintf(out, "%s\n", str);
+            addr += 4;
+            // ori 
+            unsigned long long int imm = imm_11_0(d_addr);
+            if (debug) {
+                sprintf(str, "%08X %s %012llu %05d %03d %05d %07d", addr, opcode, imm, rd, F3_ORI, rd, OP_ORI);
+            } else {
+                sprintf(str, "%012llu%05d%03d%05d%07d", imm, rd, F3_ORI, rd, OP_ORI);
             }
             fprintf(out, "%s\n", str);
         }
@@ -546,14 +567,6 @@ int main(int argc, char* argv[]) {
             }
             fprintf(out, "%s\n", str);
         }
-        // ret = jalr x0, ra, 0
-        // else if (strncmp(opcode, "ret", 3) == 0) {
-        //     int rd = 0;
-        //     int rs1 = 1; // ra
-        //     long long int imm = 0;
-        //     sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_JALR, rd, OP_JALR);
-        //     fprintf(out, "%s\n", str);
-        // }
         // jal rd, label
         else if (strncmp(opcode, "jal", 3) == 0) {
             int rd = reg(r0);
@@ -576,30 +589,6 @@ int main(int argc, char* argv[]) {
             }
             fprintf(out, "%s\n", str);
         }
-        // jr rs1 = jalr x0, rs1, 0
-        // else if (strncmp(opcode, "jr", 2) == 0) {
-        //     int rd = 0;
-        //     int rs1 = reg(r0);
-        //     long long int imm = 0;
-        //     sprintf(str, "%012lld%05d%03d%05d%07d", imm, rs1, F3_JALR, rd, OP_JALR);
-        //     fprintf(out, "%s\n", str);
-        // }
-        // j
-        // else if (strncmp(opcode, "j", 1) == 0) {
-        //     int rd = 0;
-        //     long long int jmp_addr;
-        //     for (int i=0; i<1000; i++) {
-        //         eliminate_colon(label[i]);
-        //         if (strncmp(label[i], r0, strlen(r0)) == 0) {
-        //             jmp_addr = i*4;
-        //             break;
-        //         }
-        //     }
-        //     long long int imm = imm_20_10_1_11_19_12(jmp_addr - addr);
-        //     printf("[j] jmp_addr = %lld, addr = %d\n", jmp_addr, addr);
-        //     sprintf(str, "%020llu%05d%07d", imm, rd, OP_JAL);
-        //     fprintf(out, "%s\n", str);
-        // }
     }
 
     fclose(in);
