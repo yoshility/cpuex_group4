@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
     }
 
     // options
-    int debug = (argv[2] == NULL) ? 0 : 1; // default: no debug
+    int debug = (argv[2] == NULL) ? 0 : 1;
 
     char line[BUFSIZE];
     char opcode[10];
@@ -32,23 +32,28 @@ int main(int argc, char* argv[]) {
     // 1回目の読みでラベルを探してアドレスを振る /////////////////////////////////////////////////////////////////////
     // 
     int addr = 0;
-    char label[1000][10]; // ラベル保管庫
+    int data_addr = 0;
+    char label[20000][50]; // ラベル保管庫
+    char data_label[64][10];
+    bool is_data = 0;
 
     while (fgets(line, BUFSIZE, in) != NULL) {
         // addr += 4;
-
         strcpy(r0, "\0");
         strcpy(r1, "\0");
         strcpy(r2, "\0");
         inst = eliminate_comma_and_comment(line);
         sscanf(inst, "%s%s%s%s", opcode, r0, r1, r2);
 
-        if (opcode[strlen(opcode)-1] == ':') {
+        // 関数のラベル
+        if (opcode[strlen(opcode)-1] == ':' && (!is_data)) {
             // 配列のaddr/4番目にラベル名を保管
             strcpy(label[addr/4], opcode);
-            // 命令アドレスも一緒に出力
-            printf("%08X %s\n", addr, opcode);
-            // addr -= 4;
+            continue;
+        }
+        // データのラベル
+        else if (opcode[strlen(opcode)-1] == ':' && (is_data)) {
+            strcpy(data_label[data_label/4], opcode);
             continue;
         }
 
