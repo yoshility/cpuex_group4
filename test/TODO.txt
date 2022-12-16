@@ -26,14 +26,14 @@
 - spill3 done
 - join-stack done
 - join-stack2 simulator bug
-- join-stack3 
-- join-reg 
-- join-reg2 
-- non-tail-if 
-- non-tail-if2 
+- join-stack3 done
+- join-reg done
+- join-reg2 done
+- non-tail-if bug unfinished simulator?
+- non-tail-if2 done
 - inprod done
-- inprod-rec 
-- inprod-loop 
-- matmul 
-- matmul-flat 
-- manyargs 
+- inprod-rec simulator: no slli
+- inprod-loop simulator: no slli
+- matmul simulator: no slli
+- matmul-flat simulator: no slli
+- manyargs freeze (not necessary)
