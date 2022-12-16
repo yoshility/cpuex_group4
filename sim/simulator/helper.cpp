@@ -5,7 +5,7 @@ using namespace std;
 // アセンブリのコンマとコメントと括弧を除去
 char* eliminate_comma_and_comment(char* line) {
     int n = strlen(line);
-    for (int i=0; i<n; i++) {
+    for (int i=1; i<n; i++) {
         if (line[i] == ',' || line[i] == '(' || line[i] == ')') {
             line[i] = ' ';
         } else if (line[i] == '#') {
@@ -205,6 +205,10 @@ int reg_num(char *reg) {
 int freg_num(char *reg) {
     if (strncmp(reg, "ft0", 3) == 0) {
         return 0;
+    } else if (strncmp(reg, "ft10", 4) == 0) {
+        return 30;
+    } else if (strncmp(reg, "ft11", 4) == 0) {
+        return 31;
     } else if (strncmp(reg, "ft1", 3) == 0) {
         return 1;
     } else if (strncmp(reg, "ft2", 3) == 0) {
@@ -263,11 +267,7 @@ int freg_num(char *reg) {
         return 28;
     } else if (strncmp(reg, "ft9", 3) == 0) {
         return 29;
-    } else if (strncmp(reg, "ft10", 4) == 0) {
-        return 30;
-    } else if (strncmp(reg, "ft11", 4) == 0) {
-        return 31;
-    }  else {
+    } else {
         printf("Register name error (float): %s\n", reg);
         return -1;
     }
