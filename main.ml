@@ -36,11 +36,12 @@ let lexbuf outchan  before_flatten after_flatten out_before_tse out_parsed l =(*
        (Simm.f
           (Virtual.f
           (Closure.f
-  (* (iter !limit  *)
+  (iter !limit 
      (Alpha.f
-        normalized)))
+        cse
+        )))
           ))
-          (* ) *)
+          )
           
              
 

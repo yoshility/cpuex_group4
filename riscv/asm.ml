@@ -58,8 +58,6 @@ let seq(e1, e2) = Let((Id.gentmp Type.Unit, Type.Unit), e1, e2)
 
 let regs = (* Array.init 16 (fun i -> Printf.sprintf "%%r%d" i) *)
   [| "a0"; "a1"; "a2"; "a3"; "a4"; "a5"; "a6"; "a7";
-  (* [| "a2"; "a3"; "a4"; "a5"; "a6"; "a7"; *)
-  (* "t0";  *)
   "s1";"s2";"s3";"s4";"s5";"s6";"s7";"s8";"s9";
   "t1"; "t2"; "t3"; "t4"; "t5"; "t6"; 
   |]
@@ -76,9 +74,11 @@ let reg_sw = regs.(Array.length regs - 2) (* temporary for swap *)
 let reg_tm = regs.(Array.length regs - 3) (* temporary 2 *)
 let reg_fsw = fregs.(Array.length fregs - 1) (* temporary for swap *)
 let reg_zero = "x0" (* zero register *)
-let reg_sp = "sp" (* stack pointer *)
-let reg_hp = "hp" (* heap pointer (caml2html: sparcasm_reghp) *)
-let reg_ra = "ra" (* return address *)
+let reg_sp = "sp" (* stack pointer x2*)(*スタックの先頭（アドレス最小を表す）*)
+let reg_fp = "fp" (* frame pointer s0 (caml2html: sparcasm_reghp) *)(*前のスタックフレームの先頭*)
+let reg_hp = "hp" (* heap pointer t0 (caml2html: sparcasm_reghp) *)
+
+let reg_ra = "ra" (* return address x1*)
 let is_reg x = (
   (* Str.string_match (Str.regexp "?f[a,t,s]+[0-9]") x 0  *)
   Array.mem x regs|| Array.mem x fregs

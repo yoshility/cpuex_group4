@@ -54,6 +54,7 @@ val reg_fsw : Id.t
 val reg_tm : Id.t
 val reg_ra : Id.t
 val reg_hp : Id.t
+val reg_fp : Id.t
 val reg_sp : Id.t
 val is_reg : Id.t -> bool
 (* val co_freg : Id.t -> Id.t *)

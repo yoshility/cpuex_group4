@@ -68,4 +68,6 @@ let rec atan x =
   if flag1=flag2 then y else -1.*.y in
 let rec fhalf x = x *. 0.5 in
 let rec fsqr x = x *. x in
-1
+
+int_of_float(fsqr 1.) + int_of_float (fhalf 1.) + 
+int_of_float(atan 1.) + int_of_float (cos 1.) + int_of_float(sin 1.)

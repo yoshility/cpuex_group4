@@ -13,9 +13,7 @@ let save x =
 let savef x =
   stackset := S.add x !stackset;
   if not (List.mem x !stackmap) then
-    (let pad =
-      if List.length !stackmap mod 2 = 0 then [] else [Id.gentmp Type.Int] in(*pad��alignment�Τ��ᡩ*)
-    stackmap := !stackmap @ pad @ [x; x])
+    stackmap := !stackmap @ [x; x]
 let locate x =
   let rec loc = function
     | [] -> []
@@ -23,7 +21,7 @@ let locate x =
     | y :: zs -> List.map succ (loc zs) in
   loc !stackmap
 let offset x = Printf.printf "offset %s\n" x; try 4 * List.hd (locate x) with e -> Printf.printf "error hd %s\n" x; raise e
-let stacksize () = align ((List.length !stackmap + 1) * 4)
+let stacksize () = ((List.length !stackmap + 1) * 4)
 
 let pp_id_or_imm = function
   | V(x) -> x
@@ -94,17 +92,19 @@ match (tail,exp) with
    (* 退避の仮想命令の実装 (caml2html: emit_save) *)
   | NonTail(_), Save(x, y) when List.mem x allregs && not (S.mem y !stackset) ->
       save y;
-      print_asm oc "\tsw\t%s, %d(%s)\n" x (offset y) reg_sp 
+      print_asm oc "\tsw\t%s, -%d(%s)\n" x (offset y) reg_fp ;
+      print_asm oc "\taddi\t%s, %s, -4\n" reg_sp reg_sp 
   | NonTail(_), Save(x, y) when List.mem x allfregs && not (S.mem y !stackset) ->
       savef y;
-      print_asm oc "\tfsw\t%s, %d(%s)\n" x (offset y) reg_sp
+      print_asm oc "\tfsw\t%s, -%d(%s)\n" x (offset y) reg_fp;
+      print_asm oc "\taddi\t%s, %s, -8\n" reg_sp reg_sp 
   | NonTail(_), Save(x, y) -> assert (S.mem y !stackset); ()(*���Ǥ�save�Ѥ�*)
     (* 復帰の仮想命令の実装 (caml2html: emit_restore) *)
   | NonTail(x), Restore(y) when List.mem x allregs ->
-      print_asm oc "\tlw\t%s, %d(%s)\n" x (offset y) reg_sp
+      print_asm oc "\tlw\t%s, -%d(%s)\n" x (offset y) reg_fp
   | NonTail(x), Restore(y) ->
       assert (List.mem x allfregs);
-      print_asm oc "\tflw\t%s, %d(%s)\n" x (offset y) reg_sp
+      print_asm oc "\tflw\t%s, -%d(%s)\n" x (offset y) reg_fp
  (* 末尾だったら計算結果を第一レジスタにセットしてリターン (caml2html: emit_tailret) *)
  | Tail, (Nop | St _ | StDF _ | Comment _ | Save _ as exp) ->
       g' oc (NonTail(Id.gentmp Type.Unit), (exp,p));
@@ -203,15 +203,16 @@ match (tail,exp) with
       
       let ss = stacksize () in
       print_asm oc "\tlw\t%s, 0(%s)\n" reg_sw reg_cl;
-      print_asm oc "\taddi\tsp, sp, -24\n" ;
-      print_asm oc "\tsw\t%s, 16(sp)\n" reg_cl;
-      print_asm oc "\tsw\tra, 8(sp)\n" ;
-      print_asm oc "\tsw\tfp, 0(sp)\n" ;
-      print_asm oc "\tjalr\tra, %s, 0\n" reg_sw;
-      print_asm oc "\tlw\t%s, 16(sp)\n" reg_cl;
-      print_asm oc "\tlw\tra, 8(sp)\n" ;
-      print_asm oc "\tlw\tfp, 0(sp)\n" ;
-      print_asm oc "\taddi\tsp, sp, 24 \n" ;
+      print_asm oc "\taddi\t%s, %s, -24\n" reg_sp reg_sp;
+      print_asm oc "\tsw\t%s, 16(%s)\n" reg_cl reg_sp;
+      print_asm oc "\tsw\t%s, 8(%s)\n" reg_ra reg_sp;
+      print_asm oc "\tsw\t%s, 0(%s)\n" reg_fp reg_sp;
+      print_asm oc "\taddi\t%s, %s, 0\n" reg_fp reg_sp;
+      print_asm oc "\tjalr\t%s, %s, 0\n" reg_ra reg_sw;
+      print_asm oc "\taddi\t%s, %s, 24\n" reg_sp reg_fp;
+      print_asm oc "\tlw\t%s, -8(%s)\n" reg_cl reg_sp;
+      print_asm oc "\tlw\t%s, -16(%s)\n" reg_ra reg_sp;
+      print_asm oc "\tlw\t%s, -24(%s)\n" reg_fp reg_sp;
       if List.mem a allregs && a <> regs.(0) then
         print_asm oc "\taddi\t%s, %s, 0\n"  a regs.(0)
       else if List.mem a allfregs && a <> fregs.(0) then
@@ -221,21 +222,22 @@ match (tail,exp) with
   | NonTail(a), CallDir(Id.L(x), ys, zs) ->
       g'_args oc [] ys zs;
       let ss = stacksize () in
-      (* print_asm oc "\tsw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp; *)
+      (* print_asm oc "\tsw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_fp; *)
       (* print_asm oc "\t#\t%s\n"  x; *)
       (* print_asm oc "\t#\tCallDir\n"; *)
-      print_asm oc "\taddi\tsp, sp, -24\n" ;
-      print_asm oc "\tsw\t%s, 16(sp)\n" reg_cl;
-      print_asm oc "\tsw\tra, 8(sp)\n" ;
-      print_asm oc "\tsw\tfp, 0(sp)\n" ;
-      print_asm oc "\tjal\tra, %s\n" x;(*call ??*)
-      print_asm oc "\tlw\t%s, 16(sp)\n" reg_cl;
-      print_asm oc "\tlw\tra, 8(sp)\n" ;
-      print_asm oc "\tlw\tfp, 0(sp)\n" ;
-      print_asm oc "\taddi\tsp, sp, 24\n" ;
-      (* print_asm oc "\taddi\t%s, %s, %d\t# delay slot\n" reg_sp reg_sp ss ;
-      print_asm oc "\taddi\t%s, %s, -%d\n" reg_sp reg_sp ss;
-      print_asm oc "\tlw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_sp; *)
+      print_asm oc "\taddi\t%s, %s, -24\n" reg_sp reg_sp;
+      print_asm oc "\tsw\t%s, 16(%s)\n" reg_cl reg_sp;
+      print_asm oc "\tsw\t%s, 8(%s)\n" reg_ra reg_sp;
+      print_asm oc "\tsw\t%s, 0(%s)\n" reg_fp reg_sp;
+      print_asm oc "\taddi\t%s, %s, 0\n" reg_fp reg_sp;
+      print_asm oc "\tjal\t%s, %s\n" reg_ra x;
+      print_asm oc "\taddi\t%s, %s, 24\n" reg_sp reg_fp;
+      print_asm oc "\tlw\t%s, -8(%s)\n" reg_cl reg_sp;
+      print_asm oc "\tlw\t%s, -16(%s)\n" reg_ra reg_sp;
+      print_asm oc "\tlw\t%s, -24(%s)\n" reg_fp reg_sp;
+      (* print_asm oc "\taddi\t%s, %s, %d\t# delay slot\n" reg_fp reg_fp ss ;
+      print_asm oc "\taddi\t%s, %s, -%d\n" reg_fp reg_fp ss;
+      print_asm oc "\tlw\t%s, %d(%s)\n"  reg_ra (ss - 4) reg_fp; *)
       if List.mem a allregs && a <> regs.(0) then
         print_asm oc "\taddi\t%s, %s, 0\n" a regs.(0)
       else if List.mem a allfregs && a <> fregs.(0) then
@@ -298,7 +300,10 @@ let h oc { name = Id.L(x); args = _; fargs = _; body = e; ret = _ } =
   g oc (Tail, e)
 
 let f oc (Prog(data, fundefs, e)) =
-  pc := 2964;(*labelnumの初期値。ライブラリ関数などに注意。*)(*(771-43-71)*4=2628?*)
+  pc := 3044;
+  (* pc := 0; *)
+  (* labelnumの初期値。ライブラリ関数などに注意。(771-43-71)*4=2628? *)
+   (*pc := 0; labelnumの初期値。ライブラリ関数などに注意。(771-43-71)*4=2628? *)
   Format.eprintf "generating assembly...@."; 
   Printf.fprintf oc(* print_asm oc*) ".section\t\".rodata\"\n"; 
   Printf.fprintf oc(* print_asm oc*) ".align\t8\n"; 
@@ -313,8 +318,9 @@ let f oc (Prog(data, fundefs, e)) =
   List.iter (fun fundef -> h oc fundef) fundefs;
   print_asm oc ".global\tmin_caml_start\n";
   print_asm oc "min_caml_start:\n";
-  print_asm oc "\taddi\tsp, x0, 8188\n"; 
-  print_asm oc "\taddi\t%s, x0, 64\n" reg_hp; 
+  print_asm oc "\taddi\t%s, %s, 8188\n" reg_sp reg_zero; 
+  print_asm oc "\taddi\t%s, %s, 8188\n"reg_fp reg_zero; 
+  print_asm oc "\taddi\t%s, %s, 64\n" reg_hp reg_zero; 
   stackset := S.empty;
   stackmap := [];
   g oc (Tail, e);

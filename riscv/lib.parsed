@@ -484,4 +484,32 @@ Let
                                                                                              FMul
                                                                                                  Var x
                                                                                                  Var x
-                                                                                             1
+                                                                                             Add
+                                                                                                Add
+                                                                                                   Add
+                                                                                                      Add
+                                                                                                         App
+                                                                                                            Var int_of_float
+                                                                                                            App
+                                                                                                               Var fsqr
+                                                                                                               1.
+                                                                                                         App
+                                                                                                            Var int_of_float
+                                                                                                            App
+                                                                                                               Var fhalf
+                                                                                                               1.
+                                                                                                      App
+                                                                                                         Var int_of_float
+                                                                                                         App
+                                                                                                            Var atan
+                                                                                                            1.
+                                                                                                   App
+                                                                                                      Var int_of_float
+                                                                                                      App
+                                                                                                         Var cos
+                                                                                                         1.
+                                                                                                App
+                                                                                                   Var int_of_float
+                                                                                                   App
+                                                                                                      Var sin
+                                                                                                      1.
