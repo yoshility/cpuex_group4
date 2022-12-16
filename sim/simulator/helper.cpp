@@ -197,7 +197,7 @@ int reg_num(char *reg) {
         return 31;
     } else {
         printf("Register name error: %s\n", reg);
-        return 0;
+        return -1;
     }
 }
 
@@ -268,8 +268,8 @@ int freg_num(char *reg) {
     } else if (strncmp(reg, "ft9", 3) == 0) {
         return 29;
     } else {
-        printf("Register name error: %s\n", reg);
-        return 0;
+        printf("Register name error (float): %s\n", reg);
+        return -1;
     }
 }
 
