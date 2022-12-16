@@ -5,7 +5,7 @@ using namespace std;
 // アセンブリのコンマとコメントと括弧を除去
 char* eliminate_comma_and_comment(char* line) {
     int n = strlen(line);
-    for (int i=1; i<n; i++) {
+    for (int i=0; i<n; i++) {
         if (line[i] == ',' || line[i] == '(' || line[i] == ')') {
             line[i] = ' ';
         } else if (line[i] == '#') {
@@ -130,7 +130,7 @@ void print_freg(float* freg) {
 }
 
 // 整数レジスタ名をレジスタ番号に変換
-int reg_num(char *reg) {
+int reg_num(char *reg, int pc) {
     if (strncmp(reg, "x0", 2) == 0) {
         return 0;
     } else if (strncmp(reg, "ra", 2) == 0) {
@@ -196,13 +196,14 @@ int reg_num(char *reg) {
     } else if (strncmp(reg, "t6", 2) == 0) {
         return 31;
     } else {
-        printf("Register name error: %s\n", reg);
+        printf("[0x%X] Register name error: %s\n", pc, reg);
         return -1;
+        // exit(1);
     }
 }
 
 // 浮動小数点レジスタ名をレジスタ番号に変換
-int freg_num(char *reg) {
+int freg_num(char *reg, int pc) {
     if (strncmp(reg, "ft0", 3) == 0) {
         return 0;
     } else if (strncmp(reg, "ft10", 4) == 0) {
@@ -268,7 +269,7 @@ int freg_num(char *reg) {
     } else if (strncmp(reg, "ft9", 3) == 0) {
         return 29;
     } else {
-        printf("Register name error (float): %s\n", reg);
+        printf("[0x%X] Register name error (float): %s\n", pc, reg);
         return -1;
     }
 }
