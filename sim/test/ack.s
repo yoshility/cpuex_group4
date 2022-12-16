@@ -29,7 +29,7 @@ bg_else.33:
 	jal	ra, ack.14
 .global	min_caml_start
 min_caml_start:
-	addi	a0, x0, 3
-	addi	a1, x0, 10
+	addi	a0, x0, 2
+	addi	a1, x0, 4
 	jal	ra, ack.14
 	jalr	x0, ra, 0

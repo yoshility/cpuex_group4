@@ -141,8 +141,8 @@ int main(int argc, char* argv[]) {
 
         // addi rd, rs1, imm
         if (strncmp(opcode, "addi", 4) == 0) {
-            int rd = reg_num(r0);
-            int rs1 = reg_num(r1);
+            int rd = reg_num(r0, pc);
+            int rs1 = reg_num(r1, pc);
             int imm = atoi(r2);
             reg[rd] = reg[rs1] + imm;
             if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
@@ -156,9 +156,9 @@ int main(int argc, char* argv[]) {
         }
         // add rd, rs1, rs2
         else if (strncmp(opcode, "add", 3) == 0) {
-            int rd = reg_num(r0);
-            int rs1 = reg_num(r1);
-            int rs2 = reg_num(r2);
+            int rd = reg_num(r0, pc);
+            int rs1 = reg_num(r1, pc);
+            int rs2 = reg_num(r2, pc);
             reg[rd] = reg[rs1] + reg[rs2];
             if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
                 clk += 2;
@@ -171,9 +171,9 @@ int main(int argc, char* argv[]) {
         }
         // sub rd, rs1, rs2
         else if (strncmp(opcode, "sub", 3) == 0) {
-            int rd = reg_num(r0);
-            int rs1 = reg_num(r1);
-            int rs2 = reg_num(r2);
+            int rd = reg_num(r0, pc);
+            int rs1 = reg_num(r1, pc);
+            int rs2 = reg_num(r2, pc);
             reg[rd] = reg[rs1] - reg[rs2];
             if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
                 clk += 2;
@@ -186,9 +186,9 @@ int main(int argc, char* argv[]) {
         }
         // mul rd, rs1, rs2
         else if (strncmp(opcode, "mul", 3) == 0) {
-            int rd = reg_num(r0);
-            int rs1 = reg_num(r1);
-            int rs2 = reg_num(r2);
+            int rd = reg_num(r0, pc);
+            int rs1 = reg_num(r1, pc);
+            int rs2 = reg_num(r2, pc);
             reg[rd] = reg[rs1] * reg[rs2];
             if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
                 clk += 2;
@@ -201,9 +201,9 @@ int main(int argc, char* argv[]) {
         }
         // div rd, rs1, rs2
         else if (strncmp(opcode, "div", 3) == 0) {
-            int rd = reg_num(r0);
-            int rs1 = reg_num(r1);
-            int rs2 = reg_num(r2);
+            int rd = reg_num(r0, pc);
+            int rs1 = reg_num(r1, pc);
+            int rs2 = reg_num(r2, pc);
             reg[rd] = reg[rs1] / reg[rs2];
             if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
                 clk += 2;
@@ -216,9 +216,9 @@ int main(int argc, char* argv[]) {
         }
         // and rd, rs1, rs2
         else if (strncmp(opcode, "and", 3) == 0) {
-            int rd = reg_num(r0);
-            int rs1 = reg_num(r1);
-            int rs2 = reg_num(r2);
+            int rd = reg_num(r0, pc);
+            int rs1 = reg_num(r1, pc);
+            int rs2 = reg_num(r2, pc);
             reg[rd] = reg[rs1] & reg[rs2];
             if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
                 clk += 2;
@@ -231,9 +231,9 @@ int main(int argc, char* argv[]) {
         }
         // or rd, rs1, rs2
         else if (strncmp(opcode, "or", 2) == 0) {
-            int rd = reg_num(r0);
-            int rs1 = reg_num(r1);
-            int rs2 = reg_num(r2);
+            int rd = reg_num(r0, pc);
+            int rs1 = reg_num(r1, pc);
+            int rs2 = reg_num(r2, pc);
             reg[rd] = reg[rs1] | reg[rs2];
             if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
                 clk += 2;
@@ -246,9 +246,9 @@ int main(int argc, char* argv[]) {
         }
         // slt rd, rs1, rs2
         else if (strncmp(opcode, "slt", 3) == 0) {
-            int rd = reg_num(r0);
-            int rs1 = reg_num(r1);
-            int rs2 = reg_num(r2);
+            int rd = reg_num(r0, pc);
+            int rs1 = reg_num(r1, pc);
+            int rs2 = reg_num(r2, pc);
             reg[rd] = (reg[rs1] < reg[rs2]);
             if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
                 clk += 2;
@@ -261,8 +261,8 @@ int main(int argc, char* argv[]) {
         }
         // slli rd, rs1, uimm
         else if (strncmp(opcode, "slli", 4) == 0) {
-            int rd = reg_num(r0);
-            int rs1 = reg_num(r1);
+            int rd = reg_num(r0, pc);
+            int rs1 = reg_num(r1, pc);
             unsigned int uimm = atoi(r2);
             reg[rd] = (reg[rs1] << uimm);
             if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
@@ -276,9 +276,9 @@ int main(int argc, char* argv[]) {
         }
         // sll rd, rs1, rs2
         else if (strncmp(opcode, "sll", 3) == 0) {
-            int rd = reg_num(r0);
-            int rs1 = reg_num(r1);
-            int rs2 = reg_num(r2);
+            int rd = reg_num(r0, pc);
+            int rs1 = reg_num(r1, pc);
+            int rs2 = reg_num(r2, pc);
             reg[rd] = (reg[rs1] << reg[rs2]);
             if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
                 clk += 2;
@@ -291,7 +291,7 @@ int main(int argc, char* argv[]) {
         }
         // lui rd, upimm / lui rd, label
         else if (strncmp(opcode, "lui", 3) == 0) {
-            int rd = reg_num(r0);
+            int rd = reg_num(r0, pc);
             int d_addr;
             for (int i=0; i<64; i++) {
                 if (strncmp(data_label[i], r1, strlen(r1)) == 0) {
@@ -307,8 +307,8 @@ int main(int argc, char* argv[]) {
         }
         // beq rs1, rs2, label
         else if (strncmp(opcode, "beq", 3) == 0) {
-            int rs1 = reg_num(r0);
-            int rs2 = reg_num(r1);
+            int rs1 = reg_num(r0, pc);
+            int rs2 = reg_num(r1, pc);
             int jmp_addr;
             for (int i=0; i<1000; i++) {
                 if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
@@ -334,8 +334,8 @@ int main(int argc, char* argv[]) {
         }
         // bne rs1, rs2, label
         else if (strncmp(opcode, "bne", 3) == 0) {
-            int rs1 = reg_num(r0);
-            int rs2 = reg_num(r1);
+            int rs1 = reg_num(r0, pc);
+            int rs2 = reg_num(r1, pc);
             int jmp_addr;
             for (int i=0; i<1000; i++) {
                 if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
@@ -361,8 +361,8 @@ int main(int argc, char* argv[]) {
         }
         // blt rs1, rs2, label
         else if (strncmp(opcode, "blt", 3) == 0) {
-            int rs1 = reg_num(r0);
-            int rs2 = reg_num(r1);
+            int rs1 = reg_num(r0, pc);
+            int rs2 = reg_num(r1, pc);
             int jmp_addr;
             for (int i=0; i<1000; i++) {
                 if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
@@ -388,8 +388,8 @@ int main(int argc, char* argv[]) {
         }
         // bge rs1, rs2, label
         else if (strncmp(opcode, "blt", 3) == 0) {
-            int rs1 = reg_num(r0);
-            int rs2 = reg_num(r1);
+            int rs1 = reg_num(r0, pc);
+            int rs2 = reg_num(r1, pc);
             int jmp_addr;
             for (int i=0; i<1000; i++) {
                 if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
@@ -415,9 +415,9 @@ int main(int argc, char* argv[]) {
         }
         // lw rd, imm(rs1) (input=s10/x26)
         else if (strncmp(opcode, "lw", 2) == 0) {
-            int rd = reg_num(r0);
+            int rd = reg_num(r0, pc);
             int imm = atoi(r1);
-            int rs1 = reg_num(r2);
+            int rs1 = reg_num(r2, pc);
             // input
             if (rs1 == 26) {
                 char i[10];
@@ -488,9 +488,9 @@ int main(int argc, char* argv[]) {
         }
         // sw rs2, imm(rs1) (int output=s10/x26; char output=s11/x27)
         else if (strncmp(opcode, "sw", 2) == 0) {
-            int rs2 = reg_num(r0);
+            int rs2 = reg_num(r0, pc);
             int imm = atoi(r1);
-            int rs1 = reg_num(r2);
+            int rs1 = reg_num(r2, pc);
             // int output
             if (rs1 == 26) {
                 fprintf(out_ppm, "%d", reg[rs2]);
@@ -560,9 +560,9 @@ int main(int argc, char* argv[]) {
         }
         // fadd fd, fs1, fs2
         else if (strncmp(opcode, "fadd", 4) == 0) {
-            int fd = freg_num(r0);
-            int fs1 = freg_num(r1);
-            int fs2 = freg_num(r2);
+            int fd = freg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
+            int fs2 = freg_num(r2, pc);
             if(fd < 0 || fs1 < 0 || fs2 < 0){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -579,9 +579,9 @@ int main(int argc, char* argv[]) {
         }
         // fsub fd, fs1, fs2
         else if (strncmp(opcode, "fsub", 4) == 0) {
-            int fd = freg_num(r0);
-            int fs1 = freg_num(r1);
-            int fs2 = freg_num(r2);
+            int fd = freg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
+            int fs2 = freg_num(r2, pc);
              if(fd < 0 || fs1 < 0 || fs2 < 0){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -598,9 +598,9 @@ int main(int argc, char* argv[]) {
         }
         // fmul fd, fs1, fs2
         else if (strncmp(opcode, "fmul", 4) == 0) {
-            int fd = freg_num(r0);
-            int fs1 = freg_num(r1);
-            int fs2 = freg_num(r2);
+            int fd = freg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
+            int fs2 = freg_num(r2, pc);
              if(fd < 0 || fs1 < 0 || fs2 < 0){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -617,9 +617,9 @@ int main(int argc, char* argv[]) {
         }
         // fdiv fd, fs1, fs2
         else if (strncmp(opcode, "fdiv", 4) == 0) {
-            int fd = freg_num(r0);
-            int fs1 = freg_num(r1);
-            int fs2 = freg_num(r2);
+            int fd = freg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
+            int fs2 = freg_num(r2, pc);
              if(fd < 0 || fs1 < 0 || fs2 < 0){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -636,13 +636,13 @@ int main(int argc, char* argv[]) {
         }
         // flw fd, imm(rs1) (input=s11/x27)
         else if (strncmp(opcode, "flw", 3) == 0) {
-            int fd = freg_num(r0);
+            int fd = freg_num(r0, pc);
              if(fd < 0 ){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
             }
             int imm = atoi(r1);
-            int rs1 = reg_num(r2);
+            int rs1 = reg_num(r2, pc);
             // input
             if (rs1 == 27) {
                 char i[10];
@@ -714,9 +714,9 @@ int main(int argc, char* argv[]) {
         }
         // fsw fs2, imm(rs1) (outputには使わない)
         else if (strncmp(opcode, "fsw", 3) == 0) {
-            int fs2 = freg_num(r0);
+            int fs2 = freg_num(r0, pc);
             int imm = atoi(r1);
-            int rs1 = reg_num(r2);
+            int rs1 = reg_num(r2, pc);
             if(fs2 < 0 ){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -777,8 +777,8 @@ int main(int argc, char* argv[]) {
         }
         // fsqrt fd, fs1
         else if (strncmp(opcode, "fsqrt", 5) == 0) {
-            int fd = freg_num(r0);
-            int fs1 = freg_num(r1);
+            int fd = freg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
             if(fd < 0 || fs1 < 0 ){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -795,9 +795,9 @@ int main(int argc, char* argv[]) {
         }
         // fsgnjn fd, fs1, fs2
         else if (strncmp(opcode, "fsgnjn", 6) == 0) {
-            int fd = freg_num(r0);
-            int fs1 = freg_num(r1);
-            int fs2 = freg_num(r2);
+            int fd = freg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
+            int fs2 = freg_num(r2, pc);
             if(fd < 0 || fs1 < 0 || fs2 < 0){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -814,9 +814,9 @@ int main(int argc, char* argv[]) {
         }
         // fsgnjx fd, fs1, fs2
         else if (strncmp(opcode, "fsgnjn", 6) == 0) {
-            int fd = freg_num(r0);
-            int fs1 = freg_num(r1);
-            int fs2 = freg_num(r2);
+            int fd = freg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
+            int fs2 = freg_num(r2, pc);
             if(fd < 0 || fs1 < 0 || fs2 < 0){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -833,9 +833,9 @@ int main(int argc, char* argv[]) {
         }
         // fsgnj fd, fs1, fs2
         else if (strncmp(opcode, "fsgnj", 5) == 0) {
-            int fd = freg_num(r0);
-            int fs1 = freg_num(r1);
-            int fs2 = freg_num(r2);
+            int fd = freg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
+            int fs2 = freg_num(r2, pc);
             if(fd < 0 || fs1 < 0 || fs2 < 0){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -852,12 +852,12 @@ int main(int argc, char* argv[]) {
         }
         // fcvtsw fd, rs1
         else if (strncmp(opcode, "fcvtsw", 6) == 0) {
-            int fd = freg_num(r0);
+            int fd = freg_num(r0, pc);
             if(fd < 0 ){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
             }
-            int rs1 = reg_num(r1);
+            int rs1 = reg_num(r1, pc);
             freg[fd] = (float)(reg[rs1]);
             if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
                 clk += 2;
@@ -870,8 +870,8 @@ int main(int argc, char* argv[]) {
         }
         // fcvtws rd, fs1
         else if (strncmp(opcode, "fcvtws", 6) == 0) {
-            int rd = reg_num(r0);
-            int fs1 = freg_num(r1);
+            int rd = reg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
             if( fs1 < 0){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -888,9 +888,9 @@ int main(int argc, char* argv[]) {
         }
         // feq rd, fs1, fs2
         else if (strncmp(opcode, "feq", 3) == 0) {
-            int rd = reg_num(r0);
-            int fs1 = freg_num(r1);
-            int fs2 = freg_num(r2);
+            int rd = reg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
+            int fs2 = freg_num(r2, pc);
             if(fs1 < 0 || fs2 < 0){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -907,9 +907,9 @@ int main(int argc, char* argv[]) {
         }
         // flt rd, fs1, fs2
         else if (strncmp(opcode, "flt", 3) == 0) {
-            int rd = reg_num(r0);
-            int fs1 = freg_num(r1);
-            int fs2 = freg_num(r2);
+            int rd = reg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
+            int fs2 = freg_num(r2, pc);
             
             if(fs1 < 0 || fs2 < 0){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
@@ -930,9 +930,9 @@ int main(int argc, char* argv[]) {
         }
         // fle rd, fs1, fs2
         else if (strncmp(opcode, "fle", 3) == 0) {
-            int rd = reg_num(r0);
-            int fs1 = freg_num(r1);
-            int fs2 = freg_num(r2);
+            int rd = reg_num(r0, pc);
+            int fs1 = freg_num(r1, pc);
+            int fs2 = freg_num(r2, pc);
             if(fs1 < 0 || fs2 < 0){
                 printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                 return 1;
@@ -949,8 +949,8 @@ int main(int argc, char* argv[]) {
         }
         // jalr rd, rs1, imm
         else if (strncmp(opcode, "jalr", 4) == 0) {
-            int rd = reg_num(r0);
-            int rs1 = reg_num(r1);
+            int rd = reg_num(r0, pc);
+            int rs1 = reg_num(r1, pc);
             int imm = atoi(r2);
             pc = reg[rs1] + imm;
             if (rd != 0) {
@@ -966,7 +966,7 @@ int main(int argc, char* argv[]) {
         }
         // jal rd, label
         else if (strncmp(opcode, "jal", 3) == 0) {
-            int rd = reg_num(r0);
+            int rd = reg_num(r0, pc);
             int jmp_addr;
             for (int i=0; i<1000; i++) {
                 if (strncmp(func_label[i], r1, strlen(r1)) == 0) {
@@ -1004,9 +1004,9 @@ int main(int argc, char* argv[]) {
         // } else {
         //     memory.print(1024, 992);
         // }
-        if (debug && !use_cache) {
-            memory.print(1024, 1000);
-        }
+        // if (debug && !use_cache) {
+        //     memory.print(1024, 1000);
+        // }
 
         if (step_by_step) {
             char enter;
