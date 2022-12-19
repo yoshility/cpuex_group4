@@ -27,6 +27,27 @@ char* eliminate_colon(char* line) {
     return line;
 }
 
+// 10進数をd桁の2進数表記に変換
+long long int to_binary(int num, int d) {
+    int n = (num < 0) ? ((1 << d) + num) : num;
+    long long int binary = 0;
+    long long int base = 1;
+    while (n > 0) {
+        binary += (n % 2) * base;
+        n /= 2;
+        base *= 10;
+    }
+    return binary;
+}
+
+// 10進数を32bitの0,1の文字列に変換してファイル出力
+void print_binary(FILE* out, long long int num) {
+    for (int i=31; i>=0; i--) {
+        fprintf(out, "%lld", (num >> i) % 2);
+    }
+    fprintf(out, "\n");
+}
+
 // 整数レジスタ名をレジスタ番号に変換 
 // ex) a0 : char* -> 1010 : int(2進数を装った10進数)
 int reg(char *reg) {
@@ -48,6 +69,10 @@ int reg(char *reg) {
         return 111;
     } else if ((strncmp(reg, "s0", 2) == 0) || (strncmp(reg, "fp", 2) == 0)) {
         return 1000;
+    } else if (strncmp(reg, "s10", 3) == 0) {
+        return 11010;
+    } else if (strncmp(reg, "s11", 3) == 0) {
+        return 11011;
     } else if (strncmp(reg, "s1", 2) == 0) {
         return 1001;
     } else if (strncmp(reg, "a0", 2) == 0) {
@@ -82,10 +107,6 @@ int reg(char *reg) {
         return 11000;
     } else if (strncmp(reg, "s9", 2) == 0) {
         return 11001;
-    } else if (strncmp(reg, "s10", 3) == 0) {
-        return 11010;
-    } else if (strncmp(reg, "s11", 3) == 0) {
-        return 11011;
     } else if (strncmp(reg, "t3", 2) == 0) {
         return 11100;
     } else if (strncmp(reg, "t4", 2) == 0) {
@@ -105,6 +126,10 @@ int reg(char *reg) {
 int freg(char *reg) {
     if (strncmp(reg, "ft0", 3) == 0) {
         return 0;
+    } else if (strncmp(reg, "ft10", 4) == 0) {
+        return 11110;
+    } else if (strncmp(reg, "ft11", 4) == 0) {
+        return 11111;
     } else if (strncmp(reg, "ft1", 3) == 0) {
         return 1;
     } else if (strncmp(reg, "ft2", 3) == 0) {
@@ -121,6 +146,10 @@ int freg(char *reg) {
         return 111;
     } else if (strncmp(reg, "fs0", 3) == 0) {
         return 1000;
+    } else if (strncmp(reg, "fs10", 4) == 0) {
+        return 11010;
+    } else if (strncmp(reg, "fs11", 4) == 0) {
+        return 11011;
     } else if (strncmp(reg, "fs1", 3) == 0) {
         return 1001;
     } else if (strncmp(reg, "fa0", 3) == 0) {
@@ -155,18 +184,10 @@ int freg(char *reg) {
         return 11000;
     } else if (strncmp(reg, "fs9", 3) == 0) {
         return 11001;
-    } else if (strncmp(reg, "fs10", 4) == 0) {
-        return 11010;
-    } else if (strncmp(reg, "fs11", 4) == 0) {
-        return 11011;
     } else if (strncmp(reg, "ft8", 3) == 0) {
         return 11100;
     } else if (strncmp(reg, "ft9", 3) == 0) {
         return 11101;
-    } else if (strncmp(reg, "ft10", 4) == 0) {
-        return 11110;
-    } else if (strncmp(reg, "ft11", 4) == 0) {
-        return 11111;
     } else {
         printf("Register name error: %s\n", reg);
         return 0;

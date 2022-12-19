@@ -1,5 +1,13 @@
 .section	".rodata"
 .align	8
+l.602:	# 0.142857
+	.long	0x3e124925
+l.600:	# 0.200000
+	.long	0x3e4ccccd
+l.598:	# 0.333333
+	.long	0x3eaaaaab
+l.596:	# 0.041664
+	.long	0x3d2aa789
 .section	".text"
 fib.9:
 	addi	t6, x0, 1
