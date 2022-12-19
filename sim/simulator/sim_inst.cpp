@@ -310,7 +310,8 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r0, pc);
             int rs2 = reg_num(r1, pc);
             int jmp_addr;
-            for (int i=0; i<1000; i++) {
+            for (int i=0; i<=1000; i++) {
+                if (i==1000) printf("[0x%X] cannot find label: %s\n", pc, r2);
                 if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
@@ -337,8 +338,10 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r0, pc);
             int rs2 = reg_num(r1, pc);
             int jmp_addr;
-            for (int i=0; i<1000; i++) {
-                if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
+            for (int i=0; i<=1000; i++) {
+                if (i == 1000) {
+                    printf("[0x%X] cannot find label: %s\n", pc, r2);
+                } else if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
                 }
@@ -364,7 +367,8 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r0, pc);
             int rs2 = reg_num(r1, pc);
             int jmp_addr;
-            for (int i=0; i<1000; i++) {
+            for (int i=0; i<=1000; i++) {
+                if (i==1000) printf("[0x%X] cannot find label: %s\n", pc, r2);
                 if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
@@ -391,7 +395,8 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r0, pc);
             int rs2 = reg_num(r1, pc);
             int jmp_addr;
-            for (int i=0; i<1000; i++) {
+            for (int i=0; i<=1000; i++) {
+                if (i==1000) printf("[0x%X] cannot find label: %s\n", pc, r2);
                 if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
@@ -968,7 +973,8 @@ int main(int argc, char* argv[]) {
         else if (strncmp(opcode, "jal", 3) == 0) {
             int rd = reg_num(r0, pc);
             int jmp_addr;
-            for (int i=0; i<1000; i++) {
+            for (int i=0; i<=1000; i++) {
+                if (i==1000) printf("[0x%X] cannot find label: %s\n", pc, r1);
                 if (strncmp(func_label[i], r1, strlen(r1)) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
@@ -1017,8 +1023,9 @@ int main(int argc, char* argv[]) {
 
         reg[0] = 0;
 
-        if (inst_count % 100000000 == 0) {
-            cout << "now inst count: " << inst_count << endl;
+        if (reg[10] > 8188) {
+            printf("reg[10] is broken! pc: 0x%X\n", pre_pc);
+            break;
         }
 
         if (pc == pre_pc) { // ループするのはおかしい？
@@ -1036,8 +1043,14 @@ int main(int argc, char* argv[]) {
         cache.print_stat();
     }
     // print float table
+    cout << "------ float table ------" << endl << endl;
     for (int i=0; i<64; i++) {
         cout << i << ": " << data_label[i] << endl;
+    }
+    // print func_label
+    cout << "------ function label ------" << endl << endl;
+    for (int i=0; i<1000; i++) {
+        printf("[%d] 0x%X: %s\n", i, func_label_addr[i], func_label[i]);
     }
     printf("inst_count: %lld\n", inst_count);
     printf("clk: %lld\n", clk);

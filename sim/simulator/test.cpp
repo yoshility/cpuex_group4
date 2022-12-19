@@ -38,6 +38,29 @@ class TEST {
         }
 };
 
+// 10進数をd桁の2進数表記に変換
+long long int to_binary(int num, int d) {
+    int n = (num < 0) ? ((1 << d) + num) : num;
+    long long int binary = 0;
+    long long int base = 1;
+    while (n > 0) {
+        binary += (n % 2) * base;
+        n /= 2;
+        base *= 10;
+    }
+    return binary;
+}
+
+// 10進数を32bitの0,1の文字列に変換して出力
+void print_binary(long long int num) {
+    int b;
+    for (int i=31; i>=0; i--) {
+        b = (num >> i) % 2;
+        cout << b;
+    }
+    cout << endl;
+}
+
 int main(int argc, char* argv[]) {
     // FILE *in, *out;
     // if ((in = fopen(argv[1], "rb")) == NULL) {
@@ -62,7 +85,12 @@ int main(int argc, char* argv[]) {
     union data a;
     a.i = atof("0x40900000");
     cout << a.i << endl;
+    printf("%032lld\n", to_binary(a.i, 32));
     printf("%f\n", a.f);
+
+    print_binary(a.i);
+    print_binary(atof("0x40900000"));
+
 
     // string inst = "add a0 t1 t2";
     // string opcode, r0, r1, r2;

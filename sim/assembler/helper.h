@@ -11,7 +11,9 @@
 #define OP_LW       (11)
 #define OP_SW       (100011)
 #define OP_BLT      (1100011)
+#define OP_BNE      (1100011)
 #define OP_LUI      (110111)
+#define OP_ORI      (10011)
 #define OP_FADD     (1010011)
 #define OP_FSUB     (1010011)
 #define OP_FMUL     (1010011)
@@ -28,6 +30,7 @@
 #define OP_FEQ      (1010011)
 #define OP_FLT      (1010011)
 #define OP_FLE      (1010011)
+#define OP_SLLI     (10011)
 
 #define F7_ADD      (0)
 #define F7_SUB      (100000)
@@ -61,6 +64,7 @@
 #define F3_LW       (10)
 #define F3_SW       (10)
 #define F3_BLT      (100)
+#define F3_BNE      (1)
 #define F3_FADD     (0)
 #define F3_FSUB     (0)
 #define F3_FMUL     (0)
@@ -77,9 +81,13 @@
 #define F3_FEQ      (10)
 #define F3_FLT      (1)
 #define F3_FLE      (0)
+#define F3_SLLI     (1)
+#define F3_ORI      (110)
 
 char* eliminate_comma_and_comment(char*);
 char* eliminate_colon(char*);
+long long int to_binary(int, int);
+void print_binary(FILE*, long long int);
 int reg(char*);
 int freg(char*);
 
