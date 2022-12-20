@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "/mnt/d/cpuex/cpuex_group4/sim/simulator/a.out",
-            "args": ["../test/minrt.s", "base.sld", "test.ppm", "0", "0", "0"],
+            "args": ["../test/inprod-rec_.s", "base.sld", "test.ppm", "0", "0", "0"],
             "stopAtEntry": false,
             "cwd": "/mnt/d/cpuex/cpuex_group4/sim/simulator",
             "environment": [],

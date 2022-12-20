@@ -121,7 +121,8 @@ void print_freg(float* freg) {
     printf("\n\t---- Float Register -------------------------------------------------------------------------------------\n\n");
     for (int i=0; i<32; i++) {
         printf("\t");
-        cout << freg_name.at(i) << ":" << freg[i];
+        cout << freg_name.at(i) << ":";
+        printf("%f", freg[i]);
         if ((i+1) % 8 == 0) {
             printf("\n");
         }
