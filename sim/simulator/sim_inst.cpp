@@ -304,7 +304,7 @@ int main(int argc, char* argv[]) {
                     break;
                 }
             }
-            printf("%d\n", d_addr);
+            // printf("%d\n", d_addr);
             reg[rd] = d_addr;
             pre_inst_is_lw = 0;
             pre_inst_is_flw = 0;
@@ -711,7 +711,6 @@ int main(int argc, char* argv[]) {
                 // no cache
                 else {
                     freg[fd] = memory.d[(reg[rs1]+imm)/4].f;
-                    printf("freg[%d]: %f\n", fd, memory.d[(reg[rs1]+imm)/4].f);
                 }
                 if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
                     clk += 2;
@@ -1030,10 +1029,13 @@ int main(int argc, char* argv[]) {
 
         reg[0] = 0;
 
-        if (reg[10] > 8188) {
-            printf("reg[10] is broken! pc: 0x%X\n", pre_pc);
-            break;
+        if (inst_count % 100000000 == 0) {
+            cout << "now inst count: " << inst_count << endl;
         }
+        // if (reg[10] > 8188) {
+        //     printf("reg[10] is broken! pc: 0x%X\n", pre_pc);
+        //     break;
+        // }
 
         if (pc == pre_pc) { // ループするのはおかしい？
             cout << "same pc!" << endl;
