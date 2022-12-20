@@ -385,16 +385,17 @@ int main(int argc, char* argv[]) {
             if (debug) {
                 if (rs1 == 26) { // int output
                     sprintf(str, "0x%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, rs2, rs1, F3_SW, imm2, OP_SW-1);
-                else if (rs1 == 27) { // char output
-                    // ?????
-                }
-                } else {
+                } else if (rs1 == 27) { // char output
+                    sprintf(str, "0x%08X %s %07lld %05d %05d %03d %05d %07d", addr, "sb", imm1, rs2, rs1, F3_SB, imm2, OP_SW-1);
+                } else { // regular sw
                     sprintf(str, "0x%08X %s %07lld %05d %05d %03d %05d %07d", addr, opcode, imm1, rs2, rs1, F3_SW, imm2, OP_SW);
                 }
             } else {
-                if (rs1 == 27) {
+                if (rs1 == 26) { // int output
                     sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_SW, imm2, OP_SW-1);
-                } else {
+                } else if (rs1 == 27) { // char output
+                    sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_SB, imm2, OP_SW-1);
+                } else { // regular sw
                     sprintf(str, "%07lld%05d%05d%03d%05d%07d", imm1, rs2, rs1, F3_SW, imm2, OP_SW);
                 }
             }

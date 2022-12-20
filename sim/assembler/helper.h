@@ -83,6 +83,7 @@
 #define F3_FLE      (0)
 #define F3_SLLI     (1)
 #define F3_ORI      (110)
+#define F3_SB       (0)
 
 char* eliminate_comma_and_comment(char*);
 char* eliminate_colon(char*);

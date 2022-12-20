@@ -44,14 +44,6 @@ l.550:	# 6.283185
 	.long	0x40c90fdb
 l.548:	# 2.000000
 	.long	0x40000000
-l.71:	# 1000000.000000
-	.long	0x49742400
-l.69:	# 4.560000
-	.long	0x4091eb85
-l.67:	# 1.230000
-	.long	0x3f9d70a4
-l.61:	# 0.000000
-	.long	0x0
 .section	".text"
 while1.319.521:
 	fsub	fa2, fa0, fa1
@@ -880,37 +872,20 @@ create_float_array_cont:
 	fsw	fa0, 0(hp)
 	addi hp, hp, 8
 	addi a0, a0, -1
-	jal	x0, create_array_loop
-inprod.17.39:
-	addi	t5, x0, 0
-	blt	a2, t5, bg_else.77
-	slli	a3, a2, 3
-	add	a3, a3, a0
-	flw	fa0, 0(a3)
-	slli	a3, a2, 3
-	add	a3, a3, a1
-	flw	fa1, 0(a3)
-	fmul	fa0, fa0, fa1
-	addi	a2, a2, -1
-	fsw	fa0, -0(fp)
-	addi	sp, sp, -8
-	addi	sp, sp, -24
-	sw	t6, 16(sp)
-	sw	ra, 8(sp)
-	sw	fp, 0(sp)
-	addi	fp, sp, 0
-	jal	ra, inprod.17.39
-	addi	sp, fp, 24
-	lw	t6, -8(sp)
-	lw	ra, -16(sp)
-	lw	fp, -24(sp)
-	flw	fa1, -0(fp)
-	fadd	fa0, fa1, fa0
+	jal	x0, create_float_array_loop
+adder.9.16:
+	lw	a1, 4(t6)
+	add	a0, a1, a0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
-bg_else.77:
-	lui	a0, l.61
-	flw	fa0, 0(a0)
+make_adder.4.11:
+	addi	a1, hp 0
+	addi	hp, hp, 8
+	addi	t5, x0, 3044
+	addi	a2, t5, 0
+	sw	a2,0(a1) 
+	sw	a0,4(a1) 
+	addi	a0, a1 0
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 .global	min_caml_start
@@ -919,62 +894,18 @@ min_caml_start:
 	addi	fp, x0, 8188
 	addi	hp, x0, 256
 	addi	a0, x0, 3
-	lui	a1, l.67
-	flw	fa0, 0(a1)
 	addi	sp, sp, -24
 	sw	t6, 16(sp)
 	sw	ra, 8(sp)
 	sw	fp, 0(sp)
 	addi	fp, sp, 0
-	jal	ra, min_caml_create_float_array
+	jal	ra, make_adder.4.11
 	addi	sp, fp, 24
 	lw	t6, -8(sp)
 	lw	ra, -16(sp)
 	lw	fp, -24(sp)
-	addi	a1, x0, 3
-	lui	a2, l.69
-	flw	fa0, 0(a2)
-	sw	a0, -0(fp)
-	addi	sp, sp, -4
-	addi	a0, a1, 0
-	addi	sp, sp, -24
-	sw	t6, 16(sp)
-	sw	ra, 8(sp)
-	sw	fp, 0(sp)
-	addi	fp, sp, 0
-	jal	ra, min_caml_create_float_array
-	addi	sp, fp, 24
-	lw	t6, -8(sp)
-	lw	ra, -16(sp)
-	lw	fp, -24(sp)
-	addi	a1, a0, 0
-	lui	a0, l.71
-	flw	fa0, 0(a0)
-	addi	a2, x0, 2
-	lw	a0, -0(fp)
-	fsw	fa0, -4(fp)
-	addi	sp, sp, -8
-	addi	sp, sp, -24
-	sw	t6, 16(sp)
-	sw	ra, 8(sp)
-	sw	fp, 0(sp)
-	addi	fp, sp, 0
-	jal	ra, inprod.17.39
-	addi	sp, fp, 24
-	lw	t6, -8(sp)
-	lw	ra, -16(sp)
-	lw	fp, -24(sp)
-	flw	fa1, -4(fp)
-	fmul	fa0, fa1, fa0
-	addi	sp, sp, -24
-	sw	t6, 16(sp)
-	sw	ra, 8(sp)
-	sw	fp, 0(sp)
-	addi	fp, sp, 0
-	jal	ra, min_caml_int_of_float
-	addi	sp, fp, 24
-	lw	t6, -8(sp)
-	lw	ra, -16(sp)
-	lw	fp, -24(sp)
-	jal	x0, min_caml_print_int 
+	addi	t6, a0, 0
+	addi	a0, x0, 7
+	lw	t5, 0(t6) 
+	jalr	x0, t5, 0 
 	jalr	x0, ra, 0
