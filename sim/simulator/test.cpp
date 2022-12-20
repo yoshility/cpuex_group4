@@ -2,7 +2,7 @@
 using namespace std;
 
 union data {
-    int32_t i;
+    long int i;
     float f;
 };
 
@@ -88,9 +88,12 @@ int main(int argc, char* argv[]) {
     printf("%032lld\n", to_binary(a.i, 32));
     printf("%f\n", a.f);
 
-    print_binary(a.i);
-    print_binary(atof("0x40900000"));
+    // print_binary(a.i);
+    // print_binary(atof("0x40900000"));
 
+    a.i = atof("0xbf800000");
+    printf("%ld\n", a.i);
+    printf("%f\n", a.f);
 
     // string inst = "add a0 t1 t2";
     // string opcode, r0, r1, r2;

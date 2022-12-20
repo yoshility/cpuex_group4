@@ -111,6 +111,12 @@ int main(int argc, char* argv[]) {
     }
 
     fclose(in);
+    // print float table
+    cout << "------ float table ------" << endl << endl;
+    for (int i=0; i<64; i++) {
+        printf("[%d]: %s: %f\n", i, data_label[i], memory.d[i].f);
+    }
+    printf("mem[22]: %f\n", memory.d[22].f);
 
     // あとは命令メモリを逐次実行
     reg[1] = 1025;              // first ra = 1025
@@ -128,6 +134,7 @@ int main(int argc, char* argv[]) {
             cout << "pc = 1025 !" << endl;
             break;
         }
+        printf("mem[22]: %f\n", memory.d[22].f);
         strcpy(r0, "\0");
         strcpy(r1, "\0");
         strcpy(r2, "\0"); 
@@ -299,6 +306,7 @@ int main(int argc, char* argv[]) {
                     break;
                 }
             }
+            printf("%d\n", d_addr);
             reg[rd] = d_addr;
             pre_inst_is_lw = 0;
             pre_inst_is_flw = 0;
@@ -704,7 +712,9 @@ int main(int argc, char* argv[]) {
                 }
                 // no cache
                 else {
+                    printf("reg[rs1]: %d\n", reg[rs1]);
                     freg[fd] = memory.d[(reg[rs1]+imm)/4].f;
+                    printf("%f\n", memory.d[(reg[rs1]+imm)/4].f);
                 }
                 if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
                     clk += 2;
@@ -1042,11 +1052,7 @@ int main(int argc, char* argv[]) {
     if (debug && use_cache) {
         cache.print_stat();
     }
-    // print float table
-    cout << "------ float table ------" << endl << endl;
-    for (int i=0; i<64; i++) {
-        cout << i << ": " << data_label[i] << endl;
-    }
+    
     // print func_label
     cout << "------ function label ------" << endl << endl;
     for (int i=0; i<1000; i++) {
