@@ -116,7 +116,6 @@ int main(int argc, char* argv[]) {
     for (int i=0; i<64; i++) {
         printf("[%d]: %s: %f\n", i, data_label[i], memory.d[i].f);
     }
-    printf("mem[22]: %f\n", memory.d[22].f);
 
     // あとは命令メモリを逐次実行
     reg[1] = 1025;              // first ra = 1025
@@ -134,7 +133,6 @@ int main(int argc, char* argv[]) {
             cout << "pc = 1025 !" << endl;
             break;
         }
-        // printf("mem[22]: %f\n", memory.d[22].f);
         strcpy(r0, "\0");
         strcpy(r1, "\0");
         strcpy(r2, "\0"); 
@@ -712,9 +710,7 @@ int main(int argc, char* argv[]) {
                 }
                 // no cache
                 else {
-                    // printf("reg[rs1]: %d\n", reg[rs1]);
                     freg[fd] = memory.d[(reg[rs1]+imm)/4].f;
-                    // printf("%f\n", memory.d[(reg[rs1]+imm)/4].f);
                 }
                 if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
                     clk += 2;
@@ -1020,9 +1016,9 @@ int main(int argc, char* argv[]) {
         // } else {
         //     memory.print(1024, 992);
         // }
-        // if (debug && !use_cache) {
-        //     memory.print(1024, 1000);
-        // }
+        if (debug && !use_cache) {
+            memory.print(8188, 8060);
+        }
 
         if (step_by_step) {
             char enter;

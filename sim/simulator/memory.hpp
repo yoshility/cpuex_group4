@@ -88,7 +88,7 @@ class Memory {
 			printf("\n\t---- Data Memory -------------------------------------------------------------------------------------------\n\n");
 			printf("\t[Addr]  [Data(i)]   [Data(i_0x)]   [Data(f)]\n");
 			for (int i=start; i>=end; i-=4) {
-				printf("\t0x%04X     %04ld        %04lX        %f\n", i/4, d[i/4].i, d[i/4].i, d[i/4].f);
+				printf("\t0x%04X     %04ld        %04lX        %f\n", i, d[i/4].i, d[i/4].i, d[i/4].f);
 			}
 			printf("\n");
 		}
