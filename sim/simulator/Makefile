@@ -4,7 +4,7 @@ SRCS 	= sim_inst.cpp
 SRCS 	+= helper.cpp
 
 $(TARGET): $(SRCS)
-	$(CC) -Wall -o $@ $^
+	$(CC) -Wall -O3 -o $@ $^
 
 all: $(TARGET)
 

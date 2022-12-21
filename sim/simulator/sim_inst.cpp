@@ -56,8 +56,8 @@ int main(int argc, char* argv[]) {
     int addr = 0;                   // 命令アドレス
     int data_addr = 0;              // データセクションでのアドレス
     int func_label_index = 0;
-    char func_label[1000][50];      // 関数ラベル名
-    int func_label_addr[1000];      // 関数ラベルアドレス
+    char func_label[600][50];      // 関数ラベル名
+    int func_label_addr[600];      // 関数ラベルアドレス
     char data_label[64][10];        // データラベル名(indexがアドレスになる) (1/4に圧縮)
     int pc = 0;
     bool is_data = 0;               // 現在データセクションかどうか
@@ -121,10 +121,10 @@ int main(int argc, char* argv[]) {
     reg[1] = 1025;              // first ra = 1025
     reg[2] = MEMORY_SIZE;       // sp = MEMORY_SIZE?
     int pre_pc = 0;
-    bool pre_inst_is_lw = 0;    // 前の命令がlwかどうか
-    bool pre_inst_is_flw = 0;   // 前の命令がflwかどうか
-    int pre_lw_rd = 0;          // 前の命令のlwのディスティネーションレジスタ番号
-    int pre_flw_rd = 0;         // 前の命令のflwのディスティネーションレジスタ番号
+    // bool pre_inst_is_lw = 0;    // 前の命令がlwかどうか
+    // bool pre_inst_is_flw = 0;   // 前の命令がflwかどうか
+    // int pre_lw_rd = 0;          // 前の命令のlwのディスティネーションレジスタ番号
+    // int pre_flw_rd = 0;         // 前の命令のflwのディスティネーションレジスタ番号
     unsigned long long inst_count = 0;
     unsigned long long clk = 4;
     printf("Processing...\n");
@@ -150,13 +150,13 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r1, pc);
             int imm = atoi(r2);
             reg[rd] = reg[rs1] + imm;
-            if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // add rd, rs1, rs2
@@ -165,13 +165,13 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r1, pc);
             int rs2 = reg_num(r2, pc);
             reg[rd] = reg[rs1] + reg[rs2];
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // sub rd, rs1, rs2
@@ -180,13 +180,13 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r1, pc);
             int rs2 = reg_num(r2, pc);
             reg[rd] = reg[rs1] - reg[rs2];
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // mul rd, rs1, rs2
@@ -195,13 +195,13 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r1, pc);
             int rs2 = reg_num(r2, pc);
             reg[rd] = reg[rs1] * reg[rs2];
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // div rd, rs1, rs2
@@ -210,58 +210,13 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r1, pc);
             int rs2 = reg_num(r2, pc);
             reg[rd] = reg[rs1] / reg[rs2];
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
-            pc = pc + 4;
-        }
-        // and rd, rs1, rs2
-        else if (strncmp(opcode, "and", 3) == 0) {
-            int rd = reg_num(r0, pc);
-            int rs1 = reg_num(r1, pc);
-            int rs2 = reg_num(r2, pc);
-            reg[rd] = reg[rs1] & reg[rs2];
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
-            pc = pc + 4;
-        }
-        // or rd, rs1, rs2
-        else if (strncmp(opcode, "or", 2) == 0) {
-            int rd = reg_num(r0, pc);
-            int rs1 = reg_num(r1, pc);
-            int rs2 = reg_num(r2, pc);
-            reg[rd] = reg[rs1] | reg[rs2];
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
-            pc = pc + 4;
-        }
-        // slt rd, rs1, rs2
-        else if (strncmp(opcode, "slt", 3) == 0) {
-            int rd = reg_num(r0, pc);
-            int rs1 = reg_num(r1, pc);
-            int rs2 = reg_num(r2, pc);
-            reg[rd] = (reg[rs1] < reg[rs2]);
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // slli rd, rs1, uimm
@@ -270,54 +225,38 @@ int main(int argc, char* argv[]) {
             int rs1 = reg_num(r1, pc);
             unsigned int uimm = atoi(r2);
             reg[rd] = (reg[rs1] << uimm);
-            if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
-            pc = pc + 4;
-        }
-        // sll rd, rs1, rs2
-        else if (strncmp(opcode, "sll", 3) == 0) {
-            int rd = reg_num(r0, pc);
-            int rs1 = reg_num(r1, pc);
-            int rs2 = reg_num(r2, pc);
-            reg[rd] = (reg[rs1] << reg[rs2]);
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // lui rd, upimm / lui rd, label
         else if (strncmp(opcode, "lui", 3) == 0) {
             int rd = reg_num(r0, pc);
-            int d_addr;
+            int d_addr = 0;
             for (int i=0; i<64; i++) {
                 if (strncmp(data_label[i], r1, strlen(r1)) == 0) {
                     d_addr = i*4;
                     break;
                 }
             }
-            // printf("%d\n", d_addr);
             reg[rd] = d_addr;
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
-            clk++;
+            // clk++;
         }
         // beq rs1, rs2, label
         else if (strncmp(opcode, "beq", 3) == 0) {
             int rs1 = reg_num(r0, pc);
             int rs2 = reg_num(r1, pc);
-            int jmp_addr;
-            for (int i=0; i<=1000; i++) {
-                if (i==1000) printf("[0x%X] cannot find label: %s\n", pc, r2);
+            int jmp_addr = 0;
+            for (int i=0; i<=600; i++) {
+                if (i==600) printf("[0x%X] cannot find label: %s\n", pc, r2);
                 if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
@@ -331,21 +270,21 @@ int main(int argc, char* argv[]) {
             } else {
                 pc = pc + 4;
             }
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
         }
         // bne rs1, rs2, label
         else if (strncmp(opcode, "bne", 3) == 0) {
             int rs1 = reg_num(r0, pc);
             int rs2 = reg_num(r1, pc);
-            int jmp_addr;
-            for (int i=0; i<=1000; i++) {
-                if (i == 1000) {
+            int jmp_addr = 0;
+            for (int i=0; i<=600; i++) {
+                if (i == 600) {
                     printf("[0x%X] cannot find label: %s\n", pc, r2);
                 } else if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
                     jmp_addr = func_label_addr[i];
@@ -360,21 +299,21 @@ int main(int argc, char* argv[]) {
             } else {
                 pc = pc + 4;
             }
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
         }
         // blt rs1, rs2, label
         else if (strncmp(opcode, "blt", 3) == 0) {
             int rs1 = reg_num(r0, pc);
             int rs2 = reg_num(r1, pc);
-            int jmp_addr;
-            for (int i=0; i<=1000; i++) {
-                if (i==1000) printf("[0x%X] cannot find label: %s\n", pc, r2);
+            int jmp_addr = 0;
+            for (int i=0; i<=600; i++) {
+                if (i==600) printf("[0x%X] cannot find label: %s\n", pc, r2);
                 if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
@@ -388,41 +327,13 @@ int main(int argc, char* argv[]) {
             } else {
                 pc = pc + 4;
             }
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
-        }
-        // bge rs1, rs2, label
-        else if (strncmp(opcode, "blt", 3) == 0) {
-            int rs1 = reg_num(r0, pc);
-            int rs2 = reg_num(r1, pc);
-            int jmp_addr;
-            for (int i=0; i<=1000; i++) {
-                if (i==1000) printf("[0x%X] cannot find label: %s\n", pc, r2);
-                if (strncmp(func_label[i], r2, strlen(r2)) == 0) {
-                    jmp_addr = func_label_addr[i];
-                    break;
-                }
-            }
-            if (reg[rs1] >= reg[rs2]) {
-                pc = jmp_addr;
-                if (debug) {
-                    printf("\t[bge] jump to: %d\n", jmp_addr);
-                }
-            } else {
-                pc = pc + 4;
-            }
-            if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
         }
         // lw rd, imm(rs1) (input=s10/x26)
         else if (strncmp(opcode, "lw", 2) == 0) {
@@ -438,7 +349,7 @@ int main(int argc, char* argv[]) {
                     perror("sld file is over!\n");
                 }
                 clk++;
-                pre_inst_is_lw = 0;
+                // pre_inst_is_lw = 0;
             }
             // regular lw
             else {
@@ -486,15 +397,15 @@ int main(int argc, char* argv[]) {
                 else {
                     reg[rd] = memory.d[(reg[rs1]+imm)/4].i;
                 }
-                if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
-                    clk += 2;
-                } else {
-                    clk++;
-                }
-                pre_inst_is_lw = 1;
-                pre_lw_rd = rd;
+                // if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+                //     clk += 2;
+                // } else {
+                //     clk++;
+                // }
+                // pre_inst_is_lw = 1;
+                // pre_lw_rd = rd;
             }
-            pre_inst_is_flw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // sw rs2, imm(rs1) (int output=s10/x26; char output=s11/x27)
@@ -505,12 +416,12 @@ int main(int argc, char* argv[]) {
             // int output
             if (rs1 == 26) {
                 fprintf(out_ppm, "%d", reg[rs2]);
-                clk++;
+                // clk++;
             }
             // char output
             else if (rs1 == 27) {
                 fprintf(out_ppm, "%c", reg[rs2]);
-                clk++;
+                // clk++;
             }
             // regular sw
             else {
@@ -559,14 +470,14 @@ int main(int argc, char* argv[]) {
                 else {
                     memory.d[(reg[rs1]+imm)/4].i = reg[rs2];
                 }
-                if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
-                    clk += 2;
-                } else {
-                    clk++;
-                }
+                // if (pre_inst_is_lw && ((rs1==pre_lw_rd) || (rs2==pre_lw_rd)) && (pre_lw_rd!=0)) {
+                //     clk += 2;
+                // } else {
+                //     clk++;
+                // }
             }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // fadd fd, fs1, fs2
@@ -579,13 +490,13 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
             freg[fd] = freg[fs1] + freg[fs2];
-            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // fsub fd, fs1, fs2
@@ -598,13 +509,13 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
             freg[fd] = freg[fs1] - freg[fs2];
-            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // fmul fd, fs1, fs2
@@ -617,13 +528,13 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
             freg[fd] = freg[fs1] * freg[fs2];
-            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // fdiv fd, fs1, fs2
@@ -636,13 +547,13 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
             freg[fd] = freg[fs1] / freg[fs2];
-            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // flw fd, imm(rs1) (input=s11/x27)
@@ -663,8 +574,8 @@ int main(int argc, char* argv[]) {
                     perror("sld file is over!\n");
                     exit(1);
                 }
-                clk++;
-                pre_inst_is_flw = 0;
+                // clk++;
+                // pre_inst_is_flw = 0;
             }
             // regular flw
             else {
@@ -712,15 +623,15 @@ int main(int argc, char* argv[]) {
                 else {
                     freg[fd] = memory.d[(reg[rs1]+imm)/4].f;
                 }
-                if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
-                    clk += 2;
-                } else {
-                    clk++;
-                }
-                pre_inst_is_flw = 1;
-                pre_flw_rd = fd;
+                // if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+                //     clk += 2;
+                // } else {
+                //     clk++;
+                // }
+                // pre_inst_is_flw = 1;
+                // pre_flw_rd = fd;
             }
-            pre_inst_is_lw = 0;
+            // pre_inst_is_lw = 0;
             pc = pc + 4;
         }
         // fsw fs2, imm(rs1) (outputには使わない)
@@ -777,33 +688,33 @@ int main(int argc, char* argv[]) {
             else {
                 memory.d[(reg[rs1]+imm)/4].f = freg[fs2];
             }
-            if ((pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) || (pre_inst_is_flw && (fs2==pre_flw_rd))) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if ((pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) || (pre_inst_is_flw && (fs2==pre_flw_rd))) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
-        // fsqrt fd, fs1
-        else if (strncmp(opcode, "fsqrt", 5) == 0) {
-            int fd = freg_num(r0, pc);
-            int fs1 = freg_num(r1, pc);
-            if(fd < 0 || fs1 < 0 ){
-                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
-                return 1;
-            }
-            freg[fd] = sqrt(freg[fs1]);
-            if (pre_inst_is_flw && (fs1==pre_flw_rd)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
-            pc = pc + 4;
-        }
+        // // fsqrt fd, fs1
+        // else if (strncmp(opcode, "fsqrt", 5) == 0) {
+        //     int fd = freg_num(r0, pc);
+        //     int fs1 = freg_num(r1, pc);
+        //     if(fd < 0 || fs1 < 0 ){
+        //         printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+        //         return 1;
+        //     }
+        //     freg[fd] = sqrt(freg[fs1]);
+        //     if (pre_inst_is_flw && (fs1==pre_flw_rd)) {
+        //         clk += 2;
+        //     } else {
+        //         clk++;
+        //     }
+        //     pre_inst_is_lw = 0;
+        //     pre_inst_is_flw = 0;
+        //     pc = pc + 4;
+        // }
         // fsgnjn fd, fs1, fs2
         else if (strncmp(opcode, "fsgnjn", 6) == 0) {
             int fd = freg_num(r0, pc);
@@ -814,13 +725,13 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
             freg[fd] = fabs(freg[fs1]) * (-sign(freg[fs2]));
-            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // fsgnjx fd, fs1, fs2
@@ -833,13 +744,13 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
             freg[fd] = freg[fs1] * sign(freg[fs2]);
-            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // fsgnj fd, fs1, fs2
@@ -852,13 +763,13 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
             freg[fd] = fabs(freg[fs1]) * sign(freg[fs2]);
-            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // fcvtsw fd, rs1
@@ -870,13 +781,13 @@ int main(int argc, char* argv[]) {
             }
             int rs1 = reg_num(r1, pc);
             freg[fd] = (float)(reg[rs1]);
-            if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // fcvtws rd, fs1
@@ -888,13 +799,13 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
             reg[rd] = (int)round(freg[fs1]); // 最近傍
-            if (pre_inst_is_flw && (fs1==pre_flw_rd)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_flw && (fs1==pre_flw_rd)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // feq rd, fs1, fs2
@@ -907,13 +818,13 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
             reg[rd] = (freg[fs1] == freg[fs2]);
-            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
-                clk += 2;
-            } else {
-                clk++;
-            } // is feq stall 0 clk?
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // } // is feq stall 0 clk?
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
         // flt rd, fs1, fs2
@@ -930,34 +841,34 @@ int main(int argc, char* argv[]) {
             else if(fs2 == 100)reg[rd] = freg[fs1] < 0;
             else reg[rd] = (freg[fs1] < freg[fs2]);
 
-            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = pc + 4;
         }
-        // fle rd, fs1, fs2
-        else if (strncmp(opcode, "fle", 3) == 0) {
-            int rd = reg_num(r0, pc);
-            int fs1 = freg_num(r1, pc);
-            int fs2 = freg_num(r2, pc);
-            if(fs1 < 0 || fs2 < 0){
-                printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
-                return 1;
-            }
-            reg[rd] = (freg[fs1] <= freg[fs2]);
-            if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
-            pc = pc + 4;
-        }
+        // // fle rd, fs1, fs2
+        // else if (strncmp(opcode, "fle", 3) == 0) {
+        //     int rd = reg_num(r0, pc);
+        //     int fs1 = freg_num(r1, pc);
+        //     int fs2 = freg_num(r2, pc);
+        //     if(fs1 < 0 || fs2 < 0){
+        //         printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+        //         return 1;
+        //     }
+        //     reg[rd] = (freg[fs1] <= freg[fs2]);
+        //     if (pre_inst_is_flw && ((fs1==pre_flw_rd) || (fs2==pre_flw_rd))) {
+        //         clk += 2;
+        //     } else {
+        //         clk++;
+        //     }
+        //     pre_inst_is_lw = 0;
+        //     pre_inst_is_flw = 0;
+        //     pc = pc + 4;
+        // }
         // jalr rd, rs1, imm
         else if (strncmp(opcode, "jalr", 4) == 0) {
             int rd = reg_num(r0, pc);
@@ -967,20 +878,20 @@ int main(int argc, char* argv[]) {
             if (rd != 0) {
                 reg[rd] = pre_pc + 4;
             }
-            if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
-                clk += 2;
-            } else {
-                clk++;
-            }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // if (pre_inst_is_lw && (rs1==pre_lw_rd) && (pre_lw_rd!=0)) {
+            //     clk += 2;
+            // } else {
+            //     clk++;
+            // }
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
         }
         // jal rd, label
         else if (strncmp(opcode, "jal", 3) == 0) {
             int rd = reg_num(r0, pc);
-            int jmp_addr;
-            for (int i=0; i<=1000; i++) {
-                if (i==1000) printf("[0x%X] cannot find label: %s\n", pc, r1);
+            int jmp_addr = 0;
+            for (int i=0; i<=600; i++) {
+                if (i==600) printf("[0x%X] cannot find label: %s\n", pc, r1);
                 if (strncmp(func_label[i], r1, strlen(r1)) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
@@ -989,8 +900,8 @@ int main(int argc, char* argv[]) {
             if (rd != 0) {
                 reg[rd] = pc + 4;
             }
-            pre_inst_is_lw = 0;
-            pre_inst_is_flw = 0;
+            // pre_inst_is_lw = 0;
+            // pre_inst_is_flw = 0;
             pc = jmp_addr;
             clk++;
         }
@@ -1032,12 +943,8 @@ int main(int argc, char* argv[]) {
         if (inst_count % 100000000 == 0) {
             cout << "now inst count: " << inst_count << endl;
         }
-        // if (reg[10] > 8188) {
-        //     printf("reg[10] is broken! pc: 0x%X\n", pre_pc);
-        //     break;
-        // }
 
-        if (pc == pre_pc) { // ループするのはおかしい？
+        if (pc == pre_pc) {
             cout << "same pc!" << endl;
             break;
         }
@@ -1054,8 +961,8 @@ int main(int argc, char* argv[]) {
     
     // print func_label
     cout << "------ function label ------" << endl << endl;
-    for (int i=0; i<1000; i++) {
-        printf("[%d] 0x%X: %s\n", i, func_label_addr[i], func_label[i]);
+    for (int i=0; i<600; i++) {
+        printf("[%d] 0x%X: %s\n", i*4, func_label_addr[i], func_label[i]);
     }
     printf("inst_count: %lld\n", inst_count);
     printf("clk: %lld\n", clk);
