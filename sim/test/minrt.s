@@ -13096,8 +13096,8 @@ min_caml_start:
 	sw	s2,12(t6) 
 	sw	a5,8(t6) 
 	sw	a1,4(t6) 
-	addi	a0, x0, 512
-	addi	a1, x0, 512
+	addi	a0, x0, 2
+	addi	a1, x0, 2
 	addi	a2, x0, 3
 	lw	t5, 0(t6)
 	sw	t6, -160(sp)

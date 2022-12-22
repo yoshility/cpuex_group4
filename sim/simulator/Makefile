@@ -1,6 +1,6 @@
 CC 		= g++
 TARGET 	= sim
-SRCS 	= sim_inst.cpp
+SRCS 	= sim_copy.cpp
 SRCS 	+= helper.cpp
 
 $(TARGET): $(SRCS)

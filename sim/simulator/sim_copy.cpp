@@ -35,6 +35,36 @@ unordered_map<string, int> op_n = {
     {"jal", 27}
 };
 
+unordered_map<int, string> n_op = {
+    {1, "addi"},
+    {2, "add"},
+    {3, "sub"},
+    {4, "mul"},
+    {5, "div"},
+    {6, "slli"},
+    {7, "lui"},
+    {8, "beq"},
+    {9, "bne"},
+    {10, "blt"},
+    {11, "lw"},
+    {12, "sw"},
+    {13, "fadd"},
+    {14, "fsub"},
+    {15, "fmul"},
+    {16, "fdiv"},
+    {17, "flw"},
+    {18, "fsw"},
+    {19, "fsgnjn"},
+    {20, "fsgnjx"},
+    {21, "fsgnj"},
+    {22, "fcvtsw"},
+    {23, "fcvtws"},
+    {24, "feq"},
+    {25, "flt"},
+    {26, "jalr"},
+    {27, "jal"}
+};
+
 unordered_map<string, int> reg_num = {
     {"x0", 0},
     {"ra", 1},
@@ -242,7 +272,9 @@ int main(int argc, char* argv[]) {
         sscanf(inst_memory[pc/4], "%d%s%s%s", &opcode_n, r0, r1, r2);
 
         if (debug) {
-            printf("####[pc: 0x%08X | %d %s %s %s]##############################################################################\n", pc, opcode_n, r0, r1, r2);
+            printf("####[pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s]##############################################################################\n", r0, r1, r2);
         }
         // 書き変わる前のpcを保持
         pre_pc = pc;
