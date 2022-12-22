@@ -829,6 +829,10 @@ create_float_array_cont:
 	addi hp, hp, 8
 	addi a0, a0, -1
 	jal	x0, create_float_array_loop
+min_caml_sqrt:
+	fsqrt	fa0, fa0
+	jalr x0, ra, 0
+	addi x0, x0, 0
 xor.2403.5906:
 	addi	t5, x0, 0
 	bne	a0, t5, be_else.12732
@@ -12456,7 +12460,7 @@ min_caml_start:
 	lw	t6, -152(sp)
 	addi	a1, hp 0
 	addi	hp, hp, 24
-	addi	t5, x0, 4420
+	addi	t5, x0, 4428
 	addi	a2, t5, 0
 	sw	a2,0(a1) 
 	lw	a2, -12(sp)
@@ -12471,7 +12475,7 @@ min_caml_start:
 	sw	a6,4(a1) 
 	addi	a6, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 5248
+	addi	t5, x0, 5256
 	addi	a7, t5, 0
 	sw	a7,0(a6) 
 	lw	a7, -16(sp)
@@ -12480,14 +12484,14 @@ min_caml_start:
 	sw	s1,4(a6) 
 	addi	s2, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 6888
+	addi	t5, x0, 6896
 	addi	s3, t5, 0
 	sw	s3,0(s2) 
 	lw	s3, -4(sp)
 	sw	s3,4(s2) 
 	addi	s4, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 8868
+	addi	t5, x0, 8876
 	addi	s5, t5, 0
 	sw	s5,0(s4) 
 	sw	s2,8(s4) 
@@ -12495,20 +12499,20 @@ min_caml_start:
 	sw	s2,4(s4) 
 	addi	s5, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 8992
+	addi	t5, x0, 9000
 	addi	s6, t5, 0
 	sw	s6,0(s5) 
 	sw	s4,4(s5) 
 	addi	s4, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 9280
+	addi	t5, x0, 9288
 	addi	s6, t5, 0
 	sw	s6,0(s4) 
 	lw	s6, -28(sp)
 	sw	s6,4(s4) 
 	addi	s7, hp 0
 	addi	hp, hp, 24
-	addi	t5, x0, 9392
+	addi	t5, x0, 9400
 	addi	s8, t5, 0
 	sw	s8,0(s7) 
 	sw	a1,20(s7) 
@@ -12519,32 +12523,32 @@ min_caml_start:
 	sw	a1,4(s7) 
 	addi	a6, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 9628
+	addi	t5, x0, 9636
 	addi	s4, t5, 0
 	sw	s4,0(a6) 
 	lw	s4, -40(sp)
 	sw	s4,4(a6) 
 	addi	s5, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 10264
+	addi	t5, x0, 10272
 	addi	s8, t5, 0
 	sw	s8,0(s5) 
 	sw	a6,4(s5) 
 	addi	a6, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 10544
+	addi	t5, x0, 10552
 	addi	s8, t5, 0
 	sw	s8,0(a6) 
 	sw	s4,4(a6) 
 	addi	s8, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 11876
+	addi	t5, x0, 11884
 	addi	s9, t5, 0
 	sw	s9,0(s8) 
 	sw	s4,4(s8) 
 	addi	s9, hp 0
 	addi	hp, hp, 24
-	addi	t5, x0, 12500
+	addi	t5, x0, 12508
 	addi	t1, t5, 0
 	sw	t1,0(s9) 
 	sw	a6,16(s9) 
@@ -12553,25 +12557,25 @@ min_caml_start:
 	sw	s3,4(s9) 
 	addi	a6, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 12872
+	addi	t5, x0, 12880
 	addi	s5, t5, 0
 	sw	s5,0(a6) 
 	sw	s4,4(a6) 
 	addi	s5, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 14232
+	addi	t5, x0, 14240
 	addi	s8, t5, 0
 	sw	s8,0(s5) 
 	sw	s4,4(s5) 
 	addi	s8, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 14400
+	addi	t5, x0, 14408
 	addi	t1, t5, 0
 	sw	t1,0(s8) 
 	sw	s4,4(s8) 
 	addi	t1, hp 0
 	addi	hp, hp, 24
-	addi	t5, x0, 14988
+	addi	t5, x0, 14996
 	addi	t2, t5, 0
 	sw	t2,0(t1) 
 	sw	s5,16(t1) 
@@ -12580,19 +12584,19 @@ min_caml_start:
 	sw	s3,4(t1) 
 	addi	s5, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 15460
+	addi	t5, x0, 15468
 	addi	s8, t5, 0
 	sw	s8,0(s5) 
 	sw	s4,4(s5) 
 	addi	s8, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 15584
+	addi	t5, x0, 15592
 	addi	t2, t5, 0
 	sw	t2,0(s8) 
 	sw	s4,4(s8) 
 	addi	t2, hp 0
 	addi	hp, hp, 24
-	addi	t5, x0, 16056
+	addi	t5, x0, 16064
 	addi	t3, t5, 0
 	sw	t3,0(t2) 
 	sw	s5,16(t2) 
@@ -12601,26 +12605,26 @@ min_caml_start:
 	sw	s3,4(t2) 
 	addi	a6, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 19172
+	addi	t5, x0, 19180
 	addi	s5, t5, 0
 	sw	s5,0(a6) 
 	sw	s3,4(a6) 
 	addi	s5, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 19556
+	addi	t5, x0, 19564
 	addi	s8, t5, 0
 	sw	s8,0(s5) 
 	sw	s2,8(s5) 
 	sw	a6,4(s5) 
 	addi	a6, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 19584
+	addi	t5, x0, 19592
 	addi	s8, t5, 0
 	sw	s8,0(a6) 
 	sw	s3,4(a6) 
 	addi	s8, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 20204
+	addi	t5, x0, 20212
 	addi	t3, t5, 0
 	sw	t3,0(s8) 
 	lw	t3, -92(sp)
@@ -12629,13 +12633,13 @@ min_caml_start:
 	sw	s2,4(s8) 
 	addi	a6, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 21472
+	addi	t5, x0, 21480
 	addi	t4, t5, 0
 	sw	t4,0(a6) 
 	sw	s3,4(a6) 
 	addi	t4, hp 0
 	addi	hp, hp, 32
-	addi	t5, x0, 21632
+	addi	t5, x0, 21640
 	addi	t5, t5, 0
 	sw	t5,0(t4) 
 	sw	t1,28(t4) 
@@ -12651,14 +12655,14 @@ min_caml_start:
 	addi	s7, hp 0
 	addi	hp, hp, 16
 	sw	s5, -144(sp)
-	addi	t5, x0, 22164
+	addi	t5, x0, 22172
 	addi	s5, t5, 0
 	sw	s5,0(s7) 
 	sw	t4,8(s7) 
 	sw	s6,4(s7) 
 	addi	s5, hp 0
 	addi	hp, hp, 24
-	addi	t5, x0, 22320
+	addi	t5, x0, 22328
 	addi	t4, t5, 0
 	sw	t4,0(s5) 
 	sw	t1,20(s5) 
@@ -12668,7 +12672,7 @@ min_caml_start:
 	sw	t6,4(s5) 
 	addi	s7, hp 0
 	addi	hp, hp, 40
-	addi	t5, x0, 22764
+	addi	t5, x0, 22772
 	addi	t1, t5, 0
 	sw	t1,0(s7) 
 	lw	t1, -48(sp)
@@ -12686,14 +12690,14 @@ min_caml_start:
 	sw	a6,4(s7) 
 	addi	a4, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 23484
+	addi	t5, x0, 23492
 	addi	a3, t5, 0
 	sw	a3,0(a4) 
 	sw	s7,8(a4) 
 	sw	s6,4(a4) 
 	addi	a3, hp 0
 	addi	hp, hp, 24
-	addi	t5, x0, 23624
+	addi	t5, x0, 23632
 	addi	s7, t5, 0
 	sw	s7,0(a3) 
 	sw	t1,20(a3) 
@@ -12703,7 +12707,7 @@ min_caml_start:
 	sw	a4,4(a3) 
 	addi	a4, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 23996
+	addi	t5, x0, 24004
 	addi	s7, t5, 0
 	sw	s7,0(a4) 
 	sw	a3,12(a4) 
@@ -12711,7 +12715,7 @@ min_caml_start:
 	sw	a1,4(a4) 
 	addi	a3, hp 0
 	addi	hp, hp, 40
-	addi	t5, x0, 24176
+	addi	t5, x0, 24184
 	addi	s7, t5, 0
 	sw	s7,0(a3) 
 	sw	t1,36(a3) 
@@ -12725,14 +12729,14 @@ min_caml_start:
 	sw	a6,4(a3) 
 	addi	a6, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 24936
+	addi	t5, x0, 24944
 	addi	s7, t5, 0
 	sw	s7,0(a6) 
 	sw	a3,8(a6) 
 	sw	s6,4(a6) 
 	addi	a3, hp 0
 	addi	hp, hp, 24
-	addi	t5, x0, 25076
+	addi	t5, x0, 25084
 	addi	s6, t5, 0
 	sw	s6,0(a3) 
 	sw	t1,16(a3) 
@@ -12741,7 +12745,7 @@ min_caml_start:
 	sw	a6,4(a3) 
 	addi	a6, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 25440
+	addi	t5, x0, 25448
 	addi	s4, t5, 0
 	sw	s4,0(a6) 
 	sw	a3,12(a6) 
@@ -12749,7 +12753,7 @@ min_caml_start:
 	sw	a1,4(a6) 
 	addi	a3, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 25620
+	addi	t5, x0, 25628
 	addi	s4, t5, 0
 	sw	s4,0(a3) 
 	lw	s4, -60(sp)
@@ -12757,20 +12761,20 @@ min_caml_start:
 	sw	t5,4(a3) 
 	addi	s6, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 25796
+	addi	t5, x0, 25804
 	addi	s7, t5, 0
 	sw	s7,0(s6) 
 	sw	s4,4(s6) 
 	addi	s7, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 26036
+	addi	t5, x0, 26044
 	addi	s9, t5, 0
 	sw	s9,0(s7) 
 	sw	s4,8(s7) 
 	sw	t6,4(s7) 
 	addi	s9, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 26932
+	addi	t5, x0, 26940
 	addi	t2, t5, 0
 	sw	t2,0(s9) 
 	sw	s7,12(s9) 
@@ -12778,14 +12782,14 @@ min_caml_start:
 	sw	s6,4(s9) 
 	addi	a3, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 27056
+	addi	t5, x0, 27064
 	addi	s6, t5, 0
 	sw	s6,0(a3) 
 	lw	s6, -64(sp)
 	sw	s6,4(a3) 
 	addi	s7, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 29504
+	addi	t5, x0, 29512
 	addi	t2, t5, 0
 	sw	t2,0(s7) 
 	sw	s6,8(s7) 
@@ -12793,7 +12797,7 @@ min_caml_start:
 	sw	t2,4(s7) 
 	addi	t3, hp 0
 	addi	hp, hp, 40
-	addi	t5, x0, 29808
+	addi	t5, x0, 29816
 	addi	a5, t5, 0
 	sw	a5,0(t3) 
 	sw	s5,32(t3) 
@@ -12807,7 +12811,7 @@ min_caml_start:
 	sw	s7,4(t3) 
 	addi	a5, hp 0
 	addi	hp, hp, 88
-	addi	t5, x0, 30460
+	addi	t5, x0, 30468
 	addi	a2, t5, 0
 	sw	a2,0(a5) 
 	sw	a3,80(a5) 
@@ -12832,7 +12836,7 @@ min_caml_start:
 	sw	s7,4(a5) 
 	addi	a2, hp 0
 	addi	hp, hp, 56
-	addi	t5, x0, 32568
+	addi	t5, x0, 32576
 	addi	a4, t5, 0
 	sw	a4,0(a2) 
 	sw	a3,48(a2) 
@@ -12850,20 +12854,20 @@ min_caml_start:
 	sw	a1,4(a2) 
 	addi	a3, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 33136
+	addi	t5, x0, 33144
 	addi	a4, t5, 0
 	sw	a4,0(a3) 
 	sw	a2,4(a3) 
 	addi	a2, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 33496
+	addi	t5, x0, 33504
 	addi	a4, t5, 0
 	sw	a4,0(a2) 
 	sw	s8,8(a2) 
 	sw	a3,4(a2) 
 	addi	a3, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 33588
+	addi	t5, x0, 33596
 	addi	a4, t5, 0
 	sw	a4,0(a3) 
 	sw	a2,8(a3) 
@@ -12871,7 +12875,7 @@ min_caml_start:
 	sw	a4,4(a3) 
 	addi	a6, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 34012
+	addi	t5, x0, 34020
 	addi	s1, t5, 0
 	sw	s1,0(a6) 
 	sw	a3,12(a6) 
@@ -12879,46 +12883,46 @@ min_caml_start:
 	sw	a1,4(a6) 
 	addi	a3, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 34400
+	addi	t5, x0, 34408
 	addi	s1, t5, 0
 	sw	s1,0(a3) 
 	sw	t2,8(a3) 
 	sw	a1,4(a3) 
 	addi	s1, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 35072
+	addi	t5, x0, 35080
 	addi	s2, t5, 0
 	sw	s2,0(s1) 
 	sw	a6,4(s1) 
 	addi	a6, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 35300
+	addi	t5, x0, 35308
 	addi	s2, t5, 0
 	sw	s2,0(a6) 
 	lw	s2, -76(sp)
 	sw	s2,4(a6) 
 	addi	s4, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 35876
+	addi	t5, x0, 35884
 	addi	s5, t5, 0
 	sw	s5,0(s4) 
 	sw	s1,8(s4) 
 	sw	a3,4(s4) 
 	addi	a3, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 36256
+	addi	t5, x0, 36264
 	addi	s5, t5, 0
 	sw	s5,0(a3) 
 	sw	s2,4(a3) 
 	addi	s5, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 36720
+	addi	t5, x0, 36728
 	addi	s6, t5, 0
 	sw	s6,0(s5) 
 	sw	t2,4(s5) 
 	addi	s6, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 37020
+	addi	t5, x0, 37028
 	addi	s7, t5, 0
 	sw	s7,0(s6) 
 	sw	a2,12(s6) 
@@ -12926,7 +12930,7 @@ min_caml_start:
 	sw	a1,4(s6) 
 	addi	a1, hp 0
 	addi	hp, hp, 40
-	addi	t5, x0, 37536
+	addi	t5, x0, 37544
 	addi	a2, t5, 0
 	sw	a2,0(a1) 
 	lw	a2, -12(sp)
@@ -12945,7 +12949,7 @@ min_caml_start:
 	sw	a5,4(a1) 
 	addi	s6, hp 0
 	addi	hp, hp, 32
-	addi	t5, x0, 38296
+	addi	t5, x0, 38304
 	addi	s7, t5, 0
 	sw	s7,0(s6) 
 	lw	s7, -104(sp)
@@ -12958,7 +12962,7 @@ min_caml_start:
 	sw	a5,4(s6) 
 	addi	a1, hp 0
 	addi	hp, hp, 32
-	addi	t5, x0, 38540
+	addi	t5, x0, 38548
 	addi	s7, t5, 0
 	sw	s7,0(a1) 
 	sw	s5,24(a1) 
@@ -12969,7 +12973,7 @@ min_caml_start:
 	sw	s1,4(a1) 
 	addi	a6, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 38988
+	addi	t5, x0, 38996
 	addi	s1, t5, 0
 	sw	s1,0(a6) 
 	sw	a1,12(a6) 
@@ -12977,44 +12981,44 @@ min_caml_start:
 	sw	s2,4(a6) 
 	addi	a1, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 40060
+	addi	t5, x0, 40068
 	addi	s1, t5, 0
 	sw	s1,0(a1) 
 	sw	s2,4(a1) 
 	addi	s1, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 40400
+	addi	t5, x0, 40408
 	addi	s4, t5, 0
 	sw	s4,0(s1) 
 	sw	a4,4(s1) 
 	addi	s4, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 41656
+	addi	t5, x0, 41664
 	addi	s5, t5, 0
 	sw	s5,0(s4) 
 	sw	s1,4(s4) 
 	addi	s1, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 42032
+	addi	t5, x0, 42040
 	addi	s5, t5, 0
 	sw	s5,0(s1) 
 	sw	s4,4(s1) 
 	addi	s4, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 42252
+	addi	t5, x0, 42260
 	addi	s5, t5, 0
 	sw	s5,0(s4) 
 	lw	s5, -0(sp)
 	sw	s5,4(s4) 
 	addi	s7, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 42384
+	addi	t5, x0, 42392
 	addi	s8, t5, 0
 	sw	s8,0(s7) 
 	sw	s4,4(s7) 
 	addi	s8, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 42492
+	addi	t5, x0, 42500
 	addi	s9, t5, 0
 	sw	s9,0(s8) 
 	sw	a4,12(s8) 
@@ -13022,21 +13026,21 @@ min_caml_start:
 	sw	s4,4(s8) 
 	addi	s7, hp 0
 	addi	hp, hp, 8
-	addi	t5, x0, 42712
+	addi	t5, x0, 42720
 	addi	s9, t5, 0
 	sw	s9,0(s7) 
 	lw	s9, -144(sp)
 	sw	s9,4(s7) 
 	addi	t1, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 42820
+	addi	t5, x0, 42828
 	addi	t2, t5, 0
 	sw	t2,0(t1) 
 	sw	s7,8(t1) 
 	sw	a4,4(t1) 
 	addi	a4, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 42932
+	addi	t5, x0, 42940
 	addi	s7, t5, 0
 	sw	s7,0(a4) 
 	sw	t1,12(a4) 
@@ -13044,7 +13048,7 @@ min_caml_start:
 	sw	s1,4(a4) 
 	addi	s1, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 43060
+	addi	t5, x0, 43068
 	addi	s7, t5, 0
 	sw	s7,0(s1) 
 	sw	s9,12(s1) 
@@ -13053,7 +13057,7 @@ min_caml_start:
 	sw	s4,4(s1) 
 	addi	s4, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 43308
+	addi	t5, x0, 43316
 	addi	s7, t5, 0
 	sw	s7,0(s4) 
 	sw	a0,12(s4) 
@@ -13061,7 +13065,7 @@ min_caml_start:
 	sw	s1,4(s4) 
 	addi	s7, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 43828
+	addi	t5, x0, 43836
 	addi	s8, t5, 0
 	sw	s8,0(s7) 
 	sw	a0,12(s7) 
@@ -13069,7 +13073,7 @@ min_caml_start:
 	sw	s1,4(s7) 
 	addi	a0, hp 0
 	addi	hp, hp, 16
-	addi	t5, x0, 44340
+	addi	t5, x0, 44348
 	addi	s1, t5, 0
 	sw	s1,0(a0) 
 	sw	s7,12(a0) 
@@ -13077,7 +13081,7 @@ min_caml_start:
 	sw	s3,4(a0) 
 	addi	t6, hp 0
 	addi	hp, hp, 64
-	addi	t5, x0, 44624
+	addi	t5, x0, 44632
 	addi	s1, t5, 0
 	sw	s1,0(t6) 
 	sw	a3,56(t6) 
@@ -13096,8 +13100,8 @@ min_caml_start:
 	sw	s2,12(t6) 
 	sw	a5,8(t6) 
 	sw	a1,4(t6) 
-	addi	a0, x0, 512
-	addi	a1, x0, 512
+	addi	a0, x0, 2
+	addi	a1, x0, 2
 	addi	a2, x0, 3
 	lw	t5, 0(t6)
 	sw	t6, -160(sp)
