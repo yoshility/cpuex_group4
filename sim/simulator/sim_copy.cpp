@@ -24,15 +24,16 @@ unordered_map<string, int> op_n = {
     {"fdiv", 16},
     {"flw", 17},
     {"fsw", 18},
-    {"fsgnjn", 19},
-    {"fsgnjx", 20},
-    {"fsgnj", 21},
-    {"fcvtsw", 22},
-    {"fcvtws", 23},
-    {"feq", 24},
-    {"flt", 25},
-    {"jalr", 26},
-    {"jal", 27}
+    {"fsqrt", 19},
+    {"fsgnjn", 20},
+    {"fsgnjx", 21},
+    {"fsgnj", 22},
+    {"fcvtsw", 23},
+    {"fcvtws", 24},
+    {"feq", 25},
+    {"flt", 26},
+    {"jalr", 27},
+    {"jal", 28}
 };
 
 unordered_map<int, string> n_op = {
@@ -54,15 +55,16 @@ unordered_map<int, string> n_op = {
     {16, "fdiv"},
     {17, "flw"},
     {18, "fsw"},
-    {19, "fsgnjn"},
-    {20, "fsgnjx"},
-    {21, "fsgnj"},
-    {22, "fcvtsw"},
-    {23, "fcvtws"},
-    {24, "feq"},
-    {25, "flt"},
-    {26, "jalr"},
-    {27, "jal"}
+    {19, "fsqrt"},
+    {20, "fsgnjn"},
+    {21, "fsgnjx"},
+    {22, "fsgnj"},
+    {23, "fcvtsw"},
+    {24, "fcvtws"},
+    {25, "feq"},
+    {26, "flt"},
+    {27, "jalr"},
+    {28, "jal"}
 };
 
 unordered_map<string, int> reg_num = {
@@ -370,6 +372,7 @@ int main(int argc, char* argv[]) {
                 rs1 = reg_num[r2];
                 // input
                 if (rs1 == 26) {
+                    cout << "\tinput!" << endl;
                     char i[10];
                     if ((fscanf(in_sld, "%s", i)) != EOF) {
                         reg[rd] = atoi(i);
@@ -380,6 +383,7 @@ int main(int argc, char* argv[]) {
                 // regular lw
                 else {
                     reg[rd] = memory.d[(reg[rs1]+imm)/4].i;
+                    printf("\t[lw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                 }
                 pc = pc + 4;
                 break;
@@ -390,15 +394,18 @@ int main(int argc, char* argv[]) {
                 rs1 = reg_num[r2];
                 // int output
                 if (rs1 == 26) {
+                    cout << "\tint output!" << endl;
                     fprintf(out_ppm, "%d", reg[rs2]);
                 }
                 // char output
                 else if (rs1 == 27) {
+                    cout << "\tchar output!" << endl;
                     fprintf(out_ppm, "%c", reg[rs2]);
                 }
                 // regular sw
                 else {
                     memory.d[(reg[rs1]+imm)/4].i = reg[rs2];
+                    printf("\t[sw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                 }
                 pc = pc + 4;
                 break;
@@ -461,6 +468,7 @@ int main(int argc, char* argv[]) {
                 rs1 = reg_num[r2];
                 // input
                 if (rs1 == 27) {
+                    cout << "\tinput!" << endl;
                     char i[10];
                     if ((fscanf(in_sld, "%s", i)) != EOF) {
                         freg[fd] = atof(i);
@@ -472,6 +480,7 @@ int main(int argc, char* argv[]) {
                 // regular flw
                 else {
                     freg[fd] = memory.d[(reg[rs1]+imm)/4].f;
+                    printf("\t[flw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                 }
                 pc = pc + 4;
                 break;
@@ -485,10 +494,21 @@ int main(int argc, char* argv[]) {
                     return 1;
                 }
                 memory.d[(reg[rs1]+imm)/4].f = freg[fs2];
+                printf("\t[fsw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                 pc = pc + 4;
                 break;
-            // fsgnjn fd, fs1, fs2
+            // fsqrt fd, fs1
             case 19:
+                fd = freg_num[r0];
+                fs1 = freg_num[r1];
+                if(fd < 0 || fs1 < 0 ){
+                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                    return 1;
+                }
+                freg[fd] = sqrt(freg[fs1]);
+                pc = pc + 4;
+            // fsgnjn fd, fs1, fs2
+            case 20:
                 fd = freg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
@@ -500,7 +520,7 @@ int main(int argc, char* argv[]) {
                 pc = pc + 4;
                 break;
             // fsgnjx fd, fs1, fs2
-            case 20:
+            case 21:
                 fd = freg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
@@ -512,7 +532,7 @@ int main(int argc, char* argv[]) {
                 pc = pc + 4;
                 break;
             // fsgnj fd, fs1, fs2
-            case 21:
+            case 22:
                 fd = freg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
@@ -524,7 +544,7 @@ int main(int argc, char* argv[]) {
                 pc = pc + 4;
                 break;
             // fcvtsw fd, rs1
-            case 22:
+            case 23:
                 fd = freg_num[r0];
                 if(fd < 0 ){
                     printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
@@ -535,7 +555,7 @@ int main(int argc, char* argv[]) {
                 pc = pc + 4;
                 break;
             // fcvtws rd, fs1
-            case 23:
+            case 24:
                 rd = reg_num[r0];
                 fs1 = freg_num[r1];
                 if( fs1 < 0){
@@ -546,7 +566,7 @@ int main(int argc, char* argv[]) {
                 pc = pc + 4;
                 break;
             // feq rd, fs1, fs2
-            case 24:
+            case 25:
                 rd = reg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
@@ -558,7 +578,7 @@ int main(int argc, char* argv[]) {
                 pc = pc + 4;
                 break;
             // flt rd, fs1, fs2
-            case 25:
+            case 26:
                 rd = reg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
@@ -573,7 +593,7 @@ int main(int argc, char* argv[]) {
                 pc = pc + 4;
                 break;
             // jalr rd, rs1, imm
-            case 26:
+            case 27:
                 rd = reg_num[r0];
                 rs1 = reg_num[r1];
                 imm = atoi(r2);
@@ -583,7 +603,7 @@ int main(int argc, char* argv[]) {
                 }
                 break;
             // jal rd, label
-            case 27:
+            case 28:
                 rd = reg_num[r0];
                 if (rd != 0) {
                     reg[rd] = pc + 4;
