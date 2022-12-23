@@ -139,8 +139,8 @@ unordered_map<string, int> freg_num = {
     {"ft11", 31}
 };
 
-int reg[32] = {0};                  // integer register
-float freg[32] = {0.0};             // float register
+int reg[32] = {0};                          // integer register
+float freg[32] = {0.0};                     // float register
 
 int main(int argc, char* argv[]) {
     FILE *in, *in_sld, *out_ppm;
@@ -165,16 +165,16 @@ int main(int argc, char* argv[]) {
     bool use_cache = atoi(argv[5]);
     bool step_by_step = atoi(argv[6]);
 
-    char **inst_memory;             // instr memory
+    char **inst_memory;                     // instr memory
     inst_memory = (char**)malloc(sizeof(char*) * INST_MEMORY_SIZE);
     for (int i=0; i<INST_MEMORY_SIZE; i++) {
         inst_memory[i] = (char*)malloc(sizeof(char) * 30);
     }
-    Memory memory;                  // data memory
-    Cache cache;                    // data cache
+    Memory memory;                          // data memory
+    Cache cache;                            // data cache
     // int line_num = 1 << INDEX_WIDTH;
     // int line_size = 1 << (OFFSET_WIDTH - 2);
-    // int LRU = 0;                    // 使われていないほうのway番号（2wayのみ対応）
+    // int LRU = 0;                         // 使われていないほうのway番号（2wayのみ対応）
 
     char line[BUFSIZE];
     char opcode[30];
@@ -187,16 +187,12 @@ int main(int argc, char* argv[]) {
     char str[150];
 
     // 1回目の読みでラベルを探してデータをデータ領域に、命令を命令メモリに格納
-    int addr = 0;                   // 命令アドレス
-    int data_addr = 0;              // データセクションでのアドレス
-    // int func_label_index = 0;
-    // char func_label[600][50];      // 関数ラベル名
-    unordered_map<string, int> func_label;
-    // int func_label_addr[600];      // 関数ラベルアドレス
-    // char data_label[64][10];        // データラベル名(indexがアドレスになる) (1/4に圧縮)
-    unordered_map<string, int> data_label;
+    int addr = 0;                           // 命令アドレス
+    int data_addr = 0;                      // データセクションでのアドレス
+    unordered_map<string, int> func_label;  // 関数ラベル名
+    unordered_map<string, int> data_label;  // データラベル名
     int pc = 0;
-    bool is_data = 0;               // 現在データセクションかどうか
+    bool is_data = 0;                       // 現在データセクションかどうか
     // string str;
 
     while (fgets(line, BUFSIZE, in) != NULL) {
@@ -212,7 +208,7 @@ int main(int argc, char* argv[]) {
             opcode[strlen(opcode)-1] = '\0';
             func_label[opcode] = addr;
             if (debug) {
-                printf("0x%08X\t%s\n", addr, opcode);
+                printf("0x%08X\t%s:\n", addr, opcode);
             }
             // ラベルがmin_caml_startなら、このときのaddrをpcの初期値にする
             if (strncmp(opcode, "min_caml_start", 14) == 0) {
@@ -383,7 +379,9 @@ int main(int argc, char* argv[]) {
                 // regular lw
                 else {
                     reg[rd] = memory.d[(reg[rs1]+imm)/4].i;
-                    printf("\t[lw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                    if (debug) {
+                        printf("\t[lw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                    }
                 }
                 pc = pc + 4;
                 break;
@@ -405,7 +403,9 @@ int main(int argc, char* argv[]) {
                 // regular sw
                 else {
                     memory.d[(reg[rs1]+imm)/4].i = reg[rs2];
-                    printf("\t[sw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                    if (debug) {
+                        printf("\t[sw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                    }
                 }
                 pc = pc + 4;
                 break;
@@ -480,7 +480,9 @@ int main(int argc, char* argv[]) {
                 // regular flw
                 else {
                     freg[fd] = memory.d[(reg[rs1]+imm)/4].f;
-                    printf("\t[flw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                    if (debug) {
+                        printf("\t[flw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                    }
                 }
                 pc = pc + 4;
                 break;
@@ -494,7 +496,9 @@ int main(int argc, char* argv[]) {
                     return 1;
                 }
                 memory.d[(reg[rs1]+imm)/4].f = freg[fs2];
-                printf("\t[fsw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                if (debug) {
+                    printf("\t[fsw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                }
                 pc = pc + 4;
                 break;
             // fsqrt fd, fs1
