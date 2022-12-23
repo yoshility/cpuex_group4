@@ -2669,7 +2669,7 @@ bg_else.12773:
 	sw	ra, -16(sp)
 	addi	sp, sp, -32
 	jalr	ra, t5, 0
-	addi	sp, sp, 32
+	addi	sp, sp, 32 # 15405
 	lw	ra, -16(sp)
 	lw	t6, -24(sp)
 	addi	t5, x0, 0
