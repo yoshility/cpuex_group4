@@ -246,9 +246,9 @@ int main(int argc, char* argv[]) {
 
     fclose(in);
     // print float table
-    cout << "------ float table ------" << endl << endl;
+    cout << "------ float table ------" << endl;
     for (auto itr = data_label.begin(); itr != data_label.end(); ++itr) {
-        cout << itr->first << " : " << itr->second << endl;
+        cout << "[key] " << itr->first << "\t[addr] " << itr->second << "\t[value] " << memory.d[itr->second/4].f << endl;
     }
     // あとは命令メモリを逐次実行
     reg[1] = 1025;              // first ra = 1025
@@ -258,7 +258,7 @@ int main(int argc, char* argv[]) {
     unsigned long long inst_count = 0;
     int rd, rs1, rs2, fd, fs1, fs2, imm;
     unsigned int uimm;
-    printf("Processing... 2\n");
+    printf("Processing... 3\n");
     while (1) {
         if (pc == 1025) { // 大元のra
             cout << "pc = 1025 !" << endl;
@@ -380,9 +380,12 @@ int main(int argc, char* argv[]) {
                 }
                 // regular lw
                 else {
+                    if (debug) {
+                        printf("\t[lw] <before> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                    }
                     reg[rd] = memory.d[(reg[rs1]+imm)/4].i;
                     if (debug) {
-                        printf("\t[lw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                        printf("\t[lw] <after> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                     }
                 }
                 pc = pc + 4;
@@ -408,9 +411,12 @@ int main(int argc, char* argv[]) {
                 }
                 // regular sw
                 else {
+                    if (debug) {
+                        printf("\t[sw] <before> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                    }
                     memory.d[(reg[rs1]+imm)/4].i = reg[rs2];
                     if (debug) {
-                        printf("\t[sw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                        printf("\t[sw] <after> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                     }
                 }
                 pc = pc + 4;
@@ -487,9 +493,12 @@ int main(int argc, char* argv[]) {
                 }
                 // regular flw
                 else {
+                    if (debug) {
+                        printf("\t[flw] <before> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                    }
                     freg[fd] = memory.d[(reg[rs1]+imm)/4].f;
                     if (debug) {
-                        printf("\t[flw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                        printf("\t[flw] <after> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                     }
                 }
                 pc = pc + 4;
@@ -503,9 +512,12 @@ int main(int argc, char* argv[]) {
                     printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                     return 1;
                 }
+                if (debug) {
+                    printf("\t[fsw] <before> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                }
                 memory.d[(reg[rs1]+imm)/4].f = freg[fs2];
                 if (debug) {
-                    printf("\t[fsw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
+                    printf("\t[fsw] <after> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                 }
                 pc = pc + 4;
                 break;
@@ -640,9 +652,9 @@ int main(int argc, char* argv[]) {
         }
 
         // print memory
-        if (debug && !use_cache) {
-            memory.print(8188, 8060);
-        }
+        // if (debug && !use_cache) {
+        //     memory.print(8188, 8060);
+        // }
 
         if (step_by_step) {
             char enter;

@@ -40,33 +40,8 @@ class TEST {
 
 
 int main(int argc, char* argv[]) {
-    char s1[30];
-    unordered_map<string, int> mp {
-        {"addi", 1},
-        {"add", 2},
-        {"sub", 3}
-    };
-    strcpy(s1, "add");
-    switch (mp[s1])
-    {
-    case 1:
-        cout << "addi!" << endl;
-        break;
-    case 2:
-        cout << "add!" << endl;
-        break;
-    default:
-        break;
-    }
-
-    char str[50];
-    sprintf(str, "%d %s %s %s", 5, "hello", "world", "!");
-    int a;
-    char b[10];
-    char c[10];
-    char d[10];
-    sscanf(str, "%d %s %s %s", &a, b, c, d);
-    cout << a << " " << b << " " << c << " " << d << endl;
+    double a = 5.8;
+    printf("%f\n", a);
 
 	return 0;
 }
