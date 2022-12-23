@@ -368,7 +368,9 @@ int main(int argc, char* argv[]) {
                 rs1 = reg_num[r2];
                 // input
                 if (rs1 == 26) {
-                    cout << "\tinput!" << endl;
+                    if (debug) {
+                        cout << "\t[lw] int input!" << endl;
+                    }
                     char i[10];
                     if ((fscanf(in_sld, "%s", i)) != EOF) {
                         reg[rd] = atoi(i);
@@ -392,12 +394,16 @@ int main(int argc, char* argv[]) {
                 rs1 = reg_num[r2];
                 // int output
                 if (rs1 == 26) {
-                    cout << "\tint output!" << endl;
+                    if (debug) {
+                        cout << "\t[sw] int output!" << endl;
+                    }
                     fprintf(out_ppm, "%d", reg[rs2]);
                 }
                 // char output
                 else if (rs1 == 27) {
-                    cout << "\tchar output!" << endl;
+                    if (debug) {
+                        cout << "\t[sw] char output!" << endl;
+                    }
                     fprintf(out_ppm, "%c", reg[rs2]);
                 }
                 // regular sw
@@ -468,7 +474,9 @@ int main(int argc, char* argv[]) {
                 rs1 = reg_num[r2];
                 // input
                 if (rs1 == 27) {
-                    cout << "\tinput!" << endl;
+                    if (debug) {
+                        cout << "\t[flw] float input!" << endl;
+                    }
                     char i[10];
                     if ((fscanf(in_sld, "%s", i)) != EOF) {
                         freg[fd] = atof(i);
