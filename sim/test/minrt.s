@@ -1000,7 +1000,8 @@ create_float_array_cont:
 min_caml_sqrt:
 	fsqrt	fa0, fa0
 	jalr x0, ra, 0
-	addi x0, x0, 0xor.2403.5906:
+	addi x0, x0, 0
+xor.2403.5906:
 	addi	t5, x0, 0
 	bne	a0, t5, be_else.12732
 	addi	a0, a1 0
@@ -2669,7 +2670,7 @@ bg_else.12773:
 	sw	ra, -16(sp)
 	addi	sp, sp, -32
 	jalr	ra, t5, 0
-	addi	sp, sp, 32 # 15405
+	addi	sp, sp, 32
 	lw	ra, -16(sp)
 	lw	t6, -24(sp)
 	addi	t5, x0, 0
