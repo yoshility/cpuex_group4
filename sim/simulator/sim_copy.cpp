@@ -139,8 +139,8 @@ unordered_map<string, int> freg_num = {
     {"ft11", 31}
 };
 
-int reg[32] = {0};                          // integer register
-float freg[32] = {0.0};                     // float register
+int reg[32] = {0};                  // integer register
+float freg[32] = {0.0};             // float register
 
 int main(int argc, char* argv[]) {
     FILE *in, *in_sld, *out_ppm;
@@ -165,16 +165,16 @@ int main(int argc, char* argv[]) {
     bool use_cache = atoi(argv[5]);
     bool step_by_step = atoi(argv[6]);
 
-    char **inst_memory;                     // instr memory
+    char **inst_memory;             // instr memory
     inst_memory = (char**)malloc(sizeof(char*) * INST_MEMORY_SIZE);
     for (int i=0; i<INST_MEMORY_SIZE; i++) {
         inst_memory[i] = (char*)malloc(sizeof(char) * 30);
     }
-    Memory memory;                          // data memory
-    Cache cache;                            // data cache
+    Memory memory;                  // data memory
+    Cache cache;                    // data cache
     // int line_num = 1 << INDEX_WIDTH;
     // int line_size = 1 << (OFFSET_WIDTH - 2);
-    // int LRU = 0;                         // 使われていないほうのway番号（2wayのみ対応）
+    // int LRU = 0;                    // 使われていないほうのway番号（2wayのみ対応）
 
     char line[BUFSIZE];
     char opcode[30];
@@ -187,12 +187,16 @@ int main(int argc, char* argv[]) {
     char str[150];
 
     // 1回目の読みでラベルを探してデータをデータ領域に、命令を命令メモリに格納
-    int addr = 0;                           // 命令アドレス
-    int data_addr = 0;                      // データセクションでのアドレス
-    unordered_map<string, int> func_label;  // 関数ラベル名
-    unordered_map<string, int> data_label;  // データラベル名
+    int addr = 0;                   // 命令アドレス
+    int data_addr = 0;              // データセクションでのアドレス
+    // int func_label_index = 0;
+    // char func_label[600][50];      // 関数ラベル名
+    unordered_map<string, int> func_label;
+    // int func_label_addr[600];      // 関数ラベルアドレス
+    // char data_label[64][10];        // データラベル名(indexがアドレスになる) (1/4に圧縮)
+    unordered_map<string, int> data_label;
     int pc = 0;
-    bool is_data = 0;                       // 現在データセクションかどうか
+    bool is_data = 0;               // 現在データセクションかどうか
     // string str;
 
     while (fgets(line, BUFSIZE, in) != NULL) {
@@ -207,8 +211,8 @@ int main(int argc, char* argv[]) {
             // ラベル名とアドレスの組をmapに格納
             opcode[strlen(opcode)-1] = '\0';
             func_label[opcode] = addr;
-            if (debug) {
-                printf("0x%08X\t%s:\n", addr, opcode);
+            if (debug ) {
+                printf("0x%08X\t%s\n", addr, opcode);
             }
             // ラベルがmin_caml_startなら、このときのaddrをpcの初期値にする
             if (strncmp(opcode, "min_caml_start", 14) == 0) {
@@ -237,7 +241,7 @@ int main(int argc, char* argv[]) {
             // 命令メモリのaddr/4番目に命令列を保管（addrは真のアドレス）
             sprintf(str, "%d %s %s %s", op_n[opcode], r0, r1, r2);
             strcpy(inst_memory[addr/4], str);
-            if (debug) {
+            if (debug ) {
                 printf("0x%08X\t\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
             }
             addr += 4;
@@ -246,9 +250,9 @@ int main(int argc, char* argv[]) {
 
     fclose(in);
     // print float table
-    cout << "------ float table ------" << endl;
+    cout << "------ float table ------" << endl << endl;
     for (auto itr = data_label.begin(); itr != data_label.end(); ++itr) {
-        cout << "[key] " << itr->first << "\t[addr] " << itr->second << "\t[value] " << memory.d[itr->second/4].f << endl;
+        cout << itr->first << " : " << itr->second << endl;
     }
     // あとは命令メモリを逐次実行
     reg[1] = 1025;              // first ra = 1025
@@ -258,7 +262,7 @@ int main(int argc, char* argv[]) {
     unsigned long long inst_count = 0;
     int rd, rs1, rs2, fd, fs1, fs2, imm;
     unsigned int uimm;
-    printf("Processing... 3\n");
+    printf("Processing... 2\n");
     while (1) {
         if (pc == 1025) { // 大元のra
             cout << "pc = 1025 !" << endl;
@@ -301,6 +305,7 @@ int main(int argc, char* argv[]) {
                 rs2 = reg_num[r2];
                 reg[rd] = reg[rs1] - reg[rs2];
                 pc = pc + 4;
+                break;
             // mul rd, rs1, rs2
             case 4:
                 rd = reg_num[r0];
@@ -368,9 +373,7 @@ int main(int argc, char* argv[]) {
                 rs1 = reg_num[r2];
                 // input
                 if (rs1 == 26) {
-                    if (debug) {
-                        cout << "\t[lw] int input!" << endl;
-                    }
+                    cout << "\tinput!" << endl;
                     char i[10];
                     if ((fscanf(in_sld, "%s", i)) != EOF) {
                         reg[rd] = atoi(i);
@@ -380,13 +383,8 @@ int main(int argc, char* argv[]) {
                 }
                 // regular lw
                 else {
-                    if (debug) {
-                        printf("\t[lw] <before> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
-                    }
                     reg[rd] = memory.d[(reg[rs1]+imm)/4].i;
-                    if (debug) {
-                        printf("\t[lw] <after> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
-                    }
+                    // printf("\t[lw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                 }
                 pc = pc + 4;
                 break;
@@ -397,27 +395,18 @@ int main(int argc, char* argv[]) {
                 rs1 = reg_num[r2];
                 // int output
                 if (rs1 == 26) {
-                    if (debug) {
-                        cout << "\t[sw] int output!" << endl;
-                    }
+                    cout << "\tint output!" << endl;
                     fprintf(out_ppm, "%d", reg[rs2]);
                 }
                 // char output
                 else if (rs1 == 27) {
-                    if (debug) {
-                        cout << "\t[sw] char output!" << endl;
-                    }
+                    cout << "\tchar output!" << endl;
                     fprintf(out_ppm, "%c", reg[rs2]);
                 }
                 // regular sw
                 else {
-                    if (debug) {
-                        printf("\t[sw] <before> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
-                    }
                     memory.d[(reg[rs1]+imm)/4].i = reg[rs2];
-                    if (debug) {
-                        printf("\t[sw] <after> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
-                    }
+                    // printf("\t[sw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                 }
                 pc = pc + 4;
                 break;
@@ -480,9 +469,7 @@ int main(int argc, char* argv[]) {
                 rs1 = reg_num[r2];
                 // input
                 if (rs1 == 27) {
-                    if (debug) {
-                        cout << "\t[flw] float input!" << endl;
-                    }
+                    cout << "\tinput!" << endl;
                     char i[10];
                     if ((fscanf(in_sld, "%s", i)) != EOF) {
                         freg[fd] = atof(i);
@@ -493,13 +480,8 @@ int main(int argc, char* argv[]) {
                 }
                 // regular flw
                 else {
-                    if (debug) {
-                        printf("\t[flw] <before> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
-                    }
                     freg[fd] = memory.d[(reg[rs1]+imm)/4].f;
-                    if (debug) {
-                        printf("\t[flw] <after> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
-                    }
+                    // printf("\t[flw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                 }
                 pc = pc + 4;
                 break;
@@ -512,13 +494,8 @@ int main(int argc, char* argv[]) {
                     printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                     return 1;
                 }
-                if (debug) {
-                    printf("\t[fsw] <before> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
-                }
                 memory.d[(reg[rs1]+imm)/4].f = freg[fs2];
-                if (debug) {
-                    printf("\t[fsw] <after> mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
-                }
+                // printf("\t[fsw] accessed mem[0x%X/0d%d]: 0d%ld / 0x%lX / %f\n", reg[rs1]+imm, reg[rs1]+imm, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].i, memory.d[(reg[rs1]+imm)/4].f);
                 pc = pc + 4;
                 break;
             // fsqrt fd, fs1
@@ -652,9 +629,9 @@ int main(int argc, char* argv[]) {
         }
 
         // print memory
-        // if (debug && !use_cache) {
-        //     memory.print(8188, 8060);
-        // }
+        if (debug && !use_cache) {
+            memory.print(8188, 8060);
+        }
 
         if (step_by_step) {
             char enter;
@@ -665,6 +642,10 @@ int main(int argc, char* argv[]) {
 
         reg[0] = 0;
 
+        printf("%lld: 0x%08X\t",inst_count, addr);
+        cout << n_op[opcode_n];
+        printf(" %s %s %s\n", r0, r1, r2);
+
         if (inst_count % 100000000 == 0) {
             cout << "now inst count: " << inst_count << endl;
         }
@@ -673,6 +654,7 @@ int main(int argc, char* argv[]) {
             cout << "same pc!: " << pc << endl;
             break;
         }
+        // if (inst_count > 3520) break;
     }
 
     printf("Finished!\n");
