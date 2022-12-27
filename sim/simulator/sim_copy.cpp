@@ -165,11 +165,15 @@ int main(int argc, char* argv[]) {
     bool use_cache = atoi(argv[5]);
     bool step_by_step = atoi(argv[6]);
 
-    char **inst_memory;             // instr memory
+    char **inst_memory;             // instr memory 文字列版
     inst_memory = (char**)malloc(sizeof(char*) * INST_MEMORY_SIZE);
     for (int i=0; i<INST_MEMORY_SIZE; i++) {
         inst_memory[i] = (char*)malloc(sizeof(char) * 30);
     }
+
+    // int *inst_memory;               // instr memory 数字版
+    // inst_memory = (int*)malloc(sizeof(int) * INST_MEMORY_SIZE);
+
     Memory memory;                  // data memory
     Cache cache;                    // data cache
 
@@ -187,8 +191,8 @@ int main(int argc, char* argv[]) {
     int addr = 0;                   // 命令アドレス
     int data_addr = 0;              // データセクションでのアドレス
     int line_n = 1;                 // アセンブリでの行番号
-    unordered_map<string, int> func_label;
-    unordered_map<string, int> data_label;
+    unordered_map<string, int> func_label;      // 関数ラベル
+    unordered_map<string, int> data_label;      // データラベル
     int pc = 0;
     bool is_data = 0;               // 現在データセクションかどうか
     // string str;
@@ -236,6 +240,7 @@ int main(int argc, char* argv[]) {
         // 普通の命令
         else {
             // 命令メモリのaddr/4番目に命令列を保管（addrは真のアドレス）
+            // ここを数字格納に置き換える！
             sprintf(str, "%d %s %s %s %d", op_n[opcode], r0, r1, r2, line_n);
             strcpy(inst_memory[addr/4], str);
             if (debug) {

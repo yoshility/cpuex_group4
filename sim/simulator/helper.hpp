@@ -5,7 +5,7 @@ using namespace std;
 #define CLEAN 1
 #define DIRTY 2
 
-#define MEMORY_SIZE         8188
+#define MEMORY_SIZE         80000000
 #define INST_MEMORY_SIZE    15000
 
 char* eliminate_comma_and_comment(char*);

@@ -38,10 +38,16 @@ class TEST {
         }
 };
 
+typedef struct inst {
+    int _opcode;
+    int _r0;
+    int _r1;
+    int _r2;
+    int line_n;
+} Inst;
 
 int main(int argc, char* argv[]) {
-    double a = 5.8;
-    printf("%f\n", a);
+    
 
 	return 0;
 }
