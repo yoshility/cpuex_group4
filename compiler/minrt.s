@@ -948,7 +948,7 @@ min_caml_fneg:
 	jalr x0, ra, 0
 	addi x0, x0, 0
 min_caml_fless:
-	flt	fa0, fa0, fa1  
+	flt	a0, fa0, fa1  
 	jalr x0, ra, 0
 	addi x0, x0, 0
 min_caml_fispos:
@@ -969,8 +969,8 @@ min_caml_fiszero:
 min_caml_floor:
 	fcvtws	a0, fa0  
 	fcvtsw	ft0, a0  
-	flt	hp, fa0, ft0  
-	sub	a0, a0, hp  
+	flt	t5, fa0, ft0  
+	sub	a0, a0, t5  
 	jalr x0, ra, 0
 	addi x0, x0, 0
 min_caml_create_array:
@@ -13268,8 +13268,8 @@ min_caml_start:
 	sw	s2,12(t6) 
 	sw	a5,8(t6) 
 	sw	a1,4(t6) 
-	addi	a0, x0, 2
-	addi	a1, x0, 2
+	addi	a0, x0, 128
+	addi	a1, x0, 128
 	addi	a2, x0, 3
 	lw	t5, 0(t6)
 	sw	t6, -160(sp)
