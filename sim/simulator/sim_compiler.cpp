@@ -653,9 +653,9 @@ int main(int argc, char* argv[]) {
         // printf("%lld: 0x%08X\t",inst_count, addr);
         // cout << n_op[opcode_n];
         // printf(" %s %s %s\n", r0, r1, r2);
-        if (inst_count > 18294){
-            break;
-        }
+        // if (inst_count > 18400){
+        //     break;
+        // }
         if (inst_count % 100000000 == 0) {
             cout << "now inst count: " << inst_count << endl;
         }
