@@ -948,7 +948,7 @@ min_caml_fneg:
 	jalr x0, ra, 0
 	addi x0, x0, 0
 min_caml_fless:
-	flt	fa0, fa0, fa1  
+	flt	a0, fa0, fa1  
 	jalr x0, ra, 0
 	addi x0, x0, 0
 min_caml_fispos:

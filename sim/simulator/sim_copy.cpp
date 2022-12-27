@@ -171,6 +171,7 @@ int main(int argc, char* argv[]) {
         inst_memory[i] = (char*)malloc(sizeof(char) * 30);
     }
 
+
     // int *inst_memory;               // instr memory 数字版
     // inst_memory = (int*)malloc(sizeof(int) * INST_MEMORY_SIZE);
 
@@ -388,6 +389,10 @@ int main(int argc, char* argv[]) {
                 }
                 // regular lw
                 else {
+                    if ((reg[rs1]+imm)/4 >= 8188000) {
+                        printf("segmentation fault!!!!\n");
+                        exit(1);
+                    }
                     reg[rd] = memory.d[(reg[rs1]+imm)/4].i;
                 }
                 pc = pc + 4;
@@ -413,6 +418,10 @@ int main(int argc, char* argv[]) {
                 }
                 // regular sw
                 else {
+                    if ((reg[rs1]+imm)/4 >= 8188000) {
+                        printf("segmentation fault!!!!\n");
+                        exit(1);
+                    }
                     memory.d[(reg[rs1]+imm)/4].i = reg[rs2];
                 }
                 pc = pc + 4;
@@ -489,6 +498,10 @@ int main(int argc, char* argv[]) {
                 }
                 // regular flw
                 else {
+                    if ((reg[rs1]+imm)/4 >= 8188000) {
+                        printf("segmentation fault!!!!\n");
+                        exit(1);
+                    }
                     freg[fd] = memory.d[(reg[rs1]+imm)/4].f;
                 }
                 pc = pc + 4;
@@ -501,6 +514,10 @@ int main(int argc, char* argv[]) {
                 if(fs2 < 0){
                     printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
                     return 1;
+                }
+                if ((reg[rs1]+imm)/4 >= 8188000) {
+                    printf("segmentation fault!!!!\n");
+                    exit(1);
                 }
                 memory.d[(reg[rs1]+imm)/4].f = freg[fs2];
                 pc = pc + 4;
