@@ -260,6 +260,7 @@ int main(int argc, char* argv[]) {
     unsigned long long inst_count = 0;
     int rd, rs1, rs2, fd, fs1, fs2, imm;
     unsigned int uimm;
+
     printf("Processing...\n");
     while (1) {
         if (pc == 1025) { // 大元のra
@@ -270,7 +271,7 @@ int main(int argc, char* argv[]) {
         strcpy(r1, "\0");
         strcpy(r2, "\0"); 
         sscanf(inst_memory[pc/4], "%d%s%s%s%d", &opcode_n, r0, r1, r2, &line_n);
-
+        debug = ( ((inst_count > 311420) && (inst_count < 311430)) || ((inst_count > 80325765) && (inst_count < 80325770))  || ((inst_count > 100814248) && (inst_count < 100814255)) || ((inst_count > 102234480) && (inst_count < 102234500)));
         if (debug) {
             printf("####[pc: 0x%08X | ", pc);
             cout << n_op[opcode_n];
@@ -289,6 +290,12 @@ int main(int argc, char* argv[]) {
             case 1:
                 rd = reg_num[r0];
                 rs1 = reg_num[r1];
+                if((rd == 0 && strncmp(r0, "x0", 2) != 0) || (rs1 == 0 && strncmp(r1, "x0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
+                    return 1;
+                }
                 imm = atoi(r2);
                 reg[rd] = reg[rs1] + imm;
                 pc = pc + 4;
@@ -298,6 +305,12 @@ int main(int argc, char* argv[]) {
                 rd = reg_num[r0];
                 rs1 = reg_num[r1];
                 rs2 = reg_num[r2];
+                if((rd == 0 && strncmp(r0, "x0", 2) != 0)|| (rs1 == 0 && strncmp(r1, "x0", 2) != 0) || (rs2 == 0 && strncmp(r2, "x0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
+                    return 1;
+                }
                 reg[rd] = reg[rs1] + reg[rs2];
                 pc = pc + 4;
                 break;
@@ -306,6 +319,12 @@ int main(int argc, char* argv[]) {
                 rd = reg_num[r0];
                 rs1 = reg_num[r1];
                 rs2 = reg_num[r2];
+                if((rd == 0 && strncmp(r0, "x0", 2) != 0) || (rs1 == 0 && strncmp(r1, "x0", 2) != 0) || (rs2 == 0 && strncmp(r2, "x0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
+                    return 1;
+                }
                 reg[rd] = reg[rs1] - reg[rs2];
                 pc = pc + 4;
                 break;
@@ -314,6 +333,12 @@ int main(int argc, char* argv[]) {
                 rd = reg_num[r0];
                 rs1 = reg_num[r1];
                 rs2 = reg_num[r2];
+                if((rd == 0 && strncmp(r0, "x0", 2) != 0) || (rs1 == 0 && strncmp(r1, "x0", 2) != 0) || (rs2 == 0 && strncmp(r2, "x0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
+                    return 1;
+                }
                 reg[rd] = reg[rs1] * reg[rs2];
                 pc = pc + 4;
                 break;
@@ -322,6 +347,12 @@ int main(int argc, char* argv[]) {
                 rd = reg_num[r0];
                 rs1 = reg_num[r1];
                 rs2 = reg_num[r2];
+                if((rd == 0 && strncmp(r0, "x0", 2) != 0) || (rs1 == 0 && strncmp(r1, "x0", 2) != 0) || (rs2 == 0 && strncmp(r2, "x0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
+                    return 1;
+                }
                 reg[rd] = reg[rs1] / reg[rs2];
                 pc = pc + 4;
                 break;
@@ -329,6 +360,12 @@ int main(int argc, char* argv[]) {
             case 6:
                 rd = reg_num[r0];
                 rs1 = reg_num[r1];
+                if((rd == 0 && strncmp(r0, "x0", 2) != 0) || (rs1 == 0 && strncmp(r1, "x0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
+                    return 1;
+                }
                 uimm = atoi(r2);
                 reg[rd] = (reg[rs1] << uimm);
                 pc = pc + 4;
@@ -374,6 +411,12 @@ int main(int argc, char* argv[]) {
                 rd = reg_num[r0];
                 imm = atoi(r1);
                 rs1 = reg_num[r2];
+                if((rd == 0 && strncmp(r0, "x0", 2) != 0) || (rs1 == 0 && strncmp(r2, "x0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
+                    return 1;
+                }
                 // input
                 if (rs1 == 26) {
                     if (debug) {
@@ -397,6 +440,12 @@ int main(int argc, char* argv[]) {
                 rs2 = reg_num[r0];
                 imm = atoi(r1);
                 rs1 = reg_num[r2];
+                if((rs2 == 0 && strncmp(r0, "x0", 2) != 0) || (rs1 == 0 && strncmp(r2, "x0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
+                    return 1;
+                }
                 // int output
                 if (rs1 == 26) {
                     if (debug) {
@@ -415,6 +464,14 @@ int main(int argc, char* argv[]) {
                 else {
                     memory.d[(reg[rs1]+imm)/4].i = reg[rs2];
                 }
+                // for debug, temporarily
+                if((reg[rs1]+imm) >= 207504 && (reg[rs1]+imm) <= 207508){
+                    printf("Accessed!!!: pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
+            print_reg(reg);
+            print_freg(freg);
+                }
                 pc = pc + 4;
                 break;
             // fadd fd, fs1, fs2
@@ -422,8 +479,10 @@ int main(int argc, char* argv[]) {
                 fd = freg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
-                if(fd < 0 || fs1 < 0 || fs2 < 0){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((fd == 0 && strncmp(r0, "ft0", 2) != 0) || (fs1 == 0 && strncmp(r1, "ft0", 2) != 0) || (fs2 == 0 && strncmp(r2, "ft0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 freg[fd] = freg[fs1] + freg[fs2];
@@ -434,8 +493,10 @@ int main(int argc, char* argv[]) {
                 fd = freg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
-                if(fd < 0 || fs1 < 0 || fs2 < 0){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((fd == 0 && strncmp(r0, "ft0", 2) != 0) || (fs1 == 0 && strncmp(r1, "ft0", 2) != 0) || (fs2 == 0 && strncmp(r2, "ft0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 freg[fd] = freg[fs1] - freg[fs2];
@@ -446,8 +507,10 @@ int main(int argc, char* argv[]) {
                 fd = freg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
-                if(fd < 0 || fs1 < 0 || fs2 < 0){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((fd == 0 && strncmp(r0, "ft0", 2) != 0) || (fs1 == 0 && strncmp(r1, "ft0", 2) != 0) || (fs2 == 0 && strncmp(r2, "ft0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 freg[fd] = freg[fs1] * freg[fs2];
@@ -458,8 +521,10 @@ int main(int argc, char* argv[]) {
                 fd = freg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
-                if(fd < 0 || fs1 < 0 || fs2 < 0){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((fd == 0 && strncmp(r0, "ft0", 2) != 0) || (fs1 == 0 && strncmp(r1, "ft0", 2) != 0) || (fs2 == 0 && strncmp(r2, "ft0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 freg[fd] = freg[fs1] / freg[fs2];
@@ -468,8 +533,10 @@ int main(int argc, char* argv[]) {
             // flw fd, imm(rs1) (input=s11/x27)
             case 17:
                 fd = freg_num[r0];
-                if(fd < 0 ){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((fd == 0 && strncmp(r0, "ft0", 2) != 0) ){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 imm = atoi(r1);
@@ -498,19 +565,30 @@ int main(int argc, char* argv[]) {
                 fs2 = freg_num[r0];
                 imm = atoi(r1);
                 rs1 = reg_num[r2];
-                if(fs2 < 0){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((fs2 == 0 && strncmp(r0, "ft0", 2) != 0)  || (rs1 == 0 && strncmp(r2, "x0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
-                memory.d[(reg[rs1]+imm)/4].f = freg[fs2];
+                memory.d[(reg[rs1]+imm)/4].f = (float)freg[fs2];
+                if((reg[rs1]+imm) >= 207504 && (reg[rs1]+imm) <= 207508){
+                    printf("Accessed!!!: pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
+                print_reg(reg);
+            print_freg(freg);
+                }
                 pc = pc + 4;
                 break;
             // fsqrt fd, fs1
             case 19:
                 fd = freg_num[r0];
                 fs1 = freg_num[r1];
-                if(fd < 0 || fs1 < 0 ){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((fd == 0 && strncmp(r0, "ft0", 2) != 0) || (fs1 == 0 && strncmp(r1, "ft0", 2) != 0) ){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 freg[fd] = sqrt(freg[fs1]);
@@ -521,8 +599,10 @@ int main(int argc, char* argv[]) {
                 fd = freg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
-                if(fd < 0 || fs1 < 0 || fs2 < 0){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((fd == 0 && strncmp(r0, "ft0", 2) != 0) || (fs1 == 0 && strncmp(r1, "ft0", 2) != 0) || (fs2 == 0 && strncmp(r2, "ft0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 freg[fd] = fabs(freg[fs1]) * (-sign(freg[fs2]));
@@ -533,8 +613,10 @@ int main(int argc, char* argv[]) {
                 fd = freg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
-                if(fd < 0 || fs1 < 0 || fs2 < 0){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((fd == 0 && strncmp(r0, "ft0", 2) != 0) || (fs1 == 0 && strncmp(r1, "ft0", 2) != 0) || (fs2 == 0 && strncmp(r2, "ft0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 freg[fd] = freg[fs1] * sign(freg[fs2]);
@@ -545,8 +627,10 @@ int main(int argc, char* argv[]) {
                 fd = freg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
-                if(fd < 0 || fs1 < 0 || fs2 < 0){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((fd == 0 && strncmp(r0, "ft0", 2) != 0) || (fs1 == 0 && strncmp(r1, "ft0", 2) != 0) || (fs2 == 0 && strncmp(r2, "ft0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 freg[fd] = fabs(freg[fs1]) * sign(freg[fs2]);
@@ -555,8 +639,10 @@ int main(int argc, char* argv[]) {
             // fcvtsw fd, rs1
             case 23:
                 fd = freg_num[r0];
-                if(fd < 0 ){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((fd == 0 && strncmp(r0, "ft0", 2) != 0) ){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 rs1 = reg_num[r1];
@@ -567,8 +653,10 @@ int main(int argc, char* argv[]) {
             case 24:
                 rd = reg_num[r0];
                 fs1 = freg_num[r1];
-                if( fs1 < 0){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((rd == 0 && strncmp(r0, "x0", 2) != 0) || (fs1 == 0 && strncmp(r1, "ft0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 reg[rd] = (int)round(freg[fs1]); // 最近傍
@@ -579,8 +667,10 @@ int main(int argc, char* argv[]) {
                 rd = reg_num[r0];
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
-                if(fs1 < 0 || fs2 < 0){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((rd == 0 && strncmp(r0, "x0", 2) != 0) || (fs1 == 0 && strncmp(r1, "ft0", 2) != 0) || (fs2 == 0 && strncmp(r2, "ft0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 reg[rd] = (freg[fs1] == freg[fs2]);
@@ -592,8 +682,10 @@ int main(int argc, char* argv[]) {
                 fs1 = freg_num[r1];
                 fs2 = freg_num[r2];
                 
-                if(fs1 < 0 || fs2 < 0){
-                    printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+                if((rd == 0 && strncmp(r0, "x0", 2) != 0) || (fs1 == 0 && strncmp(r1, "ft0", 2) != 0) || (fs2 == 0 && strncmp(r2, "ft0", 2) != 0)){
+                    printf("pc: 0x%08X | ", pc);
+            cout << n_op[opcode_n];
+            printf(" %s %s %s | line: %d | inst_count: %lld\n", r0, r1, r2, line_n, inst_count+1);
                     return 1;
                 }
                 if(fs1 == 100)reg[rd] = 0 < freg[fs2];
