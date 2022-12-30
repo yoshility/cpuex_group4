@@ -1,14 +1,20 @@
 CC 		= g++
-TARGET 	= sim
-SRCS 	= sim_copy.cpp
-SRCS 	+= helper.cpp
 
-$(TARGET): $(SRCS)
-	$(CC) -Wall -O3 -o $@ $^
+# 低速版シミュ
+inst: sim_inst.cpp helper.cpp z3
+	$(CC) -Wall -O3 -o sim sim_inst.cpp helper.cpp
 
-all: $(TARGET)
+# 低速版シミュのコピー
+copy: sim_copy.cpp helper.cpp z3
+	$(CC) -Wall -O3 -o sim sim_copy.cpp helper.cpp
+
+# 高速版シミュ
+accel: sim_accel.cpp helper.cpp
+	$(CC) -Wall -O3 -o sim sim_accel.cpp helper.cpp
+
+# コンパイラ用シミュ（低速版シミュのコピー）
 compiler: sim_compiler.cpp helper.cpp
 	$(CC) -Wall -O3 -o sim_compiler sim_compiler.cpp helper.cpp
 
 clean:
-	rm -f $(TARGET)
+	rm -f sim
