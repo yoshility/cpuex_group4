@@ -2,30 +2,6 @@
 using namespace std;
 #include "helper.hpp"
 
-// アセンブリのコンマとコメントと括弧を除去
-char* eliminate_comma_and_comment(char* line) {
-    int n = strlen(line);
-    for (int i=0; i<n; i++) {
-        if (line[i] == ',' || line[i] == '(' || line[i] == ')') {
-            line[i] = ' ';
-        } else if (line[i] == '#') {
-            line[i] = '\0';
-        }
-    }
-    return line;
-}
-
-// ラベルのコロンを除去
-char* eliminate_colon(char* line) {
-    int n = strlen(line);
-    for (int i=0; i<n; i++) {
-        if (line[i] == ':') {
-            line[i] = '\0';
-        }
-    }
-    return line;
-}
-
 // map<reg_num, reg_name>
 map<int, string> reg_name {
     {0, "x0"},
@@ -61,24 +37,6 @@ map<int, string> reg_name {
     {30, "t5"},
     {31, "t6"}
 };
-
-// 整数レジスタ全出力
-void print_reg(int* reg) {
-    printf("\n\t---- Integer Register -------------------------------------------------------------------------------------\n\n");
-    for (int i=0; i<32; i++) {
-        printf("\t");
-        cout << reg_name.at(i) << ":";
-        if (i == 1 || i == 2) {
-            printf("0x%X", reg[i]);
-        } else {
-            printf("%d", reg[i]);
-        }
-        if ((i+1) % 8 == 0) {
-            printf("\n");
-        }
-    }
-    printf("\n");
-}
 
 // map<freg_num, freg_name>
 map<int, string> freg_name {
@@ -116,6 +74,59 @@ map<int, string> freg_name {
     {31, "ft11"}
 };
 
+// アセンブリのコンマとコメントと括弧を除去
+char* eliminate_comma_and_comment(char* line) {
+    int n = strlen(line);
+    for (int i=0; i<n; i++) {
+        if (line[i] == ',' || line[i] == '(' || line[i] == ')') {
+            line[i] = ' ';
+        } else if (line[i] == '#') {
+            line[i] = '\0';
+        }
+    }
+    return line;
+}
+
+// ラベルのコロンを除去
+char* eliminate_colon(char* line) {
+    int n = strlen(line);
+    for (int i=0; i<n; i++) {
+        if (line[i] == ':') {
+            line[i] = '\0';
+        }
+    }
+    return line;
+}
+
+// 命令Instの構造体を返す関数
+Inst inst_of(int opcode, int r0, int r1, int r2, int line_n) {
+    Inst tmp;
+    tmp._opcode = opcode;
+    tmp._r0 = r0;
+    tmp._r1 = r1;
+    tmp._r2 = r2;
+    tmp._line_n = line_n;
+    return tmp;
+}
+
+// 整数レジスタ全出力
+void print_reg(int* reg) {
+    printf("\n\t---- Integer Register -------------------------------------------------------------------------------------\n\n");
+    for (int i=0; i<32; i++) {
+        printf("\t");
+        cout << reg_name.at(i) << ":";
+        if (i == 1 || i == 2) {
+            printf("0x%X", reg[i]);
+        } else {
+            printf("%d", reg[i]);
+        }
+        if ((i+1) % 8 == 0) {
+            printf("\n");
+        }
+    }
+    printf("\n");
+}
+
 // 浮動小数点レジスタ全出力
 void print_freg(float* freg) {
     printf("\n\t---- Float Register -------------------------------------------------------------------------------------\n\n");
@@ -129,155 +140,6 @@ void print_freg(float* freg) {
     }
     printf("\n");
 }
-
-// 整数レジスタ名をレジスタ番号に変換
-// int reg_num(char *reg, int pc) {
-//     if (strncmp(reg, "x0", 2) == 0) {
-//         return 0;
-//     } else if (strncmp(reg, "ra", 2) == 0) {
-//         return 1;
-//     } else if (strncmp(reg, "sp", 2) == 0) {
-//         return 2;
-//     } else if (strncmp(reg, "gp", 2) == 0) {
-//         return 3;
-//     } else if (strncmp(reg, "tp", 2) == 0) {
-//         return 4;
-//     } else if (strncmp(reg, "t0", 2) == 0 || (strncmp(reg, "hp", 2) == 0)) {
-//         return 5;
-//     } else if (strncmp(reg, "t1", 2) == 0) {
-//         return 6;
-//     } else if (strncmp(reg, "t2", 2) == 0) {
-//         return 7;
-//     } else if ((strncmp(reg, "s0", 2) == 0) || (strncmp(reg, "fp", 2) == 0)) {
-//         return 8;
-//     } else if (strncmp(reg, "s10", 3) == 0) {
-//         return 26;
-//     } else if (strncmp(reg, "s11", 3) == 0) {
-//         return 27;
-//     } else if (strncmp(reg, "s1", 2) == 0) {
-//         return 9;
-//     } else if (strncmp(reg, "a0", 2) == 0) {
-//         return 10;
-//     } else if (strncmp(reg, "a1", 2) == 0) {
-//         return 11;
-//     } else if (strncmp(reg, "a2", 2) == 0) {
-//         return 12;
-//     } else if (strncmp(reg, "a3", 2) == 0) {
-//         return 13;
-//     } else if (strncmp(reg, "a4", 2) == 0) {
-//         return 14;
-//     } else if (strncmp(reg, "a5", 2) == 0) {
-//         return 15;
-//     } else if (strncmp(reg, "a6", 2) == 0) {
-//         return 16;
-//     } else if (strncmp(reg, "a7", 2) == 0) {
-//         return 17;
-//     } else if (strncmp(reg, "s2", 2) == 0) {
-//         return 18;
-//     } else if (strncmp(reg, "s3", 2) == 0) {
-//         return 19;
-//     } else if (strncmp(reg, "s4", 2) == 0) {
-//         return 20;
-//     } else if (strncmp(reg, "s5", 2) == 0) {
-//         return 21;
-//     } else if (strncmp(reg, "s6", 2) == 0) {
-//         return 22;
-//     } else if (strncmp(reg, "s7", 2) == 0) {
-//         return 23;
-//     } else if (strncmp(reg, "s8", 2) == 0) {
-//         return 24;
-//     } else if (strncmp(reg, "s9", 2) == 0) {
-//         return 25;
-//     } else if (strncmp(reg, "t3", 2) == 0) {
-//         return 28;
-//     } else if (strncmp(reg, "t4", 2) == 0) {
-//         return 29;
-//     } else if (strncmp(reg, "t5", 2) == 0) {
-//         return 30;
-//     } else if (strncmp(reg, "t6", 2) == 0) {
-//         return 31;
-//     } else {
-//         printf("[0x%X] Register name error: %s\n", pc, reg);
-//         return -1;
-//         // exit(1);
-//     }
-// }
-
-
-
-// 浮動小数点レジスタ名をレジスタ番号に変換
-// int freg_num(char *reg, int pc) {
-//     if (strncmp(reg, "ft0", 3) == 0) {
-//         return 0;
-//     } else if (strncmp(reg, "ft10", 4) == 0) {
-//         return 30;
-//     } else if (strncmp(reg, "ft11", 4) == 0) {
-//         return 31;
-//     } else if (strncmp(reg, "ft1", 3) == 0) {
-//         return 1;
-//     } else if (strncmp(reg, "ft2", 3) == 0) {
-//         return 2;
-//     } else if (strncmp(reg, "ft3", 3) == 0) {
-//         return 3;
-//     } else if (strncmp(reg, "ft4", 3) == 0) {
-//         return 4;
-//     } else if (strncmp(reg, "ft5", 3) == 0) {
-//         return 5;
-//     } else if (strncmp(reg, "ft6", 3) == 0) {
-//         return 6;
-//     } else if (strncmp(reg, "ft7", 3) == 0) {
-//         return 7;
-//     } else if (strncmp(reg, "fs0", 3) == 0) {
-//         return 8;
-//     } else if (strncmp(reg, "fs10", 4) == 0) {
-//         return 26;
-//     } else if (strncmp(reg, "fs11", 4) == 0) {
-//         return 27;
-//     } else if (strncmp(reg, "fs1", 3) == 0) {
-//         return 9;
-//     } else if (strncmp(reg, "fa0", 3) == 0) {
-//         return 10;
-//     } else if (strncmp(reg, "fa1", 3) == 0) {
-//         return 11;
-//     } else if (strncmp(reg, "fa2", 3) == 0) {
-//         return 12;
-//     } else if (strncmp(reg, "fa3", 3) == 0) {
-//         return 13;
-//     } else if (strncmp(reg, "fa4", 3) == 0) {
-//         return 14;
-//     } else if (strncmp(reg, "fa5", 3) == 0) {
-//         return 15;
-//     } else if (strncmp(reg, "fa6", 3) == 0) {
-//         return 16;
-//     } else if (strncmp(reg, "fa7", 3) == 0) {
-//         return 17;
-//     } else if (strncmp(reg, "fs2", 3) == 0) {
-//         return 18;
-//     } else if (strncmp(reg, "fs3", 3) == 0) {
-//         return 19;
-//     } else if (strncmp(reg, "fs4", 3) == 0) {
-//         return 20;
-//     } else if (strncmp(reg, "fs5", 3) == 0) {
-//         return 21;
-//     } else if (strncmp(reg, "fs6", 3) == 0) {
-//         return 22;
-//     } else if (strncmp(reg, "fs7", 3) == 0) {
-//         return 23;
-//     } else if (strncmp(reg, "fs8", 3) == 0) {
-//         return 24;
-//     } else if (strncmp(reg, "fs9", 3) == 0) {
-//         return 25;
-//     } else if (strncmp(reg, "ft8", 3) == 0) {
-//         return 28;
-//     } else if (strncmp(reg, "ft9", 3) == 0) {
-//         return 29;
-//     } else {
-//         printf("[0x%X] Register name error (float): %s\n", pc, reg);
-//         return -1;
-//     }
-// }
-
-
 
 // 10進数をd桁の2進数表記に変換
 long long int to_binary(int num, int d) {

@@ -43,11 +43,31 @@ typedef struct inst {
     int _r0;
     int _r1;
     int _r2;
-    int line_n;
+    int _line_n;
 } Inst;
 
+Inst inst_of(int opcode, int r0, int r1, int r2, int line_n) {
+    Inst tmp;
+    tmp._opcode = opcode;
+    tmp._r0 = r0;
+    tmp._r1 = r1;
+    tmp._r2 = r2;
+    tmp._line_n = line_n;
+    return tmp;
+}
+
 int main(int argc, char* argv[]) {
-    
+    Inst *insts = (Inst*)malloc(sizeof(Inst) * 10);
+    for (int i=0; i<10; i++) {
+        cout << insts[i]._opcode << endl;
+    }
+    insts[3] = inst_of(1, 2, 3, 4, 5);
+    cout << insts[3]._opcode << endl;
+    cout << insts[3]._r0 << endl;
+    cout << insts[3]._r1 << endl;
+    cout << insts[3]._r2 << endl;
+    cout << insts[3]._line_n << endl;
+
 
 	return 0;
 }
