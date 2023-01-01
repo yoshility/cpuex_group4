@@ -10,11 +10,11 @@ copy: sim_copy.cpp helper.cpp z3
 
 # 高速版シミュ
 accel: sim_accel.cpp helper.cpp
-	$(CC) -Wall -O3 -o sim sim_accel.cpp helper.cpp
+	$(CC) -Wall -O3 -o sim_accel sim_accel.cpp helper.cpp
 
 # コンパイラ用シミュ（低速版シミュのコピー）
 compiler: sim_compiler.cpp helper.cpp
-	$(CC) -Wall -O3 -o sim_compiler sim_compiler.cpp helper.cpp
+	$(CC) -Wall -O3 -I/home/tomy/boost_1_81_0/local/include -o sim_compiler sim_compiler.cpp helper.cpp
 
 clean:
 	rm -f sim
