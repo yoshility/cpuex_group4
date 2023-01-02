@@ -434,14 +434,14 @@ int main(int argc, char* argv[]) {
                 // regular sw
                 else {
                     memory.d[(reg[op._r2]+op._r1)/4].i = reg[op._r0];
-            //         if((reg[op._r2]+op._r1) == 24872){
+                    if((reg[op._r2]+op._r1) == 20964){
                         
-            //             printf("Accessed!! pc: 0x%08X | ", pc);
-            //         cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1;
-            //         printf(" | line: %d | inst_count: %lld\n", op._line_n, inst_count+1);
-            //         print_reg(reg);
-            // print_freg(freg);
-            //         }
+                        printf("Accessed!! pc: 0x%08X | ", pc);
+                    cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1;
+                    printf(" | line: %d | inst_count: %lld\n", op._line_n, inst_count+1);
+                    print_reg(reg);
+            print_freg(freg);
+                    }
                }
                 pc += 4;
                 break;
@@ -514,14 +514,14 @@ int main(int argc, char* argv[]) {
                 }
                 memory.d[(reg[op._r2]+op._r1)/4].f = freg[op._r0];
                 pc += 4;
-            //     if((reg[op._r2]+op._r1) == 24872){
+                if((reg[op._r2]+op._r1) == 20964){
                         
-            //             printf("Accessed!! pc: 0x%08X | ", pc);
-            //         cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1;
-            //         printf(" | line: %d | inst_count: %lld\n", op._line_n, inst_count+1);
-            //         print_reg(reg);
-            // print_freg(freg);
-            //         }
+                        printf("Accessed!! pc: 0x%08X | ", pc);
+                    cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1;
+                    printf(" | line: %d | inst_count: %lld\n", op._line_n, inst_count+1);
+                    print_reg(reg);
+            print_freg(freg);
+                    }
                 break;
             case 19: // fsqrt fd, fs1
                 if (debug) {
