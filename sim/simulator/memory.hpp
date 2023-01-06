@@ -9,6 +9,7 @@ using namespace std;
 
 union data {
 	long int i;
+	// int i;
 	float f;
 };
 
