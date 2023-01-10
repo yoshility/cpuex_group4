@@ -50,7 +50,7 @@ void print_binary(FILE* out, long long int num) {
 
 // 整数レジスタ名をレジスタ番号に変換 
 // ex) a0 : char* -> 1010 : int(2進数を装った10進数)
-int reg(char *reg) {
+int reg(char *reg, int line) {
     if (strncmp(reg, "x0", 2) == 0) {
         return 0;
     } else if (strncmp(reg, "ra", 2) == 0) {
@@ -61,7 +61,7 @@ int reg(char *reg) {
         return 11;
     } else if (strncmp(reg, "tp", 2) == 0) {
         return 100;
-    } else if (strncmp(reg, "t0", 2) == 0) {
+    } else if ((strncmp(reg, "t0", 2) == 0) || (strncmp(reg, "hp", 2) == 0)) {
         return 101;
     } else if (strncmp(reg, "t1", 2) == 0) {
         return 110;
@@ -116,7 +116,7 @@ int reg(char *reg) {
     } else if (strncmp(reg, "t6", 2) == 0) {
         return 11111;
     } else {
-        printf("Register name error: %s\n", reg);
+        printf("I Register name error: %s, line: %d\n", reg, line);
         return 0;
     }
 }
@@ -189,7 +189,7 @@ int freg(char *reg) {
     } else if (strncmp(reg, "ft9", 3) == 0) {
         return 11101;
     } else {
-        printf("Register name error: %s\n", reg);
+        printf("F Register name error: %s\n", reg);
         return 0;
     }
 }
