@@ -89,7 +89,7 @@ char* eliminate_comma_and_comment(char*);
 char* eliminate_colon(char*);
 long long int to_binary(int, int);
 void print_binary(FILE*, long long int);
-int reg(char*);
+int reg(char*, int);
 int freg(char*);
 
 long long int imm_11_0(char*);

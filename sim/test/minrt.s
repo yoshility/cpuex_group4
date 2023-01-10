@@ -10755,7 +10755,8 @@ rt.6386:
 	jalr	x0, t6, 0 
 .global	min_caml_start
 min_caml_start:
-	addi	sp, x0, 8188000
+    addi	a0, x0, 1
+    slli    sp, a0, 23
 	addi	hp, x0, 256
 	addi	a0, x0, 1
 	addi	a1, x0, 0

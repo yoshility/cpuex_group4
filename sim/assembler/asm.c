@@ -41,6 +41,7 @@ int main(int argc, char* argv[]) {
     int func_label_addr[1000];  // 関数ラベルアドレス
     char data_label[64][10];    // データラベル名(indexがアドレスになる) (1/4に圧縮)
     int is_data = 0;           // 現在データセクションかどうか
+    int pc = 0;
 
     while (fgets(line, BUFSIZE, in) != NULL) {
         // addr += 4;
@@ -56,6 +57,9 @@ int main(int argc, char* argv[]) {
             strcpy(func_label[func_label_index], opcode);
             func_label_addr[func_label_index] = addr;
             func_label_index++;
+            if (strncmp(opcode, "min_caml_start", 14) == 0) {
+                pc = addr;
+            }
         }
         // データのラベル
         else if (opcode[strlen(opcode)-1] == ':' && (is_data)) {
@@ -74,7 +78,10 @@ int main(int argc, char* argv[]) {
         // 普通の命令
         else {
             // 命令アドレスも一緒に出力
-            printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+            // printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
+            if (strncmp(opcode, "lui", 3) == 0) {
+                addr += 4;
+            }
             addr += 4;
         }
     }
@@ -91,6 +98,11 @@ int main(int argc, char* argv[]) {
     // 2回目の読みでバイナリに変換 /////////////////////////////////////////////////////////////////////
     // 浮動小数データの個数
     fprintf(out, "%032lld\n", to_binary(data_addr/4, 32));
+    // pcの初期値
+    if (debug) {
+        printf("initial pc: %d\n", pc);
+    }
+    fprintf(out, "%032lld\n", to_binary(pc, 32));
     while (fgets(line, BUFSIZE, in) != NULL) {
         strcpy(r0, "\0");
         strcpy(r1, "\0");
@@ -117,8 +129,8 @@ int main(int argc, char* argv[]) {
 
         // 1. addi rd, rs1, imm
         if (strncmp(opcode, "addi", 4) == 0) {
-            int rd = reg(r0);
-            int rs1 = reg(r1);
+            int rd = reg(r0, line_n);
+            int rs1 = reg(r1, line_n);
             long long int imm = imm_11_0(r2);
             if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %012lld %05d %03d %05d %07d\n", addr, opcode, line_n, imm, rs1, F3_ADDI, rd, OP_ADDI);
@@ -130,9 +142,9 @@ int main(int argc, char* argv[]) {
         }
         // 2. add rd, rs1, rs2
         else if (strncmp(opcode, "add", 3) == 0) {
-            int rd = reg(r0);
-            int rs1 = reg(r1);
-            int rs2 = reg(r2);
+            int rd = reg(r0, line_n);
+            int rs1 = reg(r1, line_n);
+            int rs2 = reg(r2, line_n);
             if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %07d %05d %05d %03d %05d %07d\n", addr, opcode, line_n, F7_ADD, rs2, rs1, F3_ADD, rd, OP_ADD);
             } else {
@@ -143,9 +155,9 @@ int main(int argc, char* argv[]) {
         }
         // 3. sub rd, rs1, rs2
         else if (strncmp(opcode, "sub", 3) == 0) {
-            int rd = reg(r0);
-            int rs1 = reg(r1);
-            int rs2 = reg(r2);
+            int rd = reg(r0, line_n);
+            int rs1 = reg(r1, line_n);
+            int rs2 = reg(r2, line_n);
             if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %07d %05d %05d %03d %05d %07d\n", addr, opcode, line_n, F7_SUB, rs2, rs1, F3_SUB, rd, OP_SUB);
             } else {
@@ -156,9 +168,9 @@ int main(int argc, char* argv[]) {
         }
         // 4. mul rd, rs1, rs2
         else if (strncmp(opcode, "mul", 3) == 0) {
-            int rd = reg(r0);
-            int rs1 = reg(r1);
-            int rs2 = reg(r2);
+            int rd = reg(r0, line_n);
+            int rs1 = reg(r1, line_n);
+            int rs2 = reg(r2, line_n);
             if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %07d %05d %05d %03d %05d %07d\n", addr, opcode, line_n, F7_MUL, rs2, rs1, F3_MUL, rd, OP_MUL);
             } else {
@@ -169,9 +181,9 @@ int main(int argc, char* argv[]) {
         }
         // 5. div rd, rs1, rs2
         else if (strncmp(opcode, "div", 3) == 0) {
-            int rd = reg(r0);
-            int rs1 = reg(r1);
-            int rs2 = reg(r2);
+            int rd = reg(r0, line_n);
+            int rs1 = reg(r1, line_n);
+            int rs2 = reg(r2, line_n);
             if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %07d %05d %05d %03d %05d %07d\n", addr, opcode, line_n, F7_DIV, rs2, rs1, F3_DIV, rd, OP_DIV);
             } else {
@@ -182,8 +194,8 @@ int main(int argc, char* argv[]) {
         }
         // 6. slli rd, rs1, uimm
         else if (strncmp(opcode, "slli", 4) == 0) {
-            int rd = reg(r0);
-            int rs1 = reg(r1);
+            int rd = reg(r0, line_n);
+            int rs1 = reg(r1, line_n);
             long long int uimm = imm_11_0(r2);
             if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %012lld %05d %03d %05d %07d\n", addr, opcode, line_n, uimm, rs1, F3_SLLI, rd, OP_SLLI);
@@ -197,7 +209,7 @@ int main(int argc, char* argv[]) {
         /* lui rd, hi(label)
            ori rd, rd, lo(label) に直す */
         else if (strncmp(opcode, "lui", 3) == 0) {
-            int rd = reg(r0);
+            int rd = reg(r0, line_n);
             int d_addr;
             int n = strlen(r1);
             for (int i=0; i<=64; i++) {
@@ -229,8 +241,8 @@ int main(int argc, char* argv[]) {
         }
         // 8. beq rs1, rs2, label
         else if (strncmp(opcode, "beq", 3) == 0) {
-            int rs1 = reg(r0);
-            int rs2 = reg(r1);
+            int rs1 = reg(r0, line_n);
+            int rs2 = reg(r1, line_n);
             long long int jmp_addr;
             int n = strlen(r2);
             // find label's address
@@ -244,7 +256,7 @@ int main(int argc, char* argv[]) {
             }
             // オフセットは(分岐先アドレス-分岐命令自体のアドレス) -> 本当は/2
             long long int imm = jmp_addr - addr;
-            printf("[beq] jmp_addr = %lld, addr = %d\n", jmp_addr, addr);
+            // printf("[beq] jmp_addr = %lld, addr = %d\n", jmp_addr, addr);
             // imm[12|10:5]
             long long int imm1 = imm_12_10_5(imm);
             // imm[4:1|11]
@@ -259,8 +271,8 @@ int main(int argc, char* argv[]) {
         }
         // 9. bne rs1, rs2, label
         else if (strncmp(opcode, "bne", 3) == 0) {
-            int rs1 = reg(r0);
-            int rs2 = reg(r1);
+            int rs1 = reg(r0, line_n);
+            int rs2 = reg(r1, line_n);
             long long int jmp_addr;
             int n = strlen(r2);
             for (int i=0; i<=1000; i++) {
@@ -284,8 +296,8 @@ int main(int argc, char* argv[]) {
         }
         // 10. blt rs1, rs2, label
         else if (strncmp(opcode, "blt", 3) == 0) {
-            int rs1 = reg(r0);
-            int rs2 = reg(r1);
+            int rs1 = reg(r0, line_n);
+            int rs2 = reg(r1, line_n);
             long long int jmp_addr;
             int n = strlen(r2);
             for (int i=0; i<=1000; i++) {
@@ -297,7 +309,7 @@ int main(int argc, char* argv[]) {
                 }
             }
             long long int imm = jmp_addr - addr;
-            printf("[blt] jmp_addr = %lld, addr = %d\n", jmp_addr, addr);
+            // printf("[blt] jmp_addr = %lld, addr = %d\n", jmp_addr, addr);
             long long int imm1 = imm_12_10_5(imm);
             int imm2 = imm_4_1_11(imm);
             if (debug) {
@@ -310,9 +322,9 @@ int main(int argc, char* argv[]) {
         }
         // 11. lw rd, imm(rs1) (input=s10/x26)
         else if (strncmp(opcode, "lw", 2) == 0) {
-            int rd = reg(r0);
+            int rd = reg(r0, line_n);
             long long int imm = imm_11_0(r1);
-            int rs1 = reg(r2);
+            int rs1 = reg(r2, line_n);
             if (debug) {
                 if (rs1 == 11010) {
                     fprintf(out, "0x%08X %s line: %d / %012lld %05d %03d %05d %07d\n", addr, opcode, line_n, imm, rs1, F3_LW, rd, OP_LW-1);
@@ -331,10 +343,10 @@ int main(int argc, char* argv[]) {
         }
         // 12. sw rs2, imm(rs1) (int output=s10/x26; char output=s11/x27)
         else if (strncmp(opcode, "sw", 2) == 0) {
-            int rs2 = reg(r0);
+            int rs2 = reg(r0, line_n);
             long long int imm1 = imm_11_5(r1);
             int imm2 = imm_4_0(r1);
-            int rs1 = reg(r2);
+            int rs1 = reg(r2, line_n);
             if (debug) {
                 if (rs1 == 11010) { // int output
                     fprintf(out, "0x%08X %s line: %d / %07lld %05d %05d %03d %05d %07d\n", addr, opcode, line_n, imm1, rs2, rs1, F3_SW, imm2, OP_SW-1);
@@ -411,7 +423,7 @@ int main(int argc, char* argv[]) {
         else if (strncmp(opcode, "flw", 3) == 0) {
             int fd = freg(r0);
             long long int imm = imm_11_0(r1);
-            int rs1 = reg(r2);
+            int rs1 = reg(r2, line_n);
             if (debug) {
                 if (rs1 == 11011) {
                     fprintf(out, "0x%08X %s line: %d / %012lld %05d %03d %05d %07d\n", addr, opcode, line_n, imm, rs1, F3_FLW, fd, OP_FLW-1);
@@ -429,11 +441,11 @@ int main(int argc, char* argv[]) {
             // addr += 4;
         }
         // 18. fsw fs2, imm(rs1) (outputには使わない)
-        else if (strncmp(opcode, "sw", 2) == 0) {
+        else if (strncmp(opcode, "fsw", 3) == 0) {
             int fs2 = freg(r0);
             long long int imm1 = imm_11_5(r1);
             int imm2 = imm_4_0(r1);
-            int rs1 = reg(r2);
+            int rs1 = reg(r2, line_n);
             if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %07lld %05d %05d %03d %05d %07d\n", addr, opcode, line_n,  imm1, fs2, rs1, F3_FSW, imm2, OP_FSW);
             } else {
@@ -497,7 +509,7 @@ int main(int argc, char* argv[]) {
         // 23. fcvtsw fd, rs1
         else if (strncmp(opcode, "fcvtsw", 6) == 0) {
             int rd = freg(r0);
-            int rs1 = reg(r1);
+            int rs1 = reg(r1, line_n);
             int rs2 = 0;
             if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %07d %05d %05d %03d %05d %07d\n", addr, opcode, line_n, F7_FCVTSW, rs2, rs1, F3_FCVTSW, rd, OP_FCVTSW);
@@ -509,7 +521,7 @@ int main(int argc, char* argv[]) {
         }
         // 24. fcvtws rd, fs1
         else if (strncmp(opcode, "fcvtws", 6) == 0) {
-            int rd = reg(r0);
+            int rd = reg(r0, line_n);
             int rs1 = freg(r1);
             int rs2 = 0;
             if (debug) {
@@ -522,7 +534,7 @@ int main(int argc, char* argv[]) {
         }
         // 25. feq rd, fs1, fs2
         else if (strncmp(opcode, "feq", 3) == 0) {
-            int rd = reg(r0);
+            int rd = reg(r0, line_n);
             int rs1 = freg(r1);
             int rs2 = freg(r2);
             if (debug) {
@@ -535,7 +547,7 @@ int main(int argc, char* argv[]) {
         }
         // 26. flt rd, fs1, fs2
         else if (strncmp(opcode, "flt", 3) == 0) {
-            int rd = reg(r0);
+            int rd = reg(r0, line_n);
             int rs1 = freg(r1);
             int rs2 = freg(r2);
             if (debug) {
@@ -548,8 +560,8 @@ int main(int argc, char* argv[]) {
         }
         // 27. jalr rd, rs1, imm (注意：jalの前に置く！)
         else if (strncmp(opcode, "jalr", 4) == 0) {
-            int rd = reg(r0);
-            int rs1 = reg(r1);
+            int rd = reg(r0, line_n);
+            int rs1 = reg(r1, line_n);
             long long int imm = imm_11_0(r2);
             if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %012lld %05d %03d %05d %07d\n", addr, opcode, line_n, imm, rs1, F3_JALR, rd, OP_JALR);
@@ -561,7 +573,7 @@ int main(int argc, char* argv[]) {
         }
         // 28. jal rd, label
         else if (strncmp(opcode, "jal", 3) == 0) {
-            int rd = reg(r0);
+            int rd = reg(r0, line_n);
             long long int jmp_addr;
             int n = strlen(r1);
             for (int i=0; i<=1000; i++) {
@@ -572,8 +584,8 @@ int main(int argc, char* argv[]) {
                     break;
                 }
             }
-            printf("label: %s\n", r1);
-            printf("[jal] jmp_addr = %lld, addr = %d\n", jmp_addr, addr);
+            // printf("label: %s\n", r1);
+            // printf("[jal] jmp_addr = %lld, addr = %d\n", jmp_addr, addr);
             // imm[20,10:1,11,19:12]
             long long int imm = imm_20_10_1_11_19_12(jmp_addr - addr);
             if (debug) {

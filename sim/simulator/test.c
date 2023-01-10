@@ -34,7 +34,7 @@ unsigned long long int imm_31_12(char* imm) {
 }
 
 int main(int argc, char* argv[]) {
-    unsigned long long int a = imm_31_12("260608");
-    printf("%020llu\n", a);
+  long long int a = imm_11_0("4");
+  printf("%012lld\n", a);
 	return 0;
 }
