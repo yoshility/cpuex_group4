@@ -91,6 +91,7 @@ long long int to_binary(int, int);
 void print_binary(FILE*, long long int);
 int reg(char*, int);
 int freg(char*);
+void addi_large_imm(FILE*, int*, char*, int, long long int, int, int);
 
 long long int imm_11_0(char*);
 long long int imm_11_5(char*);
