@@ -194,6 +194,10 @@ int freg(char *reg) {
     }
 }
 
+/* addi rd, x0, big_imm
+=> lui rd, imm[30:11]
+   srli rd, rd, 1
+   addi rd, rd, {0, imm[10:0]} に変換 */
 void addi_large_imm(FILE* out, int* addr, char* opcode, int line_n, long long int imm, int rd, int debug) {
     long long int imm_30_11 = imm >> 11;
     long long int imm_10_0 = imm & 0x7ff;

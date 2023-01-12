@@ -81,6 +81,8 @@ int main(int argc, char* argv[]) {
             // printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
             if (strncmp(opcode, "lui", 3) == 0) {
                 addr += 4;
+            } else if ((strncmp(opcode, "addi", 4) == 0) && (atoi(r2) > 2047)) {
+                addr += 8; // 実質やらなくてもいいけど念のため
             }
             addr += 4;
         }
