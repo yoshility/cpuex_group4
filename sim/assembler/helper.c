@@ -194,6 +194,30 @@ int freg(char *reg) {
     }
 }
 
+void addi_large_imm(FILE* out, int* addr, char* opcode, int line_n, long long int imm, int rd, int debug) {
+    long long int imm_30_11 = imm >> 11;
+    long long int imm_10_0 = imm & 0x7ff;
+    if (debug) {
+        // lui rd, upimm
+        fprintf(out, "0x%08X %s line: %d / %020llu %05d %07d\n", *addr, "lui", line_n, to_binary(imm_30_11, 20), rd, OP_LUI);
+        *addr += 4;
+        // srli rd, rs1, imm
+        fprintf(out, "0x%08X %s line: %d / %012d %05d %03d %05d %07d\n", *addr, "srli", line_n, 1, rd, 101, rd, 10011);
+        *addr += 4;
+        // addi rd, rs1, imm
+        fprintf(out, "0x%08X %s line: %d / 0%011lld %05d %03d %05d %07d\n", *addr, opcode, line_n, to_binary(imm_10_0, 11), rd, F3_ADDI, rd, OP_ADDI);
+    } else {
+        // lui rd, upimm
+        fprintf(out, "%020llu%05d%07d\n", to_binary(imm_30_11, 20), rd, OP_LUI);
+        *addr += 4;
+        // srli rd, rs1, imm
+        fprintf(out, "%012d%05d%03d%05d%07d\n", 1, rd, 101, rd, 10011);
+        *addr += 4;
+        // addi rd, rs1, imm
+        fprintf(out, "0%011lld%05d%03d%05d%07d\n", to_binary(imm_10_0, 11), rd, F3_ADDI, rd, OP_ADDI);
+    }
+}
+
 // 即値imm[11:0]
 long long int imm_11_0(char* imm) {
     int n = (atoi(imm) < 0) ? ((1 << 12) + atoi(imm)) : atoi(imm);

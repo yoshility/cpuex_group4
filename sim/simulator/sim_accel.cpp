@@ -1,6 +1,4 @@
 #include <bits/stdc++.h>
-#include <boost/bimap/bimap.hpp>
-#include <boost/bimap/multiset_of.hpp>
 #include "./helper.hpp"
 #include "./memory.hpp"
 using namespace std;
@@ -130,15 +128,15 @@ int main(int argc, char* argv[]) {
 
     fclose(in);
     // print float table
-    cout << "------ float table ------" << endl;
-    for (auto itr = data_label.begin(); itr != data_label.end(); ++itr) {
-        cout << "[label] " << itr->first << "\t[addr] " << itr->second << "\t[value] " << memory.d[itr->second/4].f << endl;
-    }
+    // cout << "------ float table ------" << endl;
+    // for (auto itr = data_label.begin(); itr != data_label.end(); ++itr) {
+    //     cout << "[label] " << itr->first << "\t[addr] " << itr->second << "\t[value] " << memory.d[itr->second/4].f << endl;
+    // }
     // print func_label
-    cout << "------ function label ------" << endl << endl;
-    for (auto itr = func_label.begin(); itr != func_label.end(); ++itr) {
-        cout << itr->first << " : " << itr->second << endl;
-    }
+    // cout << "------ function label ------" << endl << endl;
+    // for (auto itr = func_label.begin(); itr != func_label.end(); ++itr) {
+    //     cout << itr->first << " : " << itr->second << endl;
+    // }
     
     // <step 2> 命令メモリに格納する作業
     // もう一回開く

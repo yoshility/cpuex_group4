@@ -100,7 +100,7 @@ int main(int argc, char* argv[]) {
     fprintf(out, "%032lld\n", to_binary(data_addr/4, 32));
     // pcの初期値
     if (debug) {
-        printf("initial pc: %d\n", pc);
+        fprintf(out, "initial pc: %X / ", pc);
     }
     fprintf(out, "%032lld\n", to_binary(pc, 32));
     while (fgets(line, BUFSIZE, in) != NULL) {
@@ -132,13 +132,16 @@ int main(int argc, char* argv[]) {
             int rd = reg(r0, line_n);
             int rs1 = reg(r1, line_n);
             long long int imm = imm_11_0(r2);
-            if (debug) {
+            // 即値が大きい場合
+            if (atoi(r2) > 2047) {
+                addi_large_imm(out, &addr, opcode, line_n, atoi(r2), rd, debug);
+            }
+            // 通常即値
+            else if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %012lld %05d %03d %05d %07d\n", addr, opcode, line_n, imm, rs1, F3_ADDI, rd, OP_ADDI);
             } else {
                 fprintf(out, "%012lld%05d%03d%05d%07d\n", imm, rs1, F3_ADDI, rd, OP_ADDI);  
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 2. add rd, rs1, rs2
         else if (strncmp(opcode, "add", 3) == 0) {
