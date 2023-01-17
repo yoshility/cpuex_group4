@@ -228,18 +228,18 @@ int main(int argc, char* argv[]) {
             // lui
             unsigned long long int imm = (d_addr >> 12);
             if (debug) {
-                fprintf(out, "0x%08X %s line: %d / %020llu %05d %07d\n", addr, opcode, line_n, imm, rd, OP_LUI);
+                fprintf(out, "0x%08X %s line: %d / %020llu %05d %07d\n", addr, opcode, line_n, to_binary(imm, 20), rd, OP_LUI);
             } else {
-                fprintf(out, "%020llu%05d%07d\n", imm, rd, OP_LUI);
+                fprintf(out, "%020llu%05d%07d\n", to_binary(imm, 20), rd, OP_LUI);
             }
             // fprintf(out, "%s\n", str);
             addr += 4;
             // ori 
             imm = d_addr & 0xfff;
             if (debug) {
-                fprintf(out, "0x%08X %s line: %d / %012llu %05d %03d %05d %07d\n", addr, "ori", line_n, imm, rd, F3_ORI, rd, OP_ORI);
+                fprintf(out, "0x%08X %s line: %d / %012llu %05d %03d %05d %07d\n", addr, "ori", line_n, to_binary(imm, 12), rd, F3_ORI, rd, OP_ORI);
             } else {
-                fprintf(out, "%012llu%05d%03d%05d%07d\n", imm, rd, F3_ORI, rd, OP_ORI);
+                fprintf(out, "%012llu%05d%03d%05d%07d\n", to_binary(imm, 12), rd, F3_ORI, rd, OP_ORI);
             }
             // fprintf(out, "%s\n", str);
             // addr += 4;

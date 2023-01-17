@@ -132,6 +132,7 @@ int main(int argc, char* argv[]) {
     // for (auto itr = data_label.begin(); itr != data_label.end(); ++itr) {
     //     cout << "[label] " << itr->first << "\t[addr] " << itr->second << "\t[value] " << memory.d[itr->second/4].f << endl;
     // }
+
     // print func_label
     // cout << "------ function label ------" << endl << endl;
     // for (auto itr = func_label.begin(); itr != func_label.end(); ++itr) {
@@ -402,6 +403,10 @@ int main(int argc, char* argv[]) {
                         perror("sld file is over!\n");
                     }
                 }
+                // cache
+                else if (use_cache) {
+                    cache.lw_use_cache(reg[op._r2]+op._r1, memory, reg, op._r0);
+                }
                 // regular lw
                 else {
                     reg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].i;
@@ -647,6 +652,7 @@ int main(int argc, char* argv[]) {
         print_freg(freg);
     }
     if (debug && use_cache) {
+        cache.print();
         cache.print_stat();
     }
     

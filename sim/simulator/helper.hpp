@@ -1,13 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define INVALID 0
-#define CLEAN 1
-#define DIRTY 2
-
 #define MEMORY_SIZE         8188000
 #define INST_MEMORY_SIZE    15000
 
+// 各命令を表す構造体
 typedef struct inst {
     int _opcode;
     int _r0;
