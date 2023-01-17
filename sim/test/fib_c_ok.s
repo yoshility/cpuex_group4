@@ -42,6 +42,6 @@ bg_else.22:
 	addi	x0, x0, 0
 .global	min_caml_start
 min_caml_start:
-	addi	a0, x0, 10
+	addi	a0, x0, 3
 	jal	x0, fib.9
 	jalr	x0, ra, 0
