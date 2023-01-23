@@ -88,6 +88,12 @@ int main(int argc, char* argv[]) {
         }
     }
 
+    // print func_label
+    printf("----- function label -----\n");
+    for (int i=0; i<1000; i++) {
+        printf("[label] %s\t[addr] %X\n", func_label[i], func_label_addr[i]);
+    }
+
     // 一回閉じてもう一回開く
     fclose(in);
     if ((in = fopen(argv[1], "r")) == NULL) {
