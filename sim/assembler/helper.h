@@ -31,6 +31,7 @@
 #define OP_FLT      (1010011)
 #define OP_FLE      (1010011)
 #define OP_SLLI     (10011)
+#define OP_SRLI     (10011)
 
 #define F7_ADD      (0)
 #define F7_SUB      (100000)
@@ -84,6 +85,7 @@
 #define F3_SLLI     (1)
 #define F3_ORI      (110)
 #define F3_SB       (0)
+#define F3_SRLI     (101)
 
 char* eliminate_comma_and_comment(char*);
 char* eliminate_colon(char*);

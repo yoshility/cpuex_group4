@@ -306,7 +306,7 @@ int imm_4_1_11(long long int imm) {
 
 // 即値imm[31:12]
 unsigned long long int imm_31_12(char* imm) {
-  int m = atoi(imm);
+  int m = atoi(imm) / 4096;
   unsigned long int n = (m < 0) ? ((1 << 20) + m) : m;
 
   unsigned long long int binary = 0;
