@@ -187,7 +187,7 @@ int main(int argc, char* argv[]) {
             case 6: // slli rd, rs1, uimm
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), reg_num.at(r1), atoi(r2), line_n);
                 break;
-            case 7: // lui rd, upimm / lui rd, label
+            case 7: // luil rd, label
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), data_label[r1], -1, line_n);
                 break;
             case 8: // beq rs1, rs2, label
@@ -253,6 +253,8 @@ int main(int argc, char* argv[]) {
             case 28: // jal rd, label
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), func_label[r1], -1, line_n);
                 break;
+            // case 29: // oril rd, rs1, label
+            // case 30: // lui rd, 
             default:
                 cout << "[Step 2] Error: unknown inst: " << opcode_n << endl;
                 exit(1);
