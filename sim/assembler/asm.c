@@ -79,20 +79,15 @@ int main(int argc, char* argv[]) {
         else {
             // 命令アドレスも一緒に出力
             // printf("0x%08X\t%s %s %s %s\n", addr, opcode, r0, r1, r2);
-            if (strncmp(opcode, "lui", 3) == 0) {
-                addr += 4;
-            } else if ((strncmp(opcode, "addi", 4) == 0) && (atoi(r2) > 2047)) {
-                addr += 8; // 実質やらなくてもいいけど念のため
-            }
             addr += 4;
         }
     }
 
     // print func_label
-    printf("----- function label -----\n");
-    for (int i=0; i<1000; i++) {
-        printf("[label] %s\t[addr] %X\n", func_label[i], func_label_addr[i]);
-    }
+    // printf("----- function label -----\n");
+    // for (int i=0; i<1000; i++) {
+    //     printf("[label] %s\t[addr] %X\n", func_label[i], func_label_addr[i]);
+    // }
 
     // 一回閉じてもう一回開く
     fclose(in);
@@ -125,7 +120,12 @@ int main(int argc, char* argv[]) {
         }
         // .longならデータを出力して無視
         else if (strcmp(opcode, ".long") == 0) {
-            print_binary((FILE*)out, atof(r0));
+            if (debug) {
+                fprintf(out, "%s: ", r0);
+                print_binary((FILE*)out, atof(r0));
+            } else {
+                print_binary((FILE*)out, atof(r0));
+            }
             line_n++;
             continue;
         }
@@ -135,8 +135,29 @@ int main(int argc, char* argv[]) {
             continue;
         }
 
+        // 31. addil rd, rs1, label -> addi rd, rs1, {0, label_addr[10:0]}
+        if (strncmp(opcode, "addil", 5) == 0) {
+            int rd = reg(r0, line_n);
+            int rs1 = reg(r1, line_n);
+            int d_addr;
+            int n = strlen(r2);
+            for (int i=0; i<=64; i++) {
+                if (i == 64) {
+                    printf("[%s] cannot find label: %s\n", opcode, r2);
+                } else if (strncmp(data_label[i], r2, n) == 0) {
+                    d_addr = i*4;
+                    break;
+                }
+            }
+            long long int imm_10_0 = to_binary((d_addr&0x7ff), 11);
+            if (debug) {
+                fprintf(out, "0x%08X %s line: %d / 0%011lld %05d %03d %05d %07d\n", addr, opcode, line_n, imm_10_0, rs1, F3_ADDI, rd, OP_ADDI);
+            } else {
+                fprintf(out, "0%011lld%05d%03d%05d%07d\n", imm_10_0, rs1, F3_ADDI, rd, OP_ADDI);
+            }
+        }
         // 1. addi rd, rs1, imm
-        if (strncmp(opcode, "addi", 4) == 0) {
+        else if (strncmp(opcode, "addi", 4) == 0) {
             int rd = reg(r0, line_n);
             int rs1 = reg(r1, line_n);
             long long int imm = imm_11_0(r2);
@@ -216,39 +237,25 @@ int main(int argc, char* argv[]) {
             // fprintf(out, "%s\n", str);
             // addr += 4;
         }
-        // 7. lui rd, upimm => lui rd, label
-        /* lui rd, hi(label)
-           ori rd, rd, lo(label) に直す */
-        else if (strncmp(opcode, "lui", 3) == 0) {
+        // 7. luil rd, label -> lui a0, label_addr[30:11]
+        else if (strncmp(opcode, "luil", 4) == 0) {
             int rd = reg(r0, line_n);
             int d_addr;
             int n = strlen(r1);
             for (int i=0; i<=64; i++) {
                 if (i == 64) {
-                    printf("[0x%X] cannot find label: %s\n", addr, r2);
+                    printf("[%s] cannot find label: %s\n", opcode, r1);
                 } else if (strncmp(data_label[i], r1, n) == 0) {
                     d_addr = i*4;
                     break;
                 }
             }
-            // lui
-            unsigned long long int imm = (d_addr >> 12);
+            long long int label_30_11 = to_binary((d_addr >> 11), 20);
             if (debug) {
-                fprintf(out, "0x%08X %s line: %d / %020llu %05d %07d\n", addr, opcode, line_n, to_binary(imm, 20), rd, OP_LUI);
+                fprintf(out, "0x%08X %s line: %d / %020lld %05d %07d\n", addr, opcode, line_n, label_30_11, rd, OP_LUI);
             } else {
-                fprintf(out, "%020llu%05d%07d\n", to_binary(imm, 20), rd, OP_LUI);
+                fprintf(out, "%020lld%05d%07d\n", label_30_11, rd, OP_LUI);
             }
-            // fprintf(out, "%s\n", str);
-            addr += 4;
-            // ori 
-            imm = d_addr & 0xfff;
-            if (debug) {
-                fprintf(out, "0x%08X %s line: %d / %012llu %05d %03d %05d %07d\n", addr, "ori", line_n, to_binary(imm, 12), rd, F3_ORI, rd, OP_ORI);
-            } else {
-                fprintf(out, "%012llu%05d%03d%05d%07d\n", to_binary(imm, 12), rd, F3_ORI, rd, OP_ORI);
-            }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 8. beq rs1, rs2, label
         else if (strncmp(opcode, "beq", 3) == 0) {
@@ -259,7 +266,7 @@ int main(int argc, char* argv[]) {
             // find label's address
             for (int i=0; i<=1000; i++) {
                 if (i == 1000) {
-                    printf("[0x%X] cannot find label: %s\n", addr, r2);
+                    printf("[%s] cannot find label: %s\n", opcode, r2);
                 } else if (strncmp(func_label[i], r2, n) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
@@ -288,7 +295,7 @@ int main(int argc, char* argv[]) {
             int n = strlen(r2);
             for (int i=0; i<=1000; i++) {
                 if (i == 1000) {
-                    printf("[0x%X] cannot find label: %s\n", addr, r2);
+                    printf("[%s] cannot find label: %s\n", opcode, r2);
                 } else if (strncmp(func_label[i], r2, n) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
@@ -313,7 +320,7 @@ int main(int argc, char* argv[]) {
             int n = strlen(r2);
             for (int i=0; i<=1000; i++) {
                 if (i == 1000) {
-                    printf("[0x%X] cannot find label: %s\n", addr, r2);
+                    printf("[%s] cannot find label: %s\n", opcode, r2);
                 } else if (strncmp(func_label[i], r2, n) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
@@ -589,7 +596,7 @@ int main(int argc, char* argv[]) {
             int n = strlen(r1);
             for (int i=0; i<=1000; i++) {
                 if (i == 1000) {
-                    printf("[0x%X] cannot find label: %s\n", addr, r1);
+                    printf("[%s] cannot find label: %s\n", opcode, r1);
                 } else if (strncmp(func_label[i], r1, n) == 0) {
                     jmp_addr = func_label_addr[i];
                     break;
@@ -606,6 +613,27 @@ int main(int argc, char* argv[]) {
             }
             // fprintf(out, "%s\n", str);
             // addr += 4;
+        }
+        // 29. lui rd, imm
+        else if (strncmp(opcode, "lui", 3) == 0) {
+            int rd = reg(r0, line_n);
+            unsigned long long int imm = to_binary(atoi(r1), 20);
+            if (debug) {
+                fprintf(out, "0x%08X %s line: %d / %020llu %05d %07d\n", addr, opcode, line_n, imm, rd, OP_LUI);
+            } else {
+                fprintf(out, "%020llu%05d%07d\n", imm, rd, OP_LUI);
+            }
+        }
+        // 30. srli rd, rs1, imm
+        else if (strncmp(opcode, "srli", 4) == 0) {
+            int rd = reg(r0, line_n);
+            int rs1 = reg(r1, line_n);
+            long long int imm = imm_11_0(r2);
+            if (debug) {
+                fprintf(out, "0x%08X %s line: %d / %012lld %05d %03d %05d %07d\n", addr, opcode, line_n, imm, rs1, F3_SRLI, rd, OP_SRLI);
+            } else {
+                fprintf(out, "%012lld%05d%03d%05d%07d\n", imm, rs1, F3_SRLI, rd, OP_SRLI);
+            }
         }
         // others
         else {
