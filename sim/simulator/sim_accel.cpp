@@ -6,11 +6,11 @@ using namespace std;
 #define BUFSIZE 100
 
 const unordered_map<string, int> op_n = {
-    {"addi", 1}, {"add", 2}, {"sub", 3}, {"mul", 4}, {"div", 5}, {"slli", 6}, {"lui", 7}, {"beq", 8}, {"bne", 9}, {"blt", 10}, {"lw", 11}, {"sw", 12}, {"fadd", 13}, {"fsub", 14}, {"fmul", 15}, {"fdiv", 16}, {"flw", 17}, {"fsw", 18}, {"fsqrt", 19}, {"fsgnjn", 20}, {"fsgnjx", 21}, {"fsgnj", 22}, {"fcvtsw", 23}, {"fcvtws", 24}, {"feq", 25}, {"flt", 26}, {"jalr", 27}, {"jal", 28}
+    {"addi", 1}, {"add", 2}, {"sub", 3}, {"mul", 4}, {"div", 5}, {"slli", 6}, {"luil", 7}, {"beq", 8}, {"bne", 9}, {"blt", 10}, {"lw", 11}, {"sw", 12}, {"fadd", 13}, {"fsub", 14}, {"fmul", 15}, {"fdiv", 16}, {"flw", 17}, {"fsw", 18}, {"fsqrt", 19}, {"fsgnjn", 20}, {"fsgnjx", 21}, {"fsgnj", 22}, {"fcvtsw", 23}, {"fcvtws", 24}, {"feq", 25}, {"flt", 26}, {"jalr", 27}, {"jal", 28}, {"lui", 29}, {"srli", 30}, {"addil", 31}
 };
 
 const unordered_map<int, string> n_op = {
-    {1, "addi"}, {2, "add"}, {3, "sub"}, {4, "mul"}, {5, "div"}, {6, "slli"}, {7, "lui"}, {8, "beq"}, {9, "bne"}, {10, "blt"}, {11, "lw"}, {12, "sw"}, {13, "fadd"}, {14, "fsub"}, {15, "fmul"}, {16, "fdiv"}, {17, "flw"}, {18, "fsw"}, {19, "fsqrt"}, {20, "fsgnjn"}, {21, "fsgnjx"}, {22, "fsgnj"}, {23, "fcvtsw"}, {24, "fcvtws"}, {25, "feq"}, {26, "flt"}, {27, "jalr"}, {28, "jal"}
+    {1, "addi"}, {2, "add"}, {3, "sub"}, {4, "mul"}, {5, "div"}, {6, "slli"}, {7, "luil"}, {8, "beq"}, {9, "bne"}, {10, "blt"}, {11, "lw"}, {12, "sw"}, {13, "fadd"}, {14, "fsub"}, {15, "fmul"}, {16, "fdiv"}, {17, "flw"}, {18, "fsw"}, {19, "fsqrt"}, {20, "fsgnjn"}, {21, "fsgnjx"}, {22, "fsgnj"}, {23, "fcvtsw"}, {24, "fcvtws"}, {25, "feq"}, {26, "flt"}, {27, "jalr"}, {28, "jal"}, {29, "lui"}, {30, "srli"}, {31, "addil"}
 };
 
 const unordered_map<string, int> reg_num = {
@@ -187,7 +187,7 @@ int main(int argc, char* argv[]) {
             case 6: // slli rd, rs1, uimm
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), reg_num.at(r1), atoi(r2), line_n);
                 break;
-            case 7: // lui rd, upimm / lui rd, label
+            case 7: // luil rd, label
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), data_label[r1], -1, line_n);
                 break;
             case 8: // beq rs1, rs2, label
@@ -252,6 +252,15 @@ int main(int argc, char* argv[]) {
                 break;
             case 28: // jal rd, label
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), func_label[r1], -1, line_n);
+                break;
+            case 29: // lui rd, imm (big_addiの展開用)
+                inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), atoi(r1), -1, line_n);
+                break;
+            case 30: // srli rd, rs1, imm (ラベルluiとbig_addiの展開用)
+                inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), reg_num.at(r1), atoi(r2), line_n);
+                break;
+            case 31: // addil rd, rs1, label (ラベルluiの展開用)
+                inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), reg_num.at(r1), data_label[r2], line_n);
                 break;
             default:
                 cout << "[Step 2] Error: unknown inst: " << opcode_n << endl;
@@ -340,13 +349,13 @@ int main(int argc, char* argv[]) {
                 reg[op._r0] = reg[op._r1] << op._r2;
                 pc += 4;
                 break;
-            case 7: // lui rd, upimm / lui rd, label
+            case 7: // luil rd, label
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1;
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
-                reg[op._r0] = op._r1;
+                reg[op._r0] = ((op._r1 / 2048) << 12);
                 pc += 4;
                 break;
             case 8: // beq rs1, rs2, label
@@ -599,6 +608,33 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = pc + 4;
                 pc = op._r1;
+                break;
+            case 29: // lui rd, imm
+                if (debug) {
+                    printf("####[pc :0x%08X | ", pc);
+                    cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1;
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                }
+                reg[op._r0] = (op._r1 << 12);
+                pc += 4;
+                break;
+            case 30: // srli rd, rs1, imm
+                if (debug) {
+                    printf("####[pc :0x%08X | ", pc);
+                    cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << op._r2;
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                }
+                reg[op._r0] = reg[op._r1] >> op._r2;
+                pc += 4;
+                break;
+            case 31: // addil rd, rs1, label -> addi rd, rs1, {0,label[10:0]}
+                if (debug) {
+                    printf("####[pc :0x%08X | ", pc);
+                    cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << op._r2;
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                }
+                reg[op._r0] = reg[op._r1] + (op._r2 % 2048);
+                pc += 4;
                 break;
             default: // others
                 cout << "[Step 3] Error: unknown inst: " << opcode_n << endl;
