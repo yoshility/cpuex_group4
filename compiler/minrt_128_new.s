@@ -913,7 +913,7 @@ min_caml_fsqr:
 	addi	x0, x0, 0
 min_caml_print_newline:
 	addi a0, x0, 10
-	sw	 a0, 0(s11)
+	sw	 a0, 0(s10)
 	jalr x0, ra, 0
 	addi x0, x0, 0
 min_caml_print_int:
@@ -921,7 +921,7 @@ min_caml_print_int:
 	jalr x0, ra, 0
 	addi x0, x0, 0
 min_caml_print_char:
-	sw	 a0, 0(s11)
+	sw	 a0, 0(s10)
 	jalr x0, ra, 0
 	addi x0, x0, 0
 min_caml_read_int:
