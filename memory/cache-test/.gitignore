@@ -1,0 +1,5 @@
+.vscode/
+
+ip/*/*
+!ip/*/*.xci
+!ip/*/*.prj

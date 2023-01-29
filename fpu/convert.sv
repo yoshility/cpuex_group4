@@ -14,6 +14,7 @@ module ftoi (
 	wire [30:0] fraction = (float_x[31]) ? ~pos_fraction + 30'b1 : pos_fraction;
 
 	logic [31:0] x_reg;
+	assign int_x = x_reg;
 
 	always @(posedge clk) begin
 		if (~rstn) begin
