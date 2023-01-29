@@ -10,7 +10,7 @@ module dram_test (
     always_ff @ (posedge clk) begin
         case (req_state)
             3'b000: begin
-                fifo.req.cmd <= 1'b0; //write
+                fifo.req.cmd <= 1'b0;
                 fifo.req.addr <= 27'h300;
                 fifo.req.data <= 128'h0123456789abcdeffedcba9876543210;
                 fifo.req_en <= 1'b1;
