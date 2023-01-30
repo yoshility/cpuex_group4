@@ -1,5 +1,5 @@
 `default_nettype wire
-module cache_test #(
+module cache_controller #(
 	parameter LINE_SIZE = 128,
 	parameter LINE_NUM = 1024,
 	parameter DATA_LEN = 32,
@@ -17,13 +17,14 @@ module cache_test #(
 	input 	[ADDR_LEN-1:0] addr,
 	inout 	[DATA_LEN-1:0] data,
 	input	read_or_write, //read : 1, write : 0
-	output	finish
+	output	finish,
+	input rstn
 );
-    // req
-    assign fifo.clk = clk;
-    assign fifo.rsp_rdy = 1'b1;
+	// req
+	assign fifo.clk = clk;
+	assign fifo.rsp_rdy = 1'b1;
 
-    (*ram_style = "BLOCK"*) logic [LINE_SIZE-1:0] cache_memory [0:2**INDEX_LEN-1];
+	(*ram_style = "BLOCK"*) logic [LINE_SIZE-1:0] cache_memory [0:2**INDEX_LEN-1];
 	(*ram_style = "BLOCK"*) logic [TAG_LEN-1:0] tag_memory [0:2**INDEX_LEN-1];
 	(*ram_style = "BLOCK"*) logic [TAG_LEN-1:0] dirty_memory;
 
@@ -32,13 +33,13 @@ module cache_test #(
 
 	wire cache_hit = (tag_memory[target_line] == addr[ADDR_LEN-1:ADDR_LEN-TAG_LEN]) ? 1'b1 : 1'b0;
 
-	logic data_reg [DATA_LEN-1:0];
+	logic [DATA_LEN-1:0] data_reg;
 	assign data = data_reg;
 
 	logic [ 5:0] memory_access_state;
-	localparam s_wait = 6'b000001;
+	localparam s_wait 		= 6'b000001;
 	localparam s_write_back = 6'b000010;
-	localparam s_fetch = 6'b000100;
+	localparam s_fetch 		= 6'b000100;
 	localparam s_over_write = 6'b001000;
 
     always_ff @ (posedge clk) begin
@@ -46,7 +47,6 @@ module cache_test #(
 			data_reg <= 32'b0;
 			finish <= 1'b0;
 			memory_access_state <= s_wait;
-            ready_over_write <=
 		end
 		if (~finish) begin
 			if (read_or_write) begin
