@@ -690,14 +690,6 @@ int main(int argc, char* argv[]) {
             cout << "now inst count: " << inst_count << endl;
         }
 
-        if (inst_count == 286440469) {
-            printf("Too many insts!!\n");
-            break;
-        }
-
-        // printf("mem[0d8388480 = 0x800000-0d128] = %d\n", memory.d[8388480/4].i);
-        // // どこかのタイミングで1025が入るはず
-
         if (pc == pre_pc) {
             cout << "same pc!: " << pc << endl;
             break;
@@ -709,7 +701,7 @@ int main(int argc, char* argv[]) {
         print_reg(reg);
         print_freg(freg);
     }
-    if (debug && use_cache) {
+    if (use_cache) {
         cache.print();
         cache.print_stat();
     }
