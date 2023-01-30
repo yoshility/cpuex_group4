@@ -1,3 +1,4 @@
+`default_nettype wire
 module ddr2 (
     // DDR2
     output wire [12:0] ddr2_addr,
@@ -32,10 +33,21 @@ module ddr2 (
     slave_fifo slave_fifo ();
 
     // master
-    dram_test dram_test (
+    // 使う線
+    wire [27-1:0] addr;
+    wire [32-1:0] data;
+    wire read_or_write; //read : 1, write : 0
+    wire finish; // アクセス完了（出力
+    wire rstn;
+    //
+    cache_controller cache_controller (
         .fifo(master_fifo),
         .clk(cpu_clk),
-        .led(led)
+        .led(led),
+        .addr(addr),
+        .data(data),
+        .read_or_write(read_or_write),
+        .finish(finish)
     );
 
     // fifo
