@@ -161,12 +161,7 @@ int main(int argc, char* argv[]) {
             int rd = reg(r0, line_n);
             int rs1 = reg(r1, line_n);
             long long int imm = imm_11_0(r2);
-            // 即値が大きい場合
-            if (atoi(r2) > 2047) {
-                addi_large_imm(out, &addr, opcode, line_n, atoi(r2), rd, debug);
-            }
-            // 通常即値
-            else if (debug) {
+            if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %012lld %05d %03d %05d %07d\n", addr, opcode, line_n, imm, rs1, F3_ADDI, rd, OP_ADDI);
             } else {
                 fprintf(out, "%012lld%05d%03d%05d%07d\n", imm, rs1, F3_ADDI, rd, OP_ADDI);  
@@ -182,8 +177,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_ADD, rs2, rs1, F3_ADD, rd, OP_ADD);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 3. sub rd, rs1, rs2
         else if (strncmp(opcode, "sub", 3) == 0) {
@@ -195,8 +188,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_SUB, rs2, rs1, F3_SUB, rd, OP_SUB);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 4. mul rd, rs1, rs2
         else if (strncmp(opcode, "mul", 3) == 0) {
@@ -208,8 +199,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_MUL, rs2, rs1, F3_MUL, rd, OP_MUL);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 5. div rd, rs1, rs2
         else if (strncmp(opcode, "div", 3) == 0) {
@@ -221,8 +210,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_DIV, rs2, rs1, F3_DIV, rd, OP_DIV);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 6. slli rd, rs1, uimm
         else if (strncmp(opcode, "slli", 4) == 0) {
@@ -234,8 +221,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%012lld%05d%03d%05d%07d\n", uimm, rs1, F3_SLLI, rd, OP_SLLI);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 7. luil rd, label -> lui a0, label_addr[30:11]
         else if (strncmp(opcode, "luil", 4) == 0) {
@@ -284,8 +269,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07lld%05d%05d%03d%05d%07d\n", imm1, rs2, rs1, F3_BEQ, imm2, OP_BEQ);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 9. bne rs1, rs2, label
         else if (strncmp(opcode, "bne", 3) == 0) {
@@ -309,8 +292,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07lld%05d%05d%03d%05d%07d\n", imm1, rs2, rs1, F3_BNE, imm2, OP_BNE);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 10. blt rs1, rs2, label
         else if (strncmp(opcode, "blt", 3) == 0) {
@@ -335,8 +316,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07lld%05d%05d%03d%05d%07d\n", imm1, rs2, rs1, F3_BLT, imm2, OP_BLT);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 11. lw rd, imm(rs1) (input=s10/x26)
         else if (strncmp(opcode, "lw", 2) == 0) {
@@ -356,8 +335,6 @@ int main(int argc, char* argv[]) {
                     fprintf(out, "%012lld%05d%03d%05d%07d\n", imm, rs1, F3_LW, rd, OP_LW);
                 }
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 12. sw rs2, imm(rs1) (int output=s10/x26; char output=s11/x27)
         else if (strncmp(opcode, "sw", 2) == 0) {
@@ -382,8 +359,6 @@ int main(int argc, char* argv[]) {
                     fprintf(out, "%07lld%05d%05d%03d%05d%07d\n", imm1, rs2, rs1, F3_SW, imm2, OP_SW);
                 }
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 13. fadd fd, fs1, fs2
         else if (strncmp(opcode, "fadd", 4) == 0) {
@@ -395,8 +370,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FADD, fs2, fs1, F3_FADD, fd, OP_FADD);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 14. fsub fd, fs1, fs2
         else if (strncmp(opcode, "fsub", 4) == 0) {
@@ -408,8 +381,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FSUB, fs2, fs1, F3_FSUB, fd, OP_FSUB);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 15. fmul fd, fs1, fs2
         else if (strncmp(opcode, "fmul", 4) == 0) {
@@ -421,8 +392,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FMUL, fs2, fs1, F3_FMUL, fd, OP_FMUL);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 16. fdiv fd, fs1, fs2
         else if (strncmp(opcode, "fdiv", 4) == 0) {
@@ -434,8 +403,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FDIV, fs2, fs1, F3_FDIV, fd, OP_FDIV);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 17. flw fd, imm(rs1) (input=s11/x27)
         else if (strncmp(opcode, "flw", 3) == 0) {
@@ -455,8 +422,6 @@ int main(int argc, char* argv[]) {
                     fprintf(out, "%012lld%05d%03d%05d%07d\n", imm, rs1, F3_FLW, fd, OP_FLW);
                 }
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 18. fsw fs2, imm(rs1) (outputには使わない)
         else if (strncmp(opcode, "fsw", 3) == 0) {
@@ -469,8 +434,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07lld%05d%05d%03d%05d%07d\n", imm1, fs2, rs1, F3_FSW, imm2, OP_FSW);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 19. fsqrt fd, fs1
         else if (strncmp(opcode, "fsqrt", 5) == 0) {
@@ -482,8 +445,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FSQRT, rs2, rs1, F3_FSQRT, rd, OP_FSQRT);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 20. fsgnjn fd, fs1, fs2
         else if (strncmp(opcode, "fsgnjn", 6) == 0) {
@@ -495,8 +456,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FSGNJN, rs2, rs1, F3_FSGNJN, rd, OP_FSGNJN);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 21. fsgnjx fd, fs1, fs2
         else if (strncmp(opcode, "fsgnjx", 6) == 0) {
@@ -508,8 +467,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FSGNJX, rs2, rs1, F3_FSGNJX, rd, OP_FSGNJX);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 22. fsgnj fd, fs1, fs2
         else if (strncmp(opcode, "fsgnj", 5) == 0) {
@@ -521,8 +478,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FSGNJ, rs2, rs1, F3_FSGNJ, rd, OP_FSGNJ);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 23. fcvtsw fd, rs1
         else if (strncmp(opcode, "fcvtsw", 6) == 0) {
@@ -534,8 +489,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FCVTSW, rs2, rs1, F3_FCVTSW, rd, OP_FCVTSW);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 24. fcvtws rd, fs1
         else if (strncmp(opcode, "fcvtws", 6) == 0) {
@@ -547,8 +500,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FCVTWS, rs2, rs1, F3_FCVTWS, rd, OP_FCVTWS);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 25. feq rd, fs1, fs2
         else if (strncmp(opcode, "feq", 3) == 0) {
@@ -560,8 +511,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FEQ, rs2, rs1, F3_FEQ, rd, OP_FEQ);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 26. flt rd, fs1, fs2
         else if (strncmp(opcode, "flt", 3) == 0) {
@@ -573,8 +522,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%07d%05d%05d%03d%05d%07d\n", F7_FLT, rs2, rs1, F3_FLT, rd, OP_FLT);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 27. jalr rd, rs1, imm (注意：jalの前に置く！)
         else if (strncmp(opcode, "jalr", 4) == 0) {
@@ -586,8 +533,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%012lld%05d%03d%05d%07d\n", imm, rs1, F3_JALR, rd, OP_JALR);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 28. jal rd, label
         else if (strncmp(opcode, "jal", 3) == 0) {
@@ -611,8 +556,6 @@ int main(int argc, char* argv[]) {
             } else {
                 fprintf(out, "%020llu%05d%07d\n", imm, rd, OP_JAL);
             }
-            // fprintf(out, "%s\n", str);
-            // addr += 4;
         }
         // 29. lui rd, imm
         else if (strncmp(opcode, "lui", 3) == 0) {

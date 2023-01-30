@@ -414,7 +414,7 @@ int main(int argc, char* argv[]) {
                 }
                 // cache
                 else if (use_cache) {
-                    cache.lw_use_cache(reg[op._r2]+op._r1, memory, reg, op._r0);
+                    cache.lw_use_cache(reg[op._r2]+op._r1, memory, reg, op._r0, debug);
                 }
                 // regular lw
                 else {
@@ -442,6 +442,10 @@ int main(int argc, char* argv[]) {
                         cout << "\t[sw] char output!" << endl;
                     }
                     fprintf(out_ppm, "%c", reg[op._r0]);
+                }
+                // cache
+                else if (use_cache) {
+                    cache.sw_use_cache(reg[op._r2]+op._r1, memory, reg, op._r0, debug);
                 }
                 // regular sw
                 else {
@@ -504,6 +508,10 @@ int main(int argc, char* argv[]) {
                         exit(1);
                     }
                 }
+                // cache
+                else if (use_cache) {
+                    cache.flw_use_cache(reg[op._r2]+op._r1, memory, freg, op._r0, debug);
+                }
                 // regular flw
                 else {
                     freg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].f;
@@ -516,7 +524,14 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << op._r1 << "(" << reg_name_.at(op._r2) << ")";
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
-                memory.d[(reg[op._r2]+op._r1)/4].f = freg[op._r0];
+                // cache
+                if (use_cache) {
+                    cache.fsw_use_cache(reg[op._r2]+op._r1, memory, freg, op._r0, debug);
+                }
+                // no cache
+                else {
+                    memory.d[(reg[op._r2]+op._r1)/4].f = freg[op._r0];
+                }
                 pc += 4;
                 break;
             case 19: // fsqrt fd, fs1
@@ -657,6 +672,11 @@ int main(int argc, char* argv[]) {
         //     memory.print(8188, 8060);
         // }
 
+        // print cache
+        if (debug && use_cache) {
+            cache.print();
+        }
+
         if (step_by_step) {
             char enter;
             scanf("%c", &enter);
@@ -665,16 +685,18 @@ int main(int argc, char* argv[]) {
         inst_count++;
 
         reg[0] = 0;
-
-        // printf("%lld: 0x%08X\t",inst_count, addr);
-        // cout << n_op[opcode_n];
-        // printf(" %s %s %s\n", r0, r1, r2);
         
         if (inst_count % 100000000 == 0) {
             cout << "now inst count: " << inst_count << endl;
         }
 
-        // printf("accel pc: %d\n", pre_pc);
+        if (inst_count == 286440469) {
+            printf("Too many insts!!\n");
+            break;
+        }
+
+        // printf("mem[0d8388480 = 0x800000-0d128] = %d\n", memory.d[8388480/4].i);
+        // // どこかのタイミングで1025が入るはず
 
         if (pc == pre_pc) {
             cout << "same pc!: " << pc << endl;
