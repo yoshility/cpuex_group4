@@ -4748,10 +4748,10 @@ be_else.14194:
 	fadd	fa0, fa0, fa3
 	addi	a0, x0, 0
 	lw	a1, -0(sp)
-	fsgnj	fs10, fa2, fa2
+	fsgnj	fs11, fa2, fa2
 	fsgnj	fa2, fa0, fa0
 	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fs10, fs10
+	fsgnj	fa1, fs11, fs11
 	sw	ra, -32(sp)
 	addi	sp, sp, -40
 	jal	ra, check_all_inside.2819.6462
@@ -7184,13 +7184,13 @@ calc_diffuse_using_5points.2908.6551:
 	add	a7, a7, a2
 	lw	a7, 0(a7)
 	lw	a7, 20(a7)
-	slli	s1, a0, 2
-	add	a3, s1, a3
+	slli	s0, a0, 2
+	add	a3, s0, a3
 	lw	a3, 0(a3)
 	lw	a3, 20(a3)
-	addi	s1, x0, 932
-	slli	s2, a4, 2
-	add	a1, s2, a1
+	addi	s0, x0, 932
+	slli	s1, a4, 2
+	add	a1, s1, a1
 	lw	a1, 0(a1)
 	sw	a2, -0(sp)
 	sw	a0, -4(sp)
@@ -7199,7 +7199,7 @@ calc_diffuse_using_5points.2908.6551:
 	sw	a6, -16(sp)
 	sw	a5, -20(sp)
 	sw	a4, -24(sp)
-	addi	a0, s1, 0
+	addi	a0, s0, 0
 	sw	ra, -32(sp)
 	addi	sp, sp, -40
 	jal	ra, veccpy.2574.6217
@@ -7408,8 +7408,8 @@ try_exploit_neighbors.2930.6573:
 	addi	t6, x0, 4
 	blt	t6, a5, bg_else.14356
 	lw	a7, 8(a6)
-	slli	s1, a5, 2
-	add	a7, s1, a7
+	slli	s0, a5, 2
+	add	a7, s0, a7
 	lw	a7, 0(a7)
 	addi	t6, x0, 0
 	blt	a7, t6, bg_else.14357
@@ -7923,10 +7923,10 @@ pretrace_line.2955.6598:
 	addi	a1, a0, -1
 	lw	a0, -4(sp)
 	lw	a2, -0(sp)
-	fsgnj	fs10, fa2, fa2
+	fsgnj	fs11, fa2, fa2
 	fsgnj	fa2, fa0, fa0
 	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fs10, fs10
+	fsgnj	fa1, fs11, fs11
 	jal	x0, pretrace_pixels.2948.6591 
 scan_pixel.2959.6602:
 	addi	a6, x0, 0
@@ -8374,10 +8374,10 @@ calc_dirvec.2987.6630:
 	fsw	fa2, -48(sp)
 	sw	a0, -56(sp)
 	addi	a0, a2, 0
-	fsgnj	fs10, fa2, fa2
+	fsgnj	fs11, fa2, fa2
 	fsgnj	fa2, fa0, fa0
 	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fs10, fs10
+	fsgnj	fa1, fs11, fs11
 	sw	ra, -64(sp)
 	addi	sp, sp, -72
 	jal	ra, vecset.2564.6207
