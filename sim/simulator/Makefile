@@ -17,4 +17,4 @@ compiler: sim_compiler.cpp helper.cpp
 	$(CC) -Wall -O3 -I/home/tomy/boost_1_81_0/local/include -o sim_compiler sim_compiler.cpp helper.cpp
 
 clean:
-	rm -f sim
+	rm -f sim sim_compiler

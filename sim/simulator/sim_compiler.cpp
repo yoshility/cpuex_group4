@@ -14,7 +14,7 @@ const unordered_map<int, string> n_op = {
 };
 
 const unordered_map<string, int> reg_num = {
-    {"x0", 0}, {"ra", 1}, {"sp", 2}, {"gp", 3}, {"tp", 4}, {"t0", 5}, {"hp", 5}, {"t1", 6}, {"t2", 7}, {"s0", 8}, {"fp", 8}, {"s1", 9}, {"a0", 10}, {"a1", 11}, {"a2", 12}, {"a3", 13}, {"a4", 14}, {"a5", 15}, {"a6", 16}, {"a7", 17}, {"s2", 18}, {"s3", 19}, {"s4", 20}, {"s5", 21}, {"s6", 22}, {"s7", 23}, {"s8", 24}, {"s9", 25}, {"s10", 26}, {"s11", 27}, {"t3", 28}, {"t4", 29}, {"t5", 30}, {"t6", 31}
+    {"x0", 0}, {"ra", 1}, {"sp", 2}, {"gp", 3}, {"x3",3}, {"tp", 4}, {"x4", 4 }, {"t0", 5}, {"hp", 5}, {"t1", 6}, {"t2", 7}, {"s0", 8}, {"fp", 8}, {"s1", 9}, {"a0", 10}, {"a1", 11}, {"a2", 12}, {"a3", 13}, {"a4", 14}, {"a5", 15}, {"a6", 16}, {"a7", 17}, {"s2", 18}, {"s3", 19}, {"s4", 20}, {"s5", 21}, {"s6", 22}, {"s7", 23}, {"s8", 24}, {"s9", 25}, {"s10", 26}, {"s11", 27}, {"t3", 28}, {"t4", 29}, {"t5", 30}, {"t6", 31}
 };
 
 const unordered_map<string, int> freg_num = {
@@ -148,13 +148,13 @@ int main(int argc, char* argv[]) {
     addr = 0;                   // 命令アドレズを0に戻す
     int line_n = 1;             // アセンブリでの行番号
     int opcode_n = 0;           // opcode 番号
+
     while (fgets(line, BUFSIZE, in) != NULL) {
         strcpy(r0, "\0");
         strcpy(r1, "\0");
         strcpy(r2, "\0");
         inst_cleaned = eliminate_comma_and_comment(line);
         sscanf(inst_cleaned, "%s%s%s%s", opcode, r0, r1, r2);
-
         // ラベルなら無視
         if (opcode[strlen(opcode)-1] == ':') {
             line_n++;
@@ -267,11 +267,10 @@ int main(int argc, char* argv[]) {
                 exit(1);
                 break;
         }
-    
         addr += 4;
         line_n++;
     }
- 
+
     // <step 3> あとは命令メモリを逐次実行
     reg[1] = 1025;              // first ra = 1025
     reg[2] = MEMORY_SIZE;       // sp = MEMORY_SIZE
