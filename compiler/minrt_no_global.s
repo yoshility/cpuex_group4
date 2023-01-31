@@ -780,7 +780,7 @@ y.210.467:
 	bne	a0, t6, be_else.814
 	luil	a0, l.729
 	srli	a0, a0, 1
-	addil	a0, a0, l.729
+	addil	a0, a0,l.729
 	flw	fa0, 0(a0)
 	flw	fa1, -0(sp)
 	fsub	fa0, fa0, fa1
