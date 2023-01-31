@@ -280,6 +280,7 @@ int main(int argc, char* argv[]) {
     unsigned long long inst_count = 0;  // 命令数
     Inst op;                    // 命令
     // unsigned int uimm;
+    int output = 0; // output num
     printf("Processing...\n");
     while (1) {
         if (pc == 1025) { // 大元のra
@@ -399,6 +400,7 @@ int main(int argc, char* argv[]) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1 << "(" << reg_name_.at(op._r2) << ")";
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf("\t[lw] addr: %d\n", reg[op._r2]+op._r1);
                 }
                 // input
                 if (op._r2 == 26) {
@@ -413,9 +415,9 @@ int main(int argc, char* argv[]) {
                     }
                 }
                 // cache
-                else if (use_cache) {
-                    cache.lw_use_cache(reg[op._r2]+op._r1, memory, reg, op._r0, debug);
-                }
+                // else if (use_cache) {
+                //     cache.lw_use_cache(reg[op._r2]+op._r1, memory, reg, op._r0, debug);
+                // }
                 // regular lw
                 else {
                     reg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].i;
@@ -428,6 +430,7 @@ int main(int argc, char* argv[]) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1 << "(" << reg_name_.at(op._r2) << ")";
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf("\t[sw] addr: %d\n", reg[op._r2]+op._r1);
                 }
                 // int output
                 if (op._r2 == 26) {
@@ -435,6 +438,7 @@ int main(int argc, char* argv[]) {
                         cout << "\t[sw] int output!" << endl;
                     }
                     fprintf(out_ppm, "%d", reg[op._r0]);
+                    output++;
                 }
                 // char output
                 else if (op._r2 == 27) {
@@ -442,11 +446,12 @@ int main(int argc, char* argv[]) {
                         cout << "\t[sw] char output!" << endl;
                     }
                     fprintf(out_ppm, "%c", reg[op._r0]);
+                    output++;
                 }
                 // cache
-                else if (use_cache) {
-                    cache.sw_use_cache(reg[op._r2]+op._r1, memory, reg, op._r0, debug);
-                }
+                // else if (use_cache) {
+                //     cache.sw_use_cache(reg[op._r2]+op._r1, memory, reg, op._r0, debug);
+                // }
                 // regular sw
                 else {
                     memory.d[(reg[op._r2]+op._r1)/4].i = reg[op._r0];
@@ -494,6 +499,7 @@ int main(int argc, char* argv[]) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << op._r1 << "(" << reg_name_.at(op._r2) << ")";
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf("\t[flw] addr: %d\n", reg[op._r2]+op._r1);
                 }
                 // input
                 if (op._r2 == 27) {
@@ -509,9 +515,9 @@ int main(int argc, char* argv[]) {
                     }
                 }
                 // cache
-                else if (use_cache) {
-                    cache.flw_use_cache(reg[op._r2]+op._r1, memory, freg, op._r0, debug);
-                }
+                // else if (use_cache) {
+                //     cache.flw_use_cache(reg[op._r2]+op._r1, memory, freg, op._r0, debug);
+                // }
                 // regular flw
                 else {
                     freg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].f;
@@ -523,15 +529,16 @@ int main(int argc, char* argv[]) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << op._r1 << "(" << reg_name_.at(op._r2) << ")";
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf("\t[fsw] addr: %d\n", reg[op._r2]+op._r1);
                 }
                 // cache
-                if (use_cache) {
-                    cache.fsw_use_cache(reg[op._r2]+op._r1, memory, freg, op._r0, debug);
-                }
+                // if (use_cache) {
+                //     cache.fsw_use_cache(reg[op._r2]+op._r1, memory, freg, op._r0, debug);
+                // }
                 // no cache
-                else {
-                    memory.d[(reg[op._r2]+op._r1)/4].f = freg[op._r0];
-                }
+                // else {
+                memory.d[(reg[op._r2]+op._r1)/4].f = freg[op._r0];
+                // }
                 pc += 4;
                 break;
             case 19: // fsqrt fd, fs1
@@ -673,9 +680,9 @@ int main(int argc, char* argv[]) {
         // }
 
         // print cache
-        if (debug && use_cache) {
-            cache.print();
-        }
+        // if (debug && use_cache) {
+        //     cache.print();
+        // }
 
         if (step_by_step) {
             char enter;
@@ -690,6 +697,10 @@ int main(int argc, char* argv[]) {
             cout << "now inst count: " << inst_count << endl;
         }
 
+        if (output > 15) {
+            debug = 1;
+        }
+
         if (pc == pre_pc) {
             cout << "same pc!: " << pc << endl;
             break;
@@ -701,10 +712,10 @@ int main(int argc, char* argv[]) {
         print_reg(reg);
         print_freg(freg);
     }
-    if (use_cache) {
-        cache.print();
-        cache.print_stat();
-    }
+    // if (use_cache) {
+    //     cache.print();
+    //     cache.print_stat();
+    // }
     
     printf("inst_count: %lld\n", inst_count);
 
