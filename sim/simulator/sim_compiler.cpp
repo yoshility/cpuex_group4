@@ -165,7 +165,6 @@ int main(int argc, char* argv[]) {
             line_n++;
             continue;
         }
-
         // 普通の命令なら構造体を作って命令メモリに格納
         opcode_n = op_n.at(opcode);
         switch(opcode_n) {
