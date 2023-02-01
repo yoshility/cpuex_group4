@@ -1,6 +1,7 @@
 obj_dir/
 /scala
 /test_*
+/testf_*
 /project*
 /.Xil
 /ddr2
