@@ -19,7 +19,6 @@ module finv (
 	wire [12:0] gradient = dout[12:0];
 	wire [25:0] dy_calc = gradient * dx;
 	wire [23:0] frac_y = {constant,1'b0} - {10'b0, dy_calc[25:12]};
-	wire [22:0] frac_y2 = constant - {9'b0, dy_calc[25:12]};
 
 	wire [ 7:0] exp_x_unbiased = exp_x - 8'd127;
 	wire [ 7:0] exp_y_unbiased = ~exp_x_unbiased + 8'd1;

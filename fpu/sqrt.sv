@@ -19,12 +19,12 @@ module sqrt (
 	wire [22:0] constant = dout[35:13];
 	wire [12:0] gradient = dout[12:0];
 	wire [26:0] dy_calc = gradient * dx;
-	wire [22:0] frac_y = constant + dy_calc[26:4];
+	wire [23:0] frac_y = {constant, 1'b0} + {9'b0, dy_calc[26:12]};
 
 	wire [ 7:0] exp_y_unbiased = exp_x_unbiased >> 1;
 	wire [ 7:0] exp_y = exp_y_unbiased + 8'd127;
 
-	assign y = {sign , exp_y, frac_y};
+	assign y = {sign , exp_y, frac_y[22:0]};
 endmodule
 
 module sqrt_table (
