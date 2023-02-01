@@ -280,7 +280,6 @@ int main(int argc, char* argv[]) {
     unsigned long long inst_count = 0;  // 命令数
     Inst op;                    // 命令
     // unsigned int uimm;
-    int output = 0; // output num
     printf("Processing...\n");
     while (1) {
         if (pc == 1025) { // 大元のra
@@ -415,9 +414,9 @@ int main(int argc, char* argv[]) {
                     }
                 }
                 // cache
-                // else if (use_cache) {
-                //     cache.lw_use_cache(reg[op._r2]+op._r1, memory, reg, op._r0, debug);
-                // }
+                else if (use_cache) {
+                    cache.use_cache(0, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug);
+                }
                 // regular lw
                 else {
                     reg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].i;
@@ -438,7 +437,6 @@ int main(int argc, char* argv[]) {
                         cout << "\t[sw] int output!" << endl;
                     }
                     fprintf(out_ppm, "%d", reg[op._r0]);
-                    output++;
                 }
                 // char output
                 else if (op._r2 == 27) {
@@ -446,12 +444,11 @@ int main(int argc, char* argv[]) {
                         cout << "\t[sw] char output!" << endl;
                     }
                     fprintf(out_ppm, "%c", reg[op._r0]);
-                    output++;
                 }
                 // cache
-                // else if (use_cache) {
-                //     cache.sw_use_cache(reg[op._r2]+op._r1, memory, reg, op._r0, debug);
-                // }
+                else if (use_cache) {
+                    cache.use_cache(1, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug);
+                }
                 // regular sw
                 else {
                     memory.d[(reg[op._r2]+op._r1)/4].i = reg[op._r0];
@@ -515,9 +512,9 @@ int main(int argc, char* argv[]) {
                     }
                 }
                 // cache
-                // else if (use_cache) {
-                //     cache.flw_use_cache(reg[op._r2]+op._r1, memory, freg, op._r0, debug);
-                // }
+                else if (use_cache) {
+                    cache.use_cache(2, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug);
+                }
                 // regular flw
                 else {
                     freg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].f;
@@ -532,13 +529,13 @@ int main(int argc, char* argv[]) {
                     printf("\t[fsw] addr: %d\n", reg[op._r2]+op._r1);
                 }
                 // cache
-                // if (use_cache) {
-                //     cache.fsw_use_cache(reg[op._r2]+op._r1, memory, freg, op._r0, debug);
-                // }
+                if (use_cache) {
+                    cache.use_cache(3, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug);
+                }
                 // no cache
-                // else {
+                else {
                 memory.d[(reg[op._r2]+op._r1)/4].f = freg[op._r0];
-                // }
+                }
                 pc += 4;
                 break;
             case 19: // fsqrt fd, fs1
@@ -695,10 +692,6 @@ int main(int argc, char* argv[]) {
         
         if (inst_count % 100000000 == 0) {
             cout << "now inst count: " << inst_count << endl;
-        }
-
-        if (output > 15) {
-            debug = 1;
         }
 
         if (pc == pre_pc) {
