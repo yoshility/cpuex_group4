@@ -69,14 +69,14 @@ module fmul (
 		(frac_calc[46] == 1) ? exp_sum :
 		(frac_calc[45] == 1) ? exp_sub1 :
 		exp_sub2;
-	wire [ 8:0] exponent = biased_exponent - 9'd127;
-	wire 				zero = (|x1[30:23] && |x2[30:23]) ? 1'b1 : 1'b0;
-	wire 				inf = (exponent > 9'd381) ? 1'b1 : 1'b0;
-	wire 				denormal = (exponent < 9'd128) ? 1'b1 : 1'b0;
+	wire [ 8:0] exponent = biased_exponent + 9'd129;
+	wire 				zero = (~|x1[30:23] && ~|x2[30:23]) ? 1'b0 : 1'b1;
+	wire 				inf = (&x1[30:23] || &x2[30:23]) ? 1'b1 : 1'b0;
+	//wire 				denormal = (exponent[8]) ? 1'b1 : 1'b0;
 	assign y =
 		(zero) ? {sign, 8'b0, 23'b0} :
 		(inf) ? {sign, 8'd255, 23'b0} :
-		(denormal) ? {sign, 8'b0, fraction} :
+		//(denormal) ? {sign, 8'b0, fraction} :
 		{sign, exponent[7:0], fraction};
 endmodule
 
