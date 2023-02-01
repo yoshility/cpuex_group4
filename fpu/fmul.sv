@@ -1,39 +1,5 @@
 `default_nettype wire
 
-module fmul_multi (
-  input wire [31:0]  x1,
-  input wire [31:0]  x2,
-  output wire [31:0] y,
-  //output wire        ovf,
-  input wire       clk,
-  input wire       rstn
-);
-	wire [47:0] frac_calc;
-	wire [ 8:0] exp_sum;
-	wire      	sign;
-	wire      	zero;
-	logic [47:0] frac_calc_reg;
-	logic [ 8:0] exp_sum_reg;
-	logic      	 sign_reg;
-	logic      	 zero_reg;
-	fmul_step1 step1(x1, x2, frac_calc, exp_sum, sign, zero);
-	fmul_step2 step2(frac_calc_reg, exp_sum_reg, sign_reg, zero_reg, y);
-
-	always @(posedge clk) begin
-		if (~rstn) begin
-			frac_calc_reg <= 48'b0;
-			exp_sum_reg <= 9'b0;
-			sign_reg <= 1'b0;
-			zero_reg <= 1'b0;
-		end else begin
-			frac_calc_reg <= frac_calc;
-			exp_sum_reg <= exp_sum;
-			sign_reg <= sign;
-			zero_reg <= zero;
-		end
-	end
-endmodule
-
 module fmul (
   input wire [31:0]  x1,
   input wire [31:0]  x2,
@@ -44,7 +10,7 @@ module fmul (
 );
 	wire  			sign = x1[31] ^ x2[31];
 	wire [ 7:0] exp_x1 = (|x1[30:23]) ? x1[30:23] : 8'b1 ;
-  wire [ 7:0] exp_x2 = (|x2[30:23]) ? x2[30:23] : 8'b1 ;
+    wire [ 7:0] exp_x2 = (|x2[30:23]) ? x2[30:23] : 8'b1 ;
 	wire [11:0] x1_h, x2_h, x1_l, x2_l;
 	assign {x1_h, x1_l} = (|x1[30:23]) ? {1'b1, x1[22:0]} : {1'b0, x1[22:0]};
 	assign {x2_h, x2_l} = (|x2[30:23]) ? {1'b1, x2[22:0]} : {1'b0, x2[22:0]};
@@ -54,29 +20,29 @@ module fmul (
 	assign lh = x1_l * x2_h;
 	assign ll = x1_l * x2_l;
 	wire [47:0] frac_calc = {{24'b0,hh}<<24} + {{24'b0,hl}<<12} + {{24'b0,lh}<<12} + {24'b0,ll};
-	wire [ 8:0] exp_sum = {1'b0,x1[30:23]} + {1'b0, x2[30:23]};
+	wire [ 9:0] exp_sum = {1'b0,x1[30:23]} + {1'b0, x2[30:23]}  + 8'd129;
 
 	wire [22:0] fraction =
 		(frac_calc[47] == 1) ? frac_calc[46:24] :
 		(frac_calc[46] == 1) ? frac_calc[45:23] :
 		(frac_calc[45] == 1) ? frac_calc[44:22] :
 		frac_calc[43:21];
-	wire [ 8:0] exp_add1 = exp_sum + 9'd1;
-	wire [ 8:0] exp_sub1 = exp_sum - 9'd1;
-	wire [ 8:0] exp_sub2 = exp_sum - 9'd2;
-	wire [ 8:0] biased_exponent =
+	wire [ 8:0] exp_add1 = exp_sum[8:0] + 9'd1;
+	wire [ 8:0] exp_sub1 = exp_sum[8:0] - 9'd1;
+	wire [ 8:0] exp_sub2 = exp_sum[8:0] - 9'd2;
+	wire [ 8:0] exponent =
 		(frac_calc[47] == 1) ? exp_add1 :
 		(frac_calc[46] == 1) ? exp_sum :
 		(frac_calc[45] == 1) ? exp_sub1 :
 		exp_sub2;
-	wire [ 8:0] exponent = biased_exponent + 9'd129;
-	wire 				zero = (~|x1[30:23] && ~|x2[30:23]) ? 1'b0 : 1'b1;
+	//wire [ 8:0] exponent = biased_exponent;
+	wire 				zero = (~(|x1[30:23]) || ~(|x2[30:23])) ? 1'b1 : 1'b0;
 	wire 				inf = (&x1[30:23] || &x2[30:23]) ? 1'b1 : 1'b0;
-	//wire 				denormal = (exponent[8]) ? 1'b1 : 1'b0;
+	//wire 				denormal = (exponent[7:0] == 8'd255 || exponent[7:0] == 8'd0) ? 1'b1 : 1'b0;
 	assign y =
 		(zero) ? {sign, 8'b0, 23'b0} :
 		(inf) ? {sign, 8'd255, 23'b0} :
-		//(denormal) ? {sign, 8'b0, fraction} :
+		//(denormal) ? {sign, exponent[7:0], 23'b0} :
 		{sign, exponent[7:0], fraction};
 endmodule
 

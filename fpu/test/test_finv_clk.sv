@@ -3,8 +3,9 @@
 
 module test_finv ();
    wire  [31:0] x_bit, y_bit, my_y_bit;
-   logic [31:0] x_logic, y_logic, my_y_logic;
-   shortreal    x_real, y_real, my_x_real, my_y_real;
+   logic [31:0] x_logic, y_logic, my_y_logic, y_real_reg;
+   logic [22:0] y_frac;
+   shortreal    x_real, y_real, my_x_real, my_y_real, y_real_1clock_rate;
    logic        x_1clock_late, x1_2clock_late;
    int i;
 
@@ -22,14 +23,20 @@ module test_finv ();
    end
 
    assign x_bit = x_logic;
+   always_ff @(posedge clk) begin
+    y_real_reg <= y_logic;
+   end
 
    finv u1(x_bit, my_y_bit, clk, rstn);
    initial begin
-      repeat (255) begin
+      repeat (1024) begin
           x_logic = $random();
           x_real = $bitstoshortreal(x_logic);
-          y_real = 1 / x_real
+          y_real = 1 / x_real;
           y_logic = $shortrealtobits(y_real);
+          y_frac = y_logic[22:0];
+          my_y_real = $bitstoshortreal(my_y_bit);
+          y_real_1clock_rate = $bitstoshortreal(y_real_reg);
           #100;
       end
    end
