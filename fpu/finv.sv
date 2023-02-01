@@ -22,7 +22,7 @@ module finv (
 
 	wire [ 7:0] exp_x_unbiased = exp_x - 8'd127;
 	wire [ 7:0] exp_y_unbiased = ~exp_x_unbiased + 8'd1;
-	wire [ 7:0] exp_y = exp_y_unbiased + 8'd127;
+	wire [ 7:0] exp_y = 8'd253 - exp_x;
 
 	assign y = {sign , exp_y, frac_y};
 endmodule
