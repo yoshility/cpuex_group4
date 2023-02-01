@@ -57,11 +57,10 @@ Inst inst_of(int opcode, int r0, int r1, int r2, int line_n) {
 }
 
 int main(int argc, char* argv[]) {
-    int imm = 4088;
-    int imm_31_12 = imm > 12;
-    int imm_11_0 = imm & 0xfff;
-    printf("imm_31_12 = %d\n", imm_31_12);
-    printf("imm_11_0 = %d\n", imm_11_0);
+    bool a = 1;
+    bool b = 0;
+    bool c = a && b;
+    cout << c << endl;
 
 	return 0;
 }
