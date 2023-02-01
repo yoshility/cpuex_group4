@@ -50,8 +50,8 @@ int main(){
 	FILE *fp = fopen("sqrt_table.txt", "w");
 	srand((unsigned int)time(NULL));
 	char** finv_table = calloc(sizeof(char*), N);
-	float dx = 3.0/N;
-	for (int i = 0; i < N; ++i) {
+	float dx = 2.0/N;
+	for (int i = 0; i < N/2; ++i) {
 		float start_x = 1.0 + i*dx;
 		float end_x = 1.0 + (i+1)*dx;
 		float middle_x = (start_x + end_x)/2;
@@ -59,8 +59,9 @@ int main(){
 		float end_y = sqrt(end_x);
 		float middle_y = sqrt(middle_x);
 		float mean_y = (start_y + end_y)/2;
+
 		float grad_float = (end_y - start_y)/dx;
-		float const_float = ((middle_y + mean_y) / 2) - grad_float * middle_x;
+		float const_float = ((middle_y + mean_y) / 2) - grad_float * dx / 2;
 		char* finv_table_i = calloc(sizeof(char), 36);
 		char* grad_bit = float2bit(grad_float, 13);
 		char* const_bit = float2bit(const_float, 23);
@@ -68,6 +69,31 @@ int main(){
 		finv_table[i] = finv_table_i;
 		char* index = calloc(sizeof(char),5);
 		snprintf(index, 5, "%4d", i);
+		char* out1 = my_strcat("sqrt_table[", index, 11, 4);
+		char* out2 = my_strcat(out1, "] = 36'b", 15, 8);
+		char* out3 = my_strcat(out2, finv_table_i, 23, 36);
+		char* out = my_strcat(out3, ";", 59, 1);
+		//printf("%s", out);
+		fputs(out, fp);
+	}
+	for (int i = 0; i < N/2; ++i) {
+		float start_x = (1.0 + i*dx)*2;
+		float end_x = (1.0 + (i+1)*dx)*2;
+		float middle_x = (start_x + end_x)/2;
+		float start_y = sqrt(start_x);
+		float end_y = sqrt(end_x);
+		float middle_y = sqrt(middle_x);
+		float mean_y = (start_y + end_y)/2;
+
+		float grad_float = (end_y - start_y)/(2*dx);
+		float const_float = ((middle_y + mean_y) / 2) - grad_float * dx;
+		char* finv_table_i = calloc(sizeof(char), 36);
+		char* grad_bit = float2bit(grad_float, 13);
+		char* const_bit = float2bit(const_float, 23);
+		finv_table_i = my_strcat(const_bit, grad_bit,23,13);
+		finv_table[i+512] = finv_table_i;
+		char* index = calloc(sizeof(char),5);
+		snprintf(index, 5, "%4d", i+512);
 		char* out1 = my_strcat("sqrt_table[", index, 11, 4);
 		char* out2 = my_strcat(out1, "] = 36'b", 15, 8);
 		char* out3 = my_strcat(out2, finv_table_i, 23, 36);
