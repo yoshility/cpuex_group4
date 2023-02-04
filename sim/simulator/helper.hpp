@@ -2,7 +2,8 @@
 using namespace std;
 
 #define MEMORY_SIZE         8188000
-#define INST_MEMORY_SIZE    15000
+// #define INST_MEMORY_SIZE    15000
+#define INST_MEMORY_SIZE    30000
 
 // 各命令を表す構造体
 typedef struct inst {

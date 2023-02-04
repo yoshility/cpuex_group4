@@ -294,6 +294,7 @@ int main(int argc, char* argv[]) {
         // 書き変わる前のpcを保持
         pre_pc = pc;
         opcode_n = op._opcode;
+        debug = inst_count > 54935500;
         switch(opcode_n) {
             case 1: // addi rd, rs1, imm
                 if (debug) {
@@ -656,7 +657,7 @@ int main(int argc, char* argv[]) {
                 pc += 4;
                 break;
             default: // others
-                cout << "[Step 3] Error: unknown inst: " << opcode_n << endl;
+                cout << "[Step 3] Error: unknown inst: " << opcode_n << inst_count << endl;
                 exit(1);
                 break;
         }
