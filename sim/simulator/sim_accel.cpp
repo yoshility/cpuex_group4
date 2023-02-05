@@ -147,6 +147,8 @@ int main(int argc, char* argv[]) {
     addr = 0;                   // 命令アドレズを0に戻す
     int line_n = 1;             // アセンブリでの行番号
     int opcode_n = 0;           // opcode 番号
+    int off = 0;                // offsetのチェック用
+    bool too_large_off = 0;     // offsetが大きすぎたら1 -> 実行までいかずに途中で止める
     while (fgets(line, BUFSIZE, in) != NULL) {
         strcpy(r0, "\0");
         strcpy(r1, "\0");
@@ -190,12 +192,30 @@ int main(int argc, char* argv[]) {
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), data_label[r1], -1, line_n);
                 break;
             case 8: // beq rs1, rs2, label
+                off = func_label[r2] - addr;
+                if (off >= 4096 || off < -4096) {
+                    printf("[Step 2] Warning: beq too far offset!\n");
+                    printf("inst addr: %X\tline: %d\n", addr, line_n);
+                    too_large_off = 1;
+                }
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), reg_num.at(r1), func_label[r2], line_n);
                 break;
             case 9: // bne rs1, rs2, label
+                off = func_label[r2] - addr;
+                if (off >= 4096 || off < -4096) {
+                    printf("[Step 2] Warning: bne too far offset!\n");
+                    printf("inst addr: %X\tline: %d\n", addr, line_n);
+                    too_large_off = 1;
+                }
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), reg_num.at(r1), func_label[r2], line_n);
                 break;
             case 10: // blt rs1, rs2, label
+                off = func_label[r2] - addr;
+                if (off >= 4096 || off < -4096) {
+                    printf("[Step 2] Warning: blt too far offset!\n");
+                    printf("inst addr: %X\tline: %d\n", addr, line_n);
+                    too_large_off = 1;
+                }
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), reg_num.at(r1), func_label[r2], line_n);
                 break;
             case 11: // lw rd, imm(rs1)
@@ -269,6 +289,11 @@ int main(int argc, char* argv[]) {
     
         addr += 4;
         line_n++;
+    }
+
+    if (too_large_off) {
+        printf("simulator stop!\n");
+        exit(1);
     }
  
     // <step 3> あとは命令メモリを逐次実行
