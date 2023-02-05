@@ -77,7 +77,6 @@ int main(int argc, char* argv[]) {
     unordered_map<string, int> data_label;      // データラベル
     int pc = 0;
     bool is_data = 0;               // 現在データセクションかどうか
-    // string str;
 
     while (fgets(line, BUFSIZE, in) != NULL) {
         strcpy(r0, "\0");
@@ -279,16 +278,12 @@ int main(int argc, char* argv[]) {
     opcode_n = 0;               // opcode 番号
     unsigned long long inst_count = 0;  // 命令数
     Inst op;                    // 命令
-    // unsigned int uimm;
     printf("Processing...\n");
     while (1) {
         if (pc == 1025) { // 大元のra
             cout << "pc = 1025 !" << endl;
             break;
-        }
-        strcpy(r0, "\0");
-        strcpy(r1, "\0");
-        strcpy(r2, "\0"); 
+        } 
         op = inst_memory[pc/4];
 
         // 書き変わる前のpcを保持
@@ -511,6 +506,12 @@ int main(int argc, char* argv[]) {
                         exit(1);
                     }
                 }
+                // data section
+                else if (reg[op._r2]+op._r1 < 256) {
+                    freg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].f;
+                    pc += 4;
+                    break;
+                }
                 // cache
                 else if (use_cache) {
                     cache.use_cache(2, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug);
@@ -656,9 +657,8 @@ int main(int argc, char* argv[]) {
                 pc += 4;
                 break;
             default: // others
-                cout << "[Step 3] Error: unknown inst: " << opcode_n << endl;
+                printf("[Step 3] Error: unknown inst: %d\tinst_count: %lld\n", opcode_n, inst_count);
                 exit(1);
-                break;
         }
 
         // print integer register
@@ -705,10 +705,9 @@ int main(int argc, char* argv[]) {
         print_reg(reg);
         print_freg(freg);
     }
-    // if (use_cache) {
-    //     cache.print();
-    //     cache.print_stat();
-    // }
+    if (use_cache) {
+        cache.print_stat();
+    }
     
     printf("inst_count: %lld\n", inst_count);
 
