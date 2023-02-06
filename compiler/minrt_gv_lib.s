@@ -1010,7 +1010,7 @@ read_object.2800.6569:
 	addi	x0, x0, 0
 bg_else.27428:
 	lw	a1, 0(s10)
-	sw	a0, -0(sp) # Save n.2801.6570
+	sw	a0, -0(sp)
 	addi	t6, x0, -1
 	bne	a1, t6, beq_else.27430
 	addi	x0, x0, 0
@@ -1026,10 +1026,10 @@ beq_else.27430:
 	srli	a6, a6, 1
 	addil	a6, a6, l.23583
 	flw	fa0, 0(a6)
-	sw	a1, -4(sp) # Save texture.5440.9209.15040
-	sw	a3, -8(sp) # Save refltype.5443.9212.15046
-	sw	a2, -12(sp) # Save form.5442.9211.15044
-	sw	a4, -16(sp) # Save isrot_p.5444.9213.15048
+	sw	a1, -4(sp)
+	sw	a3, -8(sp)
+	sw	a2, -12(sp)
+	sw	a4, -16(sp)
 	addi	t6, hp, 0
 create_float_array_loop.27432:
 	beq	a5, x0, create_float_array_end.27432
@@ -1053,7 +1053,7 @@ create_float_array_end.27432:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -20(sp) # Save abc.5445.9214.15051
+	sw	a0, -20(sp)
 	addi	t6, hp, 0
 create_float_array_loop.27433:
 	beq	a1, x0, create_float_array_end.27433
@@ -1080,8 +1080,8 @@ create_float_array_end.27433:
 	srli	a3, a3, 1
 	addil	a3, a3, l.23583
 	flw	fa0, 0(a3)
-	sw	a0, -24(sp) # Save xyz.5449.9218.15066
-	sw	a1, -28(sp) # Save m_invert.5453.9222.15081
+	sw	a0, -24(sp)
+	sw	a1, -28(sp)
 	addi	t6, hp, 0
 create_float_array_loop.27434:
 	beq	a2, x0, create_float_array_end.27434
@@ -1102,7 +1102,7 @@ create_float_array_end.27434:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -32(sp) # Save reflparam.5454.9223.15084
+	sw	a0, -32(sp)
 	addi	t6, hp, 0
 create_float_array_loop.27435:
 	beq	a1, x0, create_float_array_end.27435
@@ -1126,7 +1126,7 @@ create_float_array_end.27435:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -36(sp) # Save color.5457.9226.15095
+	sw	a0, -36(sp)
 	addi	t6, hp, 0
 create_float_array_loop.27436:
 	beq	a1, x0, create_float_array_end.27436
@@ -1136,7 +1136,7 @@ create_float_array_loop.27436:
 	jal	x0, create_float_array_loop.27436
 create_float_array_end.27436:
 	addi	a0, t6, 0
-	lw	a1, -16(sp) # Restore isrot_p.5444.9213.15048
+	lw	a1, -16(sp)
 	addi	t6, x0, 0
 	bne	a1, t6, beq_else.27437
 	addi	x0, x0, 0
@@ -1168,7 +1168,7 @@ beq_else.27437:
 	addi	a2, a0, 8
 	fsw	fa0, 0(a2) 
 beq_cont.27438:
-	lw	a2, -12(sp) # Restore form.5442.9211.15044
+	lw	a2, -12(sp)
 	addi	t6, x0, 2
 	bne	a2, t6, beq_else.27439
 	addi	x0, x0, 0
@@ -1176,15 +1176,15 @@ beq_cont.27438:
 	jal	x0, beq_cont.27440
 	addi	x0, x0, 0
 beq_else.27439:
-	lw	a3, -28(sp) # Restore m_invert.5453.9222.15081
+	lw	a3, -28(sp)
 beq_cont.27440:
 	addi	a4, x0, 4
 	luil	a5, l.23583
 	srli	a5, a5, 1
 	addil	a5, a5, l.23583
 	flw	fa0, 0(a5)
-	sw	a3, -40(sp) # Save m_invert2.5463.9232.15114
-	sw	a0, -44(sp) # Save rotation.5461.9230.15110
+	sw	a3, -40(sp)
+	sw	a0, -44(sp)
 	addi	t6, hp, 0
 create_float_array_loop.27441:
 	beq	a4, x0, create_float_array_end.27441
@@ -1197,27 +1197,27 @@ create_float_array_end.27441:
 	addi	a1, hp 0
 	addi	hp, hp, 44
 	sw	a0,40(a1) 
-	lw	a0, -44(sp) # Restore rotation.5461.9230.15110
+	lw	a0, -44(sp)
 	sw	a0,36(a1) 
-	lw	a2, -36(sp) # Restore color.5457.9226.15095
+	lw	a2, -36(sp)
 	sw	a2,32(a1) 
-	lw	a2, -32(sp) # Restore reflparam.5454.9223.15084
+	lw	a2, -32(sp)
 	sw	a2,28(a1) 
-	lw	a2, -40(sp) # Restore m_invert2.5463.9232.15114
+	lw	a2, -40(sp)
 	sw	a2,24(a1) 
-	lw	a2, -24(sp) # Restore xyz.5449.9218.15066
+	lw	a2, -24(sp)
 	sw	a2,20(a1) 
-	lw	a2, -20(sp) # Restore abc.5445.9214.15051
+	lw	a2, -20(sp)
 	sw	a2,16(a1) 
-	lw	a3, -16(sp) # Restore isrot_p.5444.9213.15048
+	lw	a3, -16(sp)
 	sw	a3,12(a1) 
-	lw	a4, -8(sp) # Restore refltype.5443.9212.15046
+	lw	a4, -8(sp)
 	sw	a4,8(a1) 
-	lw	a4, -12(sp) # Restore form.5442.9211.15044
+	lw	a4, -12(sp)
 	sw	a4,4(a1) 
-	lw	a5, -4(sp) # Restore texture.5440.9209.15040
+	lw	a5, -4(sp)
 	sw	a5,0(a1) 
-	lw	a5, -0(sp) # Restore n.2801.6570
+	lw	a5, -0(sp)
 	slli	a6, a5, 2
 	addi	a6, a6, 304
 	sw	a1,0(a6) 
@@ -1377,7 +1377,7 @@ beq_else.27442:
 	addi	t6, x0, 2
 	bne	a4, t6, beq_else.27462
 	addi	x0, x0, 0
-	lw	a1, -28(sp) # Restore m_invert.5453.9222.15081
+	lw	a1, -28(sp)
 	addi	t6, x0, 0
 	bne	a1, t6, beq_else.27464
 	addi	x0, x0, 0
@@ -1462,7 +1462,7 @@ beq_else.27470:
 	jal	ra, min_caml_cos
 	addi	sp, sp, 56
 	lw	ra, -52(sp)
-	lw	a0, -44(sp) # Restore rotation.5461.9230.15110
+	lw	a0, -44(sp)
 	addi	a1, a0, 0
 	flw	fa1, 0(a1)
 	fsw	fa0, -48(sp)
@@ -1472,7 +1472,7 @@ beq_else.27470:
 	jal	ra, min_caml_sin
 	addi	sp, sp, 60
 	lw	ra, -56(sp)
-	lw	a0, -44(sp) # Restore rotation.5461.9230.15110
+	lw	a0, -44(sp)
 	addi	a1, a0, 4
 	flw	fa1, 0(a1)
 	fsw	fa0, -52(sp)
@@ -1482,7 +1482,7 @@ beq_else.27470:
 	jal	ra, min_caml_cos
 	addi	sp, sp, 64
 	lw	ra, -60(sp)
-	lw	a0, -44(sp) # Restore rotation.5461.9230.15110
+	lw	a0, -44(sp)
 	addi	a1, a0, 4
 	flw	fa1, 0(a1)
 	fsw	fa0, -56(sp)
@@ -1492,7 +1492,7 @@ beq_else.27470:
 	jal	ra, min_caml_sin
 	addi	sp, sp, 68
 	lw	ra, -64(sp)
-	lw	a0, -44(sp) # Restore rotation.5461.9230.15110
+	lw	a0, -44(sp)
 	addi	a1, a0, 8
 	flw	fa1, 0(a1)
 	fsw	fa0, -60(sp)
@@ -1502,7 +1502,7 @@ beq_else.27470:
 	jal	ra, min_caml_cos
 	addi	sp, sp, 72
 	lw	ra, -68(sp)
-	lw	a0, -44(sp) # Restore rotation.5461.9230.15110
+	lw	a0, -44(sp)
 	addi	a1, a0, 8
 	flw	fa1, 0(a1)
 	fsw	fa0, -64(sp)
@@ -1538,7 +1538,7 @@ beq_else.27470:
 	fsgnjn	fa1, fa4, fa4
 	fmul	fa4, fa5, fa2
 	fmul	fa2, fa7, fa2
-	lw	a0, -20(sp) # Restore abc.5445.9214.15051
+	lw	a0, -20(sp)
 	addi	a1, a0, 0
 	flw	fa5, 0(a1)
 	addi	a1, a0, 4
@@ -1588,7 +1588,7 @@ beq_else.27470:
 	fmul	ft6, ft6, fa2
 	fadd	ft5, ft5, ft6
 	fmul	ft4, ft4, ft5
-	lw	a0, -44(sp) # Restore rotation.5461.9230.15110
+	lw	a0, -44(sp)
 	addi	a1, a0, 0
 	fsw	ft4, 0(a1) 
 	luil	a1, l.23707
@@ -1627,12 +1627,12 @@ beq_cont.27431:
 	bne	a0, t6, be_else.27472
 	addi	a0, x0, 256
 	addi	a0, a0, 0
-	lw	a1, -0(sp) # Restore n.2801.6570
+	lw	a1, -0(sp)
 	sw	a1,0(a0) 
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 be_else.27472:
-	lw	a0, -0(sp) # Restore n.2801.6570
+	lw	a0, -0(sp)
 	addi	a0, a0, 1
 	jal	x0, read_object.2800.6569 
 read_net_item.2804.6573:
@@ -1654,24 +1654,24 @@ create_array_end.27475:
 	addi	x0, x0, 0
 be_else.27474:
 	addi	a2, a0, 1
-	sw	a1, -0(sp) # Save item.5420.9189
-	sw	a0, -4(sp) # Save length.2805.6574
+	sw	a1, -0(sp)
+	sw	a0, -4(sp)
 	addi	a0, a2, 0
 	sw	ra, -12(sp)
 	addi	sp, sp, -16
 	jal	ra, read_net_item.2804.6573
 	addi	sp, sp, 16
 	lw	ra, -12(sp)
-	lw	a1, -4(sp) # Restore length.2805.6574
+	lw	a1, -4(sp)
 	slli	a1, a1, 2
 	add	a1, a0, a1
-	lw	a2, -0(sp) # Restore item.5420.9189
+	lw	a2, -0(sp)
 	sw	a2,0(a1) 
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 read_or_network.2806.6575:
 	addi	a1, x0, 0
-	sw	a0, -0(sp) # Save length.2807.6576
+	sw	a0, -0(sp)
 	addi	a0, a1, 0
 	sw	ra, -8(sp)
 	addi	sp, sp, -12
@@ -1682,7 +1682,7 @@ read_or_network.2806.6575:
 	lw	a1, 0(a1)
 	addi	t6, x0, -1
 	bne	a1, t6, be_else.27476
-	lw	a1, -0(sp) # Restore length.2807.6576
+	lw	a1, -0(sp)
 	addi	a1, a1, 1
 	addi	t6, hp, 0
 create_array_loop.27477:
@@ -1696,25 +1696,25 @@ create_array_end.27477:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 be_else.27476:
-	lw	a1, -0(sp) # Restore length.2807.6576
+	lw	a1, -0(sp)
 	addi	a2, a1, 1
-	sw	a0, -4(sp) # Save net.5408.9177
+	sw	a0, -4(sp)
 	addi	a0, a2, 0
 	sw	ra, -12(sp)
 	addi	sp, sp, -16
 	jal	ra, read_or_network.2806.6575
 	addi	sp, sp, 16
 	lw	ra, -12(sp)
-	lw	a1, -0(sp) # Restore length.2807.6576
+	lw	a1, -0(sp)
 	slli	a1, a1, 2
 	add	a1, a0, a1
-	lw	a2, -4(sp) # Restore net.5408.9177
+	lw	a2, -4(sp)
 	sw	a2,0(a1) 
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 read_and_network.2808.6577:
 	addi	a1, x0, 0
-	sw	a0, -0(sp) # Save n.2809.6578
+	sw	a0, -0(sp)
 	addi	a0, a1, 0
 	sw	ra, -8(sp)
 	addi	sp, sp, -12
@@ -1728,7 +1728,7 @@ read_and_network.2808.6577:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 be_else.27478:
-	lw	a1, -0(sp) # Restore n.2809.6578
+	lw	a1, -0(sp)
 	slli	a2, a1, 2
 	addi	a2, a2, 588
 	sw	a0,0(a2) 
@@ -1743,7 +1743,7 @@ iter_setup_dirvec_constants.2905.6674:
 	lw	a3, 4(a0)
 	lw	a4, 0(a0)
 	lw	a5, 4(a2)
-	sw	a0, -0(sp) # Save dirvec.2906.6675
+	sw	a0, -0(sp)
 	addi	t6, x0, 1
 	bne	a5, t6, beq_else.27481
 	addi	x0, x0, 0
@@ -1752,10 +1752,10 @@ iter_setup_dirvec_constants.2905.6674:
 	srli	a6, a6, 1
 	addil	a6, a6, l.23583
 	flw	fa0, 0(a6)
-	sw	a3, -4(sp) # Save m_const.5814.9583.13591
-	sw	a1, -8(sp) # Save index.2907.6676
-	sw	a2, -12(sp) # Save m.4787.8556
-	sw	a4, -16(sp) # Save m_vec.5815.9584.13588
+	sw	a3, -4(sp)
+	sw	a1, -8(sp)
+	sw	a2, -12(sp)
+	sw	a4, -16(sp)
 	addi	t6, hp, 0
 create_float_array_loop.27483:
 	beq	a5, x0, create_float_array_end.27483
@@ -1765,7 +1765,7 @@ create_float_array_loop.27483:
 	jal	x0, create_float_array_loop.27483
 create_float_array_end.27483:
 	addi	a0, t6, 0
-	lw	a1, -16(sp) # Restore m_vec.5815.9584.13588
+	lw	a1, -16(sp)
 	addi	a2, a1, 0
 	flw	fa0, 0(a2)
 	fsgnjn	fs11, fa0, fa0
@@ -1773,7 +1773,7 @@ create_float_array_end.27483:
 	addi	t6, x0, 0
 	bne	a2, t6, beq_else.27484
 	addi	x0, x0, 0
-	lw	a2, -12(sp) # Restore m.4787.8556
+	lw	a2, -12(sp)
 	lw	a3, 24(a2)
 	addi	a4, a1, 0
 	flw	fa0, 0(a4)
@@ -1835,7 +1835,7 @@ beq_cont.27485:
 	addi	t6, x0, 0
 	bne	a2, t6, beq_else.27492
 	addi	x0, x0, 0
-	lw	a2, -12(sp) # Restore m.4787.8556
+	lw	a2, -12(sp)
 	lw	a3, 24(a2)
 	addi	a4, a1, 4
 	flw	fa0, 0(a4)
@@ -1897,7 +1897,7 @@ beq_cont.27493:
 	addi	t6, x0, 0
 	bne	a2, t6, beq_else.27500
 	addi	x0, x0, 0
-	lw	a2, -12(sp) # Restore m.4787.8556
+	lw	a2, -12(sp)
 	lw	a3, 24(a2)
 	addi	a4, a1, 8
 	flw	fa0, 0(a4)
@@ -1952,9 +1952,9 @@ beq_else.27500:
 	addi	a1, a0, 20
 	fsw	fa0, 0(a1) 
 beq_cont.27501:
-	lw	a1, -8(sp) # Restore index.2907.6676
+	lw	a1, -8(sp)
 	slli	a2, a1, 2
-	lw	a3, -4(sp) # Restore m_const.5814.9583.13591
+	lw	a3, -4(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
 	jal	x0, beq_cont.27482
@@ -1968,10 +1968,10 @@ beq_else.27481:
 	srli	a6, a6, 1
 	addil	a6, a6, l.23583
 	flw	fa0, 0(a6)
-	sw	a3, -4(sp) # Save m_const.5814.9583.13591
-	sw	a1, -8(sp) # Save index.2907.6676
-	sw	a2, -12(sp) # Save m.4787.8556
-	sw	a4, -16(sp) # Save m_vec.5815.9584.13588
+	sw	a3, -4(sp)
+	sw	a1, -8(sp)
+	sw	a2, -12(sp)
+	sw	a4, -16(sp)
 	addi	t6, hp, 0
 create_float_array_loop.27510:
 	beq	a5, x0, create_float_array_end.27510
@@ -1981,10 +1981,10 @@ create_float_array_loop.27510:
 	jal	x0, create_float_array_loop.27510
 create_float_array_end.27510:
 	addi	a0, t6, 0
-	lw	a1, -16(sp) # Restore m_vec.5815.9584.13588
+	lw	a1, -16(sp)
 	addi	a2, a1, 0
 	flw	fa0, 0(a2)
-	lw	a2, -12(sp) # Restore m.4787.8556
+	lw	a2, -12(sp)
 	lw	a3, 16(a2)
 	addi	a3, a3, 0
 	flw	fa1, 0(a3)
@@ -2046,9 +2046,9 @@ beq_else.27511:
 	addi	a1, a0, 12
 	fsw	fa0, 0(a1) 
 beq_cont.27512:
-	lw	a1, -8(sp) # Restore index.2907.6676
+	lw	a1, -8(sp)
 	slli	a2, a1, 2
-	lw	a3, -4(sp) # Restore m_const.5814.9583.13591
+	lw	a3, -4(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
 	jal	x0, beq_cont.27509
@@ -2059,10 +2059,10 @@ beq_else.27508:
 	srli	a6, a6, 1
 	addil	a6, a6, l.23583
 	flw	fa0, 0(a6)
-	sw	a3, -4(sp) # Save m_const.5814.9583.13591
-	sw	a1, -8(sp) # Save index.2907.6676
-	sw	a2, -12(sp) # Save m.4787.8556
-	sw	a4, -16(sp) # Save m_vec.5815.9584.13588
+	sw	a3, -4(sp)
+	sw	a1, -8(sp)
+	sw	a2, -12(sp)
+	sw	a4, -16(sp)
 	addi	t6, hp, 0
 create_float_array_loop.27513:
 	beq	a5, x0, create_float_array_end.27513
@@ -2072,7 +2072,7 @@ create_float_array_loop.27513:
 	jal	x0, create_float_array_loop.27513
 create_float_array_end.27513:
 	addi	a0, t6, 0
-	lw	a1, -16(sp) # Restore m_vec.5815.9584.13588
+	lw	a1, -16(sp)
 	addi	a2, a1, 0
 	flw	fa0, 0(a2)
 	addi	a2, a1, 4
@@ -2080,7 +2080,7 @@ create_float_array_end.27513:
 	addi	a2, a1, 8
 	flw	fa2, 0(a2)
 	fmul	fa3, fa0, fa0
-	lw	a2, -12(sp) # Restore m.4787.8556
+	lw	a2, -12(sp)
 	lw	a3, 16(a2)
 	addi	a3, a3, 0
 	flw	fa4, 0(a3)
@@ -2240,15 +2240,15 @@ beq_cont.27517:
 	addi	x0, x0, 0
 beq_else.27518:
 beq_cont.27519:
-	lw	a1, -8(sp) # Restore index.2907.6676
+	lw	a1, -8(sp)
 	slli	a2, a1, 2
-	lw	a3, -4(sp) # Restore m_const.5814.9583.13591
+	lw	a3, -4(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
 beq_cont.27509:
 beq_cont.27482:
 	addi	a1, a1, -1
-	lw	a0, -0(sp) # Restore dirvec.2906.6675
+	lw	a0, -0(sp)
 	jal	x0, iter_setup_dirvec_constants.2905.6674 
 bg_else.27480:
 	jalr	x0, ra, 0
@@ -3065,8 +3065,8 @@ be_else.27604:
 	flw	fa3, 0(a2)
 	fadd	fa0, fa0, fa3
 	addi	a2, x0, 0
-	sw	a1, -0(sp) # Save and_group.2943.6712
-	sw	a0, -4(sp) # Save iand_ofs.2942.6711
+	sw	a1, -0(sp)
+	sw	a0, -4(sp)
 	addi	a0, a2, 0
 	fsgnj	fs11, fa2, fa2
 	fsgnj	fa2, fa0, fa0
@@ -3079,9 +3079,9 @@ be_else.27604:
 	lw	ra, -12(sp)
 	addi	t6, x0, 0
 	bne	a0, t6, be_else.27606
-	lw	a0, -4(sp) # Restore iand_ofs.2942.6711
+	lw	a0, -4(sp)
 	addi	a0, a0, 1
-	lw	a1, -0(sp) # Restore and_group.2943.6712
+	lw	a1, -0(sp)
 	jal	x0, shadow_check_and_group.2941.6710 
 be_else.27606:
 	addi	a0, x0, 1
@@ -3101,8 +3101,8 @@ be_else.27607:
 	addi	a2, a2, 588
 	lw	a2, 0(a2)
 	addi	a3, x0, 0
-	sw	a1, -0(sp) # Save or_group.2946.6715
-	sw	a0, -4(sp) # Save ofs.2945.6714
+	sw	a1, -0(sp)
+	sw	a0, -4(sp)
 	addi	a1, a2, 0
 	addi	a0, a3, 0
 	sw	ra, -12(sp)
@@ -3112,9 +3112,9 @@ be_else.27607:
 	lw	ra, -12(sp)
 	addi	t6, x0, 0
 	bne	a0, t6, be_else.27608
-	lw	a0, -4(sp) # Restore ofs.2945.6714
+	lw	a0, -4(sp)
 	addi	a0, a0, 1
-	lw	a1, -0(sp) # Restore or_group.2946.6715
+	lw	a1, -0(sp)
 	jal	x0, shadow_check_one_or_group.2944.6713 
 be_else.27608:
 	addi	a0, x0, 1
@@ -3132,9 +3132,9 @@ shadow_check_one_or_matrix.2947.6716:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 be_else.27609:
-	sw	a2, -0(sp) # Save head.4590.8359
-	sw	a1, -4(sp) # Save or_matrix.2949.6718
-	sw	a0, -8(sp) # Save ofs.2948.6717
+	sw	a2, -0(sp)
+	sw	a1, -4(sp)
+	sw	a0, -8(sp)
 	addi	t6, x0, 99
 	bne	a3, t6, beq_else.27610
 	addi	x0, x0, 0
@@ -3567,13 +3567,13 @@ beq_cont.27653:
 beq_cont.27611:
 	addi	t6, x0, 0
 	bne	a0, t6, be_else.27658
-	lw	a0, -8(sp) # Restore ofs.2948.6717
+	lw	a0, -8(sp)
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_matrix.2949.6718
+	lw	a1, -4(sp)
 	jal	x0, shadow_check_one_or_matrix.2947.6716 
 be_else.27658:
 	addi	a0, x0, 1
-	lw	a1, -0(sp) # Restore head.4590.8359
+	lw	a1, -0(sp)
 	sw	ra, -16(sp)
 	addi	sp, sp, -20
 	jal	ra, shadow_check_one_or_group.2944.6713
@@ -3581,9 +3581,9 @@ be_else.27658:
 	lw	ra, -16(sp)
 	addi	t6, x0, 0
 	bne	a0, t6, be_else.27659
-	lw	a0, -8(sp) # Restore ofs.2948.6717
+	lw	a0, -8(sp)
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_matrix.2949.6718
+	lw	a1, -4(sp)
 	jal	x0, shadow_check_one_or_matrix.2947.6716 
 be_else.27659:
 	addi	a0, x0, 1
@@ -4189,9 +4189,9 @@ be_else.27724:
 	addil	a5, a5, l.23583
 	flw	fa1, 0(a5)
 	flt	a5, fa1, fa0
-	sw	a2, -0(sp) # Save dirvec.2953.6722
-	sw	a1, -4(sp) # Save and_group.2952.6721
-	sw	a0, -8(sp) # Save iand_ofs.2951.6720
+	sw	a2, -0(sp)
+	sw	a1, -4(sp)
+	sw	a0, -8(sp)
 	addi	t6, x0, 0
 	bne	a5, t6, beq_else.27727
 	addi	x0, x0, 0
@@ -4235,8 +4235,8 @@ beq_else.27729:
 	flw	fa4, 0(a5)
 	fadd	fa3, fa3, fa4
 	addi	a5, x0, 0
-	sw	a4, -12(sp) # Save t0.4530.8299
-	sw	a3, -16(sp) # Save iobj.4528.8297
+	sw	a4, -12(sp)
+	sw	a3, -16(sp)
 	fsw	fa3, -20(sp)
 	fsw	fa2, -24(sp)
 	fsw	fa1, -28(sp)
@@ -4272,19 +4272,19 @@ beq_else.27731:
 	fsw	fa0, 0(a0) 
 	addi	a0, x0, 820
 	addi	a0, a0, 0
-	lw	a1, -16(sp) # Restore iobj.4528.8297
+	lw	a1, -16(sp)
 	sw	a1,0(a0) 
 	addi	a0, x0, 800
 	addi	a0, a0, 0
-	lw	a1, -12(sp) # Restore t0.4530.8299
+	lw	a1, -12(sp)
 	sw	a1,0(a0) 
 beq_cont.27732:
 beq_cont.27730:
 beq_cont.27728:
-	lw	a0, -8(sp) # Restore iand_ofs.2951.6720
+	lw	a0, -8(sp)
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore and_group.2952.6721
-	lw	a2, -0(sp) # Restore dirvec.2953.6722
+	lw	a1, -4(sp)
+	lw	a2, -0(sp)
 	jal	x0, solve_each_element.2950.6719 
 solve_one_or_network.2954.6723:
 	slli	a3, a0, 2
@@ -4299,9 +4299,9 @@ be_else.27733:
 	addi	a3, a3, 588
 	lw	a3, 0(a3)
 	addi	a4, x0, 0
-	sw	a2, -0(sp) # Save dirvec.2957.6726
-	sw	a1, -4(sp) # Save or_group.2956.6725
-	sw	a0, -8(sp) # Save ofs.2955.6724
+	sw	a2, -0(sp)
+	sw	a1, -4(sp)
+	sw	a0, -8(sp)
 	addi	a1, a3, 0
 	addi	a0, a4, 0
 	sw	ra, -16(sp)
@@ -4309,10 +4309,10 @@ be_else.27733:
 	jal	ra, solve_each_element.2950.6719
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-	lw	a0, -8(sp) # Restore ofs.2955.6724
+	lw	a0, -8(sp)
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_group.2956.6725
-	lw	a2, -0(sp) # Restore dirvec.2957.6726
+	lw	a1, -4(sp)
+	lw	a2, -0(sp)
 	jal	x0, solve_one_or_network.2954.6723 
 trace_or_matrix.2958.6727:
 	slli	a3, a0, 2
@@ -4325,9 +4325,9 @@ trace_or_matrix.2958.6727:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 be_else.27735:
-	sw	a2, -0(sp) # Save dirvec.2961.6730
-	sw	a1, -4(sp) # Save or_network.2960.6729
-	sw	a0, -8(sp) # Save ofs.2959.6728
+	sw	a2, -0(sp)
+	sw	a1, -4(sp)
+	sw	a0, -8(sp)
 	addi	t6, x0, 99
 	bne	a4, t6, beq_else.27737
 	addi	x0, x0, 0
@@ -4941,10 +4941,10 @@ beq_else.27803:
 beq_cont.27804:
 beq_cont.27802:
 beq_cont.27738:
-	lw	a0, -8(sp) # Restore ofs.2959.6728
+	lw	a0, -8(sp)
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_network.2960.6729
-	lw	a2, -0(sp) # Restore dirvec.2961.6730
+	lw	a1, -4(sp)
+	lw	a2, -0(sp)
 	jal	x0, trace_or_matrix.2958.6727 
 solve_each_element_fast.2964.6733:
 	lw	a3, 0(a2)
@@ -5283,9 +5283,9 @@ be_else.27843:
 	addil	a6, a6, l.23583
 	flw	fa1, 0(a6)
 	flt	a6, fa1, fa0
-	sw	a2, -0(sp) # Save dirvec.2967.6736
-	sw	a1, -4(sp) # Save and_group.2966.6735
-	sw	a0, -8(sp) # Save iand_ofs.2965.6734
+	sw	a2, -0(sp)
+	sw	a1, -4(sp)
+	sw	a0, -8(sp)
 	addi	t6, x0, 0
 	bne	a6, t6, beq_else.27846
 	addi	x0, x0, 0
@@ -5329,8 +5329,8 @@ beq_else.27848:
 	flw	fa4, 0(a3)
 	fadd	fa3, fa3, fa4
 	addi	a3, x0, 0
-	sw	a5, -12(sp) # Save t0.4422.8191
-	sw	a4, -16(sp) # Save iobj.4420.8189
+	sw	a5, -12(sp)
+	sw	a4, -16(sp)
 	fsw	fa3, -20(sp)
 	fsw	fa2, -24(sp)
 	fsw	fa1, -28(sp)
@@ -5366,19 +5366,19 @@ beq_else.27850:
 	fsw	fa0, 0(a0) 
 	addi	a0, x0, 820
 	addi	a0, a0, 0
-	lw	a1, -16(sp) # Restore iobj.4420.8189
+	lw	a1, -16(sp)
 	sw	a1,0(a0) 
 	addi	a0, x0, 800
 	addi	a0, a0, 0
-	lw	a1, -12(sp) # Restore t0.4422.8191
+	lw	a1, -12(sp)
 	sw	a1,0(a0) 
 beq_cont.27851:
 beq_cont.27849:
 beq_cont.27847:
-	lw	a0, -8(sp) # Restore iand_ofs.2965.6734
+	lw	a0, -8(sp)
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore and_group.2966.6735
-	lw	a2, -0(sp) # Restore dirvec.2967.6736
+	lw	a1, -4(sp)
+	lw	a2, -0(sp)
 	jal	x0, solve_each_element_fast.2964.6733 
 solve_one_or_network_fast.2968.6737:
 	slli	a3, a0, 2
@@ -5393,9 +5393,9 @@ be_else.27852:
 	addi	a3, a3, 588
 	lw	a3, 0(a3)
 	addi	a4, x0, 0
-	sw	a2, -0(sp) # Save dirvec.2971.6740
-	sw	a1, -4(sp) # Save or_group.2970.6739
-	sw	a0, -8(sp) # Save ofs.2969.6738
+	sw	a2, -0(sp)
+	sw	a1, -4(sp)
+	sw	a0, -8(sp)
 	addi	a1, a3, 0
 	addi	a0, a4, 0
 	sw	ra, -16(sp)
@@ -5403,10 +5403,10 @@ be_else.27852:
 	jal	ra, solve_each_element_fast.2964.6733
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-	lw	a0, -8(sp) # Restore ofs.2969.6738
+	lw	a0, -8(sp)
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_group.2970.6739
-	lw	a2, -0(sp) # Restore dirvec.2971.6740
+	lw	a1, -4(sp)
+	lw	a2, -0(sp)
 	jal	x0, solve_one_or_network_fast.2968.6737 
 trace_or_matrix_fast.2972.6741:
 	slli	a3, a0, 2
@@ -5419,9 +5419,9 @@ trace_or_matrix_fast.2972.6741:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 be_else.27854:
-	sw	a2, -0(sp) # Save dirvec.2975.6744
-	sw	a1, -4(sp) # Save or_network.2974.6743
-	sw	a0, -8(sp) # Save ofs.2973.6742
+	sw	a2, -0(sp)
+	sw	a1, -4(sp)
+	sw	a0, -8(sp)
 	addi	t6, x0, 99
 	bne	a4, t6, beq_else.27856
 	addi	x0, x0, 0
@@ -5773,10 +5773,10 @@ beq_else.27896:
 beq_cont.27897:
 beq_cont.27895:
 beq_cont.27857:
-	lw	a0, -8(sp) # Restore ofs.2973.6742
+	lw	a0, -8(sp)
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_network.2974.6743
-	lw	a2, -0(sp) # Restore dirvec.2975.6744
+	lw	a1, -4(sp)
+	lw	a2, -0(sp)
 	jal	x0, trace_or_matrix_fast.2972.6741 
 trace_reflections.2994.6763:
 	addi	t6, x0, 0
@@ -5796,12 +5796,12 @@ trace_reflections.2994.6763:
 	addi	a5, x0, 792
 	addi	a5, a5, 0
 	lw	a5, 0(a5)
-	sw	a0, -0(sp) # Save index.2995.6764
+	sw	a0, -0(sp)
 	fsw	fa1, -4(sp)
-	sw	a1, -8(sp) # Save dirvec.2998.6767
+	sw	a1, -8(sp)
 	fsw	fa0, -12(sp)
-	sw	a3, -16(sp) # Save m_dvec.5808.9577.12372
-	sw	a2, -20(sp) # Save rinfo.4054.7823
+	sw	a3, -16(sp)
+	sw	a2, -20(sp)
 	addi	a2, a3, 0
 	addi	a1, a5, 0
 	addi	a0, a4, 0
@@ -5846,7 +5846,7 @@ beq_else.27901:
 	addi	a1, a1, 0
 	lw	a1, 0(a1)
 	add	a0, a0, a1
-	lw	a1, -20(sp) # Restore rinfo.4054.7823
+	lw	a1, -20(sp)
 	lw	a2, 0(a1)
 	bne	a0, a2, beq_else.27903
 	addi	x0, x0, 0
@@ -5864,7 +5864,7 @@ beq_else.27901:
 	bne	a0, t6, beq_else.27905
 	addi	x0, x0, 0
 	addi	a0, x0, 824
-	lw	a1, -16(sp) # Restore m_dvec.5808.9577.12372
+	lw	a1, -16(sp)
 	lw	a2, 0(a1)
 	addi	a3, a0, 0
 	flw	fa0, 0(a3)
@@ -5883,13 +5883,13 @@ beq_else.27901:
 	flw	fa2, 0(a0)
 	fmul	fa1, fa1, fa2
 	fadd	fa0, fa0, fa1
-	lw	a0, -20(sp) # Restore rinfo.4054.7823
+	lw	a0, -20(sp)
 	flw	fa1, 8(a0)
 	flw	fa2, -12(sp)
 	fmul	fa3, fa1, fa2
 	fmul	fa0, fa3, fa0
 	lw	a0, 0(a1)
-	lw	a1, -8(sp) # Restore dirvec.2998.6767
+	lw	a1, -8(sp)
 	addi	a2, a1, 0
 	flw	fa3, 0(a2)
 	addi	a2, a0, 0
@@ -5984,11 +5984,11 @@ beq_cont.27906:
 beq_else.27903:
 beq_cont.27904:
 beq_cont.27902:
-	lw	a0, -0(sp) # Restore index.2995.6764
+	lw	a0, -0(sp)
 	addi	a0, a0, -1
 	flw	fa0, -12(sp)
 	flw	fa1, -4(sp)
-	lw	a1, -8(sp) # Restore dirvec.2998.6767
+	lw	a1, -8(sp)
 	jal	x0, trace_reflections.2994.6763 
 bg_else.27898:
 	jalr	x0, ra, 0
@@ -6009,11 +6009,11 @@ trace_ray.2999.6768:
 	addi	a5, a5, 0
 	lw	a5, 0(a5)
 	fsw	fa1, -0(sp)
-	sw	a2, -4(sp) # Save pixel.3003.6772
+	sw	a2, -4(sp)
 	fsw	fa0, -8(sp)
-	sw	a1, -12(sp) # Save dirvec.3002.6771
-	sw	a3, -16(sp) # Save m_sids.5869.9638.12277
-	sw	a0, -20(sp) # Save nref.3000.6769
+	sw	a1, -12(sp)
+	sw	a3, -16(sp)
+	sw	a0, -20(sp)
 	addi	a2, a1, 0
 	addi	a0, a4, 0
 	addi	a1, a5, 0
@@ -6046,9 +6046,9 @@ beq_cont.27914:
 	addi	t6, x0, 0
 	bne	a0, t6, be_else.27915
 	addi	a0, x0, -1
-	lw	a1, -20(sp) # Restore nref.3000.6769
+	lw	a1, -20(sp)
 	slli	a2, a1, 2
-	lw	a3, -16(sp) # Restore m_sids.5869.9638.12277
+	lw	a3, -16(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
 	addi	t6, x0, 0
@@ -6057,7 +6057,7 @@ beq_cont.27914:
 	addi	x0, x0, 0
 be_else.27916:
 	addi	a0, x0, 568
-	lw	a1, -12(sp) # Restore dirvec.3002.6771
+	lw	a1, -12(sp)
 	addi	a2, a1, 0
 	flw	fa0, 0(a2)
 	addi	a2, a0, 0
@@ -6147,7 +6147,7 @@ be_else.27915:
 	addi	a4, a3, -1
 	addi	a3, a3, -1
 	slli	a3, a3, 2
-	lw	a5, -12(sp) # Restore dirvec.3002.6771
+	lw	a5, -12(sp)
 	add	a3, a5, a3
 	flw	fa2, 0(a3)
 	fsgnjn	fs11, fa2, fa2
@@ -6408,10 +6408,10 @@ beq_cont.27922:
 	flw	fa2, 0(a6)
 	addi	a5, a5, 8
 	fsw	fa2, 0(a5) 
-	sw	a2, -24(sp) # Save m_surface.6105.9874.12234
+	sw	a2, -24(sp)
 	fsw	fa0, -28(sp)
-	sw	a1, -32(sp) # Save obj.3920.7689
-	sw	a0, -36(sp) # Save obj_id.3919.7688
+	sw	a1, -32(sp)
+	sw	a0, -36(sp)
 	addi	t6, x0, 1
 	bne	a4, t6, beq_else.27935
 	addi	x0, x0, 0
@@ -6652,7 +6652,7 @@ beq_else.27945:
 	flw	fa6, 0(a4)
 	flt	a4, fa5, fa6
 	fsw	fa4, -40(sp)
-	sw	a3, -44(sp) # Save Ta969.4010.7779
+	sw	a3, -44(sp)
 	addi	t6, x0, 0
 	bne	a4, t6, beq_else.27949
 	addi	x0, x0, 0
@@ -6688,10 +6688,10 @@ beq_cont.27950:
 	sub	t6, t6, t4
 	fcvtsw	fa1, t6
 	fsub	fa0, fa0, fa1
-	lw	a0, -44(sp) # Restore Ta969.4010.7779
+	lw	a0, -44(sp)
 	addi	a0, a0, 4
 	flw	fa1, 0(a0)
-	lw	a0, -32(sp) # Restore obj.3920.7689
+	lw	a0, -32(sp)
 	lw	a1, 20(a0)
 	addi	a1, a1, 4
 	flw	fa2, 0(a1)
@@ -6796,18 +6796,18 @@ beq_cont.27946:
 beq_cont.27944:
 beq_cont.27936:
 	addi	a0, x0, 4
-	lw	a1, -36(sp) # Restore obj_id.3919.7688
+	lw	a1, -36(sp)
 	mul	a0, a1, a0
 	addi	a1, x0, 800
 	addi	a1, a1, 0
 	lw	a1, 0(a1)
 	add	a0, a0, a1
-	lw	a1, -20(sp) # Restore nref.3000.6769
+	lw	a1, -20(sp)
 	slli	a2, a1, 2
-	lw	a3, -16(sp) # Restore m_sids.5869.9638.12277
+	lw	a3, -16(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
-	lw	a0, -4(sp) # Restore pixel.3003.6772
+	lw	a0, -4(sp)
 	lw	a2, 4(a0)
 	slli	a4, a1, 2
 	add	a2, a2, a4
@@ -6826,7 +6826,7 @@ beq_cont.27936:
 	addi	a2, a2, 8
 	fsw	fa0, 0(a2) 
 	lw	a2, 12(a0)
-	lw	a4, -32(sp) # Restore obj.3920.7689
+	lw	a4, -32(sp)
 	lw	a5, 28(a4)
 	addi	a5, a5, 0
 	flw	fa0, 0(a5)
@@ -6912,7 +6912,7 @@ beq_cont.27956:
 	addil	a2, a2, l.25124
 	flw	fa0, 0(a2)
 	addi	a2, x0, 824
-	lw	a5, -12(sp) # Restore dirvec.3002.6771
+	lw	a5, -12(sp)
 	addi	a6, a5, 0
 	flw	fa1, 0(a6)
 	addi	a6, a2, 0
@@ -6999,7 +6999,7 @@ beq_cont.27956:
 	flw	fa1, -28(sp)
 	fmul	fa0, fa0, fa1
 	addi	a0, x0, 568
-	lw	a1, -12(sp) # Restore dirvec.3002.6771
+	lw	a1, -12(sp)
 	addi	a2, a1, 0
 	flw	fa2, 0(a2)
 	addi	a2, a0, 0
@@ -7118,7 +7118,7 @@ beq_cont.27958:
 	addi	a0, a0, -1
 	flw	fa0, -28(sp)
 	flw	fa1, -52(sp)
-	lw	a1, -12(sp) # Restore dirvec.3002.6771
+	lw	a1, -12(sp)
 	sw	ra, -60(sp)
 	addi	sp, sp, -64
 	jal	ra, trace_reflections.2994.6763
@@ -7135,7 +7135,7 @@ beq_cont.27958:
 	jalr	x0, ra, 0
 	addi	x0, x0, 0
 be_else.27963:
-	lw	a0, -20(sp) # Restore nref.3000.6769
+	lw	a0, -20(sp)
 	addi	t6, x0, 4
 	blt	a0, t6, bg_else.27965
 	addi	x0, x0, 0
@@ -7145,18 +7145,18 @@ bg_else.27965:
 	addi	a1, a0, 1
 	addi	a2, x0, -1
 	slli	a1, a1, 2
-	lw	a3, -16(sp) # Restore m_sids.5869.9638.12277
+	lw	a3, -16(sp)
 	add	a1, a3, a1
 	sw	a2,0(a1) 
 bg_cont.27966:
-	lw	a1, -24(sp) # Restore m_surface.6105.9874.12234
+	lw	a1, -24(sp)
 	addi	t6, x0, 2
 	bne	a1, t6, be_else.27967
 	luil	a1, l.23642
 	srli	a1, a1, 1
 	addil	a1, a1, l.23642
 	flw	fa0, 0(a1)
-	lw	a1, -32(sp) # Restore obj.3920.7689
+	lw	a1, -32(sp)
 	lw	a1, 28(a1)
 	addi	a1, a1, 0
 	flw	fa2, 0(a1)
@@ -7168,8 +7168,8 @@ bg_cont.27966:
 	flw	fa1, 0(a1)
 	flw	fa2, -0(sp)
 	fadd	fa1, fa2, fa1
-	lw	a1, -12(sp) # Restore dirvec.3002.6771
-	lw	a2, -4(sp) # Restore pixel.3003.6772
+	lw	a1, -12(sp)
+	lw	a2, -4(sp)
 	jal	x0, trace_ray.2999.6768 
 be_else.27967:
 	jalr	x0, ra, 0
@@ -7204,9 +7204,9 @@ iter_trace_diffuse_rays.3008.6777:
 	fadd	fa0, fa0, fa1
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fa0, fs11
-	sw	a2, -0(sp) # Save org.3011.6780
-	sw	a0, -4(sp) # Save dirvec_group.3009.6778
-	sw	a3, -8(sp) # Save index.3012.6781
+	sw	a2, -0(sp)
+	sw	a0, -4(sp)
+	sw	a3, -8(sp)
 	addi	t6, x0, 0
 	bne	a1, t6, beq_else.27971
 	addi	x0, x0, 0
@@ -7230,7 +7230,7 @@ iter_trace_diffuse_rays.3008.6777:
 	addi	a5, a5, 0
 	lw	a5, 0(a5)
 	fsw	fa0, -12(sp)
-	sw	a1, -16(sp) # Save Tt894.3880.7649
+	sw	a1, -16(sp)
 	addi	a2, a1, 0
 	addi	a0, a4, 0
 	addi	a1, a5, 0
@@ -7272,7 +7272,7 @@ beq_else.27975:
 	slli	a0, a0, 2
 	addi	a0, a0, 304
 	lw	a0, 0(a0)
-	lw	a1, -16(sp) # Restore Tt894.3880.7649
+	lw	a1, -16(sp)
 	lw	a1, 0(a1)
 	lw	a2, 4(a0)
 	addi	t6, x0, 1
@@ -7541,7 +7541,7 @@ beq_cont.27978:
 	flw	fa0, 0(a4)
 	addi	a3, a3, 8
 	fsw	fa0, 0(a3) 
-	sw	a0, -20(sp) # Save obj.3888.7657.11544
+	sw	a0, -20(sp)
 	addi	t6, x0, 1
 	bne	a2, t6, beq_else.27991
 	addi	x0, x0, 0
@@ -7780,7 +7780,7 @@ beq_else.28001:
 	flw	fa4, 0(a2)
 	flt	a2, fa3, fa4
 	fsw	fa2, -24(sp)
-	sw	a1, -28(sp) # Save Ta912.3909.7678.11547
+	sw	a1, -28(sp)
 	addi	t6, x0, 0
 	bne	a2, t6, beq_else.28005
 	addi	x0, x0, 0
@@ -7815,10 +7815,10 @@ beq_cont.28006:
 	sub	t6, t6, t4
 	fcvtsw	fa1, t6
 	fsub	fa0, fa0, fa1
-	lw	a0, -28(sp) # Restore Ta912.3909.7678.11547
+	lw	a0, -28(sp)
 	addi	a0, a0, 4
 	flw	fa1, 0(a0)
-	lw	a0, -20(sp) # Restore obj.3888.7657.11544
+	lw	a0, -20(sp)
 	lw	a1, 20(a0)
 	addi	a1, a1, 4
 	flw	fa2, 0(a1)
@@ -7970,7 +7970,7 @@ beq_cont.28014:
 	addi	a0, x0, 848
 	flw	fa1, -12(sp)
 	fmul	fa0, fa1, fa0
-	lw	a1, -20(sp) # Restore obj.3888.7657.11544
+	lw	a1, -20(sp)
 	lw	a1, 28(a1)
 	addi	a1, a1, 0
 	flw	fa1, 0(a1)
@@ -8028,7 +8028,7 @@ beq_else.27971:
 	addi	a5, a5, 0
 	lw	a5, 0(a5)
 	fsw	fa0, -36(sp)
-	sw	a1, -40(sp) # Save Tt899.3875.7644
+	sw	a1, -40(sp)
 	addi	a2, a1, 0
 	addi	a0, a4, 0
 	addi	a1, a5, 0
@@ -8070,7 +8070,7 @@ beq_else.28017:
 	slli	a0, a0, 2
 	addi	a0, a0, 304
 	lw	a0, 0(a0)
-	lw	a1, -40(sp) # Restore Tt899.3875.7644
+	lw	a1, -40(sp)
 	lw	a1, 0(a1)
 	lw	a2, 4(a0)
 	addi	t6, x0, 1
@@ -8339,7 +8339,7 @@ beq_cont.28020:
 	flw	fa0, 0(a4)
 	addi	a3, a3, 8
 	fsw	fa0, 0(a3) 
-	sw	a0, -44(sp) # Save obj.3888.7657.11515
+	sw	a0, -44(sp)
 	addi	t6, x0, 1
 	bne	a2, t6, beq_else.28033
 	addi	x0, x0, 0
@@ -8578,7 +8578,7 @@ beq_else.28043:
 	flw	fa4, 0(a2)
 	flt	a2, fa3, fa4
 	fsw	fa2, -48(sp)
-	sw	a1, -52(sp) # Save Ta912.3909.7678.11518
+	sw	a1, -52(sp)
 	addi	t6, x0, 0
 	bne	a2, t6, beq_else.28047
 	addi	x0, x0, 0
@@ -8613,10 +8613,10 @@ beq_cont.28048:
 	sub	t6, t6, t4
 	fcvtsw	fa1, t6
 	fsub	fa0, fa0, fa1
-	lw	a0, -52(sp) # Restore Ta912.3909.7678.11518
+	lw	a0, -52(sp)
 	addi	a0, a0, 4
 	flw	fa1, 0(a0)
-	lw	a0, -44(sp) # Restore obj.3888.7657.11515
+	lw	a0, -44(sp)
 	lw	a1, 20(a0)
 	addi	a1, a1, 4
 	flw	fa2, 0(a1)
@@ -8768,7 +8768,7 @@ beq_cont.28056:
 	addi	a0, x0, 848
 	flw	fa1, -36(sp)
 	fmul	fa0, fa1, fa0
-	lw	a1, -44(sp) # Restore obj.3888.7657.11515
+	lw	a1, -44(sp)
 	lw	a1, 28(a1)
 	addi	a1, a1, 0
 	flw	fa1, 0(a1)
@@ -8804,10 +8804,10 @@ beq_cont.28054:
 beq_cont.28018:
 beq_cont.27972:
 	addi	a1, x0, 824
-	lw	a0, -8(sp) # Restore index.3012.6781
+	lw	a0, -8(sp)
 	addi	a3, a0, -2
-	lw	a0, -4(sp) # Restore dirvec_group.3009.6778
-	lw	a2, -0(sp) # Restore org.3011.6780
+	lw	a0, -4(sp)
+	lw	a2, -0(sp)
 	jal	x0, iter_trace_diffuse_rays.3008.6777 
 bg_else.27970:
 	jalr	x0, ra, 0
@@ -8825,7 +8825,7 @@ do_without_neighbors.3030.6799:
 	slli	a3, a1, 2
 	add	a2, a2, a3
 	lw	a2, 0(a2)
-	sw	a0, -0(sp) # Save pixel.3031.6800
+	sw	a0, -0(sp)
 	addi	t6, x0, 0
 	bne	a2, t6, beq_else.28060
 	addi	x0, x0, 0
@@ -8857,10 +8857,10 @@ beq_else.28060:
 	slli	a5, a1, 2
 	add	a3, a3, a5
 	lw	a3, 0(a3)
-	sw	a4, -4(sp) # Save m_engy.5855.9624.16541
-	sw	a1, -8(sp) # Save nref.3032.6801
-	sw	a3, -12(sp) # Save Ta857.3832.7601.11188
-	sw	a2, -16(sp) # Save Ti855.3830.7599.11186
+	sw	a4, -4(sp)
+	sw	a1, -8(sp)
+	sw	a3, -12(sp)
+	sw	a2, -16(sp)
 	addi	t6, x0, 0
 	bne	a2, t6, beq_else.28062
 	addi	x0, x0, 0
@@ -8887,7 +8887,7 @@ beq_else.28062:
 	addi	a6, a6, 0
 	lw	a6, 0(a6)
 	addi	a6, a6, -1
-	sw	a5, -20(sp) # Save Ta864.3860.7629.16513
+	sw	a5, -20(sp)
 	addi	a1, a6, 0
 	addi	a0, a3, 0
 	sw	ra, -28(sp)
@@ -8897,15 +8897,15 @@ beq_else.28062:
 	lw	ra, -28(sp)
 	addi	a1, x0, 824
 	addi	a3, x0, 118
-	lw	a0, -20(sp) # Restore Ta864.3860.7629.16513
-	lw	a2, -12(sp) # Restore Ta857.3832.7601.11188
+	lw	a0, -20(sp)
+	lw	a2, -12(sp)
 	sw	ra, -28(sp)
 	addi	sp, sp, -32
 	jal	ra, iter_trace_diffuse_rays.3008.6777
 	addi	sp, sp, 32
 	lw	ra, -28(sp)
 beq_cont.28063:
-	lw	a0, -16(sp) # Restore Ti855.3830.7599.11186
+	lw	a0, -16(sp)
 	addi	t6, x0, 1
 	bne	a0, t6, beq_else.28064
 	addi	x0, x0, 0
@@ -8916,7 +8916,7 @@ beq_else.28064:
 	addi	a1, a1, 4
 	lw	a1, 0(a1)
 	addi	a2, x0, 904
-	lw	a3, -12(sp) # Restore Ta857.3832.7601.11188
+	lw	a3, -12(sp)
 	addi	a4, a3, 0
 	flw	fa0, 0(a4)
 	addi	a4, a2, 0
@@ -8933,7 +8933,7 @@ beq_else.28064:
 	addi	a2, a2, 0
 	lw	a2, 0(a2)
 	addi	a2, a2, -1
-	sw	a1, -24(sp) # Save Ta869.3855.7624.16507
+	sw	a1, -24(sp)
 	addi	a1, a2, 0
 	addi	a0, a3, 0
 	sw	ra, -32(sp)
@@ -8943,15 +8943,15 @@ beq_else.28064:
 	lw	ra, -32(sp)
 	addi	a1, x0, 824
 	addi	a3, x0, 118
-	lw	a0, -24(sp) # Restore Ta869.3855.7624.16507
-	lw	a2, -12(sp) # Restore Ta857.3832.7601.11188
+	lw	a0, -24(sp)
+	lw	a2, -12(sp)
 	sw	ra, -32(sp)
 	addi	sp, sp, -36
 	jal	ra, iter_trace_diffuse_rays.3008.6777
 	addi	sp, sp, 36
 	lw	ra, -32(sp)
 beq_cont.28065:
-	lw	a0, -16(sp) # Restore Ti855.3830.7599.11186
+	lw	a0, -16(sp)
 	addi	t6, x0, 2
 	bne	a0, t6, beq_else.28066
 	addi	x0, x0, 0
@@ -8962,7 +8962,7 @@ beq_else.28066:
 	addi	a1, a1, 8
 	lw	a1, 0(a1)
 	addi	a2, x0, 904
-	lw	a3, -12(sp) # Restore Ta857.3832.7601.11188
+	lw	a3, -12(sp)
 	addi	a4, a3, 0
 	flw	fa0, 0(a4)
 	addi	a4, a2, 0
@@ -8979,7 +8979,7 @@ beq_else.28066:
 	addi	a2, a2, 0
 	lw	a2, 0(a2)
 	addi	a2, a2, -1
-	sw	a1, -28(sp) # Save Ta874.3850.7619.16501
+	sw	a1, -28(sp)
 	addi	a1, a2, 0
 	addi	a0, a3, 0
 	sw	ra, -36(sp)
@@ -8989,15 +8989,15 @@ beq_else.28066:
 	lw	ra, -36(sp)
 	addi	a1, x0, 824
 	addi	a3, x0, 118
-	lw	a0, -28(sp) # Restore Ta874.3850.7619.16501
-	lw	a2, -12(sp) # Restore Ta857.3832.7601.11188
+	lw	a0, -28(sp)
+	lw	a2, -12(sp)
 	sw	ra, -36(sp)
 	addi	sp, sp, -40
 	jal	ra, iter_trace_diffuse_rays.3008.6777
 	addi	sp, sp, 40
 	lw	ra, -36(sp)
 beq_cont.28067:
-	lw	a0, -16(sp) # Restore Ti855.3830.7599.11186
+	lw	a0, -16(sp)
 	addi	t6, x0, 3
 	bne	a0, t6, beq_else.28068
 	addi	x0, x0, 0
@@ -9008,7 +9008,7 @@ beq_else.28068:
 	addi	a1, a1, 12
 	lw	a1, 0(a1)
 	addi	a2, x0, 904
-	lw	a3, -12(sp) # Restore Ta857.3832.7601.11188
+	lw	a3, -12(sp)
 	addi	a4, a3, 0
 	flw	fa0, 0(a4)
 	addi	a4, a2, 0
@@ -9025,7 +9025,7 @@ beq_else.28068:
 	addi	a2, a2, 0
 	lw	a2, 0(a2)
 	addi	a2, a2, -1
-	sw	a1, -32(sp) # Save Ta879.3845.7614.16495
+	sw	a1, -32(sp)
 	addi	a1, a2, 0
 	addi	a0, a3, 0
 	sw	ra, -40(sp)
@@ -9035,15 +9035,15 @@ beq_else.28068:
 	lw	ra, -40(sp)
 	addi	a1, x0, 824
 	addi	a3, x0, 118
-	lw	a0, -32(sp) # Restore Ta879.3845.7614.16495
-	lw	a2, -12(sp) # Restore Ta857.3832.7601.11188
+	lw	a0, -32(sp)
+	lw	a2, -12(sp)
 	sw	ra, -40(sp)
 	addi	sp, sp, -44
 	jal	ra, iter_trace_diffuse_rays.3008.6777
 	addi	sp, sp, 44
 	lw	ra, -40(sp)
 beq_cont.28069:
-	lw	a0, -16(sp) # Restore Ti855.3830.7599.11186
+	lw	a0, -16(sp)
 	addi	t6, x0, 4
 	bne	a0, t6, beq_else.28070
 	addi	x0, x0, 0
@@ -9054,7 +9054,7 @@ beq_else.28070:
 	addi	a0, a0, 16
 	lw	a0, 0(a0)
 	addi	a1, x0, 904
-	lw	a2, -12(sp) # Restore Ta857.3832.7601.11188
+	lw	a2, -12(sp)
 	addi	a3, a2, 0
 	flw	fa0, 0(a3)
 	addi	a3, a1, 0
@@ -9071,7 +9071,7 @@ beq_else.28070:
 	addi	a1, a1, 0
 	lw	a1, 0(a1)
 	addi	a1, a1, -1
-	sw	a0, -36(sp) # Save Ta884.3840.7609.16489
+	sw	a0, -36(sp)
 	addi	a0, a2, 0
 	sw	ra, -44(sp)
 	addi	sp, sp, -48
@@ -9080,8 +9080,8 @@ beq_else.28070:
 	lw	ra, -44(sp)
 	addi	a1, x0, 824
 	addi	a3, x0, 118
-	lw	a0, -36(sp) # Restore Ta884.3840.7609.16489
-	lw	a2, -12(sp) # Restore Ta857.3832.7601.11188
+	lw	a0, -36(sp)
+	lw	a2, -12(sp)
 	sw	ra, -44(sp)
 	addi	sp, sp, -48
 	jal	ra, iter_trace_diffuse_rays.3008.6777
@@ -9089,9 +9089,9 @@ beq_else.28070:
 	lw	ra, -44(sp)
 beq_cont.28071:
 	addi	a0, x0, 860
-	lw	a1, -8(sp) # Restore nref.3032.6801
+	lw	a1, -8(sp)
 	slli	a2, a1, 2
-	lw	a3, -4(sp) # Restore m_engy.5855.9624.16541
+	lw	a3, -4(sp)
 	add	a2, a3, a2
 	lw	a2, 0(a2)
 	addi	a3, x0, 848
@@ -9126,7 +9126,7 @@ beq_cont.28071:
 	fsw	fa0, 8(a0) 
 beq_cont.28061:
 	addi	a1, a1, 1
-	lw	a0, -0(sp) # Restore pixel.3031.6800
+	lw	a0, -0(sp)
 	jal	x0, do_without_neighbors.3030.6799 
 bg_else.28059:
 	jalr	x0, ra, 0
@@ -9429,7 +9429,7 @@ pretrace_diffuse_rays.3061.6830:
 	slli	a3, a1, 2
 	add	a2, a2, a3
 	lw	a2, 0(a2)
-	sw	a1, -0(sp) # Save nref.3063.6832
+	sw	a1, -0(sp)
 	addi	t6, x0, 0
 	bne	a2, t6, beq_else.28091
 	addi	x0, x0, 0
@@ -9474,9 +9474,9 @@ beq_else.28091:
 	addi	a4, a4, 0
 	lw	a4, 0(a4)
 	addi	a4, a4, -1
-	sw	a0, -4(sp) # Save pixel.3062.6831
-	sw	a3, -8(sp) # Save Ta743.3675.7444
-	sw	a2, -12(sp) # Save Ta741.3673.7442
+	sw	a0, -4(sp)
+	sw	a3, -8(sp)
+	sw	a2, -12(sp)
 	addi	a1, a4, 0
 	addi	a0, a3, 0
 	sw	ra, -20(sp)
@@ -9486,16 +9486,16 @@ beq_else.28091:
 	lw	ra, -20(sp)
 	addi	a1, x0, 824
 	addi	a3, x0, 118
-	lw	a0, -12(sp) # Restore Ta741.3673.7442
-	lw	a2, -8(sp) # Restore Ta743.3675.7444
+	lw	a0, -12(sp)
+	lw	a2, -8(sp)
 	sw	ra, -20(sp)
 	addi	sp, sp, -24
 	jal	ra, iter_trace_diffuse_rays.3008.6777
 	addi	sp, sp, 24
 	lw	ra, -20(sp)
-	lw	a0, -4(sp) # Restore pixel.3062.6831
+	lw	a0, -4(sp)
 	lw	a1, 20(a0)
-	lw	a2, -0(sp) # Restore nref.3063.6832
+	lw	a2, -0(sp)
 	slli	a3, a2, 2
 	add	a1, a1, a3
 	lw	a1, 0(a1)
@@ -9512,7 +9512,7 @@ beq_else.28091:
 	flw	fa0, 0(a3)
 	fsw	fa0, 8(a1) 
 beq_cont.28092:
-	lw	a1, -0(sp) # Restore nref.3063.6832
+	lw	a1, -0(sp)
 	addi	a1, a1, 1
 	jal	x0, pretrace_diffuse_rays.3061.6830 
 bg_else.28090:
@@ -9644,9 +9644,9 @@ beq_cont.28097:
 	fsw	fa2, -0(sp)
 	fsw	fa1, -4(sp)
 	fsw	fa0, -8(sp)
-	sw	a2, -12(sp) # Save group_id.3067.6836
-	sw	a0, -16(sp) # Save line.3065.6834
-	sw	a1, -20(sp) # Save x.3066.6835
+	sw	a2, -12(sp)
+	sw	a0, -16(sp)
+	sw	a1, -20(sp)
 	addi	a2, a5, 0
 	addi	a1, a4, 0
 	addi	a0, a3, 0
@@ -9657,9 +9657,9 @@ beq_cont.28097:
 	jal	ra, trace_ray.2999.6768
 	addi	sp, sp, 32
 	lw	ra, -28(sp)
-	lw	a0, -20(sp) # Restore x.3066.6835
+	lw	a0, -20(sp)
 	slli	a1, a0, 2
-	lw	a2, -16(sp) # Restore line.3065.6834
+	lw	a2, -16(sp)
 	add	a1, a2, a1
 	lw	a1, 0(a1)
 	lw	a1, 0(a1)
@@ -9681,7 +9681,7 @@ beq_cont.28097:
 	lw	a1, 0(a1)
 	lw	a1, 24(a1)
 	addi	a1, a1, 0
-	lw	a3, -12(sp) # Restore group_id.3067.6836
+	lw	a3, -12(sp)
 	sw	a3,0(a1) 
 	slli	a1, a0, 2
 	add	a1, a2, a1
@@ -9694,9 +9694,9 @@ beq_cont.28097:
 	jal	ra, pretrace_diffuse_rays.3061.6830
 	addi	sp, sp, 32
 	lw	ra, -28(sp)
-	lw	a0, -20(sp) # Restore x.3066.6835
+	lw	a0, -20(sp)
 	addi	a1, a0, -1
-	lw	a0, -12(sp) # Restore group_id.3067.6836
+	lw	a0, -12(sp)
 	addi	a0, a0, 1
 	addi	t6, x0, 5
 	blt	a0, t6, bg_else.28098
@@ -9710,7 +9710,7 @@ bg_cont.28099:
 	flw	fa0, -8(sp)
 	flw	fa1, -4(sp)
 	flw	fa2, -0(sp)
-	lw	a0, -16(sp) # Restore line.3065.6834
+	lw	a0, -16(sp)
 	jal	x0, pretrace_pixels.3064.6833 
 bg_else.28095:
 	jalr	x0, ra, 0
@@ -9779,12 +9779,12 @@ bg_cont.28110:
 bg_cont.28108:
 bg_cont.28106:
 bg_cont.28104:
-	sw	a4, -0(sp) # Save next.3080.6849
-	sw	a3, -4(sp) # Save cur.3079.6848
-	sw	a2, -8(sp) # Save prev.3078.6847
-	sw	a1, -12(sp) # Save y.3077.6846
-	sw	a0, -16(sp) # Save x.3076.6845
-	sw	a5, -20(sp) # Save version.3081.6850
+	sw	a4, -0(sp)
+	sw	a3, -4(sp)
+	sw	a2, -8(sp)
+	sw	a1, -12(sp)
+	sw	a0, -16(sp)
+	sw	a5, -20(sp)
 	addi	t6, x0, 0
 	bne	a6, t6, beq_else.28111
 	addi	x0, x0, 0
@@ -9810,7 +9810,7 @@ beq_else.28111:
 	addi	sp, sp, 32
 	lw	ra, -28(sp)
 beq_cont.28112:
-	lw	a5, -20(sp) # Restore version.3081.6850
+	lw	a5, -20(sp)
 	addi	t6, x0, 3
 	bne	a5, t6, beq_else.28113
 	addi	x0, x0, 0
@@ -9950,12 +9950,12 @@ bg_else.28135:
 bg_cont.28136:
 	sw	a0, 0(s11)
 beq_cont.28114:
-	lw	a0, -16(sp) # Restore x.3076.6845
+	lw	a0, -16(sp)
 	addi	a0, a0, 1
-	lw	a1, -12(sp) # Restore y.3077.6846
-	lw	a2, -8(sp) # Restore prev.3078.6847
-	lw	a3, -4(sp) # Restore cur.3079.6848
-	lw	a4, -0(sp) # Restore next.3080.6849
+	lw	a1, -12(sp)
+	lw	a2, -8(sp)
+	lw	a3, -4(sp)
+	lw	a4, -0(sp)
 	jal	x0, scan_pixel.3075.6844 
 scan_line.3082.6851:
 	addi	a6, x0, 872
@@ -9969,12 +9969,12 @@ bg_else.28139:
 	addi	a6, a6, 4
 	lw	a6, 0(a6)
 	addi	a6, a6, -1
-	sw	a4, -0(sp) # Save group_id.3087.6856
-	sw	a5, -4(sp) # Save version.3088.6857
-	sw	a3, -8(sp) # Save next.3086.6855
-	sw	a2, -12(sp) # Save cur.3085.6854
-	sw	a1, -16(sp) # Save prev.3084.6853
-	sw	a0, -20(sp) # Save y.3083.6852
+	sw	a4, -0(sp)
+	sw	a5, -4(sp)
+	sw	a3, -8(sp)
+	sw	a2, -12(sp)
+	sw	a1, -16(sp)
+	sw	a0, -20(sp)
 	blt	a0, a6, bg_else.28141
 	addi	x0, x0, 0
 	jal	x0, bg_cont.28142
@@ -10032,19 +10032,19 @@ bg_else.28141:
 	lw	ra, -28(sp)
 bg_cont.28142:
 	addi	a0, x0, 0
-	lw	a1, -20(sp) # Restore y.3083.6852
-	lw	a2, -16(sp) # Restore prev.3084.6853
-	lw	a3, -12(sp) # Restore cur.3085.6854
-	lw	a4, -8(sp) # Restore next.3086.6855
-	lw	a5, -4(sp) # Restore version.3088.6857
+	lw	a1, -20(sp)
+	lw	a2, -16(sp)
+	lw	a3, -12(sp)
+	lw	a4, -8(sp)
+	lw	a5, -4(sp)
 	sw	ra, -28(sp)
 	addi	sp, sp, -32
 	jal	ra, scan_pixel.3075.6844
 	addi	sp, sp, 32
 	lw	ra, -28(sp)
-	lw	a0, -20(sp) # Restore y.3083.6852
+	lw	a0, -20(sp)
 	addi	a0, a0, 1
-	lw	a1, -0(sp) # Restore group_id.3087.6856
+	lw	a1, -0(sp)
 	addi	a1, a1, 2
 	addi	t6, x0, 5
 	blt	a1, t6, bg_else.28143
@@ -10055,10 +10055,10 @@ bg_cont.28142:
 bg_else.28143:
 	addi	a4, a1 0
 bg_cont.28144:
-	lw	a1, -12(sp) # Restore cur.3085.6854
-	lw	a2, -8(sp) # Restore next.3086.6855
-	lw	a3, -16(sp) # Restore prev.3084.6853
-	lw	a5, -4(sp) # Restore version.3088.6857
+	lw	a1, -12(sp)
+	lw	a2, -8(sp)
+	lw	a3, -16(sp)
+	lw	a5, -4(sp)
 	jal	x0, scan_line.3082.6851 
 init_line_elements.3093.6862:
 	addi	t6, x0, 0
@@ -10068,8 +10068,8 @@ init_line_elements.3093.6862:
 	srli	a3, a3, 1
 	addil	a3, a3, l.23583
 	flw	fa0, 0(a3)
-	sw	a0, -0(sp) # Save line.3094.6863
-	sw	a1, -4(sp) # Save n.3095.6864
+	sw	a0, -0(sp)
+	sw	a1, -4(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28146:
 	beq	a2, x0, create_float_array_end.28146
@@ -10084,7 +10084,7 @@ create_float_array_end.28146:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -8(sp) # Save m_rgb.3479.7248.10734
+	sw	a0, -8(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28147:
 	beq	a1, x0, create_float_array_end.28147
@@ -10109,7 +10109,7 @@ create_array_end.28148:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -12(sp) # Save array.3500.7269.16147
+	sw	a0, -12(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28149:
 	beq	a1, x0, create_float_array_end.28149
@@ -10119,7 +10119,7 @@ create_float_array_loop.28149:
 	jal	x0, create_float_array_loop.28149
 create_float_array_end.28149:
 	addi	a0, t6, 0
-	lw	a1, -12(sp) # Restore array.3500.7269.16147
+	lw	a1, -12(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10136,7 +10136,7 @@ create_float_array_loop.28150:
 	jal	x0, create_float_array_loop.28150
 create_float_array_end.28150:
 	addi	a0, t6, 0
-	lw	a1, -12(sp) # Restore array.3500.7269.16147
+	lw	a1, -12(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10153,7 +10153,7 @@ create_float_array_loop.28151:
 	jal	x0, create_float_array_loop.28151
 create_float_array_end.28151:
 	addi	a0, t6, 0
-	lw	a1, -12(sp) # Restore array.3500.7269.16147
+	lw	a1, -12(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10170,7 +10170,7 @@ create_float_array_loop.28152:
 	jal	x0, create_float_array_loop.28152
 create_float_array_end.28152:
 	addi	a0, t6, 0
-	lw	a1, -12(sp) # Restore array.3500.7269.16147
+	lw	a1, -12(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 5
@@ -10186,7 +10186,7 @@ create_array_end.28153:
 	addi	a0, t6, 0
 	addi	a1, x0, 5
 	addi	a2, x0, 0
-	sw	a0, -16(sp) # Save m_sids.3481.7250.10739
+	sw	a0, -16(sp)
 	addi	t6, hp, 0
 create_array_loop.28154:
 	beq	a1, x0, create_array_end.28154
@@ -10201,7 +10201,7 @@ create_array_end.28154:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -20(sp) # Save m_cdif.3482.7251.10742
+	sw	a0, -20(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28155:
 	beq	a1, x0, create_float_array_end.28155
@@ -10226,7 +10226,7 @@ create_array_end.28156:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -24(sp) # Save array.3500.7269.16122
+	sw	a0, -24(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28157:
 	beq	a1, x0, create_float_array_end.28157
@@ -10236,7 +10236,7 @@ create_float_array_loop.28157:
 	jal	x0, create_float_array_loop.28157
 create_float_array_end.28157:
 	addi	a0, t6, 0
-	lw	a1, -24(sp) # Restore array.3500.7269.16122
+	lw	a1, -24(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10253,7 +10253,7 @@ create_float_array_loop.28158:
 	jal	x0, create_float_array_loop.28158
 create_float_array_end.28158:
 	addi	a0, t6, 0
-	lw	a1, -24(sp) # Restore array.3500.7269.16122
+	lw	a1, -24(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10270,7 +10270,7 @@ create_float_array_loop.28159:
 	jal	x0, create_float_array_loop.28159
 create_float_array_end.28159:
 	addi	a0, t6, 0
-	lw	a1, -24(sp) # Restore array.3500.7269.16122
+	lw	a1, -24(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10287,7 +10287,7 @@ create_float_array_loop.28160:
 	jal	x0, create_float_array_loop.28160
 create_float_array_end.28160:
 	addi	a0, t6, 0
-	lw	a1, -24(sp) # Restore array.3500.7269.16122
+	lw	a1, -24(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10319,7 +10319,7 @@ create_array_end.28162:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -28(sp) # Save array.3500.7269.16097
+	sw	a0, -28(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28163:
 	beq	a1, x0, create_float_array_end.28163
@@ -10329,7 +10329,7 @@ create_float_array_loop.28163:
 	jal	x0, create_float_array_loop.28163
 create_float_array_end.28163:
 	addi	a0, t6, 0
-	lw	a1, -28(sp) # Restore array.3500.7269.16097
+	lw	a1, -28(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10346,7 +10346,7 @@ create_float_array_loop.28164:
 	jal	x0, create_float_array_loop.28164
 create_float_array_end.28164:
 	addi	a0, t6, 0
-	lw	a1, -28(sp) # Restore array.3500.7269.16097
+	lw	a1, -28(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10363,7 +10363,7 @@ create_float_array_loop.28165:
 	jal	x0, create_float_array_loop.28165
 create_float_array_end.28165:
 	addi	a0, t6, 0
-	lw	a1, -28(sp) # Restore array.3500.7269.16097
+	lw	a1, -28(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10380,7 +10380,7 @@ create_float_array_loop.28166:
 	jal	x0, create_float_array_loop.28166
 create_float_array_end.28166:
 	addi	a0, t6, 0
-	lw	a1, -28(sp) # Restore array.3500.7269.16097
+	lw	a1, -28(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 1
@@ -10399,7 +10399,7 @@ create_array_end.28167:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -32(sp) # Save m_gid.3485.7254.10749
+	sw	a0, -32(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28168:
 	beq	a1, x0, create_float_array_end.28168
@@ -10424,7 +10424,7 @@ create_array_end.28169:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -36(sp) # Save array.3500.7269.16072
+	sw	a0, -36(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28170:
 	beq	a1, x0, create_float_array_end.28170
@@ -10434,7 +10434,7 @@ create_float_array_loop.28170:
 	jal	x0, create_float_array_loop.28170
 create_float_array_end.28170:
 	addi	a0, t6, 0
-	lw	a1, -36(sp) # Restore array.3500.7269.16072
+	lw	a1, -36(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10451,7 +10451,7 @@ create_float_array_loop.28171:
 	jal	x0, create_float_array_loop.28171
 create_float_array_end.28171:
 	addi	a0, t6, 0
-	lw	a1, -36(sp) # Restore array.3500.7269.16072
+	lw	a1, -36(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10468,7 +10468,7 @@ create_float_array_loop.28172:
 	jal	x0, create_float_array_loop.28172
 create_float_array_end.28172:
 	addi	a0, t6, 0
-	lw	a1, -36(sp) # Restore array.3500.7269.16072
+	lw	a1, -36(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -10485,29 +10485,29 @@ create_float_array_loop.28173:
 	jal	x0, create_float_array_loop.28173
 create_float_array_end.28173:
 	addi	a0, t6, 0
-	lw	a1, -36(sp) # Restore array.3500.7269.16072
+	lw	a1, -36(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, hp 0
 	addi	hp, hp, 32
 	sw	a1,28(a0) 
-	lw	a1, -32(sp) # Restore m_gid.3485.7254.10749
+	lw	a1, -32(sp)
 	sw	a1,24(a0) 
-	lw	a1, -28(sp) # Restore array.3500.7269.16097
+	lw	a1, -28(sp)
 	sw	a1,20(a0) 
-	lw	a1, -24(sp) # Restore array.3500.7269.16122
+	lw	a1, -24(sp)
 	sw	a1,16(a0) 
-	lw	a1, -20(sp) # Restore m_cdif.3482.7251.10742
+	lw	a1, -20(sp)
 	sw	a1,12(a0) 
-	lw	a1, -16(sp) # Restore m_sids.3481.7250.10739
+	lw	a1, -16(sp)
 	sw	a1,8(a0) 
-	lw	a1, -12(sp) # Restore array.3500.7269.16147
+	lw	a1, -12(sp)
 	sw	a1,4(a0) 
-	lw	a1, -8(sp) # Restore m_rgb.3479.7248.10734
+	lw	a1, -8(sp)
 	sw	a1,0(a0) 
-	lw	a1, -4(sp) # Restore n.3095.6864
+	lw	a1, -4(sp)
 	slli	a2, a1, 2
-	lw	a3, -0(sp) # Restore line.3094.6863
+	lw	a3, -0(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
 	addi	a1, a1, -1
@@ -10626,10 +10626,10 @@ bg_else.28174:
 	addil	a3, a3, l.23642
 	flw	fa1, 0(a3)
 	fdiv	fa1, fa1, fa0
-	sw	a2, -0(sp) # Save index.3110.6879
-	sw	a1, -4(sp) # Save group_id.3109.6878
+	sw	a2, -0(sp)
+	sw	a1, -4(sp)
 	fsw	fa3, -8(sp)
-	sw	a0, -12(sp) # Save icount.3104.6873
+	sw	a0, -12(sp)
 	fsw	fa0, -16(sp)
 	fsw	fa2, -20(sp)
 	fsgnj	fa0, fa1, fa1
@@ -10658,7 +10658,7 @@ bg_else.28174:
 	fdiv	fa0, fa1, fa0
 	flw	fa1, -16(sp)
 	fmul	fa0, fa0, fa1
-	lw	a0, -12(sp) # Restore icount.3104.6873
+	lw	a0, -12(sp)
 	addi	a0, a0, 1
 	fmul	fa1, fa0, fa0
 	luil	a1, l.25230
@@ -10673,7 +10673,7 @@ bg_else.28174:
 	flw	fa2, 0(a1)
 	fdiv	fa2, fa2, fa1
 	fsw	fa0, -32(sp)
-	sw	a0, -36(sp) # Save Ti568.3400.7169
+	sw	a0, -36(sp)
 	fsw	fa1, -40(sp)
 	fsgnj	fa0, fa2, fa2
 	sw	ra, -48(sp)
@@ -10704,9 +10704,9 @@ bg_else.28174:
 	flw	fa0, -32(sp)
 	flw	fa2, -20(sp)
 	flw	fa3, -8(sp)
-	lw	a0, -36(sp) # Restore Ti568.3400.7169
-	lw	a1, -4(sp) # Restore group_id.3109.6878
-	lw	a2, -0(sp) # Restore index.3110.6879
+	lw	a0, -36(sp)
+	lw	a1, -4(sp)
+	lw	a2, -0(sp)
 	jal	x0, calc_dirvec.3103.6872 
 calc_dirvecs.3111.6880:
 	addi	t6, x0, 0
@@ -10732,9 +10732,9 @@ calc_dirvecs.3111.6880:
 	addil	a4, a4, l.23583
 	flw	fa3, 0(a4)
 	fsw	fa0, -0(sp)
-	sw	a1, -4(sp) # Save group_id.3114.6883
-	sw	a2, -8(sp) # Save index.3115.6884
-	sw	a0, -12(sp) # Save col.3112.6881
+	sw	a1, -4(sp)
+	sw	a2, -8(sp)
+	sw	a0, -12(sp)
 	addi	a0, a3, 0
 	fsgnj	fs11, fa3, fa3
 	fsgnj	fa3, fa0, fa0
@@ -10745,7 +10745,7 @@ calc_dirvecs.3111.6880:
 	jal	ra, calc_dirvec.3103.6872
 	addi	sp, sp, 24
 	lw	ra, -20(sp)
-	lw	a0, -12(sp) # Restore col.3112.6881
+	lw	a0, -12(sp)
 	fcvtsw	fa0, a0
 	luil	a1, l.26341
 	srli	a1, a1, 1
@@ -10766,10 +10766,10 @@ calc_dirvecs.3111.6880:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa1, 0(a2)
-	lw	a2, -8(sp) # Restore index.3115.6884
+	lw	a2, -8(sp)
 	addi	a3, a2, 2
 	flw	fa3, -0(sp)
-	lw	a4, -4(sp) # Restore group_id.3114.6883
+	lw	a4, -4(sp)
 	addi	a2, a3, 0
 	addi	a0, a1, 0
 	addi	a1, a4, 0
@@ -10778,9 +10778,9 @@ calc_dirvecs.3111.6880:
 	jal	ra, calc_dirvec.3103.6872
 	addi	sp, sp, 24
 	lw	ra, -20(sp)
-	lw	a0, -12(sp) # Restore col.3112.6881
+	lw	a0, -12(sp)
 	addi	a0, a0, -1
-	lw	a1, -4(sp) # Restore group_id.3114.6883
+	lw	a1, -4(sp)
 	addi	a1, a1, 1
 	addi	t6, x0, 5
 	blt	a1, t6, bg_else.28177
@@ -10791,7 +10791,7 @@ calc_dirvecs.3111.6880:
 bg_else.28177:
 bg_cont.28178:
 	flw	fa0, -0(sp)
-	lw	a2, -8(sp) # Restore index.3115.6884
+	lw	a2, -8(sp)
 	jal	x0, calc_dirvecs.3111.6880 
 bg_else.28176:
 	jalr	x0, ra, 0
@@ -10811,18 +10811,18 @@ calc_dirvec_rows.3116.6885:
 	flw	fa1, 0(a3)
 	fsub	fa0, fa0, fa1
 	addi	a3, x0, 4
-	sw	a2, -0(sp) # Save index.3119.6888
-	sw	a1, -4(sp) # Save group_id.3118.6887
-	sw	a0, -8(sp) # Save row.3117.6886
+	sw	a2, -0(sp)
+	sw	a1, -4(sp)
+	sw	a0, -8(sp)
 	addi	a0, a3, 0
 	sw	ra, -16(sp)
 	addi	sp, sp, -20
 	jal	ra, calc_dirvecs.3111.6880
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-	lw	a0, -8(sp) # Restore row.3117.6886
+	lw	a0, -8(sp)
 	addi	a0, a0, -1
-	lw	a1, -4(sp) # Restore group_id.3118.6887
+	lw	a1, -4(sp)
 	addi	a1, a1, 2
 	addi	t6, x0, 5
 	blt	a1, t6, bg_else.28181
@@ -10832,7 +10832,7 @@ calc_dirvec_rows.3116.6885:
 	addi	x0, x0, 0
 bg_else.28181:
 bg_cont.28182:
-	lw	a2, -0(sp) # Restore index.3119.6888
+	lw	a2, -0(sp)
 	addi	a2, a2, 4
 	jal	x0, calc_dirvec_rows.3116.6885 
 bg_else.28180:
@@ -10846,8 +10846,8 @@ create_dirvec_elements.3122.6891:
 	srli	a3, a3, 1
 	addil	a3, a3, l.23583
 	flw	fa0, 0(a3)
-	sw	a0, -0(sp) # Save d.3123.6892
-	sw	a1, -4(sp) # Save index.3124.6893
+	sw	a0, -0(sp)
+	sw	a1, -4(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28185:
 	beq	a2, x0, create_float_array_end.28185
@@ -10860,7 +10860,7 @@ create_float_array_end.28185:
 	addi	a1, x0, 256
 	addi	a1, a1, 0
 	lw	a1, 0(a1)
-	sw	a0, -8(sp) # Save v3.3352.7121.10639
+	sw	a0, -8(sp)
 	addi	t6, hp, 0
 create_array_loop.28186:
 	beq	a1, x0, create_array_end.28186
@@ -10873,12 +10873,12 @@ create_array_end.28186:
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -8(sp) # Restore v3.3352.7121.10639
+	lw	a0, -8(sp)
 	sw	a0,0(a1) 
 	addi	a0, a1 0
-	lw	a1, -4(sp) # Restore index.3124.6893
+	lw	a1, -4(sp)
 	slli	a2, a1, 2
-	lw	a3, -0(sp) # Restore d.3123.6892
+	lw	a3, -0(sp)
 	add	a2, a3, a2
 	sw	a0,0(a2) 
 	addi	a1, a1, -1
@@ -10896,8 +10896,8 @@ create_dirvecs.3125.6894:
 	srli	a3, a3, 1
 	addil	a3, a3, l.23583
 	flw	fa0, 0(a3)
-	sw	a0, -0(sp) # Save index.3126.6895
-	sw	a1, -4(sp) # Save Ti476.3343.7112
+	sw	a0, -0(sp)
+	sw	a1, -4(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28189:
 	beq	a2, x0, create_float_array_end.28189
@@ -10910,7 +10910,7 @@ create_float_array_end.28189:
 	addi	a1, x0, 256
 	addi	a1, a1, 0
 	lw	a1, 0(a1)
-	sw	a0, -8(sp) # Save v3.3352.7121.10632
+	sw	a0, -8(sp)
 	addi	t6, hp, 0
 create_array_loop.28190:
 	beq	a1, x0, create_array_end.28190
@@ -10923,10 +10923,10 @@ create_array_end.28190:
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -8(sp) # Restore v3.3352.7121.10632
+	lw	a0, -8(sp)
 	sw	a0,0(a1) 
 	addi	a0, a1 0
-	lw	a1, -4(sp) # Restore Ti476.3343.7112
+	lw	a1, -4(sp)
 	addi	t6, hp, 0
 create_array_loop.28191:
 	beq	a1, x0, create_array_end.28191
@@ -10936,7 +10936,7 @@ create_array_loop.28191:
 	jal	x0, create_array_loop.28191
 create_array_end.28191:
 	addi	a0, t6, 0
-	lw	a1, -0(sp) # Restore index.3126.6895
+	lw	a1, -0(sp)
 	slli	a2, a1, 2
 	addi	a2, a2, 964
 	sw	a0,0(a2) 
@@ -10950,7 +10950,7 @@ create_array_end.28191:
 	jal	ra, create_dirvec_elements.3122.6891
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-	lw	a0, -0(sp) # Restore index.3126.6895
+	lw	a0, -0(sp)
 	addi	a0, a0, -1
 	jal	x0, create_dirvecs.3125.6894 
 bg_else.28188:
@@ -10966,8 +10966,8 @@ init_dirvec_constants.3127.6896:
 	addi	a3, a3, 0
 	lw	a3, 0(a3)
 	addi	a3, a3, -1
-	sw	a0, -0(sp) # Save vecset.3128.6897
-	sw	a1, -4(sp) # Save index.3129.6898
+	sw	a0, -0(sp)
+	sw	a1, -4(sp)
 	addi	a1, a3, 0
 	addi	a0, a2, 0
 	sw	ra, -12(sp)
@@ -10975,9 +10975,9 @@ init_dirvec_constants.3127.6896:
 	jal	ra, iter_setup_dirvec_constants.2905.6674
 	addi	sp, sp, 16
 	lw	ra, -12(sp)
-	lw	a0, -4(sp) # Restore index.3129.6898
+	lw	a0, -4(sp)
 	addi	a1, a0, -1
-	lw	a0, -0(sp) # Restore vecset.3128.6897
+	lw	a0, -0(sp)
 	jal	x0, init_dirvec_constants.3127.6896 
 bg_else.28193:
 	jalr	x0, ra, 0
@@ -10989,7 +10989,7 @@ init_vecset_constants.3130.6899:
 	addi	a1, a1, 964
 	lw	a1, 0(a1)
 	addi	a2, x0, 119
-	sw	a0, -0(sp) # Save index.3131.6900
+	sw	a0, -0(sp)
 	addi	a0, a1, 0
 	addi	a1, a2, 0
 	sw	ra, -8(sp)
@@ -10997,7 +10997,7 @@ init_vecset_constants.3130.6899:
 	jal	ra, init_dirvec_constants.3127.6896
 	addi	sp, sp, 12
 	lw	ra, -8(sp)
-	lw	a0, -0(sp) # Restore index.3131.6900
+	lw	a0, -0(sp)
 	addi	a0, a0, -1
 	jal	x0, init_vecset_constants.3130.6899 
 bg_else.28195:
@@ -11117,7 +11117,7 @@ create_float_array_end.28203:
 	addi	a0, x0, 50
 	addi	a1, x0, 1
 	addi	a2, x0, -1
-	sw	a0, -0(sp) # Save Ti266.6383.10152
+	sw	a0, -0(sp)
 	addi	t6, hp, 0
 create_array_loop.28204:
 	beq	a1, x0, create_array_end.28204
@@ -11127,7 +11127,7 @@ create_array_loop.28204:
 	jal	x0, create_array_loop.28204
 create_array_end.28204:
 	addi	a0, t6, 0
-	lw	a1, -0(sp) # Restore Ti266.6383.10152
+	lw	a1, -0(sp)
 	addi	t6, hp, 0
 create_array_loop.28205:
 	beq	a1, x0, create_array_end.28205
@@ -11141,7 +11141,7 @@ create_array_end.28205:
 	addi	a1, x0, 588
 	addi	a1, a1, 0
 	lw	a1, 0(a1)
-	sw	a0, -4(sp) # Save Ti271.6377.10146
+	sw	a0, -4(sp)
 	addi	t6, hp, 0
 create_array_loop.28206:
 	beq	a0, x0, create_array_end.28206
@@ -11151,7 +11151,7 @@ create_array_loop.28206:
 	jal	x0, create_array_loop.28206
 create_array_end.28206:
 	addi	a0, t6, 0
-	lw	a1, -4(sp) # Restore Ti271.6377.10146
+	lw	a1, -4(sp)
 	addi	t6, hp, 0
 create_array_loop.28207:
 	beq	a1, x0, create_array_end.28207
@@ -11416,7 +11416,7 @@ create_float_array_loop.28226:
 create_float_array_end.28226:
 	addi	a0, t6, 0
 	addi	a1, x0, 0
-	sw	a0, -8(sp) # Save dummyf.6332.10101
+	sw	a0, -8(sp)
 	addi	t6, hp, 0
 create_array_loop.28227:
 	beq	a1, x0, create_array_end.28227
@@ -11430,7 +11430,7 @@ create_array_end.28227:
 	addi	a2, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a2) 
-	lw	a0, -8(sp) # Restore dummyf.6332.10101
+	lw	a0, -8(sp)
 	sw	a0,0(a2) 
 	addi	a0, a2 0
 	addi	t6, hp, 0
@@ -11471,7 +11471,7 @@ create_float_array_end.28230:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -12(sp) # Save dummyf2.6324.10093
+	sw	a0, -12(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28231:
 	beq	a1, x0, create_float_array_end.28231
@@ -11482,7 +11482,7 @@ create_float_array_loop.28231:
 create_float_array_end.28231:
 	addi	a0, t6, 0
 	addi	a0, x0, 60
-	lw	a1, -12(sp) # Restore dummyf2.6324.10093
+	lw	a1, -12(sp)
 	addi	t6, hp, 0
 create_array_loop.28232:
 	beq	a0, x0, create_array_end.28232
@@ -11507,7 +11507,7 @@ create_float_array_loop.28233:
 create_float_array_end.28233:
 	addi	a0, t6, 0
 	addi	a1, x0, 0
-	sw	a0, -16(sp) # Save dummyf3.6314.10083
+	sw	a0, -16(sp)
 	addi	t6, hp, 0
 create_array_loop.28234:
 	beq	a1, x0, create_array_end.28234
@@ -11520,7 +11520,7 @@ create_array_end.28234:
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -16(sp) # Restore dummyf3.6314.10083
+	lw	a0, -16(sp)
 	sw	a0,0(a1) 
 	addi	a0, a1 0
 	addi	a1, x0, 180
@@ -11589,8 +11589,8 @@ create_array_end.28236:
 	srli	a3, a3, 1
 	addil	a3, a3, l.23583
 	flw	fa0, 0(a3)
-	sw	a2, -20(sp) # Save Ti335.3156.6925
-	sw	a0, -24(sp) # Save Ti579.3468.7237.15749
+	sw	a2, -20(sp)
+	sw	a0, -24(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28237:
 	beq	a1, x0, create_float_array_end.28237
@@ -11605,7 +11605,7 @@ create_float_array_end.28237:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -28(sp) # Save m_rgb.3479.7248.10714.15752
+	sw	a0, -28(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28238:
 	beq	a1, x0, create_float_array_end.28238
@@ -11630,7 +11630,7 @@ create_array_end.28239:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -32(sp) # Save array.3500.7269.22082
+	sw	a0, -32(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28240:
 	beq	a1, x0, create_float_array_end.28240
@@ -11640,7 +11640,7 @@ create_float_array_loop.28240:
 	jal	x0, create_float_array_loop.28240
 create_float_array_end.28240:
 	addi	a0, t6, 0
-	lw	a1, -32(sp) # Restore array.3500.7269.22082
+	lw	a1, -32(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11657,7 +11657,7 @@ create_float_array_loop.28241:
 	jal	x0, create_float_array_loop.28241
 create_float_array_end.28241:
 	addi	a0, t6, 0
-	lw	a1, -32(sp) # Restore array.3500.7269.22082
+	lw	a1, -32(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11674,7 +11674,7 @@ create_float_array_loop.28242:
 	jal	x0, create_float_array_loop.28242
 create_float_array_end.28242:
 	addi	a0, t6, 0
-	lw	a1, -32(sp) # Restore array.3500.7269.22082
+	lw	a1, -32(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11691,7 +11691,7 @@ create_float_array_loop.28243:
 	jal	x0, create_float_array_loop.28243
 create_float_array_end.28243:
 	addi	a0, t6, 0
-	lw	a1, -32(sp) # Restore array.3500.7269.22082
+	lw	a1, -32(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 5
@@ -11707,7 +11707,7 @@ create_array_end.28244:
 	addi	a0, t6, 0
 	addi	a1, x0, 5
 	addi	a2, x0, 0
-	sw	a0, -36(sp) # Save m_sids.3481.7250.10719.15757
+	sw	a0, -36(sp)
 	addi	t6, hp, 0
 create_array_loop.28245:
 	beq	a1, x0, create_array_end.28245
@@ -11722,7 +11722,7 @@ create_array_end.28245:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -40(sp) # Save m_cdif.3482.7251.10722.15760
+	sw	a0, -40(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28246:
 	beq	a1, x0, create_float_array_end.28246
@@ -11747,7 +11747,7 @@ create_array_end.28247:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -44(sp) # Save array.3500.7269.22057
+	sw	a0, -44(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28248:
 	beq	a1, x0, create_float_array_end.28248
@@ -11757,7 +11757,7 @@ create_float_array_loop.28248:
 	jal	x0, create_float_array_loop.28248
 create_float_array_end.28248:
 	addi	a0, t6, 0
-	lw	a1, -44(sp) # Restore array.3500.7269.22057
+	lw	a1, -44(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11774,7 +11774,7 @@ create_float_array_loop.28249:
 	jal	x0, create_float_array_loop.28249
 create_float_array_end.28249:
 	addi	a0, t6, 0
-	lw	a1, -44(sp) # Restore array.3500.7269.22057
+	lw	a1, -44(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11791,7 +11791,7 @@ create_float_array_loop.28250:
 	jal	x0, create_float_array_loop.28250
 create_float_array_end.28250:
 	addi	a0, t6, 0
-	lw	a1, -44(sp) # Restore array.3500.7269.22057
+	lw	a1, -44(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11808,7 +11808,7 @@ create_float_array_loop.28251:
 	jal	x0, create_float_array_loop.28251
 create_float_array_end.28251:
 	addi	a0, t6, 0
-	lw	a1, -44(sp) # Restore array.3500.7269.22057
+	lw	a1, -44(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11840,7 +11840,7 @@ create_array_end.28253:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -48(sp) # Save array.3500.7269.22032
+	sw	a0, -48(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28254:
 	beq	a1, x0, create_float_array_end.28254
@@ -11850,7 +11850,7 @@ create_float_array_loop.28254:
 	jal	x0, create_float_array_loop.28254
 create_float_array_end.28254:
 	addi	a0, t6, 0
-	lw	a1, -48(sp) # Restore array.3500.7269.22032
+	lw	a1, -48(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11867,7 +11867,7 @@ create_float_array_loop.28255:
 	jal	x0, create_float_array_loop.28255
 create_float_array_end.28255:
 	addi	a0, t6, 0
-	lw	a1, -48(sp) # Restore array.3500.7269.22032
+	lw	a1, -48(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11884,7 +11884,7 @@ create_float_array_loop.28256:
 	jal	x0, create_float_array_loop.28256
 create_float_array_end.28256:
 	addi	a0, t6, 0
-	lw	a1, -48(sp) # Restore array.3500.7269.22032
+	lw	a1, -48(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11901,7 +11901,7 @@ create_float_array_loop.28257:
 	jal	x0, create_float_array_loop.28257
 create_float_array_end.28257:
 	addi	a0, t6, 0
-	lw	a1, -48(sp) # Restore array.3500.7269.22032
+	lw	a1, -48(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 1
@@ -11920,7 +11920,7 @@ create_array_end.28258:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -52(sp) # Save m_gid.3485.7254.10729.15767
+	sw	a0, -52(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28259:
 	beq	a1, x0, create_float_array_end.28259
@@ -11945,7 +11945,7 @@ create_array_end.28260:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -56(sp) # Save array.3500.7269.22007
+	sw	a0, -56(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28261:
 	beq	a1, x0, create_float_array_end.28261
@@ -11955,7 +11955,7 @@ create_float_array_loop.28261:
 	jal	x0, create_float_array_loop.28261
 create_float_array_end.28261:
 	addi	a0, t6, 0
-	lw	a1, -56(sp) # Restore array.3500.7269.22007
+	lw	a1, -56(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11972,7 +11972,7 @@ create_float_array_loop.28262:
 	jal	x0, create_float_array_loop.28262
 create_float_array_end.28262:
 	addi	a0, t6, 0
-	lw	a1, -56(sp) # Restore array.3500.7269.22007
+	lw	a1, -56(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -11989,7 +11989,7 @@ create_float_array_loop.28263:
 	jal	x0, create_float_array_loop.28263
 create_float_array_end.28263:
 	addi	a0, t6, 0
-	lw	a1, -56(sp) # Restore array.3500.7269.22007
+	lw	a1, -56(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12006,27 +12006,27 @@ create_float_array_loop.28264:
 	jal	x0, create_float_array_loop.28264
 create_float_array_end.28264:
 	addi	a0, t6, 0
-	lw	a1, -56(sp) # Restore array.3500.7269.22007
+	lw	a1, -56(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, hp 0
 	addi	hp, hp, 32
 	sw	a1,28(a0) 
-	lw	a1, -52(sp) # Restore m_gid.3485.7254.10729.15767
+	lw	a1, -52(sp)
 	sw	a1,24(a0) 
-	lw	a1, -48(sp) # Restore array.3500.7269.22032
+	lw	a1, -48(sp)
 	sw	a1,20(a0) 
-	lw	a1, -44(sp) # Restore array.3500.7269.22057
+	lw	a1, -44(sp)
 	sw	a1,16(a0) 
-	lw	a1, -40(sp) # Restore m_cdif.3482.7251.10722.15760
+	lw	a1, -40(sp)
 	sw	a1,12(a0) 
-	lw	a1, -36(sp) # Restore m_sids.3481.7250.10719.15757
+	lw	a1, -36(sp)
 	sw	a1,8(a0) 
-	lw	a1, -32(sp) # Restore array.3500.7269.22082
+	lw	a1, -32(sp)
 	sw	a1,4(a0) 
-	lw	a1, -28(sp) # Restore m_rgb.3479.7248.10714.15752
+	lw	a1, -28(sp)
 	sw	a1,0(a0) 
-	lw	a1, -24(sp) # Restore Ti579.3468.7237.15749
+	lw	a1, -24(sp)
 	addi	t6, hp, 0
 create_array_loop.28265:
 	beq	a1, x0, create_array_end.28265
@@ -12053,8 +12053,8 @@ create_array_end.28265:
 	srli	a3, a3, 1
 	addil	a3, a3, l.23583
 	flw	fa0, 0(a3)
-	sw	a0, -60(sp) # Save prev.3162.6931.10200
-	sw	a1, -64(sp) # Save Ti579.3468.7237.15719
+	sw	a0, -60(sp)
+	sw	a1, -64(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28266:
 	beq	a2, x0, create_float_array_end.28266
@@ -12069,7 +12069,7 @@ create_float_array_end.28266:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -68(sp) # Save m_rgb.3479.7248.10714.15722
+	sw	a0, -68(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28267:
 	beq	a1, x0, create_float_array_end.28267
@@ -12094,7 +12094,7 @@ create_array_end.28268:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -72(sp) # Save array.3500.7269.21982
+	sw	a0, -72(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28269:
 	beq	a1, x0, create_float_array_end.28269
@@ -12104,7 +12104,7 @@ create_float_array_loop.28269:
 	jal	x0, create_float_array_loop.28269
 create_float_array_end.28269:
 	addi	a0, t6, 0
-	lw	a1, -72(sp) # Restore array.3500.7269.21982
+	lw	a1, -72(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12121,7 +12121,7 @@ create_float_array_loop.28270:
 	jal	x0, create_float_array_loop.28270
 create_float_array_end.28270:
 	addi	a0, t6, 0
-	lw	a1, -72(sp) # Restore array.3500.7269.21982
+	lw	a1, -72(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12138,7 +12138,7 @@ create_float_array_loop.28271:
 	jal	x0, create_float_array_loop.28271
 create_float_array_end.28271:
 	addi	a0, t6, 0
-	lw	a1, -72(sp) # Restore array.3500.7269.21982
+	lw	a1, -72(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12155,7 +12155,7 @@ create_float_array_loop.28272:
 	jal	x0, create_float_array_loop.28272
 create_float_array_end.28272:
 	addi	a0, t6, 0
-	lw	a1, -72(sp) # Restore array.3500.7269.21982
+	lw	a1, -72(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 5
@@ -12171,7 +12171,7 @@ create_array_end.28273:
 	addi	a0, t6, 0
 	addi	a1, x0, 5
 	addi	a2, x0, 0
-	sw	a0, -76(sp) # Save m_sids.3481.7250.10719.15727
+	sw	a0, -76(sp)
 	addi	t6, hp, 0
 create_array_loop.28274:
 	beq	a1, x0, create_array_end.28274
@@ -12186,7 +12186,7 @@ create_array_end.28274:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -80(sp) # Save m_cdif.3482.7251.10722.15730
+	sw	a0, -80(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28275:
 	beq	a1, x0, create_float_array_end.28275
@@ -12211,7 +12211,7 @@ create_array_end.28276:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -84(sp) # Save array.3500.7269.21957
+	sw	a0, -84(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28277:
 	beq	a1, x0, create_float_array_end.28277
@@ -12221,7 +12221,7 @@ create_float_array_loop.28277:
 	jal	x0, create_float_array_loop.28277
 create_float_array_end.28277:
 	addi	a0, t6, 0
-	lw	a1, -84(sp) # Restore array.3500.7269.21957
+	lw	a1, -84(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12238,7 +12238,7 @@ create_float_array_loop.28278:
 	jal	x0, create_float_array_loop.28278
 create_float_array_end.28278:
 	addi	a0, t6, 0
-	lw	a1, -84(sp) # Restore array.3500.7269.21957
+	lw	a1, -84(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12255,7 +12255,7 @@ create_float_array_loop.28279:
 	jal	x0, create_float_array_loop.28279
 create_float_array_end.28279:
 	addi	a0, t6, 0
-	lw	a1, -84(sp) # Restore array.3500.7269.21957
+	lw	a1, -84(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12272,7 +12272,7 @@ create_float_array_loop.28280:
 	jal	x0, create_float_array_loop.28280
 create_float_array_end.28280:
 	addi	a0, t6, 0
-	lw	a1, -84(sp) # Restore array.3500.7269.21957
+	lw	a1, -84(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12304,7 +12304,7 @@ create_array_end.28282:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -88(sp) # Save array.3500.7269.21932
+	sw	a0, -88(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28283:
 	beq	a1, x0, create_float_array_end.28283
@@ -12314,7 +12314,7 @@ create_float_array_loop.28283:
 	jal	x0, create_float_array_loop.28283
 create_float_array_end.28283:
 	addi	a0, t6, 0
-	lw	a1, -88(sp) # Restore array.3500.7269.21932
+	lw	a1, -88(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12331,7 +12331,7 @@ create_float_array_loop.28284:
 	jal	x0, create_float_array_loop.28284
 create_float_array_end.28284:
 	addi	a0, t6, 0
-	lw	a1, -88(sp) # Restore array.3500.7269.21932
+	lw	a1, -88(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12348,7 +12348,7 @@ create_float_array_loop.28285:
 	jal	x0, create_float_array_loop.28285
 create_float_array_end.28285:
 	addi	a0, t6, 0
-	lw	a1, -88(sp) # Restore array.3500.7269.21932
+	lw	a1, -88(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12365,7 +12365,7 @@ create_float_array_loop.28286:
 	jal	x0, create_float_array_loop.28286
 create_float_array_end.28286:
 	addi	a0, t6, 0
-	lw	a1, -88(sp) # Restore array.3500.7269.21932
+	lw	a1, -88(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 1
@@ -12384,7 +12384,7 @@ create_array_end.28287:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -92(sp) # Save m_gid.3485.7254.10729.15737
+	sw	a0, -92(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28288:
 	beq	a1, x0, create_float_array_end.28288
@@ -12409,7 +12409,7 @@ create_array_end.28289:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -96(sp) # Save array.3500.7269.21907
+	sw	a0, -96(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28290:
 	beq	a1, x0, create_float_array_end.28290
@@ -12419,7 +12419,7 @@ create_float_array_loop.28290:
 	jal	x0, create_float_array_loop.28290
 create_float_array_end.28290:
 	addi	a0, t6, 0
-	lw	a1, -96(sp) # Restore array.3500.7269.21907
+	lw	a1, -96(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12436,7 +12436,7 @@ create_float_array_loop.28291:
 	jal	x0, create_float_array_loop.28291
 create_float_array_end.28291:
 	addi	a0, t6, 0
-	lw	a1, -96(sp) # Restore array.3500.7269.21907
+	lw	a1, -96(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12453,7 +12453,7 @@ create_float_array_loop.28292:
 	jal	x0, create_float_array_loop.28292
 create_float_array_end.28292:
 	addi	a0, t6, 0
-	lw	a1, -96(sp) # Restore array.3500.7269.21907
+	lw	a1, -96(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12470,27 +12470,27 @@ create_float_array_loop.28293:
 	jal	x0, create_float_array_loop.28293
 create_float_array_end.28293:
 	addi	a0, t6, 0
-	lw	a1, -96(sp) # Restore array.3500.7269.21907
+	lw	a1, -96(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, hp 0
 	addi	hp, hp, 32
 	sw	a1,28(a0) 
-	lw	a1, -92(sp) # Restore m_gid.3485.7254.10729.15737
+	lw	a1, -92(sp)
 	sw	a1,24(a0) 
-	lw	a1, -88(sp) # Restore array.3500.7269.21932
+	lw	a1, -88(sp)
 	sw	a1,20(a0) 
-	lw	a1, -84(sp) # Restore array.3500.7269.21957
+	lw	a1, -84(sp)
 	sw	a1,16(a0) 
-	lw	a1, -80(sp) # Restore m_cdif.3482.7251.10722.15730
+	lw	a1, -80(sp)
 	sw	a1,12(a0) 
-	lw	a1, -76(sp) # Restore m_sids.3481.7250.10719.15727
+	lw	a1, -76(sp)
 	sw	a1,8(a0) 
-	lw	a1, -72(sp) # Restore array.3500.7269.21982
+	lw	a1, -72(sp)
 	sw	a1,4(a0) 
-	lw	a1, -68(sp) # Restore m_rgb.3479.7248.10714.15722
+	lw	a1, -68(sp)
 	sw	a1,0(a0) 
-	lw	a1, -64(sp) # Restore Ti579.3468.7237.15719
+	lw	a1, -64(sp)
 	addi	t6, hp, 0
 create_array_loop.28294:
 	beq	a1, x0, create_array_end.28294
@@ -12517,8 +12517,8 @@ create_array_end.28294:
 	srli	a3, a3, 1
 	addil	a3, a3, l.23583
 	flw	fa0, 0(a3)
-	sw	a0, -100(sp) # Save cur.3163.6932.10202
-	sw	a1, -104(sp) # Save Ti579.3468.7237.15689
+	sw	a0, -100(sp)
+	sw	a1, -104(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28295:
 	beq	a2, x0, create_float_array_end.28295
@@ -12533,7 +12533,7 @@ create_float_array_end.28295:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -108(sp) # Save m_rgb.3479.7248.10714.15692
+	sw	a0, -108(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28296:
 	beq	a1, x0, create_float_array_end.28296
@@ -12558,7 +12558,7 @@ create_array_end.28297:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -112(sp) # Save array.3500.7269.21882
+	sw	a0, -112(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28298:
 	beq	a1, x0, create_float_array_end.28298
@@ -12568,7 +12568,7 @@ create_float_array_loop.28298:
 	jal	x0, create_float_array_loop.28298
 create_float_array_end.28298:
 	addi	a0, t6, 0
-	lw	a1, -112(sp) # Restore array.3500.7269.21882
+	lw	a1, -112(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12585,7 +12585,7 @@ create_float_array_loop.28299:
 	jal	x0, create_float_array_loop.28299
 create_float_array_end.28299:
 	addi	a0, t6, 0
-	lw	a1, -112(sp) # Restore array.3500.7269.21882
+	lw	a1, -112(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12602,7 +12602,7 @@ create_float_array_loop.28300:
 	jal	x0, create_float_array_loop.28300
 create_float_array_end.28300:
 	addi	a0, t6, 0
-	lw	a1, -112(sp) # Restore array.3500.7269.21882
+	lw	a1, -112(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12619,7 +12619,7 @@ create_float_array_loop.28301:
 	jal	x0, create_float_array_loop.28301
 create_float_array_end.28301:
 	addi	a0, t6, 0
-	lw	a1, -112(sp) # Restore array.3500.7269.21882
+	lw	a1, -112(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 5
@@ -12635,7 +12635,7 @@ create_array_end.28302:
 	addi	a0, t6, 0
 	addi	a1, x0, 5
 	addi	a2, x0, 0
-	sw	a0, -116(sp) # Save m_sids.3481.7250.10719.15697
+	sw	a0, -116(sp)
 	addi	t6, hp, 0
 create_array_loop.28303:
 	beq	a1, x0, create_array_end.28303
@@ -12650,7 +12650,7 @@ create_array_end.28303:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -120(sp) # Save m_cdif.3482.7251.10722.15700
+	sw	a0, -120(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28304:
 	beq	a1, x0, create_float_array_end.28304
@@ -12675,7 +12675,7 @@ create_array_end.28305:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -124(sp) # Save array.3500.7269.21857
+	sw	a0, -124(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28306:
 	beq	a1, x0, create_float_array_end.28306
@@ -12685,7 +12685,7 @@ create_float_array_loop.28306:
 	jal	x0, create_float_array_loop.28306
 create_float_array_end.28306:
 	addi	a0, t6, 0
-	lw	a1, -124(sp) # Restore array.3500.7269.21857
+	lw	a1, -124(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12702,7 +12702,7 @@ create_float_array_loop.28307:
 	jal	x0, create_float_array_loop.28307
 create_float_array_end.28307:
 	addi	a0, t6, 0
-	lw	a1, -124(sp) # Restore array.3500.7269.21857
+	lw	a1, -124(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12719,7 +12719,7 @@ create_float_array_loop.28308:
 	jal	x0, create_float_array_loop.28308
 create_float_array_end.28308:
 	addi	a0, t6, 0
-	lw	a1, -124(sp) # Restore array.3500.7269.21857
+	lw	a1, -124(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12736,7 +12736,7 @@ create_float_array_loop.28309:
 	jal	x0, create_float_array_loop.28309
 create_float_array_end.28309:
 	addi	a0, t6, 0
-	lw	a1, -124(sp) # Restore array.3500.7269.21857
+	lw	a1, -124(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12768,7 +12768,7 @@ create_array_end.28311:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -128(sp) # Save array.3500.7269.21832
+	sw	a0, -128(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28312:
 	beq	a1, x0, create_float_array_end.28312
@@ -12778,7 +12778,7 @@ create_float_array_loop.28312:
 	jal	x0, create_float_array_loop.28312
 create_float_array_end.28312:
 	addi	a0, t6, 0
-	lw	a1, -128(sp) # Restore array.3500.7269.21832
+	lw	a1, -128(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12795,7 +12795,7 @@ create_float_array_loop.28313:
 	jal	x0, create_float_array_loop.28313
 create_float_array_end.28313:
 	addi	a0, t6, 0
-	lw	a1, -128(sp) # Restore array.3500.7269.21832
+	lw	a1, -128(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12812,7 +12812,7 @@ create_float_array_loop.28314:
 	jal	x0, create_float_array_loop.28314
 create_float_array_end.28314:
 	addi	a0, t6, 0
-	lw	a1, -128(sp) # Restore array.3500.7269.21832
+	lw	a1, -128(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12829,7 +12829,7 @@ create_float_array_loop.28315:
 	jal	x0, create_float_array_loop.28315
 create_float_array_end.28315:
 	addi	a0, t6, 0
-	lw	a1, -128(sp) # Restore array.3500.7269.21832
+	lw	a1, -128(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 1
@@ -12848,7 +12848,7 @@ create_array_end.28316:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -132(sp) # Save m_gid.3485.7254.10729.15707
+	sw	a0, -132(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28317:
 	beq	a1, x0, create_float_array_end.28317
@@ -12873,7 +12873,7 @@ create_array_end.28318:
 	srli	a2, a2, 1
 	addil	a2, a2, l.23583
 	flw	fa0, 0(a2)
-	sw	a0, -136(sp) # Save array.3500.7269.21807
+	sw	a0, -136(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28319:
 	beq	a1, x0, create_float_array_end.28319
@@ -12883,7 +12883,7 @@ create_float_array_loop.28319:
 	jal	x0, create_float_array_loop.28319
 create_float_array_end.28319:
 	addi	a0, t6, 0
-	lw	a1, -136(sp) # Restore array.3500.7269.21807
+	lw	a1, -136(sp)
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12900,7 +12900,7 @@ create_float_array_loop.28320:
 	jal	x0, create_float_array_loop.28320
 create_float_array_end.28320:
 	addi	a0, t6, 0
-	lw	a1, -136(sp) # Restore array.3500.7269.21807
+	lw	a1, -136(sp)
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12917,7 +12917,7 @@ create_float_array_loop.28321:
 	jal	x0, create_float_array_loop.28321
 create_float_array_end.28321:
 	addi	a0, t6, 0
-	lw	a1, -136(sp) # Restore array.3500.7269.21807
+	lw	a1, -136(sp)
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
 	addi	a0, x0, 3
@@ -12934,27 +12934,27 @@ create_float_array_loop.28322:
 	jal	x0, create_float_array_loop.28322
 create_float_array_end.28322:
 	addi	a0, t6, 0
-	lw	a1, -136(sp) # Restore array.3500.7269.21807
+	lw	a1, -136(sp)
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, hp 0
 	addi	hp, hp, 32
 	sw	a1,28(a0) 
-	lw	a1, -132(sp) # Restore m_gid.3485.7254.10729.15707
+	lw	a1, -132(sp)
 	sw	a1,24(a0) 
-	lw	a1, -128(sp) # Restore array.3500.7269.21832
+	lw	a1, -128(sp)
 	sw	a1,20(a0) 
-	lw	a1, -124(sp) # Restore array.3500.7269.21857
+	lw	a1, -124(sp)
 	sw	a1,16(a0) 
-	lw	a1, -120(sp) # Restore m_cdif.3482.7251.10722.15700
+	lw	a1, -120(sp)
 	sw	a1,12(a0) 
-	lw	a1, -116(sp) # Restore m_sids.3481.7250.10719.15697
+	lw	a1, -116(sp)
 	sw	a1,8(a0) 
-	lw	a1, -112(sp) # Restore array.3500.7269.21882
+	lw	a1, -112(sp)
 	sw	a1,4(a0) 
-	lw	a1, -108(sp) # Restore m_rgb.3479.7248.10714.15692
+	lw	a1, -108(sp)
 	sw	a1,0(a0) 
-	lw	a1, -104(sp) # Restore Ti579.3468.7237.15689
+	lw	a1, -104(sp)
 	addi	t6, hp, 0
 create_array_loop.28323:
 	beq	a1, x0, create_array_end.28323
@@ -12991,7 +12991,7 @@ create_array_end.28323:
 	addil	a1, a1, l.23611
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
-	sw	a0, -140(sp) # Save next.3164.6933.10204
+	sw	a0, -140(sp)
 	fsw	fa0, -144(sp)
 	sw	ra, -152(sp)
 	addi	sp, sp, -156
@@ -13188,14 +13188,14 @@ create_array_end.28323:
 	lw	ra, -180(sp)
 	addi	a0, x0, 792
 	addi	a1, x0, 0
-	sw	a0, -176(sp) # Save Ta2152.5390.9159.15683
+	sw	a0, -176(sp)
 	addi	a0, a1, 0
 	sw	ra, -184(sp)
 	addi	sp, sp, -188
 	jal	ra, read_or_network.2806.6575
 	addi	sp, sp, 188
 	lw	ra, -184(sp)
-	lw	a1, -176(sp) # Restore Ta2152.5390.9159.15683
+	lw	a1, -176(sp)
 	addi	a1, a1, 0
 	sw	a0,0(a1) 
 	addi	a0, x0, 80
@@ -13332,9 +13332,9 @@ beq_else.28328:
 	addil	a4, a4, l.23583
 	flw	fa5, 0(a4)
 	fsw	fa1, -180(sp)
-	sw	a0, -184(sp) # Save sid.3261.7030.10412.15461
-	sw	a2, -188(sp) # Save nr.3262.7031.10415.15464
-	sw	a1, -192(sp) # Save Ti433.3288.7057.10432.15481
+	sw	a0, -184(sp)
+	sw	a2, -188(sp)
+	sw	a1, -192(sp)
 	fsw	fa0, -196(sp)
 	fsw	fa3, -200(sp)
 	fsw	fa2, -204(sp)
@@ -13351,7 +13351,7 @@ create_float_array_end.28332:
 	addi	a1, x0, 256
 	addi	a1, a1, 0
 	lw	a1, 0(a1)
-	sw	a0, -212(sp) # Save v3.3352.7121.10620.21767
+	sw	a0, -212(sp)
 	addi	t6, hp, 0
 create_array_loop.28333:
 	beq	a1, x0, create_array_end.28333
@@ -13364,7 +13364,7 @@ create_array_end.28333:
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -212(sp) # Restore v3.3352.7121.10620.21767
+	lw	a0, -212(sp)
 	sw	a0,0(a1) 
 	addi	a2, a0, 0
 	flw	fa0, -208(sp)
@@ -13379,7 +13379,7 @@ create_array_end.28333:
 	addi	a0, a0, 0
 	lw	a0, 0(a0)
 	addi	a0, a0, -1
-	sw	a1, -216(sp) # Save dvec.3307.7076.21772
+	sw	a1, -216(sp)
 	addi	t6, a1, 0
 	addi	a1, a0, 0
 	addi	a0, t6, 0
@@ -13392,16 +13392,16 @@ create_array_end.28333:
 	addi	hp, hp, 12
 	flw	fa0, -196(sp)
 	fsw	fa0, 8(a0) 
-	lw	a1, -216(sp) # Restore dvec.3307.7076.21772
+	lw	a1, -216(sp)
 	sw	a1,4(a0) 
-	lw	a1, -192(sp) # Restore Ti433.3288.7057.10432.15481
+	lw	a1, -192(sp)
 	sw	a1,0(a0) 
-	lw	a1, -188(sp) # Restore nr.3262.7031.10415.15464
+	lw	a1, -188(sp)
 	slli	a2, a1, 2
 	addi	a2, a2, 1264
 	sw	a0,0(a2) 
 	addi	a0, a1, 1
-	lw	a2, -184(sp) # Restore sid.3261.7030.10412.15461
+	lw	a2, -184(sp)
 	addi	a3, a2, 2
 	addi	a4, x0, 568
 	addi	a4, a4, 4
@@ -13411,8 +13411,8 @@ create_array_end.28333:
 	srli	a5, a5, 1
 	addil	a5, a5, l.23583
 	flw	fa2, 0(a5)
-	sw	a0, -220(sp) # Save Ti438.3281.7050.10438.15487
-	sw	a3, -224(sp) # Save Ti440.3282.7051.10440.15489
+	sw	a0, -220(sp)
+	sw	a3, -224(sp)
 	fsw	fa1, -228(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28334:
@@ -13426,7 +13426,7 @@ create_float_array_end.28334:
 	addi	a1, x0, 256
 	addi	a1, a1, 0
 	lw	a1, 0(a1)
-	sw	a0, -232(sp) # Save v3.3352.7121.10620.21745
+	sw	a0, -232(sp)
 	addi	t6, hp, 0
 create_array_loop.28335:
 	beq	a1, x0, create_array_end.28335
@@ -13439,7 +13439,7 @@ create_array_end.28335:
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -232(sp) # Restore v3.3352.7121.10620.21745
+	lw	a0, -232(sp)
 	sw	a0,0(a1) 
 	addi	a2, a0, 0
 	flw	fa0, -180(sp)
@@ -13454,7 +13454,7 @@ create_array_end.28335:
 	addi	a0, a0, 0
 	lw	a0, 0(a0)
 	addi	a0, a0, -1
-	sw	a1, -236(sp) # Save dvec.3307.7076.21750
+	sw	a1, -236(sp)
 	addi	t6, a1, 0
 	addi	a1, a0, 0
 	addi	a0, t6, 0
@@ -13467,17 +13467,17 @@ create_array_end.28335:
 	addi	hp, hp, 12
 	flw	fa0, -196(sp)
 	fsw	fa0, 8(a0) 
-	lw	a1, -236(sp) # Restore dvec.3307.7076.21750
+	lw	a1, -236(sp)
 	sw	a1,4(a0) 
-	lw	a1, -224(sp) # Restore Ti440.3282.7051.10440.15489
+	lw	a1, -224(sp)
 	sw	a1,0(a0) 
-	lw	a1, -220(sp) # Restore Ti438.3281.7050.10438.15487
+	lw	a1, -220(sp)
 	slli	a1, a1, 2
 	addi	a1, a1, 1264
 	sw	a0,0(a1) 
-	lw	a0, -188(sp) # Restore nr.3262.7031.10415.15464
+	lw	a0, -188(sp)
 	addi	a1, a0, 2
-	lw	a2, -184(sp) # Restore sid.3261.7030.10412.15461
+	lw	a2, -184(sp)
 	addi	a2, a2, 3
 	addi	a3, x0, 568
 	addi	a3, a3, 8
@@ -13487,8 +13487,8 @@ create_array_end.28335:
 	srli	a4, a4, 1
 	addil	a4, a4, l.23583
 	flw	fa2, 0(a4)
-	sw	a1, -240(sp) # Save Ti445.3274.7043.10446.15495
-	sw	a2, -244(sp) # Save Ti447.3275.7044.10448.15497
+	sw	a1, -240(sp)
+	sw	a2, -244(sp)
 	fsw	fa1, -248(sp)
 	addi	t6, hp, 0
 create_float_array_loop.28336:
@@ -13502,7 +13502,7 @@ create_float_array_end.28336:
 	addi	a1, x0, 256
 	addi	a1, a1, 0
 	lw	a1, 0(a1)
-	sw	a0, -252(sp) # Save v3.3352.7121.10620.21723
+	sw	a0, -252(sp)
 	addi	t6, hp, 0
 create_array_loop.28337:
 	beq	a1, x0, create_array_end.28337
@@ -13515,7 +13515,7 @@ create_array_end.28337:
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -252(sp) # Restore v3.3352.7121.10620.21723
+	lw	a0, -252(sp)
 	sw	a0,0(a1) 
 	addi	a2, a0, 0
 	flw	fa0, -180(sp)
@@ -13530,7 +13530,7 @@ create_array_end.28337:
 	addi	a0, a0, 0
 	lw	a0, 0(a0)
 	addi	a0, a0, -1
-	sw	a1, -256(sp) # Save dvec.3307.7076.21728
+	sw	a1, -256(sp)
 	addi	t6, a1, 0
 	addi	a1, a0, 0
 	addi	a0, t6, 0
@@ -13543,16 +13543,16 @@ create_array_end.28337:
 	addi	hp, hp, 12
 	flw	fa0, -196(sp)
 	fsw	fa0, 8(a0) 
-	lw	a1, -256(sp) # Restore dvec.3307.7076.21728
+	lw	a1, -256(sp)
 	sw	a1,4(a0) 
-	lw	a1, -244(sp) # Restore Ti447.3275.7044.10448.15497
+	lw	a1, -244(sp)
 	sw	a1,0(a0) 
-	lw	a1, -240(sp) # Restore Ti445.3274.7043.10446.15495
+	lw	a1, -240(sp)
 	slli	a1, a1, 2
 	addi	a1, a1, 1264
 	sw	a0,0(a1) 
 	addi	a0, x0, 1984
-	lw	a1, -188(sp) # Restore nr.3262.7031.10415.15464
+	lw	a1, -188(sp)
 	addi	a1, a1, 3
 	sw	a1,0(a0) 
 	jal	x0, beq_cont.28331
@@ -13638,8 +13638,8 @@ beq_else.28330:
 	srli	a3, a3, 1
 	addil	a3, a3, l.23583
 	flw	fa4, 0(a3)
-	sw	a2, -260(sp) # Save nr.3220.6989.10375.15424
-	sw	a0, -264(sp) # Save sid.3219.6988.10372.15421
+	sw	a2, -260(sp)
+	sw	a0, -264(sp)
 	fsw	fa0, -268(sp)
 	fsw	fa1, -272(sp)
 	fsw	fa3, -276(sp)
@@ -13656,7 +13656,7 @@ create_float_array_end.28340:
 	addi	a1, x0, 256
 	addi	a1, a1, 0
 	lw	a1, 0(a1)
-	sw	a0, -284(sp) # Save v3.3352.7121.10620.21626
+	sw	a0, -284(sp)
 	addi	t6, hp, 0
 create_array_loop.28341:
 	beq	a1, x0, create_array_end.28341
@@ -13669,7 +13669,7 @@ create_array_end.28341:
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -284(sp) # Restore v3.3352.7121.10620.21626
+	lw	a0, -284(sp)
 	sw	a0,0(a1) 
 	addi	a2, a0, 0
 	flw	fa0, -280(sp)
@@ -13684,7 +13684,7 @@ create_array_end.28341:
 	addi	a0, a0, 0
 	lw	a0, 0(a0)
 	addi	a0, a0, -1
-	sw	a1, -288(sp) # Save dvec.3307.7076.21631
+	sw	a1, -288(sp)
 	addi	t6, a1, 0
 	addi	a1, a0, 0
 	addi	a0, t6, 0
@@ -13697,11 +13697,11 @@ create_array_end.28341:
 	addi	hp, hp, 12
 	flw	fa0, -268(sp)
 	fsw	fa0, 8(a0) 
-	lw	a1, -288(sp) # Restore dvec.3307.7076.21631
+	lw	a1, -288(sp)
 	sw	a1,4(a0) 
-	lw	a1, -264(sp) # Restore sid.3219.6988.10372.15421
+	lw	a1, -264(sp)
 	sw	a1,0(a0) 
-	lw	a1, -260(sp) # Restore nr.3220.6989.10375.15424
+	lw	a1, -260(sp)
 	slli	a2, a1, 2
 	addi	a2, a2, 1264
 	sw	a0,0(a2) 
@@ -13761,7 +13761,7 @@ bg_cont.28325:
 	addi	a0, a0, 0
 	lw	a0, 0(a0)
 	addi	a1, a0, -1
-	lw	a0, -100(sp) # Restore cur.3163.6932.10202
+	lw	a0, -100(sp)
 	fsgnj	fs11, fa2, fa2
 	fsgnj	fa2, fa0, fa0
 	fsgnj	fa0, fa1, fa1
@@ -13773,10 +13773,10 @@ bg_cont.28325:
 	lw	ra, -296(sp)
 	addi	a0, x0, 0
 	addi	a4, x0, 2
-	lw	a1, -60(sp) # Restore prev.3162.6931.10200
-	lw	a2, -100(sp) # Restore cur.3163.6932.10202
-	lw	a3, -140(sp) # Restore next.3164.6933.10204
-	lw	a5, -20(sp) # Restore Ti335.3156.6925
+	lw	a1, -60(sp)
+	lw	a2, -100(sp)
+	lw	a3, -140(sp)
+	lw	a5, -20(sp)
 	sw	ra, -296(sp)
 	addi	sp, sp, -300
 	jal	ra, scan_line.3082.6851
