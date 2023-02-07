@@ -2,9 +2,9 @@
 // #include "./helper.hpp"
 using namespace std;
 
-#define INDEX_WIDTH         2
-#define OFFSET_WIDTH        6
-#define WAY_NUM             2
+#define INDEX_WIDTH         10
+#define OFFSET_WIDTH        4
+#define WAY_NUM             4
 #define INVALID 			0
 #define CLEAN 				1
 #define DIRTY 				2
@@ -292,7 +292,12 @@ void Cache::use_cache(int op, int addr, Memory memory, int* reg, float* freg, in
 
 // statistics
 void Cache::print_stat() {
+	printf("cache line num:       %d\n", 1<<INDEX_WIDTH);
+	printf("cache line size:      %d byte\n", 1<<OFFSET_WIDTH);
+	printf("cache way num:        %d\n", WAY_NUM);
 	printf("cache accessed_times: %lld\n", accessed_times);
-	printf("cache hit_times: %lld\n", hit_times);
-	printf("cache miss_times: %lld\n", miss_times);
+	printf("cache hit_times:      %lld\n", hit_times);
+	printf("cache miss_times:     %lld\n", miss_times);
+	printf("hit rate:             %f\n", (double)hit_times/accessed_times*100);
+	printf("miss rate:            %f\n", (double)miss_times/accessed_times*100);
 }

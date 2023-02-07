@@ -4,6 +4,7 @@
 #include "./helper.h"
 
 #define BUFSIZE 100
+#define FUNC_LABEL_NUM 10000
 
 /* todo: swの出力 */
 
@@ -37,8 +38,8 @@ int main(int argc, char* argv[]) {
     int addr = 0;               // 命令アドレス
     int data_addr = 0;          // データセクションでのアドレス
     int func_label_index = 0;
-    char func_label[1000][50];  // 関数ラベル名
-    int func_label_addr[1000];  // 関数ラベルアドレス
+    char func_label[FUNC_LABEL_NUM][50];  // 関数ラベル名
+    int func_label_addr[FUNC_LABEL_NUM];  // 関数ラベルアドレス
     char data_label[64][10];    // データラベル名(indexがアドレスになる) (1/4に圧縮)
     int is_data = 0;           // 現在データセクションかどうか
     int pc = 0;
@@ -249,8 +250,8 @@ int main(int argc, char* argv[]) {
             long long int jmp_addr;
             int n = strlen(r2);
             // find label's address
-            for (int i=0; i<=1000; i++) {
-                if (i == 1000) {
+            for (int i=0; i<=FUNC_LABEL_NUM; i++) {
+                if (i == FUNC_LABEL_NUM) {
                     printf("[%s] cannot find label: %s\n", opcode, r2);
                 } else if (strncmp(func_label[i], r2, n) == 0) {
                     jmp_addr = func_label_addr[i];
@@ -276,8 +277,8 @@ int main(int argc, char* argv[]) {
             int rs2 = reg(r1, line_n);
             long long int jmp_addr;
             int n = strlen(r2);
-            for (int i=0; i<=1000; i++) {
-                if (i == 1000) {
+            for (int i=0; i<=FUNC_LABEL_NUM; i++) {
+                if (i == FUNC_LABEL_NUM) {
                     printf("[%s] cannot find label: %s\n", opcode, r2);
                 } else if (strncmp(func_label[i], r2, n) == 0) {
                     jmp_addr = func_label_addr[i];
@@ -299,8 +300,8 @@ int main(int argc, char* argv[]) {
             int rs2 = reg(r1, line_n);
             long long int jmp_addr;
             int n = strlen(r2);
-            for (int i=0; i<=1000; i++) {
-                if (i == 1000) {
+            for (int i=0; i<=FUNC_LABEL_NUM; i++) {
+                if (i == FUNC_LABEL_NUM) {
                     printf("[%s] cannot find label: %s\n", opcode, r2);
                 } else if (strncmp(func_label[i], r2, n) == 0) {
                     jmp_addr = func_label_addr[i];
@@ -308,9 +309,12 @@ int main(int argc, char* argv[]) {
                 }
             }
             long long int imm = jmp_addr - addr;
+            fprintf(out, "[blt] imm: %lld\n", imm);
             // printf("[blt] jmp_addr = %lld, addr = %d\n", jmp_addr, addr);
             long long int imm1 = imm_12_10_5(imm);
+            fprintf(out, "      imm[12|10:5]: %lld\n", imm1);
             int imm2 = imm_4_1_11(imm);
+            fprintf(out, "      imm[4:1|11]: %d\n", imm2);
             if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %07lld %05d %05d %03d %05d %07d\n", addr, opcode, line_n, imm1, rs2, rs1, F3_BLT, imm2, OP_BLT);
             } else {
@@ -539,8 +543,8 @@ int main(int argc, char* argv[]) {
             int rd = reg(r0, line_n);
             long long int jmp_addr;
             int n = strlen(r1);
-            for (int i=0; i<=1000; i++) {
-                if (i == 1000) {
+            for (int i=0; i<=FUNC_LABEL_NUM; i++) {
+                if (i == FUNC_LABEL_NUM) {
                     printf("[%s] cannot find label: %s\n", opcode, r1);
                 } else if (strncmp(func_label[i], r1, n) == 0) {
                     jmp_addr = func_label_addr[i];
