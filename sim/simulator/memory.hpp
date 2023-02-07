@@ -292,12 +292,13 @@ void Cache::use_cache(int op, int addr, Memory memory, int* reg, float* freg, in
 
 // statistics
 void Cache::print_stat() {
-	printf("cache line num:       %d\n", 1<<INDEX_WIDTH);
-	printf("cache line size:      %d byte\n", 1<<OFFSET_WIDTH);
-	printf("cache way num:        %d\n", WAY_NUM);
-	printf("cache accessed_times: %lld\n", accessed_times);
-	printf("cache hit_times:      %lld\n", hit_times);
-	printf("cache miss_times:     %lld\n", miss_times);
-	printf("hit rate:             %f\n", (double)hit_times/accessed_times*100);
-	printf("miss rate:            %f\n", (double)miss_times/accessed_times*100);
+	printf("\n\t---- Cache Statistics ---------------------------\n\n");
+	printf("\tcache line num:       %d\n", 1<<INDEX_WIDTH);
+	printf("\tcache line size:      %d byte\n", 1<<OFFSET_WIDTH);
+	printf("\tcache way num:        %d\n", WAY_NUM);
+	printf("\tcache accessed_times: %lld\n", accessed_times);
+	printf("\tcache hit_times:      %lld\n", hit_times);
+	printf("\tcache miss_times:     %lld\n", miss_times);
+	printf("\thit rate:             %f\n", (double)hit_times/accessed_times*100);
+	printf("\tmiss rate:            %f\n", (double)miss_times/accessed_times*100);
 }
