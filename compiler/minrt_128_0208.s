@@ -20218,8 +20218,8 @@ create_array_loop.38378:
 	jal	x0, create_array_loop.38378
 create_array_end.38378:
 	addi	a0, t6, 0
-	addi	a0, x0, 512
-	addi	a1, x0, 512
+	addi	a0, x0, 128
+	addi	a1, x0, 128
 	addi	a2, x0, 3
 	addi	a3, x0, 872
 	addi	a3, a3, 0
@@ -20228,11 +20228,11 @@ create_array_end.38378:
 	addi	a3, a3, 4
 	sw	a1,0(a3) 
 	addi	a1, x0, 880
-	addi	a3, x0, 256
+	addi	a3, x0, 64
 	addi	a1, a1, 0
 	sw	a3,0(a1) 
 	addi	a1, x0, 880
-	addi	a3, x0, 256
+	addi	a3, x0, 64
 	addi	a1, a1, 4
 	sw	a3,0(a1) 
 	addi	a1, x0, 888
