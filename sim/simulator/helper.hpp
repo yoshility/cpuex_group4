@@ -21,3 +21,4 @@ void print_reg(int*);
 void print_freg(float*);
 long long int to_binary(int, int);
 float sign(float);
+void clk_count(unsigned long long*, bool*, int*, int, int, bool, int, int*);

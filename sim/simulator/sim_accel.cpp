@@ -293,6 +293,10 @@ int main(int argc, char* argv[]) {
     int pre_pc = 0;
     opcode_n = 0;               // opcode 番号
     unsigned long long inst_count = 0;  // 命令数
+    unsigned long long clk = 4; // クロック数
+    bool pre_inst_is_load = 0;  // 前の命令がロードか
+    int pre_load_rd = -1;       // ロードされた目的レジスタ
+    int data_hazard_stall = 0;  // ロードによるストール回数
     Inst op;                    // 命令
     printf("Processing...\n");
     while (1) {
@@ -314,6 +318,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = reg[op._r1] + op._r2;
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
                 break;
             case 2: // add rd, rs1, rs2
                 if (debug) {
@@ -323,6 +328,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = reg[op._r1] + reg[op._r2];
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall);
                 break;
             case 3: // sub rd, rs1, rs2
                 if (debug) {
@@ -332,6 +338,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = reg[op._r1] - reg[op._r2];
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall);
                 break;
             case 4: // mul rd, rs1, rs2
                 if (debug) {
@@ -341,6 +348,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = reg[op._r1] * reg[op._r2];
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall);
                 break;
             case 5: // div rd, rs1, rs2
                 if (debug) {
@@ -350,6 +358,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = reg[op._r1] / reg[op._r2];
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall);
                 break;
             case 6: // slli rd, rs1, uimm
                 if (debug) {
@@ -359,6 +368,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = reg[op._r1] << op._r2;
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
                 break;
             case 7: // luil rd, label
                 if (debug) {
@@ -368,6 +378,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = ((op._r1 / 2048) << 12);
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, -2, -2, 0, -1, &data_hazard_stall);
                 break;
             case 8: // beq rs1, rs2, label
                 if (debug) {
@@ -380,6 +391,7 @@ int main(int argc, char* argv[]) {
                 } else {
                     pc += 4;
                 }
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r0, op._r1, 0, -1, &data_hazard_stall);
                 break;
             case 9: // bne rs1, rs2, label
                 if (debug) {
@@ -392,6 +404,7 @@ int main(int argc, char* argv[]) {
                 } else {
                     pc += 4;
                 }
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r0, op._r1, 0, -1, &data_hazard_stall);
                 break;
             case 10: // blt rs1, rs2, label
                 if (debug) {
@@ -404,6 +417,7 @@ int main(int argc, char* argv[]) {
                 } else {
                     pc += 4;
                 }
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r0, op._r1, 0, -1, &data_hazard_stall);
                 break;
             case 11: // lw rd, imm(rs1) (input=s10/x26)
                 if (debug) {
@@ -433,6 +447,7 @@ int main(int argc, char* argv[]) {
                     reg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].i;
                 }
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 1, op._r0, &data_hazard_stall);
                 break;
             // sw rs2, imm(rs1) (int output=s10/x26; char output=s11/x27)
             case 12:
@@ -465,6 +480,7 @@ int main(int argc, char* argv[]) {
                     memory.d[(reg[op._r2]+op._r1)/4].i = reg[op._r0];
                 }
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 0, -1, &data_hazard_stall);
                 break;
             case 13: // fadd fd, fs1, fs2
                 if (debug) {
@@ -474,6 +490,7 @@ int main(int argc, char* argv[]) {
                 }
                 freg[op._r0] = freg[op._r1] + freg[op._r2];
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
             case 14: // fsub fd, fs1, fs2
                 if (debug) {
@@ -483,6 +500,7 @@ int main(int argc, char* argv[]) {
                 }
                 freg[op._r0] = freg[op._r1] - freg[op._r2];
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
             case 15: // fmul fd, fs1, fs2
                 if (debug) {
@@ -492,6 +510,7 @@ int main(int argc, char* argv[]) {
                 }
                 freg[op._r0] = freg[op._r1] * freg[op._r2];
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
             case 16: // fdiv fd, fs1, fs2
                 if (debug) {
@@ -501,6 +520,7 @@ int main(int argc, char* argv[]) {
                 }
                 freg[op._r0] = freg[op._r1] / freg[op._r2];
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
             case 17: // flw fd, imm(rs1) (input=s11/x27)
                 if (debug) {
@@ -537,6 +557,7 @@ int main(int argc, char* argv[]) {
                     freg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].f;
                 }
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 1, op._r0+32, &data_hazard_stall);
                 break;
             case 18: // fsw fs2, imm(rs1) (outputには使わない)
                 if (debug) {
@@ -554,6 +575,7 @@ int main(int argc, char* argv[]) {
                 memory.d[(reg[op._r2]+op._r1)/4].f = freg[op._r0];
                 }
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 0, -1, &data_hazard_stall);
                 break;
             case 19: // fsqrt fd, fs1
                 if (debug) {
@@ -563,6 +585,7 @@ int main(int argc, char* argv[]) {
                 }
                 freg[op._r0] = sqrt(freg[op._r1]);
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, -2, 0, -1, &data_hazard_stall);
                 break;
             case 20: // fsgnjn fd, fs1, fs2
                 if (debug) {
@@ -572,6 +595,7 @@ int main(int argc, char* argv[]) {
                 }
                 freg[op._r0] = fabs(freg[op._r1]) * (-sign(freg[op._r2]));
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
             case 21: // fsgnjx fd, fs1, fs2
                 if (debug) {
@@ -581,6 +605,7 @@ int main(int argc, char* argv[]) {
                 }
                 freg[op._r0] = freg[op._r1] * sign(freg[op._r2]);
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
             case 22: // fsgnj fd, fs1, fs2
                 if (debug) {
@@ -590,6 +615,7 @@ int main(int argc, char* argv[]) {
                 }
                 freg[op._r0] = fabs(freg[op._r1]) * sign(freg[op._r2]);
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
             case 23: // fcvtsw fd, rs1
                 if (debug) {
@@ -599,6 +625,7 @@ int main(int argc, char* argv[]) {
                 }
                 freg[op._r0] = (float)(reg[op._r1]);
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
                 break;
             case 24: // fcvtws rd, fs1
                 if (debug) {
@@ -608,6 +635,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = (int)round(freg[op._r1]); // 最近傍
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, -2, 0, -1, &data_hazard_stall);
                 break;
             case 25: // feq rd, fs1, fs2
                 if (debug) {
@@ -617,6 +645,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = (freg[op._r1] == freg[op._r2]);
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
             case 26: // flt rd, fs1, fs2
                 if (debug) {
@@ -626,6 +655,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = (freg[op._r1] < freg[op._r2]);
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
             case 27: // jalr rd, rs1, imm
                 if (debug) {
@@ -635,6 +665,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = pc + 4;
                 pc = reg[op._r1] + op._r2;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
                 break;
             case 28: // jal rd, label
                 if (debug) {
@@ -644,6 +675,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = pc + 4;
                 pc = op._r1;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, -2, -2, 0, -1, &data_hazard_stall);
                 break;
             case 29: // lui rd, imm
                 if (debug) {
@@ -653,6 +685,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = (op._r1 << 12);
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, -2, -2, 0, -1, &data_hazard_stall);
                 break;
             case 30: // srli rd, rs1, imm
                 if (debug) {
@@ -662,6 +695,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = reg[op._r1] >> op._r2;
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
                 break;
             case 31: // addil rd, rs1, label -> addi rd, rs1, {0,label[10:0]}
                 if (debug) {
@@ -671,6 +705,7 @@ int main(int argc, char* argv[]) {
                 }
                 reg[op._r0] = reg[op._r1] + (op._r2 % 2048);
                 pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
                 break;
             default: // others
                 printf("[Step 3] Error: unknown inst: %d\tinst_count: %lld\n", opcode_n, inst_count);
