@@ -148,7 +148,6 @@ int main(int argc, char* argv[]) {
     int line_n = 1;             // アセンブリでの行番号
     int opcode_n = 0;           // opcode 番号
     int off = 0;                // offsetのチェック用
-    bool too_large_off = 0;     // offsetが大きすぎたら1 -> 実行までいかずに途中で止める
     while (fgets(line, BUFSIZE, in) != NULL) {
         strcpy(r0, "\0");
         strcpy(r1, "\0");
@@ -195,8 +194,7 @@ int main(int argc, char* argv[]) {
                 off = func_label[r2] - addr;
                 if (off >= 4096 || off < -4096) {
                     printf("[Step 2] Warning: beq too far offset!\n");
-                    printf("inst addr: %X\tline: %d\n", addr, line_n);
-                    too_large_off = 1;
+                    printf("         inst addr: %X    line: %d\n", addr, line_n);
                 }
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), reg_num.at(r1), func_label[r2], line_n);
                 break;
@@ -204,8 +202,7 @@ int main(int argc, char* argv[]) {
                 off = func_label[r2] - addr;
                 if (off >= 4096 || off < -4096) {
                     printf("[Step 2] Warning: bne too far offset!\n");
-                    printf("inst addr: %X\tline: %d\n", addr, line_n);
-                    too_large_off = 1;
+                    printf("         inst addr: %X    line: %d\n", addr, line_n);
                 }
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), reg_num.at(r1), func_label[r2], line_n);
                 break;
@@ -213,8 +210,7 @@ int main(int argc, char* argv[]) {
                 off = func_label[r2] - addr;
                 if (off >= 4096 || off < -4096) {
                     printf("[Step 2] Warning: blt too far offset!\n");
-                    printf("inst addr: %X\tline: %d\n", addr, line_n);
-                    too_large_off = 1;
+                    printf("         inst addr: %X    line: %d\n", addr, line_n);
                 }
                 inst_memory[addr/4] = inst_of(opcode_n, reg_num.at(r0), reg_num.at(r1), func_label[r2], line_n);
                 break;
@@ -291,11 +287,6 @@ int main(int argc, char* argv[]) {
         line_n++;
     }
 
-    if (too_large_off) {
-        printf("simulator stop!\n");
-        exit(1);
-    }
- 
     // <step 3> あとは命令メモリを逐次実行
     reg[1] = 1025;              // first ra = 1025
     reg[2] = MEMORY_SIZE;       // sp = MEMORY_SIZE
