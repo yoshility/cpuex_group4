@@ -1,0 +1,15 @@
+obj_dir/
+/scala
+/test_*
+/testf_*
+/project*
+/.Xil
+/ddr2
+/xsim
+*.log
+memo.txt
+xsim*
+xelab*
+xvlog*
+*sim*
+.DS_Store

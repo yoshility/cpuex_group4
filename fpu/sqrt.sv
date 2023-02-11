@@ -24,7 +24,8 @@ module sqrt (
 	wire [ 7:0] exp_y_unbiased = exp_x_unbiased >> 1;
 	wire [ 7:0] exp_y = exp_y_unbiased + 8'd127;
 
-	assign y = {sign , exp_y, frac_y[22:0]};
+	assign y =
+		(sign) ? 32'b0 : {sign , exp_y, frac_y[22:0]} ;
 endmodule
 
 module sqrt_table (
