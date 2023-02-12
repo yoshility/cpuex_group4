@@ -147,6 +147,7 @@ read_object.2989: # 152
 	jalr	x0, ra, 0
 bg_else.32281:
 	lw	a1, 0(s10)
+	addi	x0, x0, 0
 	sw	t5, -0(sp) # Save read_object.2989
 	sw	a0, -4(sp) # Save n.2990
 	addi	t6, x0, -1
@@ -155,8 +156,11 @@ bg_else.32281:
 	jal	x0, beq_cont.32284
 beq_else.32283:
 	lw	a2, 0(s10)
+	addi	x0, x0, 0
 	lw	a3, 0(s10)
+	addi	x0, x0, 0
 	lw	a4, 0(s10)
+	addi	x0, x0, 0
 	luil	a5, l.26808
 	srli	a5, a5, 1
 	addil	a5, a5, l.26808
@@ -172,12 +176,15 @@ beq_else.32283:
 	addi	a0, hp, 0
 	addi	hp, hp, 12
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a0 0
 	fsw	fa0, 0(a1) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a0, 4
 	fsw	fa0, 0(a1) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a0, 8
 	fsw	fa0, 0(a1) 
 	luil	a1, l.26808
@@ -191,15 +198,19 @@ beq_else.32283:
 	addi	a0, hp, 0
 	addi	hp, hp, 12
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a0 0
 	fsw	fa0, 0(a1) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a0, 4
 	fsw	fa0, 0(a1) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a0, 8
 	fsw	fa0, 0(a1) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fa0, fs11
 	luil	a2, l.26808
@@ -213,9 +224,11 @@ beq_else.32283:
 	addi	a0, hp, 0
 	addi	hp, hp, 8
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a0 0
 	fsw	fa0, 0(a1) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a0, 4
 	fsw	fa0, 0(a1) 
 	luil	a1, l.26808
@@ -229,12 +242,15 @@ beq_else.32283:
 	addi	a0, hp, 0
 	addi	hp, hp, 12
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a0 0
 	fsw	fa0, 0(a1) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a0, 4
 	fsw	fa0, 0(a1) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a0, 8
 	fsw	fa0, 0(a1) 
 	luil	a1, l.26808
@@ -252,6 +268,7 @@ beq_else.32283:
 	jal	x0, beq_cont.32291
 beq_else.32290:
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	luil	a2, l.26836
 	srli	a2, a2, 1
 	addil	a2, a2, l.26836
@@ -260,6 +277,7 @@ beq_else.32290:
 	addi	a2, a0 0
 	fsw	fa0, 0(a2) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	luil	a2, l.26836
 	srli	a2, a2, 1
 	addil	a2, a2, l.26836
@@ -268,6 +286,7 @@ beq_else.32290:
 	addi	a2, a0, 4
 	fsw	fa0, 0(a2) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	luil	a2, l.26836
 	srli	a2, a2, 1
 	addil	a2, a2, l.26836
@@ -3046,8 +3065,9 @@ be_else.32547:
 	lw	t5, -0(sp) # Restore read_object.2989
 	lw	t6, 0(t5) 
 	jalr	x0, t6, 0 
-read_net_item.2993: # 10732
+read_net_item.2993: # 10808
 	lw	a1, 0(s10)
+	addi	x0, x0, 0
 	addi	t6, x0, -1
 	bne	a1, t6, be_else.32549 # size : 40
 	addi	a0, a0, 1
@@ -3078,7 +3098,7 @@ be_else.32549:
 	lw	a2, -0(sp) # Restore item.5601
 	sw	a2,0(a1) 
 	jalr	x0, ra, 0
-read_or_network.2995: # 10844
+read_or_network.2995: # 10924
 	addi	a1, x0, 0
 	sw	a0, -0(sp) # Save length.2996
 	addi	a0, a1, 0
@@ -3119,7 +3139,7 @@ be_else.32551:
 	lw	a2, -4(sp) # Restore net.5589
 	sw	a2,0(a1) 
 	jalr	x0, ra, 0
-read_and_network.2997: # 10992
+read_and_network.2997: # 11072
 	addi	a1, x0, 0
 	sw	a0, -0(sp) # Save n.2998
 	addi	a0, a1, 0
@@ -3140,7 +3160,7 @@ be_else.32553:
 	sw	a0,0(a2) 
 	addi	a0, a1, 1
 	jal	x0, read_and_network.2997 
-iter_setup_dirvec_constants.3094: # 11068
+iter_setup_dirvec_constants.3094: # 11148
 	blt	a1, x0, bg_else.32555 # size : 2996
 	slli	a2, a1, 2
 	addi	a2, a2, 304
@@ -3587,7 +3607,7 @@ beq_cont.32557:
 	jal	x0, iter_setup_dirvec_constants.3094 
 bg_else.32555:
 	jalr	x0, ra, 0
-setup_startp_constants.3099: # 12704
+setup_startp_constants.3099: # 12784
 	blt	a1, x0, bg_else.32596 # size : 872
 	slli	a2, a1, 2
 	addi	a2, a2, 304
@@ -3708,7 +3728,7 @@ beq_cont.32598:
 	jal	x0, setup_startp_constants.3099 
 bg_else.32596:
 	jalr	x0, ra, 0
-check_all_inside.3124: # 13148
+check_all_inside.3124: # 13228
 	slli	a2, a0, 2
 	add	a2, a1, a2
 	lw	a2, 0(a2)
@@ -3886,7 +3906,7 @@ beq_cont.32608:
 be_else.32635:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
-shadow_check_and_group.3130: # 13736
+shadow_check_and_group.3130: # 13816
 	slli	a2, a0, 2
 	add	a2, a1, a2
 	lw	a2, 0(a2)
@@ -4283,7 +4303,7 @@ be_else.32679:
 be_else.32681:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
-shadow_check_one_or_group.3133: # 15136
+shadow_check_one_or_group.3133: # 15216
 	slli	a2, a0, 2
 	add	a2, a1, a2
 	lw	a2, 0(a2)
@@ -4313,7 +4333,7 @@ be_else.32682:
 be_else.32683:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
-shadow_check_one_or_matrix.3136: # 15244
+shadow_check_one_or_matrix.3136: # 15324
 	slli	a2, a0, 2
 	add	a2, a1, a2
 	lw	a2, 0(a2)
@@ -4701,7 +4721,7 @@ be_else.32733:
 be_else.32734:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
-solve_each_element.3139: # 16588
+solve_each_element.3139: # 16668
 	slli	a3, a0, 2
 	add	a3, a1, a3
 	lw	a3, 0(a3)
@@ -5277,7 +5297,7 @@ beq_cont.32803:
 	lw	a1, -4(sp) # Restore and_group.3141
 	lw	a2, -0(sp) # Restore dirvec.3142
 	jal	x0, solve_each_element.3139 
-solve_one_or_network.3143: # 18604
+solve_one_or_network.3143: # 18684
 	slli	a3, a0, 2
 	add	a3, a1, a3
 	lw	a3, 0(a3)
@@ -5304,7 +5324,7 @@ be_else.32808:
 	lw	a1, -4(sp) # Restore or_group.3145
 	lw	a2, -0(sp) # Restore dirvec.3146
 	jal	x0, solve_one_or_network.3143 
-trace_or_matrix.3147: # 18704
+trace_or_matrix.3147: # 18784
 	slli	a3, a0, 2
 	add	a3, a1, a3
 	lw	a3, 0(a3)
@@ -5823,7 +5843,7 @@ beq_cont.32813:
 	lw	a1, -4(sp) # Restore or_network.3149
 	lw	a2, -0(sp) # Restore dirvec.3150
 	jal	x0, trace_or_matrix.3147 
-solve_each_element_fast.3153: # 20500
+solve_each_element_fast.3153: # 20580
 	lw	a3, 0(a2)
 	slli	a4, a0, 2
 	add	a4, a1, a4
@@ -6179,7 +6199,7 @@ beq_cont.32922:
 	lw	a1, -4(sp) # Restore and_group.3155
 	lw	a2, -0(sp) # Restore dirvec.3156
 	jal	x0, solve_each_element_fast.3153 
-solve_one_or_network_fast.3157: # 21740
+solve_one_or_network_fast.3157: # 21820
 	slli	a3, a0, 2
 	add	a3, a1, a3
 	lw	a3, 0(a3)
@@ -6206,7 +6226,7 @@ be_else.32927:
 	lw	a1, -4(sp) # Restore or_group.3159
 	lw	a2, -0(sp) # Restore dirvec.3160
 	jal	x0, solve_one_or_network_fast.3157 
-trace_or_matrix_fast.3161: # 21840
+trace_or_matrix_fast.3161: # 21920
 	slli	a3, a0, 2
 	add	a3, a1, a3
 	lw	a3, 0(a3)
@@ -6507,7 +6527,7 @@ beq_cont.32932:
 	lw	a1, -4(sp) # Restore or_network.3163
 	lw	a2, -0(sp) # Restore dirvec.3164
 	jal	x0, trace_or_matrix_fast.3161 
-trace_reflections.3183: # 22868
+trace_reflections.3183: # 22948
 	blt	a0, x0, bg_else.32973 # size : 1404
 	slli	a2, a0, 2
 	addi	a2, a2, 1264
@@ -6694,7 +6714,7 @@ beq_cont.32977:
 	jal	x0, trace_reflections.3183 
 bg_else.32973:
 	jalr	x0, ra, 0
-trace_ray.3188: # 23560
+trace_ray.3188: # 23640
 	flw	fa2, 4(t5)
 	addi	t6, x0, 4
 	blt	t6, a0, bg_else.32987 # size : 17164
@@ -9291,7 +9311,7 @@ bg_cont.33154:
 	jalr	x0, t6, 0 
 be_else.33155:
 	jalr	x0, ra, 0
-iter_trace_diffuse_rays.3197: # 33288
+iter_trace_diffuse_rays.3197: # 33368
 	flw	fa0, 4(t5)
 	blt	a3, x0, bg_else.33157 # size : 28672
 	jal	x0, bg_sub.33158
@@ -13803,7 +13823,7 @@ beq_cont.33161:
 	lw	t5, -12(sp) # Restore iter_trace_diffuse_rays.3197
 	lw	t6, 0(t5) 
 	jalr	x0, t6, 0 
-do_without_neighbors.3219: # 50088
+do_without_neighbors.3219: # 50168
 	lw	a2, 4(t5)
 	addi	t6, x0, 4
 	blt	t6, a1, bg_else.33469 # size : 2600
@@ -14121,7 +14141,7 @@ bg_else.33470:
 	jalr	x0, ra, 0
 bg_else.33469:
 	jalr	x0, ra, 0
-try_exploit_neighbors.3235: # 51300
+try_exploit_neighbors.3235: # 51380
 	lw	a6, 4(t5)
 	slli	a7, a0, 2
 	add	a7, a3, a7
@@ -14392,7 +14412,7 @@ bg_else.33486:
 	jalr	x0, ra, 0
 bg_else.33485:
 	jalr	x0, ra, 0
-pretrace_diffuse_rays.3250: # 52328
+pretrace_diffuse_rays.3250: # 52408
 	lw	a2, 4(t5)
 	addi	t6, x0, 4
 	blt	t6, a1, bg_else.33500 # size : 828
@@ -14501,7 +14521,7 @@ bg_else.33501:
 	jalr	x0, ra, 0
 bg_else.33500:
 	jalr	x0, ra, 0
-pretrace_pixels.3253: # 52744
+pretrace_pixels.3253: # 52824
 	lw	a3, 8(t5)
 	lw	a4, 4(t5)
 	blt	a1, x0, bg_else.33506 # size : 1420
@@ -14693,7 +14713,7 @@ bg_cont.33510:
 	jalr	x0, t6, 0 
 bg_else.33506:
 	jalr	x0, ra, 0
-scan_pixel.3264: # 53488
+scan_pixel.3264: # 53568
 	lw	a6, 8(t5)
 	lw	a7, 4(t5)
 	addi	s0, x0, 872
@@ -14894,7 +14914,7 @@ beq_cont.33525:
 	lw	t5, -16(sp) # Restore scan_pixel.3264
 	lw	t6, 0(t5) 
 	jalr	x0, t6, 0 
-scan_line.3271: # 54140
+scan_line.3271: # 54220
 	lw	a6, 8(t5)
 	lw	a7, 4(t5)
 	addi	s0, x0, 872
@@ -14998,7 +15018,7 @@ bg_cont.33555:
 	lw	t5, -0(sp) # Restore scan_line.3271
 	lw	t6, 0(t5) 
 	jalr	x0, t6, 0 
-init_line_elements.3282: # 54532
+init_line_elements.3282: # 54612
 	blt	a1, x0, bg_else.33556 # size : 2124
 	luil	a2, l.26808
 	srli	a2, a2, 1
@@ -15322,7 +15342,7 @@ init_line_elements.3282: # 54532
 	jal	x0, init_line_elements.3282 
 bg_else.33556:
 	jalr	x0, ra, 0
-calc_dirvec.3292: # 55820
+calc_dirvec.3292: # 55900
 	flw	fa4, 4(t5)
 	addi	t6, x0, 5
 	blt	a0, t6, bg_else.33585 # size : 724
@@ -17821,7 +17841,7 @@ beq_cont.33754:
 	lw	t5, -12(sp) # Restore calc_dirvec.3292
 	lw	t6, 0(t5) 
 	jalr	x0, t6, 0 
-calc_dirvecs.3300: # 65072
+calc_dirvecs.3300: # 65152
 	lw	a3, 4(t5)
 	blt	a0, x0, bg_else.33771 # size : 628
 	fcvtsw	fa1, a0
@@ -17914,7 +17934,7 @@ bg_cont.33773:
 	jalr	x0, t6, 0 
 bg_else.33771:
 	jalr	x0, ra, 0
-calc_dirvec_rows.3305: # 65428
+calc_dirvec_rows.3305: # 65508
 	lw	a3, 4(t5)
 	blt	a0, x0, bg_else.33775 # size : 280
 	fcvtsw	fa0, a0
@@ -17958,7 +17978,7 @@ bg_cont.33777:
 	jalr	x0, t6, 0 
 bg_else.33775:
 	jalr	x0, ra, 0
-create_dirvec_elements.3311: # 65588
+create_dirvec_elements.3311: # 65668
 	blt	a1, x0, bg_else.33779 # size : 260
 	luil	a2, l.26808
 	srli	a2, a2, 1
@@ -17999,7 +18019,7 @@ create_array_end.33781:
 	jal	x0, create_dirvec_elements.3311 
 bg_else.33779:
 	jalr	x0, ra, 0
-create_dirvecs.3314: # 65736
+create_dirvecs.3314: # 65816
 	blt	a0, x0, bg_else.33783 # size : 356
 	luil	a1, l.26808
 	srli	a1, a1, 1
@@ -18170,7 +18190,7 @@ create_array_end.33785:
 	jal	x0, create_dirvecs.3314 
 bg_else.33783:
 	jalr	x0, ra, 0
-init_dirvec_constants.3316: # 66404
+init_dirvec_constants.3316: # 66484
 	blt	a1, x0, bg_else.33788 # size : 172
 	slli	a2, a1, 2
 	add	a2, a0, a2
@@ -18193,7 +18213,7 @@ init_dirvec_constants.3316: # 66404
 	jal	x0, init_dirvec_constants.3316 
 bg_else.33788:
 	jalr	x0, ra, 0
-init_vecset_constants.3319: # 66488
+init_vecset_constants.3319: # 66568
 	blt	a0, x0, bg_else.33790 # size : 128
 	slli	a1, a0, 2
 	addi	a1, a1, 964
@@ -18680,42 +18700,42 @@ min_caml_start:
 	addi	hp, hp, 8
 	lui	a2, 11 # label trace_ray.3188
 	srli	a2, a2, 1
-	addi	a2, a2, 1032
+	addi	a2, a2, 1112
 	sw	a2,0(a1) 
 	fsw	fa0, 4(a1) 
 	addi	a2, hp 0
 	addi	hp, hp, 8
 	lui	a3, 16 # label iter_trace_diffuse_rays.3197
 	srli	a3, a3, 1
-	addi	a3, a3, 520
+	addi	a3, a3, 600
 	sw	a3,0(a2) 
 	fsw	fa0, 4(a2) 
 	addi	a3, hp 0
 	addi	hp, hp, 8
 	lui	a4, 24 # label do_without_neighbors.3219
 	srli	a4, a4, 1
-	addi	a4, a4, 936
+	addi	a4, a4, 1016
 	sw	a4,0(a3) 
 	sw	a2,4(a3) 
 	addi	a4, hp 0
 	addi	hp, hp, 8
 	lui	a5, 25 # label try_exploit_neighbors.3235
 	srli	a5, a5, 1
-	addi	a5, a5, 100
+	addi	a5, a5, 180
 	sw	a5,0(a4) 
 	sw	a3,4(a4) 
 	addi	a5, hp 0
 	addi	hp, hp, 8
 	lui	a6, 25 # label pretrace_diffuse_rays.3250
 	srli	a6, a6, 1
-	addi	a6, a6, 1128
+	addi	a6, a6, 1208
 	sw	a6,0(a5) 
 	sw	a2,4(a5) 
 	addi	a2, hp 0
 	addi	hp, hp, 12
 	lui	a6, 25 # label pretrace_pixels.3253
 	srli	a6, a6, 1
-	addi	a6, a6, 1544
+	addi	a6, a6, 1624
 	sw	a6,0(a2) 
 	sw	a1,8(a2) 
 	sw	a5,4(a2) 
@@ -18723,7 +18743,7 @@ min_caml_start:
 	addi	hp, hp, 12
 	lui	a5, 26 # label scan_pixel.3264
 	srli	a5, a5, 1
-	addi	a5, a5, 240
+	addi	a5, a5, 320
 	sw	a5,0(a1) 
 	sw	a4,8(a1) 
 	sw	a3,4(a1) 
@@ -18731,7 +18751,7 @@ min_caml_start:
 	addi	hp, hp, 12
 	lui	a4, 26 # label scan_line.3271
 	srli	a4, a4, 1
-	addi	a4, a4, 892
+	addi	a4, a4, 972
 	sw	a4,0(a3) 
 	sw	a1,8(a3) 
 	sw	a2,4(a3) 
@@ -18739,21 +18759,21 @@ min_caml_start:
 	addi	hp, hp, 8
 	lui	a4, 27 # label calc_dirvec.3292
 	srli	a4, a4, 1
-	addi	a4, a4, 524
+	addi	a4, a4, 604
 	sw	a4,0(a1) 
 	fsw	fa0, 4(a1) 
 	addi	a4, hp 0
 	addi	hp, hp, 8
 	lui	a5, 31 # label calc_dirvecs.3300
 	srli	a5, a5, 1
-	addi	a5, a5, 1584
+	addi	a5, a5, 1664
 	sw	a5,0(a4) 
 	sw	a1,4(a4) 
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	lui	a5, 31 # label calc_dirvec_rows.3305
 	srli	a5, a5, 1
-	addi	a5, a5, 1940
+	addi	a5, a5, 2020
 	sw	a5,0(a1) 
 	sw	a4,4(a1) 
 	addi	a4, x0, 128
@@ -19782,16 +19802,20 @@ create_array_end.33895:
 	lw	ra, -160(sp)
 	addi	a1, x0, 544
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	fsw	fa0, 0(a1) 
 	addi	a1, x0, 544
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a1, 4
 	fsw	fa0, 0(a1) 
 	addi	a1, x0, 544
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	addi	a1, a1, 8
 	fsw	fa0, 0(a1) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	luil	a1, l.26836
 	srli	a1, a1, 1
 	addil	a1, a1, l.26836
@@ -20599,6 +20623,7 @@ beq_cont.33969:
 	fmul	fa0, fa2, fa0
 beq_cont.33949:
 	flw	fa2, 0(s11)
+	addi	x0, x0, 0
 	luil	a0, l.26836
 	srli	a0, a0, 1
 	addil	a0, a0, l.26836
@@ -21487,7 +21512,9 @@ beq_cont.34023:
 	addi	a0, a0, 8
 	fsw	fa0, 0(a0) 
 	lw	a0, 0(s10)
+	addi	x0, x0, 0
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	luil	a0, l.26836
 	srli	a0, a0, 1
 	addil	a0, a0, l.26836
@@ -21862,6 +21889,7 @@ beq_cont.34059:
 	addi	a0, a0, 4
 	fsw	fa0, 0(a0) 
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	luil	a0, l.26836
 	srli	a0, a0, 1
 	addil	a0, a0, l.26836
@@ -23112,6 +23140,7 @@ beq_cont.34175:
 	fsw	fa0, 0(a0) 
 	addi	a0, x0, 580
 	flw	fa0, 0(s11)
+	addi	x0, x0, 0
 	fsw	fa0, 0(a0) 
 	addi	a0, x0, 0
 	lw	t5, -32(sp) # Restore read_object.2989
