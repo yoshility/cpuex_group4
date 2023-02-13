@@ -307,6 +307,7 @@ int main(int argc, char* argv[]) {
     int pre_load_rd = -1;       // ロードされた目的レジスタ
     int data_hazard_stall = 0;  // ロードによるストール回数
     Inst op;                    // 命令
+    char enter;                 // ステップ実行用
     // unsigned long long input = 0;
     printf("*** Processing...\n");
     while (1) {
@@ -775,8 +776,10 @@ int main(int argc, char* argv[]) {
         }
 
         if (step_by_step) {
-            char enter;
-            scanf("%c", &enter);
+            if(scanf("%c", &enter) < 0) {
+                printf("step by step: enter error\n");
+                exit(1);
+            }
         }
 
         if (pc == pre_pc) {
