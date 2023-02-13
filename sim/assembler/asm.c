@@ -309,12 +309,9 @@ int main(int argc, char* argv[]) {
                 }
             }
             long long int imm = jmp_addr - addr;
-            fprintf(out, "[blt] imm: %lld\n", imm);
             // printf("[blt] jmp_addr = %lld, addr = %d\n", jmp_addr, addr);
             long long int imm1 = imm_12_10_5(imm);
-            fprintf(out, "      imm[12|10:5]: %lld\n", imm1);
             int imm2 = imm_4_1_11(imm);
-            fprintf(out, "      imm[4:1|11]: %d\n", imm2);
             if (debug) {
                 fprintf(out, "0x%08X %s line: %d / %07lld %05d %05d %03d %05d %07d\n", addr, opcode, line_n, imm1, rs2, rs1, F3_BLT, imm2, OP_BLT);
             } else {
