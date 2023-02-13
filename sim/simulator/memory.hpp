@@ -4,11 +4,12 @@ using namespace std;
 
 #define INDEX_WIDTH         10
 #define OFFSET_WIDTH        4
-#define WAY_NUM             4
+#define WAY_NUM             1
 #define INVALID 			0
 #define CLEAN 				1
 #define DIRTY 				2
 #define MEMORY_SIZE			8188000
+#define MEMORY_ACCESS_CLK	300 // missしたときにメモリアクセスする時間
 
 #define LW					0
 #define SW					1
@@ -64,7 +65,7 @@ typedef struct cache_block {
     Cache_line* _cache_lines;
 } Cache_block;
 
-// キャッシュ全体(これ以降を直していく)
+// キャッシュ全体
 class Cache {
 	public:
 		Cache_block *d; // たとえばCache_blockが4つ入った配列->4行
@@ -77,7 +78,7 @@ class Cache {
 		// void print_block(int);
 		void print_hit_miss(int, bool);
 		void write_back(int, int, Memory);
-		void use_cache(int, int, Memory, int*, float*, int, bool);
+		void use_cache(int, int, Memory, int*, float*, int, bool, unsigned long long*);
 		void print_stat();
 };
 
@@ -160,7 +161,7 @@ void Cache::write_back(int index, int way, Memory memory) {
 }
 
 // みんなまとめてキャッシュを使う
-void Cache::use_cache(int op, int addr, Memory memory, int* reg, float* freg, int rd, bool debug) {
+void Cache::use_cache(int op, int addr, Memory memory, int* reg, float* freg, int rd, bool debug, unsigned long long* clk) {
 	accessed_times++;
 	unsigned int tag = (addr >> (INDEX_WIDTH + OFFSET_WIDTH));
 	unsigned int index = (addr >> OFFSET_WIDTH) & ((1 << INDEX_WIDTH)-1);
@@ -204,6 +205,7 @@ void Cache::use_cache(int op, int addr, Memory memory, int* reg, float* freg, in
 				print_hit_miss(op, 0);
 			}
 			miss_times++;
+			*clk += MEMORY_ACCESS_CLK;
 			// メモリからキャッシュにデータを持ってくる
 			for (int j=0; j<(1<<(OFFSET_WIDTH-2)); j++) {
 				d[index]._cache_lines[i]._data[j] = memory.d[(addr-offset)/4 + j];
@@ -256,6 +258,7 @@ void Cache::use_cache(int op, int addr, Memory memory, int* reg, float* freg, in
 		print_hit_miss(op, 0);
 	}
 	miss_times++;
+	*clk += MEMORY_ACCESS_CLK;
 	// この時点でLRUは決定している->そのwayを追い出すことを考える
 	// dirty missのときだけwrite back
 	if (d[index]._cache_lines[LRU]._status == DIRTY) {
