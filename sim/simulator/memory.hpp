@@ -9,7 +9,7 @@ using namespace std;
 #define CLEAN 				1
 #define DIRTY 				2
 #define MEMORY_SIZE			8188000
-#define MEMORY_ACCESS_CLK	300 // missしたときにメモリアクセスする時間
+#define MEMORY_ACCESS_CLK	100 // missしたときにメモリアクセスする時間
 
 #define LW					0
 #define SW					1
@@ -304,4 +304,5 @@ void Cache::print_stat() {
 	printf("\tcache miss_times:     %lld\n", miss_times);
 	printf("\thit rate:             %f\n", (double)hit_times/accessed_times*100);
 	printf("\tmiss rate:            %f\n", (double)miss_times/accessed_times*100);
+	printf("\n");
 }

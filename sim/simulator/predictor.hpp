@@ -41,7 +41,7 @@ void Predictor::change_status(bool is_taken) {
     }
 }
 
-// 予測する関数
+// 予測する関数(act:実際 status:予測)
 void Predictor::predict(int act, unsigned long long* clk, bool debug) {
     predict_access++;
     if (act && (status>0)) {
