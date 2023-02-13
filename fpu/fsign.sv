@@ -90,7 +90,7 @@ module fsgnjx (
 		if (~rstn) begin
 			y_reg <= 32'b0;
 		end else begin
-			y_reg <= {x1[31]^x2[31],x2[30:0]};
+			y_reg <= {x1[31]^x2[31],x1[30:0]};
 		end
 	end
 endmodule

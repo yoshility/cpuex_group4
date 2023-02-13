@@ -24,14 +24,12 @@ module test_fadd ();
    assign x1_bit = x1_logic;
    assign x2_bit = x2_logic;
 
-   fdiv u1(x1_bit, x2_bit, my_y_bit, clk, rstn);
+   fsqrt u1(x1_bit, my_y_bit, clk, rstn);
    initial begin
       repeat (255) begin
           x1_logic = $random();
-          x2_logic = $random();
           x1_real = $bitstoshortreal(x1_logic);
-          x2_real = $bitstoshortreal(x2_logic);
-          y_real = x1_real / x2_real;
+          y_real = x1_real ;
           y_logic = $shortrealtobits(y_real);
           #100;
       end
