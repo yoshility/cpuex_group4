@@ -803,7 +803,7 @@ int main(int argc, char* argv[]) {
     
     printf("inst_count:     %lld\n", inst_count);
     printf("clk_count:      %lld\n", clk);
-    printf("estimated time:           %lf(s)\n", (double)clk / CLK_HZ);
+    printf("estimated time:           %lf s (%lf min)\n", (double)clk/CLK_HZ, (double)clk/CLK_HZ/60);
     printf("lw stall count: %d\n",   data_hazard_stall);
 
     printf("sim elapsed time:   %lf(ms)\n", elapsed);
