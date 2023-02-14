@@ -19280,8 +19280,8 @@ min_caml_start:
 	sw	a0, 716(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 720
-	addi	a0, x0, 256
-	addi	a1, x0, 256
+	addi	a0, x0, 128
+	addi	a1, x0, 128
 	addi	a2, x0, 3
 	addi	a3, x0, 872
 	sw	a0,0(a3) 
@@ -19289,16 +19289,16 @@ min_caml_start:
 	addi	a0, a0, 4
 	sw	a1,0(a0) 
 	addi	a0, x0, 880
-	addi	a1, x0, 128
+	addi	a1, x0, 64
 	sw	a1,0(a0) 
 	addi	a0, x0, 880
-	addi	a1, x0, 128
+	addi	a1, x0, 64
 	addi	a0, a0, 4
 	sw	a1,0(a0) 
 	addi	a0, x0, 888
-	luil	a1, l.001
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.001
+	addil	a1, a1, l.27213
 	flw	fa0, 0(a1)
 	fsw	fa0, 0(a0) 
 	addi	a0, x0, 872
