@@ -3,9 +3,11 @@
 #include "./memory.hpp"
 #include "./predictor.hpp"
 #include "./fpu.hpp"
+#include "./fmul_fdiv.hpp"
 using namespace std;
 
 #define BUFSIZE 100
+#define CLK_HZ  10000000 // 10MHz
 
 const unordered_map<string, int> op_n = {
     {"addi", 1}, {"add", 2}, {"sub", 3}, {"mul", 4}, {"div", 5}, {"slli", 6}, {"luil", 7}, {"beq", 8}, {"bne", 9}, {"blt", 10}, {"lw", 11}, {"sw", 12}, {"fadd", 13}, {"fsub", 14}, {"fmul", 15}, {"fdiv", 16}, {"flw", 17}, {"fsw", 18}, {"fsqrt", 19}, {"fsgnjn", 20}, {"fsgnjx", 21}, {"fsgnj", 22}, {"fcvtsw", 23}, {"fcvtws", 24}, {"feq", 25}, {"flt", 26}, {"jalr", 27}, {"jal", 28}, {"lui", 29}, {"srli", 30}, {"addil", 31}
@@ -80,6 +82,10 @@ int main(int argc, char* argv[]) {
     unordered_map<string, int> data_label;      // データラベル
     int pc = 0;
     bool is_data = 0;               // 現在データセクションかどうか
+
+    // 時間計測
+    chrono::system_clock::time_point start_time, end_time;
+    start_time = chrono::system_clock::now();
 
     while (fgets(line, BUFSIZE, in) != NULL) {
         strcpy(r0, "\0");
@@ -301,10 +307,12 @@ int main(int argc, char* argv[]) {
     int pre_load_rd = -1;       // ロードされた目的レジスタ
     int data_hazard_stall = 0;  // ロードによるストール回数
     Inst op;                    // 命令
-    printf("Processing...\n");
+    char enter;                 // ステップ実行用
+    // unsigned long long input = 0;
+    printf("*** Processing...\n");
     while (1) {
         if (pc == 1025) { // 大元のra
-            cout << "pc = 1025 !" << endl;
+            cout << "pc = initial ra!" << endl;
             break;
         } 
         op = inst_memory[pc/4];
@@ -434,6 +442,7 @@ int main(int argc, char* argv[]) {
                 }
                 // input
                 if (op._r2 == 26) {
+                    // input++;
                     if (debug) {
                         cout << "\t[lw] int input!" << endl;
                     }
@@ -446,7 +455,7 @@ int main(int argc, char* argv[]) {
                 }
                 // cache
                 else if (use_cache) {
-                    cache.use_cache(0, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug);
+                    cache.use_cache(0, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk);
                 }
                 // regular lw
                 else {
@@ -479,7 +488,7 @@ int main(int argc, char* argv[]) {
                 }
                 // cache
                 else if (use_cache) {
-                    cache.use_cache(1, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug);
+                    cache.use_cache(1, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk);
                 }
                 // regular sw
                 else {
@@ -494,8 +503,8 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
-                freg[op._r0] = freg[op._r1] + freg[op._r2];
-                // freg[op._r0] = fadd(freg[op._r1], freg[op._r2]);
+                // freg[op._r0] = freg[op._r1] + freg[op._r2];
+                freg[op._r0] = fadd(freg[op._r1], freg[op._r2]);
                 pc += 4;
                 clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
@@ -505,7 +514,8 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
-                freg[op._r0] = freg[op._r1] - freg[op._r2];
+                // freg[op._r0] = freg[op._r1] - freg[op._r2];
+                freg[op._r0] = fadd(freg[op._r1], -freg[op._r2]);
                 pc += 4;
                 clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
@@ -515,7 +525,8 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
-                freg[op._r0] = freg[op._r1] * freg[op._r2];
+                // freg[op._r0] = freg[op._r1] * freg[op._r2];
+                freg[op._r0] = fmul(freg[op._r1], freg[op._r2]);
                 pc += 4;
                 clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
@@ -525,7 +536,8 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
-                freg[op._r0] = freg[op._r1] / freg[op._r2];
+                // freg[op._r0] = freg[op._r1] / freg[op._r2];
+                freg[op._r0] = fdiv(freg[op._r1], freg[op._r2]);
                 pc += 4;
                 clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
@@ -538,6 +550,7 @@ int main(int argc, char* argv[]) {
                 }
                 // input
                 if (op._r2 == 27) {
+                    // input++;
                     if (debug) {
                         cout << "\t[flw] float input!" << endl;
                     }
@@ -558,7 +571,7 @@ int main(int argc, char* argv[]) {
                 }
                 // cache
                 else if (use_cache) {
-                    cache.use_cache(2, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug);
+                    cache.use_cache(2, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk);
                 }
                 // regular flw
                 else {
@@ -576,7 +589,7 @@ int main(int argc, char* argv[]) {
                 }
                 // cache
                 if (use_cache) {
-                    cache.use_cache(3, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug);
+                    cache.use_cache(3, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk);
                 }
                 // no cache
                 else {
@@ -591,7 +604,8 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1);
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
-                freg[op._r0] = sqrt(freg[op._r1]);
+                // freg[op._r0] = sqrt(freg[op._r1]);
+                freg[op._r0] = fsqrt(freg[op._r1]);
                 pc += 4;
                 clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, -2, 0, -1, &data_hazard_stall);
                 break;
@@ -634,7 +648,8 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << reg_name_.at(op._r1);
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
-                freg[op._r0] = (float)(reg[op._r1]);
+                // freg[op._r0] = (float)(reg[op._r1]);
+                freg[op._r0] = itof(reg[op._r1]);
                 pc += 4;
                 clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
                 break;
@@ -644,7 +659,8 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << freg_name_.at(op._r1);
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
-                reg[op._r0] = (int)round(freg[op._r1]); // 最近傍
+                // reg[op._r0] = (int)round(freg[op._r1]); // 最近傍
+                reg[op._r0] = ftoi(freg[op._r1]);
                 pc += 4;
                 clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, -2, 0, -1, &data_hazard_stall);
                 break;
@@ -654,8 +670,8 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
-                reg[op._r0] = (freg[op._r1] == freg[op._r2]);
-                // reg[op._r0] = feq(freg[op._r1], freg[op._r2]);
+                // reg[op._r0] = (freg[op._r1] == freg[op._r2]);
+                reg[op._r0] = feq(freg[op._r1], freg[op._r2]);
                 pc += 4;
                 clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
@@ -665,8 +681,8 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
-                reg[op._r0] = (freg[op._r1] < freg[op._r2]);
-                // reg[op._r0] = flt(freg[op._r1], freg[op._r2]);
+                // reg[op._r0] = (freg[op._r1] < freg[op._r2]);
+                reg[op._r0] = flt(freg[op._r1], freg[op._r2]);
                 pc += 4;
                 clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
                 break;
@@ -679,6 +695,7 @@ int main(int argc, char* argv[]) {
                 reg[op._r0] = pc + 4;
                 pc = reg[op._r1] + op._r2;
                 clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
+                clk += 2;
                 break;
             case 28: // jal rd, label
                 if (debug) {
@@ -759,8 +776,10 @@ int main(int argc, char* argv[]) {
         }
 
         if (step_by_step) {
-            char enter;
-            scanf("%c", &enter);
+            if(scanf("%c", &enter) < 0) {
+                printf("step by step: enter error\n");
+                exit(1);
+            }
         }
 
         if (pc == pre_pc) {
@@ -768,6 +787,9 @@ int main(int argc, char* argv[]) {
             break;
         }
     }
+
+    end_time = chrono::system_clock::now();
+    double elapsed = chrono::duration_cast<chrono::milliseconds>(end_time-start_time).count();
 
     printf("Finished!\n");
     if (!debug) {
@@ -781,7 +803,11 @@ int main(int argc, char* argv[]) {
     
     printf("inst_count:     %lld\n", inst_count);
     printf("clk_count:      %lld\n", clk);
+    printf("estimated time:           %lf(s)\n", (double)clk / CLK_HZ);
     printf("lw stall count: %d\n",   data_hazard_stall);
+
+    printf("sim elapsed time:   %lf(ms)\n", elapsed);
+    // printf("input: %lld\n", input);
 
     return 0;
 }
