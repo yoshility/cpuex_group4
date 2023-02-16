@@ -1,180 +1,175 @@
 .section	".rodata"
 .align	8
-l.30961:	# -200.000000
+l.31489:	# -200.000000
 	.long	0xc3480000
-l.30957:	# 200.000000
+l.31485:	# 200.000000
 	.long	0x43480000
-l.30613:	# 8.000000
-	.long	0x41000000
-l.30603:	# 3.141593
-	.long	0x40490fdb
-l.30545:	# 0.900000
+l.31042:	# 0.900000
 	.long	0x3f666666
-l.29305:	# 150.000000
+l.29748:	# 150.000000
 	.long	0x43160000
-l.28896:	# -150.000000
+l.29319:	# -150.000000
 	.long	0xc3160000
-l.28843:	# 0.100000
+l.29266:	# 0.100000
 	.long	0x3dcccccd
-l.28737:	# -2.000000
+l.29160:	# -2.000000
 	.long	0xc0000000
-l.28709:	# 0.003906
+l.29132:	# 0.003906
 	.long	0x3b800000
-l.28652:	# 20.000000
+l.29075:	# 20.000000
 	.long	0x41a00000
-l.28650:	# 0.050000
+l.29073:	# 0.050000
 	.long	0x3d4ccccd
-l.28606:	# 0.250000
+l.29022:	# 0.250000
 	.long	0x3e800000
-l.28558:	# 10.000000
+l.28964:	# 10.000000
 	.long	0x41200000
-l.28546:	# 0.300000
+l.28952:	# 0.300000
 	.long	0x3e99999a
-l.28544:	# 255.000000
+l.28950:	# 255.000000
 	.long	0x437f0000
-l.28539:	# 0.150000
+l.28945:	# 0.150000
 	.long	0x3e19999a
-l.28474:	# 3.141593
+l.28880:	# 3.141593
 	.long	0x40490fdb
-l.28472:	# 30.000000
+l.28878:	# 30.000000
 	.long	0x41f00000
-l.28427:	# 0.785398
+l.28833:	# 0.785398
 	.long	0x3f490fdb
-l.28425:	# 2.437500
+l.28831:	# 2.437500
 	.long	0x401c0000
-l.28423:	# 0.060035
+l.28829:	# 0.060035
 	.long	0x3d75e7c3
-l.28421:	# 0.089764
+l.28827:	# 0.089764
 	.long	0x3db7d66e
-l.28419:	# 0.111111
+l.28825:	# 0.111111
 	.long	0x3de38e38
-l.28417:	# 0.142857
+l.28823:	# 0.142857
 	.long	0x3e124925
-l.28415:	# 0.200000
+l.28821:	# 0.200000
 	.long	0x3e4ccccd
-l.28413:	# 0.333333
+l.28819:	# 0.333333
 	.long	0x3eaaaaab
-l.28411:	# 0.437500
+l.28817:	# 0.437500
 	.long	0x3ee00000
-l.28408:	# 15.000000
+l.28814:	# 15.000000
 	.long	0x41700000
-l.28406:	# 0.000100
+l.28812:	# 0.000100
 	.long	0x38d1b717
-l.28202:	# 100000000.000000
+l.28605:	# 100000000.000000
 	.long	0x4cbebc20
-l.28193:	# 1000000000.000000
+l.28596:	# 1000000000.000000
 	.long	0x4e6e6b28
-l.27651:	# -0.100000
+l.28052:	# -0.100000
 	.long	0xbdcccccd
-l.27522:	# 0.010000
+l.27923:	# 0.010000
 	.long	0x3c23d70a
-l.27520:	# -0.200000
+l.27921:	# -0.200000
 	.long	0xbe4ccccd
-l.26937:	# -0.000196
+l.27291:	# -0.000196
 	.long	0xb94d64b6
-l.26935:	# 0.008333
+l.27289:	# 0.008333
 	.long	0x3c088666
-l.26933:	# 0.166667
+l.27287:	# 0.166667
 	.long	0x3e2aaaac
-l.26931:	# 1.570796
+l.27285:	# 1.570796
 	.long	0x3fc90fdb
-l.26928:	# -0.001370
+l.27282:	# -0.001370
 	.long	0xbab38106
-l.26926:	# 0.041664
+l.27280:	# 0.041664
 	.long	0x3d2aa789
-l.26923:	# 4.000000
+l.27277:	# 4.000000
 	.long	0x40800000
-l.26869:	# -1.000000
+l.27256:	# 3.141593
+	.long	0x40490fdb
+l.27215:	# -1.000000
 	.long	0xbf800000
-l.26867:	# 1.000000
+l.27213:	# 1.000000
 	.long	0x3f800000
-l.26836:	# 0.017453
+l.27182:	# 0.017453
 	.long	0x3c8efa35
-l.26808:	# 0.000000
+l.27154:	# 0.000000
 	.long	0x0
-l.26804:	# 6.283185
+l.27150:	# 6.283185
 	.long	0x40c90fdb
-l.26802:	# 2.000000
+l.27148:	# 2.000000
 	.long	0x40000000
 l.001:	# 0.500000
 	.long	0x3f000000
 .section	".text"
-while1.2799: # 0
+while1.2800: # 0
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, be_else.32279 # size : 4
+	bne	a0, x0, be_else.32803 # size : 4
 	fsgnj	fa0, fa1, fa1
 	jalr	x0, ra, 0
-be_else.32279:
-	luil	a0, l.26802
+be_else.32803:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa1, fa2, fa1
-	jal	x0, while1.2799 
+	jal	x0, while1.2800 
 while2.2805: # 48
-	luil	a0, l.26804
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27150
 	flw	fa2, 0(a0)
 	fsub	fa2, fa0, fa2
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, be_else.32280 # size : 4
+	bne	a0, x0, be_else.32804 # size : 4
 	jalr	x0, ra, 0
-be_else.32280:
+be_else.32804:
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, be_else.32281 # size : 68
-	luil	a0, l.26802
+	bne	a0, x0, be_else.32805 # size : 68
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fdiv	fa1, fa1, fa2
 	jal	x0, while2.2805 
-be_else.32281:
+be_else.32805:
 	fsub	fa0, fa0, fa1
-	luil	a0, l.26802
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fdiv	fa1, fa1, fa2
 	jal	x0, while2.2805 
-read_object.2989: # 152
-	flw	fa0, 4(t5)
+read_object.2993: # 152
 	addi	t6, x0, 60
-	blt	a0, t6, bg_else.32282 # size : 0
+	blt	a0, t6, bg_else.32806 # size : 0
 	jalr	x0, ra, 0
-bg_else.32282:
+bg_else.32806:
 	lw	a1, 0(s10)
 	addi	x0, x0, 0
-	sw	t5, -0(sp) # Save read_object.2989
-	sw	a0, -4(sp) # Save n.2990
+	sw	a0, -0(sp) # Save n.2994
 	addi	t6, x0, -1
-	bne	a1, t6, beq_else.32284 # size : 4
+	bne	a1, t6, beq_else.32808 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.32285
-beq_else.32284:
+	jal	x0, beq_cont.32809
+beq_else.32808:
 	lw	a2, 0(s10)
 	addi	x0, x0, 0
 	lw	a3, 0(s10)
 	addi	x0, x0, 0
 	lw	a4, 0(s10)
 	addi	x0, x0, 0
-	luil	a5, l.26808
+	luil	a5, l.27154
 	srli	a5, a5, 1
-	addil	a5, a5, l.26808
-	flw	fa1, 0(a5)
-	fsw	fa0, -8(sp)
-	sw	a1, -12(sp) # Save texture.5621.11636
-	sw	a3, -16(sp) # Save refltype.5624.11642
-	sw	a2, -20(sp) # Save form.5623.11640
-	sw	a4, -24(sp) # Save isrot_p.5625.11644
-	fsw	fa1, 0(hp)
-	fsw	fa1, 4(hp)
-	fsw	fa1, 8(hp)
+	addil	a5, a5, l.27154
+	flw	fa0, 0(a5)
+	sw	a1, -4(sp) # Save texture.5625.11657
+	sw	a3, -8(sp) # Save refltype.5628.11663
+	sw	a2, -12(sp) # Save form.5627.11661
+	sw	a4, -16(sp) # Save isrot_p.5629.11665
+	fsw	fa0, 0(hp)
+	fsw	fa0, 4(hp)
+	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
 	flw	fa0, 0(s11)
@@ -189,11 +184,11 @@ beq_else.32284:
 	addi	x0, x0, 0
 	addi	a1, a0, 8
 	fsw	fa0, 0(a1) 
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -28(sp) # Save abc.5626.11647
+	sw	a0, -20(sp) # Save abc.5630.11668
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -215,12 +210,12 @@ beq_else.32284:
 	addi	x0, x0, 0
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fa0, fs11
-	luil	a2, l.26808
+	luil	a2, l.27154
 	srli	a2, a2, 1
-	addil	a2, a2, l.26808
+	addil	a2, a2, l.27154
 	flw	fa0, 0(a2)
-	sw	a0, -32(sp) # Save xyz.5630.11662
-	sw	a1, -36(sp) # Save m_invert.5634.11677
+	sw	a0, -24(sp) # Save xyz.5634.11683
+	sw	a1, -28(sp) # Save m_invert.5638.11698
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	addi	a0, hp, 0
@@ -233,11 +228,11 @@ beq_else.32284:
 	addi	x0, x0, 0
 	addi	a1, a0, 4
 	fsw	fa0, 0(a1) 
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -40(sp) # Save reflparam.5635.11680
+	sw	a0, -32(sp) # Save reflparam.5639.11701
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -255,62 +250,62 @@ beq_else.32284:
 	addi	x0, x0, 0
 	addi	a1, a0, 8
 	fsw	fa0, 0(a1) 
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -44(sp) # Save color.5638.11691
+	sw	a0, -36(sp) # Save color.5642.11712
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -24(sp) # Restore isrot_p.5625.11644
-	bne	a1, x0, beq_else.32291 # size : 0
-	jal	x0, beq_cont.32292
-beq_else.32291:
+	lw	a1, -16(sp) # Restore isrot_p.5629.11665
+	bne	a1, x0, beq_else.32815 # size : 0
+	jal	x0, beq_cont.32816
+beq_else.32815:
 	flw	fa0, 0(s11)
 	addi	x0, x0, 0
-	luil	a2, l.26836
+	luil	a2, l.27182
 	srli	a2, a2, 1
-	addil	a2, a2, l.26836
+	addil	a2, a2, l.27182
 	flw	fa1, 0(a2)
 	fmul	fa0, fa0, fa1
 	addi	a2, a0 0
 	fsw	fa0, 0(a2) 
 	flw	fa0, 0(s11)
 	addi	x0, x0, 0
-	luil	a2, l.26836
+	luil	a2, l.27182
 	srli	a2, a2, 1
-	addil	a2, a2, l.26836
+	addil	a2, a2, l.27182
 	flw	fa1, 0(a2)
 	fmul	fa0, fa0, fa1
 	addi	a2, a0, 4
 	fsw	fa0, 0(a2) 
 	flw	fa0, 0(s11)
 	addi	x0, x0, 0
-	luil	a2, l.26836
+	luil	a2, l.27182
 	srli	a2, a2, 1
-	addil	a2, a2, l.26836
+	addil	a2, a2, l.27182
 	flw	fa1, 0(a2)
 	fmul	fa0, fa0, fa1
 	addi	a2, a0, 8
 	fsw	fa0, 0(a2) 
-beq_cont.32292:
-	lw	a2, -20(sp) # Restore form.5623.11640
+beq_cont.32816:
+	lw	a2, -12(sp) # Restore form.5627.11661
 	addi	t6, x0, 2
-	bne	a2, t6, beq_else.32293 # size : 4
+	bne	a2, t6, beq_else.32817 # size : 4
 	addi	a3, x0, 1
-	jal	x0, beq_cont.32294
-beq_else.32293:
-	lw	a3, -36(sp) # Restore m_invert.5634.11677
-beq_cont.32294:
-	luil	a4, l.26808
+	jal	x0, beq_cont.32818
+beq_else.32817:
+	lw	a3, -28(sp) # Restore m_invert.5638.11698
+beq_cont.32818:
+	luil	a4, l.27154
 	srli	a4, a4, 1
-	addil	a4, a4, l.26808
+	addil	a4, a4, l.27154
 	flw	fa0, 0(a4)
-	sw	a3, -48(sp) # Save m_invert2.5644.11710
-	sw	a0, -52(sp) # Save rotation.5642.11706
+	sw	a3, -40(sp) # Save m_invert2.5648.11731
+	sw	a0, -44(sp) # Save rotation.5646.11727
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -320,163 +315,163 @@ beq_cont.32294:
 	addi	a1, hp 0
 	addi	hp, hp, 44
 	sw	a0,40(a1) 
-	lw	a0, -52(sp) # Restore rotation.5642.11706
+	lw	a0, -44(sp) # Restore rotation.5646.11727
 	sw	a0,36(a1) 
-	lw	a2, -44(sp) # Restore color.5638.11691
+	lw	a2, -36(sp) # Restore color.5642.11712
 	sw	a2,32(a1) 
-	lw	a2, -40(sp) # Restore reflparam.5635.11680
+	lw	a2, -32(sp) # Restore reflparam.5639.11701
 	sw	a2,28(a1) 
-	lw	a2, -48(sp) # Restore m_invert2.5644.11710
+	lw	a2, -40(sp) # Restore m_invert2.5648.11731
 	sw	a2,24(a1) 
-	lw	a2, -32(sp) # Restore xyz.5630.11662
+	lw	a2, -24(sp) # Restore xyz.5634.11683
 	sw	a2,20(a1) 
-	lw	a2, -28(sp) # Restore abc.5626.11647
+	lw	a2, -20(sp) # Restore abc.5630.11668
 	sw	a2,16(a1) 
-	lw	a3, -24(sp) # Restore isrot_p.5625.11644
+	lw	a3, -16(sp) # Restore isrot_p.5629.11665
 	sw	a3,12(a1) 
-	lw	a4, -16(sp) # Restore refltype.5624.11642
+	lw	a4, -8(sp) # Restore refltype.5628.11663
 	sw	a4,8(a1) 
-	lw	a4, -20(sp) # Restore form.5623.11640
+	lw	a4, -12(sp) # Restore form.5627.11661
 	sw	a4,4(a1) 
-	lw	a5, -12(sp) # Restore texture.5621.11636
+	lw	a5, -4(sp) # Restore texture.5625.11657
 	sw	a5,0(a1) 
-	lw	a5, -4(sp) # Restore n.2990
+	lw	a5, -0(sp) # Restore n.2994
 	slli	a6, a5, 2
 	addi	a6, a6, 304
 	sw	a1,0(a6) 
 	addi	t6, x0, 3
-	bne	a4, t6, beq_else.32296 # size : 608
+	bne	a4, t6, beq_else.32820 # size : 608
 	addi	a1, a2 0
 	flw	fa0, 0(a1)
 	fsgnjn	fs11, fa0, fa0
 	feq	a1, fs11, fa0
-	bne	a1, x0, beq_else.32298 # size : 124
+	bne	a1, x0, beq_else.32822 # size : 124
 	fsgnjn	fs11, fa0, fa0
 	feq	a1, fs11, fa0
-	bne	a1, x0, beq_else.32300 # size : 64
+	bne	a1, x0, beq_else.32824 # size : 64
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.32302 # size : 20
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.32826 # size : 20
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa1, 0(a1)
-	jal	x0, beq_cont.32303
-beq_else.32302:
-	luil	a1, l.26867
+	jal	x0, beq_cont.32827
+beq_else.32826:
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa1, 0(a1)
-beq_cont.32303:
-	jal	x0, beq_cont.32301
-beq_else.32300:
-	luil	a1, l.26808
+beq_cont.32827:
+	jal	x0, beq_cont.32825
+beq_else.32824:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa1, 0(a1)
-beq_cont.32301:
+beq_cont.32825:
 	fmul	fa0, fa0, fa0
 	fdiv	fa0, fa1, fa0
-	jal	x0, beq_cont.32299
-beq_else.32298:
-	luil	a1, l.26808
+	jal	x0, beq_cont.32823
+beq_else.32822:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-beq_cont.32299:
+beq_cont.32823:
 	addi	a1, a2 0
 	fsw	fa0, 0(a1) 
 	addi	a1, a2, 4
 	flw	fa0, 0(a1)
 	fsgnjn	fs11, fa0, fa0
 	feq	a1, fs11, fa0
-	bne	a1, x0, beq_else.32304 # size : 124
+	bne	a1, x0, beq_else.32828 # size : 124
 	fsgnjn	fs11, fa0, fa0
 	feq	a1, fs11, fa0
-	bne	a1, x0, beq_else.32306 # size : 64
+	bne	a1, x0, beq_else.32830 # size : 64
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.32308 # size : 20
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.32832 # size : 20
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa1, 0(a1)
-	jal	x0, beq_cont.32309
-beq_else.32308:
-	luil	a1, l.26867
+	jal	x0, beq_cont.32833
+beq_else.32832:
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa1, 0(a1)
-beq_cont.32309:
-	jal	x0, beq_cont.32307
-beq_else.32306:
-	luil	a1, l.26808
+beq_cont.32833:
+	jal	x0, beq_cont.32831
+beq_else.32830:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa1, 0(a1)
-beq_cont.32307:
+beq_cont.32831:
 	fmul	fa0, fa0, fa0
 	fdiv	fa0, fa1, fa0
-	jal	x0, beq_cont.32305
-beq_else.32304:
-	luil	a1, l.26808
+	jal	x0, beq_cont.32829
+beq_else.32828:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-beq_cont.32305:
+beq_cont.32829:
 	addi	a1, a2, 4
 	fsw	fa0, 0(a1) 
 	addi	a1, a2, 8
 	flw	fa0, 0(a1)
 	fsgnjn	fs11, fa0, fa0
 	feq	a1, fs11, fa0
-	bne	a1, x0, beq_else.32310 # size : 124
+	bne	a1, x0, beq_else.32834 # size : 124
 	fsgnjn	fs11, fa0, fa0
 	feq	a1, fs11, fa0
-	bne	a1, x0, beq_else.32312 # size : 64
+	bne	a1, x0, beq_else.32836 # size : 64
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.32314 # size : 20
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.32838 # size : 20
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa1, 0(a1)
-	jal	x0, beq_cont.32315
-beq_else.32314:
-	luil	a1, l.26867
+	jal	x0, beq_cont.32839
+beq_else.32838:
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa1, 0(a1)
-beq_cont.32315:
-	jal	x0, beq_cont.32313
-beq_else.32312:
-	luil	a1, l.26808
+beq_cont.32839:
+	jal	x0, beq_cont.32837
+beq_else.32836:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa1, 0(a1)
-beq_cont.32313:
+beq_cont.32837:
 	fmul	fa0, fa0, fa0
 	fdiv	fa0, fa1, fa0
-	jal	x0, beq_cont.32311
-beq_else.32310:
-	luil	a1, l.26808
+	jal	x0, beq_cont.32835
+beq_else.32834:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-beq_cont.32311:
+beq_cont.32835:
 	addi	a1, a2, 8
 	fsw	fa0, 0(a1) 
-	jal	x0, beq_cont.32297
-beq_else.32296:
+	jal	x0, beq_cont.32821
+beq_else.32820:
 	addi	t6, x0, 2
-	bne	a4, t6, beq_else.32316 # size : 360
-	lw	a1, -36(sp) # Restore m_invert.5634.11677
-	bne	a1, x0, beq_else.32318 # size : 4
+	bne	a4, t6, beq_else.32840 # size : 360
+	lw	a1, -28(sp) # Restore m_invert.5638.11698
+	bne	a1, x0, beq_else.32842 # size : 4
 	addi	a1, x0, 1
-	jal	x0, beq_cont.32319
-beq_else.32318:
+	jal	x0, beq_cont.32843
+beq_else.32842:
 	addi	a1, x0, 0
-beq_cont.32319:
+beq_cont.32843:
 	addi	a4, a2 0
 	flw	fa0, 0(a4)
 	fmul	fa0, fa0, fa0
@@ -491,28 +486,28 @@ beq_cont.32319:
 	fsqrt	fa0, fa0
 	fsgnjn	fs11, fa0, fa0
 	feq	a4, fs11, fa0
-	bne	a4, x0, beq_else.32320 # size : 68
-	bne	a1, x0, beq_else.32322 # size : 28
-	luil	a1, l.26867
+	bne	a4, x0, beq_else.32844 # size : 68
+	bne	a1, x0, beq_else.32846 # size : 28
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa1, 0(a1)
 	fdiv	fa0, fa1, fa0
-	jal	x0, beq_cont.32323
-beq_else.32322:
-	luil	a1, l.26869
+	jal	x0, beq_cont.32847
+beq_else.32846:
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa1, 0(a1)
 	fdiv	fa0, fa1, fa0
-beq_cont.32323:
-	jal	x0, beq_cont.32321
-beq_else.32320:
-	luil	a1, l.26867
+beq_cont.32847:
+	jal	x0, beq_cont.32845
+beq_else.32844:
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa0, 0(a1)
-beq_cont.32321:
+beq_cont.32845:
 	addi	a1, a2 0
 	flw	fa1, 0(a1)
 	fmul	fa1, fa1, fa0
@@ -528,483 +523,264 @@ beq_cont.32321:
 	fmul	fa0, fa1, fa0
 	addi	a1, a2, 8
 	fsw	fa0, 0(a1) 
-	jal	x0, beq_cont.32317
-beq_else.32316:
-beq_cont.32317:
-beq_cont.32297:
-	bne	a3, x0, beq_else.32324 # size : 0
-	jal	x0, beq_cont.32325
-beq_else.32324:
+	jal	x0, beq_cont.32841
+beq_else.32840:
+beq_cont.32841:
+beq_cont.32821:
+	bne	a3, x0, beq_else.32848 # size : 0
+	jal	x0, beq_cont.32849
+beq_else.32848:
 	addi	a1, a0 0
 	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.32326 # size : 28
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.32850 # size : 28
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.32327
-beq_else.32326:
-	fsgnj	fa1, fa0, fa0
-beq_cont.32327:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
+	addil	a1, a1, l.27215
 	flw	fa2, 0(a1)
-	fsw	fa0, -56(sp)
-	fsw	fa1, -60(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -68(sp)
-	addi	sp, sp, -72
-	jal	ra, while1.2799
-	addi	sp, sp, 72
-	lw	ra, -68(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -60(sp)
-	sw	ra, -68(sp)
-	addi	sp, sp, -72
-	jal	ra, while2.2805
-	addi	sp, sp, 72
-	lw	ra, -68(sp)
-	flw	fa1, -8(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32328 # size : 4
-	jal	x0, beq_cont.32329
-beq_else.32328:
-	fsub	fa0, fa0, fa1
-beq_cont.32329:
-	flw	fa2, -56(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32330 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.32331
-beq_else.32330:
-	fsgnj	fa3, fa2, fa2
-beq_cont.32331:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -64(sp)
-	fsw	fa3, -68(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -76(sp)
-	addi	sp, sp, -80
-	jal	ra, while1.2799
-	addi	sp, sp, 80
-	lw	ra, -76(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -68(sp)
-	sw	ra, -76(sp)
-	addi	sp, sp, -80
-	jal	ra, while2.2805
-	addi	sp, sp, 80
-	lw	ra, -76(sp)
-	flw	fa1, -64(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.32332 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.32333
-bne_else.32332:
-	addi	a0, x0, 0
-bne_cont.32333:
-	flw	fa0, -56(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.32334 # size : 28
-	luil	a1, l.26869
+	fmul	fa2, fa2, fa0
+	jal	x0, beq_cont.32851
+beq_else.32850:
+	fsgnj	fa2, fa0, fa0
+beq_cont.32851:
+	luil	a1, l.27150
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.32335
-beq_else.32334:
-	fsgnj	fa1, fa0, fa0
-beq_cont.32335:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -72(sp) # Save flag00.6561.26162
-	fsw	fa1, -76(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -84(sp)
-	addi	sp, sp, -88
-	jal	ra, while1.2799
-	addi	sp, sp, 88
-	lw	ra, -84(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -76(sp)
-	sw	ra, -84(sp)
-	addi	sp, sp, -88
-	jal	ra, while2.2805
-	addi	sp, sp, 88
-	lw	ra, -84(sp)
-	flw	fa1, -8(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32336 # size : 4
-	jal	x0, beq_cont.32337
-beq_else.32336:
-	fsub	fa0, fa0, fa1
-beq_cont.32337:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32338 # size : 4
-	jal	x0, beq_cont.32339
-beq_else.32338:
-	fsub	fa0, fa1, fa0
-beq_cont.32339:
-	flw	fa2, -56(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32340 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.32341
-beq_else.32340:
-	fsgnj	fa3, fa2, fa2
-beq_cont.32341:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -80(sp)
-	fsw	fa3, -84(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -92(sp)
-	addi	sp, sp, -96
-	jal	ra, while1.2799
-	addi	sp, sp, 96
-	lw	ra, -92(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -84(sp)
-	sw	ra, -92(sp)
-	addi	sp, sp, -96
-	jal	ra, while2.2805
-	addi	sp, sp, 96
-	lw	ra, -92(sp)
-	flw	fa1, -8(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32342 # size : 4
-	jal	x0, beq_cont.32343
-beq_else.32342:
-	fsub	fa0, fa0, fa1
-beq_cont.32343:
-	flw	fa2, -80(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.32344 # size : 12
-	lw	a0, -72(sp) # Restore flag00.6561.26162
-	jal	x0, bne_cont.32345
-bne_else.32344:
-	addi	a0, x0, 1
-	lw	a1, -72(sp) # Restore flag00.6561.26162
-	sub	a0, a0, a1
-bne_cont.32345:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32346 # size : 724
-	flw	fa0, -56(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.32348 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.32349
-beq_else.32348:
-beq_cont.32349:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -88(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -96(sp)
-	addi	sp, sp, -100
-	jal	ra, while1.2799
-	addi	sp, sp, 100
-	lw	ra, -96(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -88(sp)
-	sw	ra, -96(sp)
-	addi	sp, sp, -100
-	jal	ra, while2.2805
-	addi	sp, sp, 100
-	lw	ra, -96(sp)
-	flw	fa1, -8(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32350 # size : 4
-	jal	x0, beq_cont.32351
-beq_else.32350:
-	fsub	fa0, fa0, fa1
-beq_cont.32351:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32352 # size : 4
-	jal	x0, beq_cont.32353
-beq_else.32352:
-	fsub	fa0, fa1, fa0
-beq_cont.32353:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32354 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.32355
-beq_else.32354:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.32355:
-	jal	x0, beq_cont.32347
-beq_else.32346:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	flw	fa2, -56(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32356 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa2, fa3, fa2
-	jal	x0, beq_cont.32357
-beq_else.32356:
-beq_cont.32357:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa0, -92(sp)
-	fsw	fa2, -96(sp)
+	addil	a1, a1, l.27150
+	flw	fa3, 0(a1)
+	fsw	fa0, -48(sp)
+	fsw	fa1, -52(sp)
+	fsw	fa2, -56(sp)
 	fsgnj	fa1, fa3, fa3
 	fsgnj	fa0, fa2, fa2
-	sw	ra, -104(sp)
-	addi	sp, sp, -108
-	jal	ra, while1.2799
-	addi	sp, sp, 108
-	lw	ra, -104(sp)
+	sw	ra, -64(sp)
+	addi	sp, sp, -68
+	jal	ra, while1.2800
+	addi	sp, sp, 68
+	lw	ra, -64(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -96(sp)
-	sw	ra, -104(sp)
-	addi	sp, sp, -108
+	flw	fa0, -56(sp)
+	sw	ra, -64(sp)
+	addi	sp, sp, -68
 	jal	ra, while2.2805
-	addi	sp, sp, 108
-	lw	ra, -104(sp)
-	flw	fa1, -8(sp)
+	addi	sp, sp, 68
+	lw	ra, -64(sp)
+	flw	fa1, -52(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32358 # size : 4
-	jal	x0, beq_cont.32359
-beq_else.32358:
+	bne	a0, x0, beq_else.32852 # size : 4
+	jal	x0, beq_cont.32853
+beq_else.32852:
 	fsub	fa0, fa0, fa1
-beq_cont.32359:
-	luil	a0, l.26802
+beq_cont.32853:
+	flw	fa1, -48(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32854 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32360 # size : 4
-	jal	x0, beq_cont.32361
-beq_else.32360:
-	fsub	fa0, fa1, fa0
-beq_cont.32361:
-	luil	a0, l.26923
+	fmul	fa2, fa2, fa1
+	jal	x0, beq_cont.32855
+beq_else.32854:
+	fsgnj	fa2, fa1, fa1
+beq_cont.32855:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32362 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27150
 	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.32363
-beq_else.32362:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.32363:
-	flw	fa2, -92(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.32347:
-	lw	a0, -52(sp) # Restore rotation.5642.11706
-	addi	a1, a0 0
-	flw	fa2, 0(a1)
+	fsw	fa0, -60(sp)
+	fsw	fa2, -64(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -72(sp)
+	addi	sp, sp, -76
+	jal	ra, while1.2800
+	addi	sp, sp, 76
+	lw	ra, -72(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -64(sp)
+	sw	ra, -72(sp)
+	addi	sp, sp, -76
+	jal	ra, while2.2805
+	addi	sp, sp, 76
+	lw	ra, -72(sp)
+	flw	fa1, -60(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.32856 # size : 4
+	addi	a0, x0, 1
+	jal	x0, bne_cont.32857
+bne_else.32856:
+	addi	a0, x0, 0
+bne_cont.32857:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -48(sp)
 	fsgnjn	fs11, fa2, fa2
 	flt	a1, fs11, fa2
-	bne	a1, x0, beq_else.32364 # size : 4
-	addi	a1, x0, 0
-	jal	x0, beq_cont.32365
-beq_else.32364:
-	addi	a1, x0, 1
-beq_cont.32365:
-	addi	t6, x0, 1
-	bne	a1, t6, beq_else.32366 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.32367
-beq_else.32366:
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.32858 # size : 28
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa3, 0(a1)
 	fmul	fa3, fa3, fa2
-beq_cont.32367:
-	luil	a1, l.26804
+	jal	x0, beq_cont.32859
+beq_else.32858:
+	fsgnj	fa3, fa2, fa2
+beq_cont.32859:
+	luil	a1, l.27150
 	srli	a1, a1, 1
-	addil	a1, a1, l.26804
+	addil	a1, a1, l.27150
 	flw	fa4, 0(a1)
-	fsw	fa0, -100(sp)
+	sw	a0, -68(sp) # Save flag00.6568.26505
+	fsw	fa0, -72(sp)
+	fsw	fa1, -76(sp)
+	fsw	fa3, -80(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -88(sp)
+	addi	sp, sp, -92
+	jal	ra, while1.2800
+	addi	sp, sp, 92
+	lw	ra, -88(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -80(sp)
+	sw	ra, -88(sp)
+	addi	sp, sp, -92
+	jal	ra, while2.2805
+	addi	sp, sp, 92
+	lw	ra, -88(sp)
+	flw	fa1, -76(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.32860 # size : 4
+	jal	x0, beq_cont.32861
+beq_else.32860:
+	fsub	fa0, fa0, fa1
+beq_cont.32861:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -72(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32862 # size : 4
+	jal	x0, beq_cont.32863
+beq_else.32862:
+	fsub	fa0, fa2, fa0
+beq_cont.32863:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -48(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.32864 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.32865
+beq_else.32864:
+	fsgnj	fa3, fa2, fa2
+beq_cont.32865:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -84(sp)
+	fsw	fa1, -88(sp)
+	fsw	fa3, -92(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -100(sp)
+	addi	sp, sp, -104
+	jal	ra, while1.2800
+	addi	sp, sp, 104
+	lw	ra, -100(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -92(sp)
+	sw	ra, -100(sp)
+	addi	sp, sp, -104
+	jal	ra, while2.2805
+	addi	sp, sp, 104
+	lw	ra, -100(sp)
+	flw	fa1, -88(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.32866 # size : 4
+	jal	x0, beq_cont.32867
+beq_else.32866:
+	fsub	fa0, fa0, fa1
+beq_cont.32867:
+	flw	fa1, -84(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.32868 # size : 12
+	lw	a0, -68(sp) # Restore flag00.6568.26505
+	jal	x0, bne_cont.32869
+bne_else.32868:
+	addi	a0, x0, 1
+	lw	a1, -68(sp) # Restore flag00.6568.26505
+	sub	a0, a0, a1
+bne_cont.32869:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.32870 # size : 828
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -48(sp)
+	fsgnjn	fs11, fa3, fa3
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.32872 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa4, 0(a0)
+	fmul	fa3, fa4, fa3
+	jal	x0, beq_cont.32873
+beq_else.32872:
+beq_cont.32873:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -96(sp)
+	fsw	fa1, -100(sp)
 	fsw	fa2, -104(sp)
 	fsw	fa3, -108(sp)
 	fsgnj	fa1, fa4, fa4
 	fsgnj	fa0, fa3, fa3
 	sw	ra, -116(sp)
 	addi	sp, sp, -120
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 120
 	lw	ra, -116(sp)
 	fsgnj	fa1, fa0, fa0
@@ -1014,231 +790,138 @@ beq_cont.32367:
 	jal	ra, while2.2805
 	addi	sp, sp, 120
 	lw	ra, -116(sp)
-	flw	fa1, -8(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32368 # size : 4
-	jal	x0, beq_cont.32369
-beq_else.32368:
-	fsub	fa0, fa0, fa1
-beq_cont.32369:
-	flw	fa2, -104(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32370 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.32371
-beq_else.32370:
-	addi	a0, x0, 1
-beq_cont.32371:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32372 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.32373
-beq_else.32372:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.32373:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -112(sp)
-	fsw	fa3, -116(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -124(sp)
-	addi	sp, sp, -128
-	jal	ra, while1.2799
-	addi	sp, sp, 128
-	lw	ra, -124(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -116(sp)
-	sw	ra, -124(sp)
-	addi	sp, sp, -128
-	jal	ra, while2.2805
-	addi	sp, sp, 128
-	lw	ra, -124(sp)
 	flw	fa1, -104(sp)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32374 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.32375
-beq_else.32374:
-	addi	a0, x0, 1
-beq_cont.32375:
-	flw	fa2, -112(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.32376 # size : 4
-	jal	x0, bne_cont.32377
-bne_else.32376:
-	addi	a1, x0, 1
-	sub	a0, a1, a0
-bne_cont.32377:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32378 # size : 732
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32380 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.32381
-beq_else.32380:
-	addi	a0, x0, 1
-beq_cont.32381:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32382 # size : 4
-	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.32383
-beq_else.32382:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fmul	fa0, fa0, fa1
-beq_cont.32383:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa1, 0(a0)
-	fsw	fa0, -120(sp)
-	sw	ra, -128(sp)
-	addi	sp, sp, -132
-	jal	ra, while1.2799
-	addi	sp, sp, 132
-	lw	ra, -128(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -120(sp)
-	sw	ra, -128(sp)
-	addi	sp, sp, -132
-	jal	ra, while2.2805
-	addi	sp, sp, 132
-	lw	ra, -128(sp)
-	flw	fa1, -8(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32384 # size : 4
-	jal	x0, beq_cont.32385
-beq_else.32384:
+	bne	a0, x0, beq_else.32874 # size : 4
+	jal	x0, beq_cont.32875
+beq_else.32874:
 	fsub	fa0, fa0, fa1
-beq_cont.32385:
-	luil	a0, l.26802
+beq_cont.32875:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32386 # size : 4
-	jal	x0, beq_cont.32387
-beq_else.32386:
-	fsub	fa0, fa1, fa0
-beq_cont.32387:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32388 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -100(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32876 # size : 4
+	jal	x0, beq_cont.32877
+beq_else.32876:
 	fsub	fa0, fa2, fa0
+beq_cont.32877:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -96(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32878 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.32879
+beq_else.32878:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.32389
-beq_else.32388:
-	luil	a0, l.26933
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.32879:
+	jal	x0, beq_cont.32871
+beq_else.32870:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.32389:
-	jal	x0, beq_cont.32379
-beq_else.32378:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
 	flw	fa0, 0(a0)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32390 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.32391
-beq_else.32390:
-	addi	a0, x0, 1
-beq_cont.32391:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32392 # size : 4
-	jal	x0, beq_cont.32393
-beq_else.32392:
-	luil	a0, l.26869
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa1, fa2, fa1
-beq_cont.32393:
-	luil	a0, l.26804
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27256
 	flw	fa2, 0(a0)
-	fsw	fa0, -124(sp)
-	fsw	fa1, -128(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -48(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.32880 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa5, 0(a0)
+	fmul	fa4, fa5, fa4
+	jal	x0, beq_cont.32881
+beq_else.32880:
+beq_cont.32881:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -112(sp)
+	fsw	fa1, -116(sp)
+	fsw	fa2, -120(sp)
+	fsw	fa3, -124(sp)
+	fsw	fa4, -128(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
 	sw	ra, -136(sp)
 	addi	sp, sp, -140
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 140
 	lw	ra, -136(sp)
 	fsgnj	fa1, fa0, fa0
@@ -1248,122 +931,131 @@ beq_cont.32393:
 	jal	ra, while2.2805
 	addi	sp, sp, 140
 	lw	ra, -136(sp)
-	flw	fa1, -8(sp)
+	flw	fa1, -124(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32394 # size : 4
-	jal	x0, beq_cont.32395
-beq_else.32394:
+	bne	a0, x0, beq_else.32882 # size : 4
+	jal	x0, beq_cont.32883
+beq_else.32882:
 	fsub	fa0, fa0, fa1
-beq_cont.32395:
-	luil	a0, l.26802
+beq_cont.32883:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32396 # size : 4
-	jal	x0, beq_cont.32397
-beq_else.32396:
-	fsub	fa0, fa1, fa0
-beq_cont.32397:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32398 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -120(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32884 # size : 4
+	jal	x0, beq_cont.32885
+beq_else.32884:
 	fsub	fa0, fa2, fa0
+beq_cont.32885:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -116(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32886 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.32887
+beq_else.32886:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.32399
-beq_else.32398:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.32399:
-	flw	fa2, -124(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.32379:
-	lw	a0, -52(sp) # Restore rotation.5642.11706
-	addi	a1, a0, 4
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.32887:
+	flw	fa1, -112(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.32871:
+	lw	a0, -44(sp) # Restore rotation.5646.11727
+	addi	a1, a0 0
+	flw	fa1, 0(a1)
+	fsgnjn	fs11, fa1, fa1
+	flt	a1, fs11, fa1
+	bne	a1, x0, beq_else.32888 # size : 4
+	addi	a1, x0, 0
+	jal	x0, beq_cont.32889
+beq_else.32888:
+	addi	a1, x0, 1
+beq_cont.32889:
+	addi	t6, x0, 1
+	bne	a1, t6, beq_else.32890 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.32891
+beq_else.32890:
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
 	flw	fa2, 0(a1)
-	fsgnjn	fs11, fa2, fa2
-	flt	a1, fs11, fa2
-	bne	a1, x0, beq_else.32400 # size : 28
-	luil	a1, l.26869
+	fmul	fa2, fa2, fa1
+beq_cont.32891:
+	luil	a1, l.27150
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27150
 	flw	fa3, 0(a1)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.32401
-beq_else.32400:
-	fsgnj	fa3, fa2, fa2
-beq_cont.32401:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa4, 0(a1)
 	fsw	fa0, -132(sp)
-	fsw	fa2, -136(sp)
-	fsw	fa3, -140(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
+	fsw	fa1, -136(sp)
+	fsw	fa2, -140(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
 	sw	ra, -148(sp)
 	addi	sp, sp, -152
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 152
 	lw	ra, -148(sp)
 	fsgnj	fa1, fa0, fa0
@@ -1373,39 +1065,49 @@ beq_cont.32401:
 	jal	ra, while2.2805
 	addi	sp, sp, 152
 	lw	ra, -148(sp)
-	flw	fa1, -8(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32402 # size : 4
-	jal	x0, beq_cont.32403
-beq_else.32402:
+	bne	a0, x0, beq_else.32892 # size : 4
+	jal	x0, beq_cont.32893
+beq_else.32892:
 	fsub	fa0, fa0, fa1
-beq_cont.32403:
-	flw	fa2, -136(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32404 # size : 28
-	luil	a0, l.26869
+beq_cont.32893:
+	flw	fa1, -136(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32894 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.32895
+beq_else.32894:
+	addi	a0, x0, 1
+beq_cont.32895:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.32896 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.32897
+beq_else.32896:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.32897:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
 	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.32405
-beq_else.32404:
-	fsgnj	fa3, fa2, fa2
-beq_cont.32405:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
 	fsw	fa0, -144(sp)
-	fsw	fa3, -148(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
+	fsw	fa2, -148(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
 	sw	ra, -156(sp)
 	addi	sp, sp, -160
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 160
 	lw	ra, -156(sp)
 	fsgnj	fa1, fa0, fa0
@@ -1415,268 +1117,334 @@ beq_cont.32405:
 	jal	ra, while2.2805
 	addi	sp, sp, 160
 	lw	ra, -156(sp)
-	flw	fa1, -144(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.32406 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.32407
-bne_else.32406:
+	flw	fa1, -136(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32898 # size : 4
 	addi	a0, x0, 0
-bne_cont.32407:
-	flw	fa0, -136(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.32408 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.32409
-beq_else.32408:
-	fsgnj	fa1, fa0, fa0
-beq_cont.32409:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -152(sp) # Save flag00.6561.25943
-	fsw	fa1, -156(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -164(sp)
-	addi	sp, sp, -168
-	jal	ra, while1.2799
-	addi	sp, sp, 168
-	lw	ra, -164(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -156(sp)
-	sw	ra, -164(sp)
-	addi	sp, sp, -168
-	jal	ra, while2.2805
-	addi	sp, sp, 168
-	lw	ra, -164(sp)
-	flw	fa1, -8(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32410 # size : 4
-	jal	x0, beq_cont.32411
-beq_else.32410:
-	fsub	fa0, fa0, fa1
-beq_cont.32411:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32412 # size : 4
-	jal	x0, beq_cont.32413
-beq_else.32412:
-	fsub	fa0, fa1, fa0
-beq_cont.32413:
-	flw	fa2, -136(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32414 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.32415
-beq_else.32414:
-	fsgnj	fa3, fa2, fa2
-beq_cont.32415:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -160(sp)
-	fsw	fa3, -164(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -172(sp)
-	addi	sp, sp, -176
-	jal	ra, while1.2799
-	addi	sp, sp, 176
-	lw	ra, -172(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -164(sp)
-	sw	ra, -172(sp)
-	addi	sp, sp, -176
-	jal	ra, while2.2805
-	addi	sp, sp, 176
-	lw	ra, -172(sp)
-	flw	fa1, -8(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32416 # size : 4
-	jal	x0, beq_cont.32417
-beq_else.32416:
-	fsub	fa0, fa0, fa1
-beq_cont.32417:
-	flw	fa2, -160(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.32418 # size : 12
-	lw	a0, -152(sp) # Restore flag00.6561.25943
-	jal	x0, bne_cont.32419
-bne_else.32418:
+	jal	x0, beq_cont.32899
+beq_else.32898:
 	addi	a0, x0, 1
-	lw	a1, -152(sp) # Restore flag00.6561.25943
-	sub	a0, a0, a1
-bne_cont.32419:
+beq_cont.32899:
+	flw	fa2, -144(sp)
+	feq	t6, fa2, fa0
+	beq	t6, x0, bne_else.32900 # size : 4
+	jal	x0, bne_cont.32901
+bne_else.32900:
+	addi	a1, x0, 1
+	sub	a0, a1, a0
+bne_cont.32901:
 	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32420 # size : 724
-	flw	fa0, -136(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.32422 # size : 28
-	luil	a0, l.26869
+	bne	a0, t6, beq_else.32902 # size : 796
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32904 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.32905
+beq_else.32904:
+	addi	a0, x0, 1
+beq_cont.32905:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.32906 # size : 4
+	fsgnj	fa0, fa1, fa1
+	jal	x0, beq_cont.32907
+beq_else.32906:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.32423
-beq_else.32422:
-beq_cont.32423:
-	luil	a0, l.26804
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fmul	fa0, fa0, fa1
+beq_cont.32907:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -168(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -176(sp)
-	addi	sp, sp, -180
-	jal	ra, while1.2799
-	addi	sp, sp, 180
-	lw	ra, -176(sp)
+	addil	a0, a0, l.27150
+	flw	fa1, 0(a0)
+	fsw	fa0, -152(sp)
+	sw	ra, -160(sp)
+	addi	sp, sp, -164
+	jal	ra, while1.2800
+	addi	sp, sp, 164
+	lw	ra, -160(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -168(sp)
-	sw	ra, -176(sp)
-	addi	sp, sp, -180
+	flw	fa0, -152(sp)
+	sw	ra, -160(sp)
+	addi	sp, sp, -164
 	jal	ra, while2.2805
-	addi	sp, sp, 180
-	lw	ra, -176(sp)
-	flw	fa1, -8(sp)
+	addi	sp, sp, 164
+	lw	ra, -160(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32424 # size : 4
-	jal	x0, beq_cont.32425
-beq_else.32424:
+	bne	a0, x0, beq_else.32908 # size : 4
+	jal	x0, beq_cont.32909
+beq_else.32908:
 	fsub	fa0, fa0, fa1
-beq_cont.32425:
-	luil	a0, l.26802
+beq_cont.32909:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32426 # size : 4
-	jal	x0, beq_cont.32427
-beq_else.32426:
+	bne	a0, x0, beq_else.32910 # size : 4
+	jal	x0, beq_cont.32911
+beq_else.32910:
 	fsub	fa0, fa1, fa0
-beq_cont.32427:
-	luil	a0, l.26923
+beq_cont.32911:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32428 # size : 188
-	luil	a0, l.26931
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32912 # size : 180
+	luil	a0, l.27285
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.32429
-beq_else.32428:
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.32913
+beq_else.32912:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.32429:
-	jal	x0, beq_cont.32421
-beq_else.32420:
-	luil	a0, l.26869
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.32913:
+	jal	x0, beq_cont.32903
+beq_else.32902:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
 	flw	fa0, 0(a0)
-	flw	fa2, -136(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32914 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.32915
+beq_else.32914:
+	addi	a0, x0, 1
+beq_cont.32915:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.32916 # size : 4
+	jal	x0, beq_cont.32917
+beq_else.32916:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa1, fa2, fa1
+beq_cont.32917:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa2, 0(a0)
+	fsw	fa0, -156(sp)
+	fsw	fa1, -160(sp)
+	fsgnj	fa0, fa1, fa1
+	fsgnj	fa1, fa2, fa2
+	sw	ra, -168(sp)
+	addi	sp, sp, -172
+	jal	ra, while1.2800
+	addi	sp, sp, 172
+	lw	ra, -168(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -160(sp)
+	sw	ra, -168(sp)
+	addi	sp, sp, -172
+	jal	ra, while2.2805
+	addi	sp, sp, 172
+	lw	ra, -168(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32430 # size : 28
-	luil	a0, l.26869
+	bne	a0, x0, beq_else.32918 # size : 4
+	jal	x0, beq_cont.32919
+beq_else.32918:
+	fsub	fa0, fa0, fa1
+beq_cont.32919:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa2, fa3, fa2
-	jal	x0, beq_cont.32431
-beq_else.32430:
-beq_cont.32431:
-	luil	a0, l.26804
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.32920 # size : 4
+	jal	x0, beq_cont.32921
+beq_else.32920:
+	fsub	fa0, fa1, fa0
+beq_cont.32921:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32922 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
-	fsw	fa0, -172(sp)
-	fsw	fa2, -176(sp)
-	fsgnj	fa1, fa3, fa3
-	fsgnj	fa0, fa2, fa2
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.32923
+beq_else.32922:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.32923:
+	flw	fa1, -156(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.32903:
+	lw	a0, -44(sp) # Restore rotation.5646.11727
+	addi	a1, a0, 4
+	flw	fa1, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa2, 0(a1)
+	fsgnjn	fs11, fa1, fa1
+	flt	a1, fs11, fa1
+	bne	a1, x0, beq_else.32924 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa1
+	jal	x0, beq_cont.32925
+beq_else.32924:
+	fsgnj	fa3, fa1, fa1
+beq_cont.32925:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	fsw	fa0, -164(sp)
+	fsw	fa1, -168(sp)
+	fsw	fa2, -172(sp)
+	fsw	fa3, -176(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
 	sw	ra, -184(sp)
 	addi	sp, sp, -188
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 188
 	lw	ra, -184(sp)
 	fsgnj	fa1, fa0, fa0
@@ -1686,233 +1454,90 @@ beq_cont.32431:
 	jal	ra, while2.2805
 	addi	sp, sp, 188
 	lw	ra, -184(sp)
-	flw	fa1, -8(sp)
+	flw	fa1, -172(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32432 # size : 4
-	jal	x0, beq_cont.32433
-beq_else.32432:
+	bne	a0, x0, beq_else.32926 # size : 4
+	jal	x0, beq_cont.32927
+beq_else.32926:
 	fsub	fa0, fa0, fa1
-beq_cont.32433:
-	luil	a0, l.26802
+beq_cont.32927:
+	flw	fa1, -168(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32928 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32434 # size : 4
-	jal	x0, beq_cont.32435
-beq_else.32434:
-	fsub	fa0, fa1, fa0
-beq_cont.32435:
-	luil	a0, l.26923
+	fmul	fa2, fa2, fa1
+	jal	x0, beq_cont.32929
+beq_else.32928:
+	fsgnj	fa2, fa1, fa1
+beq_cont.32929:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32436 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27150
 	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.32437
-beq_else.32436:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.32437:
-	flw	fa2, -172(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.32421:
-	lw	a0, -52(sp) # Restore rotation.5642.11706
-	addi	a1, a0, 4
-	flw	fa2, 0(a1)
-	fsgnjn	fs11, fa2, fa2
-	flt	a1, fs11, fa2
-	bne	a1, x0, beq_else.32438 # size : 4
-	addi	a1, x0, 0
-	jal	x0, beq_cont.32439
-beq_else.32438:
-	addi	a1, x0, 1
-beq_cont.32439:
-	addi	t6, x0, 1
-	bne	a1, t6, beq_else.32440 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.32441
-beq_else.32440:
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa3, 0(a1)
-	fmul	fa3, fa3, fa2
-beq_cont.32441:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa4, 0(a1)
 	fsw	fa0, -180(sp)
 	fsw	fa2, -184(sp)
-	fsw	fa3, -188(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -196(sp)
-	addi	sp, sp, -200
-	jal	ra, while1.2799
-	addi	sp, sp, 200
-	lw	ra, -196(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -192(sp)
+	addi	sp, sp, -196
+	jal	ra, while1.2800
+	addi	sp, sp, 196
+	lw	ra, -192(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -188(sp)
-	sw	ra, -196(sp)
-	addi	sp, sp, -200
+	flw	fa0, -184(sp)
+	sw	ra, -192(sp)
+	addi	sp, sp, -196
 	jal	ra, while2.2805
-	addi	sp, sp, 200
-	lw	ra, -196(sp)
-	flw	fa1, -8(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32442 # size : 4
-	jal	x0, beq_cont.32443
-beq_else.32442:
-	fsub	fa0, fa0, fa1
-beq_cont.32443:
-	flw	fa2, -184(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32444 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.32445
-beq_else.32444:
+	addi	sp, sp, 196
+	lw	ra, -192(sp)
+	flw	fa1, -180(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.32930 # size : 4
 	addi	a0, x0, 1
-beq_cont.32445:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32446 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.32447
-beq_else.32446:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
+	jal	x0, bne_cont.32931
+bne_else.32930:
+	addi	a0, x0, 0
+bne_cont.32931:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -168(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.32932 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
 	fmul	fa3, fa3, fa2
-beq_cont.32447:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
+	jal	x0, beq_cont.32933
+beq_else.32932:
+	fsgnj	fa3, fa2, fa2
+beq_cont.32933:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	sw	a0, -188(sp) # Save flag00.6568.26269
 	fsw	fa0, -192(sp)
-	fsw	fa3, -196(sp)
+	fsw	fa1, -196(sp)
+	fsw	fa3, -200(sp)
 	fsgnj	fa1, fa4, fa4
 	fsgnj	fa0, fa3, fa3
-	sw	ra, -204(sp)
-	addi	sp, sp, -208
-	jal	ra, while1.2799
-	addi	sp, sp, 208
-	lw	ra, -204(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -196(sp)
-	sw	ra, -204(sp)
-	addi	sp, sp, -208
-	jal	ra, while2.2805
-	addi	sp, sp, 208
-	lw	ra, -204(sp)
-	flw	fa1, -184(sp)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32448 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.32449
-beq_else.32448:
-	addi	a0, x0, 1
-beq_cont.32449:
-	flw	fa2, -192(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.32450 # size : 4
-	jal	x0, bne_cont.32451
-bne_else.32450:
-	addi	a1, x0, 1
-	sub	a0, a1, a0
-bne_cont.32451:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32452 # size : 732
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32454 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.32455
-beq_else.32454:
-	addi	a0, x0, 1
-beq_cont.32455:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32456 # size : 4
-	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.32457
-beq_else.32456:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fmul	fa0, fa0, fa1
-beq_cont.32457:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa1, 0(a0)
-	fsw	fa0, -200(sp)
 	sw	ra, -208(sp)
 	addi	sp, sp, -212
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 212
 	lw	ra, -208(sp)
 	fsgnj	fa1, fa0, fa0
@@ -1922,294 +1547,125 @@ beq_cont.32457:
 	jal	ra, while2.2805
 	addi	sp, sp, 212
 	lw	ra, -208(sp)
-	flw	fa1, -8(sp)
+	flw	fa1, -196(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32458 # size : 4
-	jal	x0, beq_cont.32459
-beq_else.32458:
+	bne	a0, x0, beq_else.32934 # size : 4
+	jal	x0, beq_cont.32935
+beq_else.32934:
 	fsub	fa0, fa0, fa1
-beq_cont.32459:
-	luil	a0, l.26802
+beq_cont.32935:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32460 # size : 4
-	jal	x0, beq_cont.32461
-beq_else.32460:
-	fsub	fa0, fa1, fa0
-beq_cont.32461:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32462 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.32463
-beq_else.32462:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.32463:
-	jal	x0, beq_cont.32453
-beq_else.32452:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -192(sp)
+	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32464 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.32465
-beq_else.32464:
-	addi	a0, x0, 1
-beq_cont.32465:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32466 # size : 4
-	jal	x0, beq_cont.32467
-beq_else.32466:
-	luil	a0, l.26869
+	bne	a0, x0, beq_else.32936 # size : 4
+	jal	x0, beq_cont.32937
+beq_else.32936:
+	fsub	fa0, fa2, fa0
+beq_cont.32937:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa1, fa2, fa1
-beq_cont.32467:
-	luil	a0, l.26804
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -168(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.32938 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.32939
+beq_else.32938:
+	fsgnj	fa3, fa2, fa2
+beq_cont.32939:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
 	fsw	fa0, -204(sp)
 	fsw	fa1, -208(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -216(sp)
-	addi	sp, sp, -220
-	jal	ra, while1.2799
-	addi	sp, sp, 220
-	lw	ra, -216(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -208(sp)
-	sw	ra, -216(sp)
-	addi	sp, sp, -220
-	jal	ra, while2.2805
-	addi	sp, sp, 220
-	lw	ra, -216(sp)
-	flw	fa1, -8(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32468 # size : 4
-	jal	x0, beq_cont.32469
-beq_else.32468:
-	fsub	fa0, fa0, fa1
-beq_cont.32469:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32470 # size : 4
-	jal	x0, beq_cont.32471
-beq_else.32470:
-	fsub	fa0, fa1, fa0
-beq_cont.32471:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32472 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.32473
-beq_else.32472:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.32473:
-	flw	fa2, -204(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.32453:
-	lw	a0, -52(sp) # Restore rotation.5642.11706
-	addi	a1, a0, 8
-	flw	fa2, 0(a1)
-	fsgnjn	fs11, fa2, fa2
-	flt	a1, fs11, fa2
-	bne	a1, x0, beq_else.32474 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa3, 0(a1)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.32475
-beq_else.32474:
-	fsgnj	fa3, fa2, fa2
-beq_cont.32475:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa4, 0(a1)
-	fsw	fa0, -212(sp)
-	fsw	fa2, -216(sp)
-	fsw	fa3, -220(sp)
+	fsw	fa3, -212(sp)
 	fsgnj	fa1, fa4, fa4
 	fsgnj	fa0, fa3, fa3
-	sw	ra, -228(sp)
-	addi	sp, sp, -232
-	jal	ra, while1.2799
-	addi	sp, sp, 232
-	lw	ra, -228(sp)
+	sw	ra, -220(sp)
+	addi	sp, sp, -224
+	jal	ra, while1.2800
+	addi	sp, sp, 224
+	lw	ra, -220(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -220(sp)
-	sw	ra, -228(sp)
-	addi	sp, sp, -232
+	flw	fa0, -212(sp)
+	sw	ra, -220(sp)
+	addi	sp, sp, -224
 	jal	ra, while2.2805
-	addi	sp, sp, 232
-	lw	ra, -228(sp)
-	flw	fa1, -8(sp)
+	addi	sp, sp, 224
+	lw	ra, -220(sp)
+	flw	fa1, -208(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32476 # size : 4
-	jal	x0, beq_cont.32477
-beq_else.32476:
+	bne	a0, x0, beq_else.32940 # size : 4
+	jal	x0, beq_cont.32941
+beq_else.32940:
 	fsub	fa0, fa0, fa1
-beq_cont.32477:
-	flw	fa2, -216(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32478 # size : 28
-	luil	a0, l.26869
+beq_cont.32941:
+	flw	fa1, -204(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.32942 # size : 12
+	lw	a0, -188(sp) # Restore flag00.6568.26269
+	jal	x0, bne_cont.32943
+bne_else.32942:
+	addi	a0, x0, 1
+	lw	a1, -188(sp) # Restore flag00.6568.26269
+	sub	a0, a0, a1
+bne_cont.32943:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.32944 # size : 828
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.32479
-beq_else.32478:
-	fsgnj	fa3, fa2, fa2
-beq_cont.32479:
-	luil	a0, l.26804
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -168(sp)
+	fsgnjn	fs11, fa3, fa3
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.32946 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
 	flw	fa4, 0(a0)
-	fsw	fa0, -224(sp)
+	fmul	fa3, fa4, fa3
+	jal	x0, beq_cont.32947
+beq_else.32946:
+beq_cont.32947:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -216(sp)
+	fsw	fa1, -220(sp)
+	fsw	fa2, -224(sp)
 	fsw	fa3, -228(sp)
 	fsgnj	fa1, fa4, fa4
 	fsgnj	fa0, fa3, fa3
 	sw	ra, -236(sp)
 	addi	sp, sp, -240
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 240
 	lw	ra, -236(sp)
 	fsgnj	fa1, fa0, fa0
@@ -2220,143 +1676,137 @@ beq_cont.32479:
 	addi	sp, sp, 240
 	lw	ra, -236(sp)
 	flw	fa1, -224(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.32480 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.32481
-bne_else.32480:
-	addi	a0, x0, 0
-bne_cont.32481:
-	flw	fa0, -216(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.32482 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.32948 # size : 4
+	jal	x0, beq_cont.32949
+beq_else.32948:
+	fsub	fa0, fa0, fa1
+beq_cont.32949:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
 	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.32483
-beq_else.32482:
-	fsgnj	fa1, fa0, fa0
-beq_cont.32483:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -232(sp) # Save flag00.6561.25724
-	fsw	fa1, -236(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -244(sp)
-	addi	sp, sp, -248
-	jal	ra, while1.2799
-	addi	sp, sp, 248
-	lw	ra, -244(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -236(sp)
-	sw	ra, -244(sp)
-	addi	sp, sp, -248
-	jal	ra, while2.2805
-	addi	sp, sp, 248
-	lw	ra, -244(sp)
-	flw	fa1, -8(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32484 # size : 4
-	jal	x0, beq_cont.32485
-beq_else.32484:
-	fsub	fa0, fa0, fa1
-beq_cont.32485:
-	luil	a0, l.26802
+	flw	fa2, -220(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32950 # size : 4
+	jal	x0, beq_cont.32951
+beq_else.32950:
+	fsub	fa0, fa2, fa0
+beq_cont.32951:
+	luil	a0, l.27277
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32486 # size : 4
-	jal	x0, beq_cont.32487
-beq_else.32486:
-	fsub	fa0, fa1, fa0
-beq_cont.32487:
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
 	flw	fa2, -216(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32488 # size : 28
-	luil	a0, l.26869
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32952 # size : 188
+	luil	a0, l.27285
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.32489
-beq_else.32488:
-	fsgnj	fa3, fa2, fa2
-beq_cont.32489:
-	luil	a0, l.26804
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
-	fsw	fa0, -240(sp)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.32953
+beq_else.32952:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.32953:
+	jal	x0, beq_cont.32945
+beq_else.32944:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -168(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.32954 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa5, 0(a0)
+	fmul	fa4, fa5, fa4
+	jal	x0, beq_cont.32955
+beq_else.32954:
+beq_cont.32955:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -232(sp)
+	fsw	fa1, -236(sp)
+	fsw	fa2, -240(sp)
 	fsw	fa3, -244(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -252(sp)
-	addi	sp, sp, -256
-	jal	ra, while1.2799
-	addi	sp, sp, 256
-	lw	ra, -252(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -244(sp)
-	sw	ra, -252(sp)
-	addi	sp, sp, -256
-	jal	ra, while2.2805
-	addi	sp, sp, 256
-	lw	ra, -252(sp)
-	flw	fa1, -8(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32490 # size : 4
-	jal	x0, beq_cont.32491
-beq_else.32490:
-	fsub	fa0, fa0, fa1
-beq_cont.32491:
-	flw	fa2, -240(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.32492 # size : 12
-	lw	a0, -232(sp) # Restore flag00.6561.25724
-	jal	x0, bne_cont.32493
-bne_else.32492:
-	addi	a0, x0, 1
-	lw	a1, -232(sp) # Restore flag00.6561.25724
-	sub	a0, a0, a1
-bne_cont.32493:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32494 # size : 724
-	flw	fa0, -216(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.32496 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.32497
-beq_else.32496:
-beq_cont.32497:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -248(sp)
-	fsgnj	fa1, fa2, fa2
+	fsw	fa4, -248(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
 	sw	ra, -256(sp)
 	addi	sp, sp, -260
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 260
 	lw	ra, -256(sp)
 	fsgnj	fa1, fa0, fa0
@@ -2366,253 +1816,183 @@ beq_cont.32497:
 	jal	ra, while2.2805
 	addi	sp, sp, 260
 	lw	ra, -256(sp)
-	flw	fa1, -8(sp)
+	flw	fa1, -244(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32498 # size : 4
-	jal	x0, beq_cont.32499
-beq_else.32498:
+	bne	a0, x0, beq_else.32956 # size : 4
+	jal	x0, beq_cont.32957
+beq_else.32956:
 	fsub	fa0, fa0, fa1
-beq_cont.32499:
-	luil	a0, l.26802
+beq_cont.32957:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32500 # size : 4
-	jal	x0, beq_cont.32501
-beq_else.32500:
-	fsub	fa0, fa1, fa0
-beq_cont.32501:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32502 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -240(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32958 # size : 4
+	jal	x0, beq_cont.32959
+beq_else.32958:
 	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
+beq_cont.32959:
+	luil	a0, l.27277
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -236(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32960 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
-	luil	a0, l.26935
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.32503
-beq_else.32502:
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.32961
+beq_else.32960:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.32503:
-	jal	x0, beq_cont.32495
-beq_else.32494:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	flw	fa2, -216(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32504 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa2, fa3, fa2
-	jal	x0, beq_cont.32505
-beq_else.32504:
-beq_cont.32505:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.32961:
+	flw	fa1, -232(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.32945:
+	lw	a0, -44(sp) # Restore rotation.5646.11727
+	addi	a1, a0, 4
+	flw	fa1, 0(a1)
+	fsgnjn	fs11, fa1, fa1
+	flt	a1, fs11, fa1
+	bne	a1, x0, beq_else.32962 # size : 4
+	addi	a1, x0, 0
+	jal	x0, beq_cont.32963
+beq_else.32962:
+	addi	a1, x0, 1
+beq_cont.32963:
+	addi	t6, x0, 1
+	bne	a1, t6, beq_else.32964 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.32965
+beq_else.32964:
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa2, 0(a1)
+	fmul	fa2, fa2, fa1
+beq_cont.32965:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa3, 0(a1)
 	fsw	fa0, -252(sp)
-	fsw	fa2, -256(sp)
+	fsw	fa1, -256(sp)
+	fsw	fa2, -260(sp)
 	fsgnj	fa1, fa3, fa3
 	fsgnj	fa0, fa2, fa2
-	sw	ra, -264(sp)
-	addi	sp, sp, -268
-	jal	ra, while1.2799
-	addi	sp, sp, 268
-	lw	ra, -264(sp)
+	sw	ra, -268(sp)
+	addi	sp, sp, -272
+	jal	ra, while1.2800
+	addi	sp, sp, 272
+	lw	ra, -268(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -256(sp)
-	sw	ra, -264(sp)
-	addi	sp, sp, -268
+	flw	fa0, -260(sp)
+	sw	ra, -268(sp)
+	addi	sp, sp, -272
 	jal	ra, while2.2805
-	addi	sp, sp, 268
-	lw	ra, -264(sp)
-	flw	fa1, -8(sp)
+	addi	sp, sp, 272
+	lw	ra, -268(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32506 # size : 4
-	jal	x0, beq_cont.32507
-beq_else.32506:
+	bne	a0, x0, beq_else.32966 # size : 4
+	jal	x0, beq_cont.32967
+beq_else.32966:
 	fsub	fa0, fa0, fa1
-beq_cont.32507:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32508 # size : 4
-	jal	x0, beq_cont.32509
-beq_else.32508:
-	fsub	fa0, fa1, fa0
-beq_cont.32509:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32510 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.32511
-beq_else.32510:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.32511:
-	flw	fa2, -252(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.32495:
-	lw	a0, -52(sp) # Restore rotation.5642.11706
-	addi	a1, a0, 8
-	flw	fa2, 0(a1)
-	fsgnjn	fs11, fa2, fa2
-	flt	a1, fs11, fa2
-	bne	a1, x0, beq_else.32512 # size : 4
-	addi	a1, x0, 0
-	jal	x0, beq_cont.32513
-beq_else.32512:
-	addi	a1, x0, 1
-beq_cont.32513:
+beq_cont.32967:
+	flw	fa1, -256(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32968 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.32969
+beq_else.32968:
+	addi	a0, x0, 1
+beq_cont.32969:
 	addi	t6, x0, 1
-	bne	a1, t6, beq_else.32514 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.32515
-beq_else.32514:
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa3, 0(a1)
-	fmul	fa3, fa3, fa2
-beq_cont.32515:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa4, 0(a1)
-	fsw	fa0, -260(sp)
-	fsw	fa2, -264(sp)
-	fsw	fa3, -268(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
+	bne	a0, t6, beq_else.32970 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.32971
+beq_else.32970:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.32971:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -264(sp)
+	fsw	fa2, -268(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
 	sw	ra, -276(sp)
 	addi	sp, sp, -280
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 280
 	lw	ra, -276(sp)
 	fsgnj	fa1, fa0, fa0
@@ -2622,101 +2002,193 @@ beq_cont.32515:
 	jal	ra, while2.2805
 	addi	sp, sp, 280
 	lw	ra, -276(sp)
-	flw	fa1, -8(sp)
+	flw	fa1, -256(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32972 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.32973
+beq_else.32972:
+	addi	a0, x0, 1
+beq_cont.32973:
+	flw	fa2, -264(sp)
+	feq	t6, fa2, fa0
+	beq	t6, x0, bne_else.32974 # size : 4
+	jal	x0, bne_cont.32975
+bne_else.32974:
+	addi	a1, x0, 1
+	sub	a0, a1, a0
+bne_cont.32975:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.32976 # size : 796
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32978 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.32979
+beq_else.32978:
+	addi	a0, x0, 1
+beq_cont.32979:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.32980 # size : 4
+	fsgnj	fa0, fa1, fa1
+	jal	x0, beq_cont.32981
+beq_else.32980:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fmul	fa0, fa0, fa1
+beq_cont.32981:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa1, 0(a0)
+	fsw	fa0, -272(sp)
+	sw	ra, -280(sp)
+	addi	sp, sp, -284
+	jal	ra, while1.2800
+	addi	sp, sp, 284
+	lw	ra, -280(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -272(sp)
+	sw	ra, -280(sp)
+	addi	sp, sp, -284
+	jal	ra, while2.2805
+	addi	sp, sp, 284
+	lw	ra, -280(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32516 # size : 4
-	jal	x0, beq_cont.32517
-beq_else.32516:
+	bne	a0, x0, beq_else.32982 # size : 4
+	jal	x0, beq_cont.32983
+beq_else.32982:
 	fsub	fa0, fa0, fa1
-beq_cont.32517:
-	flw	fa2, -264(sp)
+beq_cont.32983:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32518 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.32519
-beq_else.32518:
-	addi	a0, x0, 1
-beq_cont.32519:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32520 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.32521
-beq_else.32520:
-	luil	a0, l.26869
+	bne	a0, x0, beq_else.32984 # size : 4
+	jal	x0, beq_cont.32985
+beq_else.32984:
+	fsub	fa0, fa1, fa0
+beq_cont.32985:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.32521:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -272(sp)
-	fsw	fa3, -276(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -284(sp)
-	addi	sp, sp, -288
-	jal	ra, while1.2799
-	addi	sp, sp, 288
-	lw	ra, -284(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -276(sp)
-	sw	ra, -284(sp)
-	addi	sp, sp, -288
-	jal	ra, while2.2805
-	addi	sp, sp, 288
-	lw	ra, -284(sp)
-	flw	fa1, -264(sp)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32522 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.32523
-beq_else.32522:
-	addi	a0, x0, 1
-beq_cont.32523:
-	flw	fa2, -272(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.32524 # size : 4
-	jal	x0, bne_cont.32525
-bne_else.32524:
-	addi	a1, x0, 1
-	sub	a0, a1, a0
-bne_cont.32525:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32526 # size : 732
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32528 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.32529
-beq_else.32528:
-	addi	a0, x0, 1
-beq_cont.32529:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32530 # size : 4
-	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.32531
-beq_else.32530:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fmul	fa0, fa0, fa1
-beq_cont.32531:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27256
 	flw	fa1, 0(a0)
-	fsw	fa0, -280(sp)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32986 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.32987
+beq_else.32986:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.32987:
+	jal	x0, beq_cont.32977
+beq_else.32976:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.32988 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.32989
+beq_else.32988:
+	addi	a0, x0, 1
+beq_cont.32989:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.32990 # size : 4
+	jal	x0, beq_cont.32991
+beq_else.32990:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa1, fa2, fa1
+beq_cont.32991:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa2, 0(a0)
+	fsw	fa0, -276(sp)
+	fsw	fa1, -280(sp)
+	fsgnj	fa0, fa1, fa1
+	fsgnj	fa1, fa2, fa2
 	sw	ra, -288(sp)
 	addi	sp, sp, -292
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 292
 	lw	ra, -288(sp)
 	fsgnj	fa1, fa0, fa0
@@ -2726,233 +2198,999 @@ beq_cont.32531:
 	jal	ra, while2.2805
 	addi	sp, sp, 292
 	lw	ra, -288(sp)
-	flw	fa1, -8(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32532 # size : 4
-	jal	x0, beq_cont.32533
-beq_else.32532:
+	bne	a0, x0, beq_else.32992 # size : 4
+	jal	x0, beq_cont.32993
+beq_else.32992:
 	fsub	fa0, fa0, fa1
-beq_cont.32533:
-	luil	a0, l.26802
+beq_cont.32993:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32534 # size : 4
-	jal	x0, beq_cont.32535
-beq_else.32534:
+	bne	a0, x0, beq_else.32994 # size : 4
+	jal	x0, beq_cont.32995
+beq_else.32994:
 	fsub	fa0, fa1, fa0
-beq_cont.32535:
-	luil	a0, l.26923
+beq_cont.32995:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32536 # size : 180
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.32996 # size : 180
+	luil	a0, l.27285
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-	jal	x0, beq_cont.32537
-beq_else.32536:
-	luil	a0, l.26933
+	jal	x0, beq_cont.32997
+beq_else.32996:
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27287
 	flw	fa1, 0(a0)
-	luil	a0, l.26935
+	luil	a0, l.27289
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
 	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
 	fmul	fa4, fa4, fa3
 	fadd	fa2, fa4, fa2
 	fmul	fa2, fa2, fa3
 	fsub	fa1, fa2, fa1
 	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
 	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-beq_cont.32537:
-	jal	x0, beq_cont.32527
-beq_else.32526:
-	luil	a0, l.26869
+beq_cont.32997:
+	flw	fa1, -276(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.32977:
+	lw	a0, -44(sp) # Restore rotation.5646.11727
+	addi	a1, a0, 8
+	flw	fa1, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa2, 0(a1)
+	fsgnjn	fs11, fa1, fa1
+	flt	a1, fs11, fa1
+	bne	a1, x0, beq_else.32998 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa1
+	jal	x0, beq_cont.32999
+beq_else.32998:
+	fsgnj	fa3, fa1, fa1
+beq_cont.32999:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	fsw	fa0, -284(sp)
+	fsw	fa1, -288(sp)
+	fsw	fa2, -292(sp)
+	fsw	fa3, -296(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -304(sp)
+	addi	sp, sp, -308
+	jal	ra, while1.2800
+	addi	sp, sp, 308
+	lw	ra, -304(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -296(sp)
+	sw	ra, -304(sp)
+	addi	sp, sp, -308
+	jal	ra, while2.2805
+	addi	sp, sp, 308
+	lw	ra, -304(sp)
+	flw	fa1, -292(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33000 # size : 4
+	jal	x0, beq_cont.33001
+beq_else.33000:
+	fsub	fa0, fa0, fa1
+beq_cont.33001:
+	flw	fa1, -288(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33002 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+	jal	x0, beq_cont.33003
+beq_else.33002:
+	fsgnj	fa2, fa1, fa1
+beq_cont.33003:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -300(sp)
+	fsw	fa2, -304(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -312(sp)
+	addi	sp, sp, -316
+	jal	ra, while1.2800
+	addi	sp, sp, 316
+	lw	ra, -312(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -304(sp)
+	sw	ra, -312(sp)
+	addi	sp, sp, -316
+	jal	ra, while2.2805
+	addi	sp, sp, 316
+	lw	ra, -312(sp)
+	flw	fa1, -300(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.33004 # size : 4
+	addi	a0, x0, 1
+	jal	x0, bne_cont.33005
+bne_else.33004:
+	addi	a0, x0, 0
+bne_cont.33005:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -288(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.33006 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.33007
+beq_else.33006:
+	fsgnj	fa3, fa2, fa2
+beq_cont.33007:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	sw	a0, -308(sp) # Save flag00.6568.26033
+	fsw	fa0, -312(sp)
+	fsw	fa1, -316(sp)
+	fsw	fa3, -320(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -328(sp)
+	addi	sp, sp, -332
+	jal	ra, while1.2800
+	addi	sp, sp, 332
+	lw	ra, -328(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -320(sp)
+	sw	ra, -328(sp)
+	addi	sp, sp, -332
+	jal	ra, while2.2805
+	addi	sp, sp, 332
+	lw	ra, -328(sp)
+	flw	fa1, -316(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33008 # size : 4
+	jal	x0, beq_cont.33009
+beq_else.33008:
+	fsub	fa0, fa0, fa1
+beq_cont.33009:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -312(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33010 # size : 4
+	jal	x0, beq_cont.33011
+beq_else.33010:
+	fsub	fa0, fa2, fa0
+beq_cont.33011:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -288(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33012 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.33013
+beq_else.33012:
+	fsgnj	fa3, fa2, fa2
+beq_cont.33013:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -324(sp)
+	fsw	fa1, -328(sp)
+	fsw	fa3, -332(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -340(sp)
+	addi	sp, sp, -344
+	jal	ra, while1.2800
+	addi	sp, sp, 344
+	lw	ra, -340(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -332(sp)
+	sw	ra, -340(sp)
+	addi	sp, sp, -344
+	jal	ra, while2.2805
+	addi	sp, sp, 344
+	lw	ra, -340(sp)
+	flw	fa1, -328(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33014 # size : 4
+	jal	x0, beq_cont.33015
+beq_else.33014:
+	fsub	fa0, fa0, fa1
+beq_cont.33015:
+	flw	fa1, -324(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.33016 # size : 12
+	lw	a0, -308(sp) # Restore flag00.6568.26033
+	jal	x0, bne_cont.33017
+bne_else.33016:
+	addi	a0, x0, 1
+	lw	a1, -308(sp) # Restore flag00.6568.26033
+	sub	a0, a0, a1
+bne_cont.33017:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33018 # size : 828
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -288(sp)
+	fsgnjn	fs11, fa3, fa3
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.33020 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa4, 0(a0)
+	fmul	fa3, fa4, fa3
+	jal	x0, beq_cont.33021
+beq_else.33020:
+beq_cont.33021:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -336(sp)
+	fsw	fa1, -340(sp)
+	fsw	fa2, -344(sp)
+	fsw	fa3, -348(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -356(sp)
+	addi	sp, sp, -360
+	jal	ra, while1.2800
+	addi	sp, sp, 360
+	lw	ra, -356(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -348(sp)
+	sw	ra, -356(sp)
+	addi	sp, sp, -360
+	jal	ra, while2.2805
+	addi	sp, sp, 360
+	lw	ra, -356(sp)
+	flw	fa1, -344(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33022 # size : 4
+	jal	x0, beq_cont.33023
+beq_else.33022:
+	fsub	fa0, fa0, fa1
+beq_cont.33023:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -340(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33024 # size : 4
+	jal	x0, beq_cont.33025
+beq_else.33024:
+	fsub	fa0, fa2, fa0
+beq_cont.33025:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -336(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33026 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.33027
+beq_else.33026:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.33027:
+	jal	x0, beq_cont.33019
+beq_else.33018:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -288(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.33028 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa5, 0(a0)
+	fmul	fa4, fa5, fa4
+	jal	x0, beq_cont.33029
+beq_else.33028:
+beq_cont.33029:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -352(sp)
+	fsw	fa1, -356(sp)
+	fsw	fa2, -360(sp)
+	fsw	fa3, -364(sp)
+	fsw	fa4, -368(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -376(sp)
+	addi	sp, sp, -380
+	jal	ra, while1.2800
+	addi	sp, sp, 380
+	lw	ra, -376(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -368(sp)
+	sw	ra, -376(sp)
+	addi	sp, sp, -380
+	jal	ra, while2.2805
+	addi	sp, sp, 380
+	lw	ra, -376(sp)
+	flw	fa1, -364(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33030 # size : 4
+	jal	x0, beq_cont.33031
+beq_else.33030:
+	fsub	fa0, fa0, fa1
+beq_cont.33031:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -360(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33032 # size : 4
+	jal	x0, beq_cont.33033
+beq_else.33032:
+	fsub	fa0, fa2, fa0
+beq_cont.33033:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -356(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33034 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.33035
+beq_else.33034:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.33035:
+	flw	fa1, -352(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.33019:
+	lw	a0, -44(sp) # Restore rotation.5646.11727
+	addi	a1, a0, 8
+	flw	fa1, 0(a1)
+	fsgnjn	fs11, fa1, fa1
+	flt	a1, fs11, fa1
+	bne	a1, x0, beq_else.33036 # size : 4
+	addi	a1, x0, 0
+	jal	x0, beq_cont.33037
+beq_else.33036:
+	addi	a1, x0, 1
+beq_cont.33037:
+	addi	t6, x0, 1
+	bne	a1, t6, beq_else.33038 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.33039
+beq_else.33038:
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa2, 0(a1)
+	fmul	fa2, fa2, fa1
+beq_cont.33039:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa3, 0(a1)
+	fsw	fa0, -372(sp)
+	fsw	fa1, -376(sp)
+	fsw	fa2, -380(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -388(sp)
+	addi	sp, sp, -392
+	jal	ra, while1.2800
+	addi	sp, sp, 392
+	lw	ra, -388(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -380(sp)
+	sw	ra, -388(sp)
+	addi	sp, sp, -392
+	jal	ra, while2.2805
+	addi	sp, sp, 392
+	lw	ra, -388(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33040 # size : 4
+	jal	x0, beq_cont.33041
+beq_else.33040:
+	fsub	fa0, fa0, fa1
+beq_cont.33041:
+	flw	fa1, -376(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33042 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33043
+beq_else.33042:
+	addi	a0, x0, 1
+beq_cont.33043:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33044 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.33045
+beq_else.33044:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.33045:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -384(sp)
+	fsw	fa2, -388(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -396(sp)
+	addi	sp, sp, -400
+	jal	ra, while1.2800
+	addi	sp, sp, 400
+	lw	ra, -396(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -388(sp)
+	sw	ra, -396(sp)
+	addi	sp, sp, -400
+	jal	ra, while2.2805
+	addi	sp, sp, 400
+	lw	ra, -396(sp)
+	flw	fa1, -376(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33046 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33047
+beq_else.33046:
+	addi	a0, x0, 1
+beq_cont.33047:
+	flw	fa2, -384(sp)
+	feq	t6, fa2, fa0
+	beq	t6, x0, bne_else.33048 # size : 4
+	jal	x0, bne_cont.33049
+bne_else.33048:
+	addi	a1, x0, 1
+	sub	a0, a1, a0
+bne_cont.33049:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33050 # size : 796
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33052 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33053
+beq_else.33052:
+	addi	a0, x0, 1
+beq_cont.33053:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33054 # size : 4
+	fsgnj	fa0, fa1, fa1
+	jal	x0, beq_cont.33055
+beq_else.33054:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fmul	fa0, fa0, fa1
+beq_cont.33055:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa1, 0(a0)
+	fsw	fa0, -392(sp)
+	sw	ra, -400(sp)
+	addi	sp, sp, -404
+	jal	ra, while1.2800
+	addi	sp, sp, 404
+	lw	ra, -400(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -392(sp)
+	sw	ra, -400(sp)
+	addi	sp, sp, -404
+	jal	ra, while2.2805
+	addi	sp, sp, 404
+	lw	ra, -400(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33056 # size : 4
+	jal	x0, beq_cont.33057
+beq_else.33056:
+	fsub	fa0, fa0, fa1
+beq_cont.33057:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33058 # size : 4
+	jal	x0, beq_cont.33059
+beq_else.33058:
+	fsub	fa0, fa1, fa0
+beq_cont.33059:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33060 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.33061
+beq_else.33060:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.33061:
+	jal	x0, beq_cont.33051
+beq_else.33050:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
 	flw	fa0, 0(a0)
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32538 # size : 4
+	bne	a0, x0, beq_else.33062 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.32539
-beq_else.32538:
+	jal	x0, beq_cont.33063
+beq_else.33062:
 	addi	a0, x0, 1
-beq_cont.32539:
+beq_cont.33063:
 	addi	t6, x0, 1
-	bne	a0, t6, beq_else.32540 # size : 4
-	jal	x0, beq_cont.32541
-beq_else.32540:
-	luil	a0, l.26869
+	bne	a0, t6, beq_else.33064 # size : 4
+	jal	x0, beq_cont.33065
+beq_else.33064:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
 	fmul	fa1, fa2, fa1
-beq_cont.32541:
-	luil	a0, l.26804
+beq_cont.33065:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27150
 	flw	fa2, 0(a0)
-	fsw	fa0, -284(sp)
-	fsw	fa1, -288(sp)
+	fsw	fa0, -396(sp)
+	fsw	fa1, -400(sp)
 	fsgnj	fa0, fa1, fa1
 	fsgnj	fa1, fa2, fa2
-	sw	ra, -296(sp)
-	addi	sp, sp, -300
-	jal	ra, while1.2799
-	addi	sp, sp, 300
-	lw	ra, -296(sp)
+	sw	ra, -408(sp)
+	addi	sp, sp, -412
+	jal	ra, while1.2800
+	addi	sp, sp, 412
+	lw	ra, -408(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -288(sp)
-	sw	ra, -296(sp)
-	addi	sp, sp, -300
+	flw	fa0, -400(sp)
+	sw	ra, -408(sp)
+	addi	sp, sp, -412
 	jal	ra, while2.2805
-	addi	sp, sp, 300
-	lw	ra, -296(sp)
-	flw	fa1, -8(sp)
+	addi	sp, sp, 412
+	lw	ra, -408(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32542 # size : 4
-	jal	x0, beq_cont.32543
-beq_else.32542:
+	bne	a0, x0, beq_else.33066 # size : 4
+	jal	x0, beq_cont.33067
+beq_else.33066:
 	fsub	fa0, fa0, fa1
-beq_cont.32543:
-	luil	a0, l.26802
+beq_cont.33067:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.32544 # size : 4
-	jal	x0, beq_cont.32545
-beq_else.32544:
+	bne	a0, x0, beq_else.33068 # size : 4
+	jal	x0, beq_cont.33069
+beq_else.33068:
 	fsub	fa0, fa1, fa0
-beq_cont.32545:
-	luil	a0, l.26923
+beq_cont.33069:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32546 # size : 180
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.33070 # size : 180
+	luil	a0, l.27285
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-	jal	x0, beq_cont.32547
-beq_else.32546:
-	luil	a0, l.26933
+	jal	x0, beq_cont.33071
+beq_else.33070:
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27287
 	flw	fa1, 0(a0)
-	luil	a0, l.26935
+	luil	a0, l.27289
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
 	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
 	fmul	fa4, fa4, fa3
 	fadd	fa2, fa4, fa2
 	fmul	fa2, fa2, fa3
 	fsub	fa1, fa2, fa1
 	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
 	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-beq_cont.32547:
-	flw	fa1, -284(sp)
+beq_cont.33071:
+	flw	fa1, -396(sp)
 	fmul	fa0, fa1, fa0
-beq_cont.32527:
-	flw	fa1, -260(sp)
-	flw	fa2, -180(sp)
+beq_cont.33051:
+	flw	fa1, -372(sp)
+	flw	fa2, -252(sp)
 	fmul	fa3, fa2, fa1
-	flw	fa4, -212(sp)
-	flw	fa5, -132(sp)
+	flw	fa4, -284(sp)
+	flw	fa5, -164(sp)
 	fmul	fa6, fa5, fa4
 	fmul	fa6, fa6, fa1
-	flw	fa7, -100(sp)
+	flw	fa7, -132(sp)
 	fmul	ft0, fa7, fa0
 	fsub	fa6, fa6, ft0
 	fmul	ft0, fa7, fa4
@@ -2971,7 +3209,7 @@ beq_cont.32527:
 	fsgnjn	fa1, fa4, fa4
 	fmul	fa4, fa5, fa2
 	fmul	fa2, fa7, fa2
-	lw	a0, -28(sp) # Restore abc.5626.11647
+	lw	a0, -20(sp) # Restore abc.5630.11668
 	addi	a1, a0 0
 	flw	fa5, 0(a1)
 	addi	a1, a0, 4
@@ -3008,9 +3246,9 @@ beq_cont.32527:
 	fadd	ft4, ft4, ft5
 	addi	a0, a0, 8
 	fsw	ft4, 0(a0) 
-	luil	a0, l.26802
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27148
 	flw	ft4, 0(a0)
 	fmul	ft5, fa5, fa6
 	fmul	ft5, ft5, ft0
@@ -3021,12 +3259,12 @@ beq_cont.32527:
 	fmul	ft6, ft6, fa2
 	fadd	ft5, ft5, ft6
 	fmul	ft4, ft4, ft5
-	lw	a0, -52(sp) # Restore rotation.5642.11706
+	lw	a0, -44(sp) # Restore rotation.5646.11727
 	addi	a1, a0 0
 	fsw	ft4, 0(a1) 
-	luil	a1, l.26802
+	luil	a1, l.27148
 	srli	a1, a1, 1
-	addil	a1, a1, l.26802
+	addil	a1, a1, l.27148
 	flw	ft4, 0(a1)
 	fmul	ft5, fa5, fa3
 	fmul	ft0, ft5, ft0
@@ -3039,9 +3277,9 @@ beq_cont.32527:
 	fmul	fa0, ft4, fa0
 	addi	a1, a0, 4
 	fsw	fa0, 0(a1) 
-	luil	a1, l.26802
+	luil	a1, l.27148
 	srli	a1, a1, 1
-	addil	a1, a1, l.26802
+	addil	a1, a1, l.27148
 	flw	fa0, 0(a1)
 	fmul	fa2, fa5, fa3
 	fmul	fa2, fa2, fa6
@@ -3053,134 +3291,132 @@ beq_cont.32527:
 	fadd	fa1, fa2, fa1
 	fmul	fa0, fa0, fa1
 	fsw	fa0, 8(a0) 
-beq_cont.32325:
+beq_cont.32849:
 	addi	a0, x0, 1
-beq_cont.32285:
-	bne	a0, x0, be_else.32548 # size : 28
+beq_cont.32809:
+	bne	a0, x0, be_else.33072 # size : 28
 	addi	a0, x0, 256
-	lw	a1, -4(sp) # Restore n.2990
+	lw	a1, -0(sp) # Restore n.2994
 	sw	a1,0(a0) 
 	jalr	x0, ra, 0
-be_else.32548:
-	lw	a0, -4(sp) # Restore n.2990
+be_else.33072:
+	lw	a0, -0(sp) # Restore n.2994
 	addi	a0, a0, 1
-	lw	t5, -0(sp) # Restore read_object.2989
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-read_net_item.2993: # 10808
+	jal	x0, read_object.2993 
+read_net_item.2997: # 11760
 	lw	a1, 0(s10)
 	addi	x0, x0, 0
 	addi	t6, x0, -1
-	bne	a1, t6, be_else.32550 # size : 40
+	bne	a1, t6, be_else.33074 # size : 40
 	addi	a0, a0, 1
 	addi	a1, x0, -1
 	addi	t6, hp, 0
-create_array_loop.32551:
-	beq	a0, x0, create_array_end.32551
+create_array_loop.33075:
+	beq	a0, x0, create_array_end.33075
 	sw	a1, 0(hp)
 	addi	hp, hp, 4
 	addi	a0, a0, -1
-	jal	x0, create_array_loop.32551
-create_array_end.32551:
+	jal	x0, create_array_loop.33075
+create_array_end.33075:
 	addi	a0, t6, 0
 	jalr	x0, ra, 0
-be_else.32550:
+be_else.33074:
 	addi	a2, a0, 1
-	sw	a1, -0(sp) # Save item.5601
-	sw	a0, -4(sp) # Save length.2994
+	sw	a1, -0(sp) # Save item.5605
+	sw	a0, -4(sp) # Save length.2998
 	addi	a0, a2, 0
 	sw	ra, -12(sp)
 	addi	sp, sp, -16
-	jal	ra, read_net_item.2993
+	jal	ra, read_net_item.2997
 	addi	sp, sp, 16
 	lw	ra, -12(sp)
-	lw	a1, -4(sp) # Restore length.2994
+	lw	a1, -4(sp) # Restore length.2998
 	slli	a1, a1, 2
 	add	a1, a0, a1
-	lw	a2, -0(sp) # Restore item.5601
+	lw	a2, -0(sp) # Restore item.5605
 	sw	a2,0(a1) 
 	jalr	x0, ra, 0
-read_or_network.2995: # 10924
+read_or_network.2999: # 11876
 	addi	a1, x0, 0
-	sw	a0, -0(sp) # Save length.2996
+	sw	a0, -0(sp) # Save length.3000
 	addi	a0, a1, 0
 	sw	ra, -8(sp)
 	addi	sp, sp, -12
-	jal	ra, read_net_item.2993
+	jal	ra, read_net_item.2997
 	addi	sp, sp, 12
 	lw	ra, -8(sp)
 	addi	a1, a0 0
 	lw	a1, 0(a1)
 	addi	t6, x0, -1
-	bne	a1, t6, be_else.32552 # size : 40
-	lw	a1, -0(sp) # Restore length.2996
+	bne	a1, t6, be_else.33076 # size : 40
+	lw	a1, -0(sp) # Restore length.3000
 	addi	a1, a1, 1
 	addi	t6, hp, 0
-create_array_loop.32553:
-	beq	a1, x0, create_array_end.32553
+create_array_loop.33077:
+	beq	a1, x0, create_array_end.33077
 	sw	a0, 0(hp)
 	addi	hp, hp, 4
 	addi	a1, a1, -1
-	jal	x0, create_array_loop.32553
-create_array_end.32553:
+	jal	x0, create_array_loop.33077
+create_array_end.33077:
 	addi	a0, t6, 0
 	jalr	x0, ra, 0
-be_else.32552:
-	lw	a1, -0(sp) # Restore length.2996
+be_else.33076:
+	lw	a1, -0(sp) # Restore length.3000
 	addi	a2, a1, 1
-	sw	a0, -4(sp) # Save net.5589
+	sw	a0, -4(sp) # Save net.5593
 	addi	a0, a2, 0
 	sw	ra, -12(sp)
 	addi	sp, sp, -16
-	jal	ra, read_or_network.2995
+	jal	ra, read_or_network.2999
 	addi	sp, sp, 16
 	lw	ra, -12(sp)
-	lw	a1, -0(sp) # Restore length.2996
+	lw	a1, -0(sp) # Restore length.3000
 	slli	a1, a1, 2
 	add	a1, a0, a1
-	lw	a2, -4(sp) # Restore net.5589
+	lw	a2, -4(sp) # Restore net.5593
 	sw	a2,0(a1) 
 	jalr	x0, ra, 0
-read_and_network.2997: # 11072
+read_and_network.3001: # 12024
 	addi	a1, x0, 0
-	sw	a0, -0(sp) # Save n.2998
+	sw	a0, -0(sp) # Save n.3002
 	addi	a0, a1, 0
 	sw	ra, -8(sp)
 	addi	sp, sp, -12
-	jal	ra, read_net_item.2993
+	jal	ra, read_net_item.2997
 	addi	sp, sp, 12
 	lw	ra, -8(sp)
 	addi	a1, a0 0
 	lw	a1, 0(a1)
 	addi	t6, x0, -1
-	bne	a1, t6, be_else.32554 # size : 0
+	bne	a1, t6, be_else.33078 # size : 0
 	jalr	x0, ra, 0
-be_else.32554:
-	lw	a1, -0(sp) # Restore n.2998
+be_else.33078:
+	lw	a1, -0(sp) # Restore n.3002
 	slli	a2, a1, 2
 	addi	a2, a2, 588
 	sw	a0,0(a2) 
 	addi	a0, a1, 1
-	jal	x0, read_and_network.2997 
-iter_setup_dirvec_constants.3094: # 11148
-	blt	a1, x0, bg_else.32556 # size : 2996
+	jal	x0, read_and_network.3001 
+iter_setup_dirvec_constants.3098: # 12100
+	blt	a1, x0, bg_else.33080 # size : 3020
 	slli	a2, a1, 2
 	addi	a2, a2, 304
 	lw	a2, 0(a2)
 	lw	a3, 4(a0)
 	lw	a4, 0(a0)
 	lw	a5, 4(a2)
-	sw	a0, -0(sp) # Save dirvec.3095
+	sw	a0, -0(sp) # Save dirvec.3099
 	addi	t6, x0, 1
-	bne	a5, t6, beq_else.32557 # size : 1000
-	luil	a5, l.26808
+	bne	a5, t6, beq_else.33081 # size : 1000
+	luil	a5, l.27154
 	srli	a5, a5, 1
-	addil	a5, a5, l.26808
+	addil	a5, a5, l.27154
 	flw	fa0, 0(a5)
-	sw	a3, -4(sp) # Save m_const.5995.10187
-	sw	a1, -8(sp) # Save index.3096
-	sw	a2, -12(sp) # Save m.4968
-	sw	a4, -16(sp) # Save m_vec.5996.10184
+	sw	a3, -4(sp) # Save m_const.5999.10204
+	sw	a1, -8(sp) # Save index.3100
+	sw	a2, -12(sp) # Save m.4972
+	sw	a4, -16(sp) # Save m_vec.6000.10201
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -3189,183 +3425,183 @@ iter_setup_dirvec_constants.3094: # 11148
 	fsw	fa0, 20(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 24
-	lw	a1, -16(sp) # Restore m_vec.5996.10184
+	lw	a1, -16(sp) # Restore m_vec.6000.10201
 	addi	a2, a1 0
 	flw	fa0, 0(a2)
 	fsgnjn	fs11, fa0, fa0
 	feq	a2, fs11, fa0
-	bne	a2, x0, beq_else.32560 # size : 208
-	lw	a2, -12(sp) # Restore m.4968
+	bne	a2, x0, beq_else.33084 # size : 208
+	lw	a2, -12(sp) # Restore m.4972
 	lw	a3, 24(a2)
 	addi	a4, a1 0
 	flw	fa0, 0(a4)
 	fsgnjn	fs11, fa0, fa0
 	flt	a4, fa0, fs11
-	bne	a3, x0, beq_else.32562 # size : 4
+	bne	a3, x0, beq_else.33086 # size : 4
 	addi	a3, a4 0
-	jal	x0, beq_cont.32563
-beq_else.32562:
-	bne	a4, x0, beq_else.32564 # size : 4
+	jal	x0, beq_cont.33087
+beq_else.33086:
+	bne	a4, x0, beq_else.33088 # size : 4
 	addi	a3, x0, 1
-	jal	x0, beq_cont.32565
-beq_else.32564:
+	jal	x0, beq_cont.33089
+beq_else.33088:
 	addi	a3, x0, 0
-beq_cont.32565:
-beq_cont.32563:
+beq_cont.33089:
+beq_cont.33087:
 	lw	a4, 16(a2)
 	flw	fa0, 0(a4)
-	bne	a3, x0, beq_else.32566 # size : 4
+	bne	a3, x0, beq_else.33090 # size : 4
 	fsgnjn	fa0, fa0, fa0
-	jal	x0, beq_cont.32567
-beq_else.32566:
-beq_cont.32567:
+	jal	x0, beq_cont.33091
+beq_else.33090:
+beq_cont.33091:
 	addi	a3, a0 0
 	fsw	fa0, 0(a3) 
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa0, 0(a3)
 	addi	a3, a1 0
 	flw	fa1, 0(a3)
 	fdiv	fa0, fa0, fa1
 	addi	a3, a0, 4
 	fsw	fa0, 0(a3) 
-	jal	x0, beq_cont.32561
-beq_else.32560:
-	luil	a2, l.26808
+	jal	x0, beq_cont.33085
+beq_else.33084:
+	luil	a2, l.27154
 	srli	a2, a2, 1
-	addil	a2, a2, l.26808
+	addil	a2, a2, l.27154
 	flw	fa0, 0(a2)
 	addi	a2, a0, 4
 	fsw	fa0, 0(a2) 
-beq_cont.32561:
+beq_cont.33085:
 	addi	a2, a1, 4
 	flw	fa0, 0(a2)
 	fsgnjn	fs11, fa0, fa0
 	feq	a2, fs11, fa0
-	bne	a2, x0, beq_else.32568 # size : 208
-	lw	a2, -12(sp) # Restore m.4968
+	bne	a2, x0, beq_else.33092 # size : 208
+	lw	a2, -12(sp) # Restore m.4972
 	lw	a3, 24(a2)
 	addi	a4, a1, 4
 	flw	fa0, 0(a4)
 	fsgnjn	fs11, fa0, fa0
 	flt	a4, fa0, fs11
-	bne	a3, x0, beq_else.32570 # size : 4
+	bne	a3, x0, beq_else.33094 # size : 4
 	addi	a3, a4 0
-	jal	x0, beq_cont.32571
-beq_else.32570:
-	bne	a4, x0, beq_else.32572 # size : 4
+	jal	x0, beq_cont.33095
+beq_else.33094:
+	bne	a4, x0, beq_else.33096 # size : 4
 	addi	a3, x0, 1
-	jal	x0, beq_cont.32573
-beq_else.32572:
+	jal	x0, beq_cont.33097
+beq_else.33096:
 	addi	a3, x0, 0
-beq_cont.32573:
-beq_cont.32571:
+beq_cont.33097:
+beq_cont.33095:
 	lw	a4, 16(a2)
 	addi	a4, a4, 4
 	flw	fa0, 0(a4)
-	bne	a3, x0, beq_else.32574 # size : 4
+	bne	a3, x0, beq_else.33098 # size : 4
 	fsgnjn	fa0, fa0, fa0
-	jal	x0, beq_cont.32575
-beq_else.32574:
-beq_cont.32575:
+	jal	x0, beq_cont.33099
+beq_else.33098:
+beq_cont.33099:
 	addi	a3, a0, 8
 	fsw	fa0, 0(a3) 
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa0, 0(a3)
 	addi	a3, a1, 4
 	flw	fa1, 0(a3)
 	fdiv	fa0, fa0, fa1
 	addi	a3, a0, 12
 	fsw	fa0, 0(a3) 
-	jal	x0, beq_cont.32569
-beq_else.32568:
-	luil	a2, l.26808
+	jal	x0, beq_cont.33093
+beq_else.33092:
+	luil	a2, l.27154
 	srli	a2, a2, 1
-	addil	a2, a2, l.26808
+	addil	a2, a2, l.27154
 	flw	fa0, 0(a2)
 	addi	a2, a0, 12
 	fsw	fa0, 0(a2) 
-beq_cont.32569:
+beq_cont.33093:
 	addi	a2, a1, 8
 	flw	fa0, 0(a2)
 	fsgnjn	fs11, fa0, fa0
 	feq	a2, fs11, fa0
-	bne	a2, x0, beq_else.32576 # size : 208
-	lw	a2, -12(sp) # Restore m.4968
+	bne	a2, x0, beq_else.33100 # size : 208
+	lw	a2, -12(sp) # Restore m.4972
 	lw	a3, 24(a2)
 	addi	a4, a1, 8
 	flw	fa0, 0(a4)
 	fsgnjn	fs11, fa0, fa0
 	flt	a4, fa0, fs11
-	bne	a3, x0, beq_else.32578 # size : 4
+	bne	a3, x0, beq_else.33102 # size : 4
 	addi	a3, a4 0
-	jal	x0, beq_cont.32579
-beq_else.32578:
-	bne	a4, x0, beq_else.32580 # size : 4
+	jal	x0, beq_cont.33103
+beq_else.33102:
+	bne	a4, x0, beq_else.33104 # size : 4
 	addi	a3, x0, 1
-	jal	x0, beq_cont.32581
-beq_else.32580:
+	jal	x0, beq_cont.33105
+beq_else.33104:
 	addi	a3, x0, 0
-beq_cont.32581:
-beq_cont.32579:
+beq_cont.33105:
+beq_cont.33103:
 	lw	a2, 16(a2)
 	addi	a2, a2, 8
 	flw	fa0, 0(a2)
-	bne	a3, x0, beq_else.32582 # size : 4
+	bne	a3, x0, beq_else.33106 # size : 4
 	fsgnjn	fa0, fa0, fa0
-	jal	x0, beq_cont.32583
-beq_else.32582:
-beq_cont.32583:
+	jal	x0, beq_cont.33107
+beq_else.33106:
+beq_cont.33107:
 	addi	a2, a0, 16
 	fsw	fa0, 0(a2) 
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa0, 0(a2)
 	addi	a1, a1, 8
 	flw	fa1, 0(a1)
 	fdiv	fa0, fa0, fa1
 	addi	a1, a0, 20
 	fsw	fa0, 0(a1) 
-	jal	x0, beq_cont.32577
-beq_else.32576:
-	luil	a1, l.26808
+	jal	x0, beq_cont.33101
+beq_else.33100:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
 	addi	a1, a0, 20
 	fsw	fa0, 0(a1) 
-beq_cont.32577:
-	lw	a1, -8(sp) # Restore index.3096
+beq_cont.33101:
+	lw	a1, -8(sp) # Restore index.3100
 	slli	a2, a1, 2
-	lw	a3, -4(sp) # Restore m_const.5995.10187
+	lw	a3, -4(sp) # Restore m_const.5999.10204
 	add	a2, a3, a2
 	sw	a0,0(a2) 
-	jal	x0, beq_cont.32558
-beq_else.32557:
+	jal	x0, beq_cont.33082
+beq_else.33081:
 	addi	t6, x0, 2
-	bne	a5, t6, beq_else.32584 # size : 580
-	luil	a5, l.26808
+	bne	a5, t6, beq_else.33108 # size : 580
+	luil	a5, l.27154
 	srli	a5, a5, 1
-	addil	a5, a5, l.26808
+	addil	a5, a5, l.27154
 	flw	fa0, 0(a5)
-	sw	a3, -4(sp) # Save m_const.5995.10187
-	sw	a1, -8(sp) # Save index.3096
-	sw	a2, -12(sp) # Save m.4968
-	sw	a4, -16(sp) # Save m_vec.5996.10184
+	sw	a3, -4(sp) # Save m_const.5999.10204
+	sw	a1, -8(sp) # Save index.3100
+	sw	a2, -12(sp) # Save m.4972
+	sw	a4, -16(sp) # Save m_vec.6000.10201
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	fsw	fa0, 12(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 16
-	lw	a1, -16(sp) # Restore m_vec.5996.10184
+	lw	a1, -16(sp) # Restore m_vec.6000.10201
 	addi	a2, a1 0
 	flw	fa0, 0(a2)
-	lw	a2, -12(sp) # Restore m.4968
+	lw	a2, -12(sp) # Restore m.4972
 	lw	a3, 16(a2)
 	flw	fa1, 0(a3)
 	fmul	fa0, fa0, fa1
@@ -3385,18 +3621,18 @@ beq_else.32557:
 	fadd	fa0, fa0, fa1
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.32587 # size : 36
-	luil	a1, l.26808
+	bne	a1, x0, beq_else.33111 # size : 36
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
 	addi	a1, a0 0
 	fsw	fa0, 0(a1) 
-	jal	x0, beq_cont.32588
-beq_else.32587:
-	luil	a1, l.26869
+	jal	x0, beq_cont.33112
+beq_else.33111:
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa1, 0(a1)
 	fdiv	fa1, fa1, fa0
 	addi	a1, a0 0
@@ -3421,22 +3657,22 @@ beq_else.32587:
 	fsgnjn	fa0, fa0, fa0
 	addi	a1, a0, 12
 	fsw	fa0, 0(a1) 
-beq_cont.32588:
-	lw	a1, -8(sp) # Restore index.3096
+beq_cont.33112:
+	lw	a1, -8(sp) # Restore index.3100
 	slli	a2, a1, 2
-	lw	a3, -4(sp) # Restore m_const.5995.10187
+	lw	a3, -4(sp) # Restore m_const.5999.10204
 	add	a2, a3, a2
 	sw	a0,0(a2) 
-	jal	x0, beq_cont.32585
-beq_else.32584:
-	luil	a5, l.26808
+	jal	x0, beq_cont.33109
+beq_else.33108:
+	luil	a5, l.27154
 	srli	a5, a5, 1
-	addil	a5, a5, l.26808
+	addil	a5, a5, l.27154
 	flw	fa0, 0(a5)
-	sw	a3, -4(sp) # Save m_const.5995.10187
-	sw	a1, -8(sp) # Save index.3096
-	sw	a2, -12(sp) # Save m.4968
-	sw	a4, -16(sp) # Save m_vec.5996.10184
+	sw	a3, -4(sp) # Save m_const.5999.10204
+	sw	a1, -8(sp) # Save index.3100
+	sw	a2, -12(sp) # Save m.4972
+	sw	a4, -16(sp) # Save m_vec.6000.10201
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -3444,7 +3680,7 @@ beq_else.32584:
 	fsw	fa0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	lw	a1, -16(sp) # Restore m_vec.5996.10184
+	lw	a1, -16(sp) # Restore m_vec.6000.10201
 	addi	a2, a1 0
 	flw	fa0, 0(a2)
 	addi	a2, a1, 4
@@ -3452,7 +3688,7 @@ beq_else.32584:
 	addi	a2, a1, 8
 	flw	fa2, 0(a2)
 	fmul	fa3, fa0, fa0
-	lw	a2, -12(sp) # Restore m.4968
+	lw	a2, -12(sp) # Restore m.4972
 	lw	a3, 16(a2)
 	flw	fa4, 0(a3)
 	fmul	fa3, fa3, fa4
@@ -3469,10 +3705,10 @@ beq_else.32584:
 	fmul	fa4, fa4, fa5
 	fadd	fa3, fa3, fa4
 	lw	a3, 12(a2)
-	bne	a3, x0, beq_else.32590 # size : 4
+	bne	a3, x0, beq_else.33114 # size : 4
 	fsgnj	fa0, fa3, fa3
-	jal	x0, beq_cont.32591
-beq_else.32590:
+	jal	x0, beq_cont.33115
+beq_else.33114:
 	fmul	fa4, fa1, fa2
 	lw	a3, 36(a2)
 	flw	fa5, 0(a3)
@@ -3490,7 +3726,7 @@ beq_else.32590:
 	flw	fa1, 0(a3)
 	fmul	fa0, fa0, fa1
 	fadd	fa0, fa2, fa0
-beq_cont.32591:
+beq_cont.33115:
 	addi	a3, a1 0
 	flw	fa1, 0(a3)
 	lw	a3, 16(a2)
@@ -3514,15 +3750,15 @@ beq_cont.32591:
 	addi	a3, a0 0
 	fsw	fa0, 0(a3) 
 	lw	a3, 12(a2)
-	bne	a3, x0, beq_else.32592 # size : 44
+	bne	a3, x0, beq_else.33116 # size : 44
 	addi	a1, a0, 4
 	fsw	fa1, 0(a1) 
 	addi	a1, a0, 8
 	fsw	fa2, 0(a1) 
 	addi	a1, a0, 12
 	fsw	fa3, 0(a1) 
-	jal	x0, beq_cont.32593
-beq_else.32592:
+	jal	x0, beq_cont.33117
+beq_else.33116:
 	addi	a3, a1, 8
 	flw	fa4, 0(a3)
 	lw	a3, 36(a2)
@@ -3536,11 +3772,11 @@ beq_else.32592:
 	flw	fa6, 0(a3)
 	fmul	fa5, fa5, fa6
 	fadd	fa4, fa4, fa5
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa4, fa4, fs11
+	luil	a3, l.001
+	srli	a3, a3, 1
+	addil	a3, a3, l.001
+	flw	fa5, 0(a3)
+	fmul	fa4, fa4, fa5
 	fsub	fa1, fa1, fa4
 	addi	a3, a0, 4
 	fsw	fa1, 0(a3) 
@@ -3556,11 +3792,11 @@ beq_else.32592:
 	flw	fa5, 0(a3)
 	fmul	fa4, fa4, fa5
 	fadd	fa1, fa1, fa4
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa1, fa1, fs11
+	luil	a3, l.001
+	srli	a3, a3, 1
+	addil	a3, a3, l.001
+	flw	fa4, 0(a3)
+	fmul	fa1, fa1, fa4
 	fsub	fa1, fa2, fa1
 	addi	a3, a0, 8
 	fsw	fa1, 0(a3) 
@@ -3575,42 +3811,42 @@ beq_else.32592:
 	flw	fa4, 0(a1)
 	fmul	fa2, fa2, fa4
 	fadd	fa1, fa1, fa2
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa1, fa1, fs11
+	luil	a1, l.001
+	srli	a1, a1, 1
+	addil	a1, a1, l.001
+	flw	fa2, 0(a1)
+	fmul	fa1, fa1, fa2
 	fsub	fa1, fa3, fa1
 	addi	a1, a0, 12
 	fsw	fa1, 0(a1) 
-beq_cont.32593:
+beq_cont.33117:
 	fsgnjn	fs11, fa0, fa0
 	feq	a1, fs11, fa0
-	bne	a1, x0, beq_else.32594 # size : 44
-	luil	a1, l.26867
+	bne	a1, x0, beq_else.33118 # size : 44
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa1, 0(a1)
 	fdiv	fa0, fa1, fa0
 	addi	a1, a0, 16
 	fsw	fa0, 0(a1) 
-	jal	x0, beq_cont.32595
-beq_else.32594:
-beq_cont.32595:
-	lw	a1, -8(sp) # Restore index.3096
+	jal	x0, beq_cont.33119
+beq_else.33118:
+beq_cont.33119:
+	lw	a1, -8(sp) # Restore index.3100
 	slli	a2, a1, 2
-	lw	a3, -4(sp) # Restore m_const.5995.10187
+	lw	a3, -4(sp) # Restore m_const.5999.10204
 	add	a2, a3, a2
 	sw	a0,0(a2) 
-beq_cont.32585:
-beq_cont.32558:
+beq_cont.33109:
+beq_cont.33082:
 	addi	a1, a1, -1
-	lw	a0, -0(sp) # Restore dirvec.3095
-	jal	x0, iter_setup_dirvec_constants.3094 
-bg_else.32556:
+	lw	a0, -0(sp) # Restore dirvec.3099
+	jal	x0, iter_setup_dirvec_constants.3098 
+bg_else.33080:
 	jalr	x0, ra, 0
-setup_startp_constants.3099: # 12784
-	blt	a1, x0, bg_else.32597 # size : 872
+setup_startp_constants.3103: # 13736
+	blt	a1, x0, bg_else.33121 # size : 872
 	slli	a2, a1, 2
 	addi	a2, a2, 304
 	lw	a2, 0(a2)
@@ -3640,7 +3876,7 @@ setup_startp_constants.3099: # 12784
 	addi	a5, a3, 8
 	fsw	fa0, 0(a5) 
 	addi	t6, x0, 2
-	bne	a4, t6, beq_else.32598 # size : 156
+	bne	a4, t6, beq_else.33122 # size : 156
 	lw	a2, 16(a2)
 	addi	a4, a3 0
 	flw	fa0, 0(a4)
@@ -3661,12 +3897,12 @@ setup_startp_constants.3099: # 12784
 	fadd	fa0, fa0, fa1
 	addi	a2, a3, 12
 	fsw	fa0, 0(a2) 
-	jal	x0, beq_cont.32599
-beq_else.32598:
+	jal	x0, beq_cont.33123
+beq_else.33122:
 	addi	t6, x0, 2
-	blt	t6, a4, bg_else.32600 # size : 0
-	jal	x0, bg_cont.32601
-bg_else.32600:
+	blt	t6, a4, bg_else.33124 # size : 0
+	jal	x0, bg_cont.33125
+bg_else.33124:
 	addi	a5, a3 0
 	flw	fa0, 0(a5)
 	addi	a5, a3, 4
@@ -3690,10 +3926,10 @@ bg_else.32600:
 	fmul	fa4, fa4, fa5
 	fadd	fa3, fa3, fa4
 	lw	a5, 12(a2)
-	bne	a5, x0, beq_else.32602 # size : 4
+	bne	a5, x0, beq_else.33126 # size : 4
 	fsgnj	fa0, fa3, fa3
-	jal	x0, beq_cont.32603
-beq_else.32602:
+	jal	x0, beq_cont.33127
+beq_else.33126:
 	fmul	fa4, fa1, fa2
 	lw	a5, 36(a2)
 	flw	fa5, 0(a5)
@@ -3711,34 +3947,34 @@ beq_else.32602:
 	flw	fa1, 0(a2)
 	fmul	fa0, fa0, fa1
 	fadd	fa0, fa2, fa0
-beq_cont.32603:
+beq_cont.33127:
 	addi	t6, x0, 3
-	bne	a4, t6, beq_else.32604 # size : 28
-	luil	a2, l.26867
+	bne	a4, t6, beq_else.33128 # size : 28
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa1, 0(a2)
 	fsub	fa0, fa0, fa1
-	jal	x0, beq_cont.32605
-beq_else.32604:
-beq_cont.32605:
+	jal	x0, beq_cont.33129
+beq_else.33128:
+beq_cont.33129:
 	addi	a2, a3, 12
 	fsw	fa0, 0(a2) 
-bg_cont.32601:
-beq_cont.32599:
+bg_cont.33125:
+beq_cont.33123:
 	addi	a1, a1, -1
-	jal	x0, setup_startp_constants.3099 
-bg_else.32597:
+	jal	x0, setup_startp_constants.3103 
+bg_else.33121:
 	jalr	x0, ra, 0
-check_all_inside.3124: # 13228
+check_all_inside.3128: # 14180
 	slli	a2, a0, 2
 	add	a2, a1, a2
 	lw	a2, 0(a2)
 	addi	t6, x0, -1
-	bne	a2, t6, be_else.32607 # size : 4
+	bne	a2, t6, be_else.33131 # size : 4
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
-be_else.32607:
+be_else.33131:
 	slli	a2, a2, 2
 	addi	a2, a2, 304
 	lw	a2, 0(a2)
@@ -3755,47 +3991,47 @@ be_else.32607:
 	fsub	fa5, fa2, fa5
 	lw	a3, 4(a2)
 	addi	t6, x0, 1
-	bne	a3, t6, beq_else.32608 # size : 204
+	bne	a3, t6, beq_else.33132 # size : 204
 	fsgnjx	fa3, fa3, fa3
 	lw	a3, 16(a2)
 	flw	fa6, 0(a3)
 	flt	a3, fa3, fa6
-	bne	a3, x0, beq_else.32610 # size : 4
+	bne	a3, x0, beq_else.33134 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32611
-beq_else.32610:
+	jal	x0, beq_cont.33135
+beq_else.33134:
 	fsgnjx	fa3, fa4, fa4
 	lw	a3, 16(a2)
 	addi	a3, a3, 4
 	flw	fa4, 0(a3)
 	flt	a3, fa3, fa4
-	bne	a3, x0, beq_else.32612 # size : 4
+	bne	a3, x0, beq_else.33136 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32613
-beq_else.32612:
+	jal	x0, beq_cont.33137
+beq_else.33136:
 	fsgnjx	fa3, fa5, fa5
 	lw	a3, 16(a2)
 	addi	a3, a3, 8
 	flw	fa4, 0(a3)
 	flt	a3, fa3, fa4
-beq_cont.32613:
-beq_cont.32611:
-	bne	a3, x0, beq_else.32614 # size : 28
+beq_cont.33137:
+beq_cont.33135:
+	bne	a3, x0, beq_else.33138 # size : 28
 	lw	a2, 24(a2)
-	bne	a2, x0, beq_else.32616 # size : 4
+	bne	a2, x0, beq_else.33140 # size : 4
 	addi	a2, x0, 1
-	jal	x0, beq_cont.32617
-beq_else.32616:
+	jal	x0, beq_cont.33141
+beq_else.33140:
 	addi	a2, x0, 0
-beq_cont.32617:
-	jal	x0, beq_cont.32615
-beq_else.32614:
+beq_cont.33141:
+	jal	x0, beq_cont.33139
+beq_else.33138:
 	lw	a2, 24(a2)
-beq_cont.32615:
-	jal	x0, beq_cont.32609
-beq_else.32608:
+beq_cont.33139:
+	jal	x0, beq_cont.33133
+beq_else.33132:
 	addi	t6, x0, 2
-	bne	a3, t6, beq_else.32618 # size : 176
+	bne	a3, t6, beq_else.33142 # size : 176
 	lw	a3, 16(a2)
 	addi	a4, a3 0
 	flw	fa6, 0(a4)
@@ -3811,25 +4047,25 @@ beq_else.32608:
 	lw	a2, 24(a2)
 	fsgnjn	fs11, fa3, fa3
 	flt	a3, fa3, fs11
-	bne	a2, x0, beq_else.32620 # size : 4
+	bne	a2, x0, beq_else.33144 # size : 4
 	addi	a2, a3 0
-	jal	x0, beq_cont.32621
-beq_else.32620:
-	bne	a3, x0, beq_else.32622 # size : 4
+	jal	x0, beq_cont.33145
+beq_else.33144:
+	bne	a3, x0, beq_else.33146 # size : 4
 	addi	a2, x0, 1
-	jal	x0, beq_cont.32623
-beq_else.32622:
+	jal	x0, beq_cont.33147
+beq_else.33146:
 	addi	a2, x0, 0
-beq_cont.32623:
-beq_cont.32621:
-	bne	a2, x0, beq_else.32624 # size : 4
+beq_cont.33147:
+beq_cont.33145:
+	bne	a2, x0, beq_else.33148 # size : 4
 	addi	a2, x0, 1
-	jal	x0, beq_cont.32625
-beq_else.32624:
+	jal	x0, beq_cont.33149
+beq_else.33148:
 	addi	a2, x0, 0
-beq_cont.32625:
-	jal	x0, beq_cont.32619
-beq_else.32618:
+beq_cont.33149:
+	jal	x0, beq_cont.33143
+beq_else.33142:
 	fmul	fa6, fa3, fa3
 	lw	a3, 16(a2)
 	flw	fa7, 0(a3)
@@ -3847,10 +4083,10 @@ beq_else.32618:
 	fmul	fa7, fa7, ft0
 	fadd	fa6, fa6, fa7
 	lw	a3, 12(a2)
-	bne	a3, x0, beq_else.32626 # size : 4
+	bne	a3, x0, beq_else.33150 # size : 4
 	fsgnj	fa3, fa6, fa6
-	jal	x0, beq_cont.32627
-beq_else.32626:
+	jal	x0, beq_cont.33151
+beq_else.33150:
 	fmul	fa7, fa4, fa5
 	lw	a3, 36(a2)
 	flw	ft0, 0(a3)
@@ -3868,55 +4104,55 @@ beq_else.32626:
 	flw	fa4, 0(a3)
 	fmul	fa3, fa3, fa4
 	fadd	fa3, fa5, fa3
-beq_cont.32627:
+beq_cont.33151:
 	lw	a3, 4(a2)
 	addi	t6, x0, 3
-	bne	a3, t6, beq_else.32628 # size : 28
-	luil	a3, l.26867
+	bne	a3, t6, beq_else.33152 # size : 28
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa4, 0(a3)
 	fsub	fa3, fa3, fa4
-	jal	x0, beq_cont.32629
-beq_else.32628:
-beq_cont.32629:
+	jal	x0, beq_cont.33153
+beq_else.33152:
+beq_cont.33153:
 	lw	a2, 24(a2)
 	fsgnjn	fs11, fa3, fa3
 	flt	a3, fa3, fs11
-	bne	a2, x0, beq_else.32630 # size : 4
+	bne	a2, x0, beq_else.33154 # size : 4
 	addi	a2, a3 0
-	jal	x0, beq_cont.32631
-beq_else.32630:
-	bne	a3, x0, beq_else.32632 # size : 4
+	jal	x0, beq_cont.33155
+beq_else.33154:
+	bne	a3, x0, beq_else.33156 # size : 4
 	addi	a2, x0, 1
-	jal	x0, beq_cont.32633
-beq_else.32632:
+	jal	x0, beq_cont.33157
+beq_else.33156:
 	addi	a2, x0, 0
-beq_cont.32633:
-beq_cont.32631:
-	bne	a2, x0, beq_else.32634 # size : 4
+beq_cont.33157:
+beq_cont.33155:
+	bne	a2, x0, beq_else.33158 # size : 4
 	addi	a2, x0, 1
-	jal	x0, beq_cont.32635
-beq_else.32634:
+	jal	x0, beq_cont.33159
+beq_else.33158:
 	addi	a2, x0, 0
-beq_cont.32635:
-beq_cont.32619:
-beq_cont.32609:
-	bne	a2, x0, be_else.32636 # size : 56
+beq_cont.33159:
+beq_cont.33143:
+beq_cont.33133:
+	bne	a2, x0, be_else.33160 # size : 56
 	addi	a0, a0, 1
-	jal	x0, check_all_inside.3124 
-be_else.32636:
+	jal	x0, check_all_inside.3128 
+be_else.33160:
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
-shadow_check_and_group.3130: # 13816
+shadow_check_and_group.3134: # 14768
 	slli	a2, a0, 2
 	add	a2, a1, a2
 	lw	a2, 0(a2)
 	addi	t6, x0, -1
-	bne	a2, t6, be_else.32637 # size : 4
+	bne	a2, t6, be_else.33161 # size : 4
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
-be_else.32637:
+be_else.33161:
 	slli	a2, a0, 2
 	add	a2, a1, a2
 	lw	a2, 0(a2)
@@ -3948,7 +4184,7 @@ be_else.32637:
 	lw	a4, 0(a4)
 	lw	a6, 4(a5)
 	addi	t6, x0, 1
-	bne	a6, t6, beq_else.32638 # size : 960
+	bne	a6, t6, beq_else.33162 # size : 960
 	lw	a3, 0(a3)
 	addi	a6, a4 0
 	flw	fa3, 0(a6)
@@ -3965,10 +4201,10 @@ be_else.32637:
 	addi	a6, a6, 4
 	flw	fa5, 0(a6)
 	flt	a6, fa4, fa5
-	bne	a6, x0, beq_else.32640 # size : 4
+	bne	a6, x0, beq_else.33164 # size : 4
 	addi	a6, x0, 0
-	jal	x0, beq_cont.32641
-beq_else.32640:
+	jal	x0, beq_cont.33165
+beq_else.33164:
 	addi	a6, a3, 8
 	flw	fa4, 0(a6)
 	fmul	fa4, fa3, fa4
@@ -3978,23 +4214,23 @@ beq_else.32640:
 	addi	a6, a6, 8
 	flw	fa5, 0(a6)
 	flt	a6, fa4, fa5
-	bne	a6, x0, beq_else.32642 # size : 4
+	bne	a6, x0, beq_else.33166 # size : 4
 	addi	a6, x0, 0
-	jal	x0, beq_cont.32643
-beq_else.32642:
+	jal	x0, beq_cont.33167
+beq_else.33166:
 	addi	a6, a4, 4
 	flw	fa4, 0(a6)
 	fsgnjn	fs11, fa4, fa4
 	feq	a6, fs11, fa4
-	bne	a6, x0, beq_else.32644 # size : 4
+	bne	a6, x0, beq_else.33168 # size : 4
 	addi	a6, x0, 1
-	jal	x0, beq_cont.32645
-beq_else.32644:
+	jal	x0, beq_cont.33169
+beq_else.33168:
 	addi	a6, x0, 0
-beq_cont.32645:
-beq_cont.32643:
-beq_cont.32641:
-	bne	a6, x0, beq_else.32646 # size : 636
+beq_cont.33169:
+beq_cont.33167:
+beq_cont.33165:
+	bne	a6, x0, beq_else.33170 # size : 636
 	addi	a6, a4, 8
 	flw	fa3, 0(a6)
 	fsub	fa3, fa3, fa1
@@ -4009,10 +4245,10 @@ beq_cont.32641:
 	lw	a6, 16(a5)
 	flw	fa5, 0(a6)
 	flt	a6, fa4, fa5
-	bne	a6, x0, beq_else.32648 # size : 4
+	bne	a6, x0, beq_else.33172 # size : 4
 	addi	a6, x0, 0
-	jal	x0, beq_cont.32649
-beq_else.32648:
+	jal	x0, beq_cont.33173
+beq_else.33172:
 	addi	a6, a3, 8
 	flw	fa4, 0(a6)
 	fmul	fa4, fa3, fa4
@@ -4022,23 +4258,23 @@ beq_else.32648:
 	addi	a6, a6, 8
 	flw	fa5, 0(a6)
 	flt	a6, fa4, fa5
-	bne	a6, x0, beq_else.32650 # size : 4
+	bne	a6, x0, beq_else.33174 # size : 4
 	addi	a6, x0, 0
-	jal	x0, beq_cont.32651
-beq_else.32650:
+	jal	x0, beq_cont.33175
+beq_else.33174:
 	addi	a6, a4, 12
 	flw	fa4, 0(a6)
 	fsgnjn	fs11, fa4, fa4
 	feq	a6, fs11, fa4
-	bne	a6, x0, beq_else.32652 # size : 4
+	bne	a6, x0, beq_else.33176 # size : 4
 	addi	a6, x0, 1
-	jal	x0, beq_cont.32653
-beq_else.32652:
+	jal	x0, beq_cont.33177
+beq_else.33176:
 	addi	a6, x0, 0
-beq_cont.32653:
-beq_cont.32651:
-beq_cont.32649:
-	bne	a6, x0, beq_else.32654 # size : 320
+beq_cont.33177:
+beq_cont.33175:
+beq_cont.33173:
+	bne	a6, x0, beq_else.33178 # size : 320
 	addi	a6, a4, 16
 	flw	fa3, 0(a6)
 	fsub	fa2, fa3, fa2
@@ -4053,10 +4289,10 @@ beq_cont.32649:
 	lw	a6, 16(a5)
 	flw	fa3, 0(a6)
 	flt	a6, fa0, fa3
-	bne	a6, x0, beq_else.32656 # size : 4
+	bne	a6, x0, beq_else.33180 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32657
-beq_else.32656:
+	jal	x0, beq_cont.33181
+beq_else.33180:
 	addi	a3, a3, 4
 	flw	fa0, 0(a3)
 	fmul	fa0, fa2, fa0
@@ -4066,54 +4302,54 @@ beq_else.32656:
 	addi	a3, a3, 4
 	flw	fa1, 0(a3)
 	flt	a3, fa0, fa1
-	bne	a3, x0, beq_else.32658 # size : 4
+	bne	a3, x0, beq_else.33182 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32659
-beq_else.32658:
+	jal	x0, beq_cont.33183
+beq_else.33182:
 	addi	a3, a4, 20
 	flw	fa0, 0(a3)
 	fsgnjn	fs11, fa0, fa0
 	feq	a3, fs11, fa0
-	bne	a3, x0, beq_else.32660 # size : 4
+	bne	a3, x0, beq_else.33184 # size : 4
 	addi	a3, x0, 1
-	jal	x0, beq_cont.32661
-beq_else.32660:
+	jal	x0, beq_cont.33185
+beq_else.33184:
 	addi	a3, x0, 0
-beq_cont.32661:
-beq_cont.32659:
-beq_cont.32657:
-	bne	a3, x0, beq_else.32662 # size : 4
+beq_cont.33185:
+beq_cont.33183:
+beq_cont.33181:
+	bne	a3, x0, beq_else.33186 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32663
-beq_else.32662:
+	jal	x0, beq_cont.33187
+beq_else.33186:
 	addi	a3, x0, 796
 	fsw	fa2, 0(a3) 
 	addi	a3, x0, 3
-beq_cont.32663:
-	jal	x0, beq_cont.32655
-beq_else.32654:
+beq_cont.33187:
+	jal	x0, beq_cont.33179
+beq_else.33178:
 	addi	a3, x0, 796
 	fsw	fa3, 0(a3) 
 	addi	a3, x0, 2
-beq_cont.32655:
-	jal	x0, beq_cont.32647
-beq_else.32646:
+beq_cont.33179:
+	jal	x0, beq_cont.33171
+beq_else.33170:
 	addi	a3, x0, 796
 	fsw	fa3, 0(a3) 
 	addi	a3, x0, 1
-beq_cont.32647:
-	jal	x0, beq_cont.32639
-beq_else.32638:
+beq_cont.33171:
+	jal	x0, beq_cont.33163
+beq_else.33162:
 	addi	t6, x0, 2
-	bne	a6, t6, beq_else.32664 # size : 160
+	bne	a6, t6, beq_else.33188 # size : 160
 	addi	a3, a4 0
 	flw	fa3, 0(a3)
 	fsgnjn	fs11, fa3, fa3
 	flt	a3, fa3, fs11
-	bne	a3, x0, beq_else.32666 # size : 4
+	bne	a3, x0, beq_else.33190 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32667
-beq_else.32666:
+	jal	x0, beq_cont.33191
+beq_else.33190:
 	addi	a3, x0, 796
 	addi	a5, a4, 4
 	flw	fa3, 0(a5)
@@ -4128,14 +4364,14 @@ beq_else.32666:
 	fadd	fa0, fa0, fa1
 	fsw	fa0, 0(a3) 
 	addi	a3, x0, 1
-beq_cont.32667:
-	jal	x0, beq_cont.32665
-beq_else.32664:
+beq_cont.33191:
+	jal	x0, beq_cont.33189
+beq_else.33188:
 	addi	a3, a4 0
 	flw	fa3, 0(a3)
 	fsgnjn	fs11, fa3, fa3
 	feq	a3, fs11, fa3
-	bne	a3, x0, beq_else.32668 # size : 648
+	bne	a3, x0, beq_else.33192 # size : 648
 	addi	a3, a4, 4
 	flw	fa4, 0(a3)
 	fmul	fa4, fa4, fa0
@@ -4164,10 +4400,10 @@ beq_else.32664:
 	fmul	fa6, fa6, fa7
 	fadd	fa5, fa5, fa6
 	lw	a3, 12(a5)
-	bne	a3, x0, beq_else.32670 # size : 4
+	bne	a3, x0, beq_else.33194 # size : 4
 	fsgnj	fa0, fa5, fa5
-	jal	x0, beq_cont.32671
-beq_else.32670:
+	jal	x0, beq_cont.33195
+beq_else.33194:
 	fmul	fa6, fa1, fa2
 	lw	a3, 36(a5)
 	flw	fa7, 0(a3)
@@ -4185,29 +4421,29 @@ beq_else.32670:
 	flw	fa1, 0(a3)
 	fmul	fa0, fa0, fa1
 	fadd	fa0, fa2, fa0
-beq_cont.32671:
+beq_cont.33195:
 	lw	a3, 4(a5)
 	addi	t6, x0, 3
-	bne	a3, t6, beq_else.32672 # size : 28
-	luil	a3, l.26867
+	bne	a3, t6, beq_else.33196 # size : 28
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa1, 0(a3)
 	fsub	fa0, fa0, fa1
-	jal	x0, beq_cont.32673
-beq_else.32672:
-beq_cont.32673:
+	jal	x0, beq_cont.33197
+beq_else.33196:
+beq_cont.33197:
 	fmul	fa1, fa4, fa4
 	fmul	fa0, fa3, fa0
 	fsub	fa0, fa1, fa0
 	fsgnjn	fs11, fa0, fa0
 	flt	a3, fs11, fa0
-	bne	a3, x0, beq_else.32674 # size : 4
+	bne	a3, x0, beq_else.33198 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32675
-beq_else.32674:
+	jal	x0, beq_cont.33199
+beq_else.33198:
 	lw	a3, 24(a5)
-	bne	a3, x0, beq_else.32676 # size : 60
+	bne	a3, x0, beq_else.33200 # size : 60
 	addi	a3, x0, 796
 	fsqrt	fa0, fa0
 	fsub	fa0, fa4, fa0
@@ -4215,8 +4451,8 @@ beq_else.32674:
 	flw	fa1, 0(a4)
 	fmul	fa0, fa0, fa1
 	fsw	fa0, 0(a3) 
-	jal	x0, beq_cont.32677
-beq_else.32676:
+	jal	x0, beq_cont.33201
+beq_else.33200:
 	addi	a3, x0, 796
 	fsqrt	fa0, fa0
 	fadd	fa0, fa4, fa0
@@ -4224,42 +4460,42 @@ beq_else.32676:
 	flw	fa1, 0(a4)
 	fmul	fa0, fa0, fa1
 	fsw	fa0, 0(a3) 
-beq_cont.32677:
+beq_cont.33201:
 	addi	a3, x0, 1
-beq_cont.32675:
-	jal	x0, beq_cont.32669
-beq_else.32668:
+beq_cont.33199:
+	jal	x0, beq_cont.33193
+beq_else.33192:
 	addi	a3, x0, 0
-beq_cont.32669:
-beq_cont.32665:
-beq_cont.32639:
+beq_cont.33193:
+beq_cont.33189:
+beq_cont.33163:
 	addi	a4, x0, 796
 	flw	fa0, 0(a4)
-	bne	a3, x0, beq_else.32678 # size : 4
+	bne	a3, x0, beq_else.33202 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32679
-beq_else.32678:
-	luil	a3, l.27520
+	jal	x0, beq_cont.33203
+beq_else.33202:
+	luil	a3, l.27921
 	srli	a3, a3, 1
-	addil	a3, a3, l.27520
+	addil	a3, a3, l.27921
 	flw	fa1, 0(a3)
 	flt	a3, fa0, fa1
-beq_cont.32679:
-	bne	a3, x0, be_else.32680 # size : 92
+beq_cont.33203:
+	bne	a3, x0, be_else.33204 # size : 92
 	slli	a2, a2, 2
 	addi	a2, a2, 304
 	lw	a2, 0(a2)
 	lw	a2, 24(a2)
-	bne	a2, x0, be_else.32681 # size : 4
+	bne	a2, x0, be_else.33205 # size : 4
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
-be_else.32681:
+be_else.33205:
 	addi	a0, a0, 1
-	jal	x0, shadow_check_and_group.3130 
-be_else.32680:
-	luil	a2, l.27522
+	jal	x0, shadow_check_and_group.3134 
+be_else.33204:
+	luil	a2, l.27923
 	srli	a2, a2, 1
-	addil	a2, a2, l.27522
+	addil	a2, a2, l.27923
 	flw	fa1, 0(a2)
 	fadd	fa0, fa0, fa1
 	addi	a2, x0, 568
@@ -4285,8 +4521,8 @@ be_else.32680:
 	flw	fa3, 0(a2)
 	fadd	fa0, fa0, fa3
 	addi	a2, x0, 0
-	sw	a1, -0(sp) # Save and_group.3132
-	sw	a0, -4(sp) # Save iand_ofs.3131
+	sw	a1, -0(sp) # Save and_group.3136
+	sw	a0, -4(sp) # Save iand_ofs.3135
 	addi	a0, a2, 0
 	fsgnj	fs11, fa2, fa2
 	fsgnj	fa2, fa0, fa0
@@ -4294,66 +4530,66 @@ be_else.32680:
 	fsgnj	fa1, fs11, fs11
 	sw	ra, -12(sp)
 	addi	sp, sp, -16
-	jal	ra, check_all_inside.3124
+	jal	ra, check_all_inside.3128
 	addi	sp, sp, 16
 	lw	ra, -12(sp)
-	bne	a0, x0, be_else.32682 # size : 60
-	lw	a0, -4(sp) # Restore iand_ofs.3131
+	bne	a0, x0, be_else.33206 # size : 60
+	lw	a0, -4(sp) # Restore iand_ofs.3135
 	addi	a0, a0, 1
-	lw	a1, -0(sp) # Restore and_group.3132
-	jal	x0, shadow_check_and_group.3130 
-be_else.32682:
+	lw	a1, -0(sp) # Restore and_group.3136
+	jal	x0, shadow_check_and_group.3134 
+be_else.33206:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
-shadow_check_one_or_group.3133: # 15216
+shadow_check_one_or_group.3137: # 16168
 	slli	a2, a0, 2
 	add	a2, a1, a2
 	lw	a2, 0(a2)
 	addi	t6, x0, -1
-	bne	a2, t6, be_else.32683 # size : 4
+	bne	a2, t6, be_else.33207 # size : 4
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
-be_else.32683:
+be_else.33207:
 	slli	a2, a2, 2
 	addi	a2, a2, 588
 	lw	a2, 0(a2)
 	addi	a3, x0, 0
-	sw	a1, -0(sp) # Save or_group.3135
-	sw	a0, -4(sp) # Save ofs.3134
+	sw	a1, -0(sp) # Save or_group.3139
+	sw	a0, -4(sp) # Save ofs.3138
 	addi	a1, a2, 0
 	addi	a0, a3, 0
 	sw	ra, -12(sp)
 	addi	sp, sp, -16
-	jal	ra, shadow_check_and_group.3130
+	jal	ra, shadow_check_and_group.3134
 	addi	sp, sp, 16
 	lw	ra, -12(sp)
-	bne	a0, x0, be_else.32684 # size : 60
-	lw	a0, -4(sp) # Restore ofs.3134
+	bne	a0, x0, be_else.33208 # size : 60
+	lw	a0, -4(sp) # Restore ofs.3138
 	addi	a0, a0, 1
-	lw	a1, -0(sp) # Restore or_group.3135
-	jal	x0, shadow_check_one_or_group.3133 
-be_else.32684:
+	lw	a1, -0(sp) # Restore or_group.3139
+	jal	x0, shadow_check_one_or_group.3137 
+be_else.33208:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
-shadow_check_one_or_matrix.3136: # 15324
+shadow_check_one_or_matrix.3140: # 16276
 	slli	a2, a0, 2
 	add	a2, a1, a2
 	lw	a2, 0(a2)
 	addi	a3, a2 0
 	lw	a3, 0(a3)
 	addi	t6, x0, -1
-	bne	a3, t6, be_else.32685 # size : 4
+	bne	a3, t6, be_else.33209 # size : 4
 	addi	a0, x0, 0
 	jalr	x0, ra, 0
-be_else.32685:
-	sw	a2, -0(sp) # Save head.4771
-	sw	a1, -4(sp) # Save or_matrix.3138
-	sw	a0, -8(sp) # Save ofs.3137
+be_else.33209:
+	sw	a2, -0(sp) # Save head.4775
+	sw	a1, -4(sp) # Save or_matrix.3142
+	sw	a0, -8(sp) # Save ofs.3141
 	addi	t6, x0, 99
-	bne	a3, t6, beq_else.32686 # size : 4
+	bne	a3, t6, beq_else.33210 # size : 4
 	addi	a0, x0, 1
-	jal	x0, beq_cont.32687
-beq_else.32686:
+	jal	x0, beq_cont.33211
+beq_else.33210:
 	addi	a4, x0, 1236
 	addi	a5, x0, 808
 	slli	a6, a3, 2
@@ -4382,7 +4618,7 @@ beq_else.32686:
 	lw	a3, 0(a3)
 	lw	a5, 4(a6)
 	addi	t6, x0, 1
-	bne	a5, t6, beq_else.32688 # size : 960
+	bne	a5, t6, beq_else.33212 # size : 960
 	lw	a4, 0(a4)
 	addi	a5, a3 0
 	flw	fa3, 0(a5)
@@ -4399,10 +4635,10 @@ beq_else.32686:
 	addi	a5, a5, 4
 	flw	fa5, 0(a5)
 	flt	a5, fa4, fa5
-	bne	a5, x0, beq_else.32690 # size : 4
+	bne	a5, x0, beq_else.33214 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32691
-beq_else.32690:
+	jal	x0, beq_cont.33215
+beq_else.33214:
 	addi	a5, a4, 8
 	flw	fa4, 0(a5)
 	fmul	fa4, fa3, fa4
@@ -4412,23 +4648,23 @@ beq_else.32690:
 	addi	a5, a5, 8
 	flw	fa5, 0(a5)
 	flt	a5, fa4, fa5
-	bne	a5, x0, beq_else.32692 # size : 4
+	bne	a5, x0, beq_else.33216 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32693
-beq_else.32692:
+	jal	x0, beq_cont.33217
+beq_else.33216:
 	addi	a5, a3, 4
 	flw	fa4, 0(a5)
 	fsgnjn	fs11, fa4, fa4
 	feq	a5, fs11, fa4
-	bne	a5, x0, beq_else.32694 # size : 4
+	bne	a5, x0, beq_else.33218 # size : 4
 	addi	a5, x0, 1
-	jal	x0, beq_cont.32695
-beq_else.32694:
+	jal	x0, beq_cont.33219
+beq_else.33218:
 	addi	a5, x0, 0
-beq_cont.32695:
-beq_cont.32693:
-beq_cont.32691:
-	bne	a5, x0, beq_else.32696 # size : 636
+beq_cont.33219:
+beq_cont.33217:
+beq_cont.33215:
+	bne	a5, x0, beq_else.33220 # size : 636
 	addi	a5, a3, 8
 	flw	fa3, 0(a5)
 	fsub	fa3, fa3, fa1
@@ -4443,10 +4679,10 @@ beq_cont.32691:
 	lw	a5, 16(a6)
 	flw	fa5, 0(a5)
 	flt	a5, fa4, fa5
-	bne	a5, x0, beq_else.32698 # size : 4
+	bne	a5, x0, beq_else.33222 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32699
-beq_else.32698:
+	jal	x0, beq_cont.33223
+beq_else.33222:
 	addi	a5, a4, 8
 	flw	fa4, 0(a5)
 	fmul	fa4, fa3, fa4
@@ -4456,23 +4692,23 @@ beq_else.32698:
 	addi	a5, a5, 8
 	flw	fa5, 0(a5)
 	flt	a5, fa4, fa5
-	bne	a5, x0, beq_else.32700 # size : 4
+	bne	a5, x0, beq_else.33224 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32701
-beq_else.32700:
+	jal	x0, beq_cont.33225
+beq_else.33224:
 	addi	a5, a3, 12
 	flw	fa4, 0(a5)
 	fsgnjn	fs11, fa4, fa4
 	feq	a5, fs11, fa4
-	bne	a5, x0, beq_else.32702 # size : 4
+	bne	a5, x0, beq_else.33226 # size : 4
 	addi	a5, x0, 1
-	jal	x0, beq_cont.32703
-beq_else.32702:
+	jal	x0, beq_cont.33227
+beq_else.33226:
 	addi	a5, x0, 0
-beq_cont.32703:
-beq_cont.32701:
-beq_cont.32699:
-	bne	a5, x0, beq_else.32704 # size : 320
+beq_cont.33227:
+beq_cont.33225:
+beq_cont.33223:
+	bne	a5, x0, beq_else.33228 # size : 320
 	addi	a5, a3, 16
 	flw	fa3, 0(a5)
 	fsub	fa2, fa3, fa2
@@ -4487,10 +4723,10 @@ beq_cont.32699:
 	lw	a5, 16(a6)
 	flw	fa3, 0(a5)
 	flt	a5, fa0, fa3
-	bne	a5, x0, beq_else.32706 # size : 4
+	bne	a5, x0, beq_else.33230 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32707
-beq_else.32706:
+	jal	x0, beq_cont.33231
+beq_else.33230:
 	addi	a4, a4, 4
 	flw	fa0, 0(a4)
 	fmul	fa0, fa2, fa0
@@ -4500,54 +4736,54 @@ beq_else.32706:
 	addi	a4, a4, 4
 	flw	fa1, 0(a4)
 	flt	a4, fa0, fa1
-	bne	a4, x0, beq_else.32708 # size : 4
+	bne	a4, x0, beq_else.33232 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32709
-beq_else.32708:
+	jal	x0, beq_cont.33233
+beq_else.33232:
 	addi	a3, a3, 20
 	flw	fa0, 0(a3)
 	fsgnjn	fs11, fa0, fa0
 	feq	a3, fs11, fa0
-	bne	a3, x0, beq_else.32710 # size : 4
+	bne	a3, x0, beq_else.33234 # size : 4
 	addi	a3, x0, 1
-	jal	x0, beq_cont.32711
-beq_else.32710:
+	jal	x0, beq_cont.33235
+beq_else.33234:
 	addi	a3, x0, 0
-beq_cont.32711:
-beq_cont.32709:
-beq_cont.32707:
-	bne	a3, x0, beq_else.32712 # size : 4
+beq_cont.33235:
+beq_cont.33233:
+beq_cont.33231:
+	bne	a3, x0, beq_else.33236 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32713
-beq_else.32712:
+	jal	x0, beq_cont.33237
+beq_else.33236:
 	addi	a3, x0, 796
 	fsw	fa2, 0(a3) 
 	addi	a3, x0, 3
-beq_cont.32713:
-	jal	x0, beq_cont.32705
-beq_else.32704:
+beq_cont.33237:
+	jal	x0, beq_cont.33229
+beq_else.33228:
 	addi	a3, x0, 796
 	fsw	fa3, 0(a3) 
 	addi	a3, x0, 2
-beq_cont.32705:
-	jal	x0, beq_cont.32697
-beq_else.32696:
+beq_cont.33229:
+	jal	x0, beq_cont.33221
+beq_else.33220:
 	addi	a3, x0, 796
 	fsw	fa3, 0(a3) 
 	addi	a3, x0, 1
-beq_cont.32697:
-	jal	x0, beq_cont.32689
-beq_else.32688:
+beq_cont.33221:
+	jal	x0, beq_cont.33213
+beq_else.33212:
 	addi	t6, x0, 2
-	bne	a5, t6, beq_else.32714 # size : 160
+	bne	a5, t6, beq_else.33238 # size : 160
 	addi	a4, a3 0
 	flw	fa3, 0(a4)
 	fsgnjn	fs11, fa3, fa3
 	flt	a4, fa3, fs11
-	bne	a4, x0, beq_else.32716 # size : 4
+	bne	a4, x0, beq_else.33240 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32717
-beq_else.32716:
+	jal	x0, beq_cont.33241
+beq_else.33240:
 	addi	a4, x0, 796
 	addi	a5, a3, 4
 	flw	fa3, 0(a5)
@@ -4563,14 +4799,14 @@ beq_else.32716:
 	addi	a3, a4 0
 	fsw	fa0, 0(a3) 
 	addi	a3, x0, 1
-beq_cont.32717:
-	jal	x0, beq_cont.32715
-beq_else.32714:
+beq_cont.33241:
+	jal	x0, beq_cont.33239
+beq_else.33238:
 	addi	a4, a3 0
 	flw	fa3, 0(a4)
 	fsgnjn	fs11, fa3, fa3
 	feq	a4, fs11, fa3
-	bne	a4, x0, beq_else.32718 # size : 648
+	bne	a4, x0, beq_else.33242 # size : 648
 	addi	a4, a3, 4
 	flw	fa4, 0(a4)
 	fmul	fa4, fa4, fa0
@@ -4599,10 +4835,10 @@ beq_else.32714:
 	fmul	fa6, fa6, fa7
 	fadd	fa5, fa5, fa6
 	lw	a4, 12(a6)
-	bne	a4, x0, beq_else.32720 # size : 4
+	bne	a4, x0, beq_else.33244 # size : 4
 	fsgnj	fa0, fa5, fa5
-	jal	x0, beq_cont.32721
-beq_else.32720:
+	jal	x0, beq_cont.33245
+beq_else.33244:
 	fmul	fa6, fa1, fa2
 	lw	a4, 36(a6)
 	flw	fa7, 0(a4)
@@ -4620,29 +4856,29 @@ beq_else.32720:
 	flw	fa1, 0(a4)
 	fmul	fa0, fa0, fa1
 	fadd	fa0, fa2, fa0
-beq_cont.32721:
+beq_cont.33245:
 	lw	a4, 4(a6)
 	addi	t6, x0, 3
-	bne	a4, t6, beq_else.32722 # size : 28
-	luil	a4, l.26867
+	bne	a4, t6, beq_else.33246 # size : 28
+	luil	a4, l.27213
 	srli	a4, a4, 1
-	addil	a4, a4, l.26867
+	addil	a4, a4, l.27213
 	flw	fa1, 0(a4)
 	fsub	fa0, fa0, fa1
-	jal	x0, beq_cont.32723
-beq_else.32722:
-beq_cont.32723:
+	jal	x0, beq_cont.33247
+beq_else.33246:
+beq_cont.33247:
 	fmul	fa1, fa4, fa4
 	fmul	fa0, fa3, fa0
 	fsub	fa0, fa1, fa0
 	fsgnjn	fs11, fa0, fa0
 	flt	a4, fs11, fa0
-	bne	a4, x0, beq_else.32724 # size : 4
+	bne	a4, x0, beq_else.33248 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.32725
-beq_else.32724:
+	jal	x0, beq_cont.33249
+beq_else.33248:
 	lw	a4, 24(a6)
-	bne	a4, x0, beq_else.32726 # size : 60
+	bne	a4, x0, beq_else.33250 # size : 60
 	addi	a4, x0, 796
 	fsqrt	fa0, fa0
 	fsub	fa0, fa4, fa0
@@ -4651,8 +4887,8 @@ beq_else.32724:
 	fmul	fa0, fa0, fa1
 	addi	a3, a4 0
 	fsw	fa0, 0(a3) 
-	jal	x0, beq_cont.32727
-beq_else.32726:
+	jal	x0, beq_cont.33251
+beq_else.33250:
 	addi	a4, x0, 796
 	fsqrt	fa0, fa0
 	fadd	fa0, fa4, fa0
@@ -4661,76 +4897,76 @@ beq_else.32726:
 	fmul	fa0, fa0, fa1
 	addi	a3, a4 0
 	fsw	fa0, 0(a3) 
-beq_cont.32727:
+beq_cont.33251:
 	addi	a3, x0, 1
-beq_cont.32725:
-	jal	x0, beq_cont.32719
-beq_else.32718:
+beq_cont.33249:
+	jal	x0, beq_cont.33243
+beq_else.33242:
 	addi	a3, x0, 0
-beq_cont.32719:
-beq_cont.32715:
-beq_cont.32689:
-	bne	a3, x0, beq_else.32728 # size : 4
+beq_cont.33243:
+beq_cont.33239:
+beq_cont.33213:
+	bne	a3, x0, beq_else.33252 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.32729
-beq_else.32728:
+	jal	x0, beq_cont.33253
+beq_else.33252:
 	addi	a3, x0, 796
 	flw	fa0, 0(a3)
-	luil	a3, l.27651
+	luil	a3, l.28052
 	srli	a3, a3, 1
-	addil	a3, a3, l.27651
+	addil	a3, a3, l.28052
 	flw	fa1, 0(a3)
 	flt	a3, fa0, fa1
-	bne	a3, x0, beq_else.32730 # size : 4
+	bne	a3, x0, beq_else.33254 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.32731
-beq_else.32730:
+	jal	x0, beq_cont.33255
+beq_else.33254:
 	addi	a3, x0, 1
 	addi	a1, a2, 0
 	addi	a0, a3, 0
 	sw	ra, -16(sp)
 	addi	sp, sp, -20
-	jal	ra, shadow_check_one_or_group.3133
+	jal	ra, shadow_check_one_or_group.3137
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-	bne	a0, x0, beq_else.32732 # size : 4
+	bne	a0, x0, beq_else.33256 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.32733
-beq_else.32732:
+	jal	x0, beq_cont.33257
+beq_else.33256:
 	addi	a0, x0, 1
-beq_cont.32733:
-beq_cont.32731:
-beq_cont.32729:
-beq_cont.32687:
-	bne	a0, x0, be_else.32734 # size : 60
-	lw	a0, -8(sp) # Restore ofs.3137
+beq_cont.33257:
+beq_cont.33255:
+beq_cont.33253:
+beq_cont.33211:
+	bne	a0, x0, be_else.33258 # size : 60
+	lw	a0, -8(sp) # Restore ofs.3141
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_matrix.3138
-	jal	x0, shadow_check_one_or_matrix.3136 
-be_else.32734:
+	lw	a1, -4(sp) # Restore or_matrix.3142
+	jal	x0, shadow_check_one_or_matrix.3140 
+be_else.33258:
 	addi	a0, x0, 1
-	lw	a1, -0(sp) # Restore head.4771
+	lw	a1, -0(sp) # Restore head.4775
 	sw	ra, -16(sp)
 	addi	sp, sp, -20
-	jal	ra, shadow_check_one_or_group.3133
+	jal	ra, shadow_check_one_or_group.3137
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-	bne	a0, x0, be_else.32735 # size : 60
-	lw	a0, -8(sp) # Restore ofs.3137
+	bne	a0, x0, be_else.33259 # size : 60
+	lw	a0, -8(sp) # Restore ofs.3141
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_matrix.3138
-	jal	x0, shadow_check_one_or_matrix.3136 
-be_else.32735:
+	lw	a1, -4(sp) # Restore or_matrix.3142
+	jal	x0, shadow_check_one_or_matrix.3140 
+be_else.33259:
 	addi	a0, x0, 1
 	jalr	x0, ra, 0
-solve_each_element.3139: # 16668
+solve_each_element.3143: # 17620
 	slli	a3, a0, 2
 	add	a3, a1, a3
 	lw	a3, 0(a3)
 	addi	t6, x0, -1
-	bne	a3, t6, be_else.32736 # size : 0
+	bne	a3, t6, be_else.33260 # size : 0
 	jalr	x0, ra, 0
-be_else.32736:
+be_else.33260:
 	addi	a4, x0, 892
 	slli	a5, a3, 2
 	addi	a5, a5, 304
@@ -4754,36 +4990,36 @@ be_else.32736:
 	fsub	fa2, fa2, fa3
 	lw	a4, 4(a5)
 	addi	t6, x0, 1
-	bne	a4, t6, beq_else.32738 # size : 1228
+	bne	a4, t6, beq_else.33262 # size : 1228
 	addi	a4, a2 0
 	flw	fa3, 0(a4)
 	fsgnjn	fs11, fa3, fa3
 	feq	a4, fs11, fa3
-	bne	a4, x0, beq_else.32740 # size : 344
+	bne	a4, x0, beq_else.33264 # size : 344
 	lw	a4, 16(a5)
 	lw	a6, 24(a5)
 	addi	a7, a2 0
 	flw	fa3, 0(a7)
 	fsgnjn	fs11, fa3, fa3
 	flt	a7, fa3, fs11
-	bne	a6, x0, beq_else.32742 # size : 4
+	bne	a6, x0, beq_else.33266 # size : 4
 	addi	a6, a7 0
-	jal	x0, beq_cont.32743
-beq_else.32742:
-	bne	a7, x0, beq_else.32744 # size : 4
+	jal	x0, beq_cont.33267
+beq_else.33266:
+	bne	a7, x0, beq_else.33268 # size : 4
 	addi	a6, x0, 1
-	jal	x0, beq_cont.32745
-beq_else.32744:
+	jal	x0, beq_cont.33269
+beq_else.33268:
 	addi	a6, x0, 0
-beq_cont.32745:
-beq_cont.32743:
+beq_cont.33269:
+beq_cont.33267:
 	addi	a7, a4 0
 	flw	fa3, 0(a7)
-	bne	a6, x0, beq_else.32746 # size : 4
+	bne	a6, x0, beq_else.33270 # size : 4
 	fsgnjn	fa3, fa3, fa3
-	jal	x0, beq_cont.32747
-beq_else.32746:
-beq_cont.32747:
+	jal	x0, beq_cont.33271
+beq_else.33270:
+beq_cont.33271:
 	fsub	fa3, fa3, fa0
 	addi	a6, a2 0
 	flw	fa4, 0(a6)
@@ -4796,10 +5032,10 @@ beq_cont.32747:
 	addi	a6, a4, 4
 	flw	fa5, 0(a6)
 	flt	a6, fa4, fa5
-	bne	a6, x0, beq_else.32748 # size : 4
+	bne	a6, x0, beq_else.33272 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32749
-beq_else.32748:
+	jal	x0, beq_cont.33273
+beq_else.33272:
 	addi	a6, a2, 8
 	flw	fa4, 0(a6)
 	fmul	fa4, fa3, fa4
@@ -4808,49 +5044,49 @@ beq_else.32748:
 	addi	a4, a4, 8
 	flw	fa5, 0(a4)
 	flt	a4, fa4, fa5
-	bne	a4, x0, beq_else.32750 # size : 4
+	bne	a4, x0, beq_else.33274 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32751
-beq_else.32750:
+	jal	x0, beq_cont.33275
+beq_else.33274:
 	addi	a4, x0, 796
 	fsw	fa3, 0(a4) 
 	addi	a4, x0, 1
-beq_cont.32751:
-beq_cont.32749:
-	jal	x0, beq_cont.32741
-beq_else.32740:
+beq_cont.33275:
+beq_cont.33273:
+	jal	x0, beq_cont.33265
+beq_else.33264:
 	addi	a4, x0, 0
-beq_cont.32741:
-	bne	a4, x0, beq_else.32752 # size : 820
+beq_cont.33265:
+	bne	a4, x0, beq_else.33276 # size : 820
 	addi	a4, a2, 4
 	flw	fa3, 0(a4)
 	fsgnjn	fs11, fa3, fa3
 	feq	a4, fs11, fa3
-	bne	a4, x0, beq_else.32754 # size : 344
+	bne	a4, x0, beq_else.33278 # size : 344
 	lw	a4, 16(a5)
 	lw	a6, 24(a5)
 	addi	a7, a2, 4
 	flw	fa3, 0(a7)
 	fsgnjn	fs11, fa3, fa3
 	flt	a7, fa3, fs11
-	bne	a6, x0, beq_else.32756 # size : 4
+	bne	a6, x0, beq_else.33280 # size : 4
 	addi	a6, a7 0
-	jal	x0, beq_cont.32757
-beq_else.32756:
-	bne	a7, x0, beq_else.32758 # size : 4
+	jal	x0, beq_cont.33281
+beq_else.33280:
+	bne	a7, x0, beq_else.33282 # size : 4
 	addi	a6, x0, 1
-	jal	x0, beq_cont.32759
-beq_else.32758:
+	jal	x0, beq_cont.33283
+beq_else.33282:
 	addi	a6, x0, 0
-beq_cont.32759:
-beq_cont.32757:
+beq_cont.33283:
+beq_cont.33281:
 	addi	a7, a4, 4
 	flw	fa3, 0(a7)
-	bne	a6, x0, beq_else.32760 # size : 4
+	bne	a6, x0, beq_else.33284 # size : 4
 	fsgnjn	fa3, fa3, fa3
-	jal	x0, beq_cont.32761
-beq_else.32760:
-beq_cont.32761:
+	jal	x0, beq_cont.33285
+beq_else.33284:
+beq_cont.33285:
 	fsub	fa3, fa3, fa1
 	addi	a6, a2, 4
 	flw	fa4, 0(a6)
@@ -4863,10 +5099,10 @@ beq_cont.32761:
 	addi	a6, a4, 8
 	flw	fa5, 0(a6)
 	flt	a6, fa4, fa5
-	bne	a6, x0, beq_else.32762 # size : 4
+	bne	a6, x0, beq_else.33286 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32763
-beq_else.32762:
+	jal	x0, beq_cont.33287
+beq_else.33286:
 	addi	a6, a2 0
 	flw	fa4, 0(a6)
 	fmul	fa4, fa3, fa4
@@ -4874,49 +5110,49 @@ beq_else.32762:
 	fsgnjx	fa4, fa4, fa4
 	flw	fa5, 0(a4)
 	flt	a4, fa4, fa5
-	bne	a4, x0, beq_else.32764 # size : 4
+	bne	a4, x0, beq_else.33288 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32765
-beq_else.32764:
+	jal	x0, beq_cont.33289
+beq_else.33288:
 	addi	a4, x0, 796
 	fsw	fa3, 0(a4) 
 	addi	a4, x0, 1
-beq_cont.32765:
-beq_cont.32763:
-	jal	x0, beq_cont.32755
-beq_else.32754:
+beq_cont.33289:
+beq_cont.33287:
+	jal	x0, beq_cont.33279
+beq_else.33278:
 	addi	a4, x0, 0
-beq_cont.32755:
-	bne	a4, x0, beq_else.32766 # size : 412
+beq_cont.33279:
+	bne	a4, x0, beq_else.33290 # size : 412
 	addi	a4, a2, 8
 	flw	fa3, 0(a4)
 	fsgnjn	fs11, fa3, fa3
 	feq	a4, fs11, fa3
-	bne	a4, x0, beq_else.32768 # size : 344
+	bne	a4, x0, beq_else.33292 # size : 344
 	lw	a4, 16(a5)
 	lw	a5, 24(a5)
 	addi	a6, a2, 8
 	flw	fa3, 0(a6)
 	fsgnjn	fs11, fa3, fa3
 	flt	a6, fa3, fs11
-	bne	a5, x0, beq_else.32770 # size : 4
+	bne	a5, x0, beq_else.33294 # size : 4
 	addi	a5, a6 0
-	jal	x0, beq_cont.32771
-beq_else.32770:
-	bne	a6, x0, beq_else.32772 # size : 4
+	jal	x0, beq_cont.33295
+beq_else.33294:
+	bne	a6, x0, beq_else.33296 # size : 4
 	addi	a5, x0, 1
-	jal	x0, beq_cont.32773
-beq_else.32772:
+	jal	x0, beq_cont.33297
+beq_else.33296:
 	addi	a5, x0, 0
-beq_cont.32773:
-beq_cont.32771:
+beq_cont.33297:
+beq_cont.33295:
 	addi	a6, a4, 8
 	flw	fa3, 0(a6)
-	bne	a5, x0, beq_else.32774 # size : 4
+	bne	a5, x0, beq_else.33298 # size : 4
 	fsgnjn	fa3, fa3, fa3
-	jal	x0, beq_cont.32775
-beq_else.32774:
-beq_cont.32775:
+	jal	x0, beq_cont.33299
+beq_else.33298:
+beq_cont.33299:
 	fsub	fa2, fa3, fa2
 	addi	a5, a2, 8
 	flw	fa3, 0(a5)
@@ -4929,10 +5165,10 @@ beq_cont.32775:
 	addi	a5, a4 0
 	flw	fa3, 0(a5)
 	flt	a5, fa0, fa3
-	bne	a5, x0, beq_else.32776 # size : 4
+	bne	a5, x0, beq_else.33300 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32777
-beq_else.32776:
+	jal	x0, beq_cont.33301
+beq_else.33300:
 	addi	a5, a2, 4
 	flw	fa0, 0(a5)
 	fmul	fa0, fa2, fa0
@@ -4941,37 +5177,37 @@ beq_else.32776:
 	addi	a4, a4, 4
 	flw	fa1, 0(a4)
 	flt	a4, fa0, fa1
-	bne	a4, x0, beq_else.32778 # size : 4
+	bne	a4, x0, beq_else.33302 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32779
-beq_else.32778:
+	jal	x0, beq_cont.33303
+beq_else.33302:
 	addi	a4, x0, 796
 	fsw	fa2, 0(a4) 
 	addi	a4, x0, 1
-beq_cont.32779:
-beq_cont.32777:
-	jal	x0, beq_cont.32769
-beq_else.32768:
+beq_cont.33303:
+beq_cont.33301:
+	jal	x0, beq_cont.33293
+beq_else.33292:
 	addi	a4, x0, 0
-beq_cont.32769:
-	bne	a4, x0, beq_else.32780 # size : 4
+beq_cont.33293:
+	bne	a4, x0, beq_else.33304 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32781
-beq_else.32780:
+	jal	x0, beq_cont.33305
+beq_else.33304:
 	addi	a4, x0, 3
-beq_cont.32781:
-	jal	x0, beq_cont.32767
-beq_else.32766:
+beq_cont.33305:
+	jal	x0, beq_cont.33291
+beq_else.33290:
 	addi	a4, x0, 2
-beq_cont.32767:
-	jal	x0, beq_cont.32753
-beq_else.32752:
+beq_cont.33291:
+	jal	x0, beq_cont.33277
+beq_else.33276:
 	addi	a4, x0, 1
-beq_cont.32753:
-	jal	x0, beq_cont.32739
-beq_else.32738:
+beq_cont.33277:
+	jal	x0, beq_cont.33263
+beq_else.33262:
 	addi	t6, x0, 2
-	bne	a4, t6, beq_else.32782 # size : 304
+	bne	a4, t6, beq_else.33306 # size : 304
 	lw	a4, 16(a5)
 	addi	a5, a2 0
 	flw	fa3, 0(a5)
@@ -4992,10 +5228,10 @@ beq_else.32738:
 	fadd	fa3, fa3, fa4
 	fsgnjn	fs11, fa3, fa3
 	flt	a5, fs11, fa3
-	bne	a5, x0, beq_else.32784 # size : 4
+	bne	a5, x0, beq_else.33308 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32785
-beq_else.32784:
+	jal	x0, beq_cont.33309
+beq_else.33308:
 	addi	a5, x0, 796
 	addi	a6, a4 0
 	flw	fa4, 0(a6)
@@ -5013,9 +5249,9 @@ beq_else.32784:
 	addi	a4, a5 0
 	fsw	fa0, 0(a4) 
 	addi	a4, x0, 1
-beq_cont.32785:
-	jal	x0, beq_cont.32783
-beq_else.32782:
+beq_cont.33309:
+	jal	x0, beq_cont.33307
+beq_else.33306:
 	addi	a4, a2 0
 	flw	fa3, 0(a4)
 	addi	a4, a2, 4
@@ -5039,10 +5275,10 @@ beq_else.32782:
 	fmul	fa7, fa7, ft0
 	fadd	fa6, fa6, fa7
 	lw	a4, 12(a5)
-	bne	a4, x0, beq_else.32786 # size : 4
+	bne	a4, x0, beq_else.33310 # size : 4
 	fsgnj	fa3, fa6, fa6
-	jal	x0, beq_cont.32787
-beq_else.32786:
+	jal	x0, beq_cont.33311
+beq_else.33310:
 	fmul	fa7, fa4, fa5
 	lw	a4, 36(a5)
 	flw	ft0, 0(a4)
@@ -5060,10 +5296,10 @@ beq_else.32786:
 	flw	fa4, 0(a4)
 	fmul	fa3, fa3, fa4
 	fadd	fa3, fa5, fa3
-beq_cont.32787:
+beq_cont.33311:
 	fsgnjn	fs11, fa3, fa3
 	feq	a4, fs11, fa3
-	bne	a4, x0, beq_else.32788 # size : 920
+	bne	a4, x0, beq_else.33312 # size : 928
 	addi	a4, a2 0
 	flw	fa4, 0(a4)
 	addi	a4, a2, 4
@@ -5087,10 +5323,10 @@ beq_cont.32787:
 	fmul	ft0, ft0, ft1
 	fadd	fa7, fa7, ft0
 	lw	a4, 12(a5)
-	bne	a4, x0, beq_else.32790 # size : 4
+	bne	a4, x0, beq_else.33314 # size : 4
 	fsgnj	fa4, fa7, fa7
-	jal	x0, beq_cont.32791
-beq_else.32790:
+	jal	x0, beq_cont.33315
+beq_else.33314:
 	fmul	ft0, fa6, fa1
 	fmul	ft1, fa5, fa2
 	fadd	ft0, ft0, ft1
@@ -5113,13 +5349,13 @@ beq_else.32790:
 	flw	fa5, 0(a4)
 	fmul	fa4, fa4, fa5
 	fadd	fa4, fa6, fa4
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa4, fa4, fs11
+	luil	a4, l.001
+	srli	a4, a4, 1
+	addil	a4, a4, l.001
+	flw	fa5, 0(a4)
+	fmul	fa4, fa4, fa5
 	fadd	fa4, fa7, fa4
-beq_cont.32791:
+beq_cont.33315:
 	fmul	fa5, fa0, fa0
 	lw	a4, 16(a5)
 	flw	fa6, 0(a4)
@@ -5137,10 +5373,10 @@ beq_cont.32791:
 	fmul	fa6, fa6, fa7
 	fadd	fa5, fa5, fa6
 	lw	a4, 12(a5)
-	bne	a4, x0, beq_else.32792 # size : 4
+	bne	a4, x0, beq_else.33316 # size : 4
 	fsgnj	fa0, fa5, fa5
-	jal	x0, beq_cont.32793
-beq_else.32792:
+	jal	x0, beq_cont.33317
+beq_else.33316:
 	fmul	fa6, fa1, fa2
 	lw	a4, 36(a5)
 	flw	fa7, 0(a4)
@@ -5158,79 +5394,79 @@ beq_else.32792:
 	flw	fa1, 0(a4)
 	fmul	fa0, fa0, fa1
 	fadd	fa0, fa2, fa0
-beq_cont.32793:
+beq_cont.33317:
 	lw	a4, 4(a5)
 	addi	t6, x0, 3
-	bne	a4, t6, beq_else.32794 # size : 28
-	luil	a4, l.26867
+	bne	a4, t6, beq_else.33318 # size : 28
+	luil	a4, l.27213
 	srli	a4, a4, 1
-	addil	a4, a4, l.26867
+	addil	a4, a4, l.27213
 	flw	fa1, 0(a4)
 	fsub	fa0, fa0, fa1
-	jal	x0, beq_cont.32795
-beq_else.32794:
-beq_cont.32795:
+	jal	x0, beq_cont.33319
+beq_else.33318:
+beq_cont.33319:
 	fmul	fa1, fa4, fa4
 	fmul	fa0, fa3, fa0
 	fsub	fa0, fa1, fa0
 	fsgnjn	fs11, fa0, fa0
 	flt	a4, fs11, fa0
-	bne	a4, x0, beq_else.32796 # size : 4
+	bne	a4, x0, beq_else.33320 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32797
-beq_else.32796:
+	jal	x0, beq_cont.33321
+beq_else.33320:
 	fsqrt	fa0, fa0
 	lw	a4, 24(a5)
-	bne	a4, x0, beq_else.32798 # size : 4
+	bne	a4, x0, beq_else.33322 # size : 4
 	fsgnjn	fa0, fa0, fa0
-	jal	x0, beq_cont.32799
-beq_else.32798:
-beq_cont.32799:
+	jal	x0, beq_cont.33323
+beq_else.33322:
+beq_cont.33323:
 	addi	a4, x0, 796
 	fsub	fa0, fa0, fa4
 	fdiv	fa0, fa0, fa3
 	fsw	fa0, 0(a4) 
 	addi	a4, x0, 1
-beq_cont.32797:
-	jal	x0, beq_cont.32789
-beq_else.32788:
+beq_cont.33321:
+	jal	x0, beq_cont.33313
+beq_else.33312:
 	addi	a4, x0, 0
-beq_cont.32789:
-beq_cont.32783:
-beq_cont.32739:
-	bne	a4, x0, be_else.32800 # size : 92
+beq_cont.33313:
+beq_cont.33307:
+beq_cont.33263:
+	bne	a4, x0, be_else.33324 # size : 92
 	slli	a3, a3, 2
 	addi	a3, a3, 304
 	lw	a3, 0(a3)
 	lw	a3, 24(a3)
-	bne	a3, x0, be_else.32801 # size : 0
+	bne	a3, x0, be_else.33325 # size : 0
 	jalr	x0, ra, 0
-be_else.32801:
+be_else.33325:
 	addi	a0, a0, 1
-	jal	x0, solve_each_element.3139 
-be_else.32800:
+	jal	x0, solve_each_element.3143 
+be_else.33324:
 	addi	a5, x0, 796
 	flw	fa0, 0(a5)
-	luil	a5, l.26808
+	luil	a5, l.27154
 	srli	a5, a5, 1
-	addil	a5, a5, l.26808
+	addil	a5, a5, l.27154
 	flw	fa1, 0(a5)
 	flt	a5, fa1, fa0
-	sw	a2, -0(sp) # Save dirvec.3142
-	sw	a1, -4(sp) # Save and_group.3141
-	sw	a0, -8(sp) # Save iand_ofs.3140
-	bne	a5, x0, beq_else.32803 # size : 0
-	jal	x0, beq_cont.32804
-beq_else.32803:
+	sw	a2, -0(sp) # Save dirvec.3146
+	sw	a1, -4(sp) # Save and_group.3145
+	sw	a0, -8(sp) # Save iand_ofs.3144
+	bne	a5, x0, beq_else.33327 # size : 0
+	jal	x0, beq_cont.33328
+beq_else.33327:
 	addi	a5, x0, 804
 	flw	fa1, 0(a5)
 	flt	a5, fa0, fa1
-	bne	a5, x0, beq_else.32805 # size : 0
-	jal	x0, beq_cont.32806
-beq_else.32805:
-	luil	a5, l.27522
+	bne	a5, x0, beq_else.33329 # size : 0
+	jal	x0, beq_cont.33330
+beq_else.33329:
+	luil	a5, l.27923
 	srli	a5, a5, 1
-	addil	a5, a5, l.27522
+	addil	a5, a5, l.27923
 	flw	fa1, 0(a5)
 	fadd	fa0, fa0, fa1
 	addi	a5, a2 0
@@ -5254,8 +5490,8 @@ beq_else.32805:
 	flw	fa4, 0(a5)
 	fadd	fa3, fa3, fa4
 	addi	a5, x0, 0
-	sw	a4, -12(sp) # Save t0.4711
-	sw	a3, -16(sp) # Save iobj.4709
+	sw	a4, -12(sp) # Save t0.4715
+	sw	a3, -16(sp) # Save iobj.4713
 	fsw	fa3, -20(sp)
 	fsw	fa2, -24(sp)
 	fsw	fa1, -28(sp)
@@ -5266,12 +5502,12 @@ beq_else.32805:
 	fsgnj	fa2, fa3, fa3
 	sw	ra, -40(sp)
 	addi	sp, sp, -44
-	jal	ra, check_all_inside.3124
+	jal	ra, check_all_inside.3128
 	addi	sp, sp, 44
 	lw	ra, -40(sp)
-	bne	a0, x0, beq_else.32807 # size : 0
-	jal	x0, beq_cont.32808
-beq_else.32807:
+	bne	a0, x0, beq_else.33331 # size : 0
+	jal	x0, beq_cont.33332
+beq_else.33331:
 	addi	a0, x0, 804
 	flw	fa0, -32(sp)
 	fsw	fa0, 0(a0) 
@@ -5286,71 +5522,71 @@ beq_else.32807:
 	flw	fa0, -20(sp)
 	fsw	fa0, 0(a0) 
 	addi	a0, x0, 820
-	lw	a1, -16(sp) # Restore iobj.4709
+	lw	a1, -16(sp) # Restore iobj.4713
 	sw	a1,0(a0) 
 	addi	a0, x0, 800
-	lw	a1, -12(sp) # Restore t0.4711
+	lw	a1, -12(sp) # Restore t0.4715
 	sw	a1,0(a0) 
-beq_cont.32808:
-beq_cont.32806:
-beq_cont.32804:
-	lw	a0, -8(sp) # Restore iand_ofs.3140
+beq_cont.33332:
+beq_cont.33330:
+beq_cont.33328:
+	lw	a0, -8(sp) # Restore iand_ofs.3144
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore and_group.3141
-	lw	a2, -0(sp) # Restore dirvec.3142
-	jal	x0, solve_each_element.3139 
-solve_one_or_network.3143: # 18684
+	lw	a1, -4(sp) # Restore and_group.3145
+	lw	a2, -0(sp) # Restore dirvec.3146
+	jal	x0, solve_each_element.3143 
+solve_one_or_network.3147: # 19636
 	slli	a3, a0, 2
 	add	a3, a1, a3
 	lw	a3, 0(a3)
 	addi	t6, x0, -1
-	bne	a3, t6, be_else.32809 # size : 0
+	bne	a3, t6, be_else.33333 # size : 0
 	jalr	x0, ra, 0
-be_else.32809:
+be_else.33333:
 	slli	a3, a3, 2
 	addi	a3, a3, 588
 	lw	a3, 0(a3)
 	addi	a4, x0, 0
-	sw	a2, -0(sp) # Save dirvec.3146
-	sw	a1, -4(sp) # Save or_group.3145
-	sw	a0, -8(sp) # Save ofs.3144
+	sw	a2, -0(sp) # Save dirvec.3150
+	sw	a1, -4(sp) # Save or_group.3149
+	sw	a0, -8(sp) # Save ofs.3148
 	addi	a1, a3, 0
 	addi	a0, a4, 0
 	sw	ra, -16(sp)
 	addi	sp, sp, -20
-	jal	ra, solve_each_element.3139
+	jal	ra, solve_each_element.3143
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-	lw	a0, -8(sp) # Restore ofs.3144
+	lw	a0, -8(sp) # Restore ofs.3148
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_group.3145
-	lw	a2, -0(sp) # Restore dirvec.3146
-	jal	x0, solve_one_or_network.3143 
-trace_or_matrix.3147: # 18784
+	lw	a1, -4(sp) # Restore or_group.3149
+	lw	a2, -0(sp) # Restore dirvec.3150
+	jal	x0, solve_one_or_network.3147 
+trace_or_matrix.3151: # 19736
 	slli	a3, a0, 2
 	add	a3, a1, a3
 	lw	a3, 0(a3)
 	addi	a4, a3 0
 	lw	a4, 0(a4)
 	addi	t6, x0, -1
-	bne	a4, t6, be_else.32811 # size : 0
+	bne	a4, t6, be_else.33335 # size : 0
 	jalr	x0, ra, 0
-be_else.32811:
-	sw	a2, -0(sp) # Save dirvec.3150
-	sw	a1, -4(sp) # Save or_network.3149
-	sw	a0, -8(sp) # Save ofs.3148
+be_else.33335:
+	sw	a2, -0(sp) # Save dirvec.3154
+	sw	a1, -4(sp) # Save or_network.3153
+	sw	a0, -8(sp) # Save ofs.3152
 	addi	t6, x0, 99
-	bne	a4, t6, beq_else.32813 # size : 72
+	bne	a4, t6, beq_else.33337 # size : 72
 	addi	a4, x0, 1
 	addi	a1, a3, 0
 	addi	a0, a4, 0
 	sw	ra, -16(sp)
 	addi	sp, sp, -20
-	jal	ra, solve_one_or_network.3143
+	jal	ra, solve_one_or_network.3147
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-	jal	x0, beq_cont.32814
-beq_else.32813:
+	jal	x0, beq_cont.33338
+beq_else.33337:
 	addi	a5, x0, 892
 	slli	a4, a4, 2
 	addi	a4, a4, 304
@@ -5374,36 +5610,36 @@ beq_else.32813:
 	fsub	fa2, fa2, fa3
 	lw	a5, 4(a4)
 	addi	t6, x0, 1
-	bne	a5, t6, beq_else.32815 # size : 1228
+	bne	a5, t6, beq_else.33339 # size : 1228
 	addi	a5, a2 0
 	flw	fa3, 0(a5)
 	fsgnjn	fs11, fa3, fa3
 	feq	a5, fs11, fa3
-	bne	a5, x0, beq_else.32817 # size : 344
+	bne	a5, x0, beq_else.33341 # size : 344
 	lw	a5, 16(a4)
 	lw	a6, 24(a4)
 	addi	a7, a2 0
 	flw	fa3, 0(a7)
 	fsgnjn	fs11, fa3, fa3
 	flt	a7, fa3, fs11
-	bne	a6, x0, beq_else.32819 # size : 4
+	bne	a6, x0, beq_else.33343 # size : 4
 	addi	a6, a7 0
-	jal	x0, beq_cont.32820
-beq_else.32819:
-	bne	a7, x0, beq_else.32821 # size : 4
+	jal	x0, beq_cont.33344
+beq_else.33343:
+	bne	a7, x0, beq_else.33345 # size : 4
 	addi	a6, x0, 1
-	jal	x0, beq_cont.32822
-beq_else.32821:
+	jal	x0, beq_cont.33346
+beq_else.33345:
 	addi	a6, x0, 0
-beq_cont.32822:
-beq_cont.32820:
+beq_cont.33346:
+beq_cont.33344:
 	addi	a7, a5 0
 	flw	fa3, 0(a7)
-	bne	a6, x0, beq_else.32823 # size : 4
+	bne	a6, x0, beq_else.33347 # size : 4
 	fsgnjn	fa3, fa3, fa3
-	jal	x0, beq_cont.32824
-beq_else.32823:
-beq_cont.32824:
+	jal	x0, beq_cont.33348
+beq_else.33347:
+beq_cont.33348:
 	fsub	fa3, fa3, fa0
 	addi	a6, a2 0
 	flw	fa4, 0(a6)
@@ -5416,10 +5652,10 @@ beq_cont.32824:
 	addi	a6, a5, 4
 	flw	fa5, 0(a6)
 	flt	a6, fa4, fa5
-	bne	a6, x0, beq_else.32825 # size : 4
+	bne	a6, x0, beq_else.33349 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32826
-beq_else.32825:
+	jal	x0, beq_cont.33350
+beq_else.33349:
 	addi	a6, a2, 8
 	flw	fa4, 0(a6)
 	fmul	fa4, fa3, fa4
@@ -5428,49 +5664,49 @@ beq_else.32825:
 	addi	a5, a5, 8
 	flw	fa5, 0(a5)
 	flt	a5, fa4, fa5
-	bne	a5, x0, beq_else.32827 # size : 4
+	bne	a5, x0, beq_else.33351 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32828
-beq_else.32827:
+	jal	x0, beq_cont.33352
+beq_else.33351:
 	addi	a5, x0, 796
 	fsw	fa3, 0(a5) 
 	addi	a5, x0, 1
-beq_cont.32828:
-beq_cont.32826:
-	jal	x0, beq_cont.32818
-beq_else.32817:
+beq_cont.33352:
+beq_cont.33350:
+	jal	x0, beq_cont.33342
+beq_else.33341:
 	addi	a5, x0, 0
-beq_cont.32818:
-	bne	a5, x0, beq_else.32829 # size : 820
+beq_cont.33342:
+	bne	a5, x0, beq_else.33353 # size : 820
 	addi	a5, a2, 4
 	flw	fa3, 0(a5)
 	fsgnjn	fs11, fa3, fa3
 	feq	a5, fs11, fa3
-	bne	a5, x0, beq_else.32831 # size : 344
+	bne	a5, x0, beq_else.33355 # size : 344
 	lw	a5, 16(a4)
 	lw	a6, 24(a4)
 	addi	a7, a2, 4
 	flw	fa3, 0(a7)
 	fsgnjn	fs11, fa3, fa3
 	flt	a7, fa3, fs11
-	bne	a6, x0, beq_else.32833 # size : 4
+	bne	a6, x0, beq_else.33357 # size : 4
 	addi	a6, a7 0
-	jal	x0, beq_cont.32834
-beq_else.32833:
-	bne	a7, x0, beq_else.32835 # size : 4
+	jal	x0, beq_cont.33358
+beq_else.33357:
+	bne	a7, x0, beq_else.33359 # size : 4
 	addi	a6, x0, 1
-	jal	x0, beq_cont.32836
-beq_else.32835:
+	jal	x0, beq_cont.33360
+beq_else.33359:
 	addi	a6, x0, 0
-beq_cont.32836:
-beq_cont.32834:
+beq_cont.33360:
+beq_cont.33358:
 	addi	a7, a5, 4
 	flw	fa3, 0(a7)
-	bne	a6, x0, beq_else.32837 # size : 4
+	bne	a6, x0, beq_else.33361 # size : 4
 	fsgnjn	fa3, fa3, fa3
-	jal	x0, beq_cont.32838
-beq_else.32837:
-beq_cont.32838:
+	jal	x0, beq_cont.33362
+beq_else.33361:
+beq_cont.33362:
 	fsub	fa3, fa3, fa1
 	addi	a6, a2, 4
 	flw	fa4, 0(a6)
@@ -5483,10 +5719,10 @@ beq_cont.32838:
 	addi	a6, a5, 8
 	flw	fa5, 0(a6)
 	flt	a6, fa4, fa5
-	bne	a6, x0, beq_else.32839 # size : 4
+	bne	a6, x0, beq_else.33363 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32840
-beq_else.32839:
+	jal	x0, beq_cont.33364
+beq_else.33363:
 	addi	a6, a2 0
 	flw	fa4, 0(a6)
 	fmul	fa4, fa3, fa4
@@ -5494,49 +5730,49 @@ beq_else.32839:
 	fsgnjx	fa4, fa4, fa4
 	flw	fa5, 0(a5)
 	flt	a5, fa4, fa5
-	bne	a5, x0, beq_else.32841 # size : 4
+	bne	a5, x0, beq_else.33365 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32842
-beq_else.32841:
+	jal	x0, beq_cont.33366
+beq_else.33365:
 	addi	a5, x0, 796
 	fsw	fa3, 0(a5) 
 	addi	a5, x0, 1
-beq_cont.32842:
-beq_cont.32840:
-	jal	x0, beq_cont.32832
-beq_else.32831:
+beq_cont.33366:
+beq_cont.33364:
+	jal	x0, beq_cont.33356
+beq_else.33355:
 	addi	a5, x0, 0
-beq_cont.32832:
-	bne	a5, x0, beq_else.32843 # size : 412
+beq_cont.33356:
+	bne	a5, x0, beq_else.33367 # size : 412
 	addi	a5, a2, 8
 	flw	fa3, 0(a5)
 	fsgnjn	fs11, fa3, fa3
 	feq	a5, fs11, fa3
-	bne	a5, x0, beq_else.32845 # size : 344
+	bne	a5, x0, beq_else.33369 # size : 344
 	lw	a5, 16(a4)
 	lw	a4, 24(a4)
 	addi	a6, a2, 8
 	flw	fa3, 0(a6)
 	fsgnjn	fs11, fa3, fa3
 	flt	a6, fa3, fs11
-	bne	a4, x0, beq_else.32847 # size : 4
+	bne	a4, x0, beq_else.33371 # size : 4
 	addi	a4, a6 0
-	jal	x0, beq_cont.32848
-beq_else.32847:
-	bne	a6, x0, beq_else.32849 # size : 4
+	jal	x0, beq_cont.33372
+beq_else.33371:
+	bne	a6, x0, beq_else.33373 # size : 4
 	addi	a4, x0, 1
-	jal	x0, beq_cont.32850
-beq_else.32849:
+	jal	x0, beq_cont.33374
+beq_else.33373:
 	addi	a4, x0, 0
-beq_cont.32850:
-beq_cont.32848:
+beq_cont.33374:
+beq_cont.33372:
 	addi	a6, a5, 8
 	flw	fa3, 0(a6)
-	bne	a4, x0, beq_else.32851 # size : 4
+	bne	a4, x0, beq_else.33375 # size : 4
 	fsgnjn	fa3, fa3, fa3
-	jal	x0, beq_cont.32852
-beq_else.32851:
-beq_cont.32852:
+	jal	x0, beq_cont.33376
+beq_else.33375:
+beq_cont.33376:
 	fsub	fa2, fa3, fa2
 	addi	a4, a2, 8
 	flw	fa3, 0(a4)
@@ -5549,10 +5785,10 @@ beq_cont.32852:
 	addi	a4, a5 0
 	flw	fa3, 0(a4)
 	flt	a4, fa0, fa3
-	bne	a4, x0, beq_else.32853 # size : 4
+	bne	a4, x0, beq_else.33377 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32854
-beq_else.32853:
+	jal	x0, beq_cont.33378
+beq_else.33377:
 	addi	a4, a2, 4
 	flw	fa0, 0(a4)
 	fmul	fa0, fa2, fa0
@@ -5561,37 +5797,37 @@ beq_else.32853:
 	addi	a4, a5, 4
 	flw	fa1, 0(a4)
 	flt	a4, fa0, fa1
-	bne	a4, x0, beq_else.32855 # size : 4
+	bne	a4, x0, beq_else.33379 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32856
-beq_else.32855:
+	jal	x0, beq_cont.33380
+beq_else.33379:
 	addi	a4, x0, 796
 	fsw	fa2, 0(a4) 
 	addi	a4, x0, 1
-beq_cont.32856:
-beq_cont.32854:
-	jal	x0, beq_cont.32846
-beq_else.32845:
+beq_cont.33380:
+beq_cont.33378:
+	jal	x0, beq_cont.33370
+beq_else.33369:
 	addi	a4, x0, 0
-beq_cont.32846:
-	bne	a4, x0, beq_else.32857 # size : 4
+beq_cont.33370:
+	bne	a4, x0, beq_else.33381 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32858
-beq_else.32857:
+	jal	x0, beq_cont.33382
+beq_else.33381:
 	addi	a4, x0, 3
-beq_cont.32858:
-	jal	x0, beq_cont.32844
-beq_else.32843:
+beq_cont.33382:
+	jal	x0, beq_cont.33368
+beq_else.33367:
 	addi	a4, x0, 2
-beq_cont.32844:
-	jal	x0, beq_cont.32830
-beq_else.32829:
+beq_cont.33368:
+	jal	x0, beq_cont.33354
+beq_else.33353:
 	addi	a4, x0, 1
-beq_cont.32830:
-	jal	x0, beq_cont.32816
-beq_else.32815:
+beq_cont.33354:
+	jal	x0, beq_cont.33340
+beq_else.33339:
 	addi	t6, x0, 2
-	bne	a5, t6, beq_else.32859 # size : 304
+	bne	a5, t6, beq_else.33383 # size : 304
 	lw	a4, 16(a4)
 	addi	a5, a2 0
 	flw	fa3, 0(a5)
@@ -5612,10 +5848,10 @@ beq_else.32815:
 	fadd	fa3, fa3, fa4
 	fsgnjn	fs11, fa3, fa3
 	flt	a5, fs11, fa3
-	bne	a5, x0, beq_else.32861 # size : 4
+	bne	a5, x0, beq_else.33385 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32862
-beq_else.32861:
+	jal	x0, beq_cont.33386
+beq_else.33385:
 	addi	a5, x0, 796
 	addi	a6, a4 0
 	flw	fa4, 0(a6)
@@ -5633,9 +5869,9 @@ beq_else.32861:
 	addi	a4, a5 0
 	fsw	fa0, 0(a4) 
 	addi	a4, x0, 1
-beq_cont.32862:
-	jal	x0, beq_cont.32860
-beq_else.32859:
+beq_cont.33386:
+	jal	x0, beq_cont.33384
+beq_else.33383:
 	addi	a5, a2 0
 	flw	fa3, 0(a5)
 	addi	a5, a2, 4
@@ -5659,10 +5895,10 @@ beq_else.32859:
 	fmul	fa7, fa7, ft0
 	fadd	fa6, fa6, fa7
 	lw	a5, 12(a4)
-	bne	a5, x0, beq_else.32863 # size : 4
+	bne	a5, x0, beq_else.33387 # size : 4
 	fsgnj	fa3, fa6, fa6
-	jal	x0, beq_cont.32864
-beq_else.32863:
+	jal	x0, beq_cont.33388
+beq_else.33387:
 	fmul	fa7, fa4, fa5
 	lw	a5, 36(a4)
 	flw	ft0, 0(a5)
@@ -5680,10 +5916,10 @@ beq_else.32863:
 	flw	fa4, 0(a5)
 	fmul	fa3, fa3, fa4
 	fadd	fa3, fa5, fa3
-beq_cont.32864:
+beq_cont.33388:
 	fsgnjn	fs11, fa3, fa3
 	feq	a5, fs11, fa3
-	bne	a5, x0, beq_else.32865 # size : 920
+	bne	a5, x0, beq_else.33389 # size : 928
 	addi	a5, a2 0
 	flw	fa4, 0(a5)
 	addi	a5, a2, 4
@@ -5707,10 +5943,10 @@ beq_cont.32864:
 	fmul	ft0, ft0, ft1
 	fadd	fa7, fa7, ft0
 	lw	a5, 12(a4)
-	bne	a5, x0, beq_else.32867 # size : 4
+	bne	a5, x0, beq_else.33391 # size : 4
 	fsgnj	fa4, fa7, fa7
-	jal	x0, beq_cont.32868
-beq_else.32867:
+	jal	x0, beq_cont.33392
+beq_else.33391:
 	fmul	ft0, fa6, fa1
 	fmul	ft1, fa5, fa2
 	fadd	ft0, ft0, ft1
@@ -5733,13 +5969,13 @@ beq_else.32867:
 	flw	fa5, 0(a5)
 	fmul	fa4, fa4, fa5
 	fadd	fa4, fa6, fa4
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa4, fa4, fs11
+	luil	a5, l.001
+	srli	a5, a5, 1
+	addil	a5, a5, l.001
+	flw	fa5, 0(a5)
+	fmul	fa4, fa4, fa5
 	fadd	fa4, fa7, fa4
-beq_cont.32868:
+beq_cont.33392:
 	fmul	fa5, fa0, fa0
 	lw	a5, 16(a4)
 	flw	fa6, 0(a5)
@@ -5757,10 +5993,10 @@ beq_cont.32868:
 	fmul	fa6, fa6, fa7
 	fadd	fa5, fa5, fa6
 	lw	a5, 12(a4)
-	bne	a5, x0, beq_else.32869 # size : 4
+	bne	a5, x0, beq_else.33393 # size : 4
 	fsgnj	fa0, fa5, fa5
-	jal	x0, beq_cont.32870
-beq_else.32869:
+	jal	x0, beq_cont.33394
+beq_else.33393:
 	fmul	fa6, fa1, fa2
 	lw	a5, 36(a4)
 	flw	fa7, 0(a5)
@@ -5778,82 +6014,82 @@ beq_else.32869:
 	flw	fa1, 0(a5)
 	fmul	fa0, fa0, fa1
 	fadd	fa0, fa2, fa0
-beq_cont.32870:
+beq_cont.33394:
 	lw	a5, 4(a4)
 	addi	t6, x0, 3
-	bne	a5, t6, beq_else.32871 # size : 28
-	luil	a5, l.26867
+	bne	a5, t6, beq_else.33395 # size : 28
+	luil	a5, l.27213
 	srli	a5, a5, 1
-	addil	a5, a5, l.26867
+	addil	a5, a5, l.27213
 	flw	fa1, 0(a5)
 	fsub	fa0, fa0, fa1
-	jal	x0, beq_cont.32872
-beq_else.32871:
-beq_cont.32872:
+	jal	x0, beq_cont.33396
+beq_else.33395:
+beq_cont.33396:
 	fmul	fa1, fa4, fa4
 	fmul	fa0, fa3, fa0
 	fsub	fa0, fa1, fa0
 	fsgnjn	fs11, fa0, fa0
 	flt	a5, fs11, fa0
-	bne	a5, x0, beq_else.32873 # size : 4
+	bne	a5, x0, beq_else.33397 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32874
-beq_else.32873:
+	jal	x0, beq_cont.33398
+beq_else.33397:
 	fsqrt	fa0, fa0
 	lw	a4, 24(a4)
-	bne	a4, x0, beq_else.32875 # size : 4
+	bne	a4, x0, beq_else.33399 # size : 4
 	fsgnjn	fa0, fa0, fa0
-	jal	x0, beq_cont.32876
-beq_else.32875:
-beq_cont.32876:
+	jal	x0, beq_cont.33400
+beq_else.33399:
+beq_cont.33400:
 	addi	a4, x0, 796
 	fsub	fa0, fa0, fa4
 	fdiv	fa0, fa0, fa3
 	fsw	fa0, 0(a4) 
 	addi	a4, x0, 1
-beq_cont.32874:
-	jal	x0, beq_cont.32866
-beq_else.32865:
+beq_cont.33398:
+	jal	x0, beq_cont.33390
+beq_else.33389:
 	addi	a4, x0, 0
-beq_cont.32866:
-beq_cont.32860:
-beq_cont.32816:
-	bne	a4, x0, beq_else.32877 # size : 0
-	jal	x0, beq_cont.32878
-beq_else.32877:
+beq_cont.33390:
+beq_cont.33384:
+beq_cont.33340:
+	bne	a4, x0, beq_else.33401 # size : 0
+	jal	x0, beq_cont.33402
+beq_else.33401:
 	addi	a4, x0, 796
 	flw	fa0, 0(a4)
 	addi	a4, x0, 804
 	flw	fa1, 0(a4)
 	flt	a4, fa0, fa1
-	bne	a4, x0, beq_else.32879 # size : 0
-	jal	x0, beq_cont.32880
-beq_else.32879:
+	bne	a4, x0, beq_else.33403 # size : 0
+	jal	x0, beq_cont.33404
+beq_else.33403:
 	addi	a4, x0, 1
 	addi	a1, a3, 0
 	addi	a0, a4, 0
 	sw	ra, -16(sp)
 	addi	sp, sp, -20
-	jal	ra, solve_one_or_network.3143
+	jal	ra, solve_one_or_network.3147
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-beq_cont.32880:
-beq_cont.32878:
-beq_cont.32814:
-	lw	a0, -8(sp) # Restore ofs.3148
+beq_cont.33404:
+beq_cont.33402:
+beq_cont.33338:
+	lw	a0, -8(sp) # Restore ofs.3152
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_network.3149
-	lw	a2, -0(sp) # Restore dirvec.3150
-	jal	x0, trace_or_matrix.3147 
-solve_each_element_fast.3153: # 20580
+	lw	a1, -4(sp) # Restore or_network.3153
+	lw	a2, -0(sp) # Restore dirvec.3154
+	jal	x0, trace_or_matrix.3151 
+solve_each_element_fast.3157: # 21532
 	lw	a3, 0(a2)
 	slli	a4, a0, 2
 	add	a4, a1, a4
 	lw	a4, 0(a4)
 	addi	t6, x0, -1
-	bne	a4, t6, be_else.32881 # size : 0
+	bne	a4, t6, be_else.33405 # size : 0
 	jalr	x0, ra, 0
-be_else.32881:
+be_else.33405:
 	slli	a5, a4, 2
 	addi	a5, a5, 304
 	lw	a5, 0(a5)
@@ -5870,7 +6106,7 @@ be_else.32881:
 	lw	a7, 0(a7)
 	lw	s0, 4(a5)
 	addi	t6, x0, 1
-	bne	s0, t6, beq_else.32883 # size : 960
+	bne	s0, t6, beq_else.33407 # size : 960
 	lw	a6, 0(a2)
 	addi	s0, a7 0
 	flw	fa3, 0(s0)
@@ -5887,10 +6123,10 @@ be_else.32881:
 	addi	s0, s0, 4
 	flw	fa5, 0(s0)
 	flt	s0, fa4, fa5
-	bne	s0, x0, beq_else.32885 # size : 4
+	bne	s0, x0, beq_else.33409 # size : 4
 	addi	s0, x0, 0
-	jal	x0, beq_cont.32886
-beq_else.32885:
+	jal	x0, beq_cont.33410
+beq_else.33409:
 	addi	s0, a6, 8
 	flw	fa4, 0(s0)
 	fmul	fa4, fa3, fa4
@@ -5900,23 +6136,23 @@ beq_else.32885:
 	addi	s0, s0, 8
 	flw	fa5, 0(s0)
 	flt	s0, fa4, fa5
-	bne	s0, x0, beq_else.32887 # size : 4
+	bne	s0, x0, beq_else.33411 # size : 4
 	addi	s0, x0, 0
-	jal	x0, beq_cont.32888
-beq_else.32887:
+	jal	x0, beq_cont.33412
+beq_else.33411:
 	addi	s0, a7, 4
 	flw	fa4, 0(s0)
 	fsgnjn	fs11, fa4, fa4
 	feq	s0, fs11, fa4
-	bne	s0, x0, beq_else.32889 # size : 4
+	bne	s0, x0, beq_else.33413 # size : 4
 	addi	s0, x0, 1
-	jal	x0, beq_cont.32890
-beq_else.32889:
+	jal	x0, beq_cont.33414
+beq_else.33413:
 	addi	s0, x0, 0
-beq_cont.32890:
-beq_cont.32888:
-beq_cont.32886:
-	bne	s0, x0, beq_else.32891 # size : 636
+beq_cont.33414:
+beq_cont.33412:
+beq_cont.33410:
+	bne	s0, x0, beq_else.33415 # size : 636
 	addi	s0, a7, 8
 	flw	fa3, 0(s0)
 	fsub	fa3, fa3, fa1
@@ -5931,10 +6167,10 @@ beq_cont.32886:
 	lw	s0, 16(a5)
 	flw	fa5, 0(s0)
 	flt	s0, fa4, fa5
-	bne	s0, x0, beq_else.32893 # size : 4
+	bne	s0, x0, beq_else.33417 # size : 4
 	addi	s0, x0, 0
-	jal	x0, beq_cont.32894
-beq_else.32893:
+	jal	x0, beq_cont.33418
+beq_else.33417:
 	addi	s0, a6, 8
 	flw	fa4, 0(s0)
 	fmul	fa4, fa3, fa4
@@ -5944,23 +6180,23 @@ beq_else.32893:
 	addi	s0, s0, 8
 	flw	fa5, 0(s0)
 	flt	s0, fa4, fa5
-	bne	s0, x0, beq_else.32895 # size : 4
+	bne	s0, x0, beq_else.33419 # size : 4
 	addi	s0, x0, 0
-	jal	x0, beq_cont.32896
-beq_else.32895:
+	jal	x0, beq_cont.33420
+beq_else.33419:
 	addi	s0, a7, 12
 	flw	fa4, 0(s0)
 	fsgnjn	fs11, fa4, fa4
 	feq	s0, fs11, fa4
-	bne	s0, x0, beq_else.32897 # size : 4
+	bne	s0, x0, beq_else.33421 # size : 4
 	addi	s0, x0, 1
-	jal	x0, beq_cont.32898
-beq_else.32897:
+	jal	x0, beq_cont.33422
+beq_else.33421:
 	addi	s0, x0, 0
-beq_cont.32898:
-beq_cont.32896:
-beq_cont.32894:
-	bne	s0, x0, beq_else.32899 # size : 320
+beq_cont.33422:
+beq_cont.33420:
+beq_cont.33418:
+	bne	s0, x0, beq_else.33423 # size : 320
 	addi	s0, a7, 16
 	flw	fa3, 0(s0)
 	fsub	fa2, fa3, fa2
@@ -5975,10 +6211,10 @@ beq_cont.32894:
 	lw	s0, 16(a5)
 	flw	fa3, 0(s0)
 	flt	s0, fa0, fa3
-	bne	s0, x0, beq_else.32901 # size : 4
+	bne	s0, x0, beq_else.33425 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32902
-beq_else.32901:
+	jal	x0, beq_cont.33426
+beq_else.33425:
 	addi	a6, a6, 4
 	flw	fa0, 0(a6)
 	fmul	fa0, fa2, fa0
@@ -5988,54 +6224,54 @@ beq_else.32901:
 	addi	a5, a5, 4
 	flw	fa1, 0(a5)
 	flt	a5, fa0, fa1
-	bne	a5, x0, beq_else.32903 # size : 4
+	bne	a5, x0, beq_else.33427 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32904
-beq_else.32903:
+	jal	x0, beq_cont.33428
+beq_else.33427:
 	addi	a5, a7, 20
 	flw	fa0, 0(a5)
 	fsgnjn	fs11, fa0, fa0
 	feq	a5, fs11, fa0
-	bne	a5, x0, beq_else.32905 # size : 4
+	bne	a5, x0, beq_else.33429 # size : 4
 	addi	a5, x0, 1
-	jal	x0, beq_cont.32906
-beq_else.32905:
+	jal	x0, beq_cont.33430
+beq_else.33429:
 	addi	a5, x0, 0
-beq_cont.32906:
-beq_cont.32904:
-beq_cont.32902:
-	bne	a5, x0, beq_else.32907 # size : 4
+beq_cont.33430:
+beq_cont.33428:
+beq_cont.33426:
+	bne	a5, x0, beq_else.33431 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32908
-beq_else.32907:
+	jal	x0, beq_cont.33432
+beq_else.33431:
 	addi	a5, x0, 796
 	fsw	fa2, 0(a5) 
 	addi	a5, x0, 3
-beq_cont.32908:
-	jal	x0, beq_cont.32900
-beq_else.32899:
+beq_cont.33432:
+	jal	x0, beq_cont.33424
+beq_else.33423:
 	addi	a5, x0, 796
 	fsw	fa3, 0(a5) 
 	addi	a5, x0, 2
-beq_cont.32900:
-	jal	x0, beq_cont.32892
-beq_else.32891:
+beq_cont.33424:
+	jal	x0, beq_cont.33416
+beq_else.33415:
 	addi	a5, x0, 796
 	fsw	fa3, 0(a5) 
 	addi	a5, x0, 1
-beq_cont.32892:
-	jal	x0, beq_cont.32884
-beq_else.32883:
+beq_cont.33416:
+	jal	x0, beq_cont.33408
+beq_else.33407:
 	addi	t6, x0, 2
-	bne	s0, t6, beq_else.32909 # size : 112
+	bne	s0, t6, beq_else.33433 # size : 112
 	addi	a5, a7 0
 	flw	fa0, 0(a5)
 	fsgnjn	fs11, fa0, fa0
 	flt	a5, fa0, fs11
-	bne	a5, x0, beq_else.32911 # size : 4
+	bne	a5, x0, beq_else.33435 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32912
-beq_else.32911:
+	jal	x0, beq_cont.33436
+beq_else.33435:
 	addi	a5, x0, 796
 	flw	fa0, 0(a7)
 	addi	a6, a6, 12
@@ -6043,14 +6279,14 @@ beq_else.32911:
 	fmul	fa0, fa0, fa1
 	fsw	fa0, 0(a5) 
 	addi	a5, x0, 1
-beq_cont.32912:
-	jal	x0, beq_cont.32910
-beq_else.32909:
+beq_cont.33436:
+	jal	x0, beq_cont.33434
+beq_else.33433:
 	addi	s0, a7 0
 	flw	fa3, 0(s0)
 	fsgnjn	fs11, fa3, fa3
 	feq	s0, fs11, fa3
-	bne	s0, x0, beq_else.32913 # size : 304
+	bne	s0, x0, beq_else.33437 # size : 304
 	addi	s0, a7, 4
 	flw	fa4, 0(s0)
 	fmul	fa0, fa4, fa0
@@ -6069,12 +6305,12 @@ beq_else.32909:
 	fsub	fa1, fa2, fa1
 	fsgnjn	fs11, fa1, fa1
 	flt	a6, fs11, fa1
-	bne	a6, x0, beq_else.32915 # size : 4
+	bne	a6, x0, beq_else.33439 # size : 4
 	addi	a5, x0, 0
-	jal	x0, beq_cont.32916
-beq_else.32915:
+	jal	x0, beq_cont.33440
+beq_else.33439:
 	lw	a5, 24(a5)
-	bne	a5, x0, beq_else.32917 # size : 60
+	bne	a5, x0, beq_else.33441 # size : 60
 	addi	a5, x0, 796
 	fsqrt	fa1, fa1
 	fsub	fa0, fa0, fa1
@@ -6082,8 +6318,8 @@ beq_else.32915:
 	flw	fa1, 0(a6)
 	fmul	fa0, fa0, fa1
 	fsw	fa0, 0(a5) 
-	jal	x0, beq_cont.32918
-beq_else.32917:
+	jal	x0, beq_cont.33442
+beq_else.33441:
 	addi	a5, x0, 796
 	fsqrt	fa1, fa1
 	fadd	fa0, fa0, fa1
@@ -6091,48 +6327,48 @@ beq_else.32917:
 	flw	fa1, 0(a6)
 	fmul	fa0, fa0, fa1
 	fsw	fa0, 0(a5) 
-beq_cont.32918:
+beq_cont.33442:
 	addi	a5, x0, 1
-beq_cont.32916:
-	jal	x0, beq_cont.32914
-beq_else.32913:
+beq_cont.33440:
+	jal	x0, beq_cont.33438
+beq_else.33437:
 	addi	a5, x0, 0
-beq_cont.32914:
-beq_cont.32910:
-beq_cont.32884:
-	bne	a5, x0, be_else.32919 # size : 92
+beq_cont.33438:
+beq_cont.33434:
+beq_cont.33408:
+	bne	a5, x0, be_else.33443 # size : 92
 	slli	a3, a4, 2
 	addi	a3, a3, 304
 	lw	a3, 0(a3)
 	lw	a3, 24(a3)
-	bne	a3, x0, be_else.32920 # size : 0
+	bne	a3, x0, be_else.33444 # size : 0
 	jalr	x0, ra, 0
-be_else.32920:
+be_else.33444:
 	addi	a0, a0, 1
-	jal	x0, solve_each_element_fast.3153 
-be_else.32919:
+	jal	x0, solve_each_element_fast.3157 
+be_else.33443:
 	addi	a6, x0, 796
 	flw	fa0, 0(a6)
-	luil	a6, l.26808
+	luil	a6, l.27154
 	srli	a6, a6, 1
-	addil	a6, a6, l.26808
+	addil	a6, a6, l.27154
 	flw	fa1, 0(a6)
 	flt	a6, fa1, fa0
-	sw	a2, -0(sp) # Save dirvec.3156
-	sw	a1, -4(sp) # Save and_group.3155
-	sw	a0, -8(sp) # Save iand_ofs.3154
-	bne	a6, x0, beq_else.32922 # size : 0
-	jal	x0, beq_cont.32923
-beq_else.32922:
+	sw	a2, -0(sp) # Save dirvec.3160
+	sw	a1, -4(sp) # Save and_group.3159
+	sw	a0, -8(sp) # Save iand_ofs.3158
+	bne	a6, x0, beq_else.33446 # size : 0
+	jal	x0, beq_cont.33447
+beq_else.33446:
 	addi	a6, x0, 804
 	flw	fa1, 0(a6)
 	flt	a6, fa0, fa1
-	bne	a6, x0, beq_else.32924 # size : 0
-	jal	x0, beq_cont.32925
-beq_else.32924:
-	luil	a6, l.27522
+	bne	a6, x0, beq_else.33448 # size : 0
+	jal	x0, beq_cont.33449
+beq_else.33448:
+	luil	a6, l.27923
 	srli	a6, a6, 1
-	addil	a6, a6, l.27522
+	addil	a6, a6, l.27923
 	flw	fa1, 0(a6)
 	fadd	fa0, fa0, fa1
 	addi	a6, a3 0
@@ -6156,8 +6392,8 @@ beq_else.32924:
 	flw	fa4, 0(a3)
 	fadd	fa3, fa3, fa4
 	addi	a3, x0, 0
-	sw	a5, -12(sp) # Save t0.4603
-	sw	a4, -16(sp) # Save iobj.4601
+	sw	a5, -12(sp) # Save t0.4607
+	sw	a4, -16(sp) # Save iobj.4605
 	fsw	fa3, -20(sp)
 	fsw	fa2, -24(sp)
 	fsw	fa1, -28(sp)
@@ -6168,12 +6404,12 @@ beq_else.32924:
 	fsgnj	fa2, fa3, fa3
 	sw	ra, -40(sp)
 	addi	sp, sp, -44
-	jal	ra, check_all_inside.3124
+	jal	ra, check_all_inside.3128
 	addi	sp, sp, 44
 	lw	ra, -40(sp)
-	bne	a0, x0, beq_else.32926 # size : 0
-	jal	x0, beq_cont.32927
-beq_else.32926:
+	bne	a0, x0, beq_else.33450 # size : 0
+	jal	x0, beq_cont.33451
+beq_else.33450:
 	addi	a0, x0, 804
 	flw	fa0, -32(sp)
 	fsw	fa0, 0(a0) 
@@ -6188,71 +6424,71 @@ beq_else.32926:
 	flw	fa0, -20(sp)
 	fsw	fa0, 0(a0) 
 	addi	a0, x0, 820
-	lw	a1, -16(sp) # Restore iobj.4601
+	lw	a1, -16(sp) # Restore iobj.4605
 	sw	a1,0(a0) 
 	addi	a0, x0, 800
-	lw	a1, -12(sp) # Restore t0.4603
+	lw	a1, -12(sp) # Restore t0.4607
 	sw	a1,0(a0) 
-beq_cont.32927:
-beq_cont.32925:
-beq_cont.32923:
-	lw	a0, -8(sp) # Restore iand_ofs.3154
+beq_cont.33451:
+beq_cont.33449:
+beq_cont.33447:
+	lw	a0, -8(sp) # Restore iand_ofs.3158
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore and_group.3155
-	lw	a2, -0(sp) # Restore dirvec.3156
-	jal	x0, solve_each_element_fast.3153 
-solve_one_or_network_fast.3157: # 21820
+	lw	a1, -4(sp) # Restore and_group.3159
+	lw	a2, -0(sp) # Restore dirvec.3160
+	jal	x0, solve_each_element_fast.3157 
+solve_one_or_network_fast.3161: # 22772
 	slli	a3, a0, 2
 	add	a3, a1, a3
 	lw	a3, 0(a3)
 	addi	t6, x0, -1
-	bne	a3, t6, be_else.32928 # size : 0
+	bne	a3, t6, be_else.33452 # size : 0
 	jalr	x0, ra, 0
-be_else.32928:
+be_else.33452:
 	slli	a3, a3, 2
 	addi	a3, a3, 588
 	lw	a3, 0(a3)
 	addi	a4, x0, 0
-	sw	a2, -0(sp) # Save dirvec.3160
-	sw	a1, -4(sp) # Save or_group.3159
-	sw	a0, -8(sp) # Save ofs.3158
+	sw	a2, -0(sp) # Save dirvec.3164
+	sw	a1, -4(sp) # Save or_group.3163
+	sw	a0, -8(sp) # Save ofs.3162
 	addi	a1, a3, 0
 	addi	a0, a4, 0
 	sw	ra, -16(sp)
 	addi	sp, sp, -20
-	jal	ra, solve_each_element_fast.3153
+	jal	ra, solve_each_element_fast.3157
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-	lw	a0, -8(sp) # Restore ofs.3158
+	lw	a0, -8(sp) # Restore ofs.3162
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_group.3159
-	lw	a2, -0(sp) # Restore dirvec.3160
-	jal	x0, solve_one_or_network_fast.3157 
-trace_or_matrix_fast.3161: # 21920
+	lw	a1, -4(sp) # Restore or_group.3163
+	lw	a2, -0(sp) # Restore dirvec.3164
+	jal	x0, solve_one_or_network_fast.3161 
+trace_or_matrix_fast.3165: # 22872
 	slli	a3, a0, 2
 	add	a3, a1, a3
 	lw	a3, 0(a3)
 	addi	a4, a3 0
 	lw	a4, 0(a4)
 	addi	t6, x0, -1
-	bne	a4, t6, be_else.32930 # size : 0
+	bne	a4, t6, be_else.33454 # size : 0
 	jalr	x0, ra, 0
-be_else.32930:
-	sw	a2, -0(sp) # Save dirvec.3164
-	sw	a1, -4(sp) # Save or_network.3163
-	sw	a0, -8(sp) # Save ofs.3162
+be_else.33454:
+	sw	a2, -0(sp) # Save dirvec.3168
+	sw	a1, -4(sp) # Save or_network.3167
+	sw	a0, -8(sp) # Save ofs.3166
 	addi	t6, x0, 99
-	bne	a4, t6, beq_else.32932 # size : 72
+	bne	a4, t6, beq_else.33456 # size : 72
 	addi	a4, x0, 1
 	addi	a1, a3, 0
 	addi	a0, a4, 0
 	sw	ra, -16(sp)
 	addi	sp, sp, -20
-	jal	ra, solve_one_or_network_fast.3157
+	jal	ra, solve_one_or_network_fast.3161
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-	jal	x0, beq_cont.32933
-beq_else.32932:
+	jal	x0, beq_cont.33457
+beq_else.33456:
 	slli	a5, a4, 2
 	addi	a5, a5, 304
 	lw	a5, 0(a5)
@@ -6269,7 +6505,7 @@ beq_else.32932:
 	lw	a4, 0(a4)
 	lw	a7, 4(a5)
 	addi	t6, x0, 1
-	bne	a7, t6, beq_else.32934 # size : 960
+	bne	a7, t6, beq_else.33458 # size : 960
 	lw	a6, 0(a2)
 	addi	a7, a4 0
 	flw	fa3, 0(a7)
@@ -6286,10 +6522,10 @@ beq_else.32932:
 	addi	a7, a7, 4
 	flw	fa5, 0(a7)
 	flt	a7, fa4, fa5
-	bne	a7, x0, beq_else.32936 # size : 4
+	bne	a7, x0, beq_else.33460 # size : 4
 	addi	a7, x0, 0
-	jal	x0, beq_cont.32937
-beq_else.32936:
+	jal	x0, beq_cont.33461
+beq_else.33460:
 	addi	a7, a6, 8
 	flw	fa4, 0(a7)
 	fmul	fa4, fa3, fa4
@@ -6299,23 +6535,23 @@ beq_else.32936:
 	addi	a7, a7, 8
 	flw	fa5, 0(a7)
 	flt	a7, fa4, fa5
-	bne	a7, x0, beq_else.32938 # size : 4
+	bne	a7, x0, beq_else.33462 # size : 4
 	addi	a7, x0, 0
-	jal	x0, beq_cont.32939
-beq_else.32938:
+	jal	x0, beq_cont.33463
+beq_else.33462:
 	addi	a7, a4, 4
 	flw	fa4, 0(a7)
 	fsgnjn	fs11, fa4, fa4
 	feq	a7, fs11, fa4
-	bne	a7, x0, beq_else.32940 # size : 4
+	bne	a7, x0, beq_else.33464 # size : 4
 	addi	a7, x0, 1
-	jal	x0, beq_cont.32941
-beq_else.32940:
+	jal	x0, beq_cont.33465
+beq_else.33464:
 	addi	a7, x0, 0
-beq_cont.32941:
-beq_cont.32939:
-beq_cont.32937:
-	bne	a7, x0, beq_else.32942 # size : 636
+beq_cont.33465:
+beq_cont.33463:
+beq_cont.33461:
+	bne	a7, x0, beq_else.33466 # size : 636
 	addi	a7, a4, 8
 	flw	fa3, 0(a7)
 	fsub	fa3, fa3, fa1
@@ -6330,10 +6566,10 @@ beq_cont.32937:
 	lw	a7, 16(a5)
 	flw	fa5, 0(a7)
 	flt	a7, fa4, fa5
-	bne	a7, x0, beq_else.32944 # size : 4
+	bne	a7, x0, beq_else.33468 # size : 4
 	addi	a7, x0, 0
-	jal	x0, beq_cont.32945
-beq_else.32944:
+	jal	x0, beq_cont.33469
+beq_else.33468:
 	addi	a7, a6, 8
 	flw	fa4, 0(a7)
 	fmul	fa4, fa3, fa4
@@ -6343,23 +6579,23 @@ beq_else.32944:
 	addi	a7, a7, 8
 	flw	fa5, 0(a7)
 	flt	a7, fa4, fa5
-	bne	a7, x0, beq_else.32946 # size : 4
+	bne	a7, x0, beq_else.33470 # size : 4
 	addi	a7, x0, 0
-	jal	x0, beq_cont.32947
-beq_else.32946:
+	jal	x0, beq_cont.33471
+beq_else.33470:
 	addi	a7, a4, 12
 	flw	fa4, 0(a7)
 	fsgnjn	fs11, fa4, fa4
 	feq	a7, fs11, fa4
-	bne	a7, x0, beq_else.32948 # size : 4
+	bne	a7, x0, beq_else.33472 # size : 4
 	addi	a7, x0, 1
-	jal	x0, beq_cont.32949
-beq_else.32948:
+	jal	x0, beq_cont.33473
+beq_else.33472:
 	addi	a7, x0, 0
-beq_cont.32949:
-beq_cont.32947:
-beq_cont.32945:
-	bne	a7, x0, beq_else.32950 # size : 320
+beq_cont.33473:
+beq_cont.33471:
+beq_cont.33469:
+	bne	a7, x0, beq_else.33474 # size : 320
 	addi	a7, a4, 16
 	flw	fa3, 0(a7)
 	fsub	fa2, fa3, fa2
@@ -6374,10 +6610,10 @@ beq_cont.32945:
 	lw	a7, 16(a5)
 	flw	fa3, 0(a7)
 	flt	a7, fa0, fa3
-	bne	a7, x0, beq_else.32952 # size : 4
+	bne	a7, x0, beq_else.33476 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32953
-beq_else.32952:
+	jal	x0, beq_cont.33477
+beq_else.33476:
 	addi	a6, a6, 4
 	flw	fa0, 0(a6)
 	fmul	fa0, fa2, fa0
@@ -6387,54 +6623,54 @@ beq_else.32952:
 	addi	a5, a5, 4
 	flw	fa1, 0(a5)
 	flt	a5, fa0, fa1
-	bne	a5, x0, beq_else.32954 # size : 4
+	bne	a5, x0, beq_else.33478 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32955
-beq_else.32954:
+	jal	x0, beq_cont.33479
+beq_else.33478:
 	addi	a4, a4, 20
 	flw	fa0, 0(a4)
 	fsgnjn	fs11, fa0, fa0
 	feq	a4, fs11, fa0
-	bne	a4, x0, beq_else.32956 # size : 4
+	bne	a4, x0, beq_else.33480 # size : 4
 	addi	a4, x0, 1
-	jal	x0, beq_cont.32957
-beq_else.32956:
+	jal	x0, beq_cont.33481
+beq_else.33480:
 	addi	a4, x0, 0
-beq_cont.32957:
-beq_cont.32955:
-beq_cont.32953:
-	bne	a4, x0, beq_else.32958 # size : 4
+beq_cont.33481:
+beq_cont.33479:
+beq_cont.33477:
+	bne	a4, x0, beq_else.33482 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32959
-beq_else.32958:
+	jal	x0, beq_cont.33483
+beq_else.33482:
 	addi	a4, x0, 796
 	fsw	fa2, 0(a4) 
 	addi	a4, x0, 3
-beq_cont.32959:
-	jal	x0, beq_cont.32951
-beq_else.32950:
+beq_cont.33483:
+	jal	x0, beq_cont.33475
+beq_else.33474:
 	addi	a4, x0, 796
 	fsw	fa3, 0(a4) 
 	addi	a4, x0, 2
-beq_cont.32951:
-	jal	x0, beq_cont.32943
-beq_else.32942:
+beq_cont.33475:
+	jal	x0, beq_cont.33467
+beq_else.33466:
 	addi	a4, x0, 796
 	fsw	fa3, 0(a4) 
 	addi	a4, x0, 1
-beq_cont.32943:
-	jal	x0, beq_cont.32935
-beq_else.32934:
+beq_cont.33467:
+	jal	x0, beq_cont.33459
+beq_else.33458:
 	addi	t6, x0, 2
-	bne	a7, t6, beq_else.32960 # size : 112
+	bne	a7, t6, beq_else.33484 # size : 112
 	addi	a5, a4 0
 	flw	fa0, 0(a5)
 	fsgnjn	fs11, fa0, fa0
 	flt	a5, fa0, fs11
-	bne	a5, x0, beq_else.32962 # size : 4
+	bne	a5, x0, beq_else.33486 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32963
-beq_else.32962:
+	jal	x0, beq_cont.33487
+beq_else.33486:
 	addi	a5, x0, 796
 	flw	fa0, 0(a4)
 	addi	a4, a6, 12
@@ -6443,14 +6679,14 @@ beq_else.32962:
 	addi	a4, a5 0
 	fsw	fa0, 0(a4) 
 	addi	a4, x0, 1
-beq_cont.32963:
-	jal	x0, beq_cont.32961
-beq_else.32960:
+beq_cont.33487:
+	jal	x0, beq_cont.33485
+beq_else.33484:
 	addi	a7, a4 0
 	flw	fa3, 0(a7)
 	fsgnjn	fs11, fa3, fa3
 	feq	a7, fs11, fa3
-	bne	a7, x0, beq_else.32964 # size : 304
+	bne	a7, x0, beq_else.33488 # size : 304
 	addi	a7, a4, 4
 	flw	fa4, 0(a7)
 	fmul	fa0, fa4, fa0
@@ -6469,12 +6705,12 @@ beq_else.32960:
 	fsub	fa1, fa2, fa1
 	fsgnjn	fs11, fa1, fa1
 	flt	a6, fs11, fa1
-	bne	a6, x0, beq_else.32966 # size : 4
+	bne	a6, x0, beq_else.33490 # size : 4
 	addi	a4, x0, 0
-	jal	x0, beq_cont.32967
-beq_else.32966:
+	jal	x0, beq_cont.33491
+beq_else.33490:
 	lw	a5, 24(a5)
-	bne	a5, x0, beq_else.32968 # size : 60
+	bne	a5, x0, beq_else.33492 # size : 60
 	addi	a5, x0, 796
 	fsqrt	fa1, fa1
 	fsub	fa0, fa0, fa1
@@ -6483,8 +6719,8 @@ beq_else.32966:
 	fmul	fa0, fa0, fa1
 	addi	a4, a5 0
 	fsw	fa0, 0(a4) 
-	jal	x0, beq_cont.32969
-beq_else.32968:
+	jal	x0, beq_cont.33493
+beq_else.33492:
 	addi	a5, x0, 796
 	fsqrt	fa1, fa1
 	fadd	fa0, fa0, fa1
@@ -6493,112 +6729,112 @@ beq_else.32968:
 	fmul	fa0, fa0, fa1
 	addi	a4, a5 0
 	fsw	fa0, 0(a4) 
-beq_cont.32969:
+beq_cont.33493:
 	addi	a4, x0, 1
-beq_cont.32967:
-	jal	x0, beq_cont.32965
-beq_else.32964:
+beq_cont.33491:
+	jal	x0, beq_cont.33489
+beq_else.33488:
 	addi	a4, x0, 0
-beq_cont.32965:
-beq_cont.32961:
-beq_cont.32935:
-	bne	a4, x0, beq_else.32970 # size : 0
-	jal	x0, beq_cont.32971
-beq_else.32970:
+beq_cont.33489:
+beq_cont.33485:
+beq_cont.33459:
+	bne	a4, x0, beq_else.33494 # size : 0
+	jal	x0, beq_cont.33495
+beq_else.33494:
 	addi	a4, x0, 796
 	flw	fa0, 0(a4)
 	addi	a4, x0, 804
 	flw	fa1, 0(a4)
 	flt	a4, fa0, fa1
-	bne	a4, x0, beq_else.32972 # size : 0
-	jal	x0, beq_cont.32973
-beq_else.32972:
+	bne	a4, x0, beq_else.33496 # size : 0
+	jal	x0, beq_cont.33497
+beq_else.33496:
 	addi	a4, x0, 1
 	addi	a1, a3, 0
 	addi	a0, a4, 0
 	sw	ra, -16(sp)
 	addi	sp, sp, -20
-	jal	ra, solve_one_or_network_fast.3157
+	jal	ra, solve_one_or_network_fast.3161
 	addi	sp, sp, 20
 	lw	ra, -16(sp)
-beq_cont.32973:
-beq_cont.32971:
-beq_cont.32933:
-	lw	a0, -8(sp) # Restore ofs.3162
+beq_cont.33497:
+beq_cont.33495:
+beq_cont.33457:
+	lw	a0, -8(sp) # Restore ofs.3166
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore or_network.3163
-	lw	a2, -0(sp) # Restore dirvec.3164
-	jal	x0, trace_or_matrix_fast.3161 
-trace_reflections.3183: # 22948
-	blt	a0, x0, bg_else.32974 # size : 1404
+	lw	a1, -4(sp) # Restore or_network.3167
+	lw	a2, -0(sp) # Restore dirvec.3168
+	jal	x0, trace_or_matrix_fast.3165 
+trace_reflections.3187: # 23900
+	blt	a0, x0, bg_else.33498 # size : 1404
 	slli	a2, a0, 2
 	addi	a2, a2, 1264
 	lw	a2, 0(a2)
 	lw	a3, 4(a2)
 	addi	a4, x0, 804
-	luil	a5, l.28193
+	luil	a5, l.28596
 	srli	a5, a5, 1
-	addil	a5, a5, l.28193
+	addil	a5, a5, l.28596
 	flw	fa2, 0(a5)
 	fsw	fa2, 0(a4) 
 	addi	a4, x0, 0
 	addi	a5, x0, 792
 	lw	a5, 0(a5)
-	sw	a0, -0(sp) # Save index.3184
+	sw	a0, -0(sp) # Save index.3188
 	fsw	fa1, -4(sp)
-	sw	a1, -8(sp) # Save dirvec.3187
+	sw	a1, -8(sp) # Save dirvec.3191
 	fsw	fa0, -12(sp)
-	sw	a3, -16(sp) # Save m_dvec.5989.8952
-	sw	a2, -20(sp) # Save rinfo.4235
+	sw	a3, -16(sp) # Save m_dvec.5993.8966
+	sw	a2, -20(sp) # Save rinfo.4239
 	addi	a2, a3, 0
 	addi	a1, a5, 0
 	addi	a0, a4, 0
 	sw	ra, -28(sp)
 	addi	sp, sp, -32
-	jal	ra, trace_or_matrix_fast.3161
+	jal	ra, trace_or_matrix_fast.3165
 	addi	sp, sp, 32
 	lw	ra, -28(sp)
 	addi	a0, x0, 804
 	flw	fa0, 0(a0)
-	luil	a0, l.27651
+	luil	a0, l.28052
 	srli	a0, a0, 1
-	addil	a0, a0, l.27651
+	addil	a0, a0, l.28052
 	flw	fa1, 0(a0)
 	flt	a0, fa1, fa0
-	bne	a0, x0, beq_else.32975 # size : 4
+	bne	a0, x0, beq_else.33499 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.32976
-beq_else.32975:
-	luil	a0, l.28202
+	jal	x0, beq_cont.33500
+beq_else.33499:
+	luil	a0, l.28605
 	srli	a0, a0, 1
-	addil	a0, a0, l.28202
+	addil	a0, a0, l.28605
 	flw	fa1, 0(a0)
 	flt	a0, fa0, fa1
-beq_cont.32976:
-	bne	a0, x0, beq_else.32977 # size : 0
-	jal	x0, beq_cont.32978
-beq_else.32977:
+beq_cont.33500:
+	bne	a0, x0, beq_else.33501 # size : 0
+	jal	x0, beq_cont.33502
+beq_else.33501:
 	addi	a0, x0, 820
 	lw	a0, 0(a0)
 	slli	a0, a0, 2
 	addi	a1, x0, 800
 	lw	a1, 0(a1)
 	add	a0, a0, a1
-	lw	a1, -20(sp) # Restore rinfo.4235
+	lw	a1, -20(sp) # Restore rinfo.4239
 	lw	a2, 0(a1)
-	bne	a0, a2, beq_else.32979 # size : 904
+	bne	a0, a2, beq_else.33503 # size : 904
 	addi	a0, x0, 0
 	addi	a2, x0, 792
 	lw	a2, 0(a2)
 	addi	a1, a2, 0
 	sw	ra, -28(sp)
 	addi	sp, sp, -32
-	jal	ra, shadow_check_one_or_matrix.3136
+	jal	ra, shadow_check_one_or_matrix.3140
 	addi	sp, sp, 32
 	lw	ra, -28(sp)
-	bne	a0, x0, beq_else.32981 # size : 812
+	bne	a0, x0, beq_else.33505 # size : 812
 	addi	a0, x0, 824
-	lw	a1, -16(sp) # Restore m_dvec.5989.8952
+	lw	a1, -16(sp) # Restore m_dvec.5993.8966
 	lw	a2, 0(a1)
 	addi	a3, a0 0
 	flw	fa0, 0(a3)
@@ -6617,13 +6853,13 @@ beq_else.32977:
 	flw	fa2, 0(a0)
 	fmul	fa1, fa1, fa2
 	fadd	fa0, fa0, fa1
-	lw	a0, -20(sp) # Restore rinfo.4235
+	lw	a0, -20(sp) # Restore rinfo.4239
 	flw	fa1, 8(a0)
 	flw	fa2, -12(sp)
 	fmul	fa3, fa1, fa2
 	fmul	fa0, fa3, fa0
 	lw	a0, 0(a1)
-	lw	a1, -8(sp) # Restore dirvec.3187
+	lw	a1, -8(sp) # Restore dirvec.3191
 	addi	a2, a1 0
 	flw	fa3, 0(a2)
 	addi	a2, a0 0
@@ -6644,9 +6880,9 @@ beq_else.32977:
 	fmul	fa1, fa1, fa3
 	fsgnjn	fs11, fa0, fa0
 	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.32983 # size : 0
-	jal	x0, beq_cont.32984
-beq_else.32983:
+	bne	a0, x0, beq_else.33507 # size : 0
+	jal	x0, beq_cont.33508
+beq_else.33507:
 	addi	a0, x0, 860
 	addi	a2, x0, 836
 	addi	a3, a0 0
@@ -6672,12 +6908,12 @@ beq_else.32983:
 	fmul	fa0, fa0, fa4
 	fadd	fa0, fa3, fa0
 	fsw	fa0, 8(a0) 
-beq_cont.32984:
+beq_cont.33508:
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.32985 # size : 0
-	jal	x0, beq_cont.32986
-beq_else.32985:
+	bne	a0, x0, beq_else.33509 # size : 0
+	jal	x0, beq_cont.33510
+beq_else.33509:
 	fmul	fa0, fa1, fa1
 	fmul	fa0, fa0, fa0
 	flw	fa1, -4(sp)
@@ -6700,85 +6936,82 @@ beq_else.32985:
 	flw	fa3, 0(a2)
 	fadd	fa0, fa3, fa0
 	fsw	fa0, 8(a0) 
-beq_cont.32986:
-	jal	x0, beq_cont.32982
-beq_else.32981:
-beq_cont.32982:
-	jal	x0, beq_cont.32980
-beq_else.32979:
-beq_cont.32980:
-beq_cont.32978:
-	lw	a0, -0(sp) # Restore index.3184
+beq_cont.33510:
+	jal	x0, beq_cont.33506
+beq_else.33505:
+beq_cont.33506:
+	jal	x0, beq_cont.33504
+beq_else.33503:
+beq_cont.33504:
+beq_cont.33502:
+	lw	a0, -0(sp) # Restore index.3188
 	addi	a0, a0, -1
 	flw	fa0, -12(sp)
 	flw	fa1, -4(sp)
-	lw	a1, -8(sp) # Restore dirvec.3187
-	jal	x0, trace_reflections.3183 
-bg_else.32974:
+	lw	a1, -8(sp) # Restore dirvec.3191
+	jal	x0, trace_reflections.3187 
+bg_else.33498:
 	jalr	x0, ra, 0
-trace_ray.3188: # 23640
-	flw	fa2, 4(t5)
+trace_ray.3192: # 24592
 	addi	t6, x0, 4
-	blt	t6, a0, bg_else.32988 # size : 17164
-	jal	x0, bg_sub.32989
-bg_else.32988:
+	blt	t6, a0, bg_else.33512 # size : 17628
+	jal	x0, bg_sub.33513
+bg_else.33512:
 	jalr	x0, ra, 0
-bg_sub.32989:
+bg_sub.33513:
 	lw	a3, 8(a2)
 	addi	a4, x0, 804
-	luil	a5, l.28193
+	luil	a5, l.28596
 	srli	a5, a5, 1
-	addil	a5, a5, l.28193
-	flw	fa3, 0(a5)
-	fsw	fa3, 0(a4) 
+	addil	a5, a5, l.28596
+	flw	fa2, 0(a5)
+	fsw	fa2, 0(a4) 
 	addi	a4, x0, 0
 	addi	a5, x0, 792
 	lw	a5, 0(a5)
-	sw	t5, -0(sp) # Save trace_ray.3188
-	fsw	fa1, -4(sp)
-	sw	a2, -8(sp) # Save pixel.3192
-	fsw	fa2, -12(sp)
-	fsw	fa0, -16(sp)
-	sw	a1, -20(sp) # Save dirvec.3191
-	sw	a3, -24(sp) # Save m_sids.6050.8857
-	sw	a0, -28(sp) # Save nref.3189
+	fsw	fa1, -0(sp)
+	sw	a2, -4(sp) # Save pixel.3196
+	fsw	fa0, -8(sp)
+	sw	a1, -12(sp) # Save dirvec.3195
+	sw	a3, -16(sp) # Save m_sids.6054.8871
+	sw	a0, -20(sp) # Save nref.3193
 	addi	a2, a1, 0
 	addi	a0, a4, 0
 	addi	a1, a5, 0
-	sw	ra, -36(sp)
-	addi	sp, sp, -40
-	jal	ra, trace_or_matrix.3147
-	addi	sp, sp, 40
-	lw	ra, -36(sp)
+	sw	ra, -28(sp)
+	addi	sp, sp, -32
+	jal	ra, trace_or_matrix.3151
+	addi	sp, sp, 32
+	lw	ra, -28(sp)
 	addi	a0, x0, 804
 	flw	fa0, 0(a0)
-	luil	a0, l.27651
+	luil	a0, l.28052
 	srli	a0, a0, 1
-	addil	a0, a0, l.27651
+	addil	a0, a0, l.28052
 	flw	fa1, 0(a0)
 	flt	a0, fa1, fa0
-	bne	a0, x0, beq_else.32991 # size : 4
+	bne	a0, x0, beq_else.33515 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.32992
-beq_else.32991:
-	luil	a0, l.28202
+	jal	x0, beq_cont.33516
+beq_else.33515:
+	luil	a0, l.28605
 	srli	a0, a0, 1
-	addil	a0, a0, l.28202
+	addil	a0, a0, l.28605
 	flw	fa1, 0(a0)
 	flt	a0, fa0, fa1
-beq_cont.32992:
-	bne	a0, x0, be_else.32993 # size : 472
+beq_cont.33516:
+	bne	a0, x0, be_else.33517 # size : 472
 	addi	a0, x0, -1
-	lw	a1, -28(sp) # Restore nref.3189
+	lw	a1, -20(sp) # Restore nref.3193
 	slli	a2, a1, 2
-	lw	a3, -24(sp) # Restore m_sids.6050.8857
+	lw	a3, -16(sp) # Restore m_sids.6054.8871
 	add	a2, a3, a2
 	sw	a0,0(a2) 
-	bne	a1, x0, be_else.32994 # size : 0
+	bne	a1, x0, be_else.33518 # size : 0
 	jalr	x0, ra, 0
-be_else.32994:
+be_else.33518:
 	addi	a0, x0, 568
-	lw	a1, -20(sp) # Restore dirvec.3191
+	lw	a1, -12(sp) # Restore dirvec.3195
 	addi	a2, a1 0
 	flw	fa0, 0(a2)
 	addi	a2, a0 0
@@ -6799,12 +7032,12 @@ be_else.32994:
 	fsgnjn	fa0, fa0, fa0
 	fsgnjn	fs11, fa0, fa0
 	flt	a0, fs11, fa0
-	bne	a0, x0, be_else.32996 # size : 0
+	bne	a0, x0, be_else.33520 # size : 0
 	jalr	x0, ra, 0
-be_else.32996:
+be_else.33520:
 	fmul	fa1, fa0, fa0
 	fmul	fa0, fa1, fa0
-	flw	fa1, -16(sp)
+	flw	fa1, -8(sp)
 	fmul	fa0, fa0, fa1
 	addi	a0, x0, 580
 	flw	fa1, 0(a0)
@@ -6828,7 +7061,7 @@ be_else.32996:
 	fadd	fa0, fa1, fa0
 	fsw	fa0, 8(a0) 
 	jalr	x0, ra, 0
-be_else.32993:
+be_else.33517:
 	addi	a0, x0, 820
 	lw	a0, 0(a0)
 	slli	a1, a0, 2
@@ -6837,17 +7070,17 @@ be_else.32993:
 	lw	a2, 8(a1)
 	lw	a3, 28(a1)
 	flw	fa0, 0(a3)
-	flw	fa1, -16(sp)
+	flw	fa1, -8(sp)
 	fmul	fa0, fa0, fa1
 	lw	a3, 4(a1)
 	addi	t6, x0, 1
-	bne	a3, t6, beq_else.32999 # size : 292
+	bne	a3, t6, beq_else.33523 # size : 292
 	addi	a3, x0, 800
 	lw	a3, 0(a3)
 	addi	a4, x0, 824
-	luil	a5, l.26808
+	luil	a5, l.27154
 	srli	a5, a5, 1
-	addil	a5, a5, l.26808
+	addil	a5, a5, l.27154
 	flw	fa2, 0(a5)
 	addi	a5, a4 0
 	fsw	fa2, 0(a5) 
@@ -6858,40 +7091,40 @@ be_else.32993:
 	addi	a4, a3, -1
 	addi	a3, a3, -1
 	slli	a3, a3, 2
-	lw	a5, -20(sp) # Restore dirvec.3191
+	lw	a5, -12(sp) # Restore dirvec.3195
 	add	a3, a5, a3
 	flw	fa2, 0(a3)
 	fsgnjn	fs11, fa2, fa2
 	feq	a3, fs11, fa2
-	bne	a3, x0, beq_else.33001 # size : 64
+	bne	a3, x0, beq_else.33525 # size : 64
 	fsgnjn	fs11, fa2, fa2
 	flt	a3, fs11, fa2
-	bne	a3, x0, beq_else.33003 # size : 20
-	luil	a3, l.26869
+	bne	a3, x0, beq_else.33527 # size : 20
+	luil	a3, l.27215
 	srli	a3, a3, 1
-	addil	a3, a3, l.26869
+	addil	a3, a3, l.27215
 	flw	fa2, 0(a3)
-	jal	x0, beq_cont.33004
-beq_else.33003:
-	luil	a3, l.26867
+	jal	x0, beq_cont.33528
+beq_else.33527:
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa2, 0(a3)
-beq_cont.33004:
-	jal	x0, beq_cont.33002
-beq_else.33001:
-	luil	a3, l.26808
+beq_cont.33528:
+	jal	x0, beq_cont.33526
+beq_else.33525:
+	luil	a3, l.27154
 	srli	a3, a3, 1
-	addil	a3, a3, l.26808
+	addil	a3, a3, l.27154
 	flw	fa2, 0(a3)
-beq_cont.33002:
+beq_cont.33526:
 	fsgnjn	fa2, fa2, fa2
 	slli	a3, a4, 2
 	fsw	fa2, 824(a3) 
-	jal	x0, beq_cont.33000
-beq_else.32999:
+	jal	x0, beq_cont.33524
+beq_else.33523:
 	addi	t6, x0, 2
-	bne	a3, t6, beq_else.33005 # size : 164
+	bne	a3, t6, beq_else.33529 # size : 164
 	addi	a3, x0, 824
 	lw	a4, 16(a1)
 	flw	fa2, 0(a4)
@@ -6910,8 +7143,8 @@ beq_else.32999:
 	flw	fa2, 0(a4)
 	fsgnjn	fa2, fa2, fa2
 	fsw	fa2, 8(a3) 
-	jal	x0, beq_cont.33006
-beq_else.33005:
+	jal	x0, beq_cont.33530
+beq_else.33529:
 	addi	a3, x0, 808
 	flw	fa2, 0(a3)
 	lw	a3, 20(a1)
@@ -6943,7 +7176,7 @@ beq_else.33005:
 	flw	fa7, 0(a3)
 	fmul	fa7, fa4, fa7
 	lw	a3, 12(a1)
-	bne	a3, x0, beq_else.33007 # size : 68
+	bne	a3, x0, beq_else.33531 # size : 68
 	addi	a3, x0, 824
 	fsw	fa5, 0(a3) 
 	addi	a3, x0, 824
@@ -6951,8 +7184,8 @@ beq_else.33005:
 	fsw	fa6, 0(a3) 
 	addi	a3, x0, 824
 	fsw	fa7, 8(a3) 
-	jal	x0, beq_cont.33008
-beq_else.33007:
+	jal	x0, beq_cont.33532
+beq_else.33531:
 	addi	a3, x0, 824
 	lw	a4, 36(a1)
 	addi	a4, a4, 8
@@ -6963,11 +7196,11 @@ beq_else.33007:
 	flw	ft1, 0(a4)
 	fmul	ft1, fa4, ft1
 	fadd	ft0, ft0, ft1
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	ft0, ft0, fs11
+	luil	a4, l.001
+	srli	a4, a4, 1
+	addil	a4, a4, l.001
+	flw	ft1, 0(a4)
+	fmul	ft0, ft0, ft1
 	fadd	fa5, fa5, ft0
 	fsw	fa5, 0(a3) 
 	addi	a3, x0, 824
@@ -6979,11 +7212,11 @@ beq_else.33007:
 	flw	ft0, 0(a4)
 	fmul	fa4, fa4, ft0
 	fadd	fa4, fa5, fa4
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa4, fa4, fs11
+	luil	a4, l.001
+	srli	a4, a4, 1
+	addil	a4, a4, l.001
+	flw	fa5, 0(a4)
+	fmul	fa4, fa4, fa5
 	fadd	fa4, fa6, fa4
 	addi	a3, a3, 4
 	fsw	fa4, 0(a3) 
@@ -6996,14 +7229,14 @@ beq_else.33007:
 	flw	fa4, 0(a4)
 	fmul	fa3, fa3, fa4
 	fadd	fa2, fa2, fa3
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa2, fa2, fs11
+	luil	a4, l.001
+	srli	a4, a4, 1
+	addil	a4, a4, l.001
+	flw	fa3, 0(a4)
+	fmul	fa2, fa2, fa3
 	fadd	fa2, fa7, fa2
 	fsw	fa2, 8(a3) 
-beq_cont.33008:
+beq_cont.33532:
 	addi	a3, x0, 824
 	lw	a4, 24(a1)
 	addi	a5, a3 0
@@ -7020,28 +7253,28 @@ beq_cont.33008:
 	fsqrt	fa2, fa2
 	fsgnjn	fs11, fa2, fa2
 	feq	a5, fs11, fa2
-	bne	a5, x0, beq_else.33009 # size : 68
-	bne	a4, x0, beq_else.33011 # size : 28
-	luil	a4, l.26867
+	bne	a5, x0, beq_else.33533 # size : 68
+	bne	a4, x0, beq_else.33535 # size : 28
+	luil	a4, l.27213
 	srli	a4, a4, 1
-	addil	a4, a4, l.26867
+	addil	a4, a4, l.27213
 	flw	fa3, 0(a4)
 	fdiv	fa2, fa3, fa2
-	jal	x0, beq_cont.33012
-beq_else.33011:
-	luil	a4, l.26869
+	jal	x0, beq_cont.33536
+beq_else.33535:
+	luil	a4, l.27215
 	srli	a4, a4, 1
-	addil	a4, a4, l.26869
+	addil	a4, a4, l.27215
 	flw	fa3, 0(a4)
 	fdiv	fa2, fa3, fa2
-beq_cont.33012:
-	jal	x0, beq_cont.33010
-beq_else.33009:
-	luil	a4, l.26867
+beq_cont.33536:
+	jal	x0, beq_cont.33534
+beq_else.33533:
+	luil	a4, l.27213
 	srli	a4, a4, 1
-	addil	a4, a4, l.26867
+	addil	a4, a4, l.27213
 	flw	fa2, 0(a4)
-beq_cont.33010:
+beq_cont.33534:
 	addi	a4, a3 0
 	flw	fa3, 0(a4)
 	fmul	fa3, fa3, fa2
@@ -7056,8 +7289,8 @@ beq_cont.33010:
 	flw	fa3, 0(a4)
 	fmul	fa2, fa3, fa2
 	fsw	fa2, 8(a3) 
-beq_cont.33006:
-beq_cont.33000:
+beq_cont.33530:
+beq_cont.33524:
 	addi	a3, x0, 892
 	addi	a4, x0, 808
 	addi	a5, a4 0
@@ -7090,20 +7323,20 @@ beq_cont.33000:
 	flw	fa2, 0(a6)
 	addi	a5, a5, 8
 	fsw	fa2, 0(a5) 
-	sw	a2, -32(sp) # Save m_surface.6286.8814
-	fsw	fa0, -36(sp)
-	sw	a1, -40(sp) # Save obj.4101
-	sw	a0, -44(sp) # Save obj_id.4100
+	sw	a2, -24(sp) # Save m_surface.6290.8828
+	fsw	fa0, -28(sp)
+	sw	a1, -32(sp) # Save obj.4105
+	sw	a0, -36(sp) # Save obj_id.4104
 	addi	t6, x0, 1
-	bne	a4, t6, beq_else.33013 # size : 492
+	bne	a4, t6, beq_else.33537 # size : 492
 	addi	a4, a3 0
 	flw	fa2, 0(a4)
 	lw	a4, 20(a1)
 	flw	fa3, 0(a4)
 	fsub	fa2, fa2, fa3
-	luil	a4, l.28650
+	luil	a4, l.29073
 	srli	a4, a4, 1
-	addil	a4, a4, l.28650
+	addil	a4, a4, l.29073
 	flw	fa3, 0(a4)
 	fmul	fa3, fa2, fa3
 	fcvtws	t6, fa3
@@ -7111,15 +7344,15 @@ beq_cont.33000:
 	flt	t4, fa3, fs11
 	sub	t6, t6, t4
 	fcvtsw	fa3, t6
-	luil	a4, l.28652
+	luil	a4, l.29075
 	srli	a4, a4, 1
-	addil	a4, a4, l.28652
+	addil	a4, a4, l.29075
 	flw	fa4, 0(a4)
 	fmul	fa3, fa3, fa4
 	fsub	fa2, fa2, fa3
-	luil	a4, l.28558
+	luil	a4, l.28964
 	srli	a4, a4, 1
-	addil	a4, a4, l.28558
+	addil	a4, a4, l.28964
 	flw	fa3, 0(a4)
 	flt	a4, fa2, fa3
 	addi	a3, a3, 8
@@ -7128,9 +7361,9 @@ beq_cont.33000:
 	addi	a3, a3, 8
 	flw	fa3, 0(a3)
 	fsub	fa2, fa2, fa3
-	luil	a3, l.28650
+	luil	a3, l.29073
 	srli	a3, a3, 1
-	addil	a3, a3, l.28650
+	addil	a3, a3, l.29073
 	flw	fa3, 0(a3)
 	fmul	fa3, fa2, fa3
 	fcvtws	t6, fa3
@@ -7138,89 +7371,141 @@ beq_cont.33000:
 	flt	t4, fa3, fs11
 	sub	t6, t6, t4
 	fcvtsw	fa3, t6
-	luil	a3, l.28652
+	luil	a3, l.29075
 	srli	a3, a3, 1
-	addil	a3, a3, l.28652
+	addil	a3, a3, l.29075
 	flw	fa4, 0(a3)
 	fmul	fa3, fa3, fa4
 	fsub	fa2, fa2, fa3
-	luil	a3, l.28558
+	luil	a3, l.28964
 	srli	a3, a3, 1
-	addil	a3, a3, l.28558
+	addil	a3, a3, l.28964
 	flw	fa3, 0(a3)
 	flt	a3, fa2, fa3
 	addi	a5, x0, 836
-	bne	a4, x0, beq_else.33015 # size : 52
-	bne	a3, x0, beq_else.33017 # size : 20
-	luil	a3, l.28544
+	bne	a4, x0, beq_else.33539 # size : 52
+	bne	a3, x0, beq_else.33541 # size : 20
+	luil	a3, l.28950
 	srli	a3, a3, 1
-	addil	a3, a3, l.28544
+	addil	a3, a3, l.28950
 	flw	fa2, 0(a3)
-	jal	x0, beq_cont.33018
-beq_else.33017:
-	luil	a3, l.26808
+	jal	x0, beq_cont.33542
+beq_else.33541:
+	luil	a3, l.27154
 	srli	a3, a3, 1
-	addil	a3, a3, l.26808
+	addil	a3, a3, l.27154
 	flw	fa2, 0(a3)
-beq_cont.33018:
-	jal	x0, beq_cont.33016
-beq_else.33015:
-	bne	a3, x0, beq_else.33019 # size : 20
-	luil	a3, l.26808
+beq_cont.33542:
+	jal	x0, beq_cont.33540
+beq_else.33539:
+	bne	a3, x0, beq_else.33543 # size : 20
+	luil	a3, l.27154
 	srli	a3, a3, 1
-	addil	a3, a3, l.26808
+	addil	a3, a3, l.27154
 	flw	fa2, 0(a3)
-	jal	x0, beq_cont.33020
-beq_else.33019:
-	luil	a3, l.28544
+	jal	x0, beq_cont.33544
+beq_else.33543:
+	luil	a3, l.28950
 	srli	a3, a3, 1
-	addil	a3, a3, l.28544
+	addil	a3, a3, l.28950
 	flw	fa2, 0(a3)
-beq_cont.33020:
-beq_cont.33016:
+beq_cont.33544:
+beq_cont.33540:
 	addi	a3, a5, 4
 	fsw	fa2, 0(a3) 
-	jal	x0, beq_cont.33014
-beq_else.33013:
+	jal	x0, beq_cont.33538
+beq_else.33537:
 	addi	t6, x0, 2
-	bne	a4, t6, beq_else.33021 # size : 2348
+	bne	a4, t6, beq_else.33545 # size : 2484
 	addi	a3, a3, 4
 	flw	fa2, 0(a3)
-	luil	a3, l.28606
+	luil	a3, l.29022
 	srli	a3, a3, 1
-	addil	a3, a3, l.28606
+	addil	a3, a3, l.29022
 	flw	fa3, 0(a3)
 	fmul	fa2, fa2, fa3
 	fsgnjn	fs11, fa2, fa2
 	flt	a3, fs11, fa2
-	bne	a3, x0, beq_else.33023 # size : 4
+	bne	a3, x0, beq_else.33547 # size : 4
 	addi	a3, x0, 0
-	jal	x0, beq_cont.33024
-beq_else.33023:
+	jal	x0, beq_cont.33548
+beq_else.33547:
 	addi	a3, x0, 1
-beq_cont.33024:
+beq_cont.33548:
 	addi	t6, x0, 1
-	bne	a3, t6, beq_else.33025 # size : 4
+	bne	a3, t6, beq_else.33549 # size : 4
 	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.33026
-beq_else.33025:
-	luil	a3, l.26869
+	jal	x0, beq_cont.33550
+beq_else.33549:
+	luil	a3, l.27215
 	srli	a3, a3, 1
-	addil	a3, a3, l.26869
+	addil	a3, a3, l.27215
 	flw	fa3, 0(a3)
 	fmul	fa3, fa3, fa2
-beq_cont.33026:
-	luil	a3, l.26804
+beq_cont.33550:
+	luil	a3, l.27150
 	srli	a3, a3, 1
-	addil	a3, a3, l.26804
+	addil	a3, a3, l.27150
 	flw	fa4, 0(a3)
-	fsw	fa2, -48(sp)
-	fsw	fa3, -52(sp)
+	fsw	fa2, -40(sp)
+	fsw	fa3, -44(sp)
 	fsgnj	fa1, fa4, fa4
 	fsgnj	fa0, fa3, fa3
+	sw	ra, -52(sp)
+	addi	sp, sp, -56
+	jal	ra, while1.2800
+	addi	sp, sp, 56
+	lw	ra, -52(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -44(sp)
+	sw	ra, -52(sp)
+	addi	sp, sp, -56
+	jal	ra, while2.2805
+	addi	sp, sp, 56
+	lw	ra, -52(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33551 # size : 4
+	jal	x0, beq_cont.33552
+beq_else.33551:
+	fsub	fa0, fa0, fa1
+beq_cont.33552:
+	flw	fa1, -40(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33553 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33554
+beq_else.33553:
+	addi	a0, x0, 1
+beq_cont.33554:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33555 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.33556
+beq_else.33555:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.33556:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -48(sp)
+	fsw	fa2, -52(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
 	sw	ra, -60(sp)
 	addi	sp, sp, -64
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 64
 	lw	ra, -60(sp)
 	fsgnj	fa1, fa0, fa0
@@ -7230,101 +7515,193 @@ beq_cont.33026:
 	jal	ra, while2.2805
 	addi	sp, sp, 64
 	lw	ra, -60(sp)
-	flw	fa1, -12(sp)
+	flw	fa1, -40(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33557 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33558
+beq_else.33557:
+	addi	a0, x0, 1
+beq_cont.33558:
+	flw	fa2, -48(sp)
+	feq	t6, fa2, fa0
+	beq	t6, x0, bne_else.33559 # size : 4
+	jal	x0, bne_cont.33560
+bne_else.33559:
+	addi	a1, x0, 1
+	sub	a0, a1, a0
+bne_cont.33560:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33561 # size : 796
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33563 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33564
+beq_else.33563:
+	addi	a0, x0, 1
+beq_cont.33564:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33565 # size : 4
+	fsgnj	fa0, fa1, fa1
+	jal	x0, beq_cont.33566
+beq_else.33565:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fmul	fa0, fa0, fa1
+beq_cont.33566:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa1, 0(a0)
+	fsw	fa0, -56(sp)
+	sw	ra, -64(sp)
+	addi	sp, sp, -68
+	jal	ra, while1.2800
+	addi	sp, sp, 68
+	lw	ra, -64(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -56(sp)
+	sw	ra, -64(sp)
+	addi	sp, sp, -68
+	jal	ra, while2.2805
+	addi	sp, sp, 68
+	lw	ra, -64(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33027 # size : 4
-	jal	x0, beq_cont.33028
-beq_else.33027:
+	bne	a0, x0, beq_else.33567 # size : 4
+	jal	x0, beq_cont.33568
+beq_else.33567:
 	fsub	fa0, fa0, fa1
-beq_cont.33028:
-	flw	fa2, -48(sp)
+beq_cont.33568:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33029 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33030
-beq_else.33029:
-	addi	a0, x0, 1
-beq_cont.33030:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33031 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.33032
-beq_else.33031:
-	luil	a0, l.26869
+	bne	a0, x0, beq_else.33569 # size : 4
+	jal	x0, beq_cont.33570
+beq_else.33569:
+	fsub	fa0, fa1, fa0
+beq_cont.33570:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.33032:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -56(sp)
-	fsw	fa3, -60(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -68(sp)
-	addi	sp, sp, -72
-	jal	ra, while1.2799
-	addi	sp, sp, 72
-	lw	ra, -68(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -60(sp)
-	sw	ra, -68(sp)
-	addi	sp, sp, -72
-	jal	ra, while2.2805
-	addi	sp, sp, 72
-	lw	ra, -68(sp)
-	flw	fa1, -48(sp)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33033 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33034
-beq_else.33033:
-	addi	a0, x0, 1
-beq_cont.33034:
-	flw	fa2, -56(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33035 # size : 4
-	jal	x0, bne_cont.33036
-bne_else.33035:
-	addi	a1, x0, 1
-	sub	a0, a1, a0
-bne_cont.33036:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33037 # size : 732
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33039 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33040
-beq_else.33039:
-	addi	a0, x0, 1
-beq_cont.33040:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33041 # size : 4
-	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.33042
-beq_else.33041:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fmul	fa0, fa0, fa1
-beq_cont.33042:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27256
 	flw	fa1, 0(a0)
-	fsw	fa0, -64(sp)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33571 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.33572
+beq_else.33571:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.33572:
+	jal	x0, beq_cont.33562
+beq_else.33561:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33573 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33574
+beq_else.33573:
+	addi	a0, x0, 1
+beq_cont.33574:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33575 # size : 4
+	jal	x0, beq_cont.33576
+beq_else.33575:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa1, fa2, fa1
+beq_cont.33576:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa2, 0(a0)
+	fsw	fa0, -60(sp)
+	fsw	fa1, -64(sp)
+	fsgnj	fa0, fa1, fa1
+	fsgnj	fa1, fa2, fa2
 	sw	ra, -72(sp)
 	addi	sp, sp, -76
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 76
 	lw	ra, -72(sp)
 	fsgnj	fa1, fa0, fa0
@@ -7334,249 +7711,130 @@ beq_cont.33042:
 	jal	ra, while2.2805
 	addi	sp, sp, 76
 	lw	ra, -72(sp)
-	flw	fa1, -12(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33043 # size : 4
-	jal	x0, beq_cont.33044
-beq_else.33043:
+	bne	a0, x0, beq_else.33577 # size : 4
+	jal	x0, beq_cont.33578
+beq_else.33577:
 	fsub	fa0, fa0, fa1
-beq_cont.33044:
-	luil	a0, l.26802
+beq_cont.33578:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33045 # size : 4
-	jal	x0, beq_cont.33046
-beq_else.33045:
+	bne	a0, x0, beq_else.33579 # size : 4
+	jal	x0, beq_cont.33580
+beq_else.33579:
 	fsub	fa0, fa1, fa0
-beq_cont.33046:
-	luil	a0, l.26923
+beq_cont.33580:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33047 # size : 180
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.33581 # size : 180
+	luil	a0, l.27285
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-	jal	x0, beq_cont.33048
-beq_else.33047:
-	luil	a0, l.26933
+	jal	x0, beq_cont.33582
+beq_else.33581:
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27287
 	flw	fa1, 0(a0)
-	luil	a0, l.26935
+	luil	a0, l.27289
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
 	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
 	fmul	fa4, fa4, fa3
 	fadd	fa2, fa4, fa2
 	fmul	fa2, fa2, fa3
 	fsub	fa1, fa2, fa1
 	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
 	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-beq_cont.33048:
-	jal	x0, beq_cont.33038
-beq_else.33037:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33049 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33050
-beq_else.33049:
-	addi	a0, x0, 1
-beq_cont.33050:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33051 # size : 4
-	jal	x0, beq_cont.33052
-beq_else.33051:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa1, fa2, fa1
-beq_cont.33052:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -68(sp)
-	fsw	fa1, -72(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -80(sp)
-	addi	sp, sp, -84
-	jal	ra, while1.2799
-	addi	sp, sp, 84
-	lw	ra, -80(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -72(sp)
-	sw	ra, -80(sp)
-	addi	sp, sp, -84
-	jal	ra, while2.2805
-	addi	sp, sp, 84
-	lw	ra, -80(sp)
-	flw	fa1, -12(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33053 # size : 4
-	jal	x0, beq_cont.33054
-beq_else.33053:
-	fsub	fa0, fa0, fa1
-beq_cont.33054:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33055 # size : 4
-	jal	x0, beq_cont.33056
-beq_else.33055:
-	fsub	fa0, fa1, fa0
-beq_cont.33056:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa1, fa2
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33057 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa1, 0(a0)
-	fsub	fa0, fa1, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa1, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa2, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa0
-	fadd	fa2, fa3, fa2
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa2, fa1
+beq_cont.33582:
+	flw	fa1, -60(sp)
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa1, 0(a0)
-	fadd	fa0, fa0, fa1
-	jal	x0, beq_cont.33058
-beq_else.33057:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa1, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa2, 0(a0)
-	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa3
-	fadd	fa2, fa4, fa2
-	fmul	fa2, fa2, fa3
-	fsub	fa1, fa2, fa1
-	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa1, fa1, fa2
-	fmul	fa0, fa1, fa0
-beq_cont.33058:
-	flw	fa1, -68(sp)
-	fmul	fa0, fa1, fa0
-beq_cont.33038:
+beq_cont.33562:
 	fmul	fa0, fa0, fa0
 	addi	a0, x0, 836
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
 	fmul	fa1, fa1, fa0
 	fsw	fa1, 0(a0) 
 	addi	a0, x0, 836
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa2, 0(a1)
 	fsub	fa0, fa2, fa0
 	fmul	fa0, fa1, fa0
 	fsw	fa0, 4(a0) 
-	jal	x0, beq_cont.33022
-beq_else.33021:
+	jal	x0, beq_cont.33546
+beq_else.33545:
 	addi	t6, x0, 3
-	bne	a4, t6, beq_else.33059 # size : 3060
+	bne	a4, t6, beq_else.33583 # size : 3388
 	addi	a4, a3 0
 	flw	fa2, 0(a4)
 	lw	a4, 20(a1)
@@ -7592,9 +7850,9 @@ beq_else.33021:
 	fmul	fa3, fa3, fa3
 	fadd	fa2, fa2, fa3
 	fsqrt	fa2, fa2
-	luil	a3, l.28558
+	luil	a3, l.28964
 	srli	a3, a3, 1
-	addil	a3, a3, l.28558
+	addil	a3, a3, l.28964
 	flw	fa3, 0(a3)
 	fdiv	fa2, fa2, fa3
 	fcvtws	t6, fa2
@@ -7603,474 +7861,530 @@ beq_else.33021:
 	sub	t6, t6, t4
 	fcvtsw	fa3, t6
 	fsub	fa2, fa2, fa3
-	luil	a3, l.28474
+	luil	a3, l.28880
 	srli	a3, a3, 1
-	addil	a3, a3, l.28474
+	addil	a3, a3, l.28880
 	flw	fa3, 0(a3)
 	fmul	fa2, fa2, fa3
+	luil	a3, l.27256
+	srli	a3, a3, 1
+	addil	a3, a3, l.27256
+	flw	fa3, 0(a3)
 	fsgnjn	fs11, fa2, fa2
 	flt	a3, fs11, fa2
-	bne	a3, x0, beq_else.33061 # size : 28
-	luil	a3, l.26869
+	bne	a3, x0, beq_else.33585 # size : 28
+	luil	a3, l.27215
 	srli	a3, a3, 1
-	addil	a3, a3, l.26869
-	flw	fa3, 0(a3)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33062
-beq_else.33061:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33062:
-	luil	a3, l.26804
-	srli	a3, a3, 1
-	addil	a3, a3, l.26804
+	addil	a3, a3, l.27215
 	flw	fa4, 0(a3)
-	fsw	fa2, -76(sp)
-	fsw	fa3, -80(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -88(sp)
-	addi	sp, sp, -92
-	jal	ra, while1.2799
-	addi	sp, sp, 92
-	lw	ra, -88(sp)
+	fmul	fa4, fa4, fa2
+	jal	x0, beq_cont.33586
+beq_else.33585:
+	fsgnj	fa4, fa2, fa2
+beq_cont.33586:
+	luil	a3, l.27150
+	srli	a3, a3, 1
+	addil	a3, a3, l.27150
+	flw	fa5, 0(a3)
+	fsw	fa2, -68(sp)
+	fsw	fa3, -72(sp)
+	fsw	fa4, -76(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -84(sp)
+	addi	sp, sp, -88
+	jal	ra, while1.2800
+	addi	sp, sp, 88
+	lw	ra, -84(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -80(sp)
-	sw	ra, -88(sp)
-	addi	sp, sp, -92
-	jal	ra, while2.2805
-	addi	sp, sp, 92
-	lw	ra, -88(sp)
-	flw	fa1, -12(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33063 # size : 4
-	jal	x0, beq_cont.33064
-beq_else.33063:
-	fsub	fa0, fa0, fa1
-beq_cont.33064:
-	flw	fa2, -76(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33065 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33066
-beq_else.33065:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33066:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -84(sp)
-	fsw	fa3, -88(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -96(sp)
-	addi	sp, sp, -100
-	jal	ra, while1.2799
-	addi	sp, sp, 100
-	lw	ra, -96(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -88(sp)
-	sw	ra, -96(sp)
-	addi	sp, sp, -100
-	jal	ra, while2.2805
-	addi	sp, sp, 100
-	lw	ra, -96(sp)
-	flw	fa1, -84(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.33067 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.33068
-bne_else.33067:
-	addi	a0, x0, 0
-bne_cont.33068:
 	flw	fa0, -76(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33069 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33070
-beq_else.33069:
-	fsgnj	fa1, fa0, fa0
-beq_cont.33070:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -92(sp) # Save flag00.6561.12115.15012
-	fsw	fa1, -96(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -104(sp)
-	addi	sp, sp, -108
-	jal	ra, while1.2799
-	addi	sp, sp, 108
-	lw	ra, -104(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -96(sp)
-	sw	ra, -104(sp)
-	addi	sp, sp, -108
+	sw	ra, -84(sp)
+	addi	sp, sp, -88
 	jal	ra, while2.2805
-	addi	sp, sp, 108
-	lw	ra, -104(sp)
-	flw	fa1, -12(sp)
+	addi	sp, sp, 88
+	lw	ra, -84(sp)
+	flw	fa1, -72(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33071 # size : 4
-	jal	x0, beq_cont.33072
-beq_else.33071:
+	bne	a0, x0, beq_else.33587 # size : 4
+	jal	x0, beq_cont.33588
+beq_else.33587:
 	fsub	fa0, fa0, fa1
-beq_cont.33072:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33073 # size : 4
-	jal	x0, beq_cont.33074
-beq_else.33073:
-	fsub	fa0, fa1, fa0
-beq_cont.33074:
-	flw	fa2, -76(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33075 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33076
-beq_else.33075:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33076:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -100(sp)
-	fsw	fa3, -104(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -112(sp)
-	addi	sp, sp, -116
-	jal	ra, while1.2799
-	addi	sp, sp, 116
-	lw	ra, -112(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -104(sp)
-	sw	ra, -112(sp)
-	addi	sp, sp, -116
-	jal	ra, while2.2805
-	addi	sp, sp, 116
-	lw	ra, -112(sp)
-	flw	fa1, -12(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33077 # size : 4
-	jal	x0, beq_cont.33078
-beq_else.33077:
-	fsub	fa0, fa0, fa1
-beq_cont.33078:
-	flw	fa2, -100(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33079 # size : 12
-	lw	a0, -92(sp) # Restore flag00.6561.12115.15012
-	jal	x0, bne_cont.33080
-bne_else.33079:
-	addi	a0, x0, 1
-	lw	a1, -92(sp) # Restore flag00.6561.12115.15012
-	sub	a0, a0, a1
-bne_cont.33080:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33081 # size : 724
-	flw	fa0, -76(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.33083 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.33084
-beq_else.33083:
-beq_cont.33084:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -108(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -116(sp)
-	addi	sp, sp, -120
-	jal	ra, while1.2799
-	addi	sp, sp, 120
-	lw	ra, -116(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -108(sp)
-	sw	ra, -116(sp)
-	addi	sp, sp, -120
-	jal	ra, while2.2805
-	addi	sp, sp, 120
-	lw	ra, -116(sp)
-	flw	fa1, -12(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33085 # size : 4
-	jal	x0, beq_cont.33086
-beq_else.33085:
-	fsub	fa0, fa0, fa1
-beq_cont.33086:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33087 # size : 4
-	jal	x0, beq_cont.33088
-beq_else.33087:
-	fsub	fa0, fa1, fa0
-beq_cont.33088:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa1, fa2
+beq_cont.33588:
+	flw	fa1, -68(sp)
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33089 # size : 188
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.33589 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa1, 0(a0)
-	fsub	fa0, fa1, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa1, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
-	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	fmul	fa2, fa2, fa1
+	jal	x0, beq_cont.33590
+beq_else.33589:
+	fsgnj	fa2, fa1, fa1
+beq_cont.33590:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa3
-	fadd	fa2, fa4, fa2
-	fmul	fa2, fa2, fa3
-	fsub	fa1, fa2, fa1
-	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa1, fa1, fa2
-	fmul	fa0, fa1, fa0
-	jal	x0, beq_cont.33090
-beq_else.33089:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa1, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa2, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27150
 	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa0
-	fadd	fa2, fa3, fa2
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa2, fa1
-	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa1, 0(a0)
-	fadd	fa0, fa0, fa1
-beq_cont.33090:
-	jal	x0, beq_cont.33082
-beq_else.33081:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	flw	fa2, -76(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33091 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa2, fa3, fa2
-	jal	x0, beq_cont.33092
-beq_else.33091:
-beq_cont.33092:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa0, -112(sp)
-	fsw	fa2, -116(sp)
+	fsw	fa0, -80(sp)
+	fsw	fa2, -84(sp)
 	fsgnj	fa1, fa3, fa3
 	fsgnj	fa0, fa2, fa2
-	sw	ra, -124(sp)
-	addi	sp, sp, -128
-	jal	ra, while1.2799
-	addi	sp, sp, 128
-	lw	ra, -124(sp)
+	sw	ra, -92(sp)
+	addi	sp, sp, -96
+	jal	ra, while1.2800
+	addi	sp, sp, 96
+	lw	ra, -92(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -116(sp)
-	sw	ra, -124(sp)
-	addi	sp, sp, -128
+	flw	fa0, -84(sp)
+	sw	ra, -92(sp)
+	addi	sp, sp, -96
 	jal	ra, while2.2805
-	addi	sp, sp, 128
-	lw	ra, -124(sp)
-	flw	fa1, -12(sp)
+	addi	sp, sp, 96
+	lw	ra, -92(sp)
+	flw	fa1, -80(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.33591 # size : 4
+	addi	a0, x0, 1
+	jal	x0, bne_cont.33592
+bne_else.33591:
+	addi	a0, x0, 0
+bne_cont.33592:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -68(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.33593 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.33594
+beq_else.33593:
+	fsgnj	fa3, fa2, fa2
+beq_cont.33594:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	sw	a0, -88(sp) # Save flag00.6568.12140.15059
+	fsw	fa0, -92(sp)
+	fsw	fa1, -96(sp)
+	fsw	fa3, -100(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -108(sp)
+	addi	sp, sp, -112
+	jal	ra, while1.2800
+	addi	sp, sp, 112
+	lw	ra, -108(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -100(sp)
+	sw	ra, -108(sp)
+	addi	sp, sp, -112
+	jal	ra, while2.2805
+	addi	sp, sp, 112
+	lw	ra, -108(sp)
+	flw	fa1, -96(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33093 # size : 4
-	jal	x0, beq_cont.33094
-beq_else.33093:
+	bne	a0, x0, beq_else.33595 # size : 4
+	jal	x0, beq_cont.33596
+beq_else.33595:
 	fsub	fa0, fa0, fa1
-beq_cont.33094:
-	luil	a0, l.26802
+beq_cont.33596:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33095 # size : 4
-	jal	x0, beq_cont.33096
-beq_else.33095:
-	fsub	fa0, fa1, fa0
-beq_cont.33096:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -92(sp)
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33097 # size : 188
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.33597 # size : 4
+	jal	x0, beq_cont.33598
+beq_else.33597:
+	fsub	fa0, fa2, fa0
+beq_cont.33598:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -68(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33599 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.33600
+beq_else.33599:
+	fsgnj	fa3, fa2, fa2
+beq_cont.33600:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -104(sp)
+	fsw	fa1, -108(sp)
+	fsw	fa3, -112(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -120(sp)
+	addi	sp, sp, -124
+	jal	ra, while1.2800
+	addi	sp, sp, 124
+	lw	ra, -120(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -112(sp)
+	sw	ra, -120(sp)
+	addi	sp, sp, -124
+	jal	ra, while2.2805
+	addi	sp, sp, 124
+	lw	ra, -120(sp)
+	flw	fa1, -108(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33601 # size : 4
+	jal	x0, beq_cont.33602
+beq_else.33601:
+	fsub	fa0, fa0, fa1
+beq_cont.33602:
+	flw	fa1, -104(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.33603 # size : 12
+	lw	a0, -88(sp) # Restore flag00.6568.12140.15059
+	jal	x0, bne_cont.33604
+bne_else.33603:
+	addi	a0, x0, 1
+	lw	a1, -88(sp) # Restore flag00.6568.12140.15059
+	sub	a0, a0, a1
+bne_cont.33604:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33605 # size : 828
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -68(sp)
+	fsgnjn	fs11, fa3, fa3
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.33607 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa4, 0(a0)
+	fmul	fa3, fa4, fa3
+	jal	x0, beq_cont.33608
+beq_else.33607:
+beq_cont.33608:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -116(sp)
+	fsw	fa1, -120(sp)
+	fsw	fa2, -124(sp)
+	fsw	fa3, -128(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -136(sp)
+	addi	sp, sp, -140
+	jal	ra, while1.2800
+	addi	sp, sp, 140
+	lw	ra, -136(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -128(sp)
+	sw	ra, -136(sp)
+	addi	sp, sp, -140
+	jal	ra, while2.2805
+	addi	sp, sp, 140
+	lw	ra, -136(sp)
+	flw	fa1, -124(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33609 # size : 4
+	jal	x0, beq_cont.33610
+beq_else.33609:
+	fsub	fa0, fa0, fa1
+beq_cont.33610:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -120(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33611 # size : 4
+	jal	x0, beq_cont.33612
+beq_else.33611:
+	fsub	fa0, fa2, fa0
+beq_cont.33612:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -116(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33613 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
-	luil	a0, l.26933
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27287
 	flw	fa1, 0(a0)
-	luil	a0, l.26935
+	luil	a0, l.27289
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
 	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
 	fmul	fa4, fa4, fa3
 	fadd	fa2, fa4, fa2
 	fmul	fa2, fa2, fa3
 	fsub	fa1, fa2, fa1
 	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
 	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-	jal	x0, beq_cont.33098
-beq_else.33097:
+	jal	x0, beq_cont.33614
+beq_else.33613:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-beq_cont.33098:
-	flw	fa1, -112(sp)
+beq_cont.33614:
+	jal	x0, beq_cont.33606
+beq_else.33605:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -68(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.33615 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa5, 0(a0)
+	fmul	fa4, fa5, fa4
+	jal	x0, beq_cont.33616
+beq_else.33615:
+beq_cont.33616:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -132(sp)
+	fsw	fa1, -136(sp)
+	fsw	fa2, -140(sp)
+	fsw	fa3, -144(sp)
+	fsw	fa4, -148(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -156(sp)
+	addi	sp, sp, -160
+	jal	ra, while1.2800
+	addi	sp, sp, 160
+	lw	ra, -156(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -148(sp)
+	sw	ra, -156(sp)
+	addi	sp, sp, -160
+	jal	ra, while2.2805
+	addi	sp, sp, 160
+	lw	ra, -156(sp)
+	flw	fa1, -144(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33617 # size : 4
+	jal	x0, beq_cont.33618
+beq_else.33617:
+	fsub	fa0, fa0, fa1
+beq_cont.33618:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -140(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33619 # size : 4
+	jal	x0, beq_cont.33620
+beq_else.33619:
+	fsub	fa0, fa2, fa0
+beq_cont.33620:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -136(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33621 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-beq_cont.33082:
+	jal	x0, beq_cont.33622
+beq_else.33621:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.33622:
+	flw	fa1, -132(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.33606:
 	fmul	fa0, fa0, fa0
 	addi	a0, x0, 836
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
 	fmul	fa1, fa0, fa1
 	addi	a0, a0, 4
 	fsw	fa1, 0(a0) 
 	addi	a0, x0, 836
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa1, 0(a1)
 	fsub	fa0, fa1, fa0
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
 	fsw	fa0, 8(a0) 
-	jal	x0, beq_cont.33060
-beq_else.33059:
+	jal	x0, beq_cont.33584
+beq_else.33583:
 	addi	t6, x0, 4
-	bne	a4, t6, beq_else.33099 # size : 5552
-	jal	x0, beq_sub.33101
-beq_else.33099:
-	jal	x0, beq_cont.33100
-beq_sub.33101:
+	bne	a4, t6, beq_else.33623 # size : 5552
+	jal	x0, beq_sub.33625
+beq_else.33623:
+	jal	x0, beq_cont.33624
+beq_sub.33625:
 	addi	a4, a3 0
 	flw	fa2, 0(a4)
 	lw	a4, 20(a1)
@@ -8095,74 +8409,74 @@ beq_sub.33101:
 	fmul	fa5, fa3, fa3
 	fadd	fa4, fa4, fa5
 	fsgnjx	fa5, fa2, fa2
-	luil	a4, l.28406
+	luil	a4, l.28812
 	srli	a4, a4, 1
-	addil	a4, a4, l.28406
+	addil	a4, a4, l.28812
 	flw	fa6, 0(a4)
 	flt	a4, fa5, fa6
-	bne	a4, x0, beq_else.33102 # size : 2396
+	bne	a4, x0, beq_else.33626 # size : 2396
 	fdiv	fa2, fa3, fa2
 	fsgnjx	fa2, fa2, fa2
 	fsgnjn	fs11, fa2, fa2
 	flt	a4, fs11, fa2
-	bne	a4, x0, beq_else.33104 # size : 28
-	luil	a4, l.26869
+	bne	a4, x0, beq_else.33628 # size : 28
+	luil	a4, l.27215
 	srli	a4, a4, 1
-	addil	a4, a4, l.26869
+	addil	a4, a4, l.27215
 	flw	fa3, 0(a4)
 	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33105
-beq_else.33104:
+	jal	x0, beq_cont.33629
+beq_else.33628:
 	fsgnj	fa3, fa2, fa2
-beq_cont.33105:
-	luil	a4, l.28411
+beq_cont.33629:
+	luil	a4, l.28817
 	srli	a4, a4, 1
-	addil	a4, a4, l.28411
+	addil	a4, a4, l.28817
 	flw	fa5, 0(a4)
 	fsub	fa5, fa5, fa3
 	fsgnjn	fs11, fa5, fa5
 	flt	a4, fs11, fa5
-	bne	a4, x0, beq_else.33106 # size : 728
-	luil	a4, l.28425
+	bne	a4, x0, beq_else.33630 # size : 728
+	luil	a4, l.28831
 	srli	a4, a4, 1
-	addil	a4, a4, l.28425
+	addil	a4, a4, l.28831
 	flw	fa5, 0(a4)
 	fsub	fa5, fa5, fa3
 	fsgnjn	fs11, fa5, fa5
 	flt	a4, fs11, fa5
-	bne	a4, x0, beq_else.33108 # size : 316
-	luil	a4, l.26931
+	bne	a4, x0, beq_else.33632 # size : 316
+	luil	a4, l.27285
 	srli	a4, a4, 1
-	addil	a4, a4, l.26931
+	addil	a4, a4, l.27285
 	flw	fa5, 0(a4)
-	luil	a4, l.26867
+	luil	a4, l.27213
 	srli	a4, a4, 1
-	addil	a4, a4, l.26867
+	addil	a4, a4, l.27213
 	flw	fa6, 0(a4)
 	fdiv	fa3, fa6, fa3
-	luil	a4, l.28413
+	luil	a4, l.28819
 	srli	a4, a4, 1
-	addil	a4, a4, l.28413
+	addil	a4, a4, l.28819
 	flw	fa6, 0(a4)
-	luil	a4, l.28415
+	luil	a4, l.28821
 	srli	a4, a4, 1
-	addil	a4, a4, l.28415
+	addil	a4, a4, l.28821
 	flw	fa7, 0(a4)
-	luil	a4, l.28417
+	luil	a4, l.28823
 	srli	a4, a4, 1
-	addil	a4, a4, l.28417
+	addil	a4, a4, l.28823
 	flw	ft0, 0(a4)
-	luil	a4, l.28419
+	luil	a4, l.28825
 	srli	a4, a4, 1
-	addil	a4, a4, l.28419
+	addil	a4, a4, l.28825
 	flw	ft1, 0(a4)
-	luil	a4, l.28421
+	luil	a4, l.28827
 	srli	a4, a4, 1
-	addil	a4, a4, l.28421
+	addil	a4, a4, l.28827
 	flw	ft2, 0(a4)
-	luil	a4, l.28423
+	luil	a4, l.28829
 	srli	a4, a4, 1
-	addil	a4, a4, l.28423
+	addil	a4, a4, l.28829
 	flw	ft3, 0(a4)
 	fmul	ft4, fa3, fa3
 	fmul	ft3, ft3, ft4
@@ -8179,46 +8493,46 @@ beq_cont.33105:
 	fmul	fa6, fa6, ft4
 	fadd	fa3, fa6, fa3
 	fsub	fa3, fa5, fa3
-	jal	x0, beq_cont.33109
-beq_else.33108:
-	luil	a4, l.28427
+	jal	x0, beq_cont.33633
+beq_else.33632:
+	luil	a4, l.28833
 	srli	a4, a4, 1
-	addil	a4, a4, l.28427
+	addil	a4, a4, l.28833
 	flw	fa5, 0(a4)
-	luil	a4, l.26867
+	luil	a4, l.27213
 	srli	a4, a4, 1
-	addil	a4, a4, l.26867
+	addil	a4, a4, l.27213
 	flw	fa6, 0(a4)
 	fsub	fa6, fa3, fa6
-	luil	a4, l.26867
+	luil	a4, l.27213
 	srli	a4, a4, 1
-	addil	a4, a4, l.26867
+	addil	a4, a4, l.27213
 	flw	fa7, 0(a4)
 	fadd	fa3, fa3, fa7
 	fdiv	fa3, fa6, fa3
-	luil	a4, l.28413
+	luil	a4, l.28819
 	srli	a4, a4, 1
-	addil	a4, a4, l.28413
+	addil	a4, a4, l.28819
 	flw	fa6, 0(a4)
-	luil	a4, l.28415
+	luil	a4, l.28821
 	srli	a4, a4, 1
-	addil	a4, a4, l.28415
+	addil	a4, a4, l.28821
 	flw	fa7, 0(a4)
-	luil	a4, l.28417
+	luil	a4, l.28823
 	srli	a4, a4, 1
-	addil	a4, a4, l.28417
+	addil	a4, a4, l.28823
 	flw	ft0, 0(a4)
-	luil	a4, l.28419
+	luil	a4, l.28825
 	srli	a4, a4, 1
-	addil	a4, a4, l.28419
+	addil	a4, a4, l.28825
 	flw	ft1, 0(a4)
-	luil	a4, l.28421
+	luil	a4, l.28827
 	srli	a4, a4, 1
-	addil	a4, a4, l.28421
+	addil	a4, a4, l.28827
 	flw	ft2, 0(a4)
-	luil	a4, l.28423
+	luil	a4, l.28829
 	srli	a4, a4, 1
-	addil	a4, a4, l.28423
+	addil	a4, a4, l.28829
 	flw	ft3, 0(a4)
 	fmul	ft4, fa3, fa3
 	fmul	ft3, ft3, ft4
@@ -8235,32 +8549,32 @@ beq_else.33108:
 	fmul	fa6, fa6, ft4
 	fadd	fa3, fa6, fa3
 	fadd	fa3, fa5, fa3
-beq_cont.33109:
-	jal	x0, beq_cont.33107
-beq_else.33106:
-	luil	a4, l.28413
+beq_cont.33633:
+	jal	x0, beq_cont.33631
+beq_else.33630:
+	luil	a4, l.28819
 	srli	a4, a4, 1
-	addil	a4, a4, l.28413
+	addil	a4, a4, l.28819
 	flw	fa5, 0(a4)
-	luil	a4, l.28415
+	luil	a4, l.28821
 	srli	a4, a4, 1
-	addil	a4, a4, l.28415
+	addil	a4, a4, l.28821
 	flw	fa6, 0(a4)
-	luil	a4, l.28417
+	luil	a4, l.28823
 	srli	a4, a4, 1
-	addil	a4, a4, l.28417
+	addil	a4, a4, l.28823
 	flw	fa7, 0(a4)
-	luil	a4, l.28419
+	luil	a4, l.28825
 	srli	a4, a4, 1
-	addil	a4, a4, l.28419
+	addil	a4, a4, l.28825
 	flw	ft0, 0(a4)
-	luil	a4, l.28421
+	luil	a4, l.28827
 	srli	a4, a4, 1
-	addil	a4, a4, l.28421
+	addil	a4, a4, l.28827
 	flw	ft1, 0(a4)
-	luil	a4, l.28423
+	luil	a4, l.28829
 	srli	a4, a4, 1
-	addil	a4, a4, l.28423
+	addil	a4, a4, l.28829
 	flw	ft2, 0(a4)
 	fmul	ft3, fa3, fa3
 	fmul	ft2, ft2, ft3
@@ -8276,74 +8590,74 @@ beq_else.33106:
 	fmul	fa5, fa5, fa3
 	fmul	fa5, fa5, ft3
 	fadd	fa3, fa5, fa3
-beq_cont.33107:
+beq_cont.33631:
 	fsgnjn	fs11, fa2, fa2
 	flt	a4, fs11, fa2
-	bne	a4, x0, beq_else.33110 # size : 4
+	bne	a4, x0, beq_else.33634 # size : 4
 	addi	a4, x0, -1
-	jal	x0, beq_cont.33111
-beq_else.33110:
+	jal	x0, beq_cont.33635
+beq_else.33634:
 	addi	a4, x0, 1
-beq_cont.33111:
+beq_cont.33635:
 	fsgnjn	fs11, fa2, fa2
 	flt	a5, fs11, fa2
-	bne	a5, x0, beq_else.33112 # size : 28
-	luil	a5, l.26869
+	bne	a5, x0, beq_else.33636 # size : 28
+	luil	a5, l.27215
 	srli	a5, a5, 1
-	addil	a5, a5, l.26869
+	addil	a5, a5, l.27215
 	flw	fa5, 0(a5)
 	fmul	fa2, fa5, fa2
-	jal	x0, beq_cont.33113
-beq_else.33112:
-beq_cont.33113:
-	luil	a5, l.28411
+	jal	x0, beq_cont.33637
+beq_else.33636:
+beq_cont.33637:
+	luil	a5, l.28817
 	srli	a5, a5, 1
-	addil	a5, a5, l.28411
+	addil	a5, a5, l.28817
 	flw	fa5, 0(a5)
 	fsub	fa5, fa5, fa2
 	fsgnjn	fs11, fa5, fa5
 	flt	a5, fs11, fa5
-	bne	a5, x0, beq_else.33114 # size : 728
-	luil	a5, l.28425
+	bne	a5, x0, beq_else.33638 # size : 728
+	luil	a5, l.28831
 	srli	a5, a5, 1
-	addil	a5, a5, l.28425
+	addil	a5, a5, l.28831
 	flw	fa5, 0(a5)
 	fsub	fa5, fa5, fa2
 	fsgnjn	fs11, fa5, fa5
 	flt	a5, fs11, fa5
-	bne	a5, x0, beq_else.33116 # size : 316
-	luil	a5, l.26931
+	bne	a5, x0, beq_else.33640 # size : 316
+	luil	a5, l.27285
 	srli	a5, a5, 1
-	addil	a5, a5, l.26931
+	addil	a5, a5, l.27285
 	flw	fa5, 0(a5)
-	luil	a5, l.26867
+	luil	a5, l.27213
 	srli	a5, a5, 1
-	addil	a5, a5, l.26867
+	addil	a5, a5, l.27213
 	flw	fa6, 0(a5)
 	fdiv	fa2, fa6, fa2
-	luil	a5, l.28413
+	luil	a5, l.28819
 	srli	a5, a5, 1
-	addil	a5, a5, l.28413
+	addil	a5, a5, l.28819
 	flw	fa6, 0(a5)
-	luil	a5, l.28415
+	luil	a5, l.28821
 	srli	a5, a5, 1
-	addil	a5, a5, l.28415
+	addil	a5, a5, l.28821
 	flw	fa7, 0(a5)
-	luil	a5, l.28417
+	luil	a5, l.28823
 	srli	a5, a5, 1
-	addil	a5, a5, l.28417
+	addil	a5, a5, l.28823
 	flw	ft0, 0(a5)
-	luil	a5, l.28419
+	luil	a5, l.28825
 	srli	a5, a5, 1
-	addil	a5, a5, l.28419
+	addil	a5, a5, l.28825
 	flw	ft1, 0(a5)
-	luil	a5, l.28421
+	luil	a5, l.28827
 	srli	a5, a5, 1
-	addil	a5, a5, l.28421
+	addil	a5, a5, l.28827
 	flw	ft2, 0(a5)
-	luil	a5, l.28423
+	luil	a5, l.28829
 	srli	a5, a5, 1
-	addil	a5, a5, l.28423
+	addil	a5, a5, l.28829
 	flw	ft3, 0(a5)
 	fmul	ft4, fa2, fa2
 	fmul	ft3, ft3, ft4
@@ -8360,46 +8674,46 @@ beq_cont.33113:
 	fmul	fa6, fa6, ft4
 	fadd	fa2, fa6, fa2
 	fsub	fa2, fa5, fa2
-	jal	x0, beq_cont.33117
-beq_else.33116:
-	luil	a5, l.28427
+	jal	x0, beq_cont.33641
+beq_else.33640:
+	luil	a5, l.28833
 	srli	a5, a5, 1
-	addil	a5, a5, l.28427
+	addil	a5, a5, l.28833
 	flw	fa5, 0(a5)
-	luil	a5, l.26867
+	luil	a5, l.27213
 	srli	a5, a5, 1
-	addil	a5, a5, l.26867
+	addil	a5, a5, l.27213
 	flw	fa6, 0(a5)
 	fsub	fa6, fa2, fa6
-	luil	a5, l.26867
+	luil	a5, l.27213
 	srli	a5, a5, 1
-	addil	a5, a5, l.26867
+	addil	a5, a5, l.27213
 	flw	fa7, 0(a5)
 	fadd	fa2, fa2, fa7
 	fdiv	fa2, fa6, fa2
-	luil	a5, l.28413
+	luil	a5, l.28819
 	srli	a5, a5, 1
-	addil	a5, a5, l.28413
+	addil	a5, a5, l.28819
 	flw	fa6, 0(a5)
-	luil	a5, l.28415
+	luil	a5, l.28821
 	srli	a5, a5, 1
-	addil	a5, a5, l.28415
+	addil	a5, a5, l.28821
 	flw	fa7, 0(a5)
-	luil	a5, l.28417
+	luil	a5, l.28823
 	srli	a5, a5, 1
-	addil	a5, a5, l.28417
+	addil	a5, a5, l.28823
 	flw	ft0, 0(a5)
-	luil	a5, l.28419
+	luil	a5, l.28825
 	srli	a5, a5, 1
-	addil	a5, a5, l.28419
+	addil	a5, a5, l.28825
 	flw	ft1, 0(a5)
-	luil	a5, l.28421
+	luil	a5, l.28827
 	srli	a5, a5, 1
-	addil	a5, a5, l.28421
+	addil	a5, a5, l.28827
 	flw	ft2, 0(a5)
-	luil	a5, l.28423
+	luil	a5, l.28829
 	srli	a5, a5, 1
-	addil	a5, a5, l.28423
+	addil	a5, a5, l.28829
 	flw	ft3, 0(a5)
 	fmul	ft4, fa2, fa2
 	fmul	ft3, ft3, ft4
@@ -8416,32 +8730,32 @@ beq_else.33116:
 	fmul	fa6, fa6, ft4
 	fadd	fa2, fa6, fa2
 	fadd	fa2, fa5, fa2
-beq_cont.33117:
-	jal	x0, beq_cont.33115
-beq_else.33114:
-	luil	a5, l.28413
+beq_cont.33641:
+	jal	x0, beq_cont.33639
+beq_else.33638:
+	luil	a5, l.28819
 	srli	a5, a5, 1
-	addil	a5, a5, l.28413
+	addil	a5, a5, l.28819
 	flw	fa5, 0(a5)
-	luil	a5, l.28415
+	luil	a5, l.28821
 	srli	a5, a5, 1
-	addil	a5, a5, l.28415
+	addil	a5, a5, l.28821
 	flw	fa6, 0(a5)
-	luil	a5, l.28417
+	luil	a5, l.28823
 	srli	a5, a5, 1
-	addil	a5, a5, l.28417
+	addil	a5, a5, l.28823
 	flw	fa7, 0(a5)
-	luil	a5, l.28419
+	luil	a5, l.28825
 	srli	a5, a5, 1
-	addil	a5, a5, l.28419
+	addil	a5, a5, l.28825
 	flw	ft0, 0(a5)
-	luil	a5, l.28421
+	luil	a5, l.28827
 	srli	a5, a5, 1
-	addil	a5, a5, l.28421
+	addil	a5, a5, l.28827
 	flw	ft1, 0(a5)
-	luil	a5, l.28423
+	luil	a5, l.28829
 	srli	a5, a5, 1
-	addil	a5, a5, l.28423
+	addil	a5, a5, l.28829
 	flw	ft2, 0(a5)
 	fmul	ft3, fa2, fa2
 	fmul	ft2, ft2, ft3
@@ -8457,42 +8771,42 @@ beq_else.33114:
 	fmul	fa5, fa5, fa2
 	fmul	fa5, fa5, ft3
 	fadd	fa2, fa5, fa2
-beq_cont.33115:
+beq_cont.33639:
 	fsgnjn	fs11, fa2, fa2
 	flt	a5, fs11, fa2
-	bne	a5, x0, beq_else.33118 # size : 4
+	bne	a5, x0, beq_else.33642 # size : 4
 	addi	a5, x0, -1
-	jal	x0, beq_cont.33119
-beq_else.33118:
+	jal	x0, beq_cont.33643
+beq_else.33642:
 	addi	a5, x0, 1
-beq_cont.33119:
-	bne	a4, a5, beq_else.33120 # size : 4
+beq_cont.33643:
+	bne	a4, a5, beq_else.33644 # size : 4
 	fsgnj	fa2, fa3, fa3
-	jal	x0, beq_cont.33121
-beq_else.33120:
-	luil	a4, l.26869
+	jal	x0, beq_cont.33645
+beq_else.33644:
+	luil	a4, l.27215
 	srli	a4, a4, 1
-	addil	a4, a4, l.26869
+	addil	a4, a4, l.27215
 	flw	fa2, 0(a4)
 	fmul	fa2, fa2, fa3
-beq_cont.33121:
-	luil	a4, l.28472
+beq_cont.33645:
+	luil	a4, l.28878
 	srli	a4, a4, 1
-	addil	a4, a4, l.28472
+	addil	a4, a4, l.28878
 	flw	fa3, 0(a4)
 	fmul	fa2, fa2, fa3
-	luil	a4, l.28474
+	luil	a4, l.28880
 	srli	a4, a4, 1
-	addil	a4, a4, l.28474
+	addil	a4, a4, l.28880
 	flw	fa3, 0(a4)
 	fdiv	fa2, fa2, fa3
-	jal	x0, beq_cont.33103
-beq_else.33102:
-	luil	a4, l.28408
+	jal	x0, beq_cont.33627
+beq_else.33626:
+	luil	a4, l.28814
 	srli	a4, a4, 1
-	addil	a4, a4, l.28408
+	addil	a4, a4, l.28814
 	flw	fa2, 0(a4)
-beq_cont.33103:
+beq_cont.33627:
 	fcvtws	t6, fa2
 	fcvtsw	fs11, t6
 	flt	t4, fa2, fs11
@@ -8511,74 +8825,74 @@ beq_cont.33103:
 	fsqrt	fa5, fa5
 	fmul	fa3, fa3, fa5
 	fsgnjx	fa5, fa4, fa4
-	luil	a3, l.28406
+	luil	a3, l.28812
 	srli	a3, a3, 1
-	addil	a3, a3, l.28406
+	addil	a3, a3, l.28812
 	flw	fa6, 0(a3)
 	flt	a3, fa5, fa6
-	bne	a3, x0, beq_else.33122 # size : 2396
+	bne	a3, x0, beq_else.33646 # size : 2396
 	fdiv	fa3, fa3, fa4
 	fsgnjx	fa3, fa3, fa3
 	fsgnjn	fs11, fa3, fa3
 	flt	a3, fs11, fa3
-	bne	a3, x0, beq_else.33124 # size : 28
-	luil	a3, l.26869
+	bne	a3, x0, beq_else.33648 # size : 28
+	luil	a3, l.27215
 	srli	a3, a3, 1
-	addil	a3, a3, l.26869
+	addil	a3, a3, l.27215
 	flw	fa4, 0(a3)
 	fmul	fa4, fa4, fa3
-	jal	x0, beq_cont.33125
-beq_else.33124:
+	jal	x0, beq_cont.33649
+beq_else.33648:
 	fsgnj	fa4, fa3, fa3
-beq_cont.33125:
-	luil	a3, l.28411
+beq_cont.33649:
+	luil	a3, l.28817
 	srli	a3, a3, 1
-	addil	a3, a3, l.28411
+	addil	a3, a3, l.28817
 	flw	fa5, 0(a3)
 	fsub	fa5, fa5, fa4
 	fsgnjn	fs11, fa5, fa5
 	flt	a3, fs11, fa5
-	bne	a3, x0, beq_else.33126 # size : 728
-	luil	a3, l.28425
+	bne	a3, x0, beq_else.33650 # size : 728
+	luil	a3, l.28831
 	srli	a3, a3, 1
-	addil	a3, a3, l.28425
+	addil	a3, a3, l.28831
 	flw	fa5, 0(a3)
 	fsub	fa5, fa5, fa4
 	fsgnjn	fs11, fa5, fa5
 	flt	a3, fs11, fa5
-	bne	a3, x0, beq_else.33128 # size : 316
-	luil	a3, l.26931
+	bne	a3, x0, beq_else.33652 # size : 316
+	luil	a3, l.27285
 	srli	a3, a3, 1
-	addil	a3, a3, l.26931
+	addil	a3, a3, l.27285
 	flw	fa5, 0(a3)
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa6, 0(a3)
 	fdiv	fa4, fa6, fa4
-	luil	a3, l.28413
+	luil	a3, l.28819
 	srli	a3, a3, 1
-	addil	a3, a3, l.28413
+	addil	a3, a3, l.28819
 	flw	fa6, 0(a3)
-	luil	a3, l.28415
+	luil	a3, l.28821
 	srli	a3, a3, 1
-	addil	a3, a3, l.28415
+	addil	a3, a3, l.28821
 	flw	fa7, 0(a3)
-	luil	a3, l.28417
+	luil	a3, l.28823
 	srli	a3, a3, 1
-	addil	a3, a3, l.28417
+	addil	a3, a3, l.28823
 	flw	ft0, 0(a3)
-	luil	a3, l.28419
+	luil	a3, l.28825
 	srli	a3, a3, 1
-	addil	a3, a3, l.28419
+	addil	a3, a3, l.28825
 	flw	ft1, 0(a3)
-	luil	a3, l.28421
+	luil	a3, l.28827
 	srli	a3, a3, 1
-	addil	a3, a3, l.28421
+	addil	a3, a3, l.28827
 	flw	ft2, 0(a3)
-	luil	a3, l.28423
+	luil	a3, l.28829
 	srli	a3, a3, 1
-	addil	a3, a3, l.28423
+	addil	a3, a3, l.28829
 	flw	ft3, 0(a3)
 	fmul	ft4, fa4, fa4
 	fmul	ft3, ft3, ft4
@@ -8595,46 +8909,46 @@ beq_cont.33125:
 	fmul	fa6, fa6, ft4
 	fadd	fa4, fa6, fa4
 	fsub	fa4, fa5, fa4
-	jal	x0, beq_cont.33129
-beq_else.33128:
-	luil	a3, l.28427
+	jal	x0, beq_cont.33653
+beq_else.33652:
+	luil	a3, l.28833
 	srli	a3, a3, 1
-	addil	a3, a3, l.28427
+	addil	a3, a3, l.28833
 	flw	fa5, 0(a3)
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa6, 0(a3)
 	fsub	fa6, fa4, fa6
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa7, 0(a3)
 	fadd	fa4, fa4, fa7
 	fdiv	fa4, fa6, fa4
-	luil	a3, l.28413
+	luil	a3, l.28819
 	srli	a3, a3, 1
-	addil	a3, a3, l.28413
+	addil	a3, a3, l.28819
 	flw	fa6, 0(a3)
-	luil	a3, l.28415
+	luil	a3, l.28821
 	srli	a3, a3, 1
-	addil	a3, a3, l.28415
+	addil	a3, a3, l.28821
 	flw	fa7, 0(a3)
-	luil	a3, l.28417
+	luil	a3, l.28823
 	srli	a3, a3, 1
-	addil	a3, a3, l.28417
+	addil	a3, a3, l.28823
 	flw	ft0, 0(a3)
-	luil	a3, l.28419
+	luil	a3, l.28825
 	srli	a3, a3, 1
-	addil	a3, a3, l.28419
+	addil	a3, a3, l.28825
 	flw	ft1, 0(a3)
-	luil	a3, l.28421
+	luil	a3, l.28827
 	srli	a3, a3, 1
-	addil	a3, a3, l.28421
+	addil	a3, a3, l.28827
 	flw	ft2, 0(a3)
-	luil	a3, l.28423
+	luil	a3, l.28829
 	srli	a3, a3, 1
-	addil	a3, a3, l.28423
+	addil	a3, a3, l.28829
 	flw	ft3, 0(a3)
 	fmul	ft4, fa4, fa4
 	fmul	ft3, ft3, ft4
@@ -8651,32 +8965,32 @@ beq_else.33128:
 	fmul	fa6, fa6, ft4
 	fadd	fa4, fa6, fa4
 	fadd	fa4, fa5, fa4
-beq_cont.33129:
-	jal	x0, beq_cont.33127
-beq_else.33126:
-	luil	a3, l.28413
+beq_cont.33653:
+	jal	x0, beq_cont.33651
+beq_else.33650:
+	luil	a3, l.28819
 	srli	a3, a3, 1
-	addil	a3, a3, l.28413
+	addil	a3, a3, l.28819
 	flw	fa5, 0(a3)
-	luil	a3, l.28415
+	luil	a3, l.28821
 	srli	a3, a3, 1
-	addil	a3, a3, l.28415
+	addil	a3, a3, l.28821
 	flw	fa6, 0(a3)
-	luil	a3, l.28417
+	luil	a3, l.28823
 	srli	a3, a3, 1
-	addil	a3, a3, l.28417
+	addil	a3, a3, l.28823
 	flw	fa7, 0(a3)
-	luil	a3, l.28419
+	luil	a3, l.28825
 	srli	a3, a3, 1
-	addil	a3, a3, l.28419
+	addil	a3, a3, l.28825
 	flw	ft0, 0(a3)
-	luil	a3, l.28421
+	luil	a3, l.28827
 	srli	a3, a3, 1
-	addil	a3, a3, l.28421
+	addil	a3, a3, l.28827
 	flw	ft1, 0(a3)
-	luil	a3, l.28423
+	luil	a3, l.28829
 	srli	a3, a3, 1
-	addil	a3, a3, l.28423
+	addil	a3, a3, l.28829
 	flw	ft2, 0(a3)
 	fmul	ft3, fa4, fa4
 	fmul	ft2, ft2, ft3
@@ -8692,74 +9006,74 @@ beq_else.33126:
 	fmul	fa5, fa5, fa4
 	fmul	fa5, fa5, ft3
 	fadd	fa4, fa5, fa4
-beq_cont.33127:
+beq_cont.33651:
 	fsgnjn	fs11, fa3, fa3
 	flt	a3, fs11, fa3
-	bne	a3, x0, beq_else.33130 # size : 4
+	bne	a3, x0, beq_else.33654 # size : 4
 	addi	a3, x0, -1
-	jal	x0, beq_cont.33131
-beq_else.33130:
+	jal	x0, beq_cont.33655
+beq_else.33654:
 	addi	a3, x0, 1
-beq_cont.33131:
+beq_cont.33655:
 	fsgnjn	fs11, fa3, fa3
 	flt	a4, fs11, fa3
-	bne	a4, x0, beq_else.33132 # size : 28
-	luil	a4, l.26869
+	bne	a4, x0, beq_else.33656 # size : 28
+	luil	a4, l.27215
 	srli	a4, a4, 1
-	addil	a4, a4, l.26869
+	addil	a4, a4, l.27215
 	flw	fa5, 0(a4)
 	fmul	fa3, fa5, fa3
-	jal	x0, beq_cont.33133
-beq_else.33132:
-beq_cont.33133:
-	luil	a4, l.28411
+	jal	x0, beq_cont.33657
+beq_else.33656:
+beq_cont.33657:
+	luil	a4, l.28817
 	srli	a4, a4, 1
-	addil	a4, a4, l.28411
+	addil	a4, a4, l.28817
 	flw	fa5, 0(a4)
 	fsub	fa5, fa5, fa3
 	fsgnjn	fs11, fa5, fa5
 	flt	a4, fs11, fa5
-	bne	a4, x0, beq_else.33134 # size : 728
-	luil	a4, l.28425
+	bne	a4, x0, beq_else.33658 # size : 728
+	luil	a4, l.28831
 	srli	a4, a4, 1
-	addil	a4, a4, l.28425
+	addil	a4, a4, l.28831
 	flw	fa5, 0(a4)
 	fsub	fa5, fa5, fa3
 	fsgnjn	fs11, fa5, fa5
 	flt	a4, fs11, fa5
-	bne	a4, x0, beq_else.33136 # size : 316
-	luil	a4, l.26931
+	bne	a4, x0, beq_else.33660 # size : 316
+	luil	a4, l.27285
 	srli	a4, a4, 1
-	addil	a4, a4, l.26931
+	addil	a4, a4, l.27285
 	flw	fa5, 0(a4)
-	luil	a4, l.26867
+	luil	a4, l.27213
 	srli	a4, a4, 1
-	addil	a4, a4, l.26867
+	addil	a4, a4, l.27213
 	flw	fa6, 0(a4)
 	fdiv	fa3, fa6, fa3
-	luil	a4, l.28413
+	luil	a4, l.28819
 	srli	a4, a4, 1
-	addil	a4, a4, l.28413
+	addil	a4, a4, l.28819
 	flw	fa6, 0(a4)
-	luil	a4, l.28415
+	luil	a4, l.28821
 	srli	a4, a4, 1
-	addil	a4, a4, l.28415
+	addil	a4, a4, l.28821
 	flw	fa7, 0(a4)
-	luil	a4, l.28417
+	luil	a4, l.28823
 	srli	a4, a4, 1
-	addil	a4, a4, l.28417
+	addil	a4, a4, l.28823
 	flw	ft0, 0(a4)
-	luil	a4, l.28419
+	luil	a4, l.28825
 	srli	a4, a4, 1
-	addil	a4, a4, l.28419
+	addil	a4, a4, l.28825
 	flw	ft1, 0(a4)
-	luil	a4, l.28421
+	luil	a4, l.28827
 	srli	a4, a4, 1
-	addil	a4, a4, l.28421
+	addil	a4, a4, l.28827
 	flw	ft2, 0(a4)
-	luil	a4, l.28423
+	luil	a4, l.28829
 	srli	a4, a4, 1
-	addil	a4, a4, l.28423
+	addil	a4, a4, l.28829
 	flw	ft3, 0(a4)
 	fmul	ft4, fa3, fa3
 	fmul	ft3, ft3, ft4
@@ -8776,46 +9090,46 @@ beq_cont.33133:
 	fmul	fa6, fa6, ft4
 	fadd	fa3, fa6, fa3
 	fsub	fa3, fa5, fa3
-	jal	x0, beq_cont.33137
-beq_else.33136:
-	luil	a4, l.28427
+	jal	x0, beq_cont.33661
+beq_else.33660:
+	luil	a4, l.28833
 	srli	a4, a4, 1
-	addil	a4, a4, l.28427
+	addil	a4, a4, l.28833
 	flw	fa5, 0(a4)
-	luil	a4, l.26867
+	luil	a4, l.27213
 	srli	a4, a4, 1
-	addil	a4, a4, l.26867
+	addil	a4, a4, l.27213
 	flw	fa6, 0(a4)
 	fsub	fa6, fa3, fa6
-	luil	a4, l.26867
+	luil	a4, l.27213
 	srli	a4, a4, 1
-	addil	a4, a4, l.26867
+	addil	a4, a4, l.27213
 	flw	fa7, 0(a4)
 	fadd	fa3, fa3, fa7
 	fdiv	fa3, fa6, fa3
-	luil	a4, l.28413
+	luil	a4, l.28819
 	srli	a4, a4, 1
-	addil	a4, a4, l.28413
+	addil	a4, a4, l.28819
 	flw	fa6, 0(a4)
-	luil	a4, l.28415
+	luil	a4, l.28821
 	srli	a4, a4, 1
-	addil	a4, a4, l.28415
+	addil	a4, a4, l.28821
 	flw	fa7, 0(a4)
-	luil	a4, l.28417
+	luil	a4, l.28823
 	srli	a4, a4, 1
-	addil	a4, a4, l.28417
+	addil	a4, a4, l.28823
 	flw	ft0, 0(a4)
-	luil	a4, l.28419
+	luil	a4, l.28825
 	srli	a4, a4, 1
-	addil	a4, a4, l.28419
+	addil	a4, a4, l.28825
 	flw	ft1, 0(a4)
-	luil	a4, l.28421
+	luil	a4, l.28827
 	srli	a4, a4, 1
-	addil	a4, a4, l.28421
+	addil	a4, a4, l.28827
 	flw	ft2, 0(a4)
-	luil	a4, l.28423
+	luil	a4, l.28829
 	srli	a4, a4, 1
-	addil	a4, a4, l.28423
+	addil	a4, a4, l.28829
 	flw	ft3, 0(a4)
 	fmul	ft4, fa3, fa3
 	fmul	ft3, ft3, ft4
@@ -8832,32 +9146,32 @@ beq_else.33136:
 	fmul	fa6, fa6, ft4
 	fadd	fa3, fa6, fa3
 	fadd	fa3, fa5, fa3
-beq_cont.33137:
-	jal	x0, beq_cont.33135
-beq_else.33134:
-	luil	a4, l.28413
+beq_cont.33661:
+	jal	x0, beq_cont.33659
+beq_else.33658:
+	luil	a4, l.28819
 	srli	a4, a4, 1
-	addil	a4, a4, l.28413
+	addil	a4, a4, l.28819
 	flw	fa5, 0(a4)
-	luil	a4, l.28415
+	luil	a4, l.28821
 	srli	a4, a4, 1
-	addil	a4, a4, l.28415
+	addil	a4, a4, l.28821
 	flw	fa6, 0(a4)
-	luil	a4, l.28417
+	luil	a4, l.28823
 	srli	a4, a4, 1
-	addil	a4, a4, l.28417
+	addil	a4, a4, l.28823
 	flw	fa7, 0(a4)
-	luil	a4, l.28419
+	luil	a4, l.28825
 	srli	a4, a4, 1
-	addil	a4, a4, l.28419
+	addil	a4, a4, l.28825
 	flw	ft0, 0(a4)
-	luil	a4, l.28421
+	luil	a4, l.28827
 	srli	a4, a4, 1
-	addil	a4, a4, l.28421
+	addil	a4, a4, l.28827
 	flw	ft1, 0(a4)
-	luil	a4, l.28423
+	luil	a4, l.28829
 	srli	a4, a4, 1
-	addil	a4, a4, l.28423
+	addil	a4, a4, l.28829
 	flw	ft2, 0(a4)
 	fmul	ft3, fa3, fa3
 	fmul	ft2, ft2, ft3
@@ -8873,51 +9187,51 @@ beq_else.33134:
 	fmul	fa5, fa5, fa3
 	fmul	fa5, fa5, ft3
 	fadd	fa3, fa5, fa3
-beq_cont.33135:
+beq_cont.33659:
 	fsgnjn	fs11, fa3, fa3
 	flt	a4, fs11, fa3
-	bne	a4, x0, beq_else.33138 # size : 4
+	bne	a4, x0, beq_else.33662 # size : 4
 	addi	a4, x0, -1
-	jal	x0, beq_cont.33139
-beq_else.33138:
+	jal	x0, beq_cont.33663
+beq_else.33662:
 	addi	a4, x0, 1
-beq_cont.33139:
-	bne	a3, a4, beq_else.33140 # size : 4
+beq_cont.33663:
+	bne	a3, a4, beq_else.33664 # size : 4
 	fsgnj	fa3, fa4, fa4
-	jal	x0, beq_cont.33141
-beq_else.33140:
-	luil	a3, l.26869
+	jal	x0, beq_cont.33665
+beq_else.33664:
+	luil	a3, l.27215
 	srli	a3, a3, 1
-	addil	a3, a3, l.26869
+	addil	a3, a3, l.27215
 	flw	fa3, 0(a3)
 	fmul	fa3, fa3, fa4
-beq_cont.33141:
-	luil	a3, l.28472
+beq_cont.33665:
+	luil	a3, l.28878
 	srli	a3, a3, 1
-	addil	a3, a3, l.28472
+	addil	a3, a3, l.28878
 	flw	fa4, 0(a3)
 	fmul	fa3, fa3, fa4
-	luil	a3, l.28474
+	luil	a3, l.28880
 	srli	a3, a3, 1
-	addil	a3, a3, l.28474
+	addil	a3, a3, l.28880
 	flw	fa4, 0(a3)
 	fdiv	fa3, fa3, fa4
-	jal	x0, beq_cont.33123
-beq_else.33122:
-	luil	a3, l.28408
+	jal	x0, beq_cont.33647
+beq_else.33646:
+	luil	a3, l.28814
 	srli	a3, a3, 1
-	addil	a3, a3, l.28408
+	addil	a3, a3, l.28814
 	flw	fa3, 0(a3)
-beq_cont.33123:
+beq_cont.33647:
 	fcvtws	t6, fa3
 	fcvtsw	fs11, t6
 	flt	t4, fa3, fs11
 	sub	t6, t6, t4
 	fcvtsw	fa4, t6
 	fsub	fa3, fa3, fa4
-	luil	a3, l.28539
+	luil	a3, l.28945
 	srli	a3, a3, 1
-	addil	a3, a3, l.28539
+	addil	a3, a3, l.28945
 	flw	fa4, 0(a3)
 	luil	a3, l.001
 	srli	a3, a3, 1
@@ -8935,41 +9249,41 @@ beq_cont.33123:
 	fsub	fa2, fa2, fa3
 	fsgnjn	fs11, fa2, fa2
 	flt	a3, fa2, fs11
-	bne	a3, x0, beq_else.33142 # size : 4
-	jal	x0, beq_cont.33143
-beq_else.33142:
-	luil	a3, l.26808
+	bne	a3, x0, beq_else.33666 # size : 4
+	jal	x0, beq_cont.33667
+beq_else.33666:
+	luil	a3, l.27154
 	srli	a3, a3, 1
-	addil	a3, a3, l.26808
+	addil	a3, a3, l.27154
 	flw	fa2, 0(a3)
-beq_cont.33143:
+beq_cont.33667:
 	addi	a3, x0, 836
-	luil	a4, l.28544
+	luil	a4, l.28950
 	srli	a4, a4, 1
-	addil	a4, a4, l.28544
+	addil	a4, a4, l.28950
 	flw	fa3, 0(a4)
 	fmul	fa2, fa3, fa2
-	luil	a4, l.28546
+	luil	a4, l.28952
 	srli	a4, a4, 1
-	addil	a4, a4, l.28546
+	addil	a4, a4, l.28952
 	flw	fa3, 0(a4)
 	fdiv	fa2, fa2, fa3
 	fsw	fa2, 8(a3) 
-beq_cont.33100:
-beq_cont.33060:
-beq_cont.33022:
-beq_cont.33014:
-	lw	a0, -44(sp) # Restore obj_id.4100
+beq_cont.33624:
+beq_cont.33584:
+beq_cont.33546:
+beq_cont.33538:
+	lw	a0, -36(sp) # Restore obj_id.4104
 	slli	a0, a0, 2
 	addi	a1, x0, 800
 	lw	a1, 0(a1)
 	add	a0, a0, a1
-	lw	a1, -28(sp) # Restore nref.3189
+	lw	a1, -20(sp) # Restore nref.3193
 	slli	a2, a1, 2
-	lw	a3, -24(sp) # Restore m_sids.6050.8857
+	lw	a3, -16(sp) # Restore m_sids.6054.8871
 	add	a2, a3, a2
 	sw	a0,0(a2) 
-	lw	a0, -8(sp) # Restore pixel.3192
+	lw	a0, -4(sp) # Restore pixel.3196
 	lw	a2, 4(a0)
 	slli	a4, a1, 2
 	add	a2, a2, a4
@@ -8988,7 +9302,7 @@ beq_cont.33014:
 	addi	a2, a2, 8
 	fsw	fa0, 0(a2) 
 	lw	a2, 12(a0)
-	lw	a4, -40(sp) # Restore obj.4101
+	lw	a4, -32(sp) # Restore obj.4105
 	lw	a5, 28(a4)
 	flw	fa0, 0(a5)
 	luil	a5, l.001
@@ -8996,7 +9310,7 @@ beq_cont.33014:
 	addil	a5, a5, l.001
 	flw	fa1, 0(a5)
 	flt	a5, fa0, fa1
-	bne	a5, x0, beq_else.33144 # size : 484
+	bne	a5, x0, beq_else.33668 # size : 484
 	addi	a5, x0, 1
 	slli	a6, a1, 2
 	add	a2, a2, a6
@@ -9021,11 +9335,11 @@ beq_cont.33014:
 	slli	a5, a1, 2
 	add	a2, a2, a5
 	lw	a2, 0(a2)
-	luil	a5, l.28709
+	luil	a5, l.29132
 	srli	a5, a5, 1
-	addil	a5, a5, l.28709
+	addil	a5, a5, l.29132
 	flw	fa0, 0(a5)
-	flw	fa1, -36(sp)
+	flw	fa1, -28(sp)
 	fmul	fa0, fa0, fa1
 	addi	a5, a2 0
 	flw	fa2, 0(a5)
@@ -9058,19 +9372,19 @@ beq_cont.33014:
 	addi	a5, a5, 8
 	flw	fa0, 0(a5)
 	fsw	fa0, 8(a2) 
-	jal	x0, beq_cont.33145
-beq_else.33144:
+	jal	x0, beq_cont.33669
+beq_else.33668:
 	addi	a5, x0, 0
 	slli	a6, a1, 2
 	add	a2, a2, a6
 	sw	a5,0(a2) 
-beq_cont.33145:
-	luil	a2, l.28737
+beq_cont.33669:
+	luil	a2, l.29160
 	srli	a2, a2, 1
-	addil	a2, a2, l.28737
+	addil	a2, a2, l.29160
 	flw	fa0, 0(a2)
 	addi	a2, x0, 824
-	lw	a5, -20(sp) # Restore dirvec.3191
+	lw	a5, -12(sp) # Restore dirvec.3195
 	addi	a6, a5 0
 	flw	fa1, 0(a6)
 	addi	a6, a2 0
@@ -9117,20 +9431,20 @@ beq_cont.33145:
 	lw	a2, 28(a4)
 	addi	a2, a2, 4
 	flw	fa0, 0(a2)
-	flw	fa1, -16(sp)
+	flw	fa1, -8(sp)
 	fmul	fa0, fa1, fa0
 	addi	a2, x0, 0
 	addi	a6, x0, 792
 	lw	a6, 0(a6)
-	fsw	fa0, -120(sp)
+	fsw	fa0, -152(sp)
 	addi	a1, a6, 0
 	addi	a0, a2, 0
-	sw	ra, -128(sp)
-	addi	sp, sp, -132
-	jal	ra, shadow_check_one_or_matrix.3136
-	addi	sp, sp, 132
-	lw	ra, -128(sp)
-	bne	a0, x0, beq_else.33146 # size : 788
+	sw	ra, -160(sp)
+	addi	sp, sp, -164
+	jal	ra, shadow_check_one_or_matrix.3140
+	addi	sp, sp, 164
+	lw	ra, -160(sp)
+	bne	a0, x0, beq_else.33670 # size : 788
 	addi	a0, x0, 824
 	addi	a1, x0, 568
 	addi	a2, a0 0
@@ -9151,10 +9465,10 @@ beq_cont.33145:
 	fmul	fa1, fa1, fa2
 	fadd	fa0, fa0, fa1
 	fsgnjn	fa0, fa0, fa0
-	flw	fa1, -36(sp)
+	flw	fa1, -28(sp)
 	fmul	fa0, fa0, fa1
 	addi	a0, x0, 568
-	lw	a1, -20(sp) # Restore dirvec.3191
+	lw	a1, -12(sp) # Restore dirvec.3195
 	addi	a2, a1 0
 	flw	fa2, 0(a2)
 	addi	a2, a0 0
@@ -9175,9 +9489,9 @@ beq_cont.33145:
 	fsgnjn	fa2, fa2, fa2
 	fsgnjn	fs11, fa0, fa0
 	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.33148 # size : 0
-	jal	x0, beq_cont.33149
-beq_else.33148:
+	bne	a0, x0, beq_else.33672 # size : 0
+	jal	x0, beq_cont.33673
+beq_else.33672:
 	addi	a0, x0, 860
 	addi	a2, x0, 836
 	addi	a3, a0 0
@@ -9203,15 +9517,15 @@ beq_else.33148:
 	fmul	fa0, fa0, fa4
 	fadd	fa0, fa3, fa0
 	fsw	fa0, 8(a0) 
-beq_cont.33149:
+beq_cont.33673:
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33150 # size : 0
-	jal	x0, beq_cont.33151
-beq_else.33150:
+	bne	a0, x0, beq_else.33674 # size : 0
+	jal	x0, beq_cont.33675
+beq_else.33674:
 	fmul	fa0, fa2, fa2
 	fmul	fa0, fa0, fa0
-	flw	fa2, -120(sp)
+	flw	fa2, -152(sp)
 	fmul	fa0, fa0, fa2
 	addi	a0, x0, 860
 	addi	a2, x0, 860
@@ -9231,10 +9545,10 @@ beq_else.33150:
 	flw	fa3, 0(a2)
 	fadd	fa0, fa3, fa0
 	fsw	fa0, 8(a0) 
-beq_cont.33151:
-	jal	x0, beq_cont.33147
-beq_else.33146:
-beq_cont.33147:
+beq_cont.33675:
+	jal	x0, beq_cont.33671
+beq_else.33670:
+beq_cont.33671:
 	addi	a0, x0, 808
 	addi	a1, x0, 904
 	addi	a2, a0 0
@@ -9252,51 +9566,51 @@ beq_cont.33147:
 	addi	a1, x0, 256
 	lw	a1, 0(a1)
 	addi	a1, a1, -1
-	sw	ra, -128(sp)
-	addi	sp, sp, -132
-	jal	ra, setup_startp_constants.3099
-	addi	sp, sp, 132
-	lw	ra, -128(sp)
+	sw	ra, -160(sp)
+	addi	sp, sp, -164
+	jal	ra, setup_startp_constants.3103
+	addi	sp, sp, 164
+	lw	ra, -160(sp)
 	addi	a0, x0, 1984
 	lw	a0, 0(a0)
 	addi	a0, a0, -1
-	flw	fa0, -36(sp)
-	flw	fa1, -120(sp)
-	lw	a1, -20(sp) # Restore dirvec.3191
-	sw	ra, -128(sp)
-	addi	sp, sp, -132
-	jal	ra, trace_reflections.3183
-	addi	sp, sp, 132
-	lw	ra, -128(sp)
-	luil	a0, l.28843
+	flw	fa0, -28(sp)
+	flw	fa1, -152(sp)
+	lw	a1, -12(sp) # Restore dirvec.3195
+	sw	ra, -160(sp)
+	addi	sp, sp, -164
+	jal	ra, trace_reflections.3187
+	addi	sp, sp, 164
+	lw	ra, -160(sp)
+	luil	a0, l.29266
 	srli	a0, a0, 1
-	addil	a0, a0, l.28843
+	addil	a0, a0, l.29266
 	flw	fa0, 0(a0)
-	flw	fa1, -16(sp)
+	flw	fa1, -8(sp)
 	flt	a0, fa0, fa1
-	bne	a0, x0, be_else.33152 # size : 0
+	bne	a0, x0, be_else.33676 # size : 0
 	jalr	x0, ra, 0
-be_else.33152:
-	lw	a0, -28(sp) # Restore nref.3189
+be_else.33676:
+	lw	a0, -20(sp) # Restore nref.3193
 	addi	t6, x0, 4
-	blt	a0, t6, bg_else.33154 # size : 0
-	jal	x0, bg_cont.33155
-bg_else.33154:
+	blt	a0, t6, bg_else.33678 # size : 0
+	jal	x0, bg_cont.33679
+bg_else.33678:
 	addi	a1, a0, 1
 	addi	a2, x0, -1
 	slli	a1, a1, 2
-	lw	a3, -24(sp) # Restore m_sids.6050.8857
+	lw	a3, -16(sp) # Restore m_sids.6054.8871
 	add	a1, a3, a1
 	sw	a2,0(a1) 
-bg_cont.33155:
-	lw	a1, -32(sp) # Restore m_surface.6286.8814
+bg_cont.33679:
+	lw	a1, -24(sp) # Restore m_surface.6290.8828
 	addi	t6, x0, 2
-	bne	a1, t6, be_else.33156 # size : 192
-	luil	a1, l.26867
+	bne	a1, t6, be_else.33680 # size : 184
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa0, 0(a1)
-	lw	a1, -40(sp) # Restore obj.4101
+	lw	a1, -32(sp) # Restore obj.4105
 	lw	a1, 28(a1)
 	flw	fa2, 0(a1)
 	fsub	fa0, fa0, fa2
@@ -9304,118 +9618,113 @@ bg_cont.33155:
 	addi	a0, a0, 1
 	addi	a1, x0, 804
 	flw	fa1, 0(a1)
-	flw	fa2, -4(sp)
+	flw	fa2, -0(sp)
 	fadd	fa1, fa2, fa1
-	lw	a1, -20(sp) # Restore dirvec.3191
-	lw	a2, -8(sp) # Restore pixel.3192
-	lw	t5, -0(sp) # Restore trace_ray.3188
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-be_else.33156:
+	lw	a1, -12(sp) # Restore dirvec.3195
+	lw	a2, -4(sp) # Restore pixel.3196
+	jal	x0, trace_ray.3192 
+be_else.33680:
 	jalr	x0, ra, 0
-iter_trace_diffuse_rays.3197: # 33368
-	flw	fa0, 4(t5)
-	blt	a3, x0, bg_else.33158 # size : 28672
-	jal	x0, bg_sub.33159
-bg_else.33158:
+iter_trace_diffuse_rays.3201: # 34624
+	blt	a3, x0, bg_else.33682 # size : 29600
+	jal	x0, bg_sub.33683
+bg_else.33682:
 	jalr	x0, ra, 0
-bg_sub.33159:
+bg_sub.33683:
 	slli	a4, a3, 2
 	add	a4, a0, a4
 	lw	a4, 0(a4)
 	lw	a4, 0(a4)
 	addi	a5, a4 0
-	flw	fa1, 0(a5)
+	flw	fa0, 0(a5)
 	addi	a5, a1 0
+	flw	fa1, 0(a5)
+	fmul	fa0, fa0, fa1
+	addi	a5, a4, 4
+	flw	fa1, 0(a5)
+	addi	a5, a1, 4
 	flw	fa2, 0(a5)
 	fmul	fa1, fa1, fa2
-	addi	a5, a4, 4
-	flw	fa2, 0(a5)
-	addi	a5, a1, 4
-	flw	fa3, 0(a5)
-	fmul	fa2, fa2, fa3
-	fadd	fa1, fa1, fa2
+	fadd	fa0, fa0, fa1
 	addi	a4, a4, 8
-	flw	fa2, 0(a4)
+	flw	fa1, 0(a4)
 	addi	a4, a1, 8
-	flw	fa3, 0(a4)
-	fmul	fa2, fa2, fa3
-	fadd	fa1, fa1, fa2
-	fsgnjn	fs11, fa1, fa1
-	flt	a4, fa1, fs11
-	sw	a2, -0(sp) # Save org.3200
-	sw	a1, -4(sp) # Save nvector.3199
-	sw	a0, -8(sp) # Save dirvec_group.3198
-	sw	t5, -12(sp) # Save iter_trace_diffuse_rays.3197
-	sw	a3, -16(sp) # Save index.3201
-	bne	a4, x0, beq_else.33161 # size : 14168
-	jal	x0, beq_sub.33163
-beq_else.33161:
+	flw	fa2, 0(a4)
+	fmul	fa1, fa1, fa2
+	fadd	fa0, fa0, fa1
+	fsgnjn	fs11, fa0, fa0
+	flt	a4, fa0, fs11
+	sw	a2, -0(sp) # Save org.3204
+	sw	a1, -4(sp) # Save nvector.3203
+	sw	a0, -8(sp) # Save dirvec_group.3202
+	sw	a3, -12(sp) # Save index.3205
+	bne	a4, x0, beq_else.33685 # size : 14640
+	jal	x0, beq_sub.33687
+beq_else.33685:
 	addi	a4, a3, 1
 	slli	a4, a4, 2
 	add	a4, a0, a4
 	lw	a4, 0(a4)
-	luil	a5, l.28896
+	luil	a5, l.29319
 	srli	a5, a5, 1
-	addil	a5, a5, l.28896
-	flw	fa2, 0(a5)
-	fdiv	fa1, fa1, fa2
+	addil	a5, a5, l.29319
+	flw	fa1, 0(a5)
+	fdiv	fa0, fa0, fa1
 	addi	a5, x0, 804
-	luil	a6, l.28193
+	luil	a6, l.28596
 	srli	a6, a6, 1
-	addil	a6, a6, l.28193
-	flw	fa2, 0(a6)
-	fsw	fa2, 0(a5) 
+	addil	a6, a6, l.28596
+	flw	fa1, 0(a6)
+	fsw	fa1, 0(a5) 
 	addi	a5, x0, 0
 	addi	a6, x0, 792
 	lw	a6, 0(a6)
-	fsw	fa1, -20(sp)
-	fsw	fa0, -24(sp)
-	sw	a4, -28(sp) # Save Tt2215.4057
+	fsw	fa0, -16(sp)
+	sw	a4, -20(sp) # Save Tt2216.4061
 	addi	a2, a4, 0
 	addi	a1, a6, 0
 	addi	a0, a5, 0
-	sw	ra, -36(sp)
-	addi	sp, sp, -40
-	jal	ra, trace_or_matrix_fast.3161
-	addi	sp, sp, 40
-	lw	ra, -36(sp)
+	sw	ra, -28(sp)
+	addi	sp, sp, -32
+	jal	ra, trace_or_matrix_fast.3165
+	addi	sp, sp, 32
+	lw	ra, -28(sp)
 	addi	a0, x0, 804
 	flw	fa0, 0(a0)
-	luil	a0, l.27651
+	luil	a0, l.28052
 	srli	a0, a0, 1
-	addil	a0, a0, l.27651
+	addil	a0, a0, l.28052
 	flw	fa1, 0(a0)
 	flt	a0, fa1, fa0
-	bne	a0, x0, beq_else.33164 # size : 4
+	bne	a0, x0, beq_else.33688 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.33165
-beq_else.33164:
-	luil	a0, l.28202
+	jal	x0, beq_cont.33689
+beq_else.33688:
+	luil	a0, l.28605
 	srli	a0, a0, 1
-	addil	a0, a0, l.28202
+	addil	a0, a0, l.28605
 	flw	fa1, 0(a0)
 	flt	a0, fa0, fa1
-beq_cont.33165:
-	bne	a0, x0, beq_else.33166 # size : 0
-	jal	x0, beq_cont.33167
-beq_else.33166:
+beq_cont.33689:
+	bne	a0, x0, beq_else.33690 # size : 0
+	jal	x0, beq_cont.33691
+beq_else.33690:
 	addi	a0, x0, 820
 	lw	a0, 0(a0)
 	slli	a0, a0, 2
 	addi	a0, a0, 304
 	lw	a0, 0(a0)
-	lw	a1, -28(sp) # Restore Tt2215.4057
+	lw	a1, -20(sp) # Restore Tt2216.4061
 	lw	a1, 0(a1)
 	lw	a2, 4(a0)
 	addi	t6, x0, 1
-	bne	a2, t6, beq_else.33168 # size : 284
+	bne	a2, t6, beq_else.33692 # size : 284
 	addi	a2, x0, 800
 	lw	a2, 0(a2)
 	addi	a3, x0, 824
-	luil	a4, l.26808
+	luil	a4, l.27154
 	srli	a4, a4, 1
-	addil	a4, a4, l.26808
+	addil	a4, a4, l.27154
 	flw	fa0, 0(a4)
 	addi	a4, a3 0
 	fsw	fa0, 0(a4) 
@@ -9430,35 +9739,35 @@ beq_else.33166:
 	flw	fa0, 0(a1)
 	fsgnjn	fs11, fa0, fa0
 	feq	a1, fs11, fa0
-	bne	a1, x0, beq_else.33170 # size : 64
+	bne	a1, x0, beq_else.33694 # size : 64
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33172 # size : 20
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.33696 # size : 20
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa0, 0(a1)
-	jal	x0, beq_cont.33173
-beq_else.33172:
-	luil	a1, l.26867
+	jal	x0, beq_cont.33697
+beq_else.33696:
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa0, 0(a1)
-beq_cont.33173:
-	jal	x0, beq_cont.33171
-beq_else.33170:
-	luil	a1, l.26808
+beq_cont.33697:
+	jal	x0, beq_cont.33695
+beq_else.33694:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-beq_cont.33171:
+beq_cont.33695:
 	fsgnjn	fa0, fa0, fa0
 	slli	a1, a3, 2
 	fsw	fa0, 824(a1) 
-	jal	x0, beq_cont.33169
-beq_else.33168:
+	jal	x0, beq_cont.33693
+beq_else.33692:
 	addi	t6, x0, 2
-	bne	a2, t6, beq_else.33174 # size : 164
+	bne	a2, t6, beq_else.33698 # size : 164
 	addi	a1, x0, 824
 	lw	a2, 16(a0)
 	flw	fa0, 0(a2)
@@ -9477,8 +9786,8 @@ beq_else.33168:
 	flw	fa0, 0(a2)
 	fsgnjn	fa0, fa0, fa0
 	fsw	fa0, 8(a1) 
-	jal	x0, beq_cont.33175
-beq_else.33174:
+	jal	x0, beq_cont.33699
+beq_else.33698:
 	addi	a1, x0, 808
 	flw	fa0, 0(a1)
 	lw	a1, 20(a0)
@@ -9510,7 +9819,7 @@ beq_else.33174:
 	flw	fa5, 0(a1)
 	fmul	fa5, fa2, fa5
 	lw	a1, 12(a0)
-	bne	a1, x0, beq_else.33176 # size : 68
+	bne	a1, x0, beq_else.33700 # size : 68
 	addi	a1, x0, 824
 	fsw	fa3, 0(a1) 
 	addi	a1, x0, 824
@@ -9518,8 +9827,8 @@ beq_else.33174:
 	fsw	fa4, 0(a1) 
 	addi	a1, x0, 824
 	fsw	fa5, 8(a1) 
-	jal	x0, beq_cont.33177
-beq_else.33176:
+	jal	x0, beq_cont.33701
+beq_else.33700:
 	addi	a1, x0, 824
 	lw	a2, 36(a0)
 	addi	a2, a2, 8
@@ -9530,11 +9839,11 @@ beq_else.33176:
 	flw	fa7, 0(a2)
 	fmul	fa7, fa2, fa7
 	fadd	fa6, fa6, fa7
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa6, fa6, fs11
+	luil	a2, l.001
+	srli	a2, a2, 1
+	addil	a2, a2, l.001
+	flw	fa7, 0(a2)
+	fmul	fa6, fa6, fa7
 	fadd	fa3, fa3, fa6
 	fsw	fa3, 0(a1) 
 	addi	a1, x0, 824
@@ -9546,11 +9855,11 @@ beq_else.33176:
 	flw	fa6, 0(a2)
 	fmul	fa2, fa2, fa6
 	fadd	fa2, fa3, fa2
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa2, fa2, fs11
+	luil	a2, l.001
+	srli	a2, a2, 1
+	addil	a2, a2, l.001
+	flw	fa3, 0(a2)
+	fmul	fa2, fa2, fa3
 	fadd	fa2, fa4, fa2
 	addi	a1, a1, 4
 	fsw	fa2, 0(a1) 
@@ -9563,14 +9872,14 @@ beq_else.33176:
 	flw	fa2, 0(a2)
 	fmul	fa1, fa1, fa2
 	fadd	fa0, fa0, fa1
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa0, fa0, fs11
+	luil	a2, l.001
+	srli	a2, a2, 1
+	addil	a2, a2, l.001
+	flw	fa1, 0(a2)
+	fmul	fa0, fa0, fa1
 	fadd	fa0, fa5, fa0
 	fsw	fa0, 8(a1) 
-beq_cont.33177:
+beq_cont.33701:
 	addi	a1, x0, 824
 	lw	a2, 24(a0)
 	addi	a3, a1 0
@@ -9587,28 +9896,28 @@ beq_cont.33177:
 	fsqrt	fa0, fa0
 	fsgnjn	fs11, fa0, fa0
 	feq	a3, fs11, fa0
-	bne	a3, x0, beq_else.33178 # size : 68
-	bne	a2, x0, beq_else.33180 # size : 28
-	luil	a2, l.26867
+	bne	a3, x0, beq_else.33702 # size : 68
+	bne	a2, x0, beq_else.33704 # size : 28
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa1, 0(a2)
 	fdiv	fa0, fa1, fa0
-	jal	x0, beq_cont.33181
-beq_else.33180:
-	luil	a2, l.26869
+	jal	x0, beq_cont.33705
+beq_else.33704:
+	luil	a2, l.27215
 	srli	a2, a2, 1
-	addil	a2, a2, l.26869
+	addil	a2, a2, l.27215
 	flw	fa1, 0(a2)
 	fdiv	fa0, fa1, fa0
-beq_cont.33181:
-	jal	x0, beq_cont.33179
-beq_else.33178:
-	luil	a2, l.26867
+beq_cont.33705:
+	jal	x0, beq_cont.33703
+beq_else.33702:
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa0, 0(a2)
-beq_cont.33179:
+beq_cont.33703:
 	addi	a2, a1 0
 	flw	fa1, 0(a2)
 	fmul	fa1, fa1, fa0
@@ -9623,8 +9932,8 @@ beq_cont.33179:
 	flw	fa1, 0(a2)
 	fmul	fa0, fa1, fa0
 	fsw	fa0, 8(a1) 
-beq_cont.33175:
-beq_cont.33169:
+beq_cont.33699:
+beq_cont.33693:
 	addi	a1, x0, 808
 	lw	a2, 0(a0)
 	addi	a3, x0, 836
@@ -9643,17 +9952,17 @@ beq_cont.33169:
 	flw	fa0, 0(a4)
 	addi	a3, a3, 8
 	fsw	fa0, 0(a3) 
-	sw	a0, -32(sp) # Save obj.4069.8095
+	sw	a0, -24(sp) # Save obj.4073.8109
 	addi	t6, x0, 1
-	bne	a2, t6, beq_else.33182 # size : 492
+	bne	a2, t6, beq_else.33706 # size : 492
 	addi	a2, a1 0
 	flw	fa0, 0(a2)
 	lw	a2, 20(a0)
 	flw	fa1, 0(a2)
 	fsub	fa0, fa0, fa1
-	luil	a2, l.28650
+	luil	a2, l.29073
 	srli	a2, a2, 1
-	addil	a2, a2, l.28650
+	addil	a2, a2, l.29073
 	flw	fa1, 0(a2)
 	fmul	fa1, fa0, fa1
 	fcvtws	t6, fa1
@@ -9661,15 +9970,15 @@ beq_cont.33169:
 	flt	t4, fa1, fs11
 	sub	t6, t6, t4
 	fcvtsw	fa1, t6
-	luil	a2, l.28652
+	luil	a2, l.29075
 	srli	a2, a2, 1
-	addil	a2, a2, l.28652
+	addil	a2, a2, l.29075
 	flw	fa2, 0(a2)
 	fmul	fa1, fa1, fa2
 	fsub	fa0, fa0, fa1
-	luil	a2, l.28558
+	luil	a2, l.28964
 	srli	a2, a2, 1
-	addil	a2, a2, l.28558
+	addil	a2, a2, l.28964
 	flw	fa1, 0(a2)
 	flt	a2, fa0, fa1
 	addi	a1, a1, 8
@@ -9678,9 +9987,9 @@ beq_cont.33169:
 	addi	a1, a1, 8
 	flw	fa1, 0(a1)
 	fsub	fa0, fa0, fa1
-	luil	a1, l.28650
+	luil	a1, l.29073
 	srli	a1, a1, 1
-	addil	a1, a1, l.28650
+	addil	a1, a1, l.29073
 	flw	fa1, 0(a1)
 	fmul	fa1, fa0, fa1
 	fcvtws	t6, fa1
@@ -9688,89 +9997,141 @@ beq_cont.33169:
 	flt	t4, fa1, fs11
 	sub	t6, t6, t4
 	fcvtsw	fa1, t6
-	luil	a1, l.28652
+	luil	a1, l.29075
 	srli	a1, a1, 1
-	addil	a1, a1, l.28652
+	addil	a1, a1, l.29075
 	flw	fa2, 0(a1)
 	fmul	fa1, fa1, fa2
 	fsub	fa0, fa0, fa1
-	luil	a1, l.28558
+	luil	a1, l.28964
 	srli	a1, a1, 1
-	addil	a1, a1, l.28558
+	addil	a1, a1, l.28964
 	flw	fa1, 0(a1)
 	flt	a1, fa0, fa1
 	addi	a3, x0, 836
-	bne	a2, x0, beq_else.33184 # size : 52
-	bne	a1, x0, beq_else.33186 # size : 20
-	luil	a1, l.28544
+	bne	a2, x0, beq_else.33708 # size : 52
+	bne	a1, x0, beq_else.33710 # size : 20
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa0, 0(a1)
-	jal	x0, beq_cont.33187
-beq_else.33186:
-	luil	a1, l.26808
+	jal	x0, beq_cont.33711
+beq_else.33710:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-beq_cont.33187:
-	jal	x0, beq_cont.33185
-beq_else.33184:
-	bne	a1, x0, beq_else.33188 # size : 20
-	luil	a1, l.26808
+beq_cont.33711:
+	jal	x0, beq_cont.33709
+beq_else.33708:
+	bne	a1, x0, beq_else.33712 # size : 20
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	jal	x0, beq_cont.33189
-beq_else.33188:
-	luil	a1, l.28544
+	jal	x0, beq_cont.33713
+beq_else.33712:
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa0, 0(a1)
-beq_cont.33189:
-beq_cont.33185:
+beq_cont.33713:
+beq_cont.33709:
 	addi	a1, a3, 4
 	fsw	fa0, 0(a1) 
-	jal	x0, beq_cont.33183
-beq_else.33182:
+	jal	x0, beq_cont.33707
+beq_else.33706:
 	addi	t6, x0, 2
-	bne	a2, t6, beq_else.33190 # size : 2316
+	bne	a2, t6, beq_else.33714 # size : 2452
 	addi	a1, a1, 4
 	flw	fa0, 0(a1)
-	luil	a1, l.28606
+	luil	a1, l.29022
 	srli	a1, a1, 1
-	addil	a1, a1, l.28606
+	addil	a1, a1, l.29022
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33192 # size : 4
+	bne	a1, x0, beq_else.33716 # size : 4
 	addi	a1, x0, 0
-	jal	x0, beq_cont.33193
-beq_else.33192:
+	jal	x0, beq_cont.33717
+beq_else.33716:
 	addi	a1, x0, 1
-beq_cont.33193:
+beq_cont.33717:
 	addi	t6, x0, 1
-	bne	a1, t6, beq_else.33194 # size : 4
+	bne	a1, t6, beq_else.33718 # size : 4
 	fsgnj	fa1, fa0, fa0
-	jal	x0, beq_cont.33195
-beq_else.33194:
-	luil	a1, l.26869
+	jal	x0, beq_cont.33719
+beq_else.33718:
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa1, 0(a1)
 	fmul	fa1, fa1, fa0
-beq_cont.33195:
-	luil	a1, l.26804
+beq_cont.33719:
+	luil	a1, l.27150
 	srli	a1, a1, 1
-	addil	a1, a1, l.26804
+	addil	a1, a1, l.27150
 	flw	fa2, 0(a1)
-	fsw	fa0, -36(sp)
-	fsw	fa1, -40(sp)
+	fsw	fa0, -28(sp)
+	fsw	fa1, -32(sp)
 	fsgnj	fa0, fa1, fa1
 	fsgnj	fa1, fa2, fa2
+	sw	ra, -40(sp)
+	addi	sp, sp, -44
+	jal	ra, while1.2800
+	addi	sp, sp, 44
+	lw	ra, -40(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -32(sp)
+	sw	ra, -40(sp)
+	addi	sp, sp, -44
+	jal	ra, while2.2805
+	addi	sp, sp, 44
+	lw	ra, -40(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33720 # size : 4
+	jal	x0, beq_cont.33721
+beq_else.33720:
+	fsub	fa0, fa0, fa1
+beq_cont.33721:
+	flw	fa1, -28(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33722 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33723
+beq_else.33722:
+	addi	a0, x0, 1
+beq_cont.33723:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33724 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.33725
+beq_else.33724:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.33725:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -36(sp)
+	fsw	fa2, -40(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
 	sw	ra, -48(sp)
 	addi	sp, sp, -52
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 52
 	lw	ra, -48(sp)
 	fsgnj	fa1, fa0, fa0
@@ -9780,101 +10141,193 @@ beq_cont.33195:
 	jal	ra, while2.2805
 	addi	sp, sp, 52
 	lw	ra, -48(sp)
-	flw	fa1, -24(sp)
+	flw	fa1, -28(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33726 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33727
+beq_else.33726:
+	addi	a0, x0, 1
+beq_cont.33727:
+	flw	fa2, -36(sp)
+	feq	t6, fa2, fa0
+	beq	t6, x0, bne_else.33728 # size : 4
+	jal	x0, bne_cont.33729
+bne_else.33728:
+	addi	a1, x0, 1
+	sub	a0, a1, a0
+bne_cont.33729:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33730 # size : 796
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33732 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33733
+beq_else.33732:
+	addi	a0, x0, 1
+beq_cont.33733:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33734 # size : 4
+	fsgnj	fa0, fa1, fa1
+	jal	x0, beq_cont.33735
+beq_else.33734:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fmul	fa0, fa0, fa1
+beq_cont.33735:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa1, 0(a0)
+	fsw	fa0, -44(sp)
+	sw	ra, -52(sp)
+	addi	sp, sp, -56
+	jal	ra, while1.2800
+	addi	sp, sp, 56
+	lw	ra, -52(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -44(sp)
+	sw	ra, -52(sp)
+	addi	sp, sp, -56
+	jal	ra, while2.2805
+	addi	sp, sp, 56
+	lw	ra, -52(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33196 # size : 4
-	jal	x0, beq_cont.33197
-beq_else.33196:
+	bne	a0, x0, beq_else.33736 # size : 4
+	jal	x0, beq_cont.33737
+beq_else.33736:
 	fsub	fa0, fa0, fa1
-beq_cont.33197:
-	flw	fa2, -36(sp)
+beq_cont.33737:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33198 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33199
-beq_else.33198:
-	addi	a0, x0, 1
-beq_cont.33199:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33200 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.33201
-beq_else.33200:
-	luil	a0, l.26869
+	bne	a0, x0, beq_else.33738 # size : 4
+	jal	x0, beq_cont.33739
+beq_else.33738:
+	fsub	fa0, fa1, fa0
+beq_cont.33739:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.33201:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -44(sp)
-	fsw	fa3, -48(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -56(sp)
-	addi	sp, sp, -60
-	jal	ra, while1.2799
-	addi	sp, sp, 60
-	lw	ra, -56(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -48(sp)
-	sw	ra, -56(sp)
-	addi	sp, sp, -60
-	jal	ra, while2.2805
-	addi	sp, sp, 60
-	lw	ra, -56(sp)
-	flw	fa1, -36(sp)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33202 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33203
-beq_else.33202:
-	addi	a0, x0, 1
-beq_cont.33203:
-	flw	fa2, -44(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33204 # size : 4
-	jal	x0, bne_cont.33205
-bne_else.33204:
-	addi	a1, x0, 1
-	sub	a0, a1, a0
-bne_cont.33205:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33206 # size : 732
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33208 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33209
-beq_else.33208:
-	addi	a0, x0, 1
-beq_cont.33209:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33210 # size : 4
-	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.33211
-beq_else.33210:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fmul	fa0, fa0, fa1
-beq_cont.33211:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27256
 	flw	fa1, 0(a0)
-	fsw	fa0, -52(sp)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33740 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.33741
+beq_else.33740:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.33741:
+	jal	x0, beq_cont.33731
+beq_else.33730:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33742 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33743
+beq_else.33742:
+	addi	a0, x0, 1
+beq_cont.33743:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33744 # size : 4
+	jal	x0, beq_cont.33745
+beq_else.33744:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa1, fa2, fa1
+beq_cont.33745:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa2, 0(a0)
+	fsw	fa0, -48(sp)
+	fsw	fa1, -52(sp)
+	fsgnj	fa0, fa1, fa1
+	fsgnj	fa1, fa2, fa2
 	sw	ra, -60(sp)
 	addi	sp, sp, -64
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 64
 	lw	ra, -60(sp)
 	fsgnj	fa1, fa0, fa0
@@ -9884,249 +10337,130 @@ beq_cont.33211:
 	jal	ra, while2.2805
 	addi	sp, sp, 64
 	lw	ra, -60(sp)
-	flw	fa1, -24(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33212 # size : 4
-	jal	x0, beq_cont.33213
-beq_else.33212:
+	bne	a0, x0, beq_else.33746 # size : 4
+	jal	x0, beq_cont.33747
+beq_else.33746:
 	fsub	fa0, fa0, fa1
-beq_cont.33213:
-	luil	a0, l.26802
+beq_cont.33747:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33214 # size : 4
-	jal	x0, beq_cont.33215
-beq_else.33214:
+	bne	a0, x0, beq_else.33748 # size : 4
+	jal	x0, beq_cont.33749
+beq_else.33748:
 	fsub	fa0, fa1, fa0
-beq_cont.33215:
-	luil	a0, l.26923
+beq_cont.33749:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33216 # size : 180
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.33750 # size : 180
+	luil	a0, l.27285
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-	jal	x0, beq_cont.33217
-beq_else.33216:
-	luil	a0, l.26933
+	jal	x0, beq_cont.33751
+beq_else.33750:
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27287
 	flw	fa1, 0(a0)
-	luil	a0, l.26935
+	luil	a0, l.27289
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
 	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
 	fmul	fa4, fa4, fa3
 	fadd	fa2, fa4, fa2
 	fmul	fa2, fa2, fa3
 	fsub	fa1, fa2, fa1
 	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
 	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-beq_cont.33217:
-	jal	x0, beq_cont.33207
-beq_else.33206:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33218 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33219
-beq_else.33218:
-	addi	a0, x0, 1
-beq_cont.33219:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33220 # size : 4
-	jal	x0, beq_cont.33221
-beq_else.33220:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa1, fa2, fa1
-beq_cont.33221:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -56(sp)
-	fsw	fa1, -60(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -68(sp)
-	addi	sp, sp, -72
-	jal	ra, while1.2799
-	addi	sp, sp, 72
-	lw	ra, -68(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -60(sp)
-	sw	ra, -68(sp)
-	addi	sp, sp, -72
-	jal	ra, while2.2805
-	addi	sp, sp, 72
-	lw	ra, -68(sp)
-	flw	fa1, -24(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33222 # size : 4
-	jal	x0, beq_cont.33223
-beq_else.33222:
-	fsub	fa0, fa0, fa1
-beq_cont.33223:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33224 # size : 4
-	jal	x0, beq_cont.33225
-beq_else.33224:
-	fsub	fa0, fa1, fa0
-beq_cont.33225:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa1, fa2
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33226 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa1, 0(a0)
-	fsub	fa0, fa1, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa1, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa2, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa0
-	fadd	fa2, fa3, fa2
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa2, fa1
+beq_cont.33751:
+	flw	fa1, -48(sp)
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa1, 0(a0)
-	fadd	fa0, fa0, fa1
-	jal	x0, beq_cont.33227
-beq_else.33226:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa1, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa2, 0(a0)
-	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa3
-	fadd	fa2, fa4, fa2
-	fmul	fa2, fa2, fa3
-	fsub	fa1, fa2, fa1
-	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa1, fa1, fa2
-	fmul	fa0, fa1, fa0
-beq_cont.33227:
-	flw	fa1, -56(sp)
-	fmul	fa0, fa1, fa0
-beq_cont.33207:
+beq_cont.33731:
 	fmul	fa0, fa0, fa0
 	addi	a0, x0, 836
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
 	fmul	fa1, fa1, fa0
 	fsw	fa1, 0(a0) 
 	addi	a0, x0, 836
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa2, 0(a1)
 	fsub	fa0, fa2, fa0
 	fmul	fa0, fa1, fa0
 	fsw	fa0, 4(a0) 
-	jal	x0, beq_cont.33191
-beq_else.33190:
+	jal	x0, beq_cont.33715
+beq_else.33714:
 	addi	t6, x0, 3
-	bne	a2, t6, beq_else.33228 # size : 3028
+	bne	a2, t6, beq_else.33752 # size : 3356
 	addi	a2, a1 0
 	flw	fa0, 0(a2)
 	lw	a2, 20(a0)
@@ -10142,9 +10476,9 @@ beq_else.33190:
 	fmul	fa1, fa1, fa1
 	fadd	fa0, fa0, fa1
 	fsqrt	fa0, fa0
-	luil	a1, l.28558
+	luil	a1, l.28964
 	srli	a1, a1, 1
-	addil	a1, a1, l.28558
+	addil	a1, a1, l.28964
 	flw	fa1, 0(a1)
 	fdiv	fa0, fa0, fa1
 	fcvtws	t6, fa0
@@ -10153,474 +10487,530 @@ beq_else.33190:
 	sub	t6, t6, t4
 	fcvtsw	fa1, t6
 	fsub	fa0, fa0, fa1
-	luil	a1, l.28474
+	luil	a1, l.28880
 	srli	a1, a1, 1
-	addil	a1, a1, l.28474
+	addil	a1, a1, l.28880
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33230 # size : 28
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.33754 # size : 28
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33231
-beq_else.33230:
-	fsgnj	fa1, fa0, fa0
-beq_cont.33231:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
+	addil	a1, a1, l.27215
 	flw	fa2, 0(a1)
-	fsw	fa0, -64(sp)
-	fsw	fa1, -68(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -76(sp)
-	addi	sp, sp, -80
-	jal	ra, while1.2799
-	addi	sp, sp, 80
-	lw	ra, -76(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -68(sp)
-	sw	ra, -76(sp)
-	addi	sp, sp, -80
-	jal	ra, while2.2805
-	addi	sp, sp, 80
-	lw	ra, -76(sp)
-	flw	fa1, -24(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33232 # size : 4
-	jal	x0, beq_cont.33233
-beq_else.33232:
-	fsub	fa0, fa0, fa1
-beq_cont.33233:
-	flw	fa2, -64(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33234 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33235
-beq_else.33234:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33235:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -72(sp)
-	fsw	fa3, -76(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -84(sp)
-	addi	sp, sp, -88
-	jal	ra, while1.2799
-	addi	sp, sp, 88
-	lw	ra, -84(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -76(sp)
-	sw	ra, -84(sp)
-	addi	sp, sp, -88
-	jal	ra, while2.2805
-	addi	sp, sp, 88
-	lw	ra, -84(sp)
-	flw	fa1, -72(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.33236 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.33237
-bne_else.33236:
-	addi	a0, x0, 0
-bne_cont.33237:
-	flw	fa0, -64(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33238 # size : 28
-	luil	a1, l.26869
+	fmul	fa2, fa2, fa0
+	jal	x0, beq_cont.33755
+beq_else.33754:
+	fsgnj	fa2, fa0, fa0
+beq_cont.33755:
+	luil	a1, l.27150
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33239
-beq_else.33238:
-	fsgnj	fa1, fa0, fa0
-beq_cont.33239:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -80(sp) # Save flag00.6561.22975
-	fsw	fa1, -84(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -92(sp)
-	addi	sp, sp, -96
-	jal	ra, while1.2799
-	addi	sp, sp, 96
-	lw	ra, -92(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -84(sp)
-	sw	ra, -92(sp)
-	addi	sp, sp, -96
-	jal	ra, while2.2805
-	addi	sp, sp, 96
-	lw	ra, -92(sp)
-	flw	fa1, -24(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33240 # size : 4
-	jal	x0, beq_cont.33241
-beq_else.33240:
-	fsub	fa0, fa0, fa1
-beq_cont.33241:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33242 # size : 4
-	jal	x0, beq_cont.33243
-beq_else.33242:
-	fsub	fa0, fa1, fa0
-beq_cont.33243:
-	flw	fa2, -64(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33244 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33245
-beq_else.33244:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33245:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -88(sp)
-	fsw	fa3, -92(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -100(sp)
-	addi	sp, sp, -104
-	jal	ra, while1.2799
-	addi	sp, sp, 104
-	lw	ra, -100(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -92(sp)
-	sw	ra, -100(sp)
-	addi	sp, sp, -104
-	jal	ra, while2.2805
-	addi	sp, sp, 104
-	lw	ra, -100(sp)
-	flw	fa1, -24(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33246 # size : 4
-	jal	x0, beq_cont.33247
-beq_else.33246:
-	fsub	fa0, fa0, fa1
-beq_cont.33247:
-	flw	fa2, -88(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33248 # size : 12
-	lw	a0, -80(sp) # Restore flag00.6561.22975
-	jal	x0, bne_cont.33249
-bne_else.33248:
-	addi	a0, x0, 1
-	lw	a1, -80(sp) # Restore flag00.6561.22975
-	sub	a0, a0, a1
-bne_cont.33249:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33250 # size : 724
-	flw	fa0, -64(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.33252 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.33253
-beq_else.33252:
-beq_cont.33253:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -96(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -104(sp)
-	addi	sp, sp, -108
-	jal	ra, while1.2799
-	addi	sp, sp, 108
-	lw	ra, -104(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -96(sp)
-	sw	ra, -104(sp)
-	addi	sp, sp, -108
-	jal	ra, while2.2805
-	addi	sp, sp, 108
-	lw	ra, -104(sp)
-	flw	fa1, -24(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33254 # size : 4
-	jal	x0, beq_cont.33255
-beq_else.33254:
-	fsub	fa0, fa0, fa1
-beq_cont.33255:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33256 # size : 4
-	jal	x0, beq_cont.33257
-beq_else.33256:
-	fsub	fa0, fa1, fa0
-beq_cont.33257:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa1, fa2
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33258 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa1, 0(a0)
-	fsub	fa0, fa1, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa1, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa2, 0(a0)
-	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa3
-	fadd	fa2, fa4, fa2
-	fmul	fa2, fa2, fa3
-	fsub	fa1, fa2, fa1
-	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa1, fa1, fa2
-	fmul	fa0, fa1, fa0
-	jal	x0, beq_cont.33259
-beq_else.33258:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa1, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa2, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa0
-	fadd	fa2, fa3, fa2
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa2, fa1
-	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa1, 0(a0)
-	fadd	fa0, fa0, fa1
-beq_cont.33259:
-	jal	x0, beq_cont.33251
-beq_else.33250:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	flw	fa2, -64(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33260 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa2, fa3, fa2
-	jal	x0, beq_cont.33261
-beq_else.33260:
-beq_cont.33261:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa0, -100(sp)
-	fsw	fa2, -104(sp)
+	addil	a1, a1, l.27150
+	flw	fa3, 0(a1)
+	fsw	fa0, -56(sp)
+	fsw	fa1, -60(sp)
+	fsw	fa2, -64(sp)
 	fsgnj	fa1, fa3, fa3
 	fsgnj	fa0, fa2, fa2
-	sw	ra, -112(sp)
-	addi	sp, sp, -116
-	jal	ra, while1.2799
-	addi	sp, sp, 116
-	lw	ra, -112(sp)
+	sw	ra, -72(sp)
+	addi	sp, sp, -76
+	jal	ra, while1.2800
+	addi	sp, sp, 76
+	lw	ra, -72(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -104(sp)
-	sw	ra, -112(sp)
-	addi	sp, sp, -116
+	flw	fa0, -64(sp)
+	sw	ra, -72(sp)
+	addi	sp, sp, -76
 	jal	ra, while2.2805
-	addi	sp, sp, 116
-	lw	ra, -112(sp)
-	flw	fa1, -24(sp)
+	addi	sp, sp, 76
+	lw	ra, -72(sp)
+	flw	fa1, -60(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33262 # size : 4
-	jal	x0, beq_cont.33263
-beq_else.33262:
+	bne	a0, x0, beq_else.33756 # size : 4
+	jal	x0, beq_cont.33757
+beq_else.33756:
 	fsub	fa0, fa0, fa1
-beq_cont.33263:
-	luil	a0, l.26802
+beq_cont.33757:
+	flw	fa1, -56(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33758 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
+	fmul	fa2, fa2, fa1
+	jal	x0, beq_cont.33759
+beq_else.33758:
+	fsgnj	fa2, fa1, fa1
+beq_cont.33759:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -68(sp)
+	fsw	fa2, -72(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -80(sp)
+	addi	sp, sp, -84
+	jal	ra, while1.2800
+	addi	sp, sp, 84
+	lw	ra, -80(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -72(sp)
+	sw	ra, -80(sp)
+	addi	sp, sp, -84
+	jal	ra, while2.2805
+	addi	sp, sp, 84
+	lw	ra, -80(sp)
+	flw	fa1, -68(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.33760 # size : 4
+	addi	a0, x0, 1
+	jal	x0, bne_cont.33761
+bne_else.33760:
+	addi	a0, x0, 0
+bne_cont.33761:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -56(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.33762 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.33763
+beq_else.33762:
+	fsgnj	fa3, fa2, fa2
+beq_cont.33763:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	sw	a0, -76(sp) # Save flag00.6568.23222
+	fsw	fa0, -80(sp)
+	fsw	fa1, -84(sp)
+	fsw	fa3, -88(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -96(sp)
+	addi	sp, sp, -100
+	jal	ra, while1.2800
+	addi	sp, sp, 100
+	lw	ra, -96(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -88(sp)
+	sw	ra, -96(sp)
+	addi	sp, sp, -100
+	jal	ra, while2.2805
+	addi	sp, sp, 100
+	lw	ra, -96(sp)
+	flw	fa1, -84(sp)
+	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33264 # size : 4
-	jal	x0, beq_cont.33265
-beq_else.33264:
-	fsub	fa0, fa1, fa0
-beq_cont.33265:
-	luil	a0, l.26923
+	bne	a0, x0, beq_else.33764 # size : 4
+	jal	x0, beq_cont.33765
+beq_else.33764:
+	fsub	fa0, fa0, fa1
+beq_cont.33765:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -80(sp)
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33266 # size : 188
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.33766 # size : 4
+	jal	x0, beq_cont.33767
+beq_else.33766:
+	fsub	fa0, fa2, fa0
+beq_cont.33767:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -56(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33768 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.33769
+beq_else.33768:
+	fsgnj	fa3, fa2, fa2
+beq_cont.33769:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -92(sp)
+	fsw	fa1, -96(sp)
+	fsw	fa3, -100(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -108(sp)
+	addi	sp, sp, -112
+	jal	ra, while1.2800
+	addi	sp, sp, 112
+	lw	ra, -108(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -100(sp)
+	sw	ra, -108(sp)
+	addi	sp, sp, -112
+	jal	ra, while2.2805
+	addi	sp, sp, 112
+	lw	ra, -108(sp)
+	flw	fa1, -96(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33770 # size : 4
+	jal	x0, beq_cont.33771
+beq_else.33770:
+	fsub	fa0, fa0, fa1
+beq_cont.33771:
+	flw	fa1, -92(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.33772 # size : 12
+	lw	a0, -76(sp) # Restore flag00.6568.23222
+	jal	x0, bne_cont.33773
+bne_else.33772:
+	addi	a0, x0, 1
+	lw	a1, -76(sp) # Restore flag00.6568.23222
+	sub	a0, a0, a1
+bne_cont.33773:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33774 # size : 828
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -56(sp)
+	fsgnjn	fs11, fa3, fa3
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.33776 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa4, 0(a0)
+	fmul	fa3, fa4, fa3
+	jal	x0, beq_cont.33777
+beq_else.33776:
+beq_cont.33777:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -104(sp)
+	fsw	fa1, -108(sp)
+	fsw	fa2, -112(sp)
+	fsw	fa3, -116(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -124(sp)
+	addi	sp, sp, -128
+	jal	ra, while1.2800
+	addi	sp, sp, 128
+	lw	ra, -124(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -116(sp)
+	sw	ra, -124(sp)
+	addi	sp, sp, -128
+	jal	ra, while2.2805
+	addi	sp, sp, 128
+	lw	ra, -124(sp)
+	flw	fa1, -112(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33778 # size : 4
+	jal	x0, beq_cont.33779
+beq_else.33778:
+	fsub	fa0, fa0, fa1
+beq_cont.33779:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -108(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33780 # size : 4
+	jal	x0, beq_cont.33781
+beq_else.33780:
+	fsub	fa0, fa2, fa0
+beq_cont.33781:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -104(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33782 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
-	luil	a0, l.26933
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27287
 	flw	fa1, 0(a0)
-	luil	a0, l.26935
+	luil	a0, l.27289
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
 	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
 	fmul	fa4, fa4, fa3
 	fadd	fa2, fa4, fa2
 	fmul	fa2, fa2, fa3
 	fsub	fa1, fa2, fa1
 	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
 	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-	jal	x0, beq_cont.33267
-beq_else.33266:
+	jal	x0, beq_cont.33783
+beq_else.33782:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-beq_cont.33267:
-	flw	fa1, -100(sp)
+beq_cont.33783:
+	jal	x0, beq_cont.33775
+beq_else.33774:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -56(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.33784 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa5, 0(a0)
+	fmul	fa4, fa5, fa4
+	jal	x0, beq_cont.33785
+beq_else.33784:
+beq_cont.33785:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -120(sp)
+	fsw	fa1, -124(sp)
+	fsw	fa2, -128(sp)
+	fsw	fa3, -132(sp)
+	fsw	fa4, -136(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -144(sp)
+	addi	sp, sp, -148
+	jal	ra, while1.2800
+	addi	sp, sp, 148
+	lw	ra, -144(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -136(sp)
+	sw	ra, -144(sp)
+	addi	sp, sp, -148
+	jal	ra, while2.2805
+	addi	sp, sp, 148
+	lw	ra, -144(sp)
+	flw	fa1, -132(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33786 # size : 4
+	jal	x0, beq_cont.33787
+beq_else.33786:
+	fsub	fa0, fa0, fa1
+beq_cont.33787:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -128(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33788 # size : 4
+	jal	x0, beq_cont.33789
+beq_else.33788:
+	fsub	fa0, fa2, fa0
+beq_cont.33789:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -124(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33790 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-beq_cont.33251:
+	jal	x0, beq_cont.33791
+beq_else.33790:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.33791:
+	flw	fa1, -120(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.33775:
 	fmul	fa0, fa0, fa0
 	addi	a0, x0, 836
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
 	fmul	fa1, fa0, fa1
 	addi	a0, a0, 4
 	fsw	fa1, 0(a0) 
 	addi	a0, x0, 836
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa1, 0(a1)
 	fsub	fa0, fa1, fa0
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
 	fsw	fa0, 8(a0) 
-	jal	x0, beq_cont.33229
-beq_else.33228:
+	jal	x0, beq_cont.33753
+beq_else.33752:
 	addi	t6, x0, 4
-	bne	a2, t6, beq_else.33268 # size : 5552
-	jal	x0, beq_sub.33270
-beq_else.33268:
-	jal	x0, beq_cont.33269
-beq_sub.33270:
+	bne	a2, t6, beq_else.33792 # size : 5552
+	jal	x0, beq_sub.33794
+beq_else.33792:
+	jal	x0, beq_cont.33793
+beq_sub.33794:
 	addi	a2, a1 0
 	flw	fa0, 0(a2)
 	lw	a2, 20(a0)
@@ -10645,74 +11035,74 @@ beq_sub.33270:
 	fmul	fa3, fa1, fa1
 	fadd	fa2, fa2, fa3
 	fsgnjx	fa3, fa0, fa0
-	luil	a2, l.28406
+	luil	a2, l.28812
 	srli	a2, a2, 1
-	addil	a2, a2, l.28406
+	addil	a2, a2, l.28812
 	flw	fa4, 0(a2)
 	flt	a2, fa3, fa4
-	bne	a2, x0, beq_else.33271 # size : 2396
+	bne	a2, x0, beq_else.33795 # size : 2396
 	fdiv	fa0, fa1, fa0
 	fsgnjx	fa0, fa0, fa0
 	fsgnjn	fs11, fa0, fa0
 	flt	a2, fs11, fa0
-	bne	a2, x0, beq_else.33273 # size : 28
-	luil	a2, l.26869
+	bne	a2, x0, beq_else.33797 # size : 28
+	luil	a2, l.27215
 	srli	a2, a2, 1
-	addil	a2, a2, l.26869
+	addil	a2, a2, l.27215
 	flw	fa1, 0(a2)
 	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33274
-beq_else.33273:
+	jal	x0, beq_cont.33798
+beq_else.33797:
 	fsgnj	fa1, fa0, fa0
-beq_cont.33274:
-	luil	a2, l.28411
+beq_cont.33798:
+	luil	a2, l.28817
 	srli	a2, a2, 1
-	addil	a2, a2, l.28411
+	addil	a2, a2, l.28817
 	flw	fa3, 0(a2)
 	fsub	fa3, fa3, fa1
 	fsgnjn	fs11, fa3, fa3
 	flt	a2, fs11, fa3
-	bne	a2, x0, beq_else.33275 # size : 728
-	luil	a2, l.28425
+	bne	a2, x0, beq_else.33799 # size : 728
+	luil	a2, l.28831
 	srli	a2, a2, 1
-	addil	a2, a2, l.28425
+	addil	a2, a2, l.28831
 	flw	fa3, 0(a2)
 	fsub	fa3, fa3, fa1
 	fsgnjn	fs11, fa3, fa3
 	flt	a2, fs11, fa3
-	bne	a2, x0, beq_else.33277 # size : 316
-	luil	a2, l.26931
+	bne	a2, x0, beq_else.33801 # size : 316
+	luil	a2, l.27285
 	srli	a2, a2, 1
-	addil	a2, a2, l.26931
+	addil	a2, a2, l.27285
 	flw	fa3, 0(a2)
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa4, 0(a2)
 	fdiv	fa1, fa4, fa1
-	luil	a2, l.28413
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa4, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa5, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa6, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa7, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	ft0, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft1, 0(a2)
 	fmul	ft2, fa1, fa1
 	fmul	ft1, ft1, ft2
@@ -10729,46 +11119,46 @@ beq_cont.33274:
 	fmul	fa4, fa4, ft2
 	fadd	fa1, fa4, fa1
 	fsub	fa1, fa3, fa1
-	jal	x0, beq_cont.33278
-beq_else.33277:
-	luil	a2, l.28427
+	jal	x0, beq_cont.33802
+beq_else.33801:
+	luil	a2, l.28833
 	srli	a2, a2, 1
-	addil	a2, a2, l.28427
+	addil	a2, a2, l.28833
 	flw	fa3, 0(a2)
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa4, 0(a2)
 	fsub	fa4, fa1, fa4
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa5, 0(a2)
 	fadd	fa1, fa1, fa5
 	fdiv	fa1, fa4, fa1
-	luil	a2, l.28413
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa4, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa5, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa6, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa7, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	ft0, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft1, 0(a2)
 	fmul	ft2, fa1, fa1
 	fmul	ft1, ft1, ft2
@@ -10785,32 +11175,32 @@ beq_else.33277:
 	fmul	fa4, fa4, ft2
 	fadd	fa1, fa4, fa1
 	fadd	fa1, fa3, fa1
-beq_cont.33278:
-	jal	x0, beq_cont.33276
-beq_else.33275:
-	luil	a2, l.28413
+beq_cont.33802:
+	jal	x0, beq_cont.33800
+beq_else.33799:
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa3, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa4, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa5, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa6, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	fa7, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft0, 0(a2)
 	fmul	ft1, fa1, fa1
 	fmul	ft0, ft0, ft1
@@ -10826,74 +11216,74 @@ beq_else.33275:
 	fmul	fa3, fa3, fa1
 	fmul	fa3, fa3, ft1
 	fadd	fa1, fa3, fa1
-beq_cont.33276:
+beq_cont.33800:
 	fsgnjn	fs11, fa0, fa0
 	flt	a2, fs11, fa0
-	bne	a2, x0, beq_else.33279 # size : 4
+	bne	a2, x0, beq_else.33803 # size : 4
 	addi	a2, x0, -1
-	jal	x0, beq_cont.33280
-beq_else.33279:
+	jal	x0, beq_cont.33804
+beq_else.33803:
 	addi	a2, x0, 1
-beq_cont.33280:
+beq_cont.33804:
 	fsgnjn	fs11, fa0, fa0
 	flt	a3, fs11, fa0
-	bne	a3, x0, beq_else.33281 # size : 28
-	luil	a3, l.26869
+	bne	a3, x0, beq_else.33805 # size : 28
+	luil	a3, l.27215
 	srli	a3, a3, 1
-	addil	a3, a3, l.26869
+	addil	a3, a3, l.27215
 	flw	fa3, 0(a3)
 	fmul	fa0, fa3, fa0
-	jal	x0, beq_cont.33282
-beq_else.33281:
-beq_cont.33282:
-	luil	a3, l.28411
+	jal	x0, beq_cont.33806
+beq_else.33805:
+beq_cont.33806:
+	luil	a3, l.28817
 	srli	a3, a3, 1
-	addil	a3, a3, l.28411
+	addil	a3, a3, l.28817
 	flw	fa3, 0(a3)
 	fsub	fa3, fa3, fa0
 	fsgnjn	fs11, fa3, fa3
 	flt	a3, fs11, fa3
-	bne	a3, x0, beq_else.33283 # size : 728
-	luil	a3, l.28425
+	bne	a3, x0, beq_else.33807 # size : 728
+	luil	a3, l.28831
 	srli	a3, a3, 1
-	addil	a3, a3, l.28425
+	addil	a3, a3, l.28831
 	flw	fa3, 0(a3)
 	fsub	fa3, fa3, fa0
 	fsgnjn	fs11, fa3, fa3
 	flt	a3, fs11, fa3
-	bne	a3, x0, beq_else.33285 # size : 316
-	luil	a3, l.26931
+	bne	a3, x0, beq_else.33809 # size : 316
+	luil	a3, l.27285
 	srli	a3, a3, 1
-	addil	a3, a3, l.26931
+	addil	a3, a3, l.27285
 	flw	fa3, 0(a3)
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa4, 0(a3)
 	fdiv	fa0, fa4, fa0
-	luil	a3, l.28413
+	luil	a3, l.28819
 	srli	a3, a3, 1
-	addil	a3, a3, l.28413
+	addil	a3, a3, l.28819
 	flw	fa4, 0(a3)
-	luil	a3, l.28415
+	luil	a3, l.28821
 	srli	a3, a3, 1
-	addil	a3, a3, l.28415
+	addil	a3, a3, l.28821
 	flw	fa5, 0(a3)
-	luil	a3, l.28417
+	luil	a3, l.28823
 	srli	a3, a3, 1
-	addil	a3, a3, l.28417
+	addil	a3, a3, l.28823
 	flw	fa6, 0(a3)
-	luil	a3, l.28419
+	luil	a3, l.28825
 	srli	a3, a3, 1
-	addil	a3, a3, l.28419
+	addil	a3, a3, l.28825
 	flw	fa7, 0(a3)
-	luil	a3, l.28421
+	luil	a3, l.28827
 	srli	a3, a3, 1
-	addil	a3, a3, l.28421
+	addil	a3, a3, l.28827
 	flw	ft0, 0(a3)
-	luil	a3, l.28423
+	luil	a3, l.28829
 	srli	a3, a3, 1
-	addil	a3, a3, l.28423
+	addil	a3, a3, l.28829
 	flw	ft1, 0(a3)
 	fmul	ft2, fa0, fa0
 	fmul	ft1, ft1, ft2
@@ -10910,46 +11300,46 @@ beq_cont.33282:
 	fmul	fa4, fa4, ft2
 	fadd	fa0, fa4, fa0
 	fsub	fa0, fa3, fa0
-	jal	x0, beq_cont.33286
-beq_else.33285:
-	luil	a3, l.28427
+	jal	x0, beq_cont.33810
+beq_else.33809:
+	luil	a3, l.28833
 	srli	a3, a3, 1
-	addil	a3, a3, l.28427
+	addil	a3, a3, l.28833
 	flw	fa3, 0(a3)
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa4, 0(a3)
 	fsub	fa4, fa0, fa4
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa5, 0(a3)
 	fadd	fa0, fa0, fa5
 	fdiv	fa0, fa4, fa0
-	luil	a3, l.28413
+	luil	a3, l.28819
 	srli	a3, a3, 1
-	addil	a3, a3, l.28413
+	addil	a3, a3, l.28819
 	flw	fa4, 0(a3)
-	luil	a3, l.28415
+	luil	a3, l.28821
 	srli	a3, a3, 1
-	addil	a3, a3, l.28415
+	addil	a3, a3, l.28821
 	flw	fa5, 0(a3)
-	luil	a3, l.28417
+	luil	a3, l.28823
 	srli	a3, a3, 1
-	addil	a3, a3, l.28417
+	addil	a3, a3, l.28823
 	flw	fa6, 0(a3)
-	luil	a3, l.28419
+	luil	a3, l.28825
 	srli	a3, a3, 1
-	addil	a3, a3, l.28419
+	addil	a3, a3, l.28825
 	flw	fa7, 0(a3)
-	luil	a3, l.28421
+	luil	a3, l.28827
 	srli	a3, a3, 1
-	addil	a3, a3, l.28421
+	addil	a3, a3, l.28827
 	flw	ft0, 0(a3)
-	luil	a3, l.28423
+	luil	a3, l.28829
 	srli	a3, a3, 1
-	addil	a3, a3, l.28423
+	addil	a3, a3, l.28829
 	flw	ft1, 0(a3)
 	fmul	ft2, fa0, fa0
 	fmul	ft1, ft1, ft2
@@ -10966,32 +11356,32 @@ beq_else.33285:
 	fmul	fa4, fa4, ft2
 	fadd	fa0, fa4, fa0
 	fadd	fa0, fa3, fa0
-beq_cont.33286:
-	jal	x0, beq_cont.33284
-beq_else.33283:
-	luil	a3, l.28413
+beq_cont.33810:
+	jal	x0, beq_cont.33808
+beq_else.33807:
+	luil	a3, l.28819
 	srli	a3, a3, 1
-	addil	a3, a3, l.28413
+	addil	a3, a3, l.28819
 	flw	fa3, 0(a3)
-	luil	a3, l.28415
+	luil	a3, l.28821
 	srli	a3, a3, 1
-	addil	a3, a3, l.28415
+	addil	a3, a3, l.28821
 	flw	fa4, 0(a3)
-	luil	a3, l.28417
+	luil	a3, l.28823
 	srli	a3, a3, 1
-	addil	a3, a3, l.28417
+	addil	a3, a3, l.28823
 	flw	fa5, 0(a3)
-	luil	a3, l.28419
+	luil	a3, l.28825
 	srli	a3, a3, 1
-	addil	a3, a3, l.28419
+	addil	a3, a3, l.28825
 	flw	fa6, 0(a3)
-	luil	a3, l.28421
+	luil	a3, l.28827
 	srli	a3, a3, 1
-	addil	a3, a3, l.28421
+	addil	a3, a3, l.28827
 	flw	fa7, 0(a3)
-	luil	a3, l.28423
+	luil	a3, l.28829
 	srli	a3, a3, 1
-	addil	a3, a3, l.28423
+	addil	a3, a3, l.28829
 	flw	ft0, 0(a3)
 	fmul	ft1, fa0, fa0
 	fmul	ft0, ft0, ft1
@@ -11007,42 +11397,42 @@ beq_else.33283:
 	fmul	fa3, fa3, fa0
 	fmul	fa3, fa3, ft1
 	fadd	fa0, fa3, fa0
-beq_cont.33284:
+beq_cont.33808:
 	fsgnjn	fs11, fa0, fa0
 	flt	a3, fs11, fa0
-	bne	a3, x0, beq_else.33287 # size : 4
+	bne	a3, x0, beq_else.33811 # size : 4
 	addi	a3, x0, -1
-	jal	x0, beq_cont.33288
-beq_else.33287:
+	jal	x0, beq_cont.33812
+beq_else.33811:
 	addi	a3, x0, 1
-beq_cont.33288:
-	bne	a2, a3, beq_else.33289 # size : 4
+beq_cont.33812:
+	bne	a2, a3, beq_else.33813 # size : 4
 	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.33290
-beq_else.33289:
-	luil	a2, l.26869
+	jal	x0, beq_cont.33814
+beq_else.33813:
+	luil	a2, l.27215
 	srli	a2, a2, 1
-	addil	a2, a2, l.26869
+	addil	a2, a2, l.27215
 	flw	fa0, 0(a2)
 	fmul	fa0, fa0, fa1
-beq_cont.33290:
-	luil	a2, l.28472
+beq_cont.33814:
+	luil	a2, l.28878
 	srli	a2, a2, 1
-	addil	a2, a2, l.28472
+	addil	a2, a2, l.28878
 	flw	fa1, 0(a2)
 	fmul	fa0, fa0, fa1
-	luil	a2, l.28474
+	luil	a2, l.28880
 	srli	a2, a2, 1
-	addil	a2, a2, l.28474
+	addil	a2, a2, l.28880
 	flw	fa1, 0(a2)
 	fdiv	fa0, fa0, fa1
-	jal	x0, beq_cont.33272
-beq_else.33271:
-	luil	a2, l.28408
+	jal	x0, beq_cont.33796
+beq_else.33795:
+	luil	a2, l.28814
 	srli	a2, a2, 1
-	addil	a2, a2, l.28408
+	addil	a2, a2, l.28814
 	flw	fa0, 0(a2)
-beq_cont.33272:
+beq_cont.33796:
 	fcvtws	t6, fa0
 	fcvtsw	fs11, t6
 	flt	t4, fa0, fs11
@@ -11061,74 +11451,74 @@ beq_cont.33272:
 	fsqrt	fa3, fa3
 	fmul	fa1, fa1, fa3
 	fsgnjx	fa3, fa2, fa2
-	luil	a1, l.28406
+	luil	a1, l.28812
 	srli	a1, a1, 1
-	addil	a1, a1, l.28406
+	addil	a1, a1, l.28812
 	flw	fa4, 0(a1)
 	flt	a1, fa3, fa4
-	bne	a1, x0, beq_else.33291 # size : 2396
+	bne	a1, x0, beq_else.33815 # size : 2396
 	fdiv	fa1, fa1, fa2
 	fsgnjx	fa1, fa1, fa1
 	fsgnjn	fs11, fa1, fa1
 	flt	a1, fs11, fa1
-	bne	a1, x0, beq_else.33293 # size : 28
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.33817 # size : 28
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa2, 0(a1)
 	fmul	fa2, fa2, fa1
-	jal	x0, beq_cont.33294
-beq_else.33293:
+	jal	x0, beq_cont.33818
+beq_else.33817:
 	fsgnj	fa2, fa1, fa1
-beq_cont.33294:
-	luil	a1, l.28411
+beq_cont.33818:
+	luil	a1, l.28817
 	srli	a1, a1, 1
-	addil	a1, a1, l.28411
+	addil	a1, a1, l.28817
 	flw	fa3, 0(a1)
 	fsub	fa3, fa3, fa2
 	fsgnjn	fs11, fa3, fa3
 	flt	a1, fs11, fa3
-	bne	a1, x0, beq_else.33295 # size : 728
-	luil	a1, l.28425
+	bne	a1, x0, beq_else.33819 # size : 728
+	luil	a1, l.28831
 	srli	a1, a1, 1
-	addil	a1, a1, l.28425
+	addil	a1, a1, l.28831
 	flw	fa3, 0(a1)
 	fsub	fa3, fa3, fa2
 	fsgnjn	fs11, fa3, fa3
 	flt	a1, fs11, fa3
-	bne	a1, x0, beq_else.33297 # size : 316
-	luil	a1, l.26931
+	bne	a1, x0, beq_else.33821 # size : 316
+	luil	a1, l.27285
 	srli	a1, a1, 1
-	addil	a1, a1, l.26931
+	addil	a1, a1, l.27285
 	flw	fa3, 0(a1)
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa4, 0(a1)
 	fdiv	fa2, fa4, fa2
-	luil	a1, l.28413
+	luil	a1, l.28819
 	srli	a1, a1, 1
-	addil	a1, a1, l.28413
+	addil	a1, a1, l.28819
 	flw	fa4, 0(a1)
-	luil	a1, l.28415
+	luil	a1, l.28821
 	srli	a1, a1, 1
-	addil	a1, a1, l.28415
+	addil	a1, a1, l.28821
 	flw	fa5, 0(a1)
-	luil	a1, l.28417
+	luil	a1, l.28823
 	srli	a1, a1, 1
-	addil	a1, a1, l.28417
+	addil	a1, a1, l.28823
 	flw	fa6, 0(a1)
-	luil	a1, l.28419
+	luil	a1, l.28825
 	srli	a1, a1, 1
-	addil	a1, a1, l.28419
+	addil	a1, a1, l.28825
 	flw	fa7, 0(a1)
-	luil	a1, l.28421
+	luil	a1, l.28827
 	srli	a1, a1, 1
-	addil	a1, a1, l.28421
+	addil	a1, a1, l.28827
 	flw	ft0, 0(a1)
-	luil	a1, l.28423
+	luil	a1, l.28829
 	srli	a1, a1, 1
-	addil	a1, a1, l.28423
+	addil	a1, a1, l.28829
 	flw	ft1, 0(a1)
 	fmul	ft2, fa2, fa2
 	fmul	ft1, ft1, ft2
@@ -11145,46 +11535,46 @@ beq_cont.33294:
 	fmul	fa4, fa4, ft2
 	fadd	fa2, fa4, fa2
 	fsub	fa2, fa3, fa2
-	jal	x0, beq_cont.33298
-beq_else.33297:
-	luil	a1, l.28427
+	jal	x0, beq_cont.33822
+beq_else.33821:
+	luil	a1, l.28833
 	srli	a1, a1, 1
-	addil	a1, a1, l.28427
+	addil	a1, a1, l.28833
 	flw	fa3, 0(a1)
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa4, 0(a1)
 	fsub	fa4, fa2, fa4
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa5, 0(a1)
 	fadd	fa2, fa2, fa5
 	fdiv	fa2, fa4, fa2
-	luil	a1, l.28413
+	luil	a1, l.28819
 	srli	a1, a1, 1
-	addil	a1, a1, l.28413
+	addil	a1, a1, l.28819
 	flw	fa4, 0(a1)
-	luil	a1, l.28415
+	luil	a1, l.28821
 	srli	a1, a1, 1
-	addil	a1, a1, l.28415
+	addil	a1, a1, l.28821
 	flw	fa5, 0(a1)
-	luil	a1, l.28417
+	luil	a1, l.28823
 	srli	a1, a1, 1
-	addil	a1, a1, l.28417
+	addil	a1, a1, l.28823
 	flw	fa6, 0(a1)
-	luil	a1, l.28419
+	luil	a1, l.28825
 	srli	a1, a1, 1
-	addil	a1, a1, l.28419
+	addil	a1, a1, l.28825
 	flw	fa7, 0(a1)
-	luil	a1, l.28421
+	luil	a1, l.28827
 	srli	a1, a1, 1
-	addil	a1, a1, l.28421
+	addil	a1, a1, l.28827
 	flw	ft0, 0(a1)
-	luil	a1, l.28423
+	luil	a1, l.28829
 	srli	a1, a1, 1
-	addil	a1, a1, l.28423
+	addil	a1, a1, l.28829
 	flw	ft1, 0(a1)
 	fmul	ft2, fa2, fa2
 	fmul	ft1, ft1, ft2
@@ -11201,32 +11591,32 @@ beq_else.33297:
 	fmul	fa4, fa4, ft2
 	fadd	fa2, fa4, fa2
 	fadd	fa2, fa3, fa2
-beq_cont.33298:
-	jal	x0, beq_cont.33296
-beq_else.33295:
-	luil	a1, l.28413
+beq_cont.33822:
+	jal	x0, beq_cont.33820
+beq_else.33819:
+	luil	a1, l.28819
 	srli	a1, a1, 1
-	addil	a1, a1, l.28413
+	addil	a1, a1, l.28819
 	flw	fa3, 0(a1)
-	luil	a1, l.28415
+	luil	a1, l.28821
 	srli	a1, a1, 1
-	addil	a1, a1, l.28415
+	addil	a1, a1, l.28821
 	flw	fa4, 0(a1)
-	luil	a1, l.28417
+	luil	a1, l.28823
 	srli	a1, a1, 1
-	addil	a1, a1, l.28417
+	addil	a1, a1, l.28823
 	flw	fa5, 0(a1)
-	luil	a1, l.28419
+	luil	a1, l.28825
 	srli	a1, a1, 1
-	addil	a1, a1, l.28419
+	addil	a1, a1, l.28825
 	flw	fa6, 0(a1)
-	luil	a1, l.28421
+	luil	a1, l.28827
 	srli	a1, a1, 1
-	addil	a1, a1, l.28421
+	addil	a1, a1, l.28827
 	flw	fa7, 0(a1)
-	luil	a1, l.28423
+	luil	a1, l.28829
 	srli	a1, a1, 1
-	addil	a1, a1, l.28423
+	addil	a1, a1, l.28829
 	flw	ft0, 0(a1)
 	fmul	ft1, fa2, fa2
 	fmul	ft0, ft0, ft1
@@ -11242,74 +11632,74 @@ beq_else.33295:
 	fmul	fa3, fa3, fa2
 	fmul	fa3, fa3, ft1
 	fadd	fa2, fa3, fa2
-beq_cont.33296:
+beq_cont.33820:
 	fsgnjn	fs11, fa1, fa1
 	flt	a1, fs11, fa1
-	bne	a1, x0, beq_else.33299 # size : 4
+	bne	a1, x0, beq_else.33823 # size : 4
 	addi	a1, x0, -1
-	jal	x0, beq_cont.33300
-beq_else.33299:
+	jal	x0, beq_cont.33824
+beq_else.33823:
 	addi	a1, x0, 1
-beq_cont.33300:
+beq_cont.33824:
 	fsgnjn	fs11, fa1, fa1
 	flt	a2, fs11, fa1
-	bne	a2, x0, beq_else.33301 # size : 28
-	luil	a2, l.26869
+	bne	a2, x0, beq_else.33825 # size : 28
+	luil	a2, l.27215
 	srli	a2, a2, 1
-	addil	a2, a2, l.26869
+	addil	a2, a2, l.27215
 	flw	fa3, 0(a2)
 	fmul	fa1, fa3, fa1
-	jal	x0, beq_cont.33302
-beq_else.33301:
-beq_cont.33302:
-	luil	a2, l.28411
+	jal	x0, beq_cont.33826
+beq_else.33825:
+beq_cont.33826:
+	luil	a2, l.28817
 	srli	a2, a2, 1
-	addil	a2, a2, l.28411
+	addil	a2, a2, l.28817
 	flw	fa3, 0(a2)
 	fsub	fa3, fa3, fa1
 	fsgnjn	fs11, fa3, fa3
 	flt	a2, fs11, fa3
-	bne	a2, x0, beq_else.33303 # size : 728
-	luil	a2, l.28425
+	bne	a2, x0, beq_else.33827 # size : 728
+	luil	a2, l.28831
 	srli	a2, a2, 1
-	addil	a2, a2, l.28425
+	addil	a2, a2, l.28831
 	flw	fa3, 0(a2)
 	fsub	fa3, fa3, fa1
 	fsgnjn	fs11, fa3, fa3
 	flt	a2, fs11, fa3
-	bne	a2, x0, beq_else.33305 # size : 316
-	luil	a2, l.26931
+	bne	a2, x0, beq_else.33829 # size : 316
+	luil	a2, l.27285
 	srli	a2, a2, 1
-	addil	a2, a2, l.26931
+	addil	a2, a2, l.27285
 	flw	fa3, 0(a2)
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa4, 0(a2)
 	fdiv	fa1, fa4, fa1
-	luil	a2, l.28413
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa4, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa5, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa6, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa7, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	ft0, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft1, 0(a2)
 	fmul	ft2, fa1, fa1
 	fmul	ft1, ft1, ft2
@@ -11326,46 +11716,46 @@ beq_cont.33302:
 	fmul	fa4, fa4, ft2
 	fadd	fa1, fa4, fa1
 	fsub	fa1, fa3, fa1
-	jal	x0, beq_cont.33306
-beq_else.33305:
-	luil	a2, l.28427
+	jal	x0, beq_cont.33830
+beq_else.33829:
+	luil	a2, l.28833
 	srli	a2, a2, 1
-	addil	a2, a2, l.28427
+	addil	a2, a2, l.28833
 	flw	fa3, 0(a2)
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa4, 0(a2)
 	fsub	fa4, fa1, fa4
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa5, 0(a2)
 	fadd	fa1, fa1, fa5
 	fdiv	fa1, fa4, fa1
-	luil	a2, l.28413
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa4, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa5, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa6, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa7, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	ft0, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft1, 0(a2)
 	fmul	ft2, fa1, fa1
 	fmul	ft1, ft1, ft2
@@ -11382,32 +11772,32 @@ beq_else.33305:
 	fmul	fa4, fa4, ft2
 	fadd	fa1, fa4, fa1
 	fadd	fa1, fa3, fa1
-beq_cont.33306:
-	jal	x0, beq_cont.33304
-beq_else.33303:
-	luil	a2, l.28413
+beq_cont.33830:
+	jal	x0, beq_cont.33828
+beq_else.33827:
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa3, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa4, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa5, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa6, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	fa7, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft0, 0(a2)
 	fmul	ft1, fa1, fa1
 	fmul	ft0, ft0, ft1
@@ -11423,51 +11813,51 @@ beq_else.33303:
 	fmul	fa3, fa3, fa1
 	fmul	fa3, fa3, ft1
 	fadd	fa1, fa3, fa1
-beq_cont.33304:
+beq_cont.33828:
 	fsgnjn	fs11, fa1, fa1
 	flt	a2, fs11, fa1
-	bne	a2, x0, beq_else.33307 # size : 4
+	bne	a2, x0, beq_else.33831 # size : 4
 	addi	a2, x0, -1
-	jal	x0, beq_cont.33308
-beq_else.33307:
+	jal	x0, beq_cont.33832
+beq_else.33831:
 	addi	a2, x0, 1
-beq_cont.33308:
-	bne	a1, a2, beq_else.33309 # size : 4
+beq_cont.33832:
+	bne	a1, a2, beq_else.33833 # size : 4
 	fsgnj	fa1, fa2, fa2
-	jal	x0, beq_cont.33310
-beq_else.33309:
-	luil	a1, l.26869
+	jal	x0, beq_cont.33834
+beq_else.33833:
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa1, 0(a1)
 	fmul	fa1, fa1, fa2
-beq_cont.33310:
-	luil	a1, l.28472
+beq_cont.33834:
+	luil	a1, l.28878
 	srli	a1, a1, 1
-	addil	a1, a1, l.28472
+	addil	a1, a1, l.28878
 	flw	fa2, 0(a1)
 	fmul	fa1, fa1, fa2
-	luil	a1, l.28474
+	luil	a1, l.28880
 	srli	a1, a1, 1
-	addil	a1, a1, l.28474
+	addil	a1, a1, l.28880
 	flw	fa2, 0(a1)
 	fdiv	fa1, fa1, fa2
-	jal	x0, beq_cont.33292
-beq_else.33291:
-	luil	a1, l.28408
+	jal	x0, beq_cont.33816
+beq_else.33815:
+	luil	a1, l.28814
 	srli	a1, a1, 1
-	addil	a1, a1, l.28408
+	addil	a1, a1, l.28814
 	flw	fa1, 0(a1)
-beq_cont.33292:
+beq_cont.33816:
 	fcvtws	t6, fa1
 	fcvtsw	fs11, t6
 	flt	t4, fa1, fs11
 	sub	t6, t6, t4
 	fcvtsw	fa2, t6
 	fsub	fa1, fa1, fa2
-	luil	a1, l.28539
+	luil	a1, l.28945
 	srli	a1, a1, 1
-	addil	a1, a1, l.28539
+	addil	a1, a1, l.28945
 	flw	fa2, 0(a1)
 	luil	a1, l.001
 	srli	a1, a1, 1
@@ -11485,39 +11875,39 @@ beq_cont.33292:
 	fsub	fa0, fa0, fa1
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fa0, fs11
-	bne	a1, x0, beq_else.33311 # size : 4
-	jal	x0, beq_cont.33312
-beq_else.33311:
-	luil	a1, l.26808
+	bne	a1, x0, beq_else.33835 # size : 4
+	jal	x0, beq_cont.33836
+beq_else.33835:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-beq_cont.33312:
+beq_cont.33836:
 	addi	a1, x0, 836
-	luil	a2, l.28544
+	luil	a2, l.28950
 	srli	a2, a2, 1
-	addil	a2, a2, l.28544
+	addil	a2, a2, l.28950
 	flw	fa1, 0(a2)
 	fmul	fa0, fa1, fa0
-	luil	a2, l.28546
+	luil	a2, l.28952
 	srli	a2, a2, 1
-	addil	a2, a2, l.28546
+	addil	a2, a2, l.28952
 	flw	fa1, 0(a2)
 	fdiv	fa0, fa0, fa1
 	fsw	fa0, 8(a1) 
-beq_cont.33269:
-beq_cont.33229:
-beq_cont.33191:
-beq_cont.33183:
+beq_cont.33793:
+beq_cont.33753:
+beq_cont.33715:
+beq_cont.33707:
 	addi	a0, x0, 0
 	addi	a1, x0, 792
 	lw	a1, 0(a1)
-	sw	ra, -112(sp)
-	addi	sp, sp, -116
-	jal	ra, shadow_check_one_or_matrix.3136
-	addi	sp, sp, 116
-	lw	ra, -112(sp)
-	bne	a0, x0, beq_else.33313 # size : 472
+	sw	ra, -144(sp)
+	addi	sp, sp, -148
+	jal	ra, shadow_check_one_or_matrix.3140
+	addi	sp, sp, 148
+	lw	ra, -144(sp)
+	bne	a0, x0, beq_else.33837 # size : 472
 	addi	a0, x0, 824
 	addi	a1, x0, 568
 	addi	a2, a0 0
@@ -11540,18 +11930,18 @@ beq_cont.33183:
 	fsgnjn	fa0, fa0, fa0
 	fsgnjn	fs11, fa0, fa0
 	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.33315 # size : 20
-	luil	a0, l.26808
+	bne	a0, x0, beq_else.33839 # size : 20
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
-	jal	x0, beq_cont.33316
-beq_else.33315:
-beq_cont.33316:
+	jal	x0, beq_cont.33840
+beq_else.33839:
+beq_cont.33840:
 	addi	a0, x0, 848
-	flw	fa1, -20(sp)
+	flw	fa1, -16(sp)
 	fmul	fa0, fa1, fa0
-	lw	a1, -32(sp) # Restore obj.4069.8095
+	lw	a1, -24(sp) # Restore obj.4073.8109
 	lw	a1, 28(a1)
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
@@ -11579,76 +11969,75 @@ beq_cont.33316:
 	fmul	fa0, fa0, fa2
 	fadd	fa0, fa1, fa0
 	fsw	fa0, 8(a0) 
-	jal	x0, beq_cont.33314
-beq_else.33313:
-beq_cont.33314:
-beq_cont.33167:
-	jal	x0, beq_cont.33162
-beq_sub.33163:
+	jal	x0, beq_cont.33838
+beq_else.33837:
+beq_cont.33838:
+beq_cont.33691:
+	jal	x0, beq_cont.33686
+beq_sub.33687:
 	slli	a4, a3, 2
 	add	a4, a0, a4
 	lw	a4, 0(a4)
-	luil	a5, l.29305
+	luil	a5, l.29748
 	srli	a5, a5, 1
-	addil	a5, a5, l.29305
-	flw	fa2, 0(a5)
-	fdiv	fa1, fa1, fa2
+	addil	a5, a5, l.29748
+	flw	fa1, 0(a5)
+	fdiv	fa0, fa0, fa1
 	addi	a5, x0, 804
-	luil	a6, l.28193
+	luil	a6, l.28596
 	srli	a6, a6, 1
-	addil	a6, a6, l.28193
-	flw	fa2, 0(a6)
-	fsw	fa2, 0(a5) 
+	addil	a6, a6, l.28596
+	flw	fa1, 0(a6)
+	fsw	fa1, 0(a5) 
 	addi	a5, x0, 0
 	addi	a6, x0, 792
 	lw	a6, 0(a6)
-	fsw	fa1, -108(sp)
-	fsw	fa0, -24(sp)
-	sw	a4, -112(sp) # Save Tt2210.4062
+	fsw	fa0, -140(sp)
+	sw	a4, -144(sp) # Save Tt2211.4066
 	addi	a2, a4, 0
 	addi	a1, a6, 0
 	addi	a0, a5, 0
-	sw	ra, -120(sp)
-	addi	sp, sp, -124
-	jal	ra, trace_or_matrix_fast.3161
-	addi	sp, sp, 124
-	lw	ra, -120(sp)
+	sw	ra, -152(sp)
+	addi	sp, sp, -156
+	jal	ra, trace_or_matrix_fast.3165
+	addi	sp, sp, 156
+	lw	ra, -152(sp)
 	addi	a0, x0, 804
 	flw	fa0, 0(a0)
-	luil	a0, l.27651
+	luil	a0, l.28052
 	srli	a0, a0, 1
-	addil	a0, a0, l.27651
+	addil	a0, a0, l.28052
 	flw	fa1, 0(a0)
 	flt	a0, fa1, fa0
-	bne	a0, x0, beq_else.33317 # size : 4
+	bne	a0, x0, beq_else.33841 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.33318
-beq_else.33317:
-	luil	a0, l.28202
+	jal	x0, beq_cont.33842
+beq_else.33841:
+	luil	a0, l.28605
 	srli	a0, a0, 1
-	addil	a0, a0, l.28202
+	addil	a0, a0, l.28605
 	flw	fa1, 0(a0)
 	flt	a0, fa0, fa1
-beq_cont.33318:
-	bne	a0, x0, beq_else.33319 # size : 0
-	jal	x0, beq_cont.33320
-beq_else.33319:
+beq_cont.33842:
+	bne	a0, x0, beq_else.33843 # size : 0
+	jal	x0, beq_cont.33844
+beq_else.33843:
 	addi	a0, x0, 820
 	lw	a0, 0(a0)
 	slli	a0, a0, 2
 	addi	a0, a0, 304
 	lw	a0, 0(a0)
-	lw	a1, -112(sp) # Restore Tt2210.4062
+	lw	a1, -144(sp) # Restore Tt2211.4066
 	lw	a1, 0(a1)
 	lw	a2, 4(a0)
 	addi	t6, x0, 1
-	bne	a2, t6, beq_else.33321 # size : 284
+	bne	a2, t6, beq_else.33845 # size : 284
 	addi	a2, x0, 800
 	lw	a2, 0(a2)
 	addi	a3, x0, 824
-	luil	a4, l.26808
+	luil	a4, l.27154
 	srli	a4, a4, 1
-	addil	a4, a4, l.26808
+	addil	a4, a4, l.27154
 	flw	fa0, 0(a4)
 	addi	a4, a3 0
 	fsw	fa0, 0(a4) 
@@ -11663,35 +12052,35 @@ beq_else.33319:
 	flw	fa0, 0(a1)
 	fsgnjn	fs11, fa0, fa0
 	feq	a1, fs11, fa0
-	bne	a1, x0, beq_else.33323 # size : 64
+	bne	a1, x0, beq_else.33847 # size : 64
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33325 # size : 20
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.33849 # size : 20
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa0, 0(a1)
-	jal	x0, beq_cont.33326
-beq_else.33325:
-	luil	a1, l.26867
+	jal	x0, beq_cont.33850
+beq_else.33849:
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa0, 0(a1)
-beq_cont.33326:
-	jal	x0, beq_cont.33324
-beq_else.33323:
-	luil	a1, l.26808
+beq_cont.33850:
+	jal	x0, beq_cont.33848
+beq_else.33847:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-beq_cont.33324:
+beq_cont.33848:
 	fsgnjn	fa0, fa0, fa0
 	slli	a1, a3, 2
 	fsw	fa0, 824(a1) 
-	jal	x0, beq_cont.33322
-beq_else.33321:
+	jal	x0, beq_cont.33846
+beq_else.33845:
 	addi	t6, x0, 2
-	bne	a2, t6, beq_else.33327 # size : 164
+	bne	a2, t6, beq_else.33851 # size : 164
 	addi	a1, x0, 824
 	lw	a2, 16(a0)
 	flw	fa0, 0(a2)
@@ -11710,8 +12099,8 @@ beq_else.33321:
 	flw	fa0, 0(a2)
 	fsgnjn	fa0, fa0, fa0
 	fsw	fa0, 8(a1) 
-	jal	x0, beq_cont.33328
-beq_else.33327:
+	jal	x0, beq_cont.33852
+beq_else.33851:
 	addi	a1, x0, 808
 	flw	fa0, 0(a1)
 	lw	a1, 20(a0)
@@ -11743,7 +12132,7 @@ beq_else.33327:
 	flw	fa5, 0(a1)
 	fmul	fa5, fa2, fa5
 	lw	a1, 12(a0)
-	bne	a1, x0, beq_else.33329 # size : 68
+	bne	a1, x0, beq_else.33853 # size : 68
 	addi	a1, x0, 824
 	fsw	fa3, 0(a1) 
 	addi	a1, x0, 824
@@ -11751,8 +12140,8 @@ beq_else.33327:
 	fsw	fa4, 0(a1) 
 	addi	a1, x0, 824
 	fsw	fa5, 8(a1) 
-	jal	x0, beq_cont.33330
-beq_else.33329:
+	jal	x0, beq_cont.33854
+beq_else.33853:
 	addi	a1, x0, 824
 	lw	a2, 36(a0)
 	addi	a2, a2, 8
@@ -11763,11 +12152,11 @@ beq_else.33329:
 	flw	fa7, 0(a2)
 	fmul	fa7, fa2, fa7
 	fadd	fa6, fa6, fa7
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa6, fa6, fs11
+	luil	a2, l.001
+	srli	a2, a2, 1
+	addil	a2, a2, l.001
+	flw	fa7, 0(a2)
+	fmul	fa6, fa6, fa7
 	fadd	fa3, fa3, fa6
 	fsw	fa3, 0(a1) 
 	addi	a1, x0, 824
@@ -11779,11 +12168,11 @@ beq_else.33329:
 	flw	fa6, 0(a2)
 	fmul	fa2, fa2, fa6
 	fadd	fa2, fa3, fa2
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa2, fa2, fs11
+	luil	a2, l.001
+	srli	a2, a2, 1
+	addil	a2, a2, l.001
+	flw	fa3, 0(a2)
+	fmul	fa2, fa2, fa3
 	fadd	fa2, fa4, fa2
 	addi	a1, a1, 4
 	fsw	fa2, 0(a1) 
@@ -11796,14 +12185,14 @@ beq_else.33329:
 	flw	fa2, 0(a2)
 	fmul	fa1, fa1, fa2
 	fadd	fa0, fa0, fa1
-	luil	t6, l.001
-	srli	t6, t6, 1
-	addil	t6, t6, l.001
-	flw	fs11, 0(t6)
-	fmul	fa0, fa0, fs11
+	luil	a2, l.001
+	srli	a2, a2, 1
+	addil	a2, a2, l.001
+	flw	fa1, 0(a2)
+	fmul	fa0, fa0, fa1
 	fadd	fa0, fa5, fa0
 	fsw	fa0, 8(a1) 
-beq_cont.33330:
+beq_cont.33854:
 	addi	a1, x0, 824
 	lw	a2, 24(a0)
 	addi	a3, a1 0
@@ -11820,28 +12209,28 @@ beq_cont.33330:
 	fsqrt	fa0, fa0
 	fsgnjn	fs11, fa0, fa0
 	feq	a3, fs11, fa0
-	bne	a3, x0, beq_else.33331 # size : 68
-	bne	a2, x0, beq_else.33333 # size : 28
-	luil	a2, l.26867
+	bne	a3, x0, beq_else.33855 # size : 68
+	bne	a2, x0, beq_else.33857 # size : 28
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa1, 0(a2)
 	fdiv	fa0, fa1, fa0
-	jal	x0, beq_cont.33334
-beq_else.33333:
-	luil	a2, l.26869
+	jal	x0, beq_cont.33858
+beq_else.33857:
+	luil	a2, l.27215
 	srli	a2, a2, 1
-	addil	a2, a2, l.26869
+	addil	a2, a2, l.27215
 	flw	fa1, 0(a2)
 	fdiv	fa0, fa1, fa0
-beq_cont.33334:
-	jal	x0, beq_cont.33332
-beq_else.33331:
-	luil	a2, l.26867
+beq_cont.33858:
+	jal	x0, beq_cont.33856
+beq_else.33855:
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa0, 0(a2)
-beq_cont.33332:
+beq_cont.33856:
 	addi	a2, a1 0
 	flw	fa1, 0(a2)
 	fmul	fa1, fa1, fa0
@@ -11856,8 +12245,8 @@ beq_cont.33332:
 	flw	fa1, 0(a2)
 	fmul	fa0, fa1, fa0
 	fsw	fa0, 8(a1) 
-beq_cont.33328:
-beq_cont.33322:
+beq_cont.33852:
+beq_cont.33846:
 	addi	a1, x0, 808
 	lw	a2, 0(a0)
 	addi	a3, x0, 836
@@ -11876,17 +12265,17 @@ beq_cont.33322:
 	flw	fa0, 0(a4)
 	addi	a3, a3, 8
 	fsw	fa0, 0(a3) 
-	sw	a0, -116(sp) # Save obj.4069.8124
+	sw	a0, -148(sp) # Save obj.4073.8138
 	addi	t6, x0, 1
-	bne	a2, t6, beq_else.33335 # size : 492
+	bne	a2, t6, beq_else.33859 # size : 492
 	addi	a2, a1 0
 	flw	fa0, 0(a2)
 	lw	a2, 20(a0)
 	flw	fa1, 0(a2)
 	fsub	fa0, fa0, fa1
-	luil	a2, l.28650
+	luil	a2, l.29073
 	srli	a2, a2, 1
-	addil	a2, a2, l.28650
+	addil	a2, a2, l.29073
 	flw	fa1, 0(a2)
 	fmul	fa1, fa0, fa1
 	fcvtws	t6, fa1
@@ -11894,15 +12283,15 @@ beq_cont.33322:
 	flt	t4, fa1, fs11
 	sub	t6, t6, t4
 	fcvtsw	fa1, t6
-	luil	a2, l.28652
+	luil	a2, l.29075
 	srli	a2, a2, 1
-	addil	a2, a2, l.28652
+	addil	a2, a2, l.29075
 	flw	fa2, 0(a2)
 	fmul	fa1, fa1, fa2
 	fsub	fa0, fa0, fa1
-	luil	a2, l.28558
+	luil	a2, l.28964
 	srli	a2, a2, 1
-	addil	a2, a2, l.28558
+	addil	a2, a2, l.28964
 	flw	fa1, 0(a2)
 	flt	a2, fa0, fa1
 	addi	a1, a1, 8
@@ -11911,9 +12300,9 @@ beq_cont.33322:
 	addi	a1, a1, 8
 	flw	fa1, 0(a1)
 	fsub	fa0, fa0, fa1
-	luil	a1, l.28650
+	luil	a1, l.29073
 	srli	a1, a1, 1
-	addil	a1, a1, l.28650
+	addil	a1, a1, l.29073
 	flw	fa1, 0(a1)
 	fmul	fa1, fa0, fa1
 	fcvtws	t6, fa1
@@ -11921,445 +12310,470 @@ beq_cont.33322:
 	flt	t4, fa1, fs11
 	sub	t6, t6, t4
 	fcvtsw	fa1, t6
-	luil	a1, l.28652
+	luil	a1, l.29075
 	srli	a1, a1, 1
-	addil	a1, a1, l.28652
+	addil	a1, a1, l.29075
 	flw	fa2, 0(a1)
 	fmul	fa1, fa1, fa2
 	fsub	fa0, fa0, fa1
-	luil	a1, l.28558
+	luil	a1, l.28964
 	srli	a1, a1, 1
-	addil	a1, a1, l.28558
+	addil	a1, a1, l.28964
 	flw	fa1, 0(a1)
 	flt	a1, fa0, fa1
 	addi	a3, x0, 836
-	bne	a2, x0, beq_else.33337 # size : 52
-	bne	a1, x0, beq_else.33339 # size : 20
-	luil	a1, l.28544
+	bne	a2, x0, beq_else.33861 # size : 52
+	bne	a1, x0, beq_else.33863 # size : 20
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa0, 0(a1)
-	jal	x0, beq_cont.33340
-beq_else.33339:
-	luil	a1, l.26808
+	jal	x0, beq_cont.33864
+beq_else.33863:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-beq_cont.33340:
-	jal	x0, beq_cont.33338
-beq_else.33337:
-	bne	a1, x0, beq_else.33341 # size : 20
-	luil	a1, l.26808
+beq_cont.33864:
+	jal	x0, beq_cont.33862
+beq_else.33861:
+	bne	a1, x0, beq_else.33865 # size : 20
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	jal	x0, beq_cont.33342
-beq_else.33341:
-	luil	a1, l.28544
+	jal	x0, beq_cont.33866
+beq_else.33865:
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa0, 0(a1)
-beq_cont.33342:
-beq_cont.33338:
+beq_cont.33866:
+beq_cont.33862:
 	addi	a1, a3, 4
 	fsw	fa0, 0(a1) 
-	jal	x0, beq_cont.33336
-beq_else.33335:
+	jal	x0, beq_cont.33860
+beq_else.33859:
 	addi	t6, x0, 2
-	bne	a2, t6, beq_else.33343 # size : 2316
+	bne	a2, t6, beq_else.33867 # size : 2452
 	addi	a1, a1, 4
 	flw	fa0, 0(a1)
-	luil	a1, l.28606
+	luil	a1, l.29022
 	srli	a1, a1, 1
-	addil	a1, a1, l.28606
+	addil	a1, a1, l.29022
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33345 # size : 4
+	bne	a1, x0, beq_else.33869 # size : 4
 	addi	a1, x0, 0
-	jal	x0, beq_cont.33346
-beq_else.33345:
+	jal	x0, beq_cont.33870
+beq_else.33869:
 	addi	a1, x0, 1
-beq_cont.33346:
+beq_cont.33870:
 	addi	t6, x0, 1
-	bne	a1, t6, beq_else.33347 # size : 4
+	bne	a1, t6, beq_else.33871 # size : 4
 	fsgnj	fa1, fa0, fa0
-	jal	x0, beq_cont.33348
-beq_else.33347:
-	luil	a1, l.26869
+	jal	x0, beq_cont.33872
+beq_else.33871:
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa1, 0(a1)
 	fmul	fa1, fa1, fa0
-beq_cont.33348:
-	luil	a1, l.26804
+beq_cont.33872:
+	luil	a1, l.27150
 	srli	a1, a1, 1
-	addil	a1, a1, l.26804
+	addil	a1, a1, l.27150
 	flw	fa2, 0(a1)
-	fsw	fa0, -120(sp)
-	fsw	fa1, -124(sp)
+	fsw	fa0, -152(sp)
+	fsw	fa1, -156(sp)
 	fsgnj	fa0, fa1, fa1
 	fsgnj	fa1, fa2, fa2
-	sw	ra, -132(sp)
-	addi	sp, sp, -136
-	jal	ra, while1.2799
-	addi	sp, sp, 136
-	lw	ra, -132(sp)
+	sw	ra, -164(sp)
+	addi	sp, sp, -168
+	jal	ra, while1.2800
+	addi	sp, sp, 168
+	lw	ra, -164(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -124(sp)
-	sw	ra, -132(sp)
-	addi	sp, sp, -136
+	flw	fa0, -156(sp)
+	sw	ra, -164(sp)
+	addi	sp, sp, -168
 	jal	ra, while2.2805
-	addi	sp, sp, 136
-	lw	ra, -132(sp)
-	flw	fa1, -24(sp)
+	addi	sp, sp, 168
+	lw	ra, -164(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33349 # size : 4
-	jal	x0, beq_cont.33350
-beq_else.33349:
+	bne	a0, x0, beq_else.33873 # size : 4
+	jal	x0, beq_cont.33874
+beq_else.33873:
 	fsub	fa0, fa0, fa1
-beq_cont.33350:
-	flw	fa2, -120(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33351 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33352
-beq_else.33351:
-	addi	a0, x0, 1
-beq_cont.33352:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33353 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.33354
-beq_else.33353:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.33354:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -128(sp)
-	fsw	fa3, -132(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -140(sp)
-	addi	sp, sp, -144
-	jal	ra, while1.2799
-	addi	sp, sp, 144
-	lw	ra, -140(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -132(sp)
-	sw	ra, -140(sp)
-	addi	sp, sp, -144
-	jal	ra, while2.2805
-	addi	sp, sp, 144
-	lw	ra, -140(sp)
-	flw	fa1, -120(sp)
+beq_cont.33874:
+	flw	fa1, -152(sp)
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33355 # size : 4
+	bne	a0, x0, beq_else.33875 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.33356
-beq_else.33355:
+	jal	x0, beq_cont.33876
+beq_else.33875:
 	addi	a0, x0, 1
-beq_cont.33356:
-	flw	fa2, -128(sp)
+beq_cont.33876:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33877 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.33878
+beq_else.33877:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.33878:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -160(sp)
+	fsw	fa2, -164(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -172(sp)
+	addi	sp, sp, -176
+	jal	ra, while1.2800
+	addi	sp, sp, 176
+	lw	ra, -172(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -164(sp)
+	sw	ra, -172(sp)
+	addi	sp, sp, -176
+	jal	ra, while2.2805
+	addi	sp, sp, 176
+	lw	ra, -172(sp)
+	flw	fa1, -152(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33879 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.33880
+beq_else.33879:
+	addi	a0, x0, 1
+beq_cont.33880:
+	flw	fa2, -160(sp)
 	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33357 # size : 4
-	jal	x0, bne_cont.33358
-bne_else.33357:
+	beq	t6, x0, bne_else.33881 # size : 4
+	jal	x0, bne_cont.33882
+bne_else.33881:
 	addi	a1, x0, 1
 	sub	a0, a1, a0
-bne_cont.33358:
+bne_cont.33882:
 	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33359 # size : 732
+	bne	a0, t6, beq_else.33883 # size : 796
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33361 # size : 4
+	bne	a0, x0, beq_else.33885 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.33362
-beq_else.33361:
+	jal	x0, beq_cont.33886
+beq_else.33885:
 	addi	a0, x0, 1
-beq_cont.33362:
+beq_cont.33886:
 	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33363 # size : 4
+	bne	a0, t6, beq_else.33887 # size : 4
 	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.33364
-beq_else.33363:
-	luil	a0, l.26869
+	jal	x0, beq_cont.33888
+beq_else.33887:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
 	flw	fa0, 0(a0)
 	fmul	fa0, fa0, fa1
-beq_cont.33364:
-	luil	a0, l.26804
+beq_cont.33888:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27150
 	flw	fa1, 0(a0)
-	fsw	fa0, -136(sp)
-	sw	ra, -144(sp)
-	addi	sp, sp, -148
-	jal	ra, while1.2799
-	addi	sp, sp, 148
-	lw	ra, -144(sp)
+	fsw	fa0, -168(sp)
+	sw	ra, -176(sp)
+	addi	sp, sp, -180
+	jal	ra, while1.2800
+	addi	sp, sp, 180
+	lw	ra, -176(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -136(sp)
-	sw	ra, -144(sp)
-	addi	sp, sp, -148
+	flw	fa0, -168(sp)
+	sw	ra, -176(sp)
+	addi	sp, sp, -180
 	jal	ra, while2.2805
-	addi	sp, sp, 148
-	lw	ra, -144(sp)
-	flw	fa1, -24(sp)
+	addi	sp, sp, 180
+	lw	ra, -176(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33365 # size : 4
-	jal	x0, beq_cont.33366
-beq_else.33365:
+	bne	a0, x0, beq_else.33889 # size : 4
+	jal	x0, beq_cont.33890
+beq_else.33889:
 	fsub	fa0, fa0, fa1
-beq_cont.33366:
-	luil	a0, l.26802
+beq_cont.33890:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33367 # size : 4
-	jal	x0, beq_cont.33368
-beq_else.33367:
+	bne	a0, x0, beq_else.33891 # size : 4
+	jal	x0, beq_cont.33892
+beq_else.33891:
 	fsub	fa0, fa1, fa0
-beq_cont.33368:
-	luil	a0, l.26923
+beq_cont.33892:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33369 # size : 180
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.33893 # size : 180
+	luil	a0, l.27285
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-	jal	x0, beq_cont.33370
-beq_else.33369:
-	luil	a0, l.26933
+	jal	x0, beq_cont.33894
+beq_else.33893:
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27287
 	flw	fa1, 0(a0)
-	luil	a0, l.26935
+	luil	a0, l.27289
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
 	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
 	fmul	fa4, fa4, fa3
 	fadd	fa2, fa4, fa2
 	fmul	fa2, fa2, fa3
 	fsub	fa1, fa2, fa1
 	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
 	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-beq_cont.33370:
-	jal	x0, beq_cont.33360
-beq_else.33359:
-	luil	a0, l.26869
+beq_cont.33894:
+	jal	x0, beq_cont.33884
+beq_else.33883:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
 	flw	fa0, 0(a0)
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33371 # size : 4
+	bne	a0, x0, beq_else.33895 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.33372
-beq_else.33371:
+	jal	x0, beq_cont.33896
+beq_else.33895:
 	addi	a0, x0, 1
-beq_cont.33372:
+beq_cont.33896:
 	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33373 # size : 4
-	jal	x0, beq_cont.33374
-beq_else.33373:
-	luil	a0, l.26869
+	bne	a0, t6, beq_else.33897 # size : 4
+	jal	x0, beq_cont.33898
+beq_else.33897:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
 	fmul	fa1, fa2, fa1
-beq_cont.33374:
-	luil	a0, l.26804
+beq_cont.33898:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27150
 	flw	fa2, 0(a0)
-	fsw	fa0, -140(sp)
-	fsw	fa1, -144(sp)
+	fsw	fa0, -172(sp)
+	fsw	fa1, -176(sp)
 	fsgnj	fa0, fa1, fa1
 	fsgnj	fa1, fa2, fa2
-	sw	ra, -152(sp)
-	addi	sp, sp, -156
-	jal	ra, while1.2799
-	addi	sp, sp, 156
-	lw	ra, -152(sp)
+	sw	ra, -184(sp)
+	addi	sp, sp, -188
+	jal	ra, while1.2800
+	addi	sp, sp, 188
+	lw	ra, -184(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -144(sp)
-	sw	ra, -152(sp)
-	addi	sp, sp, -156
+	flw	fa0, -176(sp)
+	sw	ra, -184(sp)
+	addi	sp, sp, -188
 	jal	ra, while2.2805
-	addi	sp, sp, 156
-	lw	ra, -152(sp)
-	flw	fa1, -24(sp)
+	addi	sp, sp, 188
+	lw	ra, -184(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33375 # size : 4
-	jal	x0, beq_cont.33376
-beq_else.33375:
+	bne	a0, x0, beq_else.33899 # size : 4
+	jal	x0, beq_cont.33900
+beq_else.33899:
 	fsub	fa0, fa0, fa1
-beq_cont.33376:
-	luil	a0, l.26802
+beq_cont.33900:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33377 # size : 4
-	jal	x0, beq_cont.33378
-beq_else.33377:
+	bne	a0, x0, beq_else.33901 # size : 4
+	jal	x0, beq_cont.33902
+beq_else.33901:
 	fsub	fa0, fa1, fa0
-beq_cont.33378:
-	luil	a0, l.26923
+beq_cont.33902:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33379 # size : 180
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.33903 # size : 180
+	luil	a0, l.27285
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-	jal	x0, beq_cont.33380
-beq_else.33379:
-	luil	a0, l.26933
+	jal	x0, beq_cont.33904
+beq_else.33903:
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27287
 	flw	fa1, 0(a0)
-	luil	a0, l.26935
+	luil	a0, l.27289
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
 	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
 	fmul	fa4, fa4, fa3
 	fadd	fa2, fa4, fa2
 	fmul	fa2, fa2, fa3
 	fsub	fa1, fa2, fa1
 	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
 	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-beq_cont.33380:
-	flw	fa1, -140(sp)
+beq_cont.33904:
+	flw	fa1, -172(sp)
 	fmul	fa0, fa1, fa0
-beq_cont.33360:
+beq_cont.33884:
 	fmul	fa0, fa0, fa0
 	addi	a0, x0, 836
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
 	fmul	fa1, fa1, fa0
 	fsw	fa1, 0(a0) 
 	addi	a0, x0, 836
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa2, 0(a1)
 	fsub	fa0, fa2, fa0
 	fmul	fa0, fa1, fa0
 	fsw	fa0, 4(a0) 
-	jal	x0, beq_cont.33344
-beq_else.33343:
+	jal	x0, beq_cont.33868
+beq_else.33867:
 	addi	t6, x0, 3
-	bne	a2, t6, beq_else.33381 # size : 3028
+	bne	a2, t6, beq_else.33905 # size : 3356
 	addi	a2, a1 0
 	flw	fa0, 0(a2)
 	lw	a2, 20(a0)
@@ -12375,9 +12789,9 @@ beq_else.33343:
 	fmul	fa1, fa1, fa1
 	fadd	fa0, fa0, fa1
 	fsqrt	fa0, fa0
-	luil	a1, l.28558
+	luil	a1, l.28964
 	srli	a1, a1, 1
-	addil	a1, a1, l.28558
+	addil	a1, a1, l.28964
 	flw	fa1, 0(a1)
 	fdiv	fa0, fa0, fa1
 	fcvtws	t6, fa0
@@ -12386,347 +12800,39 @@ beq_else.33343:
 	sub	t6, t6, t4
 	fcvtsw	fa1, t6
 	fsub	fa0, fa0, fa1
-	luil	a1, l.28474
+	luil	a1, l.28880
 	srli	a1, a1, 1
-	addil	a1, a1, l.28474
+	addil	a1, a1, l.28880
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33383 # size : 28
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.33907 # size : 28
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33384
-beq_else.33383:
-	fsgnj	fa1, fa0, fa0
-beq_cont.33384:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
+	addil	a1, a1, l.27215
 	flw	fa2, 0(a1)
-	fsw	fa0, -148(sp)
-	fsw	fa1, -152(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -160(sp)
-	addi	sp, sp, -164
-	jal	ra, while1.2799
-	addi	sp, sp, 164
-	lw	ra, -160(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -152(sp)
-	sw	ra, -160(sp)
-	addi	sp, sp, -164
-	jal	ra, while2.2805
-	addi	sp, sp, 164
-	lw	ra, -160(sp)
-	flw	fa1, -24(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33385 # size : 4
-	jal	x0, beq_cont.33386
-beq_else.33385:
-	fsub	fa0, fa0, fa1
-beq_cont.33386:
-	flw	fa2, -148(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33387 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33388
-beq_else.33387:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33388:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -156(sp)
-	fsw	fa3, -160(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -168(sp)
-	addi	sp, sp, -172
-	jal	ra, while1.2799
-	addi	sp, sp, 172
-	lw	ra, -168(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -160(sp)
-	sw	ra, -168(sp)
-	addi	sp, sp, -172
-	jal	ra, while2.2805
-	addi	sp, sp, 172
-	lw	ra, -168(sp)
-	flw	fa1, -156(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.33389 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.33390
-bne_else.33389:
-	addi	a0, x0, 0
-bne_cont.33390:
-	flw	fa0, -148(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33391 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33392
-beq_else.33391:
-	fsgnj	fa1, fa0, fa0
-beq_cont.33392:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -164(sp) # Save flag00.6561.23768
-	fsw	fa1, -168(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -176(sp)
-	addi	sp, sp, -180
-	jal	ra, while1.2799
-	addi	sp, sp, 180
-	lw	ra, -176(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -168(sp)
-	sw	ra, -176(sp)
-	addi	sp, sp, -180
-	jal	ra, while2.2805
-	addi	sp, sp, 180
-	lw	ra, -176(sp)
-	flw	fa1, -24(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33393 # size : 4
-	jal	x0, beq_cont.33394
-beq_else.33393:
-	fsub	fa0, fa0, fa1
-beq_cont.33394:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33395 # size : 4
-	jal	x0, beq_cont.33396
-beq_else.33395:
-	fsub	fa0, fa1, fa0
-beq_cont.33396:
-	flw	fa2, -148(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33397 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33398
-beq_else.33397:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33398:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -172(sp)
-	fsw	fa3, -176(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -184(sp)
-	addi	sp, sp, -188
-	jal	ra, while1.2799
-	addi	sp, sp, 188
-	lw	ra, -184(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -176(sp)
-	sw	ra, -184(sp)
-	addi	sp, sp, -188
-	jal	ra, while2.2805
-	addi	sp, sp, 188
-	lw	ra, -184(sp)
-	flw	fa1, -24(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33399 # size : 4
-	jal	x0, beq_cont.33400
-beq_else.33399:
-	fsub	fa0, fa0, fa1
-beq_cont.33400:
-	flw	fa2, -172(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33401 # size : 12
-	lw	a0, -164(sp) # Restore flag00.6561.23768
-	jal	x0, bne_cont.33402
-bne_else.33401:
-	addi	a0, x0, 1
-	lw	a1, -164(sp) # Restore flag00.6561.23768
-	sub	a0, a0, a1
-bne_cont.33402:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33403 # size : 724
-	flw	fa0, -148(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.33405 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.33406
-beq_else.33405:
-beq_cont.33406:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
+	jal	x0, beq_cont.33908
+beq_else.33907:
+	fsgnj	fa2, fa0, fa0
+beq_cont.33908:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa3, 0(a1)
 	fsw	fa0, -180(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -188(sp)
-	addi	sp, sp, -192
-	jal	ra, while1.2799
-	addi	sp, sp, 192
-	lw	ra, -188(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -180(sp)
-	sw	ra, -188(sp)
-	addi	sp, sp, -192
-	jal	ra, while2.2805
-	addi	sp, sp, 192
-	lw	ra, -188(sp)
-	flw	fa1, -24(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33407 # size : 4
-	jal	x0, beq_cont.33408
-beq_else.33407:
-	fsub	fa0, fa0, fa1
-beq_cont.33408:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33409 # size : 4
-	jal	x0, beq_cont.33410
-beq_else.33409:
-	fsub	fa0, fa1, fa0
-beq_cont.33410:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa1, fa2
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33411 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa1, 0(a0)
-	fsub	fa0, fa1, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa1, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa2, 0(a0)
-	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa3
-	fadd	fa2, fa4, fa2
-	fmul	fa2, fa2, fa3
-	fsub	fa1, fa2, fa1
-	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa1, fa1, fa2
-	fmul	fa0, fa1, fa0
-	jal	x0, beq_cont.33412
-beq_else.33411:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa1, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa2, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa0
-	fadd	fa2, fa3, fa2
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa2, fa1
-	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa1, 0(a0)
-	fadd	fa0, fa0, fa1
-beq_cont.33412:
-	jal	x0, beq_cont.33404
-beq_else.33403:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	flw	fa2, -148(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33413 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa2, fa3, fa2
-	jal	x0, beq_cont.33414
-beq_else.33413:
-beq_cont.33414:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa0, -184(sp)
+	fsw	fa1, -184(sp)
 	fsw	fa2, -188(sp)
 	fsgnj	fa1, fa3, fa3
 	fsgnj	fa0, fa2, fa2
 	sw	ra, -196(sp)
 	addi	sp, sp, -200
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 200
 	lw	ra, -196(sp)
 	fsgnj	fa1, fa0, fa0
@@ -12736,124 +12842,488 @@ beq_cont.33414:
 	jal	ra, while2.2805
 	addi	sp, sp, 200
 	lw	ra, -196(sp)
-	flw	fa1, -24(sp)
+	flw	fa1, -184(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33415 # size : 4
-	jal	x0, beq_cont.33416
-beq_else.33415:
+	bne	a0, x0, beq_else.33909 # size : 4
+	jal	x0, beq_cont.33910
+beq_else.33909:
 	fsub	fa0, fa0, fa1
-beq_cont.33416:
-	luil	a0, l.26802
+beq_cont.33910:
+	flw	fa1, -180(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33911 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
+	fmul	fa2, fa2, fa1
+	jal	x0, beq_cont.33912
+beq_else.33911:
+	fsgnj	fa2, fa1, fa1
+beq_cont.33912:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -192(sp)
+	fsw	fa2, -196(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -204(sp)
+	addi	sp, sp, -208
+	jal	ra, while1.2800
+	addi	sp, sp, 208
+	lw	ra, -204(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -196(sp)
+	sw	ra, -204(sp)
+	addi	sp, sp, -208
+	jal	ra, while2.2805
+	addi	sp, sp, 208
+	lw	ra, -204(sp)
+	flw	fa1, -192(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.33913 # size : 4
+	addi	a0, x0, 1
+	jal	x0, bne_cont.33914
+bne_else.33913:
+	addi	a0, x0, 0
+bne_cont.33914:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -180(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.33915 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.33916
+beq_else.33915:
+	fsgnj	fa3, fa2, fa2
+beq_cont.33916:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	sw	a0, -200(sp) # Save flag00.6568.24035
+	fsw	fa0, -204(sp)
+	fsw	fa1, -208(sp)
+	fsw	fa3, -212(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -220(sp)
+	addi	sp, sp, -224
+	jal	ra, while1.2800
+	addi	sp, sp, 224
+	lw	ra, -220(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -212(sp)
+	sw	ra, -220(sp)
+	addi	sp, sp, -224
+	jal	ra, while2.2805
+	addi	sp, sp, 224
+	lw	ra, -220(sp)
+	flw	fa1, -208(sp)
+	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33417 # size : 4
-	jal	x0, beq_cont.33418
-beq_else.33417:
-	fsub	fa0, fa1, fa0
-beq_cont.33418:
-	luil	a0, l.26923
+	bne	a0, x0, beq_else.33917 # size : 4
+	jal	x0, beq_cont.33918
+beq_else.33917:
+	fsub	fa0, fa0, fa1
+beq_cont.33918:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -204(sp)
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33419 # size : 188
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.33919 # size : 4
+	jal	x0, beq_cont.33920
+beq_else.33919:
+	fsub	fa0, fa2, fa0
+beq_cont.33920:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -180(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33921 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.33922
+beq_else.33921:
+	fsgnj	fa3, fa2, fa2
+beq_cont.33922:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -216(sp)
+	fsw	fa1, -220(sp)
+	fsw	fa3, -224(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -232(sp)
+	addi	sp, sp, -236
+	jal	ra, while1.2800
+	addi	sp, sp, 236
+	lw	ra, -232(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -224(sp)
+	sw	ra, -232(sp)
+	addi	sp, sp, -236
+	jal	ra, while2.2805
+	addi	sp, sp, 236
+	lw	ra, -232(sp)
+	flw	fa1, -220(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33923 # size : 4
+	jal	x0, beq_cont.33924
+beq_else.33923:
+	fsub	fa0, fa0, fa1
+beq_cont.33924:
+	flw	fa1, -216(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.33925 # size : 12
+	lw	a0, -200(sp) # Restore flag00.6568.24035
+	jal	x0, bne_cont.33926
+bne_else.33925:
+	addi	a0, x0, 1
+	lw	a1, -200(sp) # Restore flag00.6568.24035
+	sub	a0, a0, a1
+bne_cont.33926:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.33927 # size : 828
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -180(sp)
+	fsgnjn	fs11, fa3, fa3
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.33929 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa4, 0(a0)
+	fmul	fa3, fa4, fa3
+	jal	x0, beq_cont.33930
+beq_else.33929:
+beq_cont.33930:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -228(sp)
+	fsw	fa1, -232(sp)
+	fsw	fa2, -236(sp)
+	fsw	fa3, -240(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -248(sp)
+	addi	sp, sp, -252
+	jal	ra, while1.2800
+	addi	sp, sp, 252
+	lw	ra, -248(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -240(sp)
+	sw	ra, -248(sp)
+	addi	sp, sp, -252
+	jal	ra, while2.2805
+	addi	sp, sp, 252
+	lw	ra, -248(sp)
+	flw	fa1, -236(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33931 # size : 4
+	jal	x0, beq_cont.33932
+beq_else.33931:
+	fsub	fa0, fa0, fa1
+beq_cont.33932:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -232(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33933 # size : 4
+	jal	x0, beq_cont.33934
+beq_else.33933:
+	fsub	fa0, fa2, fa0
+beq_cont.33934:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -228(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33935 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
-	luil	a0, l.26933
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27287
 	flw	fa1, 0(a0)
-	luil	a0, l.26935
+	luil	a0, l.27289
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
 	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
 	fmul	fa4, fa4, fa3
 	fadd	fa2, fa4, fa2
 	fmul	fa2, fa2, fa3
 	fsub	fa1, fa2, fa1
 	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
 	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-	jal	x0, beq_cont.33420
-beq_else.33419:
+	jal	x0, beq_cont.33936
+beq_else.33935:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-beq_cont.33420:
-	flw	fa1, -184(sp)
+beq_cont.33936:
+	jal	x0, beq_cont.33928
+beq_else.33927:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -180(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.33937 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa5, 0(a0)
+	fmul	fa4, fa5, fa4
+	jal	x0, beq_cont.33938
+beq_else.33937:
+beq_cont.33938:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -244(sp)
+	fsw	fa1, -248(sp)
+	fsw	fa2, -252(sp)
+	fsw	fa3, -256(sp)
+	fsw	fa4, -260(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -268(sp)
+	addi	sp, sp, -272
+	jal	ra, while1.2800
+	addi	sp, sp, 272
+	lw	ra, -268(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -260(sp)
+	sw	ra, -268(sp)
+	addi	sp, sp, -272
+	jal	ra, while2.2805
+	addi	sp, sp, 272
+	lw	ra, -268(sp)
+	flw	fa1, -256(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.33939 # size : 4
+	jal	x0, beq_cont.33940
+beq_else.33939:
+	fsub	fa0, fa0, fa1
+beq_cont.33940:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -252(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33941 # size : 4
+	jal	x0, beq_cont.33942
+beq_else.33941:
+	fsub	fa0, fa2, fa0
+beq_cont.33942:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -248(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.33943 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-beq_cont.33404:
+	jal	x0, beq_cont.33944
+beq_else.33943:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.33944:
+	flw	fa1, -244(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.33928:
 	fmul	fa0, fa0, fa0
 	addi	a0, x0, 836
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
 	fmul	fa1, fa0, fa1
 	addi	a0, a0, 4
 	fsw	fa1, 0(a0) 
 	addi	a0, x0, 836
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa1, 0(a1)
 	fsub	fa0, fa1, fa0
-	luil	a1, l.28544
+	luil	a1, l.28950
 	srli	a1, a1, 1
-	addil	a1, a1, l.28544
+	addil	a1, a1, l.28950
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
 	fsw	fa0, 8(a0) 
-	jal	x0, beq_cont.33382
-beq_else.33381:
+	jal	x0, beq_cont.33906
+beq_else.33905:
 	addi	t6, x0, 4
-	bne	a2, t6, beq_else.33421 # size : 5552
-	jal	x0, beq_sub.33423
-beq_else.33421:
-	jal	x0, beq_cont.33422
-beq_sub.33423:
+	bne	a2, t6, beq_else.33945 # size : 5552
+	jal	x0, beq_sub.33947
+beq_else.33945:
+	jal	x0, beq_cont.33946
+beq_sub.33947:
 	addi	a2, a1 0
 	flw	fa0, 0(a2)
 	lw	a2, 20(a0)
@@ -12878,74 +13348,74 @@ beq_sub.33423:
 	fmul	fa3, fa1, fa1
 	fadd	fa2, fa2, fa3
 	fsgnjx	fa3, fa0, fa0
-	luil	a2, l.28406
+	luil	a2, l.28812
 	srli	a2, a2, 1
-	addil	a2, a2, l.28406
+	addil	a2, a2, l.28812
 	flw	fa4, 0(a2)
 	flt	a2, fa3, fa4
-	bne	a2, x0, beq_else.33424 # size : 2396
+	bne	a2, x0, beq_else.33948 # size : 2396
 	fdiv	fa0, fa1, fa0
 	fsgnjx	fa0, fa0, fa0
 	fsgnjn	fs11, fa0, fa0
 	flt	a2, fs11, fa0
-	bne	a2, x0, beq_else.33426 # size : 28
-	luil	a2, l.26869
+	bne	a2, x0, beq_else.33950 # size : 28
+	luil	a2, l.27215
 	srli	a2, a2, 1
-	addil	a2, a2, l.26869
+	addil	a2, a2, l.27215
 	flw	fa1, 0(a2)
 	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33427
-beq_else.33426:
+	jal	x0, beq_cont.33951
+beq_else.33950:
 	fsgnj	fa1, fa0, fa0
-beq_cont.33427:
-	luil	a2, l.28411
+beq_cont.33951:
+	luil	a2, l.28817
 	srli	a2, a2, 1
-	addil	a2, a2, l.28411
+	addil	a2, a2, l.28817
 	flw	fa3, 0(a2)
 	fsub	fa3, fa3, fa1
 	fsgnjn	fs11, fa3, fa3
 	flt	a2, fs11, fa3
-	bne	a2, x0, beq_else.33428 # size : 728
-	luil	a2, l.28425
+	bne	a2, x0, beq_else.33952 # size : 728
+	luil	a2, l.28831
 	srli	a2, a2, 1
-	addil	a2, a2, l.28425
+	addil	a2, a2, l.28831
 	flw	fa3, 0(a2)
 	fsub	fa3, fa3, fa1
 	fsgnjn	fs11, fa3, fa3
 	flt	a2, fs11, fa3
-	bne	a2, x0, beq_else.33430 # size : 316
-	luil	a2, l.26931
+	bne	a2, x0, beq_else.33954 # size : 316
+	luil	a2, l.27285
 	srli	a2, a2, 1
-	addil	a2, a2, l.26931
+	addil	a2, a2, l.27285
 	flw	fa3, 0(a2)
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa4, 0(a2)
 	fdiv	fa1, fa4, fa1
-	luil	a2, l.28413
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa4, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa5, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa6, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa7, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	ft0, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft1, 0(a2)
 	fmul	ft2, fa1, fa1
 	fmul	ft1, ft1, ft2
@@ -12962,46 +13432,46 @@ beq_cont.33427:
 	fmul	fa4, fa4, ft2
 	fadd	fa1, fa4, fa1
 	fsub	fa1, fa3, fa1
-	jal	x0, beq_cont.33431
-beq_else.33430:
-	luil	a2, l.28427
+	jal	x0, beq_cont.33955
+beq_else.33954:
+	luil	a2, l.28833
 	srli	a2, a2, 1
-	addil	a2, a2, l.28427
+	addil	a2, a2, l.28833
 	flw	fa3, 0(a2)
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa4, 0(a2)
 	fsub	fa4, fa1, fa4
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa5, 0(a2)
 	fadd	fa1, fa1, fa5
 	fdiv	fa1, fa4, fa1
-	luil	a2, l.28413
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa4, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa5, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa6, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa7, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	ft0, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft1, 0(a2)
 	fmul	ft2, fa1, fa1
 	fmul	ft1, ft1, ft2
@@ -13018,32 +13488,32 @@ beq_else.33430:
 	fmul	fa4, fa4, ft2
 	fadd	fa1, fa4, fa1
 	fadd	fa1, fa3, fa1
-beq_cont.33431:
-	jal	x0, beq_cont.33429
-beq_else.33428:
-	luil	a2, l.28413
+beq_cont.33955:
+	jal	x0, beq_cont.33953
+beq_else.33952:
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa3, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa4, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa5, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa6, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	fa7, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft0, 0(a2)
 	fmul	ft1, fa1, fa1
 	fmul	ft0, ft0, ft1
@@ -13059,74 +13529,74 @@ beq_else.33428:
 	fmul	fa3, fa3, fa1
 	fmul	fa3, fa3, ft1
 	fadd	fa1, fa3, fa1
-beq_cont.33429:
+beq_cont.33953:
 	fsgnjn	fs11, fa0, fa0
 	flt	a2, fs11, fa0
-	bne	a2, x0, beq_else.33432 # size : 4
+	bne	a2, x0, beq_else.33956 # size : 4
 	addi	a2, x0, -1
-	jal	x0, beq_cont.33433
-beq_else.33432:
+	jal	x0, beq_cont.33957
+beq_else.33956:
 	addi	a2, x0, 1
-beq_cont.33433:
+beq_cont.33957:
 	fsgnjn	fs11, fa0, fa0
 	flt	a3, fs11, fa0
-	bne	a3, x0, beq_else.33434 # size : 28
-	luil	a3, l.26869
+	bne	a3, x0, beq_else.33958 # size : 28
+	luil	a3, l.27215
 	srli	a3, a3, 1
-	addil	a3, a3, l.26869
+	addil	a3, a3, l.27215
 	flw	fa3, 0(a3)
 	fmul	fa0, fa3, fa0
-	jal	x0, beq_cont.33435
-beq_else.33434:
-beq_cont.33435:
-	luil	a3, l.28411
+	jal	x0, beq_cont.33959
+beq_else.33958:
+beq_cont.33959:
+	luil	a3, l.28817
 	srli	a3, a3, 1
-	addil	a3, a3, l.28411
+	addil	a3, a3, l.28817
 	flw	fa3, 0(a3)
 	fsub	fa3, fa3, fa0
 	fsgnjn	fs11, fa3, fa3
 	flt	a3, fs11, fa3
-	bne	a3, x0, beq_else.33436 # size : 728
-	luil	a3, l.28425
+	bne	a3, x0, beq_else.33960 # size : 728
+	luil	a3, l.28831
 	srli	a3, a3, 1
-	addil	a3, a3, l.28425
+	addil	a3, a3, l.28831
 	flw	fa3, 0(a3)
 	fsub	fa3, fa3, fa0
 	fsgnjn	fs11, fa3, fa3
 	flt	a3, fs11, fa3
-	bne	a3, x0, beq_else.33438 # size : 316
-	luil	a3, l.26931
+	bne	a3, x0, beq_else.33962 # size : 316
+	luil	a3, l.27285
 	srli	a3, a3, 1
-	addil	a3, a3, l.26931
+	addil	a3, a3, l.27285
 	flw	fa3, 0(a3)
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa4, 0(a3)
 	fdiv	fa0, fa4, fa0
-	luil	a3, l.28413
+	luil	a3, l.28819
 	srli	a3, a3, 1
-	addil	a3, a3, l.28413
+	addil	a3, a3, l.28819
 	flw	fa4, 0(a3)
-	luil	a3, l.28415
+	luil	a3, l.28821
 	srli	a3, a3, 1
-	addil	a3, a3, l.28415
+	addil	a3, a3, l.28821
 	flw	fa5, 0(a3)
-	luil	a3, l.28417
+	luil	a3, l.28823
 	srli	a3, a3, 1
-	addil	a3, a3, l.28417
+	addil	a3, a3, l.28823
 	flw	fa6, 0(a3)
-	luil	a3, l.28419
+	luil	a3, l.28825
 	srli	a3, a3, 1
-	addil	a3, a3, l.28419
+	addil	a3, a3, l.28825
 	flw	fa7, 0(a3)
-	luil	a3, l.28421
+	luil	a3, l.28827
 	srli	a3, a3, 1
-	addil	a3, a3, l.28421
+	addil	a3, a3, l.28827
 	flw	ft0, 0(a3)
-	luil	a3, l.28423
+	luil	a3, l.28829
 	srli	a3, a3, 1
-	addil	a3, a3, l.28423
+	addil	a3, a3, l.28829
 	flw	ft1, 0(a3)
 	fmul	ft2, fa0, fa0
 	fmul	ft1, ft1, ft2
@@ -13143,46 +13613,46 @@ beq_cont.33435:
 	fmul	fa4, fa4, ft2
 	fadd	fa0, fa4, fa0
 	fsub	fa0, fa3, fa0
-	jal	x0, beq_cont.33439
-beq_else.33438:
-	luil	a3, l.28427
+	jal	x0, beq_cont.33963
+beq_else.33962:
+	luil	a3, l.28833
 	srli	a3, a3, 1
-	addil	a3, a3, l.28427
+	addil	a3, a3, l.28833
 	flw	fa3, 0(a3)
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa4, 0(a3)
 	fsub	fa4, fa0, fa4
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa5, 0(a3)
 	fadd	fa0, fa0, fa5
 	fdiv	fa0, fa4, fa0
-	luil	a3, l.28413
+	luil	a3, l.28819
 	srli	a3, a3, 1
-	addil	a3, a3, l.28413
+	addil	a3, a3, l.28819
 	flw	fa4, 0(a3)
-	luil	a3, l.28415
+	luil	a3, l.28821
 	srli	a3, a3, 1
-	addil	a3, a3, l.28415
+	addil	a3, a3, l.28821
 	flw	fa5, 0(a3)
-	luil	a3, l.28417
+	luil	a3, l.28823
 	srli	a3, a3, 1
-	addil	a3, a3, l.28417
+	addil	a3, a3, l.28823
 	flw	fa6, 0(a3)
-	luil	a3, l.28419
+	luil	a3, l.28825
 	srli	a3, a3, 1
-	addil	a3, a3, l.28419
+	addil	a3, a3, l.28825
 	flw	fa7, 0(a3)
-	luil	a3, l.28421
+	luil	a3, l.28827
 	srli	a3, a3, 1
-	addil	a3, a3, l.28421
+	addil	a3, a3, l.28827
 	flw	ft0, 0(a3)
-	luil	a3, l.28423
+	luil	a3, l.28829
 	srli	a3, a3, 1
-	addil	a3, a3, l.28423
+	addil	a3, a3, l.28829
 	flw	ft1, 0(a3)
 	fmul	ft2, fa0, fa0
 	fmul	ft1, ft1, ft2
@@ -13199,32 +13669,32 @@ beq_else.33438:
 	fmul	fa4, fa4, ft2
 	fadd	fa0, fa4, fa0
 	fadd	fa0, fa3, fa0
-beq_cont.33439:
-	jal	x0, beq_cont.33437
-beq_else.33436:
-	luil	a3, l.28413
+beq_cont.33963:
+	jal	x0, beq_cont.33961
+beq_else.33960:
+	luil	a3, l.28819
 	srli	a3, a3, 1
-	addil	a3, a3, l.28413
+	addil	a3, a3, l.28819
 	flw	fa3, 0(a3)
-	luil	a3, l.28415
+	luil	a3, l.28821
 	srli	a3, a3, 1
-	addil	a3, a3, l.28415
+	addil	a3, a3, l.28821
 	flw	fa4, 0(a3)
-	luil	a3, l.28417
+	luil	a3, l.28823
 	srli	a3, a3, 1
-	addil	a3, a3, l.28417
+	addil	a3, a3, l.28823
 	flw	fa5, 0(a3)
-	luil	a3, l.28419
+	luil	a3, l.28825
 	srli	a3, a3, 1
-	addil	a3, a3, l.28419
+	addil	a3, a3, l.28825
 	flw	fa6, 0(a3)
-	luil	a3, l.28421
+	luil	a3, l.28827
 	srli	a3, a3, 1
-	addil	a3, a3, l.28421
+	addil	a3, a3, l.28827
 	flw	fa7, 0(a3)
-	luil	a3, l.28423
+	luil	a3, l.28829
 	srli	a3, a3, 1
-	addil	a3, a3, l.28423
+	addil	a3, a3, l.28829
 	flw	ft0, 0(a3)
 	fmul	ft1, fa0, fa0
 	fmul	ft0, ft0, ft1
@@ -13240,42 +13710,42 @@ beq_else.33436:
 	fmul	fa3, fa3, fa0
 	fmul	fa3, fa3, ft1
 	fadd	fa0, fa3, fa0
-beq_cont.33437:
+beq_cont.33961:
 	fsgnjn	fs11, fa0, fa0
 	flt	a3, fs11, fa0
-	bne	a3, x0, beq_else.33440 # size : 4
+	bne	a3, x0, beq_else.33964 # size : 4
 	addi	a3, x0, -1
-	jal	x0, beq_cont.33441
-beq_else.33440:
+	jal	x0, beq_cont.33965
+beq_else.33964:
 	addi	a3, x0, 1
-beq_cont.33441:
-	bne	a2, a3, beq_else.33442 # size : 4
+beq_cont.33965:
+	bne	a2, a3, beq_else.33966 # size : 4
 	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.33443
-beq_else.33442:
-	luil	a2, l.26869
+	jal	x0, beq_cont.33967
+beq_else.33966:
+	luil	a2, l.27215
 	srli	a2, a2, 1
-	addil	a2, a2, l.26869
+	addil	a2, a2, l.27215
 	flw	fa0, 0(a2)
 	fmul	fa0, fa0, fa1
-beq_cont.33443:
-	luil	a2, l.28472
+beq_cont.33967:
+	luil	a2, l.28878
 	srli	a2, a2, 1
-	addil	a2, a2, l.28472
+	addil	a2, a2, l.28878
 	flw	fa1, 0(a2)
 	fmul	fa0, fa0, fa1
-	luil	a2, l.28474
+	luil	a2, l.28880
 	srli	a2, a2, 1
-	addil	a2, a2, l.28474
+	addil	a2, a2, l.28880
 	flw	fa1, 0(a2)
 	fdiv	fa0, fa0, fa1
-	jal	x0, beq_cont.33425
-beq_else.33424:
-	luil	a2, l.28408
+	jal	x0, beq_cont.33949
+beq_else.33948:
+	luil	a2, l.28814
 	srli	a2, a2, 1
-	addil	a2, a2, l.28408
+	addil	a2, a2, l.28814
 	flw	fa0, 0(a2)
-beq_cont.33425:
+beq_cont.33949:
 	fcvtws	t6, fa0
 	fcvtsw	fs11, t6
 	flt	t4, fa0, fs11
@@ -13294,74 +13764,74 @@ beq_cont.33425:
 	fsqrt	fa3, fa3
 	fmul	fa1, fa1, fa3
 	fsgnjx	fa3, fa2, fa2
-	luil	a1, l.28406
+	luil	a1, l.28812
 	srli	a1, a1, 1
-	addil	a1, a1, l.28406
+	addil	a1, a1, l.28812
 	flw	fa4, 0(a1)
 	flt	a1, fa3, fa4
-	bne	a1, x0, beq_else.33444 # size : 2396
+	bne	a1, x0, beq_else.33968 # size : 2396
 	fdiv	fa1, fa1, fa2
 	fsgnjx	fa1, fa1, fa1
 	fsgnjn	fs11, fa1, fa1
 	flt	a1, fs11, fa1
-	bne	a1, x0, beq_else.33446 # size : 28
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.33970 # size : 28
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa2, 0(a1)
 	fmul	fa2, fa2, fa1
-	jal	x0, beq_cont.33447
-beq_else.33446:
+	jal	x0, beq_cont.33971
+beq_else.33970:
 	fsgnj	fa2, fa1, fa1
-beq_cont.33447:
-	luil	a1, l.28411
+beq_cont.33971:
+	luil	a1, l.28817
 	srli	a1, a1, 1
-	addil	a1, a1, l.28411
+	addil	a1, a1, l.28817
 	flw	fa3, 0(a1)
 	fsub	fa3, fa3, fa2
 	fsgnjn	fs11, fa3, fa3
 	flt	a1, fs11, fa3
-	bne	a1, x0, beq_else.33448 # size : 728
-	luil	a1, l.28425
+	bne	a1, x0, beq_else.33972 # size : 728
+	luil	a1, l.28831
 	srli	a1, a1, 1
-	addil	a1, a1, l.28425
+	addil	a1, a1, l.28831
 	flw	fa3, 0(a1)
 	fsub	fa3, fa3, fa2
 	fsgnjn	fs11, fa3, fa3
 	flt	a1, fs11, fa3
-	bne	a1, x0, beq_else.33450 # size : 316
-	luil	a1, l.26931
+	bne	a1, x0, beq_else.33974 # size : 316
+	luil	a1, l.27285
 	srli	a1, a1, 1
-	addil	a1, a1, l.26931
+	addil	a1, a1, l.27285
 	flw	fa3, 0(a1)
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa4, 0(a1)
 	fdiv	fa2, fa4, fa2
-	luil	a1, l.28413
+	luil	a1, l.28819
 	srli	a1, a1, 1
-	addil	a1, a1, l.28413
+	addil	a1, a1, l.28819
 	flw	fa4, 0(a1)
-	luil	a1, l.28415
+	luil	a1, l.28821
 	srli	a1, a1, 1
-	addil	a1, a1, l.28415
+	addil	a1, a1, l.28821
 	flw	fa5, 0(a1)
-	luil	a1, l.28417
+	luil	a1, l.28823
 	srli	a1, a1, 1
-	addil	a1, a1, l.28417
+	addil	a1, a1, l.28823
 	flw	fa6, 0(a1)
-	luil	a1, l.28419
+	luil	a1, l.28825
 	srli	a1, a1, 1
-	addil	a1, a1, l.28419
+	addil	a1, a1, l.28825
 	flw	fa7, 0(a1)
-	luil	a1, l.28421
+	luil	a1, l.28827
 	srli	a1, a1, 1
-	addil	a1, a1, l.28421
+	addil	a1, a1, l.28827
 	flw	ft0, 0(a1)
-	luil	a1, l.28423
+	luil	a1, l.28829
 	srli	a1, a1, 1
-	addil	a1, a1, l.28423
+	addil	a1, a1, l.28829
 	flw	ft1, 0(a1)
 	fmul	ft2, fa2, fa2
 	fmul	ft1, ft1, ft2
@@ -13378,46 +13848,46 @@ beq_cont.33447:
 	fmul	fa4, fa4, ft2
 	fadd	fa2, fa4, fa2
 	fsub	fa2, fa3, fa2
-	jal	x0, beq_cont.33451
-beq_else.33450:
-	luil	a1, l.28427
+	jal	x0, beq_cont.33975
+beq_else.33974:
+	luil	a1, l.28833
 	srli	a1, a1, 1
-	addil	a1, a1, l.28427
+	addil	a1, a1, l.28833
 	flw	fa3, 0(a1)
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa4, 0(a1)
 	fsub	fa4, fa2, fa4
-	luil	a1, l.26867
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26867
+	addil	a1, a1, l.27213
 	flw	fa5, 0(a1)
 	fadd	fa2, fa2, fa5
 	fdiv	fa2, fa4, fa2
-	luil	a1, l.28413
+	luil	a1, l.28819
 	srli	a1, a1, 1
-	addil	a1, a1, l.28413
+	addil	a1, a1, l.28819
 	flw	fa4, 0(a1)
-	luil	a1, l.28415
+	luil	a1, l.28821
 	srli	a1, a1, 1
-	addil	a1, a1, l.28415
+	addil	a1, a1, l.28821
 	flw	fa5, 0(a1)
-	luil	a1, l.28417
+	luil	a1, l.28823
 	srli	a1, a1, 1
-	addil	a1, a1, l.28417
+	addil	a1, a1, l.28823
 	flw	fa6, 0(a1)
-	luil	a1, l.28419
+	luil	a1, l.28825
 	srli	a1, a1, 1
-	addil	a1, a1, l.28419
+	addil	a1, a1, l.28825
 	flw	fa7, 0(a1)
-	luil	a1, l.28421
+	luil	a1, l.28827
 	srli	a1, a1, 1
-	addil	a1, a1, l.28421
+	addil	a1, a1, l.28827
 	flw	ft0, 0(a1)
-	luil	a1, l.28423
+	luil	a1, l.28829
 	srli	a1, a1, 1
-	addil	a1, a1, l.28423
+	addil	a1, a1, l.28829
 	flw	ft1, 0(a1)
 	fmul	ft2, fa2, fa2
 	fmul	ft1, ft1, ft2
@@ -13434,32 +13904,32 @@ beq_else.33450:
 	fmul	fa4, fa4, ft2
 	fadd	fa2, fa4, fa2
 	fadd	fa2, fa3, fa2
-beq_cont.33451:
-	jal	x0, beq_cont.33449
-beq_else.33448:
-	luil	a1, l.28413
+beq_cont.33975:
+	jal	x0, beq_cont.33973
+beq_else.33972:
+	luil	a1, l.28819
 	srli	a1, a1, 1
-	addil	a1, a1, l.28413
+	addil	a1, a1, l.28819
 	flw	fa3, 0(a1)
-	luil	a1, l.28415
+	luil	a1, l.28821
 	srli	a1, a1, 1
-	addil	a1, a1, l.28415
+	addil	a1, a1, l.28821
 	flw	fa4, 0(a1)
-	luil	a1, l.28417
+	luil	a1, l.28823
 	srli	a1, a1, 1
-	addil	a1, a1, l.28417
+	addil	a1, a1, l.28823
 	flw	fa5, 0(a1)
-	luil	a1, l.28419
+	luil	a1, l.28825
 	srli	a1, a1, 1
-	addil	a1, a1, l.28419
+	addil	a1, a1, l.28825
 	flw	fa6, 0(a1)
-	luil	a1, l.28421
+	luil	a1, l.28827
 	srli	a1, a1, 1
-	addil	a1, a1, l.28421
+	addil	a1, a1, l.28827
 	flw	fa7, 0(a1)
-	luil	a1, l.28423
+	luil	a1, l.28829
 	srli	a1, a1, 1
-	addil	a1, a1, l.28423
+	addil	a1, a1, l.28829
 	flw	ft0, 0(a1)
 	fmul	ft1, fa2, fa2
 	fmul	ft0, ft0, ft1
@@ -13475,74 +13945,74 @@ beq_else.33448:
 	fmul	fa3, fa3, fa2
 	fmul	fa3, fa3, ft1
 	fadd	fa2, fa3, fa2
-beq_cont.33449:
+beq_cont.33973:
 	fsgnjn	fs11, fa1, fa1
 	flt	a1, fs11, fa1
-	bne	a1, x0, beq_else.33452 # size : 4
+	bne	a1, x0, beq_else.33976 # size : 4
 	addi	a1, x0, -1
-	jal	x0, beq_cont.33453
-beq_else.33452:
+	jal	x0, beq_cont.33977
+beq_else.33976:
 	addi	a1, x0, 1
-beq_cont.33453:
+beq_cont.33977:
 	fsgnjn	fs11, fa1, fa1
 	flt	a2, fs11, fa1
-	bne	a2, x0, beq_else.33454 # size : 28
-	luil	a2, l.26869
+	bne	a2, x0, beq_else.33978 # size : 28
+	luil	a2, l.27215
 	srli	a2, a2, 1
-	addil	a2, a2, l.26869
+	addil	a2, a2, l.27215
 	flw	fa3, 0(a2)
 	fmul	fa1, fa3, fa1
-	jal	x0, beq_cont.33455
-beq_else.33454:
-beq_cont.33455:
-	luil	a2, l.28411
+	jal	x0, beq_cont.33979
+beq_else.33978:
+beq_cont.33979:
+	luil	a2, l.28817
 	srli	a2, a2, 1
-	addil	a2, a2, l.28411
+	addil	a2, a2, l.28817
 	flw	fa3, 0(a2)
 	fsub	fa3, fa3, fa1
 	fsgnjn	fs11, fa3, fa3
 	flt	a2, fs11, fa3
-	bne	a2, x0, beq_else.33456 # size : 728
-	luil	a2, l.28425
+	bne	a2, x0, beq_else.33980 # size : 728
+	luil	a2, l.28831
 	srli	a2, a2, 1
-	addil	a2, a2, l.28425
+	addil	a2, a2, l.28831
 	flw	fa3, 0(a2)
 	fsub	fa3, fa3, fa1
 	fsgnjn	fs11, fa3, fa3
 	flt	a2, fs11, fa3
-	bne	a2, x0, beq_else.33458 # size : 316
-	luil	a2, l.26931
+	bne	a2, x0, beq_else.33982 # size : 316
+	luil	a2, l.27285
 	srli	a2, a2, 1
-	addil	a2, a2, l.26931
+	addil	a2, a2, l.27285
 	flw	fa3, 0(a2)
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa4, 0(a2)
 	fdiv	fa1, fa4, fa1
-	luil	a2, l.28413
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa4, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa5, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa6, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa7, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	ft0, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft1, 0(a2)
 	fmul	ft2, fa1, fa1
 	fmul	ft1, ft1, ft2
@@ -13559,46 +14029,46 @@ beq_cont.33455:
 	fmul	fa4, fa4, ft2
 	fadd	fa1, fa4, fa1
 	fsub	fa1, fa3, fa1
-	jal	x0, beq_cont.33459
-beq_else.33458:
-	luil	a2, l.28427
+	jal	x0, beq_cont.33983
+beq_else.33982:
+	luil	a2, l.28833
 	srli	a2, a2, 1
-	addil	a2, a2, l.28427
+	addil	a2, a2, l.28833
 	flw	fa3, 0(a2)
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa4, 0(a2)
 	fsub	fa4, fa1, fa4
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa5, 0(a2)
 	fadd	fa1, fa1, fa5
 	fdiv	fa1, fa4, fa1
-	luil	a2, l.28413
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa4, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa5, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa6, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa7, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	ft0, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft1, 0(a2)
 	fmul	ft2, fa1, fa1
 	fmul	ft1, ft1, ft2
@@ -13615,32 +14085,32 @@ beq_else.33458:
 	fmul	fa4, fa4, ft2
 	fadd	fa1, fa4, fa1
 	fadd	fa1, fa3, fa1
-beq_cont.33459:
-	jal	x0, beq_cont.33457
-beq_else.33456:
-	luil	a2, l.28413
+beq_cont.33983:
+	jal	x0, beq_cont.33981
+beq_else.33980:
+	luil	a2, l.28819
 	srli	a2, a2, 1
-	addil	a2, a2, l.28413
+	addil	a2, a2, l.28819
 	flw	fa3, 0(a2)
-	luil	a2, l.28415
+	luil	a2, l.28821
 	srli	a2, a2, 1
-	addil	a2, a2, l.28415
+	addil	a2, a2, l.28821
 	flw	fa4, 0(a2)
-	luil	a2, l.28417
+	luil	a2, l.28823
 	srli	a2, a2, 1
-	addil	a2, a2, l.28417
+	addil	a2, a2, l.28823
 	flw	fa5, 0(a2)
-	luil	a2, l.28419
+	luil	a2, l.28825
 	srli	a2, a2, 1
-	addil	a2, a2, l.28419
+	addil	a2, a2, l.28825
 	flw	fa6, 0(a2)
-	luil	a2, l.28421
+	luil	a2, l.28827
 	srli	a2, a2, 1
-	addil	a2, a2, l.28421
+	addil	a2, a2, l.28827
 	flw	fa7, 0(a2)
-	luil	a2, l.28423
+	luil	a2, l.28829
 	srli	a2, a2, 1
-	addil	a2, a2, l.28423
+	addil	a2, a2, l.28829
 	flw	ft0, 0(a2)
 	fmul	ft1, fa1, fa1
 	fmul	ft0, ft0, ft1
@@ -13656,51 +14126,51 @@ beq_else.33456:
 	fmul	fa3, fa3, fa1
 	fmul	fa3, fa3, ft1
 	fadd	fa1, fa3, fa1
-beq_cont.33457:
+beq_cont.33981:
 	fsgnjn	fs11, fa1, fa1
 	flt	a2, fs11, fa1
-	bne	a2, x0, beq_else.33460 # size : 4
+	bne	a2, x0, beq_else.33984 # size : 4
 	addi	a2, x0, -1
-	jal	x0, beq_cont.33461
-beq_else.33460:
+	jal	x0, beq_cont.33985
+beq_else.33984:
 	addi	a2, x0, 1
-beq_cont.33461:
-	bne	a1, a2, beq_else.33462 # size : 4
+beq_cont.33985:
+	bne	a1, a2, beq_else.33986 # size : 4
 	fsgnj	fa1, fa2, fa2
-	jal	x0, beq_cont.33463
-beq_else.33462:
-	luil	a1, l.26869
+	jal	x0, beq_cont.33987
+beq_else.33986:
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27215
 	flw	fa1, 0(a1)
 	fmul	fa1, fa1, fa2
-beq_cont.33463:
-	luil	a1, l.28472
+beq_cont.33987:
+	luil	a1, l.28878
 	srli	a1, a1, 1
-	addil	a1, a1, l.28472
+	addil	a1, a1, l.28878
 	flw	fa2, 0(a1)
 	fmul	fa1, fa1, fa2
-	luil	a1, l.28474
+	luil	a1, l.28880
 	srli	a1, a1, 1
-	addil	a1, a1, l.28474
+	addil	a1, a1, l.28880
 	flw	fa2, 0(a1)
 	fdiv	fa1, fa1, fa2
-	jal	x0, beq_cont.33445
-beq_else.33444:
-	luil	a1, l.28408
+	jal	x0, beq_cont.33969
+beq_else.33968:
+	luil	a1, l.28814
 	srli	a1, a1, 1
-	addil	a1, a1, l.28408
+	addil	a1, a1, l.28814
 	flw	fa1, 0(a1)
-beq_cont.33445:
+beq_cont.33969:
 	fcvtws	t6, fa1
 	fcvtsw	fs11, t6
 	flt	t4, fa1, fs11
 	sub	t6, t6, t4
 	fcvtsw	fa2, t6
 	fsub	fa1, fa1, fa2
-	luil	a1, l.28539
+	luil	a1, l.28945
 	srli	a1, a1, 1
-	addil	a1, a1, l.28539
+	addil	a1, a1, l.28945
 	flw	fa2, 0(a1)
 	luil	a1, l.001
 	srli	a1, a1, 1
@@ -13718,39 +14188,39 @@ beq_cont.33445:
 	fsub	fa0, fa0, fa1
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fa0, fs11
-	bne	a1, x0, beq_else.33464 # size : 4
-	jal	x0, beq_cont.33465
-beq_else.33464:
-	luil	a1, l.26808
+	bne	a1, x0, beq_else.33988 # size : 4
+	jal	x0, beq_cont.33989
+beq_else.33988:
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-beq_cont.33465:
+beq_cont.33989:
 	addi	a1, x0, 836
-	luil	a2, l.28544
+	luil	a2, l.28950
 	srli	a2, a2, 1
-	addil	a2, a2, l.28544
+	addil	a2, a2, l.28950
 	flw	fa1, 0(a2)
 	fmul	fa0, fa1, fa0
-	luil	a2, l.28546
+	luil	a2, l.28952
 	srli	a2, a2, 1
-	addil	a2, a2, l.28546
+	addil	a2, a2, l.28952
 	flw	fa1, 0(a2)
 	fdiv	fa0, fa0, fa1
 	fsw	fa0, 8(a1) 
-beq_cont.33422:
-beq_cont.33382:
-beq_cont.33344:
-beq_cont.33336:
+beq_cont.33946:
+beq_cont.33906:
+beq_cont.33868:
+beq_cont.33860:
 	addi	a0, x0, 0
 	addi	a1, x0, 792
 	lw	a1, 0(a1)
-	sw	ra, -196(sp)
-	addi	sp, sp, -200
-	jal	ra, shadow_check_one_or_matrix.3136
-	addi	sp, sp, 200
-	lw	ra, -196(sp)
-	bne	a0, x0, beq_else.33466 # size : 472
+	sw	ra, -268(sp)
+	addi	sp, sp, -272
+	jal	ra, shadow_check_one_or_matrix.3140
+	addi	sp, sp, 272
+	lw	ra, -268(sp)
+	bne	a0, x0, beq_else.33990 # size : 472
 	addi	a0, x0, 824
 	addi	a1, x0, 568
 	addi	a2, a0 0
@@ -13773,18 +14243,18 @@ beq_cont.33336:
 	fsgnjn	fa0, fa0, fa0
 	fsgnjn	fs11, fa0, fa0
 	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.33468 # size : 20
-	luil	a0, l.26808
+	bne	a0, x0, beq_else.33992 # size : 20
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
-	jal	x0, beq_cont.33469
-beq_else.33468:
-beq_cont.33469:
+	jal	x0, beq_cont.33993
+beq_else.33992:
+beq_cont.33993:
 	addi	a0, x0, 848
-	flw	fa1, -108(sp)
+	flw	fa1, -140(sp)
 	fmul	fa0, fa1, fa0
-	lw	a1, -116(sp) # Restore obj.4069.8124
+	lw	a1, -148(sp) # Restore obj.4073.8138
 	lw	a1, 28(a1)
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
@@ -13812,122 +14282,115 @@ beq_cont.33469:
 	fmul	fa0, fa0, fa2
 	fadd	fa0, fa1, fa0
 	fsw	fa0, 8(a0) 
-	jal	x0, beq_cont.33467
-beq_else.33466:
-beq_cont.33467:
-beq_cont.33320:
-beq_cont.33162:
-	lw	a0, -16(sp) # Restore index.3201
+	jal	x0, beq_cont.33991
+beq_else.33990:
+beq_cont.33991:
+beq_cont.33844:
+beq_cont.33686:
+	lw	a0, -12(sp) # Restore index.3205
 	addi	a3, a0, -2
-	lw	a0, -8(sp) # Restore dirvec_group.3198
-	lw	a1, -4(sp) # Restore nvector.3199
-	lw	a2, -0(sp) # Restore org.3200
-	lw	t5, -12(sp) # Restore iter_trace_diffuse_rays.3197
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-do_without_neighbors.3219: # 50168
-	lw	a2, 4(t5)
+	lw	a0, -8(sp) # Restore dirvec_group.3202
+	lw	a1, -4(sp) # Restore nvector.3203
+	lw	a2, -0(sp) # Restore org.3204
+	jal	x0, iter_trace_diffuse_rays.3201 
+do_without_neighbors.3223: # 52048
 	addi	t6, x0, 4
-	blt	t6, a1, bg_else.33470 # size : 2600
-	lw	a3, 8(a0)
-	slli	a4, a1, 2
-	add	a3, a3, a4
+	blt	t6, a1, bg_else.33994 # size : 2480
+	lw	a2, 8(a0)
+	slli	a3, a1, 2
+	add	a2, a2, a3
+	lw	a2, 0(a2)
+	blt	a2, x0, bg_else.33995 # size : 2436
+	lw	a2, 12(a0)
+	slli	a3, a1, 2
+	add	a2, a2, a3
+	lw	a2, 0(a2)
+	sw	a0, -0(sp) # Save pixel.3224
+	bne	a2, x0, beq_else.33996 # size : 0
+	jal	x0, beq_cont.33997
+beq_else.33996:
+	lw	a2, 20(a0)
+	lw	a3, 28(a0)
+	lw	a4, 4(a0)
+	lw	a5, 16(a0)
+	addi	a6, x0, 848
+	slli	a7, a1, 2
+	add	a2, a2, a7
+	lw	a2, 0(a2)
+	addi	a7, a2 0
+	flw	fa0, 0(a7)
+	addi	a7, a6 0
+	fsw	fa0, 0(a7) 
+	addi	a7, a2, 4
+	flw	fa0, 0(a7)
+	addi	a7, a6, 4
+	fsw	fa0, 0(a7) 
+	addi	a2, a2, 8
+	flw	fa0, 0(a2)
+	addi	a2, a6, 8
+	fsw	fa0, 0(a2) 
+	lw	a2, 24(a0)
+	lw	a2, 0(a2)
+	slli	a6, a1, 2
+	add	a3, a3, a6
 	lw	a3, 0(a3)
-	blt	a3, x0, bg_else.33471 # size : 2556
-	lw	a3, 12(a0)
-	slli	a4, a1, 2
-	add	a3, a3, a4
-	lw	a3, 0(a3)
-	sw	a0, -0(sp) # Save pixel.3220
-	sw	t5, -4(sp) # Save do_without_neighbors.3219
-	bne	a3, x0, beq_else.33472 # size : 0
-	jal	x0, beq_cont.33473
-beq_else.33472:
-	lw	a3, 20(a0)
-	lw	a4, 28(a0)
-	lw	a5, 4(a0)
-	lw	a6, 16(a0)
-	addi	a7, x0, 848
-	slli	s0, a1, 2
-	add	a3, a3, s0
-	lw	a3, 0(a3)
-	addi	s0, a3 0
+	slli	a6, a1, 2
+	add	a4, a4, a6
+	lw	a4, 0(a4)
+	sw	a5, -4(sp) # Save m_engy.6040.13739
+	sw	a1, -8(sp) # Save nref.3225
+	sw	a3, -12(sp) # Save Ta2245.4024.7791
+	sw	a4, -16(sp) # Save Ta2246.4025.7792
+	sw	a2, -20(sp) # Save Ti2244.4023.7790
+	bne	a2, x0, beq_else.33998 # size : 0
+	jal	x0, beq_cont.33999
+beq_else.33998:
+	addi	a6, x0, 964
+	lw	a6, 0(a6)
+	addi	a7, x0, 904
+	addi	s0, a4 0
 	flw	fa0, 0(s0)
 	addi	s0, a7 0
 	fsw	fa0, 0(s0) 
-	addi	s0, a3, 4
+	addi	s0, a4, 4
 	flw	fa0, 0(s0)
 	addi	s0, a7, 4
 	fsw	fa0, 0(s0) 
-	addi	a3, a3, 8
-	flw	fa0, 0(a3)
-	addi	a3, a7, 8
-	fsw	fa0, 0(a3) 
-	lw	a3, 24(a0)
-	lw	a3, 0(a3)
-	slli	a7, a1, 2
-	add	a4, a4, a7
-	lw	a4, 0(a4)
-	slli	a7, a1, 2
-	add	a5, a5, a7
-	lw	a5, 0(a5)
-	sw	a6, -8(sp) # Save m_engy.6036.13692
-	sw	a1, -12(sp) # Save nref.3221
-	sw	a4, -16(sp) # Save Ta2244.4020.7777
-	sw	a2, -20(sp) # Save iter_trace_diffuse_rays.3197
-	sw	a5, -24(sp) # Save Ta2245.4021.7778
-	sw	a3, -28(sp) # Save Ti2243.4019.7776
-	bne	a3, x0, beq_else.33474 # size : 0
-	jal	x0, beq_cont.33475
-beq_else.33474:
-	addi	a7, x0, 964
+	addi	s0, a4, 8
+	flw	fa0, 0(s0)
+	addi	a7, a7, 8
+	fsw	fa0, 0(a7) 
+	addi	a7, x0, 256
 	lw	a7, 0(a7)
-	addi	s0, x0, 904
-	addi	s1, a5 0
-	flw	fa0, 0(s1)
-	addi	s1, s0 0
-	fsw	fa0, 0(s1) 
-	addi	s1, a5, 4
-	flw	fa0, 0(s1)
-	addi	s1, s0, 4
-	fsw	fa0, 0(s1) 
-	addi	s1, a5, 8
-	flw	fa0, 0(s1)
-	addi	s0, s0, 8
-	fsw	fa0, 0(s0) 
-	addi	s0, x0, 256
-	lw	s0, 0(s0)
-	addi	s0, s0, -1
-	sw	a7, -32(sp) # Save Ta2224.4045.13665
-	addi	a1, s0, 0
-	addi	a0, a5, 0
-	sw	ra, -40(sp)
-	addi	sp, sp, -44
-	jal	ra, setup_startp_constants.3099
-	addi	sp, sp, 44
-	lw	ra, -40(sp)
+	addi	a7, a7, -1
+	sw	a6, -24(sp) # Save Ta2225.4049.13712
+	addi	a1, a7, 0
+	addi	a0, a4, 0
+	sw	ra, -32(sp)
+	addi	sp, sp, -36
+	jal	ra, setup_startp_constants.3103
+	addi	sp, sp, 36
+	lw	ra, -32(sp)
 	addi	a3, x0, 118
-	lw	a0, -32(sp) # Restore Ta2224.4045.13665
-	lw	a1, -16(sp) # Restore Ta2244.4020.7777
-	lw	a2, -24(sp) # Restore Ta2245.4021.7778
-	lw	t5, -20(sp) # Restore iter_trace_diffuse_rays.3197
-	lw	t6, 0(t5)
-	sw	ra, -40(sp)
-	addi	sp, sp, -44
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 44
-	lw	ra, -40(sp)
-beq_cont.33475:
-	lw	a0, -28(sp) # Restore Ti2243.4019.7776
+	lw	a0, -24(sp) # Restore Ta2225.4049.13712
+	lw	a1, -12(sp) # Restore Ta2245.4024.7791
+	lw	a2, -16(sp) # Restore Ta2246.4025.7792
+	sw	ra, -32(sp)
+	addi	sp, sp, -36
+	jal	ra, iter_trace_diffuse_rays.3201
+	addi	sp, sp, 36
+	lw	ra, -32(sp)
+beq_cont.33999:
+	lw	a0, -20(sp) # Restore Ti2244.4023.7790
 	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33476 # size : 0
-	jal	x0, beq_cont.33477
-beq_else.33476:
+	bne	a0, t6, beq_else.34000 # size : 0
+	jal	x0, beq_cont.34001
+beq_else.34000:
 	addi	a1, x0, 964
 	addi	a1, a1, 4
 	lw	a1, 0(a1)
 	addi	a2, x0, 904
-	lw	a3, -24(sp) # Restore Ta2245.4021.7778
+	lw	a3, -16(sp) # Restore Ta2246.4025.7792
 	addi	a4, a3 0
 	flw	fa0, 0(a4)
 	addi	a4, a2 0
@@ -13943,36 +14406,34 @@ beq_else.33476:
 	addi	a2, x0, 256
 	lw	a2, 0(a2)
 	addi	a2, a2, -1
-	sw	a1, -36(sp) # Save Ta2228.4041.13660
+	sw	a1, -28(sp) # Save Ta2229.4045.13707
 	addi	a1, a2, 0
 	addi	a0, a3, 0
-	sw	ra, -44(sp)
-	addi	sp, sp, -48
-	jal	ra, setup_startp_constants.3099
-	addi	sp, sp, 48
-	lw	ra, -44(sp)
+	sw	ra, -36(sp)
+	addi	sp, sp, -40
+	jal	ra, setup_startp_constants.3103
+	addi	sp, sp, 40
+	lw	ra, -36(sp)
 	addi	a3, x0, 118
-	lw	a0, -36(sp) # Restore Ta2228.4041.13660
-	lw	a1, -16(sp) # Restore Ta2244.4020.7777
-	lw	a2, -24(sp) # Restore Ta2245.4021.7778
-	lw	t5, -20(sp) # Restore iter_trace_diffuse_rays.3197
-	lw	t6, 0(t5)
-	sw	ra, -44(sp)
-	addi	sp, sp, -48
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 48
-	lw	ra, -44(sp)
-beq_cont.33477:
-	lw	a0, -28(sp) # Restore Ti2243.4019.7776
+	lw	a0, -28(sp) # Restore Ta2229.4045.13707
+	lw	a1, -12(sp) # Restore Ta2245.4024.7791
+	lw	a2, -16(sp) # Restore Ta2246.4025.7792
+	sw	ra, -36(sp)
+	addi	sp, sp, -40
+	jal	ra, iter_trace_diffuse_rays.3201
+	addi	sp, sp, 40
+	lw	ra, -36(sp)
+beq_cont.34001:
+	lw	a0, -20(sp) # Restore Ti2244.4023.7790
 	addi	t6, x0, 2
-	bne	a0, t6, beq_else.33478 # size : 0
-	jal	x0, beq_cont.33479
-beq_else.33478:
+	bne	a0, t6, beq_else.34002 # size : 0
+	jal	x0, beq_cont.34003
+beq_else.34002:
 	addi	a1, x0, 964
 	addi	a1, a1, 8
 	lw	a1, 0(a1)
 	addi	a2, x0, 904
-	lw	a3, -24(sp) # Restore Ta2245.4021.7778
+	lw	a3, -16(sp) # Restore Ta2246.4025.7792
 	addi	a4, a3 0
 	flw	fa0, 0(a4)
 	addi	a4, a2 0
@@ -13988,36 +14449,34 @@ beq_else.33478:
 	addi	a2, x0, 256
 	lw	a2, 0(a2)
 	addi	a2, a2, -1
-	sw	a1, -40(sp) # Save Ta2232.4037.13655
+	sw	a1, -32(sp) # Save Ta2233.4041.13702
 	addi	a1, a2, 0
 	addi	a0, a3, 0
-	sw	ra, -48(sp)
-	addi	sp, sp, -52
-	jal	ra, setup_startp_constants.3099
-	addi	sp, sp, 52
-	lw	ra, -48(sp)
+	sw	ra, -40(sp)
+	addi	sp, sp, -44
+	jal	ra, setup_startp_constants.3103
+	addi	sp, sp, 44
+	lw	ra, -40(sp)
 	addi	a3, x0, 118
-	lw	a0, -40(sp) # Restore Ta2232.4037.13655
-	lw	a1, -16(sp) # Restore Ta2244.4020.7777
-	lw	a2, -24(sp) # Restore Ta2245.4021.7778
-	lw	t5, -20(sp) # Restore iter_trace_diffuse_rays.3197
-	lw	t6, 0(t5)
-	sw	ra, -48(sp)
-	addi	sp, sp, -52
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 52
-	lw	ra, -48(sp)
-beq_cont.33479:
-	lw	a0, -28(sp) # Restore Ti2243.4019.7776
+	lw	a0, -32(sp) # Restore Ta2233.4041.13702
+	lw	a1, -12(sp) # Restore Ta2245.4024.7791
+	lw	a2, -16(sp) # Restore Ta2246.4025.7792
+	sw	ra, -40(sp)
+	addi	sp, sp, -44
+	jal	ra, iter_trace_diffuse_rays.3201
+	addi	sp, sp, 44
+	lw	ra, -40(sp)
+beq_cont.34003:
+	lw	a0, -20(sp) # Restore Ti2244.4023.7790
 	addi	t6, x0, 3
-	bne	a0, t6, beq_else.33480 # size : 0
-	jal	x0, beq_cont.33481
-beq_else.33480:
+	bne	a0, t6, beq_else.34004 # size : 0
+	jal	x0, beq_cont.34005
+beq_else.34004:
 	addi	a1, x0, 964
 	addi	a1, a1, 12
 	lw	a1, 0(a1)
 	addi	a2, x0, 904
-	lw	a3, -24(sp) # Restore Ta2245.4021.7778
+	lw	a3, -16(sp) # Restore Ta2246.4025.7792
 	addi	a4, a3 0
 	flw	fa0, 0(a4)
 	addi	a4, a2 0
@@ -14033,36 +14492,34 @@ beq_else.33480:
 	addi	a2, x0, 256
 	lw	a2, 0(a2)
 	addi	a2, a2, -1
-	sw	a1, -44(sp) # Save Ta2236.4033.13650
+	sw	a1, -36(sp) # Save Ta2237.4037.13697
 	addi	a1, a2, 0
 	addi	a0, a3, 0
-	sw	ra, -52(sp)
-	addi	sp, sp, -56
-	jal	ra, setup_startp_constants.3099
-	addi	sp, sp, 56
-	lw	ra, -52(sp)
+	sw	ra, -44(sp)
+	addi	sp, sp, -48
+	jal	ra, setup_startp_constants.3103
+	addi	sp, sp, 48
+	lw	ra, -44(sp)
 	addi	a3, x0, 118
-	lw	a0, -44(sp) # Restore Ta2236.4033.13650
-	lw	a1, -16(sp) # Restore Ta2244.4020.7777
-	lw	a2, -24(sp) # Restore Ta2245.4021.7778
-	lw	t5, -20(sp) # Restore iter_trace_diffuse_rays.3197
-	lw	t6, 0(t5)
-	sw	ra, -52(sp)
-	addi	sp, sp, -56
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 56
-	lw	ra, -52(sp)
-beq_cont.33481:
-	lw	a0, -28(sp) # Restore Ti2243.4019.7776
+	lw	a0, -36(sp) # Restore Ta2237.4037.13697
+	lw	a1, -12(sp) # Restore Ta2245.4024.7791
+	lw	a2, -16(sp) # Restore Ta2246.4025.7792
+	sw	ra, -44(sp)
+	addi	sp, sp, -48
+	jal	ra, iter_trace_diffuse_rays.3201
+	addi	sp, sp, 48
+	lw	ra, -44(sp)
+beq_cont.34005:
+	lw	a0, -20(sp) # Restore Ti2244.4023.7790
 	addi	t6, x0, 4
-	bne	a0, t6, beq_else.33482 # size : 0
-	jal	x0, beq_cont.33483
-beq_else.33482:
+	bne	a0, t6, beq_else.34006 # size : 0
+	jal	x0, beq_cont.34007
+beq_else.34006:
 	addi	a0, x0, 964
 	addi	a0, a0, 16
 	lw	a0, 0(a0)
 	addi	a1, x0, 904
-	lw	a2, -24(sp) # Restore Ta2245.4021.7778
+	lw	a2, -16(sp) # Restore Ta2246.4025.7792
 	addi	a3, a2 0
 	flw	fa0, 0(a3)
 	addi	a3, a1 0
@@ -14078,29 +14535,27 @@ beq_else.33482:
 	addi	a1, x0, 256
 	lw	a1, 0(a1)
 	addi	a1, a1, -1
-	sw	a0, -48(sp) # Save Ta2240.4029.13645
+	sw	a0, -40(sp) # Save Ta2241.4033.13692
 	addi	a0, a2, 0
-	sw	ra, -56(sp)
-	addi	sp, sp, -60
-	jal	ra, setup_startp_constants.3099
-	addi	sp, sp, 60
-	lw	ra, -56(sp)
+	sw	ra, -48(sp)
+	addi	sp, sp, -52
+	jal	ra, setup_startp_constants.3103
+	addi	sp, sp, 52
+	lw	ra, -48(sp)
 	addi	a3, x0, 118
-	lw	a0, -48(sp) # Restore Ta2240.4029.13645
-	lw	a1, -16(sp) # Restore Ta2244.4020.7777
-	lw	a2, -24(sp) # Restore Ta2245.4021.7778
-	lw	t5, -20(sp) # Restore iter_trace_diffuse_rays.3197
-	lw	t6, 0(t5)
-	sw	ra, -56(sp)
-	addi	sp, sp, -60
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 60
-	lw	ra, -56(sp)
-beq_cont.33483:
+	lw	a0, -40(sp) # Restore Ta2241.4033.13692
+	lw	a1, -12(sp) # Restore Ta2245.4024.7791
+	lw	a2, -16(sp) # Restore Ta2246.4025.7792
+	sw	ra, -48(sp)
+	addi	sp, sp, -52
+	jal	ra, iter_trace_diffuse_rays.3201
+	addi	sp, sp, 52
+	lw	ra, -48(sp)
+beq_cont.34007:
 	addi	a0, x0, 860
-	lw	a1, -12(sp) # Restore nref.3221
+	lw	a1, -8(sp) # Restore nref.3225
 	slli	a2, a1, 2
-	lw	a3, -8(sp) # Restore m_engy.6036.13692
+	lw	a3, -4(sp) # Restore m_engy.6040.13739
 	add	a2, a3, a2
 	lw	a2, 0(a2)
 	addi	a3, x0, 848
@@ -14133,102 +14588,97 @@ beq_cont.33483:
 	fmul	fa1, fa1, fa2
 	fadd	fa0, fa0, fa1
 	fsw	fa0, 8(a0) 
-beq_cont.33473:
+beq_cont.33997:
 	addi	a1, a1, 1
-	lw	a0, -0(sp) # Restore pixel.3220
-	lw	t5, -4(sp) # Restore do_without_neighbors.3219
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-bg_else.33471:
+	lw	a0, -0(sp) # Restore pixel.3224
+	jal	x0, do_without_neighbors.3223 
+bg_else.33995:
 	jalr	x0, ra, 0
-bg_else.33470:
+bg_else.33994:
 	jalr	x0, ra, 0
-try_exploit_neighbors.3235: # 51380
-	lw	a6, 4(t5)
+try_exploit_neighbors.3239: # 53200
+	slli	a6, a0, 2
+	add	a6, a3, a6
+	lw	a6, 0(a6)
+	addi	t6, x0, 4
+	blt	t6, a5, bg_else.34010 # size : 2004
+	lw	a7, 8(a6)
+	slli	s0, a5, 2
+	add	a7, a7, s0
+	lw	a7, 0(a7)
+	blt	a7, x0, bg_else.34011 # size : 1960
 	slli	a7, a0, 2
 	add	a7, a3, a7
 	lw	a7, 0(a7)
-	addi	t6, x0, 4
-	blt	t6, a5, bg_else.33486 # size : 2004
-	lw	s0, 8(a7)
+	lw	a7, 8(a7)
+	slli	s0, a5, 2
+	add	a7, a7, s0
+	lw	a7, 0(a7)
+	slli	s0, a0, 2
+	add	s0, a2, s0
+	lw	s0, 0(s0)
+	lw	s0, 8(s0)
 	slli	s1, a5, 2
 	add	s0, s0, s1
 	lw	s0, 0(s0)
-	blt	s0, x0, bg_else.33487 # size : 1960
+	bne	s0, a7, beq_else.34012 # size : 236
 	slli	s0, a0, 2
+	add	s0, a4, s0
+	lw	s0, 0(s0)
+	lw	s0, 8(s0)
+	slli	s1, a5, 2
+	add	s0, s0, s1
+	lw	s0, 0(s0)
+	bne	s0, a7, beq_else.34014 # size : 164
+	addi	s0, a0, -1
+	slli	s0, s0, 2
 	add	s0, a3, s0
 	lw	s0, 0(s0)
 	lw	s0, 8(s0)
 	slli	s1, a5, 2
 	add	s0, s0, s1
 	lw	s0, 0(s0)
-	slli	s1, a0, 2
-	add	s1, a2, s1
-	lw	s1, 0(s1)
-	lw	s1, 8(s1)
-	slli	s2, a5, 2
-	add	s1, s1, s2
-	lw	s1, 0(s1)
-	bne	s1, s0, beq_else.33488 # size : 236
-	slli	s1, a0, 2
-	add	s1, a4, s1
-	lw	s1, 0(s1)
-	lw	s1, 8(s1)
-	slli	s2, a5, 2
-	add	s1, s1, s2
-	lw	s1, 0(s1)
-	bne	s1, s0, beq_else.33490 # size : 164
-	addi	s1, a0, -1
-	slli	s1, s1, 2
-	add	s1, a3, s1
-	lw	s1, 0(s1)
-	lw	s1, 8(s1)
-	slli	s2, a5, 2
-	add	s1, s1, s2
-	lw	s1, 0(s1)
-	bne	s1, s0, beq_else.33492 # size : 84
-	addi	s1, a0, 1
-	slli	s1, s1, 2
-	add	s1, a3, s1
-	lw	s1, 0(s1)
-	lw	s1, 8(s1)
-	slli	s2, a5, 2
-	add	s1, s1, s2
-	lw	s1, 0(s1)
-	bne	s1, s0, beq_else.33494 # size : 4
-	addi	s0, x0, 1
-	jal	x0, beq_cont.33495
-beq_else.33494:
-	addi	s0, x0, 0
-beq_cont.33495:
-	jal	x0, beq_cont.33493
-beq_else.33492:
-	addi	s0, x0, 0
-beq_cont.33493:
-	jal	x0, beq_cont.33491
-beq_else.33490:
-	addi	s0, x0, 0
-beq_cont.33491:
-	jal	x0, beq_cont.33489
-beq_else.33488:
-	addi	s0, x0, 0
-beq_cont.33489:
-	bne	s0, x0, be_else.33496 # size : 60
+	bne	s0, a7, beq_else.34016 # size : 84
+	addi	s0, a0, 1
+	slli	s0, s0, 2
+	add	s0, a3, s0
+	lw	s0, 0(s0)
+	lw	s0, 8(s0)
+	slli	s1, a5, 2
+	add	s0, s0, s1
+	lw	s0, 0(s0)
+	bne	s0, a7, beq_else.34018 # size : 4
+	addi	a7, x0, 1
+	jal	x0, beq_cont.34019
+beq_else.34018:
+	addi	a7, x0, 0
+beq_cont.34019:
+	jal	x0, beq_cont.34017
+beq_else.34016:
+	addi	a7, x0, 0
+beq_cont.34017:
+	jal	x0, beq_cont.34015
+beq_else.34014:
+	addi	a7, x0, 0
+beq_cont.34015:
+	jal	x0, beq_cont.34013
+beq_else.34012:
+	addi	a7, x0, 0
+beq_cont.34013:
+	bne	a7, x0, be_else.34020 # size : 60
 	slli	a0, a0, 2
 	add	a0, a3, a0
 	lw	a0, 0(a0)
 	addi	a1, a5, 0
-	addi	t5, a6, 0
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-be_else.33496:
-	lw	a6, 12(a7)
+	jal	x0, do_without_neighbors.3223 
+be_else.34020:
+	lw	a6, 12(a6)
 	slli	a7, a5, 2
 	add	a6, a6, a7
 	lw	a6, 0(a6)
-	bne	a6, x0, beq_else.33497 # size : 0
-	jal	x0, beq_cont.33498
-beq_else.33497:
+	bne	a6, x0, beq_else.34021 # size : 0
+	jal	x0, beq_cont.34022
+beq_else.34021:
 	slli	a6, a0, 2
 	add	a6, a2, a6
 	lw	a6, 0(a6)
@@ -14406,98 +14856,92 @@ beq_else.33497:
 	fadd	fa0, fa0, fa1
 	addi	a6, a7, 8
 	fsw	fa0, 0(a6) 
-beq_cont.33498:
+beq_cont.34022:
 	addi	a5, a5, 1
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-bg_else.33487:
+	jal	x0, try_exploit_neighbors.3239 
+bg_else.34011:
 	jalr	x0, ra, 0
-bg_else.33486:
+bg_else.34010:
 	jalr	x0, ra, 0
-pretrace_diffuse_rays.3250: # 52408
-	lw	a2, 4(t5)
+pretrace_diffuse_rays.3254: # 54212
 	addi	t6, x0, 4
-	blt	t6, a1, bg_else.33501 # size : 828
-	lw	a3, 8(a0)
-	slli	a4, a1, 2
-	add	a3, a3, a4
-	lw	a3, 0(a3)
-	blt	a3, x0, bg_else.33502 # size : 784
-	lw	a3, 12(a0)
-	slli	a4, a1, 2
-	add	a3, a3, a4
-	lw	a3, 0(a3)
-	sw	t5, -0(sp) # Save pretrace_diffuse_rays.3250
-	sw	a1, -4(sp) # Save nref.3252
-	bne	a3, x0, beq_else.33503 # size : 0
-	jal	x0, beq_cont.33504
-beq_else.33503:
-	lw	a3, 24(a0)
-	lw	a3, 0(a3)
-	addi	a4, x0, 848
-	luil	a5, l.26808
-	srli	a5, a5, 1
-	addil	a5, a5, l.26808
-	flw	fa0, 0(a5)
-	addi	a5, a4 0
-	fsw	fa0, 0(a5) 
-	addi	a5, a4, 4
-	fsw	fa0, 0(a5) 
-	addi	a4, a4, 8
+	blt	t6, a1, bg_else.34025 # size : 788
+	lw	a2, 8(a0)
+	slli	a3, a1, 2
+	add	a2, a2, a3
+	lw	a2, 0(a2)
+	blt	a2, x0, bg_else.34026 # size : 744
+	lw	a2, 12(a0)
+	slli	a3, a1, 2
+	add	a2, a2, a3
+	lw	a2, 0(a2)
+	sw	a1, -0(sp) # Save nref.3256
+	bne	a2, x0, beq_else.34027 # size : 0
+	jal	x0, beq_cont.34028
+beq_else.34027:
+	lw	a2, 24(a0)
+	lw	a2, 0(a2)
+	addi	a3, x0, 848
+	luil	a4, l.27154
+	srli	a4, a4, 1
+	addil	a4, a4, l.27154
+	flw	fa0, 0(a4)
+	addi	a4, a3 0
 	fsw	fa0, 0(a4) 
-	lw	a4, 28(a0)
-	lw	a5, 4(a0)
-	slli	a3, a3, 2
-	addi	a3, a3, 964
+	addi	a4, a3, 4
+	fsw	fa0, 0(a4) 
+	addi	a3, a3, 8
+	fsw	fa0, 0(a3) 
+	lw	a3, 28(a0)
+	lw	a4, 4(a0)
+	slli	a2, a2, 2
+	addi	a2, a2, 964
+	lw	a2, 0(a2)
+	slli	a5, a1, 2
+	add	a3, a3, a5
 	lw	a3, 0(a3)
-	slli	a6, a1, 2
-	add	a4, a4, a6
+	slli	a5, a1, 2
+	add	a4, a4, a5
 	lw	a4, 0(a4)
-	slli	a6, a1, 2
-	add	a5, a5, a6
-	lw	a5, 0(a5)
-	addi	a6, x0, 904
-	addi	a7, a5 0
-	flw	fa0, 0(a7)
-	addi	a7, a6 0
-	fsw	fa0, 0(a7) 
-	addi	a7, a5, 4
-	flw	fa0, 0(a7)
-	addi	a7, a6, 4
-	fsw	fa0, 0(a7) 
-	addi	a7, a5, 8
-	flw	fa0, 0(a7)
-	addi	a6, a6, 8
+	addi	a5, x0, 904
+	addi	a6, a4 0
+	flw	fa0, 0(a6)
+	addi	a6, a5 0
 	fsw	fa0, 0(a6) 
-	addi	a6, x0, 256
-	lw	a6, 0(a6)
-	addi	a6, a6, -1
-	sw	a0, -8(sp) # Save pixel.3251
-	sw	a5, -12(sp) # Save Ta2362.3864
-	sw	a4, -16(sp) # Save Ta2361.3863
-	sw	a3, -20(sp) # Save Ta2360.3862
-	sw	a2, -24(sp) # Save iter_trace_diffuse_rays.3197
-	addi	a1, a6, 0
-	addi	a0, a5, 0
-	sw	ra, -32(sp)
-	addi	sp, sp, -36
-	jal	ra, setup_startp_constants.3099
-	addi	sp, sp, 36
-	lw	ra, -32(sp)
+	addi	a6, a4, 4
+	flw	fa0, 0(a6)
+	addi	a6, a5, 4
+	fsw	fa0, 0(a6) 
+	addi	a6, a4, 8
+	flw	fa0, 0(a6)
+	addi	a5, a5, 8
+	fsw	fa0, 0(a5) 
+	addi	a5, x0, 256
+	lw	a5, 0(a5)
+	addi	a5, a5, -1
+	sw	a0, -4(sp) # Save pixel.3255
+	sw	a4, -8(sp) # Save Ta2363.3868
+	sw	a3, -12(sp) # Save Ta2362.3867
+	sw	a2, -16(sp) # Save Ta2361.3866
+	addi	a1, a5, 0
+	addi	a0, a4, 0
+	sw	ra, -24(sp)
+	addi	sp, sp, -28
+	jal	ra, setup_startp_constants.3103
+	addi	sp, sp, 28
+	lw	ra, -24(sp)
 	addi	a3, x0, 118
-	lw	a0, -20(sp) # Restore Ta2360.3862
-	lw	a1, -16(sp) # Restore Ta2361.3863
-	lw	a2, -12(sp) # Restore Ta2362.3864
-	lw	t5, -24(sp) # Restore iter_trace_diffuse_rays.3197
-	lw	t6, 0(t5)
-	sw	ra, -32(sp)
-	addi	sp, sp, -36
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 36
-	lw	ra, -32(sp)
-	lw	a0, -8(sp) # Restore pixel.3251
+	lw	a0, -16(sp) # Restore Ta2361.3866
+	lw	a1, -12(sp) # Restore Ta2362.3867
+	lw	a2, -8(sp) # Restore Ta2363.3868
+	sw	ra, -24(sp)
+	addi	sp, sp, -28
+	jal	ra, iter_trace_diffuse_rays.3201
+	addi	sp, sp, 28
+	lw	ra, -24(sp)
+	lw	a0, -4(sp) # Restore pixel.3255
 	lw	a1, 20(a0)
-	lw	a2, -4(sp) # Restore nref.3252
+	lw	a2, -0(sp) # Restore nref.3256
 	slli	a3, a2, 2
 	add	a1, a1, a3
 	lw	a1, 0(a1)
@@ -14513,153 +14957,145 @@ beq_else.33503:
 	addi	a3, a3, 8
 	flw	fa0, 0(a3)
 	fsw	fa0, 8(a1) 
-beq_cont.33504:
-	lw	a1, -4(sp) # Restore nref.3252
+beq_cont.34028:
+	lw	a1, -0(sp) # Restore nref.3256
 	addi	a1, a1, 1
-	lw	t5, -0(sp) # Restore pretrace_diffuse_rays.3250
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-bg_else.33502:
+	jal	x0, pretrace_diffuse_rays.3254 
+bg_else.34026:
 	jalr	x0, ra, 0
-bg_else.33501:
+bg_else.34025:
 	jalr	x0, ra, 0
-pretrace_pixels.3253: # 52824
-	lw	a3, 8(t5)
-	lw	a4, 4(t5)
-	blt	a1, x0, bg_else.33507 # size : 1420
-	addi	a5, x0, 888
-	flw	fa3, 0(a5)
-	addi	a5, x0, 880
-	lw	a5, 0(a5)
-	sub	a5, a1, a5
-	fcvtsw	fa4, a5
+pretrace_pixels.3257: # 54600
+	blt	a1, x0, bg_else.34031 # size : 1388
+	addi	a3, x0, 888
+	flw	fa3, 0(a3)
+	addi	a3, x0, 880
+	lw	a3, 0(a3)
+	sub	a3, a1, a3
+	fcvtsw	fa4, a3
 	fmul	fa3, fa3, fa4
-	addi	a5, x0, 952
-	addi	a6, x0, 916
-	flw	fa4, 0(a6)
+	addi	a3, x0, 952
+	addi	a4, x0, 916
+	flw	fa4, 0(a4)
 	fmul	fa4, fa3, fa4
 	fadd	fa4, fa4, fa0
-	fsw	fa4, 0(a5) 
-	addi	a5, x0, 952
-	addi	a6, x0, 916
-	addi	a6, a6, 4
-	flw	fa4, 0(a6)
+	fsw	fa4, 0(a3) 
+	addi	a3, x0, 952
+	addi	a4, x0, 916
+	addi	a4, a4, 4
+	flw	fa4, 0(a4)
 	fmul	fa4, fa3, fa4
 	fadd	fa4, fa4, fa1
-	addi	a5, a5, 4
-	fsw	fa4, 0(a5) 
-	addi	a5, x0, 952
-	addi	a6, x0, 916
-	addi	a6, a6, 8
-	flw	fa4, 0(a6)
+	addi	a3, a3, 4
+	fsw	fa4, 0(a3) 
+	addi	a3, x0, 952
+	addi	a4, x0, 916
+	addi	a4, a4, 8
+	flw	fa4, 0(a4)
 	fmul	fa3, fa3, fa4
 	fadd	fa3, fa3, fa2
-	addi	a5, a5, 8
-	fsw	fa3, 0(a5) 
-	addi	a5, x0, 952
-	addi	a6, a5 0
-	flw	fa3, 0(a6)
+	addi	a3, a3, 8
+	fsw	fa3, 0(a3) 
+	addi	a3, x0, 952
+	addi	a4, a3 0
+	flw	fa3, 0(a4)
 	fmul	fa3, fa3, fa3
-	addi	a6, a5, 4
-	flw	fa4, 0(a6)
+	addi	a4, a3, 4
+	flw	fa4, 0(a4)
 	fmul	fa4, fa4, fa4
 	fadd	fa3, fa3, fa4
-	addi	a6, a5, 8
-	flw	fa4, 0(a6)
+	addi	a4, a3, 8
+	flw	fa4, 0(a4)
 	fmul	fa4, fa4, fa4
 	fadd	fa3, fa3, fa4
 	fsqrt	fa3, fa3
 	fsgnjn	fs11, fa3, fa3
-	feq	a6, fs11, fa3
-	bne	a6, x0, beq_else.33508 # size : 28
-	luil	a6, l.26867
-	srli	a6, a6, 1
-	addil	a6, a6, l.26867
-	flw	fa4, 0(a6)
+	feq	a4, fs11, fa3
+	bne	a4, x0, beq_else.34032 # size : 28
+	luil	a4, l.27213
+	srli	a4, a4, 1
+	addil	a4, a4, l.27213
+	flw	fa4, 0(a4)
 	fdiv	fa3, fa4, fa3
-	jal	x0, beq_cont.33509
-beq_else.33508:
-	luil	a6, l.26867
-	srli	a6, a6, 1
-	addil	a6, a6, l.26867
-	flw	fa3, 0(a6)
-beq_cont.33509:
-	addi	a6, a5 0
-	flw	fa4, 0(a6)
+	jal	x0, beq_cont.34033
+beq_else.34032:
+	luil	a4, l.27213
+	srli	a4, a4, 1
+	addil	a4, a4, l.27213
+	flw	fa3, 0(a4)
+beq_cont.34033:
+	addi	a4, a3 0
+	flw	fa4, 0(a4)
 	fmul	fa4, fa4, fa3
-	addi	a6, a5 0
-	fsw	fa4, 0(a6) 
-	addi	a6, a5, 4
-	flw	fa4, 0(a6)
+	addi	a4, a3 0
+	fsw	fa4, 0(a4) 
+	addi	a4, a3, 4
+	flw	fa4, 0(a4)
 	fmul	fa4, fa4, fa3
-	addi	a6, a5, 4
-	fsw	fa4, 0(a6) 
-	addi	a6, a5, 8
-	flw	fa4, 0(a6)
+	addi	a4, a3, 4
+	fsw	fa4, 0(a4) 
+	addi	a4, a3, 8
+	flw	fa4, 0(a4)
 	fmul	fa3, fa4, fa3
-	addi	a5, a5, 8
+	addi	a3, a3, 8
+	fsw	fa3, 0(a3) 
+	addi	a3, x0, 860
+	luil	a4, l.27154
+	srli	a4, a4, 1
+	addil	a4, a4, l.27154
+	flw	fa3, 0(a4)
+	addi	a4, a3 0
+	fsw	fa3, 0(a4) 
+	addi	a4, a3, 4
+	fsw	fa3, 0(a4) 
+	addi	a3, a3, 8
+	fsw	fa3, 0(a3) 
+	addi	a3, x0, 892
+	addi	a4, x0, 556
+	addi	a5, a4 0
+	flw	fa3, 0(a5)
+	addi	a5, a3 0
 	fsw	fa3, 0(a5) 
-	addi	a5, x0, 860
-	luil	a6, l.26808
+	addi	a5, a4, 4
+	flw	fa3, 0(a5)
+	addi	a5, a3, 4
+	fsw	fa3, 0(a5) 
+	addi	a4, a4, 8
+	flw	fa3, 0(a4)
+	addi	a3, a3, 8
+	fsw	fa3, 0(a3) 
+	addi	a3, x0, 0
+	luil	a4, l.27213
+	srli	a4, a4, 1
+	addil	a4, a4, l.27213
+	flw	fa3, 0(a4)
+	addi	a4, x0, 952
+	slli	a5, a1, 2
+	add	a5, a0, a5
+	lw	a5, 0(a5)
+	luil	a6, l.27154
 	srli	a6, a6, 1
-	addil	a6, a6, l.26808
-	flw	fa3, 0(a6)
-	addi	a6, a5 0
-	fsw	fa3, 0(a6) 
-	addi	a6, a5, 4
-	fsw	fa3, 0(a6) 
-	addi	a5, a5, 8
-	fsw	fa3, 0(a5) 
-	addi	a5, x0, 892
-	addi	a6, x0, 556
-	addi	a7, a6 0
-	flw	fa3, 0(a7)
-	addi	a7, a5 0
-	fsw	fa3, 0(a7) 
-	addi	a7, a6, 4
-	flw	fa3, 0(a7)
-	addi	a7, a5, 4
-	fsw	fa3, 0(a7) 
-	addi	a6, a6, 8
-	flw	fa3, 0(a6)
-	addi	a5, a5, 8
-	fsw	fa3, 0(a5) 
-	addi	a5, x0, 0
-	luil	a6, l.26867
-	srli	a6, a6, 1
-	addil	a6, a6, l.26867
-	flw	fa3, 0(a6)
-	addi	a6, x0, 952
-	slli	a7, a1, 2
-	add	a7, a0, a7
-	lw	a7, 0(a7)
-	luil	s0, l.26808
-	srli	s0, s0, 1
-	addil	s0, s0, l.26808
-	flw	fa4, 0(s0)
+	addil	a6, a6, l.27154
+	flw	fa4, 0(a6)
 	fsw	fa2, -0(sp)
 	fsw	fa1, -4(sp)
 	fsw	fa0, -8(sp)
-	sw	t5, -12(sp) # Save pretrace_pixels.3253
-	sw	a4, -16(sp) # Save pretrace_diffuse_rays.3250
-	sw	a2, -20(sp) # Save group_id.3256
-	sw	a0, -24(sp) # Save line.3254
-	sw	a1, -28(sp) # Save x.3255
-	addi	a2, a7, 0
-	addi	a1, a6, 0
-	addi	a0, a5, 0
-	addi	t5, a3, 0
+	sw	a2, -12(sp) # Save group_id.3260
+	sw	a0, -16(sp) # Save line.3258
+	sw	a1, -20(sp) # Save x.3259
+	addi	a2, a5, 0
+	addi	a1, a4, 0
+	addi	a0, a3, 0
 	fsgnj	fa1, fa4, fa4
 	fsgnj	fa0, fa3, fa3
-	lw	t6, 0(t5)
-	sw	ra, -36(sp)
-	addi	sp, sp, -40
-	jalr	ra, t6, 0 # CallCls a3
-	addi	sp, sp, 40
-	lw	ra, -36(sp)
-	lw	a0, -28(sp) # Restore x.3255
+	sw	ra, -28(sp)
+	addi	sp, sp, -32
+	jal	ra, trace_ray.3192
+	addi	sp, sp, 32
+	lw	ra, -28(sp)
+	lw	a0, -20(sp) # Restore x.3259
 	slli	a1, a0, 2
-	lw	a2, -24(sp) # Restore line.3254
+	lw	a2, -16(sp) # Restore line.3258
 	add	a1, a2, a1
 	lw	a1, 0(a1)
 	lw	a1, 0(a1)
@@ -14680,144 +15116,133 @@ beq_cont.33509:
 	add	a1, a2, a1
 	lw	a1, 0(a1)
 	lw	a1, 24(a1)
-	lw	a3, -20(sp) # Restore group_id.3256
+	lw	a3, -12(sp) # Restore group_id.3260
 	sw	a3,0(a1) 
 	slli	a1, a0, 2
 	add	a1, a2, a1
 	lw	a1, 0(a1)
 	addi	a4, x0, 0
-	lw	t5, -16(sp) # Restore pretrace_diffuse_rays.3250
 	addi	a0, a1, 0
 	addi	a1, a4, 0
-	lw	t6, 0(t5)
-	sw	ra, -36(sp)
-	addi	sp, sp, -40
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 40
-	lw	ra, -36(sp)
-	lw	a0, -28(sp) # Restore x.3255
+	sw	ra, -28(sp)
+	addi	sp, sp, -32
+	jal	ra, pretrace_diffuse_rays.3254
+	addi	sp, sp, 32
+	lw	ra, -28(sp)
+	lw	a0, -20(sp) # Restore x.3259
 	addi	a1, a0, -1
-	lw	a0, -20(sp) # Restore group_id.3256
+	lw	a0, -12(sp) # Restore group_id.3260
 	addi	a0, a0, 1
 	addi	t6, x0, 5
-	blt	a0, t6, bg_else.33510 # size : 4
+	blt	a0, t6, bg_else.34034 # size : 4
 	addi	a2, a0, -5
-	jal	x0, bg_cont.33511
-bg_else.33510:
+	jal	x0, bg_cont.34035
+bg_else.34034:
 	addi	a2, a0 0
-bg_cont.33511:
+bg_cont.34035:
 	flw	fa0, -8(sp)
 	flw	fa1, -4(sp)
 	flw	fa2, -0(sp)
-	lw	a0, -24(sp) # Restore line.3254
-	lw	t5, -12(sp) # Restore pretrace_pixels.3253
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-bg_else.33507:
+	lw	a0, -16(sp) # Restore line.3258
+	jal	x0, pretrace_pixels.3257 
+bg_else.34031:
 	jalr	x0, ra, 0
-scan_pixel.3264: # 53568
-	lw	a6, 8(t5)
-	lw	a7, 4(t5)
-	addi	s0, x0, 872
-	lw	s0, 0(s0)
-	blt	a0, s0, bg_else.33513 # size : 0
+scan_pixel.3268: # 55304
+	addi	a6, x0, 872
+	lw	a6, 0(a6)
+	blt	a0, a6, bg_else.34037 # size : 0
 	jalr	x0, ra, 0
-bg_else.33513:
-	addi	s0, x0, 860
-	slli	s1, a0, 2
-	add	s1, a3, s1
-	lw	s1, 0(s1)
-	lw	s1, 0(s1)
-	addi	s2, s1 0
-	flw	fa0, 0(s2)
-	addi	s2, s0 0
-	fsw	fa0, 0(s2) 
-	addi	s2, s1, 4
-	flw	fa0, 0(s2)
-	addi	s2, s0, 4
-	fsw	fa0, 0(s2) 
-	addi	s1, s1, 8
-	flw	fa0, 0(s1)
-	addi	s0, s0, 8
+bg_else.34037:
+	addi	a6, x0, 860
+	slli	a7, a0, 2
+	add	a7, a3, a7
+	lw	a7, 0(a7)
+	lw	a7, 0(a7)
+	addi	s0, a7 0
+	flw	fa0, 0(s0)
+	addi	s0, a6 0
 	fsw	fa0, 0(s0) 
-	addi	s0, x0, 872
-	addi	s0, s0, 4
-	lw	s0, 0(s0)
-	addi	s1, a1, 1
-	blt	s1, s0, bg_else.33515 # size : 4
-	addi	s0, x0, 0
-	jal	x0, bg_cont.33516
-bg_else.33515:
-	blt	x0, a1, bg_else.33517 # size : 4
-	addi	s0, x0, 0
-	jal	x0, bg_cont.33518
-bg_else.33517:
-	addi	s0, x0, 872
-	lw	s0, 0(s0)
-	addi	s1, a0, 1
-	blt	s1, s0, bg_else.33519 # size : 4
-	addi	s0, x0, 0
-	jal	x0, bg_cont.33520
-bg_else.33519:
-	blt	x0, a0, bg_else.33521 # size : 4
-	addi	s0, x0, 0
-	jal	x0, bg_cont.33522
-bg_else.33521:
-	addi	s0, x0, 1
-bg_cont.33522:
-bg_cont.33520:
-bg_cont.33518:
-bg_cont.33516:
-	sw	a4, -0(sp) # Save next.3269
-	sw	a3, -4(sp) # Save cur.3268
-	sw	a2, -8(sp) # Save prev.3267
-	sw	a1, -12(sp) # Save y.3266
-	sw	t5, -16(sp) # Save scan_pixel.3264
-	sw	a0, -20(sp) # Save x.3265
-	sw	a5, -24(sp) # Save version.3270
-	bne	s0, x0, beq_else.33523 # size : 124
+	addi	s0, a7, 4
+	flw	fa0, 0(s0)
+	addi	s0, a6, 4
+	fsw	fa0, 0(s0) 
+	addi	a7, a7, 8
+	flw	fa0, 0(a7)
+	addi	a6, a6, 8
+	fsw	fa0, 0(a6) 
+	addi	a6, x0, 872
+	addi	a6, a6, 4
+	lw	a6, 0(a6)
+	addi	a7, a1, 1
+	blt	a7, a6, bg_else.34039 # size : 4
+	addi	a6, x0, 0
+	jal	x0, bg_cont.34040
+bg_else.34039:
+	blt	x0, a1, bg_else.34041 # size : 4
+	addi	a6, x0, 0
+	jal	x0, bg_cont.34042
+bg_else.34041:
+	addi	a6, x0, 872
+	lw	a6, 0(a6)
+	addi	a7, a0, 1
+	blt	a7, a6, bg_else.34043 # size : 4
+	addi	a6, x0, 0
+	jal	x0, bg_cont.34044
+bg_else.34043:
+	blt	x0, a0, bg_else.34045 # size : 4
+	addi	a6, x0, 0
+	jal	x0, bg_cont.34046
+bg_else.34045:
+	addi	a6, x0, 1
+bg_cont.34046:
+bg_cont.34044:
+bg_cont.34042:
+bg_cont.34040:
+	sw	a4, -0(sp) # Save next.3273
+	sw	a3, -4(sp) # Save cur.3272
+	sw	a2, -8(sp) # Save prev.3271
+	sw	a1, -12(sp) # Save y.3270
+	sw	a0, -16(sp) # Save x.3269
+	sw	a5, -20(sp) # Save version.3274
+	bne	a6, x0, beq_else.34047 # size : 116
 	slli	a6, a0, 2
 	add	a6, a3, a6
 	lw	a6, 0(a6)
-	addi	s0, x0, 0
-	addi	a1, s0, 0
-	addi	a0, a6, 0
-	addi	t5, a7, 0
-	lw	t6, 0(t5)
-	sw	ra, -32(sp)
-	addi	sp, sp, -36
-	jalr	ra, t6, 0 # CallCls a7
-	addi	sp, sp, 36
-	lw	ra, -32(sp)
-	jal	x0, beq_cont.33524
-beq_else.33523:
 	addi	a7, x0, 0
-	addi	a5, a7, 0
-	addi	t5, a6, 0
-	lw	t6, 0(t5)
-	sw	ra, -32(sp)
-	addi	sp, sp, -36
-	jalr	ra, t6, 0 # CallCls a6
-	addi	sp, sp, 36
-	lw	ra, -32(sp)
-beq_cont.33524:
-	lw	a5, -24(sp) # Restore version.3270
+	addi	a1, a7, 0
+	addi	a0, a6, 0
+	sw	ra, -28(sp)
+	addi	sp, sp, -32
+	jal	ra, do_without_neighbors.3223
+	addi	sp, sp, 32
+	lw	ra, -28(sp)
+	jal	x0, beq_cont.34048
+beq_else.34047:
+	addi	a6, x0, 0
+	addi	a5, a6, 0
+	sw	ra, -28(sp)
+	addi	sp, sp, -32
+	jal	ra, try_exploit_neighbors.3239
+	addi	sp, sp, 32
+	lw	ra, -28(sp)
+beq_cont.34048:
+	lw	a5, -20(sp) # Restore version.3274
 	addi	t6, x0, 3
-	bne	a5, t6, beq_else.33525 # size : 284
+	bne	a5, t6, beq_else.34049 # size : 284
 	addi	a0, x0, 860
 	flw	fa0, 0(a0)
 	fcvtws	a0, fa0
 	addi	t6, x0, 255
-	blt	t6, a0, bg_else.33527 # size : 20
-	blt	a0, x0, bg_else.33529 # size : 4
-	jal	x0, bg_cont.33530
-bg_else.33529:
+	blt	t6, a0, bg_else.34051 # size : 20
+	blt	a0, x0, bg_else.34053 # size : 4
+	jal	x0, bg_cont.34054
+bg_else.34053:
 	addi	a0, x0, 0
-bg_cont.33530:
-	jal	x0, bg_cont.33528
-bg_else.33527:
+bg_cont.34054:
+	jal	x0, bg_cont.34052
+bg_else.34051:
 	addi	a0, x0, 255
-bg_cont.33528:
+bg_cont.34052:
 	addi	t4, x0, 10
 	div	t6, a0, t4
 	mul	t3, t4, t6
@@ -14838,16 +15263,16 @@ bg_cont.33528:
 	flw	fa0, 0(a0)
 	fcvtws	a0, fa0
 	addi	t6, x0, 255
-	blt	t6, a0, bg_else.33531 # size : 20
-	blt	a0, x0, bg_else.33533 # size : 4
-	jal	x0, bg_cont.33534
-bg_else.33533:
+	blt	t6, a0, bg_else.34055 # size : 20
+	blt	a0, x0, bg_else.34057 # size : 4
+	jal	x0, bg_cont.34058
+bg_else.34057:
 	addi	a0, x0, 0
-bg_cont.33534:
-	jal	x0, bg_cont.33532
-bg_else.33531:
+bg_cont.34058:
+	jal	x0, bg_cont.34056
+bg_else.34055:
 	addi	a0, x0, 255
-bg_cont.33532:
+bg_cont.34056:
 	addi	t4, x0, 10
 	div	t6, a0, t4
 	mul	t3, t4, t6
@@ -14868,16 +15293,16 @@ bg_cont.33532:
 	flw	fa0, 0(a0)
 	fcvtws	a0, fa0
 	addi	t6, x0, 255
-	blt	t6, a0, bg_else.33535 # size : 20
-	blt	a0, x0, bg_else.33537 # size : 4
-	jal	x0, bg_cont.33538
-bg_else.33537:
+	blt	t6, a0, bg_else.34059 # size : 20
+	blt	a0, x0, bg_else.34061 # size : 4
+	jal	x0, bg_cont.34062
+bg_else.34061:
 	addi	a0, x0, 0
-bg_cont.33538:
-	jal	x0, bg_cont.33536
-bg_else.33535:
+bg_cont.34062:
+	jal	x0, bg_cont.34060
+bg_else.34059:
 	addi	a0, x0, 255
-bg_cont.33536:
+bg_cont.34060:
 	addi	t4, x0, 10
 	div	t6, a0, t4
 	mul	t3, t4, t6
@@ -14893,187 +15318,175 @@ bg_cont.33536:
 	sw	t6, 0(s11)
 	addi	a0, x0, 10
 	sw	a0, 0(s11)
-	jal	x0, beq_cont.33526
-beq_else.33525:
+	jal	x0, beq_cont.34050
+beq_else.34049:
 	addi	a0, x0, 860
 	flw	fa0, 0(a0)
 	fcvtws	a0, fa0
 	addi	t6, x0, 255
-	blt	t6, a0, bg_else.33539 # size : 20
-	blt	a0, x0, bg_else.33541 # size : 4
-	jal	x0, bg_cont.33542
-bg_else.33541:
+	blt	t6, a0, bg_else.34063 # size : 20
+	blt	a0, x0, bg_else.34065 # size : 4
+	jal	x0, bg_cont.34066
+bg_else.34065:
 	addi	a0, x0, 0
-bg_cont.33542:
-	jal	x0, bg_cont.33540
-bg_else.33539:
+bg_cont.34066:
+	jal	x0, bg_cont.34064
+bg_else.34063:
 	addi	a0, x0, 255
-bg_cont.33540:
+bg_cont.34064:
 	sw	a0, 0(s11)
 	addi	a0, x0, 860
 	addi	a0, a0, 4
 	flw	fa0, 0(a0)
 	fcvtws	a0, fa0
 	addi	t6, x0, 255
-	blt	t6, a0, bg_else.33543 # size : 20
-	blt	a0, x0, bg_else.33545 # size : 4
-	jal	x0, bg_cont.33546
-bg_else.33545:
+	blt	t6, a0, bg_else.34067 # size : 20
+	blt	a0, x0, bg_else.34069 # size : 4
+	jal	x0, bg_cont.34070
+bg_else.34069:
 	addi	a0, x0, 0
-bg_cont.33546:
-	jal	x0, bg_cont.33544
-bg_else.33543:
+bg_cont.34070:
+	jal	x0, bg_cont.34068
+bg_else.34067:
 	addi	a0, x0, 255
-bg_cont.33544:
+bg_cont.34068:
 	sw	a0, 0(s11)
 	addi	a0, x0, 860
 	addi	a0, a0, 8
 	flw	fa0, 0(a0)
 	fcvtws	a0, fa0
 	addi	t6, x0, 255
-	blt	t6, a0, bg_else.33547 # size : 20
-	blt	a0, x0, bg_else.33549 # size : 4
-	jal	x0, bg_cont.33550
-bg_else.33549:
+	blt	t6, a0, bg_else.34071 # size : 20
+	blt	a0, x0, bg_else.34073 # size : 4
+	jal	x0, bg_cont.34074
+bg_else.34073:
 	addi	a0, x0, 0
-bg_cont.33550:
-	jal	x0, bg_cont.33548
-bg_else.33547:
+bg_cont.34074:
+	jal	x0, bg_cont.34072
+bg_else.34071:
 	addi	a0, x0, 255
-bg_cont.33548:
+bg_cont.34072:
 	sw	a0, 0(s11)
-beq_cont.33526:
-	lw	a0, -20(sp) # Restore x.3265
+beq_cont.34050:
+	lw	a0, -16(sp) # Restore x.3269
 	addi	a0, a0, 1
-	lw	a1, -12(sp) # Restore y.3266
-	lw	a2, -8(sp) # Restore prev.3267
-	lw	a3, -4(sp) # Restore cur.3268
-	lw	a4, -0(sp) # Restore next.3269
-	lw	t5, -16(sp) # Restore scan_pixel.3264
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-scan_line.3271: # 54364
-	lw	a6, 8(t5)
-	lw	a7, 4(t5)
-	addi	s0, x0, 872
-	addi	s0, s0, 4
-	lw	s0, 0(s0)
-	blt	a0, s0, bg_else.33551 # size : 0
+	lw	a1, -12(sp) # Restore y.3270
+	lw	a2, -8(sp) # Restore prev.3271
+	lw	a3, -4(sp) # Restore cur.3272
+	lw	a4, -0(sp) # Restore next.3273
+	jal	x0, scan_pixel.3268 
+scan_line.3275: # 56064
+	addi	a6, x0, 872
+	addi	a6, a6, 4
+	lw	a6, 0(a6)
+	blt	a0, a6, bg_else.34075 # size : 0
 	jalr	x0, ra, 0
-bg_else.33551:
-	addi	s0, x0, 872
-	addi	s0, s0, 4
-	lw	s0, 0(s0)
-	addi	s0, s0, -1
-	sw	t5, -0(sp) # Save scan_line.3271
-	sw	a4, -4(sp) # Save group_id.3276
-	sw	a5, -8(sp) # Save version.3277
-	sw	a3, -12(sp) # Save next.3275
-	sw	a2, -16(sp) # Save cur.3274
-	sw	a1, -20(sp) # Save prev.3273
-	sw	a0, -24(sp) # Save y.3272
-	sw	a6, -28(sp) # Save scan_pixel.3264
-	blt	a0, s0, bg_else.33553 # size : 0
-	jal	x0, bg_cont.33554
-bg_else.33553:
-	addi	s0, a0, 1
-	addi	s1, x0, 888
-	flw	fa0, 0(s1)
-	addi	s1, x0, 880
-	addi	s1, s1, 4
-	lw	s1, 0(s1)
-	sub	s0, s0, s1
-	fcvtsw	fa1, s0
+bg_else.34075:
+	addi	a6, x0, 872
+	addi	a6, a6, 4
+	lw	a6, 0(a6)
+	addi	a6, a6, -1
+	sw	a4, -0(sp) # Save group_id.3280
+	sw	a5, -4(sp) # Save version.3281
+	sw	a3, -8(sp) # Save next.3279
+	sw	a2, -12(sp) # Save cur.3278
+	sw	a1, -16(sp) # Save prev.3277
+	sw	a0, -20(sp) # Save y.3276
+	blt	a0, a6, bg_else.34077 # size : 0
+	jal	x0, bg_cont.34078
+bg_else.34077:
+	addi	a6, a0, 1
+	addi	a7, x0, 888
+	flw	fa0, 0(a7)
+	addi	a7, x0, 880
+	addi	a7, a7, 4
+	lw	a7, 0(a7)
+	sub	a6, a6, a7
+	fcvtsw	fa1, a6
 	fmul	fa0, fa0, fa1
-	addi	s0, x0, 928
-	flw	fa1, 0(s0)
+	addi	a6, x0, 928
+	flw	fa1, 0(a6)
 	fmul	fa1, fa0, fa1
-	addi	s0, x0, 940
-	flw	fa2, 0(s0)
+	addi	a6, x0, 940
+	flw	fa2, 0(a6)
 	fadd	fa1, fa1, fa2
-	addi	s0, x0, 928
-	addi	s0, s0, 4
-	flw	fa2, 0(s0)
+	addi	a6, x0, 928
+	addi	a6, a6, 4
+	flw	fa2, 0(a6)
 	fmul	fa2, fa0, fa2
-	addi	s0, x0, 940
-	addi	s0, s0, 4
-	flw	fa3, 0(s0)
+	addi	a6, x0, 940
+	addi	a6, a6, 4
+	flw	fa3, 0(a6)
 	fadd	fa2, fa2, fa3
-	addi	s0, x0, 928
-	addi	s0, s0, 8
-	flw	fa3, 0(s0)
+	addi	a6, x0, 928
+	addi	a6, a6, 8
+	flw	fa3, 0(a6)
 	fmul	fa0, fa0, fa3
-	addi	s0, x0, 940
-	addi	s0, s0, 8
-	flw	fa3, 0(s0)
+	addi	a6, x0, 940
+	addi	a6, a6, 8
+	flw	fa3, 0(a6)
 	fadd	fa0, fa0, fa3
-	addi	s0, x0, 872
-	lw	s0, 0(s0)
-	addi	s0, s0, -1
+	addi	a6, x0, 872
+	lw	a6, 0(a6)
+	addi	a6, a6, -1
 	addi	a2, a4, 0
-	addi	a1, s0, 0
+	addi	a1, a6, 0
 	addi	a0, a3, 0
-	addi	t5, a7, 0
 	fsgnj	fs11, fa2, fa2
 	fsgnj	fa2, fa0, fa0
 	fsgnj	fa0, fa1, fa1
 	fsgnj	fa1, fs11, fs11
-	lw	t6, 0(t5)
-	sw	ra, -36(sp)
-	addi	sp, sp, -40
-	jalr	ra, t6, 0 # CallCls a7
-	addi	sp, sp, 40
-	lw	ra, -36(sp)
-bg_cont.33554:
+	sw	ra, -28(sp)
+	addi	sp, sp, -32
+	jal	ra, pretrace_pixels.3257
+	addi	sp, sp, 32
+	lw	ra, -28(sp)
+bg_cont.34078:
 	addi	a0, x0, 0
-	lw	a1, -24(sp) # Restore y.3272
-	lw	a2, -20(sp) # Restore prev.3273
-	lw	a3, -16(sp) # Restore cur.3274
-	lw	a4, -12(sp) # Restore next.3275
-	lw	a5, -8(sp) # Restore version.3277
-	lw	t5, -28(sp) # Restore scan_pixel.3264
-	lw	t6, 0(t5)
-	sw	ra, -36(sp)
-	addi	sp, sp, -40
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 40
-	lw	ra, -36(sp)
-	lw	a0, -24(sp) # Restore y.3272
+	lw	a1, -20(sp) # Restore y.3276
+	lw	a2, -16(sp) # Restore prev.3277
+	lw	a3, -12(sp) # Restore cur.3278
+	lw	a4, -8(sp) # Restore next.3279
+	lw	a5, -4(sp) # Restore version.3281
+	sw	ra, -28(sp)
+	addi	sp, sp, -32
+	jal	ra, scan_pixel.3268
+	addi	sp, sp, 32
+	lw	ra, -28(sp)
+	lw	a0, -20(sp) # Restore y.3276
 	addi	a0, a0, 1
-	lw	a1, -4(sp) # Restore group_id.3276
+	lw	a1, -0(sp) # Restore group_id.3280
 	addi	a1, a1, 2
 	addi	t6, x0, 5
-	blt	a1, t6, bg_else.33555 # size : 4
+	blt	a1, t6, bg_else.34079 # size : 4
 	addi	a4, a1, -5
-	jal	x0, bg_cont.33556
-bg_else.33555:
+	jal	x0, bg_cont.34080
+bg_else.34079:
 	addi	a4, a1 0
-bg_cont.33556:
-	lw	a1, -16(sp) # Restore cur.3274
-	lw	a2, -12(sp) # Restore next.3275
-	lw	a3, -20(sp) # Restore prev.3273
-	lw	a5, -8(sp) # Restore version.3277
-	lw	t5, -0(sp) # Restore scan_line.3271
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-init_line_elements.3282: # 54756
-	blt	a1, x0, bg_else.33557 # size : 2124
-	luil	a2, l.26808
+bg_cont.34080:
+	lw	a1, -12(sp) # Restore cur.3278
+	lw	a2, -8(sp) # Restore next.3279
+	lw	a3, -16(sp) # Restore prev.3277
+	lw	a5, -4(sp) # Restore version.3281
+	jal	x0, scan_line.3275 
+init_line_elements.3286: # 56416
+	blt	a1, x0, bg_else.34081 # size : 2124
+	luil	a2, l.27154
 	srli	a2, a2, 1
-	addil	a2, a2, l.26808
+	addil	a2, a2, l.27154
 	flw	fa0, 0(a2)
-	sw	a0, -0(sp) # Save line.3283
-	sw	a1, -4(sp) # Save n.3284
+	sw	a0, -0(sp) # Save line.3287
+	sw	a1, -4(sp) # Save n.3288
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -8(sp) # Save m_rgb.3668.7325
+	sw	a0, -8(sp) # Save m_rgb.3672.7339
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -15086,53 +15499,53 @@ init_line_elements.3282: # 54756
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -12(sp) # Save array.3689.13303
+	sw	a0, -12(sp) # Save array.3693.13350
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -12(sp) # Restore array.3689.13303
+	lw	a1, -12(sp) # Restore array.3693.13350
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -12(sp) # Restore array.3689.13303
+	lw	a1, -12(sp) # Restore array.3693.13350
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -12(sp) # Restore array.3689.13303
+	lw	a1, -12(sp) # Restore array.3693.13350
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -12(sp) # Restore array.3689.13303
+	lw	a1, -12(sp) # Restore array.3693.13350
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 0
@@ -15144,7 +15557,7 @@ init_line_elements.3282: # 54756
 	addi	a0, hp, 0
 	addi	hp, hp, 20
 	addi	a1, x0, 0
-	sw	a0, -16(sp) # Save m_sids.3670.7330
+	sw	a0, -16(sp) # Save m_sids.3674.7344
 	sw	a1, 0(hp)
 	sw	a1, 4(hp)
 	sw	a1, 8(hp)
@@ -15152,11 +15565,11 @@ init_line_elements.3282: # 54756
 	sw	a1, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -20(sp) # Save m_cdif.3671.7333
+	sw	a0, -20(sp) # Save m_cdif.3675.7347
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -15169,58 +15582,58 @@ init_line_elements.3282: # 54756
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -24(sp) # Save array.3689.13278
+	sw	a0, -24(sp) # Save array.3693.13325
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -24(sp) # Restore array.3689.13278
+	lw	a1, -24(sp) # Restore array.3693.13325
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -24(sp) # Restore array.3689.13278
+	lw	a1, -24(sp) # Restore array.3693.13325
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -24(sp) # Restore array.3689.13278
+	lw	a1, -24(sp) # Restore array.3693.13325
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -24(sp) # Restore array.3689.13278
+	lw	a1, -24(sp) # Restore array.3693.13325
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
@@ -15234,64 +15647,64 @@ init_line_elements.3282: # 54756
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -28(sp) # Save array.3689.13253
+	sw	a0, -28(sp) # Save array.3693.13300
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -28(sp) # Restore array.3689.13253
+	lw	a1, -28(sp) # Restore array.3693.13300
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -28(sp) # Restore array.3689.13253
+	lw	a1, -28(sp) # Restore array.3693.13300
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -28(sp) # Restore array.3689.13253
+	lw	a1, -28(sp) # Restore array.3693.13300
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -28(sp) # Restore array.3689.13253
+	lw	a1, -28(sp) # Restore array.3693.13300
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 0
 	sw	a0, 0(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 4
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -32(sp) # Save m_gid.3674.7340
+	sw	a0, -32(sp) # Save m_gid.3678.7354
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -15304,100 +15717,99 @@ init_line_elements.3282: # 54756
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -36(sp) # Save array.3689.13228
+	sw	a0, -36(sp) # Save array.3693.13275
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -36(sp) # Restore array.3689.13228
+	lw	a1, -36(sp) # Restore array.3693.13275
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -36(sp) # Restore array.3689.13228
+	lw	a1, -36(sp) # Restore array.3693.13275
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -36(sp) # Restore array.3689.13228
+	lw	a1, -36(sp) # Restore array.3693.13275
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -36(sp) # Restore array.3689.13228
+	lw	a1, -36(sp) # Restore array.3693.13275
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, hp 0
 	addi	hp, hp, 32
 	sw	a1,28(a0) 
-	lw	a1, -32(sp) # Restore m_gid.3674.7340
+	lw	a1, -32(sp) # Restore m_gid.3678.7354
 	sw	a1,24(a0) 
-	lw	a1, -28(sp) # Restore array.3689.13253
+	lw	a1, -28(sp) # Restore array.3693.13300
 	sw	a1,20(a0) 
-	lw	a1, -24(sp) # Restore array.3689.13278
+	lw	a1, -24(sp) # Restore array.3693.13325
 	sw	a1,16(a0) 
-	lw	a1, -20(sp) # Restore m_cdif.3671.7333
+	lw	a1, -20(sp) # Restore m_cdif.3675.7347
 	sw	a1,12(a0) 
-	lw	a1, -16(sp) # Restore m_sids.3670.7330
+	lw	a1, -16(sp) # Restore m_sids.3674.7344
 	sw	a1,8(a0) 
-	lw	a1, -12(sp) # Restore array.3689.13303
+	lw	a1, -12(sp) # Restore array.3693.13350
 	sw	a1,4(a0) 
-	lw	a1, -8(sp) # Restore m_rgb.3668.7325
+	lw	a1, -8(sp) # Restore m_rgb.3672.7339
 	sw	a1,0(a0) 
-	lw	a1, -4(sp) # Restore n.3284
+	lw	a1, -4(sp) # Restore n.3288
 	slli	a2, a1, 2
-	lw	a3, -0(sp) # Restore line.3283
+	lw	a3, -0(sp) # Restore line.3287
 	add	a2, a3, a2
 	sw	a0,0(a2) 
 	addi	a1, a1, -1
 	addi	a0, a3, 0
-	jal	x0, init_line_elements.3282 
-bg_else.33557:
+	jal	x0, init_line_elements.3286 
+bg_else.34081:
 	jalr	x0, ra, 0
-calc_dirvec.3292: # 56044
-	flw	fa4, 4(t5)
+calc_dirvec.3296: # 57704
 	addi	t6, x0, 5
-	blt	a0, t6, bg_else.33586 # size : 724
+	blt	a0, t6, bg_else.34110 # size : 724
 	fmul	fa2, fa0, fa0
 	fmul	fa3, fa1, fa1
 	fadd	fa2, fa2, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa3, 0(a0)
 	fadd	fa2, fa2, fa3
 	fsqrt	fa2, fa2
 	fdiv	fa0, fa0, fa2
 	fdiv	fa1, fa1, fa2
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa3, 0(a0)
 	fdiv	fa2, fa3, fa2
 	slli	a0, a1, 2
@@ -15477,1279 +15889,80 @@ calc_dirvec.3292: # 56044
 	fsw	fa0, 0(a1) 
 	fsw	fa1, 8(a0) 
 	jalr	x0, ra, 0
-bg_else.33586:
+bg_else.34110:
 	fmul	fa0, fa1, fa1
-	luil	a3, l.28843
+	luil	a3, l.29266
 	srli	a3, a3, 1
-	addil	a3, a3, l.28843
+	addil	a3, a3, l.29266
 	flw	fa1, 0(a3)
 	fadd	fa0, fa0, fa1
 	fsqrt	fa0, fa0
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa1, 0(a3)
 	fdiv	fa1, fa1, fa0
 	fsgnjn	fs11, fa1, fa1
 	flt	a3, fs11, fa1
-	bne	a3, x0, beq_else.33588 # size : 28
-	luil	a3, l.26869
+	bne	a3, x0, beq_else.34112 # size : 28
+	luil	a3, l.27215
 	srli	a3, a3, 1
-	addil	a3, a3, l.26869
+	addil	a3, a3, l.27215
+	flw	fa4, 0(a3)
+	fmul	fa4, fa4, fa1
+	jal	x0, beq_cont.34113
+beq_else.34112:
+	fsgnj	fa4, fa1, fa1
+beq_cont.34113:
+	luil	a3, l.28817
+	srli	a3, a3, 1
+	addil	a3, a3, l.28817
 	flw	fa5, 0(a3)
-	fmul	fa5, fa5, fa1
-	jal	x0, beq_cont.33589
-beq_else.33588:
-	fsgnj	fa5, fa1, fa1
-beq_cont.33589:
-	luil	a3, l.28411
-	srli	a3, a3, 1
-	addil	a3, a3, l.28411
-	flw	fa6, 0(a3)
-	fsub	fa6, fa6, fa5
-	fsgnjn	fs11, fa6, fa6
-	flt	a3, fs11, fa6
-	bne	a3, x0, beq_else.33590 # size : 728
-	luil	a3, l.28425
-	srli	a3, a3, 1
-	addil	a3, a3, l.28425
-	flw	fa6, 0(a3)
-	fsub	fa6, fa6, fa5
-	fsgnjn	fs11, fa6, fa6
-	flt	a3, fs11, fa6
-	bne	a3, x0, beq_else.33592 # size : 316
-	luil	a3, l.26931
-	srli	a3, a3, 1
-	addil	a3, a3, l.26931
-	flw	fa6, 0(a3)
-	luil	a3, l.26867
-	srli	a3, a3, 1
-	addil	a3, a3, l.26867
-	flw	fa7, 0(a3)
-	fdiv	fa5, fa7, fa5
-	luil	a3, l.28413
-	srli	a3, a3, 1
-	addil	a3, a3, l.28413
-	flw	fa7, 0(a3)
-	luil	a3, l.28415
-	srli	a3, a3, 1
-	addil	a3, a3, l.28415
-	flw	ft0, 0(a3)
-	luil	a3, l.28417
-	srli	a3, a3, 1
-	addil	a3, a3, l.28417
-	flw	ft1, 0(a3)
-	luil	a3, l.28419
-	srli	a3, a3, 1
-	addil	a3, a3, l.28419
-	flw	ft2, 0(a3)
-	luil	a3, l.28421
-	srli	a3, a3, 1
-	addil	a3, a3, l.28421
-	flw	ft3, 0(a3)
-	luil	a3, l.28423
-	srli	a3, a3, 1
-	addil	a3, a3, l.28423
-	flw	ft4, 0(a3)
-	fmul	ft5, fa5, fa5
-	fmul	ft4, ft4, ft5
-	fsub	ft3, ft4, ft3
-	fmul	ft3, ft3, ft5
-	fadd	ft2, ft3, ft2
-	fmul	ft2, ft2, ft5
-	fsub	ft1, ft2, ft1
-	fmul	ft1, ft1, ft5
-	fadd	ft0, ft1, ft0
-	fmul	ft0, ft0, ft5
-	fsub	fa7, ft0, fa7
-	fmul	fa7, fa7, fa5
-	fmul	fa7, fa7, ft5
-	fadd	fa5, fa7, fa5
-	fsub	fa5, fa6, fa5
-	jal	x0, beq_cont.33593
-beq_else.33592:
-	luil	a3, l.28427
-	srli	a3, a3, 1
-	addil	a3, a3, l.28427
-	flw	fa6, 0(a3)
-	luil	a3, l.26867
-	srli	a3, a3, 1
-	addil	a3, a3, l.26867
-	flw	fa7, 0(a3)
-	fsub	fa7, fa5, fa7
-	luil	a3, l.26867
-	srli	a3, a3, 1
-	addil	a3, a3, l.26867
-	flw	ft0, 0(a3)
-	fadd	fa5, fa5, ft0
-	fdiv	fa5, fa7, fa5
-	luil	a3, l.28413
-	srli	a3, a3, 1
-	addil	a3, a3, l.28413
-	flw	fa7, 0(a3)
-	luil	a3, l.28415
-	srli	a3, a3, 1
-	addil	a3, a3, l.28415
-	flw	ft0, 0(a3)
-	luil	a3, l.28417
-	srli	a3, a3, 1
-	addil	a3, a3, l.28417
-	flw	ft1, 0(a3)
-	luil	a3, l.28419
-	srli	a3, a3, 1
-	addil	a3, a3, l.28419
-	flw	ft2, 0(a3)
-	luil	a3, l.28421
-	srli	a3, a3, 1
-	addil	a3, a3, l.28421
-	flw	ft3, 0(a3)
-	luil	a3, l.28423
-	srli	a3, a3, 1
-	addil	a3, a3, l.28423
-	flw	ft4, 0(a3)
-	fmul	ft5, fa5, fa5
-	fmul	ft4, ft4, ft5
-	fsub	ft3, ft4, ft3
-	fmul	ft3, ft3, ft5
-	fadd	ft2, ft3, ft2
-	fmul	ft2, ft2, ft5
-	fsub	ft1, ft2, ft1
-	fmul	ft1, ft1, ft5
-	fadd	ft0, ft1, ft0
-	fmul	ft0, ft0, ft5
-	fsub	fa7, ft0, fa7
-	fmul	fa7, fa7, fa5
-	fmul	fa7, fa7, ft5
-	fadd	fa5, fa7, fa5
-	fadd	fa5, fa6, fa5
-beq_cont.33593:
-	jal	x0, beq_cont.33591
-beq_else.33590:
-	luil	a3, l.28413
-	srli	a3, a3, 1
-	addil	a3, a3, l.28413
-	flw	fa6, 0(a3)
-	luil	a3, l.28415
-	srli	a3, a3, 1
-	addil	a3, a3, l.28415
-	flw	fa7, 0(a3)
-	luil	a3, l.28417
-	srli	a3, a3, 1
-	addil	a3, a3, l.28417
-	flw	ft0, 0(a3)
-	luil	a3, l.28419
-	srli	a3, a3, 1
-	addil	a3, a3, l.28419
-	flw	ft1, 0(a3)
-	luil	a3, l.28421
-	srli	a3, a3, 1
-	addil	a3, a3, l.28421
-	flw	ft2, 0(a3)
-	luil	a3, l.28423
-	srli	a3, a3, 1
-	addil	a3, a3, l.28423
-	flw	ft3, 0(a3)
-	fmul	ft4, fa5, fa5
-	fmul	ft3, ft3, ft4
-	fsub	ft2, ft3, ft2
-	fmul	ft2, ft2, ft4
-	fadd	ft1, ft2, ft1
-	fmul	ft1, ft1, ft4
-	fsub	ft0, ft1, ft0
-	fmul	ft0, ft0, ft4
-	fadd	fa7, ft0, fa7
-	fmul	fa7, fa7, ft4
-	fsub	fa6, fa7, fa6
-	fmul	fa6, fa6, fa5
-	fmul	fa6, fa6, ft4
-	fadd	fa5, fa6, fa5
-beq_cont.33591:
-	fsgnjn	fs11, fa1, fa1
-	flt	a3, fs11, fa1
-	bne	a3, x0, beq_else.33594 # size : 4
-	addi	a3, x0, -1
-	jal	x0, beq_cont.33595
-beq_else.33594:
-	addi	a3, x0, 1
-beq_cont.33595:
-	fsgnjn	fs11, fa1, fa1
-	flt	a4, fs11, fa1
-	bne	a4, x0, beq_else.33596 # size : 28
-	luil	a4, l.26869
-	srli	a4, a4, 1
-	addil	a4, a4, l.26869
-	flw	fa6, 0(a4)
-	fmul	fa1, fa6, fa1
-	jal	x0, beq_cont.33597
-beq_else.33596:
-beq_cont.33597:
-	luil	a4, l.28411
-	srli	a4, a4, 1
-	addil	a4, a4, l.28411
-	flw	fa6, 0(a4)
-	fsub	fa6, fa6, fa1
-	fsgnjn	fs11, fa6, fa6
-	flt	a4, fs11, fa6
-	bne	a4, x0, beq_else.33598 # size : 728
-	luil	a4, l.28425
-	srli	a4, a4, 1
-	addil	a4, a4, l.28425
-	flw	fa6, 0(a4)
-	fsub	fa6, fa6, fa1
-	fsgnjn	fs11, fa6, fa6
-	flt	a4, fs11, fa6
-	bne	a4, x0, beq_else.33600 # size : 316
-	luil	a4, l.26931
-	srli	a4, a4, 1
-	addil	a4, a4, l.26931
-	flw	fa6, 0(a4)
-	luil	a4, l.26867
-	srli	a4, a4, 1
-	addil	a4, a4, l.26867
-	flw	fa7, 0(a4)
-	fdiv	fa1, fa7, fa1
-	luil	a4, l.28413
-	srli	a4, a4, 1
-	addil	a4, a4, l.28413
-	flw	fa7, 0(a4)
-	luil	a4, l.28415
-	srli	a4, a4, 1
-	addil	a4, a4, l.28415
-	flw	ft0, 0(a4)
-	luil	a4, l.28417
-	srli	a4, a4, 1
-	addil	a4, a4, l.28417
-	flw	ft1, 0(a4)
-	luil	a4, l.28419
-	srli	a4, a4, 1
-	addil	a4, a4, l.28419
-	flw	ft2, 0(a4)
-	luil	a4, l.28421
-	srli	a4, a4, 1
-	addil	a4, a4, l.28421
-	flw	ft3, 0(a4)
-	luil	a4, l.28423
-	srli	a4, a4, 1
-	addil	a4, a4, l.28423
-	flw	ft4, 0(a4)
-	fmul	ft5, fa1, fa1
-	fmul	ft4, ft4, ft5
-	fsub	ft3, ft4, ft3
-	fmul	ft3, ft3, ft5
-	fadd	ft2, ft3, ft2
-	fmul	ft2, ft2, ft5
-	fsub	ft1, ft2, ft1
-	fmul	ft1, ft1, ft5
-	fadd	ft0, ft1, ft0
-	fmul	ft0, ft0, ft5
-	fsub	fa7, ft0, fa7
-	fmul	fa7, fa7, fa1
-	fmul	fa7, fa7, ft5
-	fadd	fa1, fa7, fa1
-	fsub	fa1, fa6, fa1
-	jal	x0, beq_cont.33601
-beq_else.33600:
-	luil	a4, l.28427
-	srli	a4, a4, 1
-	addil	a4, a4, l.28427
-	flw	fa6, 0(a4)
-	luil	a4, l.26867
-	srli	a4, a4, 1
-	addil	a4, a4, l.26867
-	flw	fa7, 0(a4)
-	fsub	fa7, fa1, fa7
-	luil	a4, l.26867
-	srli	a4, a4, 1
-	addil	a4, a4, l.26867
-	flw	ft0, 0(a4)
-	fadd	fa1, fa1, ft0
-	fdiv	fa1, fa7, fa1
-	luil	a4, l.28413
-	srli	a4, a4, 1
-	addil	a4, a4, l.28413
-	flw	fa7, 0(a4)
-	luil	a4, l.28415
-	srli	a4, a4, 1
-	addil	a4, a4, l.28415
-	flw	ft0, 0(a4)
-	luil	a4, l.28417
-	srli	a4, a4, 1
-	addil	a4, a4, l.28417
-	flw	ft1, 0(a4)
-	luil	a4, l.28419
-	srli	a4, a4, 1
-	addil	a4, a4, l.28419
-	flw	ft2, 0(a4)
-	luil	a4, l.28421
-	srli	a4, a4, 1
-	addil	a4, a4, l.28421
-	flw	ft3, 0(a4)
-	luil	a4, l.28423
-	srli	a4, a4, 1
-	addil	a4, a4, l.28423
-	flw	ft4, 0(a4)
-	fmul	ft5, fa1, fa1
-	fmul	ft4, ft4, ft5
-	fsub	ft3, ft4, ft3
-	fmul	ft3, ft3, ft5
-	fadd	ft2, ft3, ft2
-	fmul	ft2, ft2, ft5
-	fsub	ft1, ft2, ft1
-	fmul	ft1, ft1, ft5
-	fadd	ft0, ft1, ft0
-	fmul	ft0, ft0, ft5
-	fsub	fa7, ft0, fa7
-	fmul	fa7, fa7, fa1
-	fmul	fa7, fa7, ft5
-	fadd	fa1, fa7, fa1
-	fadd	fa1, fa6, fa1
-beq_cont.33601:
-	jal	x0, beq_cont.33599
-beq_else.33598:
-	luil	a4, l.28413
-	srli	a4, a4, 1
-	addil	a4, a4, l.28413
-	flw	fa6, 0(a4)
-	luil	a4, l.28415
-	srli	a4, a4, 1
-	addil	a4, a4, l.28415
-	flw	fa7, 0(a4)
-	luil	a4, l.28417
-	srli	a4, a4, 1
-	addil	a4, a4, l.28417
-	flw	ft0, 0(a4)
-	luil	a4, l.28419
-	srli	a4, a4, 1
-	addil	a4, a4, l.28419
-	flw	ft1, 0(a4)
-	luil	a4, l.28421
-	srli	a4, a4, 1
-	addil	a4, a4, l.28421
-	flw	ft2, 0(a4)
-	luil	a4, l.28423
-	srli	a4, a4, 1
-	addil	a4, a4, l.28423
-	flw	ft3, 0(a4)
-	fmul	ft4, fa1, fa1
-	fmul	ft3, ft3, ft4
-	fsub	ft2, ft3, ft2
-	fmul	ft2, ft2, ft4
-	fadd	ft1, ft2, ft1
-	fmul	ft1, ft1, ft4
-	fsub	ft0, ft1, ft0
-	fmul	ft0, ft0, ft4
-	fadd	fa7, ft0, fa7
-	fmul	fa7, fa7, ft4
-	fsub	fa6, fa7, fa6
-	fmul	fa6, fa6, fa1
-	fmul	fa6, fa6, ft4
-	fadd	fa1, fa6, fa1
-beq_cont.33599:
-	fsgnjn	fs11, fa1, fa1
-	flt	a4, fs11, fa1
-	bne	a4, x0, beq_else.33602 # size : 4
-	addi	a4, x0, -1
-	jal	x0, beq_cont.33603
-beq_else.33602:
-	addi	a4, x0, 1
-beq_cont.33603:
-	bne	a3, a4, beq_else.33604 # size : 4
-	fsgnj	fa1, fa5, fa5
-	jal	x0, beq_cont.33605
-beq_else.33604:
-	luil	a3, l.26869
-	srli	a3, a3, 1
-	addil	a3, a3, l.26869
-	flw	fa1, 0(a3)
-	fmul	fa1, fa1, fa5
-beq_cont.33605:
-	fmul	fa1, fa1, fa2
-	fsgnjn	fs11, fa1, fa1
-	flt	a3, fs11, fa1
-	bne	a3, x0, beq_else.33606 # size : 4
-	addi	a3, x0, 0
-	jal	x0, beq_cont.33607
-beq_else.33606:
-	addi	a3, x0, 1
-beq_cont.33607:
-	addi	t6, x0, 1
-	bne	a3, t6, beq_else.33608 # size : 4
-	fsgnj	fa5, fa1, fa1
-	jal	x0, beq_cont.33609
-beq_else.33608:
-	luil	a3, l.26869
-	srli	a3, a3, 1
-	addil	a3, a3, l.26869
-	flw	fa5, 0(a3)
-	fmul	fa5, fa5, fa1
-beq_cont.33609:
-	luil	a3, l.26804
-	srli	a3, a3, 1
-	addil	a3, a3, l.26804
-	flw	fa6, 0(a3)
-	fsw	fa2, -0(sp)
-	sw	a2, -4(sp) # Save index.3299
-	sw	a1, -8(sp) # Save group_id.3298
-	sw	t5, -12(sp) # Save calc_dirvec.3292
-	fsw	fa3, -16(sp)
-	sw	a0, -20(sp) # Save icount.3293
-	fsw	fa0, -24(sp)
-	fsw	fa1, -28(sp)
-	fsw	fa4, -32(sp)
-	fsw	fa5, -36(sp)
-	fsgnj	fa1, fa6, fa6
-	fsgnj	fa0, fa5, fa5
-	sw	ra, -44(sp)
-	addi	sp, sp, -48
-	jal	ra, while1.2799
-	addi	sp, sp, 48
-	lw	ra, -44(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -36(sp)
-	sw	ra, -44(sp)
-	addi	sp, sp, -48
-	jal	ra, while2.2805
-	addi	sp, sp, 48
-	lw	ra, -44(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33610 # size : 4
-	jal	x0, beq_cont.33611
-beq_else.33610:
-	fsub	fa0, fa0, fa1
-beq_cont.33611:
-	flw	fa2, -28(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33612 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33613
-beq_else.33612:
-	addi	a0, x0, 1
-beq_cont.33613:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33614 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.33615
-beq_else.33614:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.33615:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -40(sp)
-	fsw	fa3, -44(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -52(sp)
-	addi	sp, sp, -56
-	jal	ra, while1.2799
-	addi	sp, sp, 56
-	lw	ra, -52(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -44(sp)
-	sw	ra, -52(sp)
-	addi	sp, sp, -56
-	jal	ra, while2.2805
-	addi	sp, sp, 56
-	lw	ra, -52(sp)
-	flw	fa1, -28(sp)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33616 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33617
-beq_else.33616:
-	addi	a0, x0, 1
-beq_cont.33617:
-	flw	fa2, -40(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33618 # size : 4
-	jal	x0, bne_cont.33619
-bne_else.33618:
-	addi	a1, x0, 1
-	sub	a0, a1, a0
-bne_cont.33619:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33620 # size : 740
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33622 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33623
-beq_else.33622:
-	addi	a0, x0, 1
-beq_cont.33623:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33624 # size : 4
-	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.33625
-beq_else.33624:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fmul	fa0, fa0, fa1
-beq_cont.33625:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -48(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -56(sp)
-	addi	sp, sp, -60
-	jal	ra, while1.2799
-	addi	sp, sp, 60
-	lw	ra, -56(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -48(sp)
-	sw	ra, -56(sp)
-	addi	sp, sp, -60
-	jal	ra, while2.2805
-	addi	sp, sp, 60
-	lw	ra, -56(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33626 # size : 4
-	jal	x0, beq_cont.33627
-beq_else.33626:
-	fsub	fa0, fa0, fa1
-beq_cont.33627:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33628 # size : 4
-	jal	x0, beq_cont.33629
-beq_else.33628:
-	fsub	fa0, fa1, fa0
-beq_cont.33629:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33630 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.33631
-beq_else.33630:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.33631:
-	jal	x0, beq_cont.33621
-beq_else.33620:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33632 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33633
-beq_else.33632:
-	addi	a0, x0, 1
-beq_cont.33633:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33634 # size : 4
-	fsgnj	fa2, fa1, fa1
-	jal	x0, beq_cont.33635
-beq_else.33634:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa1
-beq_cont.33635:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa0, -52(sp)
-	fsw	fa2, -56(sp)
-	fsgnj	fa1, fa3, fa3
-	fsgnj	fa0, fa2, fa2
-	sw	ra, -64(sp)
-	addi	sp, sp, -68
-	jal	ra, while1.2799
-	addi	sp, sp, 68
-	lw	ra, -64(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -56(sp)
-	sw	ra, -64(sp)
-	addi	sp, sp, -68
-	jal	ra, while2.2805
-	addi	sp, sp, 68
-	lw	ra, -64(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33636 # size : 4
-	jal	x0, beq_cont.33637
-beq_else.33636:
-	fsub	fa0, fa0, fa1
-beq_cont.33637:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33638 # size : 4
-	jal	x0, beq_cont.33639
-beq_else.33638:
-	fsub	fa0, fa1, fa0
-beq_cont.33639:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33640 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.33641
-beq_else.33640:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.33641:
-	flw	fa2, -52(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.33621:
-	flw	fa2, -28(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33642 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33643
-beq_else.33642:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33643:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -60(sp)
-	fsw	fa3, -64(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -72(sp)
-	addi	sp, sp, -76
-	jal	ra, while1.2799
-	addi	sp, sp, 76
-	lw	ra, -72(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -64(sp)
-	sw	ra, -72(sp)
-	addi	sp, sp, -76
-	jal	ra, while2.2805
-	addi	sp, sp, 76
-	lw	ra, -72(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33644 # size : 4
-	jal	x0, beq_cont.33645
-beq_else.33644:
-	fsub	fa0, fa0, fa1
-beq_cont.33645:
-	flw	fa2, -28(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33646 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33647
-beq_else.33646:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33647:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -68(sp)
-	fsw	fa3, -72(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -80(sp)
-	addi	sp, sp, -84
-	jal	ra, while1.2799
-	addi	sp, sp, 84
-	lw	ra, -80(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -72(sp)
-	sw	ra, -80(sp)
-	addi	sp, sp, -84
-	jal	ra, while2.2805
-	addi	sp, sp, 84
-	lw	ra, -80(sp)
-	flw	fa1, -68(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.33648 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.33649
-bne_else.33648:
-	addi	a0, x0, 0
-bne_cont.33649:
-	flw	fa0, -28(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33650 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33651
-beq_else.33650:
-	fsgnj	fa1, fa0, fa0
-beq_cont.33651:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -76(sp) # Save flag00.6561.22196
-	fsw	fa1, -80(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -88(sp)
-	addi	sp, sp, -92
-	jal	ra, while1.2799
-	addi	sp, sp, 92
-	lw	ra, -88(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -80(sp)
-	sw	ra, -88(sp)
-	addi	sp, sp, -92
-	jal	ra, while2.2805
-	addi	sp, sp, 92
-	lw	ra, -88(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33652 # size : 4
-	jal	x0, beq_cont.33653
-beq_else.33652:
-	fsub	fa0, fa0, fa1
-beq_cont.33653:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33654 # size : 4
-	jal	x0, beq_cont.33655
-beq_else.33654:
-	fsub	fa0, fa1, fa0
-beq_cont.33655:
-	flw	fa2, -28(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33656 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33657
-beq_else.33656:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33657:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -84(sp)
-	fsw	fa3, -88(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -96(sp)
-	addi	sp, sp, -100
-	jal	ra, while1.2799
-	addi	sp, sp, 100
-	lw	ra, -96(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -88(sp)
-	sw	ra, -96(sp)
-	addi	sp, sp, -100
-	jal	ra, while2.2805
-	addi	sp, sp, 100
-	lw	ra, -96(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33658 # size : 4
-	jal	x0, beq_cont.33659
-beq_else.33658:
-	fsub	fa0, fa0, fa1
-beq_cont.33659:
-	flw	fa2, -84(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33660 # size : 12
-	lw	a0, -76(sp) # Restore flag00.6561.22196
-	jal	x0, bne_cont.33661
-bne_else.33660:
-	addi	a0, x0, 1
-	lw	a1, -76(sp) # Restore flag00.6561.22196
-	sub	a0, a0, a1
-bne_cont.33661:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33662 # size : 724
-	flw	fa0, -28(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.33664 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.33665
-beq_else.33664:
-beq_cont.33665:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -92(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -100(sp)
-	addi	sp, sp, -104
-	jal	ra, while1.2799
-	addi	sp, sp, 104
-	lw	ra, -100(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -92(sp)
-	sw	ra, -100(sp)
-	addi	sp, sp, -104
-	jal	ra, while2.2805
-	addi	sp, sp, 104
-	lw	ra, -100(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33666 # size : 4
-	jal	x0, beq_cont.33667
-beq_else.33666:
-	fsub	fa0, fa0, fa1
-beq_cont.33667:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33668 # size : 4
-	jal	x0, beq_cont.33669
-beq_else.33668:
-	fsub	fa0, fa1, fa0
-beq_cont.33669:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33670 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.33671
-beq_else.33670:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.33671:
-	jal	x0, beq_cont.33663
-beq_else.33662:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	flw	fa2, -28(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33672 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa2, fa3, fa2
-	jal	x0, beq_cont.33673
-beq_else.33672:
-beq_cont.33673:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa0, -96(sp)
-	fsw	fa2, -100(sp)
-	fsgnj	fa1, fa3, fa3
-	fsgnj	fa0, fa2, fa2
-	sw	ra, -108(sp)
-	addi	sp, sp, -112
-	jal	ra, while1.2799
-	addi	sp, sp, 112
-	lw	ra, -108(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -100(sp)
-	sw	ra, -108(sp)
-	addi	sp, sp, -112
-	jal	ra, while2.2805
-	addi	sp, sp, 112
-	lw	ra, -108(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33674 # size : 4
-	jal	x0, beq_cont.33675
-beq_else.33674:
-	fsub	fa0, fa0, fa1
-beq_cont.33675:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33676 # size : 4
-	jal	x0, beq_cont.33677
-beq_else.33676:
-	fsub	fa0, fa1, fa0
-beq_cont.33677:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33678 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.33679
-beq_else.33678:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.33679:
-	flw	fa2, -96(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.33663:
-	flw	fa2, -60(sp)
-	fdiv	fa0, fa2, fa0
-	flw	fa2, -24(sp)
-	fmul	fa0, fa0, fa2
-	lw	a0, -20(sp) # Restore icount.3293
-	addi	a0, a0, 1
-	fmul	fa2, fa0, fa0
-	luil	a1, l.28843
-	srli	a1, a1, 1
-	addil	a1, a1, l.28843
-	flw	fa3, 0(a1)
-	fadd	fa2, fa2, fa3
-	fsqrt	fa2, fa2
-	luil	a1, l.26867
-	srli	a1, a1, 1
-	addil	a1, a1, l.26867
-	flw	fa3, 0(a1)
-	fdiv	fa3, fa3, fa2
-	fsgnjn	fs11, fa3, fa3
-	flt	a1, fs11, fa3
-	bne	a1, x0, beq_else.33680 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa4, 0(a1)
-	fmul	fa4, fa4, fa3
-	jal	x0, beq_cont.33681
-beq_else.33680:
-	fsgnj	fa4, fa3, fa3
-beq_cont.33681:
-	luil	a1, l.28411
-	srli	a1, a1, 1
-	addil	a1, a1, l.28411
-	flw	fa5, 0(a1)
 	fsub	fa5, fa5, fa4
 	fsgnjn	fs11, fa5, fa5
-	flt	a1, fs11, fa5
-	bne	a1, x0, beq_else.33682 # size : 728
-	luil	a1, l.28425
-	srli	a1, a1, 1
-	addil	a1, a1, l.28425
-	flw	fa5, 0(a1)
+	flt	a3, fs11, fa5
+	bne	a3, x0, beq_else.34114 # size : 728
+	luil	a3, l.28831
+	srli	a3, a3, 1
+	addil	a3, a3, l.28831
+	flw	fa5, 0(a3)
 	fsub	fa5, fa5, fa4
 	fsgnjn	fs11, fa5, fa5
-	flt	a1, fs11, fa5
-	bne	a1, x0, beq_else.33684 # size : 316
-	luil	a1, l.26931
-	srli	a1, a1, 1
-	addil	a1, a1, l.26931
-	flw	fa5, 0(a1)
-	luil	a1, l.26867
-	srli	a1, a1, 1
-	addil	a1, a1, l.26867
-	flw	fa6, 0(a1)
+	flt	a3, fs11, fa5
+	bne	a3, x0, beq_else.34116 # size : 316
+	luil	a3, l.27285
+	srli	a3, a3, 1
+	addil	a3, a3, l.27285
+	flw	fa5, 0(a3)
+	luil	a3, l.27213
+	srli	a3, a3, 1
+	addil	a3, a3, l.27213
+	flw	fa6, 0(a3)
 	fdiv	fa4, fa6, fa4
-	luil	a1, l.28413
-	srli	a1, a1, 1
-	addil	a1, a1, l.28413
-	flw	fa6, 0(a1)
-	luil	a1, l.28415
-	srli	a1, a1, 1
-	addil	a1, a1, l.28415
-	flw	fa7, 0(a1)
-	luil	a1, l.28417
-	srli	a1, a1, 1
-	addil	a1, a1, l.28417
-	flw	ft0, 0(a1)
-	luil	a1, l.28419
-	srli	a1, a1, 1
-	addil	a1, a1, l.28419
-	flw	ft1, 0(a1)
-	luil	a1, l.28421
-	srli	a1, a1, 1
-	addil	a1, a1, l.28421
-	flw	ft2, 0(a1)
-	luil	a1, l.28423
-	srli	a1, a1, 1
-	addil	a1, a1, l.28423
-	flw	ft3, 0(a1)
+	luil	a3, l.28819
+	srli	a3, a3, 1
+	addil	a3, a3, l.28819
+	flw	fa6, 0(a3)
+	luil	a3, l.28821
+	srli	a3, a3, 1
+	addil	a3, a3, l.28821
+	flw	fa7, 0(a3)
+	luil	a3, l.28823
+	srli	a3, a3, 1
+	addil	a3, a3, l.28823
+	flw	ft0, 0(a3)
+	luil	a3, l.28825
+	srli	a3, a3, 1
+	addil	a3, a3, l.28825
+	flw	ft1, 0(a3)
+	luil	a3, l.28827
+	srli	a3, a3, 1
+	addil	a3, a3, l.28827
+	flw	ft2, 0(a3)
+	luil	a3, l.28829
+	srli	a3, a3, 1
+	addil	a3, a3, l.28829
+	flw	ft3, 0(a3)
 	fmul	ft4, fa4, fa4
 	fmul	ft3, ft3, ft4
 	fsub	ft2, ft3, ft2
@@ -16765,47 +15978,47 @@ beq_cont.33681:
 	fmul	fa6, fa6, ft4
 	fadd	fa4, fa6, fa4
 	fsub	fa4, fa5, fa4
-	jal	x0, beq_cont.33685
-beq_else.33684:
-	luil	a1, l.28427
-	srli	a1, a1, 1
-	addil	a1, a1, l.28427
-	flw	fa5, 0(a1)
-	luil	a1, l.26867
-	srli	a1, a1, 1
-	addil	a1, a1, l.26867
-	flw	fa6, 0(a1)
+	jal	x0, beq_cont.34117
+beq_else.34116:
+	luil	a3, l.28833
+	srli	a3, a3, 1
+	addil	a3, a3, l.28833
+	flw	fa5, 0(a3)
+	luil	a3, l.27213
+	srli	a3, a3, 1
+	addil	a3, a3, l.27213
+	flw	fa6, 0(a3)
 	fsub	fa6, fa4, fa6
-	luil	a1, l.26867
-	srli	a1, a1, 1
-	addil	a1, a1, l.26867
-	flw	fa7, 0(a1)
+	luil	a3, l.27213
+	srli	a3, a3, 1
+	addil	a3, a3, l.27213
+	flw	fa7, 0(a3)
 	fadd	fa4, fa4, fa7
 	fdiv	fa4, fa6, fa4
-	luil	a1, l.28413
-	srli	a1, a1, 1
-	addil	a1, a1, l.28413
-	flw	fa6, 0(a1)
-	luil	a1, l.28415
-	srli	a1, a1, 1
-	addil	a1, a1, l.28415
-	flw	fa7, 0(a1)
-	luil	a1, l.28417
-	srli	a1, a1, 1
-	addil	a1, a1, l.28417
-	flw	ft0, 0(a1)
-	luil	a1, l.28419
-	srli	a1, a1, 1
-	addil	a1, a1, l.28419
-	flw	ft1, 0(a1)
-	luil	a1, l.28421
-	srli	a1, a1, 1
-	addil	a1, a1, l.28421
-	flw	ft2, 0(a1)
-	luil	a1, l.28423
-	srli	a1, a1, 1
-	addil	a1, a1, l.28423
-	flw	ft3, 0(a1)
+	luil	a3, l.28819
+	srli	a3, a3, 1
+	addil	a3, a3, l.28819
+	flw	fa6, 0(a3)
+	luil	a3, l.28821
+	srli	a3, a3, 1
+	addil	a3, a3, l.28821
+	flw	fa7, 0(a3)
+	luil	a3, l.28823
+	srli	a3, a3, 1
+	addil	a3, a3, l.28823
+	flw	ft0, 0(a3)
+	luil	a3, l.28825
+	srli	a3, a3, 1
+	addil	a3, a3, l.28825
+	flw	ft1, 0(a3)
+	luil	a3, l.28827
+	srli	a3, a3, 1
+	addil	a3, a3, l.28827
+	flw	ft2, 0(a3)
+	luil	a3, l.28829
+	srli	a3, a3, 1
+	addil	a3, a3, l.28829
+	flw	ft3, 0(a3)
 	fmul	ft4, fa4, fa4
 	fmul	ft3, ft3, ft4
 	fsub	ft2, ft3, ft2
@@ -16821,33 +16034,33 @@ beq_else.33684:
 	fmul	fa6, fa6, ft4
 	fadd	fa4, fa6, fa4
 	fadd	fa4, fa5, fa4
-beq_cont.33685:
-	jal	x0, beq_cont.33683
-beq_else.33682:
-	luil	a1, l.28413
-	srli	a1, a1, 1
-	addil	a1, a1, l.28413
-	flw	fa5, 0(a1)
-	luil	a1, l.28415
-	srli	a1, a1, 1
-	addil	a1, a1, l.28415
-	flw	fa6, 0(a1)
-	luil	a1, l.28417
-	srli	a1, a1, 1
-	addil	a1, a1, l.28417
-	flw	fa7, 0(a1)
-	luil	a1, l.28419
-	srli	a1, a1, 1
-	addil	a1, a1, l.28419
-	flw	ft0, 0(a1)
-	luil	a1, l.28421
-	srli	a1, a1, 1
-	addil	a1, a1, l.28421
-	flw	ft1, 0(a1)
-	luil	a1, l.28423
-	srli	a1, a1, 1
-	addil	a1, a1, l.28423
-	flw	ft2, 0(a1)
+beq_cont.34117:
+	jal	x0, beq_cont.34115
+beq_else.34114:
+	luil	a3, l.28819
+	srli	a3, a3, 1
+	addil	a3, a3, l.28819
+	flw	fa5, 0(a3)
+	luil	a3, l.28821
+	srli	a3, a3, 1
+	addil	a3, a3, l.28821
+	flw	fa6, 0(a3)
+	luil	a3, l.28823
+	srli	a3, a3, 1
+	addil	a3, a3, l.28823
+	flw	fa7, 0(a3)
+	luil	a3, l.28825
+	srli	a3, a3, 1
+	addil	a3, a3, l.28825
+	flw	ft0, 0(a3)
+	luil	a3, l.28827
+	srli	a3, a3, 1
+	addil	a3, a3, l.28827
+	flw	ft1, 0(a3)
+	luil	a3, l.28829
+	srli	a3, a3, 1
+	addil	a3, a3, l.28829
+	flw	ft2, 0(a3)
 	fmul	ft3, fa4, fa4
 	fmul	ft2, ft2, ft3
 	fsub	ft1, ft2, ft1
@@ -16862,173 +16075,1172 @@ beq_else.33682:
 	fmul	fa5, fa5, fa4
 	fmul	fa5, fa5, ft3
 	fadd	fa4, fa5, fa4
-beq_cont.33683:
-	fsgnjn	fs11, fa3, fa3
-	flt	a1, fs11, fa3
-	bne	a1, x0, beq_else.33686 # size : 4
-	addi	a1, x0, -1
-	jal	x0, beq_cont.33687
-beq_else.33686:
+beq_cont.34115:
+	fsgnjn	fs11, fa1, fa1
+	flt	a3, fs11, fa1
+	bne	a3, x0, beq_else.34118 # size : 4
+	addi	a3, x0, -1
+	jal	x0, beq_cont.34119
+beq_else.34118:
+	addi	a3, x0, 1
+beq_cont.34119:
+	fsgnjn	fs11, fa1, fa1
+	flt	a4, fs11, fa1
+	bne	a4, x0, beq_else.34120 # size : 28
+	luil	a4, l.27215
+	srli	a4, a4, 1
+	addil	a4, a4, l.27215
+	flw	fa5, 0(a4)
+	fmul	fa1, fa5, fa1
+	jal	x0, beq_cont.34121
+beq_else.34120:
+beq_cont.34121:
+	luil	a4, l.28817
+	srli	a4, a4, 1
+	addil	a4, a4, l.28817
+	flw	fa5, 0(a4)
+	fsub	fa5, fa5, fa1
+	fsgnjn	fs11, fa5, fa5
+	flt	a4, fs11, fa5
+	bne	a4, x0, beq_else.34122 # size : 728
+	luil	a4, l.28831
+	srli	a4, a4, 1
+	addil	a4, a4, l.28831
+	flw	fa5, 0(a4)
+	fsub	fa5, fa5, fa1
+	fsgnjn	fs11, fa5, fa5
+	flt	a4, fs11, fa5
+	bne	a4, x0, beq_else.34124 # size : 316
+	luil	a4, l.27285
+	srli	a4, a4, 1
+	addil	a4, a4, l.27285
+	flw	fa5, 0(a4)
+	luil	a4, l.27213
+	srli	a4, a4, 1
+	addil	a4, a4, l.27213
+	flw	fa6, 0(a4)
+	fdiv	fa1, fa6, fa1
+	luil	a4, l.28819
+	srli	a4, a4, 1
+	addil	a4, a4, l.28819
+	flw	fa6, 0(a4)
+	luil	a4, l.28821
+	srli	a4, a4, 1
+	addil	a4, a4, l.28821
+	flw	fa7, 0(a4)
+	luil	a4, l.28823
+	srli	a4, a4, 1
+	addil	a4, a4, l.28823
+	flw	ft0, 0(a4)
+	luil	a4, l.28825
+	srli	a4, a4, 1
+	addil	a4, a4, l.28825
+	flw	ft1, 0(a4)
+	luil	a4, l.28827
+	srli	a4, a4, 1
+	addil	a4, a4, l.28827
+	flw	ft2, 0(a4)
+	luil	a4, l.28829
+	srli	a4, a4, 1
+	addil	a4, a4, l.28829
+	flw	ft3, 0(a4)
+	fmul	ft4, fa1, fa1
+	fmul	ft3, ft3, ft4
+	fsub	ft2, ft3, ft2
+	fmul	ft2, ft2, ft4
+	fadd	ft1, ft2, ft1
+	fmul	ft1, ft1, ft4
+	fsub	ft0, ft1, ft0
+	fmul	ft0, ft0, ft4
+	fadd	fa7, ft0, fa7
+	fmul	fa7, fa7, ft4
+	fsub	fa6, fa7, fa6
+	fmul	fa6, fa6, fa1
+	fmul	fa6, fa6, ft4
+	fadd	fa1, fa6, fa1
+	fsub	fa1, fa5, fa1
+	jal	x0, beq_cont.34125
+beq_else.34124:
+	luil	a4, l.28833
+	srli	a4, a4, 1
+	addil	a4, a4, l.28833
+	flw	fa5, 0(a4)
+	luil	a4, l.27213
+	srli	a4, a4, 1
+	addil	a4, a4, l.27213
+	flw	fa6, 0(a4)
+	fsub	fa6, fa1, fa6
+	luil	a4, l.27213
+	srli	a4, a4, 1
+	addil	a4, a4, l.27213
+	flw	fa7, 0(a4)
+	fadd	fa1, fa1, fa7
+	fdiv	fa1, fa6, fa1
+	luil	a4, l.28819
+	srli	a4, a4, 1
+	addil	a4, a4, l.28819
+	flw	fa6, 0(a4)
+	luil	a4, l.28821
+	srli	a4, a4, 1
+	addil	a4, a4, l.28821
+	flw	fa7, 0(a4)
+	luil	a4, l.28823
+	srli	a4, a4, 1
+	addil	a4, a4, l.28823
+	flw	ft0, 0(a4)
+	luil	a4, l.28825
+	srli	a4, a4, 1
+	addil	a4, a4, l.28825
+	flw	ft1, 0(a4)
+	luil	a4, l.28827
+	srli	a4, a4, 1
+	addil	a4, a4, l.28827
+	flw	ft2, 0(a4)
+	luil	a4, l.28829
+	srli	a4, a4, 1
+	addil	a4, a4, l.28829
+	flw	ft3, 0(a4)
+	fmul	ft4, fa1, fa1
+	fmul	ft3, ft3, ft4
+	fsub	ft2, ft3, ft2
+	fmul	ft2, ft2, ft4
+	fadd	ft1, ft2, ft1
+	fmul	ft1, ft1, ft4
+	fsub	ft0, ft1, ft0
+	fmul	ft0, ft0, ft4
+	fadd	fa7, ft0, fa7
+	fmul	fa7, fa7, ft4
+	fsub	fa6, fa7, fa6
+	fmul	fa6, fa6, fa1
+	fmul	fa6, fa6, ft4
+	fadd	fa1, fa6, fa1
+	fadd	fa1, fa5, fa1
+beq_cont.34125:
+	jal	x0, beq_cont.34123
+beq_else.34122:
+	luil	a4, l.28819
+	srli	a4, a4, 1
+	addil	a4, a4, l.28819
+	flw	fa5, 0(a4)
+	luil	a4, l.28821
+	srli	a4, a4, 1
+	addil	a4, a4, l.28821
+	flw	fa6, 0(a4)
+	luil	a4, l.28823
+	srli	a4, a4, 1
+	addil	a4, a4, l.28823
+	flw	fa7, 0(a4)
+	luil	a4, l.28825
+	srli	a4, a4, 1
+	addil	a4, a4, l.28825
+	flw	ft0, 0(a4)
+	luil	a4, l.28827
+	srli	a4, a4, 1
+	addil	a4, a4, l.28827
+	flw	ft1, 0(a4)
+	luil	a4, l.28829
+	srli	a4, a4, 1
+	addil	a4, a4, l.28829
+	flw	ft2, 0(a4)
+	fmul	ft3, fa1, fa1
+	fmul	ft2, ft2, ft3
+	fsub	ft1, ft2, ft1
+	fmul	ft1, ft1, ft3
+	fadd	ft0, ft1, ft0
+	fmul	ft0, ft0, ft3
+	fsub	fa7, ft0, fa7
+	fmul	fa7, fa7, ft3
+	fadd	fa6, fa7, fa6
+	fmul	fa6, fa6, ft3
+	fsub	fa5, fa6, fa5
+	fmul	fa5, fa5, fa1
+	fmul	fa5, fa5, ft3
+	fadd	fa1, fa5, fa1
+beq_cont.34123:
+	fsgnjn	fs11, fa1, fa1
+	flt	a4, fs11, fa1
+	bne	a4, x0, beq_else.34126 # size : 4
+	addi	a4, x0, -1
+	jal	x0, beq_cont.34127
+beq_else.34126:
+	addi	a4, x0, 1
+beq_cont.34127:
+	bne	a3, a4, beq_else.34128 # size : 4
+	fsgnj	fa1, fa4, fa4
+	jal	x0, beq_cont.34129
+beq_else.34128:
+	luil	a3, l.27215
+	srli	a3, a3, 1
+	addil	a3, a3, l.27215
+	flw	fa1, 0(a3)
+	fmul	fa1, fa1, fa4
+beq_cont.34129:
+	fmul	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a3, fs11, fa1
+	bne	a3, x0, beq_else.34130 # size : 4
+	addi	a3, x0, 0
+	jal	x0, beq_cont.34131
+beq_else.34130:
+	addi	a3, x0, 1
+beq_cont.34131:
+	addi	t6, x0, 1
+	bne	a3, t6, beq_else.34132 # size : 4
+	fsgnj	fa4, fa1, fa1
+	jal	x0, beq_cont.34133
+beq_else.34132:
+	luil	a3, l.27215
+	srli	a3, a3, 1
+	addil	a3, a3, l.27215
+	flw	fa4, 0(a3)
+	fmul	fa4, fa4, fa1
+beq_cont.34133:
+	luil	a3, l.27150
+	srli	a3, a3, 1
+	addil	a3, a3, l.27150
+	flw	fa5, 0(a3)
+	fsw	fa2, -0(sp)
+	sw	a2, -4(sp) # Save index.3303
+	sw	a1, -8(sp) # Save group_id.3302
+	fsw	fa3, -12(sp)
+	sw	a0, -16(sp) # Save icount.3297
+	fsw	fa0, -20(sp)
+	fsw	fa1, -24(sp)
+	fsw	fa4, -28(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -36(sp)
+	addi	sp, sp, -40
+	jal	ra, while1.2800
+	addi	sp, sp, 40
+	lw	ra, -36(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -28(sp)
+	sw	ra, -36(sp)
+	addi	sp, sp, -40
+	jal	ra, while2.2805
+	addi	sp, sp, 40
+	lw	ra, -36(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34134 # size : 4
+	jal	x0, beq_cont.34135
+beq_else.34134:
+	fsub	fa0, fa0, fa1
+beq_cont.34135:
+	flw	fa1, -24(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34136 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34137
+beq_else.34136:
+	addi	a0, x0, 1
+beq_cont.34137:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34138 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34139
+beq_else.34138:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.34139:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -32(sp)
+	fsw	fa2, -36(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -44(sp)
+	addi	sp, sp, -48
+	jal	ra, while1.2800
+	addi	sp, sp, 48
+	lw	ra, -44(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -36(sp)
+	sw	ra, -44(sp)
+	addi	sp, sp, -48
+	jal	ra, while2.2805
+	addi	sp, sp, 48
+	lw	ra, -44(sp)
+	flw	fa1, -24(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34140 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34141
+beq_else.34140:
+	addi	a0, x0, 1
+beq_cont.34141:
+	flw	fa2, -32(sp)
+	feq	t6, fa2, fa0
+	beq	t6, x0, bne_else.34142 # size : 4
+	jal	x0, bne_cont.34143
+bne_else.34142:
 	addi	a1, x0, 1
-beq_cont.33687:
+	sub	a0, a1, a0
+bne_cont.34143:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34144 # size : 804
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34146 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34147
+beq_else.34146:
+	addi	a0, x0, 1
+beq_cont.34147:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34148 # size : 4
+	fsgnj	fa0, fa1, fa1
+	jal	x0, beq_cont.34149
+beq_else.34148:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fmul	fa0, fa0, fa1
+beq_cont.34149:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa2, 0(a0)
+	fsw	fa0, -40(sp)
+	fsgnj	fa1, fa2, fa2
+	sw	ra, -48(sp)
+	addi	sp, sp, -52
+	jal	ra, while1.2800
+	addi	sp, sp, 52
+	lw	ra, -48(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -40(sp)
+	sw	ra, -48(sp)
+	addi	sp, sp, -52
+	jal	ra, while2.2805
+	addi	sp, sp, 52
+	lw	ra, -48(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34150 # size : 4
+	jal	x0, beq_cont.34151
+beq_else.34150:
+	fsub	fa0, fa0, fa1
+beq_cont.34151:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34152 # size : 4
+	jal	x0, beq_cont.34153
+beq_else.34152:
+	fsub	fa0, fa1, fa0
+beq_cont.34153:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34154 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.34155
+beq_else.34154:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34155:
+	jal	x0, beq_cont.34145
+beq_else.34144:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34156 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34157
+beq_else.34156:
+	addi	a0, x0, 1
+beq_cont.34157:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34158 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34159
+beq_else.34158:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.34159:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -44(sp)
+	fsw	fa2, -48(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -56(sp)
+	addi	sp, sp, -60
+	jal	ra, while1.2800
+	addi	sp, sp, 60
+	lw	ra, -56(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -48(sp)
+	sw	ra, -56(sp)
+	addi	sp, sp, -60
+	jal	ra, while2.2805
+	addi	sp, sp, 60
+	lw	ra, -56(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34160 # size : 4
+	jal	x0, beq_cont.34161
+beq_else.34160:
+	fsub	fa0, fa0, fa1
+beq_cont.34161:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34162 # size : 4
+	jal	x0, beq_cont.34163
+beq_else.34162:
+	fsub	fa0, fa1, fa0
+beq_cont.34163:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34164 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.34165
+beq_else.34164:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34165:
+	flw	fa1, -44(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34145:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -24(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34166 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34167
+beq_else.34166:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34167:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -52(sp)
+	fsw	fa1, -56(sp)
+	fsw	fa3, -60(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -68(sp)
+	addi	sp, sp, -72
+	jal	ra, while1.2800
+	addi	sp, sp, 72
+	lw	ra, -68(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -60(sp)
+	sw	ra, -68(sp)
+	addi	sp, sp, -72
+	jal	ra, while2.2805
+	addi	sp, sp, 72
+	lw	ra, -68(sp)
+	flw	fa1, -56(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34168 # size : 4
+	jal	x0, beq_cont.34169
+beq_else.34168:
+	fsub	fa0, fa0, fa1
+beq_cont.34169:
+	flw	fa1, -24(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34170 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+	jal	x0, beq_cont.34171
+beq_else.34170:
+	fsgnj	fa2, fa1, fa1
+beq_cont.34171:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -64(sp)
+	fsw	fa2, -68(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -76(sp)
+	addi	sp, sp, -80
+	jal	ra, while1.2800
+	addi	sp, sp, 80
+	lw	ra, -76(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -68(sp)
+	sw	ra, -76(sp)
+	addi	sp, sp, -80
+	jal	ra, while2.2805
+	addi	sp, sp, 80
+	lw	ra, -76(sp)
+	flw	fa1, -64(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34172 # size : 4
+	addi	a0, x0, 1
+	jal	x0, bne_cont.34173
+bne_else.34172:
+	addi	a0, x0, 0
+bne_cont.34173:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -24(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.34174 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34175
+beq_else.34174:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34175:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	sw	a0, -72(sp) # Save flag00.6568.22426
+	fsw	fa0, -76(sp)
+	fsw	fa1, -80(sp)
+	fsw	fa3, -84(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -92(sp)
+	addi	sp, sp, -96
+	jal	ra, while1.2800
+	addi	sp, sp, 96
+	lw	ra, -92(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -84(sp)
+	sw	ra, -92(sp)
+	addi	sp, sp, -96
+	jal	ra, while2.2805
+	addi	sp, sp, 96
+	lw	ra, -92(sp)
+	flw	fa1, -80(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34176 # size : 4
+	jal	x0, beq_cont.34177
+beq_else.34176:
+	fsub	fa0, fa0, fa1
+beq_cont.34177:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -76(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34178 # size : 4
+	jal	x0, beq_cont.34179
+beq_else.34178:
+	fsub	fa0, fa2, fa0
+beq_cont.34179:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -24(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34180 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34181
+beq_else.34180:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34181:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -88(sp)
+	fsw	fa1, -92(sp)
+	fsw	fa3, -96(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -104(sp)
+	addi	sp, sp, -108
+	jal	ra, while1.2800
+	addi	sp, sp, 108
+	lw	ra, -104(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -96(sp)
+	sw	ra, -104(sp)
+	addi	sp, sp, -108
+	jal	ra, while2.2805
+	addi	sp, sp, 108
+	lw	ra, -104(sp)
+	flw	fa1, -92(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34182 # size : 4
+	jal	x0, beq_cont.34183
+beq_else.34182:
+	fsub	fa0, fa0, fa1
+beq_cont.34183:
+	flw	fa1, -88(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34184 # size : 12
+	lw	a0, -72(sp) # Restore flag00.6568.22426
+	jal	x0, bne_cont.34185
+bne_else.34184:
+	addi	a0, x0, 1
+	lw	a1, -72(sp) # Restore flag00.6568.22426
+	sub	a0, a0, a1
+bne_cont.34185:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34186 # size : 828
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -24(sp)
 	fsgnjn	fs11, fa3, fa3
-	flt	a2, fs11, fa3
-	bne	a2, x0, beq_else.33688 # size : 28
-	luil	a2, l.26869
-	srli	a2, a2, 1
-	addil	a2, a2, l.26869
-	flw	fa5, 0(a2)
-	fmul	fa3, fa5, fa3
-	jal	x0, beq_cont.33689
-beq_else.33688:
-beq_cont.33689:
-	luil	a2, l.28411
-	srli	a2, a2, 1
-	addil	a2, a2, l.28411
-	flw	fa5, 0(a2)
-	fsub	fa5, fa5, fa3
-	fsgnjn	fs11, fa5, fa5
-	flt	a2, fs11, fa5
-	bne	a2, x0, beq_else.33690 # size : 728
-	luil	a2, l.28425
-	srli	a2, a2, 1
-	addil	a2, a2, l.28425
-	flw	fa5, 0(a2)
-	fsub	fa5, fa5, fa3
-	fsgnjn	fs11, fa5, fa5
-	flt	a2, fs11, fa5
-	bne	a2, x0, beq_else.33692 # size : 316
-	luil	a2, l.26931
-	srli	a2, a2, 1
-	addil	a2, a2, l.26931
-	flw	fa5, 0(a2)
-	luil	a2, l.26867
-	srli	a2, a2, 1
-	addil	a2, a2, l.26867
-	flw	fa6, 0(a2)
-	fdiv	fa3, fa6, fa3
-	luil	a2, l.28413
-	srli	a2, a2, 1
-	addil	a2, a2, l.28413
-	flw	fa6, 0(a2)
-	luil	a2, l.28415
-	srli	a2, a2, 1
-	addil	a2, a2, l.28415
-	flw	fa7, 0(a2)
-	luil	a2, l.28417
-	srli	a2, a2, 1
-	addil	a2, a2, l.28417
-	flw	ft0, 0(a2)
-	luil	a2, l.28419
-	srli	a2, a2, 1
-	addil	a2, a2, l.28419
-	flw	ft1, 0(a2)
-	luil	a2, l.28421
-	srli	a2, a2, 1
-	addil	a2, a2, l.28421
-	flw	ft2, 0(a2)
-	luil	a2, l.28423
-	srli	a2, a2, 1
-	addil	a2, a2, l.28423
-	flw	ft3, 0(a2)
-	fmul	ft4, fa3, fa3
-	fmul	ft3, ft3, ft4
-	fsub	ft2, ft3, ft2
-	fmul	ft2, ft2, ft4
-	fadd	ft1, ft2, ft1
-	fmul	ft1, ft1, ft4
-	fsub	ft0, ft1, ft0
-	fmul	ft0, ft0, ft4
-	fadd	fa7, ft0, fa7
-	fmul	fa7, fa7, ft4
-	fsub	fa6, fa7, fa6
-	fmul	fa6, fa6, fa3
-	fmul	fa6, fa6, ft4
-	fadd	fa3, fa6, fa3
-	fsub	fa3, fa5, fa3
-	jal	x0, beq_cont.33693
-beq_else.33692:
-	luil	a2, l.28427
-	srli	a2, a2, 1
-	addil	a2, a2, l.28427
-	flw	fa5, 0(a2)
-	luil	a2, l.26867
-	srli	a2, a2, 1
-	addil	a2, a2, l.26867
-	flw	fa6, 0(a2)
-	fsub	fa6, fa3, fa6
-	luil	a2, l.26867
-	srli	a2, a2, 1
-	addil	a2, a2, l.26867
-	flw	fa7, 0(a2)
-	fadd	fa3, fa3, fa7
-	fdiv	fa3, fa6, fa3
-	luil	a2, l.28413
-	srli	a2, a2, 1
-	addil	a2, a2, l.28413
-	flw	fa6, 0(a2)
-	luil	a2, l.28415
-	srli	a2, a2, 1
-	addil	a2, a2, l.28415
-	flw	fa7, 0(a2)
-	luil	a2, l.28417
-	srli	a2, a2, 1
-	addil	a2, a2, l.28417
-	flw	ft0, 0(a2)
-	luil	a2, l.28419
-	srli	a2, a2, 1
-	addil	a2, a2, l.28419
-	flw	ft1, 0(a2)
-	luil	a2, l.28421
-	srli	a2, a2, 1
-	addil	a2, a2, l.28421
-	flw	ft2, 0(a2)
-	luil	a2, l.28423
-	srli	a2, a2, 1
-	addil	a2, a2, l.28423
-	flw	ft3, 0(a2)
-	fmul	ft4, fa3, fa3
-	fmul	ft3, ft3, ft4
-	fsub	ft2, ft3, ft2
-	fmul	ft2, ft2, ft4
-	fadd	ft1, ft2, ft1
-	fmul	ft1, ft1, ft4
-	fsub	ft0, ft1, ft0
-	fmul	ft0, ft0, ft4
-	fadd	fa7, ft0, fa7
-	fmul	fa7, fa7, ft4
-	fsub	fa6, fa7, fa6
-	fmul	fa6, fa6, fa3
-	fmul	fa6, fa6, ft4
-	fadd	fa3, fa6, fa3
-	fadd	fa3, fa5, fa3
-beq_cont.33693:
-	jal	x0, beq_cont.33691
-beq_else.33690:
-	luil	a2, l.28413
-	srli	a2, a2, 1
-	addil	a2, a2, l.28413
-	flw	fa5, 0(a2)
-	luil	a2, l.28415
-	srli	a2, a2, 1
-	addil	a2, a2, l.28415
-	flw	fa6, 0(a2)
-	luil	a2, l.28417
-	srli	a2, a2, 1
-	addil	a2, a2, l.28417
-	flw	fa7, 0(a2)
-	luil	a2, l.28419
-	srli	a2, a2, 1
-	addil	a2, a2, l.28419
-	flw	ft0, 0(a2)
-	luil	a2, l.28421
-	srli	a2, a2, 1
-	addil	a2, a2, l.28421
-	flw	ft1, 0(a2)
-	luil	a2, l.28423
-	srli	a2, a2, 1
-	addil	a2, a2, l.28423
-	flw	ft2, 0(a2)
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.34188 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa4, 0(a0)
+	fmul	fa3, fa4, fa3
+	jal	x0, beq_cont.34189
+beq_else.34188:
+beq_cont.34189:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -100(sp)
+	fsw	fa1, -104(sp)
+	fsw	fa2, -108(sp)
+	fsw	fa3, -112(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -120(sp)
+	addi	sp, sp, -124
+	jal	ra, while1.2800
+	addi	sp, sp, 124
+	lw	ra, -120(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -112(sp)
+	sw	ra, -120(sp)
+	addi	sp, sp, -124
+	jal	ra, while2.2805
+	addi	sp, sp, 124
+	lw	ra, -120(sp)
+	flw	fa1, -108(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34190 # size : 4
+	jal	x0, beq_cont.34191
+beq_else.34190:
+	fsub	fa0, fa0, fa1
+beq_cont.34191:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -104(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34192 # size : 4
+	jal	x0, beq_cont.34193
+beq_else.34192:
+	fsub	fa0, fa2, fa0
+beq_cont.34193:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -100(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34194 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.34195
+beq_else.34194:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.34195:
+	jal	x0, beq_cont.34187
+beq_else.34186:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -24(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.34196 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa5, 0(a0)
+	fmul	fa4, fa5, fa4
+	jal	x0, beq_cont.34197
+beq_else.34196:
+beq_cont.34197:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -116(sp)
+	fsw	fa1, -120(sp)
+	fsw	fa2, -124(sp)
+	fsw	fa3, -128(sp)
+	fsw	fa4, -132(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -140(sp)
+	addi	sp, sp, -144
+	jal	ra, while1.2800
+	addi	sp, sp, 144
+	lw	ra, -140(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -132(sp)
+	sw	ra, -140(sp)
+	addi	sp, sp, -144
+	jal	ra, while2.2805
+	addi	sp, sp, 144
+	lw	ra, -140(sp)
+	flw	fa1, -128(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34198 # size : 4
+	jal	x0, beq_cont.34199
+beq_else.34198:
+	fsub	fa0, fa0, fa1
+beq_cont.34199:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -124(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34200 # size : 4
+	jal	x0, beq_cont.34201
+beq_else.34200:
+	fsub	fa0, fa2, fa0
+beq_cont.34201:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -120(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34202 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.34203
+beq_else.34202:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.34203:
+	flw	fa1, -116(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34187:
+	flw	fa1, -52(sp)
+	fdiv	fa0, fa1, fa0
+	flw	fa1, -20(sp)
+	fmul	fa0, fa0, fa1
+	lw	a0, -16(sp) # Restore icount.3297
+	addi	a0, a0, 1
+	fmul	fa1, fa0, fa0
+	luil	a1, l.29266
+	srli	a1, a1, 1
+	addil	a1, a1, l.29266
+	flw	fa2, 0(a1)
+	fadd	fa1, fa1, fa2
+	fsqrt	fa1, fa1
+	luil	a1, l.27213
+	srli	a1, a1, 1
+	addil	a1, a1, l.27213
+	flw	fa2, 0(a1)
+	fdiv	fa2, fa2, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.34204 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34205
+beq_else.34204:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34205:
+	luil	a1, l.28817
+	srli	a1, a1, 1
+	addil	a1, a1, l.28817
+	flw	fa4, 0(a1)
+	fsub	fa4, fa4, fa3
+	fsgnjn	fs11, fa4, fa4
+	flt	a1, fs11, fa4
+	bne	a1, x0, beq_else.34206 # size : 728
+	luil	a1, l.28831
+	srli	a1, a1, 1
+	addil	a1, a1, l.28831
+	flw	fa4, 0(a1)
+	fsub	fa4, fa4, fa3
+	fsgnjn	fs11, fa4, fa4
+	flt	a1, fs11, fa4
+	bne	a1, x0, beq_else.34208 # size : 316
+	luil	a1, l.27285
+	srli	a1, a1, 1
+	addil	a1, a1, l.27285
+	flw	fa4, 0(a1)
+	luil	a1, l.27213
+	srli	a1, a1, 1
+	addil	a1, a1, l.27213
+	flw	fa5, 0(a1)
+	fdiv	fa3, fa5, fa3
+	luil	a1, l.28819
+	srli	a1, a1, 1
+	addil	a1, a1, l.28819
+	flw	fa5, 0(a1)
+	luil	a1, l.28821
+	srli	a1, a1, 1
+	addil	a1, a1, l.28821
+	flw	fa6, 0(a1)
+	luil	a1, l.28823
+	srli	a1, a1, 1
+	addil	a1, a1, l.28823
+	flw	fa7, 0(a1)
+	luil	a1, l.28825
+	srli	a1, a1, 1
+	addil	a1, a1, l.28825
+	flw	ft0, 0(a1)
+	luil	a1, l.28827
+	srli	a1, a1, 1
+	addil	a1, a1, l.28827
+	flw	ft1, 0(a1)
+	luil	a1, l.28829
+	srli	a1, a1, 1
+	addil	a1, a1, l.28829
+	flw	ft2, 0(a1)
 	fmul	ft3, fa3, fa3
 	fmul	ft2, ft2, ft3
 	fsub	ft1, ft2, ft1
@@ -17043,501 +17255,447 @@ beq_else.33690:
 	fmul	fa5, fa5, fa3
 	fmul	fa5, fa5, ft3
 	fadd	fa3, fa5, fa3
-beq_cont.33691:
-	fsgnjn	fs11, fa3, fa3
-	flt	a2, fs11, fa3
-	bne	a2, x0, beq_else.33694 # size : 4
-	addi	a2, x0, -1
-	jal	x0, beq_cont.33695
-beq_else.33694:
-	addi	a2, x0, 1
-beq_cont.33695:
-	bne	a1, a2, beq_else.33696 # size : 4
-	fsgnj	fa3, fa4, fa4
-	jal	x0, beq_cont.33697
-beq_else.33696:
-	luil	a1, l.26869
+	fsub	fa3, fa4, fa3
+	jal	x0, beq_cont.34209
+beq_else.34208:
+	luil	a1, l.28833
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa3, 0(a1)
-	fmul	fa3, fa3, fa4
-beq_cont.33697:
-	flw	fa4, -16(sp)
-	fmul	fa3, fa3, fa4
-	fsgnjn	fs11, fa3, fa3
-	flt	a1, fs11, fa3
-	bne	a1, x0, beq_else.33698 # size : 4
-	addi	a1, x0, 0
-	jal	x0, beq_cont.33699
-beq_else.33698:
-	addi	a1, x0, 1
-beq_cont.33699:
-	addi	t6, x0, 1
-	bne	a1, t6, beq_else.33700 # size : 4
-	fsgnj	fa5, fa3, fa3
-	jal	x0, beq_cont.33701
-beq_else.33700:
-	luil	a1, l.26869
+	addil	a1, a1, l.28833
+	flw	fa4, 0(a1)
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
+	addil	a1, a1, l.27213
 	flw	fa5, 0(a1)
-	fmul	fa5, fa5, fa3
-beq_cont.33701:
-	luil	a1, l.26804
+	fsub	fa5, fa3, fa5
+	luil	a1, l.27213
 	srli	a1, a1, 1
-	addil	a1, a1, l.26804
+	addil	a1, a1, l.27213
 	flw	fa6, 0(a1)
-	fsw	fa0, -104(sp)
-	sw	a0, -108(sp) # Save Ti2572.3589
-	fsw	fa2, -112(sp)
-	fsw	fa3, -116(sp)
-	fsw	fa5, -120(sp)
-	fsgnj	fa1, fa6, fa6
-	fsgnj	fa0, fa5, fa5
-	sw	ra, -128(sp)
-	addi	sp, sp, -132
-	jal	ra, while1.2799
-	addi	sp, sp, 132
-	lw	ra, -128(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -120(sp)
-	sw	ra, -128(sp)
-	addi	sp, sp, -132
-	jal	ra, while2.2805
-	addi	sp, sp, 132
-	lw	ra, -128(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33702 # size : 4
-	jal	x0, beq_cont.33703
-beq_else.33702:
-	fsub	fa0, fa0, fa1
-beq_cont.33703:
-	flw	fa2, -116(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33704 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33705
-beq_else.33704:
-	addi	a0, x0, 1
-beq_cont.33705:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33706 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.33707
-beq_else.33706:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.33707:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -124(sp)
-	fsw	fa3, -128(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -136(sp)
-	addi	sp, sp, -140
-	jal	ra, while1.2799
-	addi	sp, sp, 140
-	lw	ra, -136(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -128(sp)
-	sw	ra, -136(sp)
-	addi	sp, sp, -140
-	jal	ra, while2.2805
-	addi	sp, sp, 140
-	lw	ra, -136(sp)
-	flw	fa1, -116(sp)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33708 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33709
-beq_else.33708:
-	addi	a0, x0, 1
-beq_cont.33709:
-	flw	fa2, -124(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33710 # size : 4
-	jal	x0, bne_cont.33711
-bne_else.33710:
-	addi	a1, x0, 1
-	sub	a0, a1, a0
-bne_cont.33711:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33712 # size : 740
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33714 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33715
-beq_else.33714:
-	addi	a0, x0, 1
-beq_cont.33715:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33716 # size : 4
-	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.33717
-beq_else.33716:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fmul	fa0, fa0, fa1
-beq_cont.33717:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -132(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -140(sp)
-	addi	sp, sp, -144
-	jal	ra, while1.2799
-	addi	sp, sp, 144
-	lw	ra, -140(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -132(sp)
-	sw	ra, -140(sp)
-	addi	sp, sp, -144
-	jal	ra, while2.2805
-	addi	sp, sp, 144
-	lw	ra, -140(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33718 # size : 4
-	jal	x0, beq_cont.33719
-beq_else.33718:
-	fsub	fa0, fa0, fa1
-beq_cont.33719:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33720 # size : 4
-	jal	x0, beq_cont.33721
-beq_else.33720:
-	fsub	fa0, fa1, fa0
-beq_cont.33721:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33722 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.33723
-beq_else.33722:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
+	fadd	fa3, fa3, fa6
+	fdiv	fa3, fa5, fa3
+	luil	a1, l.28819
+	srli	a1, a1, 1
+	addil	a1, a1, l.28819
+	flw	fa5, 0(a1)
+	luil	a1, l.28821
+	srli	a1, a1, 1
+	addil	a1, a1, l.28821
+	flw	fa6, 0(a1)
+	luil	a1, l.28823
+	srli	a1, a1, 1
+	addil	a1, a1, l.28823
+	flw	fa7, 0(a1)
+	luil	a1, l.28825
+	srli	a1, a1, 1
+	addil	a1, a1, l.28825
+	flw	ft0, 0(a1)
+	luil	a1, l.28827
+	srli	a1, a1, 1
+	addil	a1, a1, l.28827
+	flw	ft1, 0(a1)
+	luil	a1, l.28829
+	srli	a1, a1, 1
+	addil	a1, a1, l.28829
+	flw	ft2, 0(a1)
+	fmul	ft3, fa3, fa3
+	fmul	ft2, ft2, ft3
+	fsub	ft1, ft2, ft1
+	fmul	ft1, ft1, ft3
+	fadd	ft0, ft1, ft0
+	fmul	ft0, ft0, ft3
+	fsub	fa7, ft0, fa7
+	fmul	fa7, fa7, ft3
+	fadd	fa6, fa7, fa6
+	fmul	fa6, fa6, ft3
+	fsub	fa5, fa6, fa5
+	fmul	fa5, fa5, fa3
+	fmul	fa5, fa5, ft3
 	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
+	fadd	fa3, fa4, fa3
+beq_cont.34209:
+	jal	x0, beq_cont.34207
+beq_else.34206:
+	luil	a1, l.28819
+	srli	a1, a1, 1
+	addil	a1, a1, l.28819
+	flw	fa4, 0(a1)
+	luil	a1, l.28821
+	srli	a1, a1, 1
+	addil	a1, a1, l.28821
+	flw	fa5, 0(a1)
+	luil	a1, l.28823
+	srli	a1, a1, 1
+	addil	a1, a1, l.28823
+	flw	fa6, 0(a1)
+	luil	a1, l.28825
+	srli	a1, a1, 1
+	addil	a1, a1, l.28825
+	flw	fa7, 0(a1)
+	luil	a1, l.28827
+	srli	a1, a1, 1
+	addil	a1, a1, l.28827
+	flw	ft0, 0(a1)
+	luil	a1, l.28829
+	srli	a1, a1, 1
+	addil	a1, a1, l.28829
+	flw	ft1, 0(a1)
+	fmul	ft2, fa3, fa3
+	fmul	ft1, ft1, ft2
+	fsub	ft0, ft1, ft0
+	fmul	ft0, ft0, ft2
+	fadd	fa7, ft0, fa7
+	fmul	fa7, fa7, ft2
+	fsub	fa6, fa7, fa6
+	fmul	fa6, fa6, ft2
+	fadd	fa5, fa6, fa5
+	fmul	fa5, fa5, ft2
+	fsub	fa4, fa5, fa4
+	fmul	fa4, fa4, fa3
+	fmul	fa4, fa4, ft2
+	fadd	fa3, fa4, fa3
+beq_cont.34207:
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.34210 # size : 4
+	addi	a1, x0, -1
+	jal	x0, beq_cont.34211
+beq_else.34210:
+	addi	a1, x0, 1
+beq_cont.34211:
+	fsgnjn	fs11, fa2, fa2
+	flt	a2, fs11, fa2
+	bne	a2, x0, beq_else.34212 # size : 28
+	luil	a2, l.27215
+	srli	a2, a2, 1
+	addil	a2, a2, l.27215
+	flw	fa4, 0(a2)
+	fmul	fa2, fa4, fa2
+	jal	x0, beq_cont.34213
+beq_else.34212:
+beq_cont.34213:
+	luil	a2, l.28817
+	srli	a2, a2, 1
+	addil	a2, a2, l.28817
+	flw	fa4, 0(a2)
+	fsub	fa4, fa4, fa2
+	fsgnjn	fs11, fa4, fa4
+	flt	a2, fs11, fa4
+	bne	a2, x0, beq_else.34214 # size : 728
+	luil	a2, l.28831
+	srli	a2, a2, 1
+	addil	a2, a2, l.28831
+	flw	fa4, 0(a2)
+	fsub	fa4, fa4, fa2
+	fsgnjn	fs11, fa4, fa4
+	flt	a2, fs11, fa4
+	bne	a2, x0, beq_else.34216 # size : 316
+	luil	a2, l.27285
+	srli	a2, a2, 1
+	addil	a2, a2, l.27285
+	flw	fa4, 0(a2)
+	luil	a2, l.27213
+	srli	a2, a2, 1
+	addil	a2, a2, l.27213
+	flw	fa5, 0(a2)
+	fdiv	fa2, fa5, fa2
+	luil	a2, l.28819
+	srli	a2, a2, 1
+	addil	a2, a2, l.28819
+	flw	fa5, 0(a2)
+	luil	a2, l.28821
+	srli	a2, a2, 1
+	addil	a2, a2, l.28821
+	flw	fa6, 0(a2)
+	luil	a2, l.28823
+	srli	a2, a2, 1
+	addil	a2, a2, l.28823
+	flw	fa7, 0(a2)
+	luil	a2, l.28825
+	srli	a2, a2, 1
+	addil	a2, a2, l.28825
+	flw	ft0, 0(a2)
+	luil	a2, l.28827
+	srli	a2, a2, 1
+	addil	a2, a2, l.28827
+	flw	ft1, 0(a2)
+	luil	a2, l.28829
+	srli	a2, a2, 1
+	addil	a2, a2, l.28829
+	flw	ft2, 0(a2)
+	fmul	ft3, fa2, fa2
+	fmul	ft2, ft2, ft3
+	fsub	ft1, ft2, ft1
+	fmul	ft1, ft1, ft3
+	fadd	ft0, ft1, ft0
+	fmul	ft0, ft0, ft3
+	fsub	fa7, ft0, fa7
+	fmul	fa7, fa7, ft3
+	fadd	fa6, fa7, fa6
+	fmul	fa6, fa6, ft3
+	fsub	fa5, fa6, fa5
+	fmul	fa5, fa5, fa2
+	fmul	fa5, fa5, ft3
+	fadd	fa2, fa5, fa2
+	fsub	fa2, fa4, fa2
+	jal	x0, beq_cont.34217
+beq_else.34216:
+	luil	a2, l.28833
+	srli	a2, a2, 1
+	addil	a2, a2, l.28833
+	flw	fa4, 0(a2)
+	luil	a2, l.27213
+	srli	a2, a2, 1
+	addil	a2, a2, l.27213
+	flw	fa5, 0(a2)
+	fsub	fa5, fa2, fa5
+	luil	a2, l.27213
+	srli	a2, a2, 1
+	addil	a2, a2, l.27213
+	flw	fa6, 0(a2)
+	fadd	fa2, fa2, fa6
+	fdiv	fa2, fa5, fa2
+	luil	a2, l.28819
+	srli	a2, a2, 1
+	addil	a2, a2, l.28819
+	flw	fa5, 0(a2)
+	luil	a2, l.28821
+	srli	a2, a2, 1
+	addil	a2, a2, l.28821
+	flw	fa6, 0(a2)
+	luil	a2, l.28823
+	srli	a2, a2, 1
+	addil	a2, a2, l.28823
+	flw	fa7, 0(a2)
+	luil	a2, l.28825
+	srli	a2, a2, 1
+	addil	a2, a2, l.28825
+	flw	ft0, 0(a2)
+	luil	a2, l.28827
+	srli	a2, a2, 1
+	addil	a2, a2, l.28827
+	flw	ft1, 0(a2)
+	luil	a2, l.28829
+	srli	a2, a2, 1
+	addil	a2, a2, l.28829
+	flw	ft2, 0(a2)
+	fmul	ft3, fa2, fa2
+	fmul	ft2, ft2, ft3
+	fsub	ft1, ft2, ft1
+	fmul	ft1, ft1, ft3
+	fadd	ft0, ft1, ft0
+	fmul	ft0, ft0, ft3
+	fsub	fa7, ft0, fa7
+	fmul	fa7, fa7, ft3
+	fadd	fa6, fa7, fa6
+	fmul	fa6, fa6, ft3
+	fsub	fa5, fa6, fa5
+	fmul	fa5, fa5, fa2
+	fmul	fa5, fa5, ft3
+	fadd	fa2, fa5, fa2
+	fadd	fa2, fa4, fa2
+beq_cont.34217:
+	jal	x0, beq_cont.34215
+beq_else.34214:
+	luil	a2, l.28819
+	srli	a2, a2, 1
+	addil	a2, a2, l.28819
+	flw	fa4, 0(a2)
+	luil	a2, l.28821
+	srli	a2, a2, 1
+	addil	a2, a2, l.28821
+	flw	fa5, 0(a2)
+	luil	a2, l.28823
+	srli	a2, a2, 1
+	addil	a2, a2, l.28823
+	flw	fa6, 0(a2)
+	luil	a2, l.28825
+	srli	a2, a2, 1
+	addil	a2, a2, l.28825
+	flw	fa7, 0(a2)
+	luil	a2, l.28827
+	srli	a2, a2, 1
+	addil	a2, a2, l.28827
+	flw	ft0, 0(a2)
+	luil	a2, l.28829
+	srli	a2, a2, 1
+	addil	a2, a2, l.28829
+	flw	ft1, 0(a2)
+	fmul	ft2, fa2, fa2
+	fmul	ft1, ft1, ft2
+	fsub	ft0, ft1, ft0
+	fmul	ft0, ft0, ft2
+	fadd	fa7, ft0, fa7
+	fmul	fa7, fa7, ft2
+	fsub	fa6, fa7, fa6
+	fmul	fa6, fa6, ft2
+	fadd	fa5, fa6, fa5
+	fmul	fa5, fa5, ft2
+	fsub	fa4, fa5, fa4
+	fmul	fa4, fa4, fa2
+	fmul	fa4, fa4, ft2
+	fadd	fa2, fa4, fa2
+beq_cont.34215:
+	fsgnjn	fs11, fa2, fa2
+	flt	a2, fs11, fa2
+	bne	a2, x0, beq_else.34218 # size : 4
+	addi	a2, x0, -1
+	jal	x0, beq_cont.34219
+beq_else.34218:
+	addi	a2, x0, 1
+beq_cont.34219:
+	bne	a1, a2, beq_else.34220 # size : 4
+	fsgnj	fa2, fa3, fa3
+	jal	x0, beq_cont.34221
+beq_else.34220:
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa2, 0(a1)
+	fmul	fa2, fa2, fa3
+beq_cont.34221:
+	flw	fa3, -12(sp)
+	fmul	fa2, fa2, fa3
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.34222 # size : 4
+	addi	a1, x0, 0
+	jal	x0, beq_cont.34223
+beq_else.34222:
+	addi	a1, x0, 1
+beq_cont.34223:
+	addi	t6, x0, 1
+	bne	a1, t6, beq_else.34224 # size : 4
+	fsgnj	fa4, fa2, fa2
+	jal	x0, beq_cont.34225
+beq_else.34224:
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa4, 0(a1)
+	fmul	fa4, fa4, fa2
+beq_cont.34225:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa5, 0(a1)
+	fsw	fa0, -136(sp)
+	sw	a0, -140(sp) # Save Ti2573.3593
+	fsw	fa1, -144(sp)
+	fsw	fa2, -148(sp)
+	fsw	fa4, -152(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -160(sp)
+	addi	sp, sp, -164
+	jal	ra, while1.2800
+	addi	sp, sp, 164
+	lw	ra, -160(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -152(sp)
+	sw	ra, -160(sp)
+	addi	sp, sp, -164
+	jal	ra, while2.2805
+	addi	sp, sp, 164
+	lw	ra, -160(sp)
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.33723:
-	jal	x0, beq_cont.33713
-beq_else.33712:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34226 # size : 4
+	jal	x0, beq_cont.34227
+beq_else.34226:
+	fsub	fa0, fa0, fa1
+beq_cont.34227:
+	flw	fa1, -148(sp)
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33724 # size : 4
+	bne	a0, x0, beq_else.34228 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.33725
-beq_else.33724:
+	jal	x0, beq_cont.34229
+beq_else.34228:
 	addi	a0, x0, 1
-beq_cont.33725:
+beq_cont.34229:
 	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33726 # size : 4
+	bne	a0, t6, beq_else.34230 # size : 4
 	fsgnj	fa2, fa1, fa1
-	jal	x0, beq_cont.33727
-beq_else.33726:
-	luil	a0, l.26869
+	jal	x0, beq_cont.34231
+beq_else.34230:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa1
-beq_cont.33727:
-	luil	a0, l.26804
+beq_cont.34231:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27150
 	flw	fa3, 0(a0)
-	fsw	fa0, -136(sp)
-	fsw	fa2, -140(sp)
+	fsw	fa0, -156(sp)
+	fsw	fa2, -160(sp)
 	fsgnj	fa1, fa3, fa3
 	fsgnj	fa0, fa2, fa2
-	sw	ra, -148(sp)
-	addi	sp, sp, -152
-	jal	ra, while1.2799
-	addi	sp, sp, 152
-	lw	ra, -148(sp)
+	sw	ra, -168(sp)
+	addi	sp, sp, -172
+	jal	ra, while1.2800
+	addi	sp, sp, 172
+	lw	ra, -168(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -140(sp)
-	sw	ra, -148(sp)
-	addi	sp, sp, -152
+	flw	fa0, -160(sp)
+	sw	ra, -168(sp)
+	addi	sp, sp, -172
 	jal	ra, while2.2805
-	addi	sp, sp, 152
-	lw	ra, -148(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33728 # size : 4
-	jal	x0, beq_cont.33729
-beq_else.33728:
-	fsub	fa0, fa0, fa1
-beq_cont.33729:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33730 # size : 4
-	jal	x0, beq_cont.33731
-beq_else.33730:
-	fsub	fa0, fa1, fa0
-beq_cont.33731:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33732 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.33733
-beq_else.33732:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.33733:
-	flw	fa2, -136(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.33713:
-	flw	fa2, -116(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33734 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33735
-beq_else.33734:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33735:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -144(sp)
-	fsw	fa3, -148(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -156(sp)
-	addi	sp, sp, -160
-	jal	ra, while1.2799
-	addi	sp, sp, 160
-	lw	ra, -156(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -148(sp)
-	sw	ra, -156(sp)
-	addi	sp, sp, -160
-	jal	ra, while2.2805
-	addi	sp, sp, 160
-	lw	ra, -156(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33736 # size : 4
-	jal	x0, beq_cont.33737
-beq_else.33736:
-	fsub	fa0, fa0, fa1
-beq_cont.33737:
-	flw	fa2, -116(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33738 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33739
-beq_else.33738:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33739:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -152(sp)
-	fsw	fa3, -156(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -164(sp)
-	addi	sp, sp, -168
-	jal	ra, while1.2799
-	addi	sp, sp, 168
-	lw	ra, -164(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -156(sp)
-	sw	ra, -164(sp)
-	addi	sp, sp, -168
-	jal	ra, while2.2805
-	addi	sp, sp, 168
-	lw	ra, -164(sp)
-	flw	fa1, -152(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.33740 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.33741
-bne_else.33740:
+	addi	sp, sp, 172
+	lw	ra, -168(sp)
+	flw	fa1, -148(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34232 # size : 4
 	addi	a0, x0, 0
-bne_cont.33741:
-	flw	fa0, -116(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33742 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33743
-beq_else.33742:
-	fsgnj	fa1, fa0, fa0
-beq_cont.33743:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -160(sp) # Save flag00.6561.21837
-	fsw	fa1, -164(sp)
+	jal	x0, beq_cont.34233
+beq_else.34232:
+	addi	a0, x0, 1
+beq_cont.34233:
+	flw	fa2, -156(sp)
+	feq	t6, fa2, fa0
+	beq	t6, x0, bne_else.34234 # size : 4
+	jal	x0, bne_cont.34235
+bne_else.34234:
+	addi	a1, x0, 1
+	sub	a0, a1, a0
+bne_cont.34235:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34236 # size : 804
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34238 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34239
+beq_else.34238:
+	addi	a0, x0, 1
+beq_cont.34239:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34240 # size : 4
 	fsgnj	fa0, fa1, fa1
+	jal	x0, beq_cont.34241
+beq_else.34240:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fmul	fa0, fa0, fa1
+beq_cont.34241:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa2, 0(a0)
+	fsw	fa0, -164(sp)
 	fsgnj	fa1, fa2, fa2
 	sw	ra, -172(sp)
 	addi	sp, sp, -176
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 176
 	lw	ra, -172(sp)
 	fsgnj	fa1, fa0, fa0
@@ -17547,52 +17705,139 @@ beq_cont.33743:
 	jal	ra, while2.2805
 	addi	sp, sp, 176
 	lw	ra, -172(sp)
-	flw	fa1, -32(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33744 # size : 4
-	jal	x0, beq_cont.33745
-beq_else.33744:
+	bne	a0, x0, beq_else.34242 # size : 4
+	jal	x0, beq_cont.34243
+beq_else.34242:
 	fsub	fa0, fa0, fa1
-beq_cont.33745:
-	luil	a0, l.26802
+beq_cont.34243:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33746 # size : 4
-	jal	x0, beq_cont.33747
-beq_else.33746:
+	bne	a0, x0, beq_else.34244 # size : 4
+	jal	x0, beq_cont.34245
+beq_else.34244:
 	fsub	fa0, fa1, fa0
-beq_cont.33747:
-	flw	fa2, -116(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33748 # size : 28
-	luil	a0, l.26869
+beq_cont.34245:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34246 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33749
-beq_else.33748:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33749:
-	luil	a0, l.26804
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.34247
+beq_else.34246:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34247:
+	jal	x0, beq_cont.34237
+beq_else.34236:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34248 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34249
+beq_else.34248:
+	addi	a0, x0, 1
+beq_cont.34249:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34250 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34251
+beq_else.34250:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.34251:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
 	fsw	fa0, -168(sp)
-	fsw	fa3, -172(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
+	fsw	fa2, -172(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
 	sw	ra, -180(sp)
 	addi	sp, sp, -184
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 184
 	lw	ra, -180(sp)
 	fsgnj	fa1, fa0, fa0
@@ -17602,172 +17847,135 @@ beq_cont.33749:
 	jal	ra, while2.2805
 	addi	sp, sp, 184
 	lw	ra, -180(sp)
-	flw	fa1, -32(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33750 # size : 4
-	jal	x0, beq_cont.33751
-beq_else.33750:
+	bne	a0, x0, beq_else.34252 # size : 4
+	jal	x0, beq_cont.34253
+beq_else.34252:
 	fsub	fa0, fa0, fa1
-beq_cont.33751:
-	flw	fa2, -168(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33752 # size : 12
-	lw	a0, -160(sp) # Restore flag00.6561.21837
-	jal	x0, bne_cont.33753
-bne_else.33752:
-	addi	a0, x0, 1
-	lw	a1, -160(sp) # Restore flag00.6561.21837
-	sub	a0, a0, a1
-bne_cont.33753:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33754 # size : 724
-	flw	fa0, -116(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.33756 # size : 28
-	luil	a0, l.26869
+beq_cont.34253:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.33757
-beq_else.33756:
-beq_cont.33757:
-	luil	a0, l.26804
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -176(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -184(sp)
-	addi	sp, sp, -188
-	jal	ra, while1.2799
-	addi	sp, sp, 188
-	lw	ra, -184(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -176(sp)
-	sw	ra, -184(sp)
-	addi	sp, sp, -188
-	jal	ra, while2.2805
-	addi	sp, sp, 188
-	lw	ra, -184(sp)
-	flw	fa1, -32(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33758 # size : 4
-	jal	x0, beq_cont.33759
-beq_else.33758:
-	fsub	fa0, fa0, fa1
-beq_cont.33759:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33760 # size : 4
-	jal	x0, beq_cont.33761
-beq_else.33760:
+	bne	a0, x0, beq_else.34254 # size : 4
+	jal	x0, beq_cont.34255
+beq_else.34254:
 	fsub	fa0, fa1, fa0
-beq_cont.33761:
-	luil	a0, l.26923
+beq_cont.34255:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33762 # size : 188
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.34256 # size : 180
+	luil	a0, l.27285
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa1, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa2, 0(a0)
-	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa3
-	fadd	fa2, fa4, fa2
-	fmul	fa2, fa2, fa3
-	fsub	fa1, fa2, fa1
-	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa1, fa1, fa2
-	fmul	fa0, fa1, fa0
-	jal	x0, beq_cont.33763
-beq_else.33762:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-beq_cont.33763:
-	jal	x0, beq_cont.33755
-beq_else.33754:
-	luil	a0, l.26869
+	jal	x0, beq_cont.34257
+beq_else.34256:
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	flw	fa2, -116(sp)
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34257:
+	flw	fa1, -168(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34237:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -148(sp)
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33764 # size : 28
-	luil	a0, l.26869
+	bne	a0, x0, beq_else.34258 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
 	flw	fa3, 0(a0)
-	fmul	fa2, fa3, fa2
-	jal	x0, beq_cont.33765
-beq_else.33764:
-beq_cont.33765:
-	luil	a0, l.26804
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34259
+beq_else.34258:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34259:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa0, -180(sp)
-	fsw	fa2, -184(sp)
-	fsgnj	fa1, fa3, fa3
-	fsgnj	fa0, fa2, fa2
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -176(sp)
+	fsw	fa1, -180(sp)
+	fsw	fa3, -184(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
 	sw	ra, -192(sp)
 	addi	sp, sp, -196
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 196
 	lw	ra, -192(sp)
 	fsgnj	fa1, fa0, fa0
@@ -17777,253 +17985,600 @@ beq_cont.33765:
 	jal	ra, while2.2805
 	addi	sp, sp, 196
 	lw	ra, -192(sp)
-	flw	fa1, -32(sp)
+	flw	fa1, -180(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33766 # size : 4
-	jal	x0, beq_cont.33767
-beq_else.33766:
+	bne	a0, x0, beq_else.34260 # size : 4
+	jal	x0, beq_cont.34261
+beq_else.34260:
 	fsub	fa0, fa0, fa1
-beq_cont.33767:
-	luil	a0, l.26802
+beq_cont.34261:
+	flw	fa1, -148(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34262 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
+	fmul	fa2, fa2, fa1
+	jal	x0, beq_cont.34263
+beq_else.34262:
+	fsgnj	fa2, fa1, fa1
+beq_cont.34263:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -188(sp)
+	fsw	fa2, -192(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -200(sp)
+	addi	sp, sp, -204
+	jal	ra, while1.2800
+	addi	sp, sp, 204
+	lw	ra, -200(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -192(sp)
+	sw	ra, -200(sp)
+	addi	sp, sp, -204
+	jal	ra, while2.2805
+	addi	sp, sp, 204
+	lw	ra, -200(sp)
+	flw	fa1, -188(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34264 # size : 4
+	addi	a0, x0, 1
+	jal	x0, bne_cont.34265
+bne_else.34264:
+	addi	a0, x0, 0
+bne_cont.34265:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -148(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.34266 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34267
+beq_else.34266:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34267:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	sw	a0, -196(sp) # Save flag00.6568.22050
+	fsw	fa0, -200(sp)
+	fsw	fa1, -204(sp)
+	fsw	fa3, -208(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -216(sp)
+	addi	sp, sp, -220
+	jal	ra, while1.2800
+	addi	sp, sp, 220
+	lw	ra, -216(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -208(sp)
+	sw	ra, -216(sp)
+	addi	sp, sp, -220
+	jal	ra, while2.2805
+	addi	sp, sp, 220
+	lw	ra, -216(sp)
+	flw	fa1, -204(sp)
+	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33768 # size : 4
-	jal	x0, beq_cont.33769
-beq_else.33768:
-	fsub	fa0, fa1, fa0
-beq_cont.33769:
-	luil	a0, l.26923
+	bne	a0, x0, beq_else.34268 # size : 4
+	jal	x0, beq_cont.34269
+beq_else.34268:
+	fsub	fa0, fa0, fa1
+beq_cont.34269:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -200(sp)
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33770 # size : 188
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.34270 # size : 4
+	jal	x0, beq_cont.34271
+beq_else.34270:
+	fsub	fa0, fa2, fa0
+beq_cont.34271:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -148(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34272 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34273
+beq_else.34272:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34273:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -212(sp)
+	fsw	fa1, -216(sp)
+	fsw	fa3, -220(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -228(sp)
+	addi	sp, sp, -232
+	jal	ra, while1.2800
+	addi	sp, sp, 232
+	lw	ra, -228(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -220(sp)
+	sw	ra, -228(sp)
+	addi	sp, sp, -232
+	jal	ra, while2.2805
+	addi	sp, sp, 232
+	lw	ra, -228(sp)
+	flw	fa1, -216(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34274 # size : 4
+	jal	x0, beq_cont.34275
+beq_else.34274:
+	fsub	fa0, fa0, fa1
+beq_cont.34275:
+	flw	fa1, -212(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34276 # size : 12
+	lw	a0, -196(sp) # Restore flag00.6568.22050
+	jal	x0, bne_cont.34277
+bne_else.34276:
+	addi	a0, x0, 1
+	lw	a1, -196(sp) # Restore flag00.6568.22050
+	sub	a0, a0, a1
+bne_cont.34277:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34278 # size : 828
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -148(sp)
+	fsgnjn	fs11, fa3, fa3
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.34280 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa4, 0(a0)
+	fmul	fa3, fa4, fa3
+	jal	x0, beq_cont.34281
+beq_else.34280:
+beq_cont.34281:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -224(sp)
+	fsw	fa1, -228(sp)
+	fsw	fa2, -232(sp)
+	fsw	fa3, -236(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -244(sp)
+	addi	sp, sp, -248
+	jal	ra, while1.2800
+	addi	sp, sp, 248
+	lw	ra, -244(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -236(sp)
+	sw	ra, -244(sp)
+	addi	sp, sp, -248
+	jal	ra, while2.2805
+	addi	sp, sp, 248
+	lw	ra, -244(sp)
+	flw	fa1, -232(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34282 # size : 4
+	jal	x0, beq_cont.34283
+beq_else.34282:
+	fsub	fa0, fa0, fa1
+beq_cont.34283:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -228(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34284 # size : 4
+	jal	x0, beq_cont.34285
+beq_else.34284:
+	fsub	fa0, fa2, fa0
+beq_cont.34285:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -224(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34286 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
-	luil	a0, l.26933
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27287
 	flw	fa1, 0(a0)
-	luil	a0, l.26935
+	luil	a0, l.27289
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
 	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
 	fmul	fa4, fa4, fa3
 	fadd	fa2, fa4, fa2
 	fmul	fa2, fa2, fa3
 	fsub	fa1, fa2, fa1
 	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
 	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-	jal	x0, beq_cont.33771
-beq_else.33770:
+	jal	x0, beq_cont.34287
+beq_else.34286:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-beq_cont.33771:
-	flw	fa1, -180(sp)
+beq_cont.34287:
+	jal	x0, beq_cont.34279
+beq_else.34278:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -148(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.34288 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa5, 0(a0)
+	fmul	fa4, fa5, fa4
+	jal	x0, beq_cont.34289
+beq_else.34288:
+beq_cont.34289:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -240(sp)
+	fsw	fa1, -244(sp)
+	fsw	fa2, -248(sp)
+	fsw	fa3, -252(sp)
+	fsw	fa4, -256(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -264(sp)
+	addi	sp, sp, -268
+	jal	ra, while1.2800
+	addi	sp, sp, 268
+	lw	ra, -264(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -256(sp)
+	sw	ra, -264(sp)
+	addi	sp, sp, -268
+	jal	ra, while2.2805
+	addi	sp, sp, 268
+	lw	ra, -264(sp)
+	flw	fa1, -252(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34290 # size : 4
+	jal	x0, beq_cont.34291
+beq_else.34290:
+	fsub	fa0, fa0, fa1
+beq_cont.34291:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -248(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34292 # size : 4
+	jal	x0, beq_cont.34293
+beq_else.34292:
+	fsub	fa0, fa2, fa0
+beq_cont.34293:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -244(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34294 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-beq_cont.33755:
-	flw	fa1, -144(sp)
+	jal	x0, beq_cont.34295
+beq_else.34294:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.34295:
+	flw	fa1, -240(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34279:
+	flw	fa1, -176(sp)
 	fdiv	fa0, fa1, fa0
-	flw	fa1, -112(sp)
+	flw	fa1, -144(sp)
 	fmul	fa1, fa0, fa1
-	flw	fa0, -104(sp)
+	flw	fa0, -136(sp)
 	flw	fa2, -0(sp)
-	flw	fa3, -16(sp)
-	lw	a0, -108(sp) # Restore Ti2572.3589
-	lw	a1, -8(sp) # Restore group_id.3298
-	lw	a2, -4(sp) # Restore index.3299
-	lw	t5, -12(sp) # Restore calc_dirvec.3292
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-calc_dirvecs.3300: # 65296
-	lw	a3, 4(t5)
-	blt	a0, x0, bg_else.33772 # size : 628
+	flw	fa3, -12(sp)
+	lw	a0, -140(sp) # Restore Ti2573.3593
+	lw	a1, -8(sp) # Restore group_id.3302
+	lw	a2, -4(sp) # Restore index.3303
+	jal	x0, calc_dirvec.3296 
+calc_dirvecs.3304: # 67584
+	blt	a0, x0, bg_else.34296 # size : 596
 	fcvtsw	fa1, a0
-	luil	a4, l.28415
-	srli	a4, a4, 1
-	addil	a4, a4, l.28415
-	flw	fa2, 0(a4)
+	luil	a3, l.28821
+	srli	a3, a3, 1
+	addil	a3, a3, l.28821
+	flw	fa2, 0(a3)
 	fmul	fa1, fa1, fa2
-	luil	a4, l.30545
-	srli	a4, a4, 1
-	addil	a4, a4, l.30545
-	flw	fa2, 0(a4)
+	luil	a3, l.31042
+	srli	a3, a3, 1
+	addil	a3, a3, l.31042
+	flw	fa2, 0(a3)
 	fsub	fa2, fa1, fa2
-	addi	a4, x0, 0
-	luil	a5, l.26808
-	srli	a5, a5, 1
-	addil	a5, a5, l.26808
-	flw	fa1, 0(a5)
-	luil	a5, l.26808
-	srli	a5, a5, 1
-	addil	a5, a5, l.26808
-	flw	fa3, 0(a5)
-	sw	t5, -0(sp) # Save calc_dirvecs.3300
-	fsw	fa0, -4(sp)
-	sw	a1, -8(sp) # Save group_id.3303
-	sw	a3, -12(sp) # Save calc_dirvec.3292
-	sw	a2, -16(sp) # Save index.3304
-	sw	a0, -20(sp) # Save col.3301
-	addi	a0, a4, 0
-	addi	t5, a3, 0
+	addi	a3, x0, 0
+	luil	a4, l.27154
+	srli	a4, a4, 1
+	addil	a4, a4, l.27154
+	flw	fa1, 0(a4)
+	luil	a4, l.27154
+	srli	a4, a4, 1
+	addil	a4, a4, l.27154
+	flw	fa3, 0(a4)
+	fsw	fa0, -0(sp)
+	sw	a1, -4(sp) # Save group_id.3307
+	sw	a2, -8(sp) # Save index.3308
+	sw	a0, -12(sp) # Save col.3305
+	addi	a0, a3, 0
 	fsgnj	fs11, fa3, fa3
 	fsgnj	fa3, fa0, fa0
 	fsgnj	fa0, fa1, fa1
 	fsgnj	fa1, fs11, fs11
-	lw	t6, 0(t5)
-	sw	ra, -28(sp)
-	addi	sp, sp, -32
-	jalr	ra, t6, 0 # CallCls a3
-	addi	sp, sp, 32
-	lw	ra, -28(sp)
-	lw	a0, -20(sp) # Restore col.3301
+	sw	ra, -20(sp)
+	addi	sp, sp, -24
+	jal	ra, calc_dirvec.3296
+	addi	sp, sp, 24
+	lw	ra, -20(sp)
+	lw	a0, -12(sp) # Restore col.3305
 	fcvtsw	fa0, a0
-	luil	a1, l.28415
+	luil	a1, l.28821
 	srli	a1, a1, 1
-	addil	a1, a1, l.28415
+	addil	a1, a1, l.28821
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
-	luil	a1, l.28843
+	luil	a1, l.29266
 	srli	a1, a1, 1
-	addil	a1, a1, l.28843
+	addil	a1, a1, l.29266
 	flw	fa1, 0(a1)
 	fadd	fa2, fa0, fa1
 	addi	a1, x0, 0
-	luil	a2, l.26808
+	luil	a2, l.27154
 	srli	a2, a2, 1
-	addil	a2, a2, l.26808
+	addil	a2, a2, l.27154
 	flw	fa0, 0(a2)
-	luil	a2, l.26808
+	luil	a2, l.27154
 	srli	a2, a2, 1
-	addil	a2, a2, l.26808
+	addil	a2, a2, l.27154
 	flw	fa1, 0(a2)
-	lw	a2, -16(sp) # Restore index.3304
+	lw	a2, -8(sp) # Restore index.3308
 	addi	a3, a2, 2
-	flw	fa3, -4(sp)
-	lw	a4, -8(sp) # Restore group_id.3303
-	lw	t5, -12(sp) # Restore calc_dirvec.3292
+	flw	fa3, -0(sp)
+	lw	a4, -4(sp) # Restore group_id.3307
 	addi	a2, a3, 0
 	addi	a0, a1, 0
 	addi	a1, a4, 0
-	lw	t6, 0(t5)
-	sw	ra, -28(sp)
-	addi	sp, sp, -32
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 32
-	lw	ra, -28(sp)
-	lw	a0, -20(sp) # Restore col.3301
-	addi	a0, a0, -1
-	lw	a1, -8(sp) # Restore group_id.3303
-	addi	a1, a1, 1
-	addi	t6, x0, 5
-	blt	a1, t6, bg_else.33773 # size : 4
-	addi	a1, a1, -5
-	jal	x0, bg_cont.33774
-bg_else.33773:
-bg_cont.33774:
-	flw	fa0, -4(sp)
-	lw	a2, -16(sp) # Restore index.3304
-	lw	t5, -0(sp) # Restore calc_dirvecs.3300
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-bg_else.33772:
-	jalr	x0, ra, 0
-calc_dirvec_rows.3305: # 65652
-	lw	a3, 4(t5)
-	blt	a0, x0, bg_else.33776 # size : 280
-	fcvtsw	fa0, a0
-	luil	a4, l.28415
-	srli	a4, a4, 1
-	addil	a4, a4, l.28415
-	flw	fa1, 0(a4)
-	fmul	fa0, fa0, fa1
-	luil	a4, l.30545
-	srli	a4, a4, 1
-	addil	a4, a4, l.30545
-	flw	fa1, 0(a4)
-	fsub	fa0, fa0, fa1
-	addi	a4, x0, 4
-	sw	t5, -0(sp) # Save calc_dirvec_rows.3305
-	sw	a2, -4(sp) # Save index.3308
-	sw	a1, -8(sp) # Save group_id.3307
-	sw	a0, -12(sp) # Save row.3306
-	addi	a0, a4, 0
-	addi	t5, a3, 0
-	lw	t6, 0(t5)
 	sw	ra, -20(sp)
 	addi	sp, sp, -24
-	jalr	ra, t6, 0 # CallCls a3
+	jal	ra, calc_dirvec.3296
 	addi	sp, sp, 24
 	lw	ra, -20(sp)
-	lw	a0, -12(sp) # Restore row.3306
+	lw	a0, -12(sp) # Restore col.3305
 	addi	a0, a0, -1
-	lw	a1, -8(sp) # Restore group_id.3307
+	lw	a1, -4(sp) # Restore group_id.3307
+	addi	a1, a1, 1
+	addi	t6, x0, 5
+	blt	a1, t6, bg_else.34297 # size : 4
+	addi	a1, a1, -5
+	jal	x0, bg_cont.34298
+bg_else.34297:
+bg_cont.34298:
+	flw	fa0, -0(sp)
+	lw	a2, -8(sp) # Restore index.3308
+	jal	x0, calc_dirvecs.3304 
+bg_else.34296:
+	jalr	x0, ra, 0
+calc_dirvec_rows.3309: # 67904
+	blt	a0, x0, bg_else.34300 # size : 264
+	fcvtsw	fa0, a0
+	luil	a3, l.28821
+	srli	a3, a3, 1
+	addil	a3, a3, l.28821
+	flw	fa1, 0(a3)
+	fmul	fa0, fa0, fa1
+	luil	a3, l.31042
+	srli	a3, a3, 1
+	addil	a3, a3, l.31042
+	flw	fa1, 0(a3)
+	fsub	fa0, fa0, fa1
+	addi	a3, x0, 4
+	sw	a2, -0(sp) # Save index.3312
+	sw	a1, -4(sp) # Save group_id.3311
+	sw	a0, -8(sp) # Save row.3310
+	addi	a0, a3, 0
+	sw	ra, -16(sp)
+	addi	sp, sp, -20
+	jal	ra, calc_dirvecs.3304
+	addi	sp, sp, 20
+	lw	ra, -16(sp)
+	lw	a0, -8(sp) # Restore row.3310
+	addi	a0, a0, -1
+	lw	a1, -4(sp) # Restore group_id.3311
 	addi	a1, a1, 2
 	addi	t6, x0, 5
-	blt	a1, t6, bg_else.33777 # size : 4
+	blt	a1, t6, bg_else.34301 # size : 4
 	addi	a1, a1, -5
-	jal	x0, bg_cont.33778
-bg_else.33777:
-bg_cont.33778:
-	lw	a2, -4(sp) # Restore index.3308
+	jal	x0, bg_cont.34302
+bg_else.34301:
+bg_cont.34302:
+	lw	a2, -0(sp) # Restore index.3312
 	addi	a2, a2, 4
-	lw	t5, -0(sp) # Restore calc_dirvec_rows.3305
-	lw	t6, 0(t5) 
-	jalr	x0, t6, 0 
-bg_else.33776:
+	jal	x0, calc_dirvec_rows.3309 
+bg_else.34300:
 	jalr	x0, ra, 0
-create_dirvec_elements.3311: # 65812
-	blt	a1, x0, bg_else.33780 # size : 260
-	luil	a2, l.26808
+create_dirvec_elements.3315: # 68040
+	blt	a1, x0, bg_else.34304 # size : 260
+	luil	a2, l.27154
 	srli	a2, a2, 1
-	addil	a2, a2, l.26808
+	addil	a2, a2, l.27154
 	flw	fa0, 0(a2)
-	sw	a0, -0(sp) # Save d.3312
-	sw	a1, -4(sp) # Save index.3313
+	sw	a0, -0(sp) # Save d.3316
+	sw	a1, -4(sp) # Save index.3317
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -18031,39 +18586,39 @@ create_dirvec_elements.3311: # 65812
 	addi	hp, hp, 12
 	addi	a1, x0, 256
 	lw	a1, 0(a1)
-	sw	a0, -8(sp) # Save v3.3541.7218
+	sw	a0, -8(sp) # Save v3.3545.7232
 	addi	t6, hp, 0
-create_array_loop.33782:
-	beq	a1, x0, create_array_end.33782
+create_array_loop.34306:
+	beq	a1, x0, create_array_end.34306
 	sw	a0, 0(hp)
 	addi	hp, hp, 4
 	addi	a1, a1, -1
-	jal	x0, create_array_loop.33782
-create_array_end.33782:
+	jal	x0, create_array_loop.34306
+create_array_end.34306:
 	addi	a0, t6, 0
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -8(sp) # Restore v3.3541.7218
+	lw	a0, -8(sp) # Restore v3.3545.7232
 	sw	a0,0(a1) 
 	addi	a0, a1 0
-	lw	a1, -4(sp) # Restore index.3313
+	lw	a1, -4(sp) # Restore index.3317
 	slli	a2, a1, 2
-	lw	a3, -0(sp) # Restore d.3312
+	lw	a3, -0(sp) # Restore d.3316
 	add	a2, a3, a2
 	sw	a0,0(a2) 
 	addi	a1, a1, -1
 	addi	a0, a3, 0
-	jal	x0, create_dirvec_elements.3311 
-bg_else.33780:
+	jal	x0, create_dirvec_elements.3315 
+bg_else.34304:
 	jalr	x0, ra, 0
-create_dirvecs.3314: # 65960
-	blt	a0, x0, bg_else.33784 # size : 356
-	luil	a1, l.26808
+create_dirvecs.3318: # 68188
+	blt	a0, x0, bg_else.34308 # size : 356
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -0(sp) # Save index.3315
+	sw	a0, -0(sp) # Save index.3319
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -18071,20 +18626,20 @@ create_dirvecs.3314: # 65960
 	addi	hp, hp, 12
 	addi	a1, x0, 256
 	lw	a1, 0(a1)
-	sw	a0, -4(sp) # Save v3.3541.7211
+	sw	a0, -4(sp) # Save v3.3545.7225
 	addi	t6, hp, 0
-create_array_loop.33786:
-	beq	a1, x0, create_array_end.33786
+create_array_loop.34310:
+	beq	a1, x0, create_array_end.34310
 	sw	a0, 0(hp)
 	addi	hp, hp, 4
 	addi	a1, a1, -1
-	jal	x0, create_array_loop.33786
-create_array_end.33786:
+	jal	x0, create_array_loop.34310
+create_array_end.34310:
 	addi	a0, t6, 0
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -4(sp) # Restore v3.3541.7211
+	lw	a0, -4(sp) # Restore v3.3545.7225
 	sw	a0,0(a1) 
 	addi	a0, a1 0
 	sw	a0, 0(hp)
@@ -18209,7 +18764,7 @@ create_array_end.33786:
 	sw	a0, 476(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 480
-	lw	a1, -0(sp) # Restore index.3315
+	lw	a1, -0(sp) # Restore index.3319
 	slli	a2, a1, 2
 	addi	a2, a2, 964
 	sw	a0,0(a2) 
@@ -18220,55 +18775,55 @@ create_array_end.33786:
 	addi	a1, a2, 0
 	sw	ra, -12(sp)
 	addi	sp, sp, -16
-	jal	ra, create_dirvec_elements.3311
+	jal	ra, create_dirvec_elements.3315
 	addi	sp, sp, 16
 	lw	ra, -12(sp)
-	lw	a0, -0(sp) # Restore index.3315
+	lw	a0, -0(sp) # Restore index.3319
 	addi	a0, a0, -1
-	jal	x0, create_dirvecs.3314 
-bg_else.33784:
+	jal	x0, create_dirvecs.3318 
+bg_else.34308:
 	jalr	x0, ra, 0
-init_dirvec_constants.3316: # 66628
-	blt	a1, x0, bg_else.33789 # size : 172
+init_dirvec_constants.3320: # 68856
+	blt	a1, x0, bg_else.34313 # size : 172
 	slli	a2, a1, 2
 	add	a2, a0, a2
 	lw	a2, 0(a2)
 	addi	a3, x0, 256
 	lw	a3, 0(a3)
 	addi	a3, a3, -1
-	sw	a0, -0(sp) # Save vecset.3317
-	sw	a1, -4(sp) # Save index.3318
+	sw	a0, -0(sp) # Save vecset.3321
+	sw	a1, -4(sp) # Save index.3322
 	addi	a1, a3, 0
 	addi	a0, a2, 0
 	sw	ra, -12(sp)
 	addi	sp, sp, -16
-	jal	ra, iter_setup_dirvec_constants.3094
+	jal	ra, iter_setup_dirvec_constants.3098
 	addi	sp, sp, 16
 	lw	ra, -12(sp)
-	lw	a0, -4(sp) # Restore index.3318
+	lw	a0, -4(sp) # Restore index.3322
 	addi	a1, a0, -1
-	lw	a0, -0(sp) # Restore vecset.3317
-	jal	x0, init_dirvec_constants.3316 
-bg_else.33789:
+	lw	a0, -0(sp) # Restore vecset.3321
+	jal	x0, init_dirvec_constants.3320 
+bg_else.34313:
 	jalr	x0, ra, 0
-init_vecset_constants.3319: # 66712
-	blt	a0, x0, bg_else.33791 # size : 128
+init_vecset_constants.3323: # 68940
+	blt	a0, x0, bg_else.34315 # size : 128
 	slli	a1, a0, 2
 	addi	a1, a1, 964
 	lw	a1, 0(a1)
 	addi	a2, x0, 119
-	sw	a0, -0(sp) # Save index.3320
+	sw	a0, -0(sp) # Save index.3324
 	addi	a0, a1, 0
 	addi	a1, a2, 0
 	sw	ra, -8(sp)
 	addi	sp, sp, -12
-	jal	ra, init_dirvec_constants.3316
+	jal	ra, init_dirvec_constants.3320
 	addi	sp, sp, 12
 	lw	ra, -8(sp)
-	lw	a0, -0(sp) # Restore index.3320
+	lw	a0, -0(sp) # Restore index.3324
 	addi	a0, a0, -1
-	jal	x0, init_vecset_constants.3319 
-bg_else.33791:
+	jal	x0, init_vecset_constants.3323 
+bg_else.34315:
 	jalr	x0, ra, 0
 .global	min_caml_start
 min_caml_start:
@@ -18276,13 +18831,13 @@ min_caml_start:
 	slli	sp, t6, 23
 	addi	hp, x0, 256
 	addi	a0, x0, 0
-	sw	a0, -0(sp) # Save Ti248.6755
+	sw	a0, -0(sp) # Save Ti248.6769
 	sw	a0, 0(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 4
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, -4(sp)
 	addi	a0, hp, 0
@@ -18292,7 +18847,7 @@ min_caml_start:
 	sw	a0,36(a1) 
 	sw	a0,32(a1) 
 	sw	a0,28(a1) 
-	lw	a2, -0(sp) # Restore Ti248.6755
+	lw	a2, -0(sp) # Restore Ti248.6769
 	sw	a2,24(a1) 
 	sw	a0,20(a1) 
 	sw	a0,16(a1) 
@@ -18300,7 +18855,7 @@ min_caml_start:
 	sw	a2,8(a1) 
 	sw	a2,4(a1) 
 	sw	a2,0(a1) 
-	sw	a0, -8(sp) # Save dummy.6744
+	sw	a0, -8(sp) # Save dummy.6758
 	sw	a1, 0(hp)
 	sw	a1, 4(hp)
 	sw	a1, 8(hp)
@@ -18369,9 +18924,9 @@ min_caml_start:
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	luil	a0, l.28544
+	luil	a0, l.28950
 	srli	a0, a0, 1
-	addil	a0, a0, l.28544
+	addil	a0, a0, l.28950
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	addi	a0, hp, 0
@@ -18444,26 +18999,26 @@ min_caml_start:
 	fsw	fa0, 0(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 4
-	luil	a0, l.28193
+	luil	a0, l.28596
 	srli	a0, a0, 1
-	addil	a0, a0, l.28193
+	addil	a0, a0, l.28596
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 4
-	lw	a0, -0(sp) # Restore Ti248.6755
+	lw	a0, -0(sp) # Restore Ti248.6769
 	sw	a0, 0(hp)
 	sw	a0, 4(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 8
-	lw	a0, -8(sp) # Restore dummy.6744
+	lw	a0, -8(sp) # Restore dummy.6758
 	addi	a0, hp, 0
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -8(sp) # Restore dummy.6744
+	lw	a0, -8(sp) # Restore dummy.6758
 	sw	a0,0(a1) 
-	sw	a1, -12(sp) # Save Tt317.6685
+	sw	a1, -12(sp) # Save Tt317.6699
 	addi	a0, hp, 0
 	sw	a0, 0(hp)
 	sw	a0, 4(hp)
@@ -18472,7 +19027,7 @@ min_caml_start:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	lw	a0, -8(sp) # Restore dummy.6744
+	lw	a0, -8(sp) # Restore dummy.6758
 	sw	a0, 0(hp)
 	sw	a0, 4(hp)
 	sw	a0, 8(hp)
@@ -18539,9 +19094,9 @@ min_caml_start:
 	addi	hp, hp, 12
 	flw	fa0, -4(sp)
 	fsw	fa0, 8(a0) 
-	lw	a1, -12(sp) # Restore Tt317.6685
+	lw	a1, -12(sp) # Restore Tt317.6699
 	sw	a1,4(a0) 
-	lw	a1, -0(sp) # Restore Ti248.6755
+	lw	a1, -0(sp) # Restore Ti248.6769
 	sw	a1,0(a0) 
 	sw	a0, 0(hp)
 	sw	a0, 4(hp)
@@ -18725,141 +19280,45 @@ min_caml_start:
 	sw	a0, 716(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 720
-	luil	a0, l.30603
-	srli	a0, a0, 1
-	addil	a0, a0, l.30603
-	flw	fa0, 0(a0)
-	addi	a0, hp 0
-	addi	hp, hp, 8
-	addi	a1, x0, 152 # labal read_object.2989
+	addi	a0, x0, 128
+	addi	a1, x0, 128
+	addi	a2, x0, 3
+	addi	a3, x0, 872
+	sw	a0,0(a3) 
+	addi	a0, x0, 872
+	addi	a0, a0, 4
 	sw	a1,0(a0) 
-	fsw	fa0, 4(a0) 
-	addi	a1, hp 0
-	addi	hp, hp, 8
-	lui	a2, 11 # label trace_ray.3188
-	srli	a2, a2, 1
-	addi	a2, a2, 1112
-	sw	a2,0(a1) 
-	fsw	fa0, 4(a1) 
-	addi	a2, hp 0
-	addi	hp, hp, 8
-	lui	a3, 16 # label iter_trace_diffuse_rays.3197
-	srli	a3, a3, 1
-	addi	a3, a3, 600
-	sw	a3,0(a2) 
-	fsw	fa0, 4(a2) 
-	addi	a3, hp 0
-	addi	hp, hp, 8
-	lui	a4, 24 # label do_without_neighbors.3219
-	srli	a4, a4, 1
-	addi	a4, a4, 1016
-	sw	a4,0(a3) 
-	sw	a2,4(a3) 
-	addi	a4, hp 0
-	addi	hp, hp, 8
-	lui	a5, 25 # label try_exploit_neighbors.3235
-	srli	a5, a5, 1
-	addi	a5, a5, 180
-	sw	a5,0(a4) 
-	sw	a3,4(a4) 
-	addi	a5, hp 0
-	addi	hp, hp, 8
-	lui	a6, 25 # label pretrace_diffuse_rays.3250
-	srli	a6, a6, 1
-	addi	a6, a6, 1208
-	sw	a6,0(a5) 
-	sw	a2,4(a5) 
-	addi	a2, hp 0
-	addi	hp, hp, 12
-	lui	a6, 25 # label pretrace_pixels.3253
-	srli	a6, a6, 1
-	addi	a6, a6, 1624
-	sw	a6,0(a2) 
-	sw	a1,8(a2) 
-	sw	a5,4(a2) 
-	addi	a1, hp 0
-	addi	hp, hp, 12
-	lui	a5, 26 # label scan_pixel.3264
-	srli	a5, a5, 1
-	addi	a5, a5, 320
-	sw	a5,0(a1) 
-	sw	a4,8(a1) 
-	sw	a3,4(a1) 
-	addi	a3, hp 0
-	addi	hp, hp, 12
-	lui	a4, 26 # label scan_line.3271
-	srli	a4, a4, 1
-	addi	a4, a4, 1116
-	sw	a4,0(a3) 
-	sw	a1,8(a3) 
-	sw	a2,4(a3) 
-	addi	a1, hp 0
-	addi	hp, hp, 8
-	lui	a4, 27 # label calc_dirvec.3292
-	srli	a4, a4, 1
-	addi	a4, a4, 748
-	sw	a4,0(a1) 
-	fsw	fa0, 4(a1) 
-	addi	a4, hp 0
-	addi	hp, hp, 8
-	lui	a5, 31 # label calc_dirvecs.3300
-	srli	a5, a5, 1
-	addi	a5, a5, 1808
-	sw	a5,0(a4) 
-	sw	a1,4(a4) 
-	addi	a1, hp 0
-	addi	hp, hp, 8
-	lui	a5, 32 # label calc_dirvec_rows.3305
-	srli	a5, a5, 1
-	addi	a5, a5, 116
-	sw	a5,0(a1) 
-	sw	a4,4(a1) 
-	addi	a4, x0, 16
-	addi	a5, x0, 16
-	addi	a6, x0, 3
-	addi	a7, x0, 872
-	sw	a4,0(a7) 
-	addi	a7, x0, 872
-	addi	a7, a7, 4
-	sw	a5,0(a7) 
-	addi	a5, x0, 880
-	addi	a7, x0, 8
-	sw	a7,0(a5) 
-	addi	a5, x0, 880
-	addi	a7, x0, 8
-	addi	a5, a5, 4
-	sw	a7,0(a5) 
-	addi	a5, x0, 888
-	fcvtsw	fa1, a4
-	luil	a4, l.30613
-	srli	a4, a4, 1
-	addil	a4, a4, l.30613
-	flw	fa1, 0(a4)
-	addi	a4, a5 0
-	fsw	fa1, 0(a4) 
-	addi	a4, x0, 872
-	lw	a4, 0(a4)
-	luil	a5, l.26808
-	srli	a5, a5, 1
-	addil	a5, a5, l.26808
-	flw	fa1, 0(a5)
-	sw	a6, -16(sp) # Save Ti2768.3345
-	sw	a3, -20(sp) # Save scan_line.3271
-	sw	a2, -24(sp) # Save pretrace_pixels.3253
-	sw	a1, -28(sp) # Save calc_dirvec_rows.3305
-	sw	a0, -32(sp) # Save read_object.2989
-	fsw	fa0, -36(sp)
-	sw	a4, -40(sp) # Save Ti2517.3657.12664
-	fsw	fa1, 0(hp)
-	fsw	fa1, 4(hp)
-	fsw	fa1, 8(hp)
+	addi	a0, x0, 880
+	addi	a1, x0, 64
+	sw	a1,0(a0) 
+	addi	a0, x0, 880
+	addi	a1, x0, 64
+	addi	a0, a0, 4
+	sw	a1,0(a0) 
+	addi	a0, x0, 888
+	luil	a1, l.27213
+	srli	a1, a1, 1
+	addil	a1, a1, l.27213
+	flw	fa0, 0(a1)
+	fsw	fa0, 0(a0) 
+	addi	a0, x0, 872
+	lw	a0, 0(a0)
+	luil	a1, l.27154
+	srli	a1, a1, 1
+	addil	a1, a1, l.27154
+	flw	fa0, 0(a1)
+	sw	a2, -16(sp) # Save Ti2769.3349
+	sw	a0, -20(sp) # Save Ti2518.3661.12700
+	fsw	fa0, 0(hp)
+	fsw	fa0, 4(hp)
+	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -44(sp) # Save m_rgb.3668.7305.12667
+	sw	a0, -24(sp) # Save m_rgb.3672.7319.12703
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -18872,53 +19331,53 @@ min_caml_start:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -48(sp) # Save array.3689.21725
+	sw	a0, -28(sp) # Save array.3693.21931
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -48(sp) # Restore array.3689.21725
+	lw	a1, -28(sp) # Restore array.3693.21931
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -48(sp) # Restore array.3689.21725
+	lw	a1, -28(sp) # Restore array.3693.21931
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -48(sp) # Restore array.3689.21725
+	lw	a1, -28(sp) # Restore array.3693.21931
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -48(sp) # Restore array.3689.21725
+	lw	a1, -28(sp) # Restore array.3693.21931
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 0
@@ -18930,7 +19389,7 @@ min_caml_start:
 	addi	a0, hp, 0
 	addi	hp, hp, 20
 	addi	a1, x0, 0
-	sw	a0, -52(sp) # Save m_sids.3670.7310.12672
+	sw	a0, -32(sp) # Save m_sids.3674.7324.12708
 	sw	a1, 0(hp)
 	sw	a1, 4(hp)
 	sw	a1, 8(hp)
@@ -18938,11 +19397,11 @@ min_caml_start:
 	sw	a1, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -56(sp) # Save m_cdif.3671.7313.12675
+	sw	a0, -36(sp) # Save m_cdif.3675.7327.12711
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -18955,58 +19414,58 @@ min_caml_start:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -60(sp) # Save array.3689.21700
+	sw	a0, -40(sp) # Save array.3693.21906
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -60(sp) # Restore array.3689.21700
+	lw	a1, -40(sp) # Restore array.3693.21906
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -60(sp) # Restore array.3689.21700
+	lw	a1, -40(sp) # Restore array.3693.21906
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -60(sp) # Restore array.3689.21700
+	lw	a1, -40(sp) # Restore array.3693.21906
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -60(sp) # Restore array.3689.21700
+	lw	a1, -40(sp) # Restore array.3693.21906
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
@@ -19020,64 +19479,64 @@ min_caml_start:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -64(sp) # Save array.3689.21675
+	sw	a0, -44(sp) # Save array.3693.21881
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -64(sp) # Restore array.3689.21675
+	lw	a1, -44(sp) # Restore array.3693.21881
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -64(sp) # Restore array.3689.21675
+	lw	a1, -44(sp) # Restore array.3693.21881
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -64(sp) # Restore array.3689.21675
+	lw	a1, -44(sp) # Restore array.3693.21881
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -64(sp) # Restore array.3689.21675
+	lw	a1, -44(sp) # Restore array.3693.21881
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 0
 	sw	a0, 0(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 4
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -68(sp) # Save m_gid.3674.7320.12682
+	sw	a0, -48(sp) # Save m_gid.3678.7334.12718
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -19090,108 +19549,108 @@ min_caml_start:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -72(sp) # Save array.3689.21650
+	sw	a0, -52(sp) # Save array.3693.21856
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -72(sp) # Restore array.3689.21650
+	lw	a1, -52(sp) # Restore array.3693.21856
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -72(sp) # Restore array.3689.21650
+	lw	a1, -52(sp) # Restore array.3693.21856
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -72(sp) # Restore array.3689.21650
+	lw	a1, -52(sp) # Restore array.3693.21856
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -72(sp) # Restore array.3689.21650
+	lw	a1, -52(sp) # Restore array.3693.21856
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, hp 0
 	addi	hp, hp, 32
 	sw	a1,28(a0) 
-	lw	a1, -68(sp) # Restore m_gid.3674.7320.12682
+	lw	a1, -48(sp) # Restore m_gid.3678.7334.12718
 	sw	a1,24(a0) 
-	lw	a1, -64(sp) # Restore array.3689.21675
+	lw	a1, -44(sp) # Restore array.3693.21881
 	sw	a1,20(a0) 
-	lw	a1, -60(sp) # Restore array.3689.21700
+	lw	a1, -40(sp) # Restore array.3693.21906
 	sw	a1,16(a0) 
-	lw	a1, -56(sp) # Restore m_cdif.3671.7313.12675
+	lw	a1, -36(sp) # Restore m_cdif.3675.7327.12711
 	sw	a1,12(a0) 
-	lw	a1, -52(sp) # Restore m_sids.3670.7310.12672
+	lw	a1, -32(sp) # Restore m_sids.3674.7324.12708
 	sw	a1,8(a0) 
-	lw	a1, -48(sp) # Restore array.3689.21725
+	lw	a1, -28(sp) # Restore array.3693.21931
 	sw	a1,4(a0) 
-	lw	a1, -44(sp) # Restore m_rgb.3668.7305.12667
+	lw	a1, -24(sp) # Restore m_rgb.3672.7319.12703
 	sw	a1,0(a0) 
-	lw	a1, -40(sp) # Restore Ti2517.3657.12664
+	lw	a1, -20(sp) # Restore Ti2518.3661.12700
 	addi	t6, hp, 0
-create_array_loop.33838:
-	beq	a1, x0, create_array_end.33838
+create_array_loop.34362:
+	beq	a1, x0, create_array_end.34362
 	sw	a0, 0(hp)
 	addi	hp, hp, 4
 	addi	a1, a1, -1
-	jal	x0, create_array_loop.33838
-create_array_end.33838:
+	jal	x0, create_array_loop.34362
+create_array_end.34362:
 	addi	a0, t6, 0
 	addi	a1, x0, 872
 	lw	a1, 0(a1)
 	addi	a1, a1, -2
-	sw	ra, -80(sp)
-	addi	sp, sp, -84
-	jal	ra, init_line_elements.3282
-	addi	sp, sp, 84
-	lw	ra, -80(sp)
+	sw	ra, -60(sp)
+	addi	sp, sp, -64
+	jal	ra, init_line_elements.3286
+	addi	sp, sp, 64
+	lw	ra, -60(sp)
 	addi	a1, x0, 872
 	lw	a1, 0(a1)
-	luil	a2, l.26808
+	luil	a2, l.27154
 	srli	a2, a2, 1
-	addil	a2, a2, l.26808
+	addil	a2, a2, l.27154
 	flw	fa0, 0(a2)
-	sw	a0, -76(sp) # Save prev.3351.6779
-	sw	a1, -80(sp) # Save Ti2517.3657.12634
+	sw	a0, -56(sp) # Save prev.3355.6793
+	sw	a1, -60(sp) # Save Ti2518.3661.12670
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -84(sp) # Save m_rgb.3668.7305.12637
+	sw	a0, -64(sp) # Save m_rgb.3672.7319.12673
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -19204,53 +19663,53 @@ create_array_end.33838:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -88(sp) # Save array.3689.21625
+	sw	a0, -68(sp) # Save array.3693.21831
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -88(sp) # Restore array.3689.21625
+	lw	a1, -68(sp) # Restore array.3693.21831
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -88(sp) # Restore array.3689.21625
+	lw	a1, -68(sp) # Restore array.3693.21831
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -88(sp) # Restore array.3689.21625
+	lw	a1, -68(sp) # Restore array.3693.21831
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -88(sp) # Restore array.3689.21625
+	lw	a1, -68(sp) # Restore array.3693.21831
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 0
@@ -19262,7 +19721,7 @@ create_array_end.33838:
 	addi	a0, hp, 0
 	addi	hp, hp, 20
 	addi	a1, x0, 0
-	sw	a0, -92(sp) # Save m_sids.3670.7310.12642
+	sw	a0, -72(sp) # Save m_sids.3674.7324.12678
 	sw	a1, 0(hp)
 	sw	a1, 4(hp)
 	sw	a1, 8(hp)
@@ -19270,11 +19729,11 @@ create_array_end.33838:
 	sw	a1, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -96(sp) # Save m_cdif.3671.7313.12645
+	sw	a0, -76(sp) # Save m_cdif.3675.7327.12681
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -19287,58 +19746,58 @@ create_array_end.33838:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -100(sp) # Save array.3689.21600
+	sw	a0, -80(sp) # Save array.3693.21806
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -100(sp) # Restore array.3689.21600
+	lw	a1, -80(sp) # Restore array.3693.21806
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -100(sp) # Restore array.3689.21600
+	lw	a1, -80(sp) # Restore array.3693.21806
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -100(sp) # Restore array.3689.21600
+	lw	a1, -80(sp) # Restore array.3693.21806
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -100(sp) # Restore array.3689.21600
+	lw	a1, -80(sp) # Restore array.3693.21806
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
@@ -19352,64 +19811,64 @@ create_array_end.33838:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -104(sp) # Save array.3689.21575
+	sw	a0, -84(sp) # Save array.3693.21781
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -104(sp) # Restore array.3689.21575
+	lw	a1, -84(sp) # Restore array.3693.21781
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -104(sp) # Restore array.3689.21575
+	lw	a1, -84(sp) # Restore array.3693.21781
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -104(sp) # Restore array.3689.21575
+	lw	a1, -84(sp) # Restore array.3693.21781
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -104(sp) # Restore array.3689.21575
+	lw	a1, -84(sp) # Restore array.3693.21781
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 0
 	sw	a0, 0(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 4
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -108(sp) # Save m_gid.3674.7320.12652
+	sw	a0, -88(sp) # Save m_gid.3678.7334.12688
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -19422,108 +19881,108 @@ create_array_end.33838:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -112(sp) # Save array.3689.21550
+	sw	a0, -92(sp) # Save array.3693.21756
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -112(sp) # Restore array.3689.21550
+	lw	a1, -92(sp) # Restore array.3693.21756
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -112(sp) # Restore array.3689.21550
+	lw	a1, -92(sp) # Restore array.3693.21756
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -112(sp) # Restore array.3689.21550
+	lw	a1, -92(sp) # Restore array.3693.21756
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -112(sp) # Restore array.3689.21550
+	lw	a1, -92(sp) # Restore array.3693.21756
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, hp 0
 	addi	hp, hp, 32
 	sw	a1,28(a0) 
-	lw	a1, -108(sp) # Restore m_gid.3674.7320.12652
+	lw	a1, -88(sp) # Restore m_gid.3678.7334.12688
 	sw	a1,24(a0) 
-	lw	a1, -104(sp) # Restore array.3689.21575
+	lw	a1, -84(sp) # Restore array.3693.21781
 	sw	a1,20(a0) 
-	lw	a1, -100(sp) # Restore array.3689.21600
+	lw	a1, -80(sp) # Restore array.3693.21806
 	sw	a1,16(a0) 
-	lw	a1, -96(sp) # Restore m_cdif.3671.7313.12645
+	lw	a1, -76(sp) # Restore m_cdif.3675.7327.12681
 	sw	a1,12(a0) 
-	lw	a1, -92(sp) # Restore m_sids.3670.7310.12642
+	lw	a1, -72(sp) # Restore m_sids.3674.7324.12678
 	sw	a1,8(a0) 
-	lw	a1, -88(sp) # Restore array.3689.21625
+	lw	a1, -68(sp) # Restore array.3693.21831
 	sw	a1,4(a0) 
-	lw	a1, -84(sp) # Restore m_rgb.3668.7305.12637
+	lw	a1, -64(sp) # Restore m_rgb.3672.7319.12673
 	sw	a1,0(a0) 
-	lw	a1, -80(sp) # Restore Ti2517.3657.12634
+	lw	a1, -60(sp) # Restore Ti2518.3661.12670
 	addi	t6, hp, 0
-create_array_loop.33867:
-	beq	a1, x0, create_array_end.33867
+create_array_loop.34391:
+	beq	a1, x0, create_array_end.34391
 	sw	a0, 0(hp)
 	addi	hp, hp, 4
 	addi	a1, a1, -1
-	jal	x0, create_array_loop.33867
-create_array_end.33867:
+	jal	x0, create_array_loop.34391
+create_array_end.34391:
 	addi	a0, t6, 0
 	addi	a1, x0, 872
 	lw	a1, 0(a1)
 	addi	a1, a1, -2
-	sw	ra, -120(sp)
-	addi	sp, sp, -124
-	jal	ra, init_line_elements.3282
-	addi	sp, sp, 124
-	lw	ra, -120(sp)
+	sw	ra, -100(sp)
+	addi	sp, sp, -104
+	jal	ra, init_line_elements.3286
+	addi	sp, sp, 104
+	lw	ra, -100(sp)
 	addi	a1, x0, 872
 	lw	a1, 0(a1)
-	luil	a2, l.26808
+	luil	a2, l.27154
 	srli	a2, a2, 1
-	addil	a2, a2, l.26808
+	addil	a2, a2, l.27154
 	flw	fa0, 0(a2)
-	sw	a0, -116(sp) # Save cur.3352.6781
-	sw	a1, -120(sp) # Save Ti2517.3657.12604
+	sw	a0, -96(sp) # Save cur.3356.6795
+	sw	a1, -100(sp) # Save Ti2518.3661.12640
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -124(sp) # Save m_rgb.3668.7305.12607
+	sw	a0, -104(sp) # Save m_rgb.3672.7319.12643
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -19536,53 +19995,53 @@ create_array_end.33867:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -128(sp) # Save array.3689.21525
+	sw	a0, -108(sp) # Save array.3693.21731
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -128(sp) # Restore array.3689.21525
+	lw	a1, -108(sp) # Restore array.3693.21731
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -128(sp) # Restore array.3689.21525
+	lw	a1, -108(sp) # Restore array.3693.21731
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -128(sp) # Restore array.3689.21525
+	lw	a1, -108(sp) # Restore array.3693.21731
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -128(sp) # Restore array.3689.21525
+	lw	a1, -108(sp) # Restore array.3693.21731
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 0
@@ -19594,7 +20053,7 @@ create_array_end.33867:
 	addi	a0, hp, 0
 	addi	hp, hp, 20
 	addi	a1, x0, 0
-	sw	a0, -132(sp) # Save m_sids.3670.7310.12612
+	sw	a0, -112(sp) # Save m_sids.3674.7324.12648
 	sw	a1, 0(hp)
 	sw	a1, 4(hp)
 	sw	a1, 8(hp)
@@ -19602,11 +20061,11 @@ create_array_end.33867:
 	sw	a1, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -136(sp) # Save m_cdif.3671.7313.12615
+	sw	a0, -116(sp) # Save m_cdif.3675.7327.12651
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -19619,58 +20078,58 @@ create_array_end.33867:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -140(sp) # Save array.3689.21500
+	sw	a0, -120(sp) # Save array.3693.21706
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -140(sp) # Restore array.3689.21500
+	lw	a1, -120(sp) # Restore array.3693.21706
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -140(sp) # Restore array.3689.21500
+	lw	a1, -120(sp) # Restore array.3693.21706
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -140(sp) # Restore array.3689.21500
+	lw	a1, -120(sp) # Restore array.3693.21706
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -140(sp) # Restore array.3689.21500
+	lw	a1, -120(sp) # Restore array.3693.21706
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
@@ -19684,64 +20143,64 @@ create_array_end.33867:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -144(sp) # Save array.3689.21475
+	sw	a0, -124(sp) # Save array.3693.21681
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -144(sp) # Restore array.3689.21475
+	lw	a1, -124(sp) # Restore array.3693.21681
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -144(sp) # Restore array.3689.21475
+	lw	a1, -124(sp) # Restore array.3693.21681
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -144(sp) # Restore array.3689.21475
+	lw	a1, -124(sp) # Restore array.3693.21681
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -144(sp) # Restore array.3689.21475
+	lw	a1, -124(sp) # Restore array.3693.21681
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, x0, 0
 	sw	a0, 0(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 4
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -148(sp) # Save m_gid.3674.7320.12622
+	sw	a0, -128(sp) # Save m_gid.3678.7334.12658
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
@@ -19754,90 +20213,90 @@ create_array_end.33867:
 	sw	a0, 16(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 20
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa0, 0(a1)
-	sw	a0, -152(sp) # Save array.3689.21450
+	sw	a0, -132(sp) # Save array.3693.21656
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -152(sp) # Restore array.3689.21450
+	lw	a1, -132(sp) # Restore array.3693.21656
 	addi	a2, a1, 4
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -152(sp) # Restore array.3689.21450
+	lw	a1, -132(sp) # Restore array.3693.21656
 	addi	a2, a1, 8
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -152(sp) # Restore array.3689.21450
+	lw	a1, -132(sp) # Restore array.3693.21656
 	addi	a2, a1, 12
 	sw	a0,0(a2) 
-	luil	a0, l.26808
+	luil	a0, l.27154
 	srli	a0, a0, 1
-	addil	a0, a0, l.26808
+	addil	a0, a0, l.27154
 	flw	fa0, 0(a0)
 	fsw	fa0, 0(hp)
 	fsw	fa0, 4(hp)
 	fsw	fa0, 8(hp)
 	addi	a0, hp, 0
 	addi	hp, hp, 12
-	lw	a1, -152(sp) # Restore array.3689.21450
+	lw	a1, -132(sp) # Restore array.3693.21656
 	addi	a2, a1, 16
 	sw	a0,0(a2) 
 	addi	a0, hp 0
 	addi	hp, hp, 32
 	sw	a1,28(a0) 
-	lw	a1, -148(sp) # Restore m_gid.3674.7320.12622
+	lw	a1, -128(sp) # Restore m_gid.3678.7334.12658
 	sw	a1,24(a0) 
-	lw	a1, -144(sp) # Restore array.3689.21475
+	lw	a1, -124(sp) # Restore array.3693.21681
 	sw	a1,20(a0) 
-	lw	a1, -140(sp) # Restore array.3689.21500
+	lw	a1, -120(sp) # Restore array.3693.21706
 	sw	a1,16(a0) 
-	lw	a1, -136(sp) # Restore m_cdif.3671.7313.12615
+	lw	a1, -116(sp) # Restore m_cdif.3675.7327.12651
 	sw	a1,12(a0) 
-	lw	a1, -132(sp) # Restore m_sids.3670.7310.12612
+	lw	a1, -112(sp) # Restore m_sids.3674.7324.12648
 	sw	a1,8(a0) 
-	lw	a1, -128(sp) # Restore array.3689.21525
+	lw	a1, -108(sp) # Restore array.3693.21731
 	sw	a1,4(a0) 
-	lw	a1, -124(sp) # Restore m_rgb.3668.7305.12607
+	lw	a1, -104(sp) # Restore m_rgb.3672.7319.12643
 	sw	a1,0(a0) 
-	lw	a1, -120(sp) # Restore Ti2517.3657.12604
+	lw	a1, -100(sp) # Restore Ti2518.3661.12640
 	addi	t6, hp, 0
-create_array_loop.33896:
-	beq	a1, x0, create_array_end.33896
+create_array_loop.34420:
+	beq	a1, x0, create_array_end.34420
 	sw	a0, 0(hp)
 	addi	hp, hp, 4
 	addi	a1, a1, -1
-	jal	x0, create_array_loop.33896
-create_array_end.33896:
+	jal	x0, create_array_loop.34420
+create_array_end.34420:
 	addi	a0, t6, 0
 	addi	a1, x0, 872
 	lw	a1, 0(a1)
 	addi	a1, a1, -2
-	sw	ra, -160(sp)
-	addi	sp, sp, -164
-	jal	ra, init_line_elements.3282
-	addi	sp, sp, 164
-	lw	ra, -160(sp)
+	sw	ra, -140(sp)
+	addi	sp, sp, -144
+	jal	ra, init_line_elements.3286
+	addi	sp, sp, 144
+	lw	ra, -140(sp)
 	addi	a1, x0, 544
 	flw	fa0, 0(s11)
 	addi	x0, x0, 0
@@ -19854,77 +20313,133 @@ create_array_end.33896:
 	fsw	fa0, 0(a1) 
 	flw	fa0, 0(s11)
 	addi	x0, x0, 0
-	luil	a1, l.26836
+	luil	a1, l.27182
 	srli	a1, a1, 1
-	addil	a1, a1, l.26836
+	addil	a1, a1, l.27182
 	flw	fa1, 0(a1)
 	fmul	fa0, fa0, fa1
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
 	fsgnjn	fs11, fa0, fa0
 	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33897 # size : 28
-	luil	a1, l.26869
+	bne	a1, x0, beq_else.34421 # size : 28
+	luil	a1, l.27215
 	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33898
-beq_else.33897:
-	fsgnj	fa1, fa0, fa0
-beq_cont.33898:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
+	addil	a1, a1, l.27215
 	flw	fa2, 0(a1)
-	sw	a0, -156(sp) # Save next.3353.6783
-	fsw	fa0, -160(sp)
-	fsw	fa1, -164(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -172(sp)
-	addi	sp, sp, -176
-	jal	ra, while1.2799
-	addi	sp, sp, 176
-	lw	ra, -172(sp)
+	fmul	fa2, fa2, fa0
+	jal	x0, beq_cont.34422
+beq_else.34421:
+	fsgnj	fa2, fa0, fa0
+beq_cont.34422:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa3, 0(a1)
+	sw	a0, -136(sp) # Save next.3357.6797
+	fsw	fa0, -140(sp)
+	fsw	fa1, -144(sp)
+	fsw	fa2, -148(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -156(sp)
+	addi	sp, sp, -160
+	jal	ra, while1.2800
+	addi	sp, sp, 160
+	lw	ra, -156(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -164(sp)
-	sw	ra, -172(sp)
-	addi	sp, sp, -176
+	flw	fa0, -148(sp)
+	sw	ra, -156(sp)
+	addi	sp, sp, -160
 	jal	ra, while2.2805
-	addi	sp, sp, 176
-	lw	ra, -172(sp)
-	flw	fa1, -36(sp)
+	addi	sp, sp, 160
+	lw	ra, -156(sp)
+	flw	fa1, -144(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33899 # size : 4
-	jal	x0, beq_cont.33900
-beq_else.33899:
+	bne	a0, x0, beq_else.34423 # size : 4
+	jal	x0, beq_cont.34424
+beq_else.34423:
 	fsub	fa0, fa0, fa1
-beq_cont.33900:
-	flw	fa2, -160(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33901 # size : 28
-	luil	a0, l.26869
+beq_cont.34424:
+	flw	fa1, -140(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34425 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+	jal	x0, beq_cont.34426
+beq_else.34425:
+	fsgnj	fa2, fa1, fa1
+beq_cont.34426:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
 	flw	fa3, 0(a0)
+	fsw	fa0, -152(sp)
+	fsw	fa2, -156(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -164(sp)
+	addi	sp, sp, -168
+	jal	ra, while1.2800
+	addi	sp, sp, 168
+	lw	ra, -164(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -156(sp)
+	sw	ra, -164(sp)
+	addi	sp, sp, -168
+	jal	ra, while2.2805
+	addi	sp, sp, 168
+	lw	ra, -164(sp)
+	flw	fa1, -152(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34427 # size : 4
+	addi	a0, x0, 1
+	jal	x0, bne_cont.34428
+bne_else.34427:
+	addi	a0, x0, 0
+bne_cont.34428:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -140(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.34429 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
 	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33902
-beq_else.33901:
+	jal	x0, beq_cont.34430
+beq_else.34429:
 	fsgnj	fa3, fa2, fa2
-beq_cont.33902:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -168(sp)
+beq_cont.34430:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	sw	a0, -160(sp) # Save flag00.6568.12140.21541
+	fsw	fa0, -164(sp)
+	fsw	fa1, -168(sp)
 	fsw	fa3, -172(sp)
 	fsgnj	fa1, fa4, fa4
 	fsgnj	fa0, fa3, fa3
 	sw	ra, -180(sp)
 	addi	sp, sp, -184
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 184
 	lw	ra, -180(sp)
 	fsgnj	fa1, fa0, fa0
@@ -19935,270 +20450,125 @@ beq_cont.33902:
 	addi	sp, sp, 184
 	lw	ra, -180(sp)
 	flw	fa1, -168(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.33903 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.33904
-bne_else.33903:
-	addi	a0, x0, 0
-bne_cont.33904:
-	flw	fa0, -160(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33905 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34431 # size : 4
+	jal	x0, beq_cont.34432
+beq_else.34431:
+	fsub	fa0, fa0, fa1
+beq_cont.34432:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
 	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33906
-beq_else.33905:
-	fsgnj	fa1, fa0, fa0
-beq_cont.33906:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -176(sp) # Save flag00.6561.12115.21344
-	fsw	fa1, -180(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -188(sp)
-	addi	sp, sp, -192
-	jal	ra, while1.2799
-	addi	sp, sp, 192
-	lw	ra, -188(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -180(sp)
-	sw	ra, -188(sp)
-	addi	sp, sp, -192
-	jal	ra, while2.2805
-	addi	sp, sp, 192
-	lw	ra, -188(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33907 # size : 4
-	jal	x0, beq_cont.33908
-beq_else.33907:
-	fsub	fa0, fa0, fa1
-beq_cont.33908:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33909 # size : 4
-	jal	x0, beq_cont.33910
-beq_else.33909:
-	fsub	fa0, fa1, fa0
-beq_cont.33910:
-	flw	fa2, -160(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33911 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33912
-beq_else.33911:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33912:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -184(sp)
-	fsw	fa3, -188(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -196(sp)
-	addi	sp, sp, -200
-	jal	ra, while1.2799
-	addi	sp, sp, 200
-	lw	ra, -196(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -188(sp)
-	sw	ra, -196(sp)
-	addi	sp, sp, -200
-	jal	ra, while2.2805
-	addi	sp, sp, 200
-	lw	ra, -196(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33913 # size : 4
-	jal	x0, beq_cont.33914
-beq_else.33913:
-	fsub	fa0, fa0, fa1
-beq_cont.33914:
-	flw	fa2, -184(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33915 # size : 12
-	lw	a0, -176(sp) # Restore flag00.6561.12115.21344
-	jal	x0, bne_cont.33916
-bne_else.33915:
-	addi	a0, x0, 1
-	lw	a1, -176(sp) # Restore flag00.6561.12115.21344
-	sub	a0, a0, a1
-bne_cont.33916:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33917 # size : 732
-	flw	fa0, -160(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.33919 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	jal	x0, beq_cont.33920
-beq_else.33919:
-	fsgnj	fa2, fa0, fa0
-beq_cont.33920:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa2, -192(sp)
-	fsgnj	fa1, fa3, fa3
-	fsgnj	fa0, fa2, fa2
-	sw	ra, -200(sp)
-	addi	sp, sp, -204
-	jal	ra, while1.2799
-	addi	sp, sp, 204
-	lw	ra, -200(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -192(sp)
-	sw	ra, -200(sp)
-	addi	sp, sp, -204
-	jal	ra, while2.2805
-	addi	sp, sp, 204
-	lw	ra, -200(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33921 # size : 4
-	jal	x0, beq_cont.33922
-beq_else.33921:
-	fsub	fa0, fa0, fa1
-beq_cont.33922:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33923 # size : 4
-	jal	x0, beq_cont.33924
-beq_else.33923:
-	fsub	fa0, fa1, fa0
-beq_cont.33924:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33925 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
+	flw	fa2, -164(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34433 # size : 4
+	jal	x0, beq_cont.34434
+beq_else.34433:
 	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
+beq_cont.34434:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.33926
-beq_else.33925:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.33926:
-	jal	x0, beq_cont.33918
-beq_else.33917:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	flw	fa2, -160(sp)
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -140(sp)
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33927 # size : 28
-	luil	a0, l.26869
+	bne	a0, x0, beq_else.34435 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33928
-beq_else.33927:
+	jal	x0, beq_cont.34436
+beq_else.34435:
 	fsgnj	fa3, fa2, fa2
-beq_cont.33928:
-	luil	a0, l.26804
+beq_cont.34436:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27150
 	flw	fa4, 0(a0)
-	fsw	fa0, -196(sp)
-	fsw	fa3, -200(sp)
+	fsw	fa0, -176(sp)
+	fsw	fa1, -180(sp)
+	fsw	fa3, -184(sp)
 	fsgnj	fa1, fa4, fa4
 	fsgnj	fa0, fa3, fa3
+	sw	ra, -192(sp)
+	addi	sp, sp, -196
+	jal	ra, while1.2800
+	addi	sp, sp, 196
+	lw	ra, -192(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -184(sp)
+	sw	ra, -192(sp)
+	addi	sp, sp, -196
+	jal	ra, while2.2805
+	addi	sp, sp, 196
+	lw	ra, -192(sp)
+	flw	fa1, -180(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34437 # size : 4
+	jal	x0, beq_cont.34438
+beq_else.34437:
+	fsub	fa0, fa0, fa1
+beq_cont.34438:
+	flw	fa1, -176(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34439 # size : 12
+	lw	a0, -160(sp) # Restore flag00.6568.12140.21541
+	jal	x0, bne_cont.34440
+bne_else.34439:
+	addi	a0, x0, 1
+	lw	a1, -160(sp) # Restore flag00.6568.12140.21541
+	sub	a0, a0, a1
+bne_cont.34440:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34441 # size : 836
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -140(sp)
+	fsgnjn	fs11, fa3, fa3
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.34443 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	jal	x0, beq_cont.34444
+beq_else.34443:
+	fsgnj	fa4, fa3, fa3
+beq_cont.34444:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -188(sp)
+	fsw	fa1, -192(sp)
+	fsw	fa2, -196(sp)
+	fsw	fa4, -200(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
 	sw	ra, -208(sp)
 	addi	sp, sp, -212
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 212
 	lw	ra, -208(sp)
 	fsgnj	fa1, fa0, fa0
@@ -20208,230 +20578,139 @@ beq_cont.33928:
 	jal	ra, while2.2805
 	addi	sp, sp, 212
 	lw	ra, -208(sp)
-	flw	fa1, -36(sp)
+	flw	fa1, -196(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33929 # size : 4
-	jal	x0, beq_cont.33930
-beq_else.33929:
+	bne	a0, x0, beq_else.34445 # size : 4
+	jal	x0, beq_cont.34446
+beq_else.34445:
 	fsub	fa0, fa0, fa1
-beq_cont.33930:
-	luil	a0, l.26802
+beq_cont.34446:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33931 # size : 4
-	jal	x0, beq_cont.33932
-beq_else.33931:
-	fsub	fa0, fa1, fa0
-beq_cont.33932:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33933 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -192(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34447 # size : 4
+	jal	x0, beq_cont.34448
+beq_else.34447:
 	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
+beq_cont.34448:
+	luil	a0, l.27277
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -188(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34449 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
-	luil	a0, l.26935
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.33934
-beq_else.33933:
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.34450
+beq_else.34449:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.33934:
-	flw	fa2, -196(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.33918:
-	flw	fa2, -160(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33935 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33936
-beq_else.33935:
-	addi	a0, x0, 1
-beq_cont.33936:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33937 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.33938
-beq_else.33937:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.33938:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -204(sp)
-	fsw	fa3, -208(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -216(sp)
-	addi	sp, sp, -220
-	jal	ra, while1.2799
-	addi	sp, sp, 220
-	lw	ra, -216(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -208(sp)
-	sw	ra, -216(sp)
-	addi	sp, sp, -220
-	jal	ra, while2.2805
-	addi	sp, sp, 220
-	lw	ra, -216(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33939 # size : 4
-	jal	x0, beq_cont.33940
-beq_else.33939:
-	fsub	fa0, fa0, fa1
-beq_cont.33940:
-	flw	fa2, -160(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33941 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33942
-beq_else.33941:
-	addi	a0, x0, 1
-beq_cont.33942:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33943 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.33944
-beq_else.33943:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.33944:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -212(sp)
-	fsw	fa3, -216(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -224(sp)
-	addi	sp, sp, -228
-	jal	ra, while1.2799
-	addi	sp, sp, 228
-	lw	ra, -224(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -216(sp)
-	sw	ra, -224(sp)
-	addi	sp, sp, -228
-	jal	ra, while2.2805
-	addi	sp, sp, 228
-	lw	ra, -224(sp)
-	flw	fa1, -160(sp)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33945 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33946
-beq_else.33945:
-	addi	a0, x0, 1
-beq_cont.33946:
-	flw	fa2, -212(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33947 # size : 4
-	jal	x0, bne_cont.33948
-bne_else.33947:
-	addi	a1, x0, 1
-	sub	a0, a1, a0
-bne_cont.33948:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33949 # size : 732
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33951 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.33952
-beq_else.33951:
-	addi	a0, x0, 1
-beq_cont.33952:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33953 # size : 4
-	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.33954
-beq_else.33953:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fmul	fa0, fa0, fa1
-beq_cont.33954:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
 	flw	fa1, 0(a0)
-	fsw	fa0, -220(sp)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.34450:
+	jal	x0, beq_cont.34442
+beq_else.34441:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -140(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.34451 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa5, 0(a0)
+	fmul	fa5, fa5, fa4
+	jal	x0, beq_cont.34452
+beq_else.34451:
+	fsgnj	fa5, fa4, fa4
+beq_cont.34452:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa6, 0(a0)
+	fsw	fa0, -204(sp)
+	fsw	fa1, -208(sp)
+	fsw	fa2, -212(sp)
+	fsw	fa3, -216(sp)
+	fsw	fa5, -220(sp)
+	fsgnj	fa1, fa6, fa6
+	fsgnj	fa0, fa5, fa5
 	sw	ra, -228(sp)
 	addi	sp, sp, -232
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 232
 	lw	ra, -228(sp)
 	fsgnj	fa1, fa0, fa0
@@ -20441,127 +20720,128 @@ beq_cont.33954:
 	jal	ra, while2.2805
 	addi	sp, sp, 232
 	lw	ra, -228(sp)
-	flw	fa1, -36(sp)
+	flw	fa1, -216(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33955 # size : 4
-	jal	x0, beq_cont.33956
-beq_else.33955:
+	bne	a0, x0, beq_else.34453 # size : 4
+	jal	x0, beq_cont.34454
+beq_else.34453:
 	fsub	fa0, fa0, fa1
-beq_cont.33956:
-	luil	a0, l.26802
+beq_cont.34454:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33957 # size : 4
-	jal	x0, beq_cont.33958
-beq_else.33957:
-	fsub	fa0, fa1, fa0
-beq_cont.33958:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33959 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -212(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34455 # size : 4
+	jal	x0, beq_cont.34456
+beq_else.34455:
 	fsub	fa0, fa2, fa0
+beq_cont.34456:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -208(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34457 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.34458
+beq_else.34457:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.33960
-beq_else.33959:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.33960:
-	jal	x0, beq_cont.33950
-beq_else.33949:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.34458:
+	flw	fa1, -204(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34442:
+	flw	fa1, -140(sp)
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.33961 # size : 4
+	bne	a0, x0, beq_else.34459 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.33962
-beq_else.33961:
+	jal	x0, beq_cont.34460
+beq_else.34459:
 	addi	a0, x0, 1
-beq_cont.33962:
+beq_cont.34460:
 	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33963 # size : 4
-	jal	x0, beq_cont.33964
-beq_else.33963:
-	luil	a0, l.26869
+	bne	a0, t6, beq_else.34461 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34462
+beq_else.34461:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
-	fmul	fa1, fa2, fa1
-beq_cont.33964:
-	luil	a0, l.26804
+	fmul	fa2, fa2, fa1
+beq_cont.34462:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
 	fsw	fa0, -224(sp)
-	fsw	fa1, -228(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
+	fsw	fa2, -228(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
 	sw	ra, -236(sp)
 	addi	sp, sp, -240
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 240
 	lw	ra, -236(sp)
 	fsgnj	fa1, fa0, fa0
@@ -20571,126 +20851,104 @@ beq_cont.33964:
 	jal	ra, while2.2805
 	addi	sp, sp, 240
 	lw	ra, -236(sp)
-	flw	fa1, -36(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33965 # size : 4
-	jal	x0, beq_cont.33966
-beq_else.33965:
+	bne	a0, x0, beq_else.34463 # size : 4
+	jal	x0, beq_cont.34464
+beq_else.34463:
 	fsub	fa0, fa0, fa1
-beq_cont.33966:
-	luil	a0, l.26802
+beq_cont.34464:
+	flw	fa1, -140(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34465 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34466
+beq_else.34465:
+	addi	a0, x0, 1
+beq_cont.34466:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34467 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34468
+beq_else.34467:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33967 # size : 4
-	jal	x0, beq_cont.33968
-beq_else.33967:
-	fsub	fa0, fa1, fa0
-beq_cont.33968:
-	luil	a0, l.26923
+	fmul	fa2, fa2, fa1
+beq_cont.34468:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33969 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27150
 	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.33970
-beq_else.33969:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.33970:
-	flw	fa2, -224(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.33950:
-	flw	fa2, 0(s11)
-	addi	x0, x0, 0
-	luil	a0, l.26836
-	srli	a0, a0, 1
-	addil	a0, a0, l.26836
-	flw	fa3, 0(a0)
-	fmul	fa2, fa2, fa3
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33971 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33972
-beq_else.33971:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33972:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
 	fsw	fa0, -232(sp)
 	fsw	fa2, -236(sp)
-	fsw	fa3, -240(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -244(sp)
+	addi	sp, sp, -248
+	jal	ra, while1.2800
+	addi	sp, sp, 248
+	lw	ra, -244(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -236(sp)
+	sw	ra, -244(sp)
+	addi	sp, sp, -248
+	jal	ra, while2.2805
+	addi	sp, sp, 248
+	lw	ra, -244(sp)
+	flw	fa1, -140(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34469 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34470
+beq_else.34469:
+	addi	a0, x0, 1
+beq_cont.34470:
+	flw	fa2, -232(sp)
+	feq	t6, fa2, fa0
+	beq	t6, x0, bne_else.34471 # size : 4
+	jal	x0, bne_cont.34472
+bne_else.34471:
+	addi	a1, x0, 1
+	sub	a0, a1, a0
+bne_cont.34472:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34473 # size : 796
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34475 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34476
+beq_else.34475:
+	addi	a0, x0, 1
+beq_cont.34476:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34477 # size : 4
+	fsgnj	fa0, fa1, fa1
+	jal	x0, beq_cont.34478
+beq_else.34477:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fmul	fa0, fa0, fa1
+beq_cont.34478:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa1, 0(a0)
+	fsw	fa0, -240(sp)
 	sw	ra, -248(sp)
 	addi	sp, sp, -252
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 252
 	lw	ra, -248(sp)
 	fsgnj	fa1, fa0, fa0
@@ -20700,39 +20958,138 @@ beq_cont.33972:
 	jal	ra, while2.2805
 	addi	sp, sp, 252
 	lw	ra, -248(sp)
-	flw	fa1, -36(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33973 # size : 4
-	jal	x0, beq_cont.33974
-beq_else.33973:
+	bne	a0, x0, beq_else.34479 # size : 4
+	jal	x0, beq_cont.34480
+beq_else.34479:
 	fsub	fa0, fa0, fa1
-beq_cont.33974:
-	flw	fa2, -236(sp)
+beq_cont.34480:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33975 # size : 28
-	luil	a0, l.26869
+	bne	a0, x0, beq_else.34481 # size : 4
+	jal	x0, beq_cont.34482
+beq_else.34481:
+	fsub	fa0, fa1, fa0
+beq_cont.34482:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34483 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33976
-beq_else.33975:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33976:
-	luil	a0, l.26804
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.34484
+beq_else.34483:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34484:
+	jal	x0, beq_cont.34474
+beq_else.34473:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34485 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34486
+beq_else.34485:
+	addi	a0, x0, 1
+beq_cont.34486:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34487 # size : 4
+	jal	x0, beq_cont.34488
+beq_else.34487:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa1, fa2, fa1
+beq_cont.34488:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa2, 0(a0)
 	fsw	fa0, -244(sp)
-	fsw	fa3, -248(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
+	fsw	fa1, -248(sp)
+	fsgnj	fa0, fa1, fa1
+	fsgnj	fa1, fa2, fa2
 	sw	ra, -256(sp)
 	addi	sp, sp, -260
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 260
 	lw	ra, -256(sp)
 	fsgnj	fa1, fa0, fa0
@@ -20742,93 +21099,142 @@ beq_cont.33976:
 	jal	ra, while2.2805
 	addi	sp, sp, 260
 	lw	ra, -256(sp)
-	flw	fa1, -244(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.33977 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.33978
-bne_else.33977:
-	addi	a0, x0, 0
-bne_cont.33978:
-	flw	fa0, -236(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.33979 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.33980
-beq_else.33979:
-	fsgnj	fa1, fa0, fa0
-beq_cont.33980:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -252(sp) # Save flag00.6561.12115.21137
-	fsw	fa1, -256(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -264(sp)
-	addi	sp, sp, -268
-	jal	ra, while1.2799
-	addi	sp, sp, 268
-	lw	ra, -264(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -256(sp)
-	sw	ra, -264(sp)
-	addi	sp, sp, -268
-	jal	ra, while2.2805
-	addi	sp, sp, 268
-	lw	ra, -264(sp)
-	flw	fa1, -36(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33981 # size : 4
-	jal	x0, beq_cont.33982
-beq_else.33981:
+	bne	a0, x0, beq_else.34489 # size : 4
+	jal	x0, beq_cont.34490
+beq_else.34489:
 	fsub	fa0, fa0, fa1
-beq_cont.33982:
-	luil	a0, l.26802
+beq_cont.34490:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33983 # size : 4
-	jal	x0, beq_cont.33984
-beq_else.33983:
+	bne	a0, x0, beq_else.34491 # size : 4
+	jal	x0, beq_cont.34492
+beq_else.34491:
 	fsub	fa0, fa1, fa0
-beq_cont.33984:
-	flw	fa2, -236(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33985 # size : 28
-	luil	a0, l.26869
+beq_cont.34492:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34493 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.33986
-beq_else.33985:
-	fsgnj	fa3, fa2, fa2
-beq_cont.33986:
-	luil	a0, l.26804
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.34494
+beq_else.34493:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
-	fsw	fa0, -260(sp)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34494:
+	flw	fa1, -244(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34474:
+	flw	fa1, 0(s11)
+	addi	x0, x0, 0
+	luil	a0, l.27182
+	srli	a0, a0, 1
+	addil	a0, a0, l.27182
+	flw	fa2, 0(a0)
+	fmul	fa1, fa1, fa2
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34495 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa1
+	jal	x0, beq_cont.34496
+beq_else.34495:
+	fsgnj	fa3, fa1, fa1
+beq_cont.34496:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -252(sp)
+	fsw	fa1, -256(sp)
+	fsw	fa2, -260(sp)
 	fsw	fa3, -264(sp)
 	fsgnj	fa1, fa4, fa4
 	fsgnj	fa0, fa3, fa3
 	sw	ra, -272(sp)
 	addi	sp, sp, -276
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 276
 	lw	ra, -272(sp)
 	fsgnj	fa1, fa0, fa0
@@ -20838,1208 +21244,599 @@ beq_cont.33986:
 	jal	ra, while2.2805
 	addi	sp, sp, 276
 	lw	ra, -272(sp)
-	flw	fa1, -36(sp)
+	flw	fa1, -260(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33987 # size : 4
-	jal	x0, beq_cont.33988
-beq_else.33987:
+	bne	a0, x0, beq_else.34497 # size : 4
+	jal	x0, beq_cont.34498
+beq_else.34497:
 	fsub	fa0, fa0, fa1
-beq_cont.33988:
-	flw	fa2, -260(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.33989 # size : 12
-	lw	a0, -252(sp) # Restore flag00.6561.12115.21137
-	jal	x0, bne_cont.33990
-bne_else.33989:
-	addi	a0, x0, 1
-	lw	a1, -252(sp) # Restore flag00.6561.12115.21137
-	sub	a0, a0, a1
-bne_cont.33990:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.33991 # size : 732
-	flw	fa0, -236(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.33993 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	jal	x0, beq_cont.33994
-beq_else.33993:
-	fsgnj	fa2, fa0, fa0
-beq_cont.33994:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa2, -268(sp)
-	fsgnj	fa1, fa3, fa3
-	fsgnj	fa0, fa2, fa2
-	sw	ra, -276(sp)
-	addi	sp, sp, -280
-	jal	ra, while1.2799
-	addi	sp, sp, 280
-	lw	ra, -276(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -268(sp)
-	sw	ra, -276(sp)
-	addi	sp, sp, -280
-	jal	ra, while2.2805
-	addi	sp, sp, 280
-	lw	ra, -276(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33995 # size : 4
-	jal	x0, beq_cont.33996
-beq_else.33995:
-	fsub	fa0, fa0, fa1
-beq_cont.33996:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33997 # size : 4
-	jal	x0, beq_cont.33998
-beq_else.33997:
-	fsub	fa0, fa1, fa0
-beq_cont.33998:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.33999 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.34000
-beq_else.33999:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.34000:
-	jal	x0, beq_cont.33992
-beq_else.33991:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	flw	fa2, -236(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34001 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.34002
-beq_else.34001:
-	fsgnj	fa3, fa2, fa2
-beq_cont.34002:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -272(sp)
-	fsw	fa3, -276(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -284(sp)
-	addi	sp, sp, -288
-	jal	ra, while1.2799
-	addi	sp, sp, 288
-	lw	ra, -284(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -276(sp)
-	sw	ra, -284(sp)
-	addi	sp, sp, -288
-	jal	ra, while2.2805
-	addi	sp, sp, 288
-	lw	ra, -284(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34003 # size : 4
-	jal	x0, beq_cont.34004
-beq_else.34003:
-	fsub	fa0, fa0, fa1
-beq_cont.34004:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34005 # size : 4
-	jal	x0, beq_cont.34006
-beq_else.34005:
-	fsub	fa0, fa1, fa0
-beq_cont.34006:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34007 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.34008
-beq_else.34007:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.34008:
-	flw	fa2, -272(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.33992:
-	flw	fa2, -236(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34009 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34010
-beq_else.34009:
-	addi	a0, x0, 1
-beq_cont.34010:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34011 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.34012
-beq_else.34011:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.34012:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -280(sp)
-	fsw	fa3, -284(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -292(sp)
-	addi	sp, sp, -296
-	jal	ra, while1.2799
-	addi	sp, sp, 296
-	lw	ra, -292(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -284(sp)
-	sw	ra, -292(sp)
-	addi	sp, sp, -296
-	jal	ra, while2.2805
-	addi	sp, sp, 296
-	lw	ra, -292(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34013 # size : 4
-	jal	x0, beq_cont.34014
-beq_else.34013:
-	fsub	fa0, fa0, fa1
-beq_cont.34014:
-	flw	fa2, -236(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34015 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34016
-beq_else.34015:
-	addi	a0, x0, 1
-beq_cont.34016:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34017 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.34018
-beq_else.34017:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.34018:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -288(sp)
-	fsw	fa3, -292(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -300(sp)
-	addi	sp, sp, -304
-	jal	ra, while1.2799
-	addi	sp, sp, 304
-	lw	ra, -300(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -292(sp)
-	sw	ra, -300(sp)
-	addi	sp, sp, -304
-	jal	ra, while2.2805
-	addi	sp, sp, 304
-	lw	ra, -300(sp)
-	flw	fa1, -236(sp)
+beq_cont.34498:
+	flw	fa1, -256(sp)
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.34019 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34020
-beq_else.34019:
-	addi	a0, x0, 1
-beq_cont.34020:
-	flw	fa2, -288(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.34021 # size : 4
-	jal	x0, bne_cont.34022
-bne_else.34021:
-	addi	a1, x0, 1
-	sub	a0, a1, a0
-bne_cont.34022:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34023 # size : 732
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.34025 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34026
-beq_else.34025:
-	addi	a0, x0, 1
-beq_cont.34026:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34027 # size : 4
-	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.34028
-beq_else.34027:
-	luil	a0, l.26869
+	bne	a0, x0, beq_else.34499 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fmul	fa0, fa0, fa1
-beq_cont.34028:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa1, 0(a0)
-	fsw	fa0, -296(sp)
-	sw	ra, -304(sp)
-	addi	sp, sp, -308
-	jal	ra, while1.2799
-	addi	sp, sp, 308
-	lw	ra, -304(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -296(sp)
-	sw	ra, -304(sp)
-	addi	sp, sp, -308
-	jal	ra, while2.2805
-	addi	sp, sp, 308
-	lw	ra, -304(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34029 # size : 4
-	jal	x0, beq_cont.34030
-beq_else.34029:
-	fsub	fa0, fa0, fa1
-beq_cont.34030:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34031 # size : 4
-	jal	x0, beq_cont.34032
-beq_else.34031:
-	fsub	fa0, fa1, fa0
-beq_cont.34032:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34033 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.34034
-beq_else.34033:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.34034:
-	jal	x0, beq_cont.34024
-beq_else.34023:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.34035 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34036
-beq_else.34035:
-	addi	a0, x0, 1
-beq_cont.34036:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34037 # size : 4
-	jal	x0, beq_cont.34038
-beq_else.34037:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa1, fa2, fa1
-beq_cont.34038:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -300(sp)
-	fsw	fa1, -304(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -312(sp)
-	addi	sp, sp, -316
-	jal	ra, while1.2799
-	addi	sp, sp, 316
-	lw	ra, -312(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -304(sp)
-	sw	ra, -312(sp)
-	addi	sp, sp, -316
-	jal	ra, while2.2805
-	addi	sp, sp, 316
-	lw	ra, -312(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34039 # size : 4
-	jal	x0, beq_cont.34040
-beq_else.34039:
-	fsub	fa0, fa0, fa1
-beq_cont.34040:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34041 # size : 4
-	jal	x0, beq_cont.34042
-beq_else.34041:
-	fsub	fa0, fa1, fa0
-beq_cont.34042:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34043 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.34044
-beq_else.34043:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.34044:
-	flw	fa2, -300(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.34024:
-	addi	a0, x0, 940
-	flw	fa2, -204(sp)
-	fmul	fa3, fa2, fa0
-	luil	a1, l.30957
-	srli	a1, a1, 1
-	addil	a1, a1, l.30957
-	flw	fa4, 0(a1)
-	fmul	fa3, fa3, fa4
-	fsw	fa3, 0(a0) 
-	addi	a0, x0, 940
-	luil	a1, l.30961
-	srli	a1, a1, 1
-	addil	a1, a1, l.30961
-	flw	fa3, 0(a1)
-	flw	fa4, -232(sp)
-	fmul	fa3, fa4, fa3
-	addi	a0, a0, 4
-	fsw	fa3, 0(a0) 
-	addi	a0, x0, 940
-	flw	fa3, -280(sp)
-	fmul	fa5, fa2, fa3
-	luil	a1, l.30957
-	srli	a1, a1, 1
-	addil	a1, a1, l.30957
-	flw	fa6, 0(a1)
-	fmul	fa5, fa5, fa6
-	addi	a0, a0, 8
-	fsw	fa5, 0(a0) 
-	addi	a0, x0, 916
-	fsw	fa3, 0(a0) 
-	addi	a0, x0, 916
-	luil	a1, l.26808
-	srli	a1, a1, 1
-	addil	a1, a1, l.26808
-	flw	fa5, 0(a1)
-	addi	a0, a0, 4
-	fsw	fa5, 0(a0) 
-	addi	a0, x0, 916
-	fsgnjn	fa5, fa0, fa0
-	addi	a0, a0, 8
-	fsw	fa5, 0(a0) 
-	addi	a0, x0, 928
-	fsgnjn	fa5, fa4, fa4
-	fmul	fa0, fa5, fa0
-	fsw	fa0, 0(a0) 
-	addi	a0, x0, 928
-	fsgnjn	fa0, fa2, fa2
-	addi	a0, a0, 4
-	fsw	fa0, 0(a0) 
-	addi	a0, x0, 928
-	fsgnjn	fa0, fa4, fa4
-	fmul	fa0, fa0, fa3
-	addi	a0, a0, 8
-	fsw	fa0, 0(a0) 
-	addi	a0, x0, 556
-	addi	a1, x0, 544
-	flw	fa0, 0(a1)
-	addi	a1, x0, 940
-	flw	fa2, 0(a1)
-	fsub	fa0, fa0, fa2
-	fsw	fa0, 0(a0) 
-	addi	a0, x0, 556
-	addi	a1, x0, 544
-	addi	a1, a1, 4
-	flw	fa0, 0(a1)
-	addi	a1, x0, 940
-	addi	a1, a1, 4
-	flw	fa2, 0(a1)
-	fsub	fa0, fa0, fa2
-	addi	a0, a0, 4
-	fsw	fa0, 0(a0) 
-	addi	a0, x0, 556
-	addi	a1, x0, 544
-	addi	a1, a1, 8
-	flw	fa0, 0(a1)
-	addi	a1, x0, 940
-	addi	a1, a1, 8
-	flw	fa2, 0(a1)
-	fsub	fa0, fa0, fa2
-	addi	a0, a0, 8
-	fsw	fa0, 0(a0) 
-	lw	a0, 0(s10)
-	addi	x0, x0, 0
-	flw	fa0, 0(s11)
-	addi	x0, x0, 0
-	luil	a0, l.26836
-	srli	a0, a0, 1
-	addil	a0, a0, l.26836
-	flw	fa2, 0(a0)
-	fmul	fa0, fa0, fa2
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.34045 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34046
-beq_else.34045:
-	addi	a0, x0, 1
-beq_cont.34046:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34047 # size : 4
-	fsgnj	fa2, fa0, fa0
-	jal	x0, beq_cont.34048
-beq_else.34047:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-beq_cont.34048:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa0, -308(sp)
-	fsw	fa2, -312(sp)
-	fsgnj	fa1, fa3, fa3
-	fsgnj	fa0, fa2, fa2
-	sw	ra, -320(sp)
-	addi	sp, sp, -324
-	jal	ra, while1.2799
-	addi	sp, sp, 324
-	lw	ra, -320(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -312(sp)
-	sw	ra, -320(sp)
-	addi	sp, sp, -324
-	jal	ra, while2.2805
-	addi	sp, sp, 324
-	lw	ra, -320(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34049 # size : 4
-	jal	x0, beq_cont.34050
-beq_else.34049:
-	fsub	fa0, fa0, fa1
-beq_cont.34050:
-	flw	fa2, -308(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34051 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34052
-beq_else.34051:
-	addi	a0, x0, 1
-beq_cont.34052:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34053 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.34054
-beq_else.34053:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.34054:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -316(sp)
-	fsw	fa3, -320(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -328(sp)
-	addi	sp, sp, -332
-	jal	ra, while1.2799
-	addi	sp, sp, 332
-	lw	ra, -328(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -320(sp)
-	sw	ra, -328(sp)
-	addi	sp, sp, -332
-	jal	ra, while2.2805
-	addi	sp, sp, 332
-	lw	ra, -328(sp)
-	flw	fa1, -308(sp)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.34055 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34056
-beq_else.34055:
-	addi	a0, x0, 1
-beq_cont.34056:
-	flw	fa2, -316(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.34057 # size : 4
-	jal	x0, bne_cont.34058
-bne_else.34057:
-	addi	a1, x0, 1
-	sub	a0, a1, a0
-bne_cont.34058:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34059 # size : 740
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.34061 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34062
-beq_else.34061:
-	addi	a0, x0, 1
-beq_cont.34062:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34063 # size : 4
-	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.34064
-beq_else.34063:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fmul	fa0, fa0, fa1
-beq_cont.34064:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -324(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -332(sp)
-	addi	sp, sp, -336
-	jal	ra, while1.2799
-	addi	sp, sp, 336
-	lw	ra, -332(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -324(sp)
-	sw	ra, -332(sp)
-	addi	sp, sp, -336
-	jal	ra, while2.2805
-	addi	sp, sp, 336
-	lw	ra, -332(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34065 # size : 4
-	jal	x0, beq_cont.34066
-beq_else.34065:
-	fsub	fa0, fa0, fa1
-beq_cont.34066:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34067 # size : 4
-	jal	x0, beq_cont.34068
-beq_else.34067:
-	fsub	fa0, fa1, fa0
-beq_cont.34068:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34069 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.34070
-beq_else.34069:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.34070:
-	jal	x0, beq_cont.34060
-beq_else.34059:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.34071 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34072
-beq_else.34071:
-	addi	a0, x0, 1
-beq_cont.34072:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34073 # size : 4
-	fsgnj	fa2, fa1, fa1
-	jal	x0, beq_cont.34074
-beq_else.34073:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa1
-beq_cont.34074:
-	luil	a0, l.26804
+	jal	x0, beq_cont.34500
+beq_else.34499:
+	fsgnj	fa2, fa1, fa1
+beq_cont.34500:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27150
 	flw	fa3, 0(a0)
-	fsw	fa0, -328(sp)
-	fsw	fa2, -332(sp)
+	fsw	fa0, -268(sp)
+	fsw	fa2, -272(sp)
 	fsgnj	fa1, fa3, fa3
 	fsgnj	fa0, fa2, fa2
-	sw	ra, -340(sp)
-	addi	sp, sp, -344
-	jal	ra, while1.2799
-	addi	sp, sp, 344
-	lw	ra, -340(sp)
+	sw	ra, -280(sp)
+	addi	sp, sp, -284
+	jal	ra, while1.2800
+	addi	sp, sp, 284
+	lw	ra, -280(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -332(sp)
-	sw	ra, -340(sp)
-	addi	sp, sp, -344
+	flw	fa0, -272(sp)
+	sw	ra, -280(sp)
+	addi	sp, sp, -284
 	jal	ra, while2.2805
-	addi	sp, sp, 344
-	lw	ra, -340(sp)
-	flw	fa1, -36(sp)
+	addi	sp, sp, 284
+	lw	ra, -280(sp)
+	flw	fa1, -268(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34501 # size : 4
+	addi	a0, x0, 1
+	jal	x0, bne_cont.34502
+bne_else.34501:
+	addi	a0, x0, 0
+bne_cont.34502:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -256(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.34503 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34504
+beq_else.34503:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34504:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	sw	a0, -276(sp) # Save flag00.6568.12140.21317
+	fsw	fa0, -280(sp)
+	fsw	fa1, -284(sp)
+	fsw	fa3, -288(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -296(sp)
+	addi	sp, sp, -300
+	jal	ra, while1.2800
+	addi	sp, sp, 300
+	lw	ra, -296(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -288(sp)
+	sw	ra, -296(sp)
+	addi	sp, sp, -300
+	jal	ra, while2.2805
+	addi	sp, sp, 300
+	lw	ra, -296(sp)
+	flw	fa1, -284(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34075 # size : 4
-	jal	x0, beq_cont.34076
-beq_else.34075:
+	bne	a0, x0, beq_else.34505 # size : 4
+	jal	x0, beq_cont.34506
+beq_else.34505:
 	fsub	fa0, fa0, fa1
-beq_cont.34076:
-	luil	a0, l.26802
+beq_cont.34506:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34077 # size : 4
-	jal	x0, beq_cont.34078
-beq_else.34077:
-	fsub	fa0, fa1, fa0
-beq_cont.34078:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34079 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -280(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34507 # size : 4
+	jal	x0, beq_cont.34508
+beq_else.34507:
 	fsub	fa0, fa2, fa0
+beq_cont.34508:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -256(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34509 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34510
+beq_else.34509:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34510:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -292(sp)
+	fsw	fa1, -296(sp)
+	fsw	fa3, -300(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -308(sp)
+	addi	sp, sp, -312
+	jal	ra, while1.2800
+	addi	sp, sp, 312
+	lw	ra, -308(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -300(sp)
+	sw	ra, -308(sp)
+	addi	sp, sp, -312
+	jal	ra, while2.2805
+	addi	sp, sp, 312
+	lw	ra, -308(sp)
+	flw	fa1, -296(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34511 # size : 4
+	jal	x0, beq_cont.34512
+beq_else.34511:
+	fsub	fa0, fa0, fa1
+beq_cont.34512:
+	flw	fa1, -292(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34513 # size : 12
+	lw	a0, -276(sp) # Restore flag00.6568.12140.21317
+	jal	x0, bne_cont.34514
+bne_else.34513:
+	addi	a0, x0, 1
+	lw	a1, -276(sp) # Restore flag00.6568.12140.21317
+	sub	a0, a0, a1
+bne_cont.34514:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34515 # size : 836
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -256(sp)
+	fsgnjn	fs11, fa3, fa3
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.34517 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	jal	x0, beq_cont.34518
+beq_else.34517:
+	fsgnj	fa4, fa3, fa3
+beq_cont.34518:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -304(sp)
+	fsw	fa1, -308(sp)
+	fsw	fa2, -312(sp)
+	fsw	fa4, -316(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -324(sp)
+	addi	sp, sp, -328
+	jal	ra, while1.2800
+	addi	sp, sp, 328
+	lw	ra, -324(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -316(sp)
+	sw	ra, -324(sp)
+	addi	sp, sp, -328
+	jal	ra, while2.2805
+	addi	sp, sp, 328
+	lw	ra, -324(sp)
+	flw	fa1, -312(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34519 # size : 4
+	jal	x0, beq_cont.34520
+beq_else.34519:
+	fsub	fa0, fa0, fa1
+beq_cont.34520:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -308(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34521 # size : 4
+	jal	x0, beq_cont.34522
+beq_else.34521:
+	fsub	fa0, fa2, fa0
+beq_cont.34522:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -304(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34523 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.34524
+beq_else.34523:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.34080
-beq_else.34079:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.34524:
+	jal	x0, beq_cont.34516
+beq_else.34515:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -256(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.34525 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
 	flw	fa5, 0(a0)
 	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
+	jal	x0, beq_cont.34526
+beq_else.34525:
+	fsgnj	fa5, fa4, fa4
+beq_cont.34526:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.34080:
-	flw	fa2, -328(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.34060:
-	addi	a0, x0, 568
-	fsgnjn	fa0, fa0, fa0
-	addi	a0, a0, 4
-	fsw	fa0, 0(a0) 
-	flw	fa0, 0(s11)
-	addi	x0, x0, 0
-	luil	a0, l.26836
-	srli	a0, a0, 1
-	addil	a0, a0, l.26836
-	flw	fa2, 0(a0)
-	fmul	fa0, fa0, fa2
-	flw	fa2, -308(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34081 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.34082
-beq_else.34081:
-	fsgnj	fa3, fa2, fa2
-beq_cont.34082:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -336(sp)
-	fsw	fa3, -340(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -348(sp)
-	addi	sp, sp, -352
-	jal	ra, while1.2799
-	addi	sp, sp, 352
-	lw	ra, -348(sp)
+	addil	a0, a0, l.27150
+	flw	fa6, 0(a0)
+	fsw	fa0, -320(sp)
+	fsw	fa1, -324(sp)
+	fsw	fa2, -328(sp)
+	fsw	fa3, -332(sp)
+	fsw	fa5, -336(sp)
+	fsgnj	fa1, fa6, fa6
+	fsgnj	fa0, fa5, fa5
+	sw	ra, -344(sp)
+	addi	sp, sp, -348
+	jal	ra, while1.2800
+	addi	sp, sp, 348
+	lw	ra, -344(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -340(sp)
-	sw	ra, -348(sp)
-	addi	sp, sp, -352
+	flw	fa0, -336(sp)
+	sw	ra, -344(sp)
+	addi	sp, sp, -348
 	jal	ra, while2.2805
-	addi	sp, sp, 352
-	lw	ra, -348(sp)
-	flw	fa1, -36(sp)
+	addi	sp, sp, 348
+	lw	ra, -344(sp)
+	flw	fa1, -332(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34083 # size : 4
-	jal	x0, beq_cont.34084
-beq_else.34083:
+	bne	a0, x0, beq_else.34527 # size : 4
+	jal	x0, beq_cont.34528
+beq_else.34527:
 	fsub	fa0, fa0, fa1
-beq_cont.34084:
-	flw	fa2, -308(sp)
+beq_cont.34528:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -328(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34529 # size : 4
+	jal	x0, beq_cont.34530
+beq_else.34529:
+	fsub	fa0, fa2, fa0
+beq_cont.34530:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -324(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34531 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.34532
+beq_else.34531:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.34532:
+	flw	fa1, -320(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34516:
+	flw	fa1, -256(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34533 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34534
+beq_else.34533:
+	addi	a0, x0, 1
+beq_cont.34534:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34535 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34536
+beq_else.34535:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.34536:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -340(sp)
+	fsw	fa2, -344(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -352(sp)
+	addi	sp, sp, -356
+	jal	ra, while1.2800
+	addi	sp, sp, 356
+	lw	ra, -352(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -344(sp)
+	sw	ra, -352(sp)
+	addi	sp, sp, -356
+	jal	ra, while2.2805
+	addi	sp, sp, 356
+	lw	ra, -352(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34085 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.34086
-beq_else.34085:
-	fsgnj	fa3, fa2, fa2
-beq_cont.34086:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -344(sp)
-	fsw	fa3, -348(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -356(sp)
-	addi	sp, sp, -360
-	jal	ra, while1.2799
-	addi	sp, sp, 360
-	lw	ra, -356(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -348(sp)
-	sw	ra, -356(sp)
-	addi	sp, sp, -360
-	jal	ra, while2.2805
-	addi	sp, sp, 360
-	lw	ra, -356(sp)
-	flw	fa1, -344(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.34087 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.34088
-bne_else.34087:
+	bne	a0, x0, beq_else.34537 # size : 4
+	jal	x0, beq_cont.34538
+beq_else.34537:
+	fsub	fa0, fa0, fa1
+beq_cont.34538:
+	flw	fa1, -256(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34539 # size : 4
 	addi	a0, x0, 0
-bne_cont.34088:
-	flw	fa0, -308(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.34089 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.34090
-beq_else.34089:
+	jal	x0, beq_cont.34540
+beq_else.34539:
+	addi	a0, x0, 1
+beq_cont.34540:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34541 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34542
+beq_else.34541:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.34542:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -348(sp)
+	fsw	fa2, -352(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -360(sp)
+	addi	sp, sp, -364
+	jal	ra, while1.2800
+	addi	sp, sp, 364
+	lw	ra, -360(sp)
 	fsgnj	fa1, fa0, fa0
-beq_cont.34090:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -352(sp) # Save flag00.6561.12115.20831
-	fsw	fa1, -356(sp)
+	flw	fa0, -352(sp)
+	sw	ra, -360(sp)
+	addi	sp, sp, -364
+	jal	ra, while2.2805
+	addi	sp, sp, 364
+	lw	ra, -360(sp)
+	flw	fa1, -256(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34543 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34544
+beq_else.34543:
+	addi	a0, x0, 1
+beq_cont.34544:
+	flw	fa2, -348(sp)
+	feq	t6, fa2, fa0
+	beq	t6, x0, bne_else.34545 # size : 4
+	jal	x0, bne_cont.34546
+bne_else.34545:
+	addi	a1, x0, 1
+	sub	a0, a1, a0
+bne_cont.34546:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34547 # size : 796
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34549 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34550
+beq_else.34549:
+	addi	a0, x0, 1
+beq_cont.34550:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34551 # size : 4
 	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
+	jal	x0, beq_cont.34552
+beq_else.34551:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fmul	fa0, fa0, fa1
+beq_cont.34552:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa1, 0(a0)
+	fsw	fa0, -356(sp)
 	sw	ra, -364(sp)
 	addi	sp, sp, -368
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 368
 	lw	ra, -364(sp)
 	fsgnj	fa1, fa0, fa0
@@ -22049,52 +21846,138 @@ beq_cont.34090:
 	jal	ra, while2.2805
 	addi	sp, sp, 368
 	lw	ra, -364(sp)
-	flw	fa1, -36(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34091 # size : 4
-	jal	x0, beq_cont.34092
-beq_else.34091:
+	bne	a0, x0, beq_else.34553 # size : 4
+	jal	x0, beq_cont.34554
+beq_else.34553:
 	fsub	fa0, fa0, fa1
-beq_cont.34092:
-	luil	a0, l.26802
+beq_cont.34554:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34093 # size : 4
-	jal	x0, beq_cont.34094
-beq_else.34093:
+	bne	a0, x0, beq_else.34555 # size : 4
+	jal	x0, beq_cont.34556
+beq_else.34555:
 	fsub	fa0, fa1, fa0
-beq_cont.34094:
-	flw	fa2, -308(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34095 # size : 28
-	luil	a0, l.26869
+beq_cont.34556:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34557 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.34096
-beq_else.34095:
-	fsgnj	fa3, fa2, fa2
-beq_cont.34096:
-	luil	a0, l.26804
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.34558
+beq_else.34557:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34558:
+	jal	x0, beq_cont.34548
+beq_else.34547:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34559 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34560
+beq_else.34559:
+	addi	a0, x0, 1
+beq_cont.34560:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34561 # size : 4
+	jal	x0, beq_cont.34562
+beq_else.34561:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa1, fa2, fa1
+beq_cont.34562:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa2, 0(a0)
 	fsw	fa0, -360(sp)
-	fsw	fa3, -364(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
+	fsw	fa1, -364(sp)
+	fsgnj	fa0, fa1, fa1
+	fsgnj	fa1, fa2, fa2
 	sw	ra, -372(sp)
 	addi	sp, sp, -376
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 376
 	lw	ra, -372(sp)
 	fsgnj	fa1, fa0, fa0
@@ -22104,301 +21987,334 @@ beq_cont.34096:
 	jal	ra, while2.2805
 	addi	sp, sp, 376
 	lw	ra, -372(sp)
-	flw	fa1, -36(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34097 # size : 4
-	jal	x0, beq_cont.34098
-beq_else.34097:
+	bne	a0, x0, beq_else.34563 # size : 4
+	jal	x0, beq_cont.34564
+beq_else.34563:
 	fsub	fa0, fa0, fa1
-beq_cont.34098:
-	flw	fa2, -360(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.34099 # size : 12
-	lw	a0, -352(sp) # Restore flag00.6561.12115.20831
-	jal	x0, bne_cont.34100
-bne_else.34099:
-	addi	a0, x0, 1
-	lw	a1, -352(sp) # Restore flag00.6561.12115.20831
-	sub	a0, a0, a1
-bne_cont.34100:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34101 # size : 724
-	flw	fa0, -308(sp)
+beq_cont.34564:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34565 # size : 4
+	jal	x0, beq_cont.34566
+beq_else.34565:
+	fsub	fa0, fa1, fa0
+beq_cont.34566:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34567 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.34568
+beq_else.34567:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34568:
+	flw	fa1, -360(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34548:
+	addi	a0, x0, 940
+	flw	fa1, -224(sp)
+	fmul	fa2, fa1, fa0
+	luil	a1, l.31485
+	srli	a1, a1, 1
+	addil	a1, a1, l.31485
+	flw	fa3, 0(a1)
+	fmul	fa2, fa2, fa3
+	fsw	fa2, 0(a0) 
+	addi	a0, x0, 940
+	luil	a1, l.31489
+	srli	a1, a1, 1
+	addil	a1, a1, l.31489
+	flw	fa2, 0(a1)
+	flw	fa3, -252(sp)
+	fmul	fa2, fa3, fa2
+	addi	a0, a0, 4
+	fsw	fa2, 0(a0) 
+	addi	a0, x0, 940
+	flw	fa2, -340(sp)
+	fmul	fa4, fa1, fa2
+	luil	a1, l.31485
+	srli	a1, a1, 1
+	addil	a1, a1, l.31485
+	flw	fa5, 0(a1)
+	fmul	fa4, fa4, fa5
+	addi	a0, a0, 8
+	fsw	fa4, 0(a0) 
+	addi	a0, x0, 916
+	fsw	fa2, 0(a0) 
+	addi	a0, x0, 916
+	luil	a1, l.27154
+	srli	a1, a1, 1
+	addil	a1, a1, l.27154
+	flw	fa4, 0(a1)
+	addi	a0, a0, 4
+	fsw	fa4, 0(a0) 
+	addi	a0, x0, 916
+	fsgnjn	fa4, fa0, fa0
+	addi	a0, a0, 8
+	fsw	fa4, 0(a0) 
+	addi	a0, x0, 928
+	fsgnjn	fa4, fa3, fa3
+	fmul	fa0, fa4, fa0
+	fsw	fa0, 0(a0) 
+	addi	a0, x0, 928
+	fsgnjn	fa0, fa1, fa1
+	addi	a0, a0, 4
+	fsw	fa0, 0(a0) 
+	addi	a0, x0, 928
+	fsgnjn	fa0, fa3, fa3
+	fmul	fa0, fa0, fa2
+	addi	a0, a0, 8
+	fsw	fa0, 0(a0) 
+	addi	a0, x0, 556
+	addi	a1, x0, 544
+	flw	fa0, 0(a1)
+	addi	a1, x0, 940
+	flw	fa1, 0(a1)
+	fsub	fa0, fa0, fa1
+	fsw	fa0, 0(a0) 
+	addi	a0, x0, 556
+	addi	a1, x0, 544
+	addi	a1, a1, 4
+	flw	fa0, 0(a1)
+	addi	a1, x0, 940
+	addi	a1, a1, 4
+	flw	fa1, 0(a1)
+	fsub	fa0, fa0, fa1
+	addi	a0, a0, 4
+	fsw	fa0, 0(a0) 
+	addi	a0, x0, 556
+	addi	a1, x0, 544
+	addi	a1, a1, 8
+	flw	fa0, 0(a1)
+	addi	a1, x0, 940
+	addi	a1, a1, 8
+	flw	fa1, 0(a1)
+	fsub	fa0, fa0, fa1
+	addi	a0, a0, 8
+	fsw	fa0, 0(a0) 
+	lw	a0, 0(s10)
+	addi	x0, x0, 0
+	flw	fa0, 0(s11)
+	addi	x0, x0, 0
+	luil	a0, l.27182
+	srli	a0, a0, 1
+	addil	a0, a0, l.27182
+	flw	fa1, 0(a0)
+	fmul	fa0, fa0, fa1
 	fsgnjn	fs11, fa0, fa0
 	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.34103 # size : 28
-	luil	a0, l.26869
+	bne	a0, x0, beq_else.34569 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34570
+beq_else.34569:
+	addi	a0, x0, 1
+beq_cont.34570:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34571 # size : 4
+	fsgnj	fa1, fa0, fa0
+	jal	x0, beq_cont.34572
+beq_else.34571:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.34104
-beq_else.34103:
-beq_cont.34104:
-	luil	a0, l.26804
+	addil	a0, a0, l.27215
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+beq_cont.34572:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27150
 	flw	fa2, 0(a0)
 	fsw	fa0, -368(sp)
+	fsw	fa1, -372(sp)
+	fsgnj	fa0, fa1, fa1
 	fsgnj	fa1, fa2, fa2
-	sw	ra, -376(sp)
-	addi	sp, sp, -380
-	jal	ra, while1.2799
-	addi	sp, sp, 380
-	lw	ra, -376(sp)
+	sw	ra, -380(sp)
+	addi	sp, sp, -384
+	jal	ra, while1.2800
+	addi	sp, sp, 384
+	lw	ra, -380(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -368(sp)
-	sw	ra, -376(sp)
-	addi	sp, sp, -380
+	flw	fa0, -372(sp)
+	sw	ra, -380(sp)
+	addi	sp, sp, -384
 	jal	ra, while2.2805
-	addi	sp, sp, 380
-	lw	ra, -376(sp)
-	flw	fa1, -36(sp)
+	addi	sp, sp, 384
+	lw	ra, -380(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34105 # size : 4
-	jal	x0, beq_cont.34106
-beq_else.34105:
+	bne	a0, x0, beq_else.34573 # size : 4
+	jal	x0, beq_cont.34574
+beq_else.34573:
 	fsub	fa0, fa0, fa1
-beq_cont.34106:
-	luil	a0, l.26802
+beq_cont.34574:
+	flw	fa1, -368(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34575 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34576
+beq_else.34575:
+	addi	a0, x0, 1
+beq_cont.34576:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34577 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34578
+beq_else.34577:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34107 # size : 4
-	jal	x0, beq_cont.34108
-beq_else.34107:
-	fsub	fa0, fa1, fa0
-beq_cont.34108:
-	luil	a0, l.26923
+	fmul	fa2, fa2, fa1
+beq_cont.34578:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34109 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27150
 	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.34110
-beq_else.34109:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.34110:
-	jal	x0, beq_cont.34102
-beq_else.34101:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	flw	fa2, -308(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34111 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa2, fa3, fa2
-	jal	x0, beq_cont.34112
-beq_else.34111:
-beq_cont.34112:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa0, -372(sp)
-	fsw	fa2, -376(sp)
+	fsw	fa0, -376(sp)
+	fsw	fa2, -380(sp)
 	fsgnj	fa1, fa3, fa3
 	fsgnj	fa0, fa2, fa2
-	sw	ra, -384(sp)
-	addi	sp, sp, -388
-	jal	ra, while1.2799
-	addi	sp, sp, 388
-	lw	ra, -384(sp)
+	sw	ra, -388(sp)
+	addi	sp, sp, -392
+	jal	ra, while1.2800
+	addi	sp, sp, 392
+	lw	ra, -388(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -376(sp)
-	sw	ra, -384(sp)
-	addi	sp, sp, -388
+	flw	fa0, -380(sp)
+	sw	ra, -388(sp)
+	addi	sp, sp, -392
 	jal	ra, while2.2805
-	addi	sp, sp, 388
-	lw	ra, -384(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34113 # size : 4
-	jal	x0, beq_cont.34114
-beq_else.34113:
-	fsub	fa0, fa0, fa1
-beq_cont.34114:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34115 # size : 4
-	jal	x0, beq_cont.34116
-beq_else.34115:
-	fsub	fa0, fa1, fa0
-beq_cont.34116:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34117 # size : 188
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.34118
-beq_else.34117:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-beq_cont.34118:
-	flw	fa2, -372(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.34102:
-	flw	fa2, -336(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34119 # size : 4
+	addi	sp, sp, 392
+	lw	ra, -388(sp)
+	flw	fa1, -368(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34579 # size : 4
 	addi	a0, x0, 0
-	jal	x0, beq_cont.34120
-beq_else.34119:
+	jal	x0, beq_cont.34580
+beq_else.34579:
 	addi	a0, x0, 1
-beq_cont.34120:
+beq_cont.34580:
+	flw	fa2, -376(sp)
+	feq	t6, fa2, fa0
+	beq	t6, x0, bne_else.34581 # size : 4
+	jal	x0, bne_cont.34582
+bne_else.34581:
+	addi	a1, x0, 1
+	sub	a0, a1, a0
+bne_cont.34582:
 	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34121 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.34122
-beq_else.34121:
-	luil	a0, l.26869
+	bne	a0, t6, beq_else.34583 # size : 804
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34585 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34586
+beq_else.34585:
+	addi	a0, x0, 1
+beq_cont.34586:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34587 # size : 4
+	fsgnj	fa0, fa1, fa1
+	jal	x0, beq_cont.34588
+beq_else.34587:
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.34122:
-	luil	a0, l.26804
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fmul	fa0, fa0, fa1
+beq_cont.34588:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -380(sp)
-	fsw	fa3, -384(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
+	addil	a0, a0, l.27150
+	flw	fa2, 0(a0)
+	fsw	fa0, -384(sp)
+	fsgnj	fa1, fa2, fa2
 	sw	ra, -392(sp)
 	addi	sp, sp, -396
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 396
 	lw	ra, -392(sp)
 	fsgnj	fa1, fa0, fa0
@@ -22408,46 +22324,139 @@ beq_cont.34122:
 	jal	ra, while2.2805
 	addi	sp, sp, 396
 	lw	ra, -392(sp)
-	flw	fa1, -36(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34123 # size : 4
-	jal	x0, beq_cont.34124
-beq_else.34123:
+	bne	a0, x0, beq_else.34589 # size : 4
+	jal	x0, beq_cont.34590
+beq_else.34589:
 	fsub	fa0, fa0, fa1
-beq_cont.34124:
-	flw	fa2, -336(sp)
+beq_cont.34590:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34125 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34126
-beq_else.34125:
-	addi	a0, x0, 1
-beq_cont.34126:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34127 # size : 4
-	fsgnj	fa3, fa2, fa2
-	jal	x0, beq_cont.34128
-beq_else.34127:
-	luil	a0, l.26869
+	bne	a0, x0, beq_else.34591 # size : 4
+	jal	x0, beq_cont.34592
+beq_else.34591:
+	fsub	fa0, fa1, fa0
+beq_cont.34592:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34593 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-beq_cont.34128:
-	luil	a0, l.26804
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26804
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.34594
+beq_else.34593:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34594:
+	jal	x0, beq_cont.34584
+beq_else.34583:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34595 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34596
+beq_else.34595:
+	addi	a0, x0, 1
+beq_cont.34596:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34597 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34598
+beq_else.34597:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.34598:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
 	fsw	fa0, -388(sp)
-	fsw	fa3, -392(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
+	fsw	fa2, -392(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
 	sw	ra, -400(sp)
 	addi	sp, sp, -404
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 404
 	lw	ra, -400(sp)
 	fsgnj	fa1, fa0, fa0
@@ -22457,184 +22466,146 @@ beq_cont.34128:
 	jal	ra, while2.2805
 	addi	sp, sp, 404
 	lw	ra, -400(sp)
-	flw	fa1, -336(sp)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.34129 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34130
-beq_else.34129:
-	addi	a0, x0, 1
-beq_cont.34130:
-	flw	fa2, -388(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.34131 # size : 4
-	jal	x0, bne_cont.34132
-bne_else.34131:
-	addi	a1, x0, 1
-	sub	a0, a1, a0
-bne_cont.34132:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34133 # size : 740
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.34135 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34136
-beq_else.34135:
-	addi	a0, x0, 1
-beq_cont.34136:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34137 # size : 4
-	fsgnj	fa0, fa1, fa1
-	jal	x0, beq_cont.34138
-beq_else.34137:
-	luil	a0, l.26869
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fmul	fa0, fa0, fa1
-beq_cont.34138:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -396(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -404(sp)
-	addi	sp, sp, -408
-	jal	ra, while1.2799
-	addi	sp, sp, 408
-	lw	ra, -404(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -396(sp)
-	sw	ra, -404(sp)
-	addi	sp, sp, -408
-	jal	ra, while2.2805
-	addi	sp, sp, 408
-	lw	ra, -404(sp)
-	flw	fa1, -36(sp)
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34139 # size : 4
-	jal	x0, beq_cont.34140
-beq_else.34139:
+	bne	a0, x0, beq_else.34599 # size : 4
+	jal	x0, beq_cont.34600
+beq_else.34599:
 	fsub	fa0, fa0, fa1
-beq_cont.34140:
-	luil	a0, l.26802
+beq_cont.34600:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
 	fsub	fa2, fa2, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34141 # size : 4
-	jal	x0, beq_cont.34142
-beq_else.34141:
+	bne	a0, x0, beq_else.34601 # size : 4
+	jal	x0, beq_cont.34602
+beq_else.34601:
 	fsub	fa0, fa1, fa0
-beq_cont.34142:
-	luil	a0, l.26923
+beq_cont.34602:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26923
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
 	flw	fa2, 0(a0)
 	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34143 # size : 180
-	luil	a0, l.26931
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34603 # size : 180
+	luil	a0, l.27285
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.34604
+beq_else.34603:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.34144
-beq_else.34143:
-	luil	a0, l.26933
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
-	luil	a0, l.26935
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34604:
+	flw	fa1, -388(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34584:
+	addi	a0, x0, 568
+	fsgnjn	fa0, fa0, fa0
+	addi	a0, a0, 4
+	fsw	fa0, 0(a0) 
+	flw	fa0, 0(s11)
+	addi	x0, x0, 0
+	luil	a0, l.27182
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27182
+	flw	fa1, 0(a0)
+	fmul	fa0, fa0, fa1
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -368(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34605 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
 	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34606
+beq_else.34605:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34606:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.34144:
-	jal	x0, beq_cont.34134
-beq_else.34133:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	fsgnjn	fs11, fa1, fa1
-	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.34145 # size : 4
-	addi	a0, x0, 0
-	jal	x0, beq_cont.34146
-beq_else.34145:
-	addi	a0, x0, 1
-beq_cont.34146:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34147 # size : 4
-	fsgnj	fa2, fa1, fa1
-	jal	x0, beq_cont.34148
-beq_else.34147:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa1
-beq_cont.34148:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa0, -400(sp)
-	fsw	fa2, -404(sp)
-	fsgnj	fa1, fa3, fa3
-	fsgnj	fa0, fa2, fa2
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -396(sp)
+	fsw	fa1, -400(sp)
+	fsw	fa3, -404(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
 	sw	ra, -412(sp)
 	addi	sp, sp, -416
-	jal	ra, while1.2799
+	jal	ra, while1.2800
 	addi	sp, sp, 416
 	lw	ra, -412(sp)
 	fsgnj	fa1, fa0, fa0
@@ -22644,535 +22615,1345 @@ beq_cont.34148:
 	jal	ra, while2.2805
 	addi	sp, sp, 416
 	lw	ra, -412(sp)
-	flw	fa1, -36(sp)
+	flw	fa1, -400(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34149 # size : 4
-	jal	x0, beq_cont.34150
-beq_else.34149:
+	bne	a0, x0, beq_else.34607 # size : 4
+	jal	x0, beq_cont.34608
+beq_else.34607:
 	fsub	fa0, fa0, fa1
-beq_cont.34150:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34151 # size : 4
-	jal	x0, beq_cont.34152
-beq_else.34151:
-	fsub	fa0, fa1, fa0
-beq_cont.34152:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa1, fa2
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34153 # size : 180
-	luil	a0, l.26931
-	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa2, 0(a0)
-	fsub	fa0, fa2, fa0
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa2, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa3, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa0
-	fadd	fa3, fa4, fa3
-	fmul	fa3, fa3, fa0
-	fsub	fa2, fa3, fa2
-	fmul	fa0, fa2, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa0, fa0, fa2
-	jal	x0, beq_cont.34154
-beq_else.34153:
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa2, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
-	flw	fa3, 0(a0)
-	fmul	fa4, fa0, fa0
-	luil	a0, l.26937
-	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa5, 0(a0)
-	fmul	fa5, fa5, fa4
-	fadd	fa3, fa5, fa3
-	fmul	fa3, fa3, fa4
-	fsub	fa2, fa3, fa2
-	fmul	fa2, fa2, fa4
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa3, 0(a0)
-	fadd	fa2, fa2, fa3
-	fmul	fa0, fa2, fa0
-beq_cont.34154:
-	flw	fa2, -400(sp)
-	fmul	fa0, fa2, fa0
-beq_cont.34134:
-	addi	a0, x0, 568
-	flw	fa2, -380(sp)
-	fmul	fa0, fa2, fa0
-	fsw	fa0, 0(a0) 
-	flw	fa0, -336(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.34155 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa0
-	jal	x0, beq_cont.34156
-beq_else.34155:
-	fsgnj	fa3, fa0, fa0
-beq_cont.34156:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa3, -408(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -416(sp)
-	addi	sp, sp, -420
-	jal	ra, while1.2799
-	addi	sp, sp, 420
-	lw	ra, -416(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -408(sp)
-	sw	ra, -416(sp)
-	addi	sp, sp, -420
-	jal	ra, while2.2805
-	addi	sp, sp, 420
-	lw	ra, -416(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34157 # size : 4
-	jal	x0, beq_cont.34158
-beq_else.34157:
-	fsub	fa0, fa0, fa1
-beq_cont.34158:
-	flw	fa2, -336(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34159 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.34160
-beq_else.34159:
-	fsgnj	fa3, fa2, fa2
-beq_cont.34160:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -412(sp)
-	fsw	fa3, -416(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -424(sp)
-	addi	sp, sp, -428
-	jal	ra, while1.2799
-	addi	sp, sp, 428
-	lw	ra, -424(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -416(sp)
-	sw	ra, -424(sp)
-	addi	sp, sp, -428
-	jal	ra, while2.2805
-	addi	sp, sp, 428
-	lw	ra, -424(sp)
-	flw	fa1, -412(sp)
-	feq	t6, fa1, fa0
-	beq	t6, x0, bne_else.34161 # size : 4
-	addi	a0, x0, 1
-	jal	x0, bne_cont.34162
-bne_else.34161:
-	addi	a0, x0, 0
-bne_cont.34162:
-	flw	fa0, -336(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a1, fs11, fa0
-	bne	a1, x0, beq_else.34163 # size : 28
-	luil	a1, l.26869
-	srli	a1, a1, 1
-	addil	a1, a1, l.26869
-	flw	fa1, 0(a1)
-	fmul	fa1, fa1, fa0
-	jal	x0, beq_cont.34164
-beq_else.34163:
-	fsgnj	fa1, fa0, fa0
-beq_cont.34164:
-	luil	a1, l.26804
-	srli	a1, a1, 1
-	addil	a1, a1, l.26804
-	flw	fa2, 0(a1)
-	sw	a0, -420(sp) # Save flag00.6561.12115.20625
-	fsw	fa1, -424(sp)
-	fsgnj	fa0, fa1, fa1
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -432(sp)
-	addi	sp, sp, -436
-	jal	ra, while1.2799
-	addi	sp, sp, 436
-	lw	ra, -432(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -424(sp)
-	sw	ra, -432(sp)
-	addi	sp, sp, -436
-	jal	ra, while2.2805
-	addi	sp, sp, 436
-	lw	ra, -432(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34165 # size : 4
-	jal	x0, beq_cont.34166
-beq_else.34165:
-	fsub	fa0, fa0, fa1
-beq_cont.34166:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34167 # size : 4
-	jal	x0, beq_cont.34168
-beq_else.34167:
-	fsub	fa0, fa1, fa0
-beq_cont.34168:
-	flw	fa2, -336(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34169 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa2
-	jal	x0, beq_cont.34170
-beq_else.34169:
-	fsgnj	fa3, fa2, fa2
-beq_cont.34170:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa4, 0(a0)
-	fsw	fa0, -428(sp)
-	fsw	fa3, -432(sp)
-	fsgnj	fa1, fa4, fa4
-	fsgnj	fa0, fa3, fa3
-	sw	ra, -440(sp)
-	addi	sp, sp, -444
-	jal	ra, while1.2799
-	addi	sp, sp, 444
-	lw	ra, -440(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -432(sp)
-	sw	ra, -440(sp)
-	addi	sp, sp, -444
-	jal	ra, while2.2805
-	addi	sp, sp, 444
-	lw	ra, -440(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34171 # size : 4
-	jal	x0, beq_cont.34172
-beq_else.34171:
-	fsub	fa0, fa0, fa1
-beq_cont.34172:
-	flw	fa2, -428(sp)
-	feq	t6, fa2, fa0
-	beq	t6, x0, bne_else.34173 # size : 12
-	lw	a0, -420(sp) # Restore flag00.6561.12115.20625
-	jal	x0, bne_cont.34174
-bne_else.34173:
-	addi	a0, x0, 1
-	lw	a1, -420(sp) # Restore flag00.6561.12115.20625
-	sub	a0, a0, a1
-bne_cont.34174:
-	addi	t6, x0, 1
-	bne	a0, t6, beq_else.34175 # size : 724
-	flw	fa0, -336(sp)
-	fsgnjn	fs11, fa0, fa0
-	flt	a0, fs11, fa0
-	bne	a0, x0, beq_else.34177 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa2, 0(a0)
-	fmul	fa0, fa2, fa0
-	jal	x0, beq_cont.34178
-beq_else.34177:
-beq_cont.34178:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa2, 0(a0)
-	fsw	fa0, -436(sp)
-	fsgnj	fa1, fa2, fa2
-	sw	ra, -444(sp)
-	addi	sp, sp, -448
-	jal	ra, while1.2799
-	addi	sp, sp, 448
-	lw	ra, -444(sp)
-	fsgnj	fa1, fa0, fa0
-	flw	fa0, -436(sp)
-	sw	ra, -444(sp)
-	addi	sp, sp, -448
-	jal	ra, while2.2805
-	addi	sp, sp, 448
-	lw	ra, -444(sp)
-	flw	fa1, -36(sp)
-	fsub	fa2, fa0, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34179 # size : 4
-	jal	x0, beq_cont.34180
-beq_else.34179:
-	fsub	fa0, fa0, fa1
-beq_cont.34180:
-	luil	a0, l.26802
-	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34181 # size : 4
-	jal	x0, beq_cont.34182
-beq_else.34181:
-	fsub	fa0, fa1, fa0
-beq_cont.34182:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa1, fa2
+beq_cont.34608:
+	flw	fa1, -368(sp)
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.34183 # size : 188
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.34609 # size : 28
+	luil	a0, l.27215
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
-	flw	fa1, 0(a0)
-	fsub	fa0, fa1, fa0
-	luil	a0, l.26933
-	srli	a0, a0, 1
-	addil	a0, a0, l.26933
-	flw	fa1, 0(a0)
-	luil	a0, l.26935
-	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27215
 	flw	fa2, 0(a0)
-	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	fmul	fa2, fa2, fa1
+	jal	x0, beq_cont.34610
+beq_else.34609:
+	fsgnj	fa2, fa1, fa1
+beq_cont.34610:
+	luil	a0, l.27150
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
-	flw	fa4, 0(a0)
-	fmul	fa4, fa4, fa3
-	fadd	fa2, fa4, fa2
-	fmul	fa2, fa2, fa3
-	fsub	fa1, fa2, fa1
-	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa2, 0(a0)
-	fadd	fa1, fa1, fa2
-	fmul	fa0, fa1, fa0
-	jal	x0, beq_cont.34184
-beq_else.34183:
-	luil	a0, l.001
-	srli	a0, a0, 1
-	addil	a0, a0, l.001
-	flw	fa1, 0(a0)
-	luil	a0, l.26926
-	srli	a0, a0, 1
-	addil	a0, a0, l.26926
-	flw	fa2, 0(a0)
-	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
-	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27150
 	flw	fa3, 0(a0)
-	fmul	fa3, fa3, fa0
-	fadd	fa2, fa3, fa2
-	fmul	fa2, fa2, fa0
-	fsub	fa1, fa2, fa1
-	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
-	srli	a0, a0, 1
-	addil	a0, a0, l.26867
-	flw	fa1, 0(a0)
-	fadd	fa0, fa0, fa1
-beq_cont.34184:
-	jal	x0, beq_cont.34176
-beq_else.34175:
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa0, 0(a0)
-	flw	fa2, -336(sp)
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34185 # size : 28
-	luil	a0, l.26869
-	srli	a0, a0, 1
-	addil	a0, a0, l.26869
-	flw	fa3, 0(a0)
-	fmul	fa2, fa3, fa2
-	jal	x0, beq_cont.34186
-beq_else.34185:
-beq_cont.34186:
-	luil	a0, l.26804
-	srli	a0, a0, 1
-	addil	a0, a0, l.26804
-	flw	fa3, 0(a0)
-	fsw	fa0, -440(sp)
-	fsw	fa2, -444(sp)
+	fsw	fa0, -408(sp)
+	fsw	fa2, -412(sp)
 	fsgnj	fa1, fa3, fa3
 	fsgnj	fa0, fa2, fa2
-	sw	ra, -452(sp)
-	addi	sp, sp, -456
-	jal	ra, while1.2799
-	addi	sp, sp, 456
-	lw	ra, -452(sp)
+	sw	ra, -420(sp)
+	addi	sp, sp, -424
+	jal	ra, while1.2800
+	addi	sp, sp, 424
+	lw	ra, -420(sp)
 	fsgnj	fa1, fa0, fa0
-	flw	fa0, -444(sp)
-	sw	ra, -452(sp)
-	addi	sp, sp, -456
+	flw	fa0, -412(sp)
+	sw	ra, -420(sp)
+	addi	sp, sp, -424
 	jal	ra, while2.2805
-	addi	sp, sp, 456
-	lw	ra, -452(sp)
-	flw	fa1, -36(sp)
+	addi	sp, sp, 424
+	lw	ra, -420(sp)
+	flw	fa1, -408(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34611 # size : 4
+	addi	a0, x0, 1
+	jal	x0, bne_cont.34612
+bne_else.34611:
+	addi	a0, x0, 0
+bne_cont.34612:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -368(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.34613 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34614
+beq_else.34613:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34614:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	sw	a0, -416(sp) # Save flag00.6568.12140.20987
+	fsw	fa0, -420(sp)
+	fsw	fa1, -424(sp)
+	fsw	fa3, -428(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -436(sp)
+	addi	sp, sp, -440
+	jal	ra, while1.2800
+	addi	sp, sp, 440
+	lw	ra, -436(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -428(sp)
+	sw	ra, -436(sp)
+	addi	sp, sp, -440
+	jal	ra, while2.2805
+	addi	sp, sp, 440
+	lw	ra, -436(sp)
+	flw	fa1, -424(sp)
 	fsub	fa2, fa0, fa1
 	fsgnjn	fs11, fa2, fa2
 	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34187 # size : 4
-	jal	x0, beq_cont.34188
-beq_else.34187:
+	bne	a0, x0, beq_else.34615 # size : 4
+	jal	x0, beq_cont.34616
+beq_else.34615:
 	fsub	fa0, fa0, fa1
-beq_cont.34188:
-	luil	a0, l.26802
+beq_cont.34616:
+	luil	a0, l.27148
 	srli	a0, a0, 1
-	addil	a0, a0, l.26802
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
-	fsub	fa2, fa2, fa1
-	fsgnjn	fs11, fa2, fa2
-	flt	a0, fs11, fa2
-	bne	a0, x0, beq_else.34189 # size : 4
-	jal	x0, beq_cont.34190
-beq_else.34189:
-	fsub	fa0, fa1, fa0
-beq_cont.34190:
-	luil	a0, l.26923
-	srli	a0, a0, 1
-	addil	a0, a0, l.26923
-	flw	fa2, 0(a0)
-	fmul	fa2, fa2, fa0
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -420(sp)
 	fsub	fa1, fa1, fa2
 	fsgnjn	fs11, fa1, fa1
 	flt	a0, fs11, fa1
-	bne	a0, x0, beq_else.34191 # size : 188
-	luil	a0, l.26931
+	bne	a0, x0, beq_else.34617 # size : 4
+	jal	x0, beq_cont.34618
+beq_else.34617:
+	fsub	fa0, fa2, fa0
+beq_cont.34618:
+	luil	a0, l.27256
 	srli	a0, a0, 1
-	addil	a0, a0, l.26931
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -368(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34619 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34620
+beq_else.34619:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34620:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -432(sp)
+	fsw	fa1, -436(sp)
+	fsw	fa3, -440(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -448(sp)
+	addi	sp, sp, -452
+	jal	ra, while1.2800
+	addi	sp, sp, 452
+	lw	ra, -448(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -440(sp)
+	sw	ra, -448(sp)
+	addi	sp, sp, -452
+	jal	ra, while2.2805
+	addi	sp, sp, 452
+	lw	ra, -448(sp)
+	flw	fa1, -436(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34621 # size : 4
+	jal	x0, beq_cont.34622
+beq_else.34621:
+	fsub	fa0, fa0, fa1
+beq_cont.34622:
+	flw	fa1, -432(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34623 # size : 12
+	lw	a0, -416(sp) # Restore flag00.6568.12140.20987
+	jal	x0, bne_cont.34624
+bne_else.34623:
+	addi	a0, x0, 1
+	lw	a1, -416(sp) # Restore flag00.6568.12140.20987
+	sub	a0, a0, a1
+bne_cont.34624:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34625 # size : 828
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -368(sp)
+	fsgnjn	fs11, fa3, fa3
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.34627 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa4, 0(a0)
+	fmul	fa3, fa4, fa3
+	jal	x0, beq_cont.34628
+beq_else.34627:
+beq_cont.34628:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -444(sp)
+	fsw	fa1, -448(sp)
+	fsw	fa2, -452(sp)
+	fsw	fa3, -456(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -464(sp)
+	addi	sp, sp, -468
+	jal	ra, while1.2800
+	addi	sp, sp, 468
+	lw	ra, -464(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -456(sp)
+	sw	ra, -464(sp)
+	addi	sp, sp, -468
+	jal	ra, while2.2805
+	addi	sp, sp, 468
+	lw	ra, -464(sp)
+	flw	fa1, -452(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34629 # size : 4
+	jal	x0, beq_cont.34630
+beq_else.34629:
+	fsub	fa0, fa0, fa1
+beq_cont.34630:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -448(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34631 # size : 4
+	jal	x0, beq_cont.34632
+beq_else.34631:
+	fsub	fa0, fa2, fa0
+beq_cont.34632:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -444(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34633 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
 	flw	fa1, 0(a0)
 	fsub	fa0, fa1, fa0
-	luil	a0, l.26933
+	luil	a0, l.27287
 	srli	a0, a0, 1
-	addil	a0, a0, l.26933
+	addil	a0, a0, l.27287
 	flw	fa1, 0(a0)
-	luil	a0, l.26935
+	luil	a0, l.27289
 	srli	a0, a0, 1
-	addil	a0, a0, l.26935
+	addil	a0, a0, l.27289
 	flw	fa2, 0(a0)
 	fmul	fa3, fa0, fa0
-	luil	a0, l.26937
+	luil	a0, l.27291
 	srli	a0, a0, 1
-	addil	a0, a0, l.26937
+	addil	a0, a0, l.27291
 	flw	fa4, 0(a0)
 	fmul	fa4, fa4, fa3
 	fadd	fa2, fa4, fa2
 	fmul	fa2, fa2, fa3
 	fsub	fa1, fa2, fa1
 	fmul	fa1, fa1, fa3
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa2, 0(a0)
 	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-	jal	x0, beq_cont.34192
-beq_else.34191:
+	jal	x0, beq_cont.34634
+beq_else.34633:
 	luil	a0, l.001
 	srli	a0, a0, 1
 	addil	a0, a0, l.001
 	flw	fa1, 0(a0)
-	luil	a0, l.26926
+	luil	a0, l.27280
 	srli	a0, a0, 1
-	addil	a0, a0, l.26926
+	addil	a0, a0, l.27280
 	flw	fa2, 0(a0)
 	fmul	fa0, fa0, fa0
-	luil	a0, l.26928
+	luil	a0, l.27282
 	srli	a0, a0, 1
-	addil	a0, a0, l.26928
+	addil	a0, a0, l.27282
 	flw	fa3, 0(a0)
 	fmul	fa3, fa3, fa0
 	fadd	fa2, fa3, fa2
 	fmul	fa2, fa2, fa0
 	fsub	fa1, fa2, fa1
 	fmul	fa0, fa1, fa0
-	luil	a0, l.26867
+	luil	a0, l.27213
 	srli	a0, a0, 1
-	addil	a0, a0, l.26867
+	addil	a0, a0, l.27213
 	flw	fa1, 0(a0)
 	fadd	fa0, fa0, fa1
-beq_cont.34192:
-	flw	fa1, -440(sp)
+beq_cont.34634:
+	jal	x0, beq_cont.34626
+beq_else.34625:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -368(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.34635 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa5, 0(a0)
+	fmul	fa4, fa5, fa4
+	jal	x0, beq_cont.34636
+beq_else.34635:
+beq_cont.34636:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -460(sp)
+	fsw	fa1, -464(sp)
+	fsw	fa2, -468(sp)
+	fsw	fa3, -472(sp)
+	fsw	fa4, -476(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -484(sp)
+	addi	sp, sp, -488
+	jal	ra, while1.2800
+	addi	sp, sp, 488
+	lw	ra, -484(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -476(sp)
+	sw	ra, -484(sp)
+	addi	sp, sp, -488
+	jal	ra, while2.2805
+	addi	sp, sp, 488
+	lw	ra, -484(sp)
+	flw	fa1, -472(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34637 # size : 4
+	jal	x0, beq_cont.34638
+beq_else.34637:
+	fsub	fa0, fa0, fa1
+beq_cont.34638:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -468(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34639 # size : 4
+	jal	x0, beq_cont.34640
+beq_else.34639:
+	fsub	fa0, fa2, fa0
+beq_cont.34640:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -464(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34641 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
 	fmul	fa0, fa1, fa0
-beq_cont.34176:
+	jal	x0, beq_cont.34642
+beq_else.34641:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.34642:
+	flw	fa1, -460(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34626:
+	flw	fa1, -396(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34643 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34644
+beq_else.34643:
+	addi	a0, x0, 1
+beq_cont.34644:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34645 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34646
+beq_else.34645:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.34646:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -480(sp)
+	fsw	fa2, -484(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -492(sp)
+	addi	sp, sp, -496
+	jal	ra, while1.2800
+	addi	sp, sp, 496
+	lw	ra, -492(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -484(sp)
+	sw	ra, -492(sp)
+	addi	sp, sp, -496
+	jal	ra, while2.2805
+	addi	sp, sp, 496
+	lw	ra, -492(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34647 # size : 4
+	jal	x0, beq_cont.34648
+beq_else.34647:
+	fsub	fa0, fa0, fa1
+beq_cont.34648:
+	flw	fa1, -396(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34649 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34650
+beq_else.34649:
+	addi	a0, x0, 1
+beq_cont.34650:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34651 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34652
+beq_else.34651:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.34652:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -488(sp)
+	fsw	fa2, -492(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -500(sp)
+	addi	sp, sp, -504
+	jal	ra, while1.2800
+	addi	sp, sp, 504
+	lw	ra, -500(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -492(sp)
+	sw	ra, -500(sp)
+	addi	sp, sp, -504
+	jal	ra, while2.2805
+	addi	sp, sp, 504
+	lw	ra, -500(sp)
+	flw	fa1, -396(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34653 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34654
+beq_else.34653:
+	addi	a0, x0, 1
+beq_cont.34654:
+	flw	fa2, -488(sp)
+	feq	t6, fa2, fa0
+	beq	t6, x0, bne_else.34655 # size : 4
+	jal	x0, bne_cont.34656
+bne_else.34655:
+	addi	a1, x0, 1
+	sub	a0, a1, a0
+bne_cont.34656:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34657 # size : 804
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34659 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34660
+beq_else.34659:
+	addi	a0, x0, 1
+beq_cont.34660:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34661 # size : 4
+	fsgnj	fa0, fa1, fa1
+	jal	x0, beq_cont.34662
+beq_else.34661:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fmul	fa0, fa0, fa1
+beq_cont.34662:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa2, 0(a0)
+	fsw	fa0, -496(sp)
+	fsgnj	fa1, fa2, fa2
+	sw	ra, -504(sp)
+	addi	sp, sp, -508
+	jal	ra, while1.2800
+	addi	sp, sp, 508
+	lw	ra, -504(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -496(sp)
+	sw	ra, -504(sp)
+	addi	sp, sp, -508
+	jal	ra, while2.2805
+	addi	sp, sp, 508
+	lw	ra, -504(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34663 # size : 4
+	jal	x0, beq_cont.34664
+beq_else.34663:
+	fsub	fa0, fa0, fa1
+beq_cont.34664:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34665 # size : 4
+	jal	x0, beq_cont.34666
+beq_else.34665:
+	fsub	fa0, fa1, fa0
+beq_cont.34666:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34667 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.34668
+beq_else.34667:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34668:
+	jal	x0, beq_cont.34658
+beq_else.34657:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34669 # size : 4
+	addi	a0, x0, 0
+	jal	x0, beq_cont.34670
+beq_else.34669:
+	addi	a0, x0, 1
+beq_cont.34670:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34671 # size : 4
+	fsgnj	fa2, fa1, fa1
+	jal	x0, beq_cont.34672
+beq_else.34671:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+beq_cont.34672:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -500(sp)
+	fsw	fa2, -504(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -512(sp)
+	addi	sp, sp, -516
+	jal	ra, while1.2800
+	addi	sp, sp, 516
+	lw	ra, -512(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -504(sp)
+	sw	ra, -512(sp)
+	addi	sp, sp, -516
+	jal	ra, while2.2805
+	addi	sp, sp, 516
+	lw	ra, -512(sp)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34673 # size : 4
+	jal	x0, beq_cont.34674
+beq_else.34673:
+	fsub	fa0, fa0, fa1
+beq_cont.34674:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa2, fa2, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34675 # size : 4
+	jal	x0, beq_cont.34676
+beq_else.34675:
+	fsub	fa0, fa1, fa0
+beq_cont.34676:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34677 # size : 180
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+	jal	x0, beq_cont.34678
+beq_else.34677:
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+beq_cont.34678:
+	flw	fa1, -500(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34658:
 	addi	a0, x0, 568
-	flw	fa1, -380(sp)
+	flw	fa1, -480(sp)
+	fmul	fa0, fa1, fa0
+	fsw	fa0, 0(a0) 
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	flw	fa2, -396(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34679 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34680
+beq_else.34679:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34680:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -508(sp)
+	fsw	fa3, -512(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -520(sp)
+	addi	sp, sp, -524
+	jal	ra, while1.2800
+	addi	sp, sp, 524
+	lw	ra, -520(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -512(sp)
+	sw	ra, -520(sp)
+	addi	sp, sp, -524
+	jal	ra, while2.2805
+	addi	sp, sp, 524
+	lw	ra, -520(sp)
+	flw	fa1, -508(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34681 # size : 4
+	jal	x0, beq_cont.34682
+beq_else.34681:
+	fsub	fa0, fa0, fa1
+beq_cont.34682:
+	flw	fa1, -396(sp)
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34683 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa2, 0(a0)
+	fmul	fa2, fa2, fa1
+	jal	x0, beq_cont.34684
+beq_else.34683:
+	fsgnj	fa2, fa1, fa1
+beq_cont.34684:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa3, 0(a0)
+	fsw	fa0, -516(sp)
+	fsw	fa2, -520(sp)
+	fsgnj	fa1, fa3, fa3
+	fsgnj	fa0, fa2, fa2
+	sw	ra, -528(sp)
+	addi	sp, sp, -532
+	jal	ra, while1.2800
+	addi	sp, sp, 532
+	lw	ra, -528(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -520(sp)
+	sw	ra, -528(sp)
+	addi	sp, sp, -532
+	jal	ra, while2.2805
+	addi	sp, sp, 532
+	lw	ra, -528(sp)
+	flw	fa1, -516(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34685 # size : 4
+	addi	a0, x0, 1
+	jal	x0, bne_cont.34686
+bne_else.34685:
+	addi	a0, x0, 0
+bne_cont.34686:
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa0, 0(a1)
+	luil	a1, l.27256
+	srli	a1, a1, 1
+	addil	a1, a1, l.27256
+	flw	fa1, 0(a1)
+	flw	fa2, -396(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a1, fs11, fa2
+	bne	a1, x0, beq_else.34687 # size : 28
+	luil	a1, l.27215
+	srli	a1, a1, 1
+	addil	a1, a1, l.27215
+	flw	fa3, 0(a1)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34688
+beq_else.34687:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34688:
+	luil	a1, l.27150
+	srli	a1, a1, 1
+	addil	a1, a1, l.27150
+	flw	fa4, 0(a1)
+	sw	a0, -524(sp) # Save flag00.6568.12140.20764
+	fsw	fa0, -528(sp)
+	fsw	fa1, -532(sp)
+	fsw	fa3, -536(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -544(sp)
+	addi	sp, sp, -548
+	jal	ra, while1.2800
+	addi	sp, sp, 548
+	lw	ra, -544(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -536(sp)
+	sw	ra, -544(sp)
+	addi	sp, sp, -548
+	jal	ra, while2.2805
+	addi	sp, sp, 548
+	lw	ra, -544(sp)
+	flw	fa1, -532(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34689 # size : 4
+	jal	x0, beq_cont.34690
+beq_else.34689:
+	fsub	fa0, fa0, fa1
+beq_cont.34690:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -528(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34691 # size : 4
+	jal	x0, beq_cont.34692
+beq_else.34691:
+	fsub	fa0, fa2, fa0
+beq_cont.34692:
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	flw	fa2, -396(sp)
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34693 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa2
+	jal	x0, beq_cont.34694
+beq_else.34693:
+	fsgnj	fa3, fa2, fa2
+beq_cont.34694:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -540(sp)
+	fsw	fa1, -544(sp)
+	fsw	fa3, -548(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -556(sp)
+	addi	sp, sp, -560
+	jal	ra, while1.2800
+	addi	sp, sp, 560
+	lw	ra, -556(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -548(sp)
+	sw	ra, -556(sp)
+	addi	sp, sp, -560
+	jal	ra, while2.2805
+	addi	sp, sp, 560
+	lw	ra, -556(sp)
+	flw	fa1, -544(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34695 # size : 4
+	jal	x0, beq_cont.34696
+beq_else.34695:
+	fsub	fa0, fa0, fa1
+beq_cont.34696:
+	flw	fa1, -540(sp)
+	feq	t6, fa1, fa0
+	beq	t6, x0, bne_else.34697 # size : 12
+	lw	a0, -524(sp) # Restore flag00.6568.12140.20764
+	jal	x0, bne_cont.34698
+bne_else.34697:
+	addi	a0, x0, 1
+	lw	a1, -524(sp) # Restore flag00.6568.12140.20764
+	sub	a0, a0, a1
+bne_cont.34698:
+	addi	t6, x0, 1
+	bne	a0, t6, beq_else.34699 # size : 828
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	flw	fa3, -396(sp)
+	fsgnjn	fs11, fa3, fa3
+	flt	a0, fs11, fa3
+	bne	a0, x0, beq_else.34701 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa4, 0(a0)
+	fmul	fa3, fa4, fa3
+	jal	x0, beq_cont.34702
+beq_else.34701:
+beq_cont.34702:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa4, 0(a0)
+	fsw	fa0, -552(sp)
+	fsw	fa1, -556(sp)
+	fsw	fa2, -560(sp)
+	fsw	fa3, -564(sp)
+	fsgnj	fa1, fa4, fa4
+	fsgnj	fa0, fa3, fa3
+	sw	ra, -572(sp)
+	addi	sp, sp, -576
+	jal	ra, while1.2800
+	addi	sp, sp, 576
+	lw	ra, -572(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -564(sp)
+	sw	ra, -572(sp)
+	addi	sp, sp, -576
+	jal	ra, while2.2805
+	addi	sp, sp, 576
+	lw	ra, -572(sp)
+	flw	fa1, -560(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34703 # size : 4
+	jal	x0, beq_cont.34704
+beq_else.34703:
+	fsub	fa0, fa0, fa1
+beq_cont.34704:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -556(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34705 # size : 4
+	jal	x0, beq_cont.34706
+beq_else.34705:
+	fsub	fa0, fa2, fa0
+beq_cont.34706:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -552(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34707 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.34708
+beq_else.34707:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.34708:
+	jal	x0, beq_cont.34700
+beq_else.34699:
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa0, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa1, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa2, 0(a0)
+	luil	a0, l.27256
+	srli	a0, a0, 1
+	addil	a0, a0, l.27256
+	flw	fa3, 0(a0)
+	flw	fa4, -396(sp)
+	fsgnjn	fs11, fa4, fa4
+	flt	a0, fs11, fa4
+	bne	a0, x0, beq_else.34709 # size : 28
+	luil	a0, l.27215
+	srli	a0, a0, 1
+	addil	a0, a0, l.27215
+	flw	fa5, 0(a0)
+	fmul	fa4, fa5, fa4
+	jal	x0, beq_cont.34710
+beq_else.34709:
+beq_cont.34710:
+	luil	a0, l.27150
+	srli	a0, a0, 1
+	addil	a0, a0, l.27150
+	flw	fa5, 0(a0)
+	fsw	fa0, -568(sp)
+	fsw	fa1, -572(sp)
+	fsw	fa2, -576(sp)
+	fsw	fa3, -580(sp)
+	fsw	fa4, -584(sp)
+	fsgnj	fa1, fa5, fa5
+	fsgnj	fa0, fa4, fa4
+	sw	ra, -592(sp)
+	addi	sp, sp, -596
+	jal	ra, while1.2800
+	addi	sp, sp, 596
+	lw	ra, -592(sp)
+	fsgnj	fa1, fa0, fa0
+	flw	fa0, -584(sp)
+	sw	ra, -592(sp)
+	addi	sp, sp, -596
+	jal	ra, while2.2805
+	addi	sp, sp, 596
+	lw	ra, -592(sp)
+	flw	fa1, -580(sp)
+	fsub	fa2, fa0, fa1
+	fsgnjn	fs11, fa2, fa2
+	flt	a0, fs11, fa2
+	bne	a0, x0, beq_else.34711 # size : 4
+	jal	x0, beq_cont.34712
+beq_else.34711:
+	fsub	fa0, fa0, fa1
+beq_cont.34712:
+	luil	a0, l.27148
+	srli	a0, a0, 1
+	addil	a0, a0, l.27148
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -576(sp)
+	fsub	fa1, fa1, fa2
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34713 # size : 4
+	jal	x0, beq_cont.34714
+beq_else.34713:
+	fsub	fa0, fa2, fa0
+beq_cont.34714:
+	luil	a0, l.27277
+	srli	a0, a0, 1
+	addil	a0, a0, l.27277
+	flw	fa1, 0(a0)
+	fmul	fa1, fa1, fa0
+	flw	fa2, -572(sp)
+	fsub	fa1, fa2, fa1
+	fsgnjn	fs11, fa1, fa1
+	flt	a0, fs11, fa1
+	bne	a0, x0, beq_else.34715 # size : 188
+	luil	a0, l.27285
+	srli	a0, a0, 1
+	addil	a0, a0, l.27285
+	flw	fa1, 0(a0)
+	fsub	fa0, fa1, fa0
+	luil	a0, l.27287
+	srli	a0, a0, 1
+	addil	a0, a0, l.27287
+	flw	fa1, 0(a0)
+	luil	a0, l.27289
+	srli	a0, a0, 1
+	addil	a0, a0, l.27289
+	flw	fa2, 0(a0)
+	fmul	fa3, fa0, fa0
+	luil	a0, l.27291
+	srli	a0, a0, 1
+	addil	a0, a0, l.27291
+	flw	fa4, 0(a0)
+	fmul	fa4, fa4, fa3
+	fadd	fa2, fa4, fa2
+	fmul	fa2, fa2, fa3
+	fsub	fa1, fa2, fa1
+	fmul	fa1, fa1, fa3
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa2, 0(a0)
+	fadd	fa1, fa1, fa2
+	fmul	fa0, fa1, fa0
+	jal	x0, beq_cont.34716
+beq_else.34715:
+	luil	a0, l.001
+	srli	a0, a0, 1
+	addil	a0, a0, l.001
+	flw	fa1, 0(a0)
+	luil	a0, l.27280
+	srli	a0, a0, 1
+	addil	a0, a0, l.27280
+	flw	fa2, 0(a0)
+	fmul	fa0, fa0, fa0
+	luil	a0, l.27282
+	srli	a0, a0, 1
+	addil	a0, a0, l.27282
+	flw	fa3, 0(a0)
+	fmul	fa3, fa3, fa0
+	fadd	fa2, fa3, fa2
+	fmul	fa2, fa2, fa0
+	fsub	fa1, fa2, fa1
+	fmul	fa0, fa1, fa0
+	luil	a0, l.27213
+	srli	a0, a0, 1
+	addil	a0, a0, l.27213
+	flw	fa1, 0(a0)
+	fadd	fa0, fa0, fa1
+beq_cont.34716:
+	flw	fa1, -568(sp)
+	fmul	fa0, fa1, fa0
+beq_cont.34700:
+	addi	a0, x0, 568
+	flw	fa1, -480(sp)
 	fmul	fa0, fa1, fa0
 	addi	a0, a0, 8
 	fsw	fa0, 0(a0) 
@@ -23181,29 +23962,27 @@ beq_cont.34176:
 	addi	x0, x0, 0
 	fsw	fa0, 0(a0) 
 	addi	a0, x0, 0
-	lw	t5, -32(sp) # Restore read_object.2989
-	lw	t6, 0(t5)
-	sw	ra, -452(sp)
-	addi	sp, sp, -456
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 456
-	lw	ra, -452(sp)
+	sw	ra, -592(sp)
+	addi	sp, sp, -596
+	jal	ra, read_object.2993
+	addi	sp, sp, 596
+	lw	ra, -592(sp)
 	addi	a0, x0, 0
-	sw	ra, -452(sp)
-	addi	sp, sp, -456
-	jal	ra, read_and_network.2997
-	addi	sp, sp, 456
-	lw	ra, -452(sp)
+	sw	ra, -592(sp)
+	addi	sp, sp, -596
+	jal	ra, read_and_network.3001
+	addi	sp, sp, 596
+	lw	ra, -592(sp)
 	addi	a0, x0, 792
 	addi	a1, x0, 0
-	sw	a0, -448(sp) # Save Ta958.5571.12598
+	sw	a0, -588(sp) # Save Ta959.5575.12634
 	addi	a0, a1, 0
-	sw	ra, -456(sp)
-	addi	sp, sp, -460
-	jal	ra, read_or_network.2995
-	addi	sp, sp, 460
-	lw	ra, -456(sp)
-	lw	a1, -448(sp) # Restore Ta958.5571.12598
+	sw	ra, -596(sp)
+	addi	sp, sp, -600
+	jal	ra, read_or_network.2999
+	addi	sp, sp, 600
+	lw	ra, -596(sp)
+	lw	a1, -588(sp) # Restore Ta959.5575.12634
 	sw	a0,0(a1) 
 	addi	a0, x0, 80
 	sw	a0, 0(s11)
@@ -23263,27 +24042,25 @@ beq_cont.34176:
 	addi	a0, x0, 10
 	sw	a0, 0(s11)
 	addi	a0, x0, 4
-	sw	ra, -456(sp)
-	addi	sp, sp, -460
-	jal	ra, create_dirvecs.3314
-	addi	sp, sp, 460
-	lw	ra, -456(sp)
+	sw	ra, -596(sp)
+	addi	sp, sp, -600
+	jal	ra, create_dirvecs.3318
+	addi	sp, sp, 600
+	lw	ra, -596(sp)
 	addi	a0, x0, 9
 	addi	a1, x0, 0
 	addi	a2, x0, 0
-	lw	t5, -28(sp) # Restore calc_dirvec_rows.3305
-	lw	t6, 0(t5)
-	sw	ra, -456(sp)
-	addi	sp, sp, -460
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 460
-	lw	ra, -456(sp)
+	sw	ra, -596(sp)
+	addi	sp, sp, -600
+	jal	ra, calc_dirvec_rows.3309
+	addi	sp, sp, 600
+	lw	ra, -596(sp)
 	addi	a0, x0, 4
-	sw	ra, -456(sp)
-	addi	sp, sp, -460
-	jal	ra, init_vecset_constants.3319
-	addi	sp, sp, 460
-	lw	ra, -456(sp)
+	sw	ra, -596(sp)
+	addi	sp, sp, -600
+	jal	ra, init_vecset_constants.3323
+	addi	sp, sp, 600
+	lw	ra, -596(sp)
 	addi	a0, x0, 1236
 	lw	a0, 0(a0)
 	addi	a1, x0, 568
@@ -23303,40 +24080,40 @@ beq_cont.34176:
 	addi	a1, x0, 256
 	lw	a1, 0(a1)
 	addi	a1, a1, -1
-	sw	ra, -456(sp)
-	addi	sp, sp, -460
-	jal	ra, iter_setup_dirvec_constants.3094
-	addi	sp, sp, 460
-	lw	ra, -456(sp)
+	sw	ra, -596(sp)
+	addi	sp, sp, -600
+	jal	ra, iter_setup_dirvec_constants.3098
+	addi	sp, sp, 600
+	lw	ra, -596(sp)
 	addi	a0, x0, 256
 	lw	a0, 0(a0)
 	addi	a0, a0, -1
-	blt	a0, x0, bg_else.34193 # size : 2952
+	blt	a0, x0, bg_else.34717 # size : 2952
 	slli	a1, a0, 2
 	addi	a1, a1, 304
 	lw	a1, 0(a1)
 	lw	a2, 8(a1)
 	addi	t6, x0, 2
-	bne	a2, t6, beq_else.34195 # size : 2908
+	bne	a2, t6, beq_else.34719 # size : 2908
 	lw	a2, 28(a1)
 	flw	fa0, 0(a2)
-	luil	a2, l.26867
+	luil	a2, l.27213
 	srli	a2, a2, 1
-	addil	a2, a2, l.26867
+	addil	a2, a2, l.27213
 	flw	fa1, 0(a2)
 	flt	a2, fa0, fa1
-	bne	a2, x0, beq_else.34197 # size : 0
-	jal	x0, beq_cont.34198
-beq_else.34197:
+	bne	a2, x0, beq_else.34721 # size : 0
+	jal	x0, beq_cont.34722
+beq_else.34721:
 	lw	a2, 4(a1)
 	addi	t6, x0, 1
-	bne	a2, t6, beq_else.34199 # size : 1780
+	bne	a2, t6, beq_else.34723 # size : 1780
 	slli	a0, a0, 2
 	addi	a2, x0, 1984
 	lw	a2, 0(a2)
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa0, 0(a3)
 	lw	a1, 28(a1)
 	flw	fa1, 0(a1)
@@ -23355,18 +24132,18 @@ beq_else.34197:
 	addi	a1, a0, 1
 	addi	a3, x0, 568
 	flw	fa4, 0(a3)
-	luil	a3, l.26808
+	luil	a3, l.27154
 	srli	a3, a3, 1
-	addil	a3, a3, l.26808
+	addil	a3, a3, l.27154
 	flw	fa5, 0(a3)
-	fsw	fa1, -452(sp)
-	sw	a0, -456(sp) # Save sid.3450.6991.12376
-	sw	a2, -460(sp) # Save nr.3451.6994.12379
-	sw	a1, -464(sp) # Save Ti2662.3477.7011.12396
-	fsw	fa0, -468(sp)
-	fsw	fa3, -472(sp)
-	fsw	fa2, -476(sp)
-	fsw	fa4, -480(sp)
+	fsw	fa1, -592(sp)
+	sw	a0, -596(sp) # Save sid.3454.7005.12412
+	sw	a2, -600(sp) # Save nr.3455.7008.12415
+	sw	a1, -604(sp) # Save Ti2663.3481.7025.12432
+	fsw	fa0, -608(sp)
+	fsw	fa3, -612(sp)
+	fsw	fa2, -616(sp)
+	fsw	fa4, -620(sp)
 	fsw	fa5, 0(hp)
 	fsw	fa5, 4(hp)
 	fsw	fa5, 8(hp)
@@ -23374,67 +24151,67 @@ beq_else.34197:
 	addi	hp, hp, 12
 	addi	a1, x0, 256
 	lw	a1, 0(a1)
-	sw	a0, -484(sp) # Save v3.3541.7199.20586
+	sw	a0, -624(sp) # Save v3.3545.7213.20724
 	addi	t6, hp, 0
-create_array_loop.34202:
-	beq	a1, x0, create_array_end.34202
+create_array_loop.34726:
+	beq	a1, x0, create_array_end.34726
 	sw	a0, 0(hp)
 	addi	hp, hp, 4
 	addi	a1, a1, -1
-	jal	x0, create_array_loop.34202
-create_array_end.34202:
+	jal	x0, create_array_loop.34726
+create_array_end.34726:
 	addi	a0, t6, 0
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -484(sp) # Restore v3.3541.7199.20586
+	lw	a0, -624(sp) # Restore v3.3545.7213.20724
 	sw	a0,0(a1) 
 	addi	a2, a0 0
-	flw	fa0, -480(sp)
+	flw	fa0, -620(sp)
 	fsw	fa0, 0(a2) 
 	addi	a2, a0, 4
-	flw	fa0, -476(sp)
+	flw	fa0, -616(sp)
 	fsw	fa0, 0(a2) 
 	addi	a0, a0, 8
-	flw	fa1, -472(sp)
+	flw	fa1, -612(sp)
 	fsw	fa1, 0(a0) 
 	addi	a0, x0, 256
 	lw	a0, 0(a0)
 	addi	a0, a0, -1
-	sw	a1, -488(sp) # Save dvec.3496.20591
+	sw	a1, -628(sp) # Save dvec.3500.20729
 	addi	t6, a1, 0
 	addi	a1, a0, 0
 	addi	a0, t6, 0
-	sw	ra, -496(sp)
-	addi	sp, sp, -500
-	jal	ra, iter_setup_dirvec_constants.3094
-	addi	sp, sp, 500
-	lw	ra, -496(sp)
+	sw	ra, -636(sp)
+	addi	sp, sp, -640
+	jal	ra, iter_setup_dirvec_constants.3098
+	addi	sp, sp, 640
+	lw	ra, -636(sp)
 	addi	a0, hp 0
 	addi	hp, hp, 12
-	flw	fa0, -468(sp)
+	flw	fa0, -608(sp)
 	fsw	fa0, 8(a0) 
-	lw	a1, -488(sp) # Restore dvec.3496.20591
+	lw	a1, -628(sp) # Restore dvec.3500.20729
 	sw	a1,4(a0) 
-	lw	a1, -464(sp) # Restore Ti2662.3477.7011.12396
+	lw	a1, -604(sp) # Restore Ti2663.3481.7025.12432
 	sw	a1,0(a0) 
-	lw	a1, -460(sp) # Restore nr.3451.6994.12379
+	lw	a1, -600(sp) # Restore nr.3455.7008.12415
 	slli	a2, a1, 2
 	addi	a2, a2, 1264
 	sw	a0,0(a2) 
 	addi	a0, a1, 1
-	lw	a2, -456(sp) # Restore sid.3450.6991.12376
+	lw	a2, -596(sp) # Restore sid.3454.7005.12412
 	addi	a3, a2, 2
 	addi	a4, x0, 568
 	addi	a4, a4, 4
 	flw	fa1, 0(a4)
-	luil	a4, l.26808
+	luil	a4, l.27154
 	srli	a4, a4, 1
-	addil	a4, a4, l.26808
+	addil	a4, a4, l.27154
 	flw	fa2, 0(a4)
-	sw	a0, -492(sp) # Save Ti2667.3470.7017.12402
-	sw	a3, -496(sp) # Save Ti2669.3471.7019.12404
-	fsw	fa1, -500(sp)
+	sw	a0, -632(sp) # Save Ti2668.3474.7031.12438
+	sw	a3, -636(sp) # Save Ti2670.3475.7033.12440
+	fsw	fa1, -640(sp)
 	fsw	fa2, 0(hp)
 	fsw	fa2, 4(hp)
 	fsw	fa2, 8(hp)
@@ -23442,68 +24219,68 @@ create_array_end.34202:
 	addi	hp, hp, 12
 	addi	a1, x0, 256
 	lw	a1, 0(a1)
-	sw	a0, -504(sp) # Save v3.3541.7199.20564
+	sw	a0, -644(sp) # Save v3.3545.7213.20702
 	addi	t6, hp, 0
-create_array_loop.34204:
-	beq	a1, x0, create_array_end.34204
+create_array_loop.34728:
+	beq	a1, x0, create_array_end.34728
 	sw	a0, 0(hp)
 	addi	hp, hp, 4
 	addi	a1, a1, -1
-	jal	x0, create_array_loop.34204
-create_array_end.34204:
+	jal	x0, create_array_loop.34728
+create_array_end.34728:
 	addi	a0, t6, 0
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -504(sp) # Restore v3.3541.7199.20564
+	lw	a0, -644(sp) # Restore v3.3545.7213.20702
 	sw	a0,0(a1) 
 	addi	a2, a0 0
-	flw	fa0, -452(sp)
+	flw	fa0, -592(sp)
 	fsw	fa0, 0(a2) 
 	addi	a2, a0, 4
-	flw	fa1, -500(sp)
+	flw	fa1, -640(sp)
 	fsw	fa1, 0(a2) 
 	addi	a0, a0, 8
-	flw	fa1, -472(sp)
+	flw	fa1, -612(sp)
 	fsw	fa1, 0(a0) 
 	addi	a0, x0, 256
 	lw	a0, 0(a0)
 	addi	a0, a0, -1
-	sw	a1, -508(sp) # Save dvec.3496.20569
+	sw	a1, -648(sp) # Save dvec.3500.20707
 	addi	t6, a1, 0
 	addi	a1, a0, 0
 	addi	a0, t6, 0
-	sw	ra, -516(sp)
-	addi	sp, sp, -520
-	jal	ra, iter_setup_dirvec_constants.3094
-	addi	sp, sp, 520
-	lw	ra, -516(sp)
+	sw	ra, -656(sp)
+	addi	sp, sp, -660
+	jal	ra, iter_setup_dirvec_constants.3098
+	addi	sp, sp, 660
+	lw	ra, -656(sp)
 	addi	a0, hp 0
 	addi	hp, hp, 12
-	flw	fa0, -468(sp)
+	flw	fa0, -608(sp)
 	fsw	fa0, 8(a0) 
-	lw	a1, -508(sp) # Restore dvec.3496.20569
+	lw	a1, -648(sp) # Restore dvec.3500.20707
 	sw	a1,4(a0) 
-	lw	a1, -496(sp) # Restore Ti2669.3471.7019.12404
+	lw	a1, -636(sp) # Restore Ti2670.3475.7033.12440
 	sw	a1,0(a0) 
-	lw	a1, -492(sp) # Restore Ti2667.3470.7017.12402
+	lw	a1, -632(sp) # Restore Ti2668.3474.7031.12438
 	slli	a1, a1, 2
 	addi	a1, a1, 1264
 	sw	a0,0(a1) 
-	lw	a0, -460(sp) # Restore nr.3451.6994.12379
+	lw	a0, -600(sp) # Restore nr.3455.7008.12415
 	addi	a1, a0, 2
-	lw	a2, -456(sp) # Restore sid.3450.6991.12376
+	lw	a2, -596(sp) # Restore sid.3454.7005.12412
 	addi	a2, a2, 3
 	addi	a3, x0, 568
 	addi	a3, a3, 8
 	flw	fa1, 0(a3)
-	luil	a3, l.26808
+	luil	a3, l.27154
 	srli	a3, a3, 1
-	addil	a3, a3, l.26808
+	addil	a3, a3, l.27154
 	flw	fa2, 0(a3)
-	sw	a1, -512(sp) # Save Ti2674.3463.7025.12410
-	sw	a2, -516(sp) # Save Ti2676.3464.7027.12412
-	fsw	fa1, -520(sp)
+	sw	a1, -652(sp) # Save Ti2675.3467.7039.12446
+	sw	a2, -656(sp) # Save Ti2677.3468.7041.12448
+	fsw	fa1, -660(sp)
 	fsw	fa2, 0(hp)
 	fsw	fa2, 4(hp)
 	fsw	fa2, 8(hp)
@@ -23511,69 +24288,69 @@ create_array_end.34204:
 	addi	hp, hp, 12
 	addi	a1, x0, 256
 	lw	a1, 0(a1)
-	sw	a0, -524(sp) # Save v3.3541.7199.20542
+	sw	a0, -664(sp) # Save v3.3545.7213.20680
 	addi	t6, hp, 0
-create_array_loop.34206:
-	beq	a1, x0, create_array_end.34206
+create_array_loop.34730:
+	beq	a1, x0, create_array_end.34730
 	sw	a0, 0(hp)
 	addi	hp, hp, 4
 	addi	a1, a1, -1
-	jal	x0, create_array_loop.34206
-create_array_end.34206:
+	jal	x0, create_array_loop.34730
+create_array_end.34730:
 	addi	a0, t6, 0
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -524(sp) # Restore v3.3541.7199.20542
+	lw	a0, -664(sp) # Restore v3.3545.7213.20680
 	sw	a0,0(a1) 
 	addi	a2, a0 0
-	flw	fa0, -452(sp)
+	flw	fa0, -592(sp)
 	fsw	fa0, 0(a2) 
 	addi	a2, a0, 4
-	flw	fa0, -476(sp)
+	flw	fa0, -616(sp)
 	fsw	fa0, 0(a2) 
 	addi	a0, a0, 8
-	flw	fa0, -520(sp)
+	flw	fa0, -660(sp)
 	fsw	fa0, 0(a0) 
 	addi	a0, x0, 256
 	lw	a0, 0(a0)
 	addi	a0, a0, -1
-	sw	a1, -528(sp) # Save dvec.3496.20547
+	sw	a1, -668(sp) # Save dvec.3500.20685
 	addi	t6, a1, 0
 	addi	a1, a0, 0
 	addi	a0, t6, 0
-	sw	ra, -536(sp)
-	addi	sp, sp, -540
-	jal	ra, iter_setup_dirvec_constants.3094
-	addi	sp, sp, 540
-	lw	ra, -536(sp)
+	sw	ra, -676(sp)
+	addi	sp, sp, -680
+	jal	ra, iter_setup_dirvec_constants.3098
+	addi	sp, sp, 680
+	lw	ra, -676(sp)
 	addi	a0, hp 0
 	addi	hp, hp, 12
-	flw	fa0, -468(sp)
+	flw	fa0, -608(sp)
 	fsw	fa0, 8(a0) 
-	lw	a1, -528(sp) # Restore dvec.3496.20547
+	lw	a1, -668(sp) # Restore dvec.3500.20685
 	sw	a1,4(a0) 
-	lw	a1, -516(sp) # Restore Ti2676.3464.7027.12412
+	lw	a1, -656(sp) # Restore Ti2677.3468.7041.12448
 	sw	a1,0(a0) 
-	lw	a1, -512(sp) # Restore Ti2674.3463.7025.12410
+	lw	a1, -652(sp) # Restore Ti2675.3467.7039.12446
 	slli	a1, a1, 2
 	addi	a1, a1, 1264
 	sw	a0,0(a1) 
 	addi	a0, x0, 1984
-	lw	a1, -460(sp) # Restore nr.3451.6994.12379
+	lw	a1, -600(sp) # Restore nr.3455.7008.12415
 	addi	a1, a1, 3
 	sw	a1,0(a0) 
-	jal	x0, beq_cont.34200
-beq_else.34199:
+	jal	x0, beq_cont.34724
+beq_else.34723:
 	addi	t6, x0, 2
-	bne	a2, t6, beq_else.34207 # size : 1028
+	bne	a2, t6, beq_else.34731 # size : 1028
 	slli	a0, a0, 2
 	addi	a0, a0, 1
 	addi	a2, x0, 1984
 	lw	a2, 0(a2)
-	luil	a3, l.26867
+	luil	a3, l.27213
 	srli	a3, a3, 1
-	addil	a3, a3, l.26867
+	addil	a3, a3, l.27213
 	flw	fa0, 0(a3)
 	lw	a3, 28(a1)
 	flw	fa1, 0(a3)
@@ -23597,9 +24374,9 @@ beq_else.34199:
 	flw	fa3, 0(a3)
 	fmul	fa2, fa2, fa3
 	fadd	fa1, fa1, fa2
-	luil	a3, l.26802
+	luil	a3, l.27148
 	srli	a3, a3, 1
-	addil	a3, a3, l.26802
+	addil	a3, a3, l.27148
 	flw	fa2, 0(a3)
 	lw	a3, 16(a1)
 	flw	fa3, 0(a3)
@@ -23608,9 +24385,9 @@ beq_else.34199:
 	addi	a3, x0, 568
 	flw	fa3, 0(a3)
 	fsub	fa2, fa2, fa3
-	luil	a3, l.26802
+	luil	a3, l.27148
 	srli	a3, a3, 1
-	addil	a3, a3, l.26802
+	addil	a3, a3, l.27148
 	flw	fa3, 0(a3)
 	lw	a3, 16(a1)
 	addi	a3, a3, 4
@@ -23621,9 +24398,9 @@ beq_else.34199:
 	addi	a3, a3, 4
 	flw	fa4, 0(a3)
 	fsub	fa3, fa3, fa4
-	luil	a3, l.26802
+	luil	a3, l.27148
 	srli	a3, a3, 1
-	addil	a3, a3, l.26802
+	addil	a3, a3, l.27148
 	flw	fa4, 0(a3)
 	lw	a1, 16(a1)
 	addi	a1, a1, 8
@@ -23634,16 +24411,16 @@ beq_else.34199:
 	addi	a1, a1, 8
 	flw	fa4, 0(a1)
 	fsub	fa1, fa1, fa4
-	luil	a1, l.26808
+	luil	a1, l.27154
 	srli	a1, a1, 1
-	addil	a1, a1, l.26808
+	addil	a1, a1, l.27154
 	flw	fa4, 0(a1)
-	sw	a2, -532(sp) # Save nr.3409.6954.12339
-	sw	a0, -536(sp) # Save sid.3408.6951.12336
-	fsw	fa0, -540(sp)
-	fsw	fa1, -544(sp)
-	fsw	fa3, -548(sp)
-	fsw	fa2, -552(sp)
+	sw	a2, -672(sp) # Save nr.3413.6968.12375
+	sw	a0, -676(sp) # Save sid.3412.6965.12372
+	fsw	fa0, -680(sp)
+	fsw	fa1, -684(sp)
+	fsw	fa3, -688(sp)
+	fsw	fa2, -692(sp)
 	fsw	fa4, 0(hp)
 	fsw	fa4, 4(hp)
 	fsw	fa4, 8(hp)
@@ -23651,68 +24428,68 @@ beq_else.34199:
 	addi	hp, hp, 12
 	addi	a1, x0, 256
 	lw	a1, 0(a1)
-	sw	a0, -556(sp) # Save v3.3541.7199.20445
+	sw	a0, -696(sp) # Save v3.3545.7213.20583
 	addi	t6, hp, 0
-create_array_loop.34210:
-	beq	a1, x0, create_array_end.34210
+create_array_loop.34734:
+	beq	a1, x0, create_array_end.34734
 	sw	a0, 0(hp)
 	addi	hp, hp, 4
 	addi	a1, a1, -1
-	jal	x0, create_array_loop.34210
-create_array_end.34210:
+	jal	x0, create_array_loop.34734
+create_array_end.34734:
 	addi	a0, t6, 0
 	addi	a1, hp 0
 	addi	hp, hp, 8
 	sw	a0,4(a1) 
-	lw	a0, -556(sp) # Restore v3.3541.7199.20445
+	lw	a0, -696(sp) # Restore v3.3545.7213.20583
 	sw	a0,0(a1) 
 	addi	a2, a0 0
-	flw	fa0, -552(sp)
+	flw	fa0, -692(sp)
 	fsw	fa0, 0(a2) 
 	addi	a2, a0, 4
-	flw	fa0, -548(sp)
+	flw	fa0, -688(sp)
 	fsw	fa0, 0(a2) 
 	addi	a0, a0, 8
-	flw	fa0, -544(sp)
+	flw	fa0, -684(sp)
 	fsw	fa0, 0(a0) 
 	addi	a0, x0, 256
 	lw	a0, 0(a0)
 	addi	a0, a0, -1
-	sw	a1, -560(sp) # Save dvec.3496.20450
+	sw	a1, -700(sp) # Save dvec.3500.20588
 	addi	t6, a1, 0
 	addi	a1, a0, 0
 	addi	a0, t6, 0
-	sw	ra, -568(sp)
-	addi	sp, sp, -572
-	jal	ra, iter_setup_dirvec_constants.3094
-	addi	sp, sp, 572
-	lw	ra, -568(sp)
+	sw	ra, -708(sp)
+	addi	sp, sp, -712
+	jal	ra, iter_setup_dirvec_constants.3098
+	addi	sp, sp, 712
+	lw	ra, -708(sp)
 	addi	a0, hp 0
 	addi	hp, hp, 12
-	flw	fa0, -540(sp)
+	flw	fa0, -680(sp)
 	fsw	fa0, 8(a0) 
-	lw	a1, -560(sp) # Restore dvec.3496.20450
+	lw	a1, -700(sp) # Restore dvec.3500.20588
 	sw	a1,4(a0) 
-	lw	a1, -536(sp) # Restore sid.3408.6951.12336
+	lw	a1, -676(sp) # Restore sid.3412.6965.12372
 	sw	a1,0(a0) 
-	lw	a1, -532(sp) # Restore nr.3409.6954.12339
+	lw	a1, -672(sp) # Restore nr.3413.6968.12375
 	slli	a2, a1, 2
 	addi	a2, a2, 1264
 	sw	a0,0(a2) 
 	addi	a0, x0, 1984
 	addi	a1, a1, 1
 	sw	a1,0(a0) 
-	jal	x0, beq_cont.34208
-beq_else.34207:
-beq_cont.34208:
-beq_cont.34200:
-beq_cont.34198:
-	jal	x0, beq_cont.34196
-beq_else.34195:
-beq_cont.34196:
-	jal	x0, bg_cont.34194
-bg_else.34193:
-bg_cont.34194:
+	jal	x0, beq_cont.34732
+beq_else.34731:
+beq_cont.34732:
+beq_cont.34724:
+beq_cont.34722:
+	jal	x0, beq_cont.34720
+beq_else.34719:
+beq_cont.34720:
+	jal	x0, bg_cont.34718
+bg_else.34717:
+bg_cont.34718:
 	addi	a0, x0, 0
 	addi	a2, x0, 0
 	addi	a1, x0, 888
@@ -23748,30 +24525,26 @@ bg_cont.34194:
 	addi	a0, x0, 872
 	lw	a0, 0(a0)
 	addi	a1, a0, -1
-	lw	a0, -116(sp) # Restore cur.3352.6781
-	lw	t5, -24(sp) # Restore pretrace_pixels.3253
+	lw	a0, -96(sp) # Restore cur.3356.6795
 	fsgnj	fs11, fa2, fa2
 	fsgnj	fa2, fa0, fa0
 	fsgnj	fa0, fa1, fa1
 	fsgnj	fa1, fs11, fs11
-	lw	t6, 0(t5)
-	sw	ra, -568(sp)
-	addi	sp, sp, -572
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 572
-	lw	ra, -568(sp)
+	sw	ra, -708(sp)
+	addi	sp, sp, -712
+	jal	ra, pretrace_pixels.3257
+	addi	sp, sp, 712
+	lw	ra, -708(sp)
 	addi	a0, x0, 0
 	addi	a4, x0, 2
-	lw	a1, -76(sp) # Restore prev.3351.6779
-	lw	a2, -116(sp) # Restore cur.3352.6781
-	lw	a3, -156(sp) # Restore next.3353.6783
-	lw	a5, -16(sp) # Restore Ti2768.3345
-	lw	t5, -20(sp) # Restore scan_line.3271
-	lw	t6, 0(t5)
-	sw	ra, -568(sp)
-	addi	sp, sp, -572
-	jalr	ra, t6, 0 # CallCls t5
-	addi	sp, sp, 572
-	lw	ra, -568(sp)
+	lw	a1, -56(sp) # Restore prev.3355.6793
+	lw	a2, -96(sp) # Restore cur.3356.6795
+	lw	a3, -136(sp) # Restore next.3357.6797
+	lw	a5, -16(sp) # Restore Ti2769.3349
+	sw	ra, -708(sp)
+	addi	sp, sp, -712
+	jal	ra, scan_line.3275
+	addi	sp, sp, 712
+	lw	ra, -708(sp)
 	jalr	x0, ra, 0
 	jalr	x0, ra, 0
