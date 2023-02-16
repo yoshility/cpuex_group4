@@ -19,6 +19,139 @@ int bits(long int x, int to, int from) {
     return (x >> from) & ((1 << (to-from+1)) - 1);
 }
 
+// fpu誤差チェック(float_spec参照)
+void check_error1(int op, float apx, float real, float A, float B) {
+    union Bit32 eps;        // ε = 2^-126 (e=e'+127=-126+127=1)
+    eps.i = 1<<23;
+    union Bit32 adj2_23;    // 調整用に掛ける2^23 (e=e'+127=23+127=150)
+    adj2_23.i = 150<<23;
+    union Bit32 adj2_22;    // 調整用に掛ける2^22 (e=e'+127=22+127=149)
+    adj2_22.i = 149<<23;
+    union Bit32 adj2_20;    // 調整用に掛ける2^20 (e=e'+127=20+127=147)
+    adj2_20.i = 147<<23;
+    
+    switch (op) {
+        case 13: // fadd
+            if (abs(apx-real)*adj2_23.f >= max({abs(A), abs(B), abs(real), eps.f*adj2_23.f})) {
+                printf("[fadd diff]\n");
+                printf("A:    %.8f\n", A);
+                printf("B:    %.8f\n", B);
+                printf("A+B:  %.8f\n", real);
+                printf("fadd: %.8f\n", apx);
+                exit(1);
+            } else { break; }
+        case 14: // fsub
+            if (abs(apx-real)*adj2_23.f >= max({abs(A), abs(B), abs(real), eps.f*adj2_23.f})) {
+                printf("[fsub diff]\n");
+                printf("A:    %.8f\n", A);
+                printf("B:    %.8f\n", B);
+                printf("A-B:  %.8f\n", real);
+                printf("fsub: %.8f\n", apx);
+                exit(1);
+            } else { break; }
+        case 15: // fmul
+            if (abs(apx-real)*adj2_22.f >= max(abs(real), eps.f*adj2_22.f)) {
+                printf("[fmul diff]\n");
+                printf("A:    %.54f\n", A);
+                printf("B:    %.54f\n", B);
+                printf("A*B:  %.54f\n", real);
+                printf("fmul: %.54f\n", apx);
+                printf("eps:  %.54f\n", eps.f);
+                exit(1);
+            } else { break; }
+        case 16: // fdiv
+            if (abs(apx-real)*adj2_20.f >= max({abs(real), eps.f*adj2_20.f})) {
+                printf("[fdiv diff]\n");
+                printf("A:    %.8f\n", A);
+                printf("B:    %.8f\n", B);
+                printf("A/B:  %.8f\n", real);
+                printf("fdiv: %.8f\n", apx);
+                exit(1);
+            } else { break; }
+        case 19: // fsqrt
+            if (abs(apx-real)*adj2_20.f >= max({abs(real), eps.f*adj2_20.f})) {
+                printf("[fsqrt diff]\n");
+                printf("A:     %.8f\n", A);
+                printf("√A:    %.8f\n", real);
+                printf("fsqrt: %.8f\n", apx);
+                exit(1);
+            } else { break; }
+        default:
+            printf("check_error1 unknown op: %d\n", op);
+            exit(1);
+    }
+}
+
+// fpu誤差チェック
+void check_error2(int op, float apx, float real, float A, float B, int C) {
+    switch (op) {
+        case 20: // fsgnjn
+            if (apx != real) {
+                printf("[fsgnjn diff]\n");
+                printf("A:       %.8f\n", A);
+                printf("B:       %.8f\n", B);
+                printf("real:    %.8f\n", real);
+                printf("fsgnjn:  %.8f\n", apx);
+                exit(1);
+            } else { break; }
+        case 21: // fsgnjx
+            if (apx != real) {
+                printf("[fsgnjx diff]\n");
+                printf("A:       %.8f\n", A);
+                printf("B:       %.8f\n", B);
+                printf("real:    %.8f\n", real);
+                printf("fsgnjx:  %.8f\n", apx);
+                exit(1);
+            } else { break; }
+        case 22: // fsgnj
+            if (apx != real) {
+                printf("[fsgnj diff]\n");
+                printf("A:       %.8f\n", A);
+                printf("B:       %.8f\n", B);
+                printf("real:    %.8f\n", real);
+                printf("fsgnj:   %.8f\n", apx);
+                exit(1);
+            } else { break; }
+        case 23: // fcvtsw
+            if (apx != real) {
+                printf("[itof diff]\n");
+                printf("C:     %d\n", C);
+                printf("Ctof:  %.8f\n", real);
+                printf("itof:  %.8f\n", apx);
+                exit(1);
+            } else { break; }
+        case 24: // fcvtws
+            if (apx != real) {
+                printf("[ftoi diff]\n");
+                printf("A:     %.8f\n", A);
+                printf("Atoi:  %.8f\n", real);
+                printf("ftoi:  %.8f\n", apx);
+                exit(1);
+            } else { break; }
+        case 25: // feq (要らないかも)
+            if (apx != real) {
+                printf("[feq diff]\n");
+                printf("A:    %.8f\n", A);
+                printf("B:    %.8f\n", B);
+                printf("A==B: %.8f\n", real);
+                printf("feq:  %.8f\n", apx);
+                exit(1);
+            } else { break; }
+        case 26: // flt
+            if (apx != real) {
+                printf("[flt diff]\n");
+                printf("A:    %.8f\n", A);
+                printf("B:    %.8f\n", B);
+                printf("A<B:  %.8f\n", real);
+                printf("flt:  %.8f\n", apx);
+                exit(1);
+            } else { break; }
+        default:
+            printf("check_error2 unknown op: %d\n", op);
+            exit(1);
+    }
+}
+
 // fadd.sv
 float fadd(float x1, float x2) {
     union Bit32 _x1, _x2, _y;
