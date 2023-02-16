@@ -525,6 +525,8 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
                 }
+                // *** diffあり ***
+                check_error1(15, fmul(freg[op._r1], freg[op._r2]), freg[op._r1]*freg[op._r2], freg[op._r1], freg[op._r2]);
                 // freg[op._r0] = freg[op._r1] * freg[op._r2];
                 freg[op._r0] = fmul(freg[op._r1], freg[op._r2]);
                 pc += 4;
