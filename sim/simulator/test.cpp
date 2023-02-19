@@ -60,49 +60,25 @@ int bits_(long int x, int to, int from) {
     return (x >> from) & ((1 << (to-from+1)) - 1);
 }
 
-// fmul.sv
-float fmul(float x1, float x2) {
-    union Bit32_ _x1, _x2, _y;
-    _x1.f = x1;
-    _x2.f = x2;
-    int sign = (bit_(_x1.i, 31) != bit_(_x2.i, 31));
-    // int exp_x1 = (bits_(_x1.i, 30, 23)!=0) ? bits_(_x1.i, 30, 23) : 1;
-    // int exp_x2 = (bits_(_x2.i, 30, 23)!=0) ? bits_(_x2.i, 30, 23) : 1;
-    int x1_hl, x2_hl;
-    x1_hl = (bits_(_x1.i, 30, 23)!=0) ? ((1<<23) + bits_(_x1.i, 22, 0)) : bits_(_x1.i, 22, 0);
-    x2_hl = (bits_(_x2.i, 30, 23)!=0) ? ((1<<23) + bits_(_x2.i, 22, 0)) : bits_(_x2.i, 22, 0);
-    int x1_h, x2_h, x1_l, x2_l;
-    x1_h = bits_(x1_hl, 23, 12);
-    x1_l = bits_(x1_hl, 11, 0);
-    x2_h = bits_(x2_hl, 23, 12);
-    x2_l = bits_(x2_hl, 11, 0);
-    long int hh, hl, lh, ll;
-    hh = x1_h * x2_h;
-    hl = x1_h * x2_l;
-    lh = x1_l * x2_h;
-    ll = x1_l * x2_l;
-    long int frac_calc = (hh<<24) + (hl<<12) + (lh<<12) + ll;
-    int exp_sum = bits_(_x1.i, 30, 23) + bits_(_x2.i, 30, 23) + 129;
-
-    int fraction =
-        bit_(frac_calc, 47) ? bits_(frac_calc, 46, 24) :
-        bit_(frac_calc, 46) ? bits_(frac_calc, 45, 23) :
-        bit_(frac_calc, 45) ? bits_(frac_calc, 44, 22) :
-        bits_(frac_calc, 43, 21);
-    int exp_add1 = bits_(exp_sum, 8, 0) + 1;
-    int exp_sub1 = bits_(exp_sum, 8, 0) - 1;
-    int exp_sub2 = bits_(exp_sum, 8, 0) - 2;
-    int exponent =
-        bit_(frac_calc, 47) ? exp_add1 :
-        bit_(frac_calc, 46) ? exp_sum :
-        bit_(frac_calc, 45) ? exp_sub1 :
-        exp_sub2;
-    int zero = (bits_(_x1.i, 30, 23) && bits_(_x2.i, 30, 23)) ? 0 : 1;
-    int inf = ((bits_(_x1.i, 30, 23)==255) || (bits_(_x2.i, 30, 23)==255)) ? 1 : 0;
-    _y.i = (zero) ? (sign<<31) :
-           (inf) ? ((sign<<31) + (255<<23)) :
-           ((sign<<31) + (bits_(exponent, 7, 0)<<23) + fraction);
-    return _y.f;
+// convert.sv
+int ftoi(float float_x) {
+    union Bit32 _float_x;
+    _float_x.f = float_x;
+    int exp = bits(_float_x.i, 30, 23) - 127;
+    // int shift = bit(exp, 8) ? bits(exp, 4, 0) : 0;
+    int frac = (1 << 30) + (bits(_float_x.i, 22, 0) << 7);
+    int s = 30 - exp;
+    int frac_shift = (s >= 31) ? 0 : (frac >> s);
+    printf("frac_shift:\t%d\n", frac_shift);
+    int round_bit = 29 - exp;
+    printf("round_bit:\t%d\n", round_bit);
+    int frac_tmp = (round_bit >= 31) ? 0 : (frac >> round_bit);
+    printf("frac_tmp:\t%d\n", frac_tmp);
+    int pos_fraction = bit(frac_tmp, 0) ? (frac_shift + 1) : frac_shift;
+    printf("pos_fraction:\t%d\n", pos_fraction);
+    int fraction = bit(_float_x.i, 31) ? (~pos_fraction + 1) : pos_fraction;
+    printf("fraction:\t%d\n", fraction);
+    return fraction;
 }
 
 // fpu誤差チェック(float_spec参照)
@@ -238,10 +214,12 @@ void check_error2(int op, float apx, float real, float A, float B, int C) {
 }
 
 int main(int argc, char* argv[]) {
-    float a = 0;
-    float b = 0;
-
-    printf("fmul(0, 0): %.8f\n", fmul(a, b));
+    // float a = 0.00188944430556148290634155273437500000; // 1 !?
+    // float b = 0.0018894443055614; // 1 !?
+    // float c = 0.00188; // 1 !?
+    float d = 0.001;
+    printf("%f\n", round(d));
+    printf("%d\n", ftoi(d));
     
 	return 0;
 }

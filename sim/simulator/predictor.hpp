@@ -78,5 +78,5 @@ void Predictor::predict(int act, unsigned long long* clk, bool debug) {
 
 // 情報出力
 void Predictor::print_stat() {
-    printf("Predictor hit rate: %f\n", (double)predict_hit/predict_access*100);
+    printf("Predictor hit rate:\t%f\n", (double)predict_hit/predict_access*100);
 }
