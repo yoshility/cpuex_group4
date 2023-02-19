@@ -528,10 +528,10 @@ int main(int argc, char* argv[]) {
                 // // *** diffあり ***
                 // check_error1(15, fmul(freg[op._r1], freg[op._r2]), freg[op._r1]*freg[op._r2], freg[op._r1], freg[op._r2]);
                 // // freg[op._r0] = freg[op._r1] * freg[op._r2];
-                // freg[op._r0] = fmul(freg[op._r1], freg[op._r2]);
-                // pc += 4;
-                // clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
-                // break;
+                freg[op._r0] = fmul(freg[op._r1], freg[op._r2]);
+                pc += 4;
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
+                break;
             case 16: // fdiv fd, fs1, fs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
