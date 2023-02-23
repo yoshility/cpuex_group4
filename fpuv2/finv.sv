@@ -60,8 +60,23 @@ module fdiv (
 	input					rstn
 );
 	wire [31:0] inv_x2;
+	logic [31:0] x1_reg1, x1_reg2, x1_reg3, x1_reg4;
+	logic [31:0] x2_reg1, x2_reg2, x2_reg3, x2_reg4;
+	logic [31:0] inv_x2_reg1, inv_x2_reg2, inv_x2_reg3, inv_x2_reg4;
 	finv finv_in_fdiv(x2,inv_x2,clk,rstn);
-	fmul fmul_in_fdiv(x1,inv_x2,y,clk,rstn);
+	fmul fmul_in_fdiv(x1_reg2,inv_x2,y,clk,rstn);
+
+	always_ff (@posedge clk) begin
+		if (~rstn) begin
+			x1_reg1 <= 32'b0; x1_reg2 <= 32'b0; x1_reg3 <= 32'b0; x1_reg4 <= 32'b0;
+			x2_reg1 <= 32'b0; x2_reg2 <= 32'b0; x2_reg3 <= 32'b0; x2_reg4 <= 32'b0;
+			inv_x2_reg1 <= 32'b0; inv_x2_reg2 <= 32'b0; inv_x2_reg3 <= 32'b0; inv_x2_reg4 <= 32'b0;
+		end else begin
+			x1_reg1 <= x1; x1_reg2 <= x1_reg1; x1_reg3 <= x1_reg3; x1_reg4 <= x1_reg4;
+			x2_reg1 <= x2; x2_reg2 <= x2_reg1; x2_reg3 <= x2_reg3; x2_reg4 <= x2_reg4;
+			inv_x2_reg1 <= inv_x2; inv_x2_reg2 <= inv_x2_reg1; inv_x2_reg3 <= inv_x2_reg2; inv_x2_reg4 <= inv_x2_reg3;
+		end
+	end
 endmodule
 
 module finv_table (

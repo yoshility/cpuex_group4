@@ -33,17 +33,26 @@ module cache_controller #(
 	localparam s_finish			= 6'b010000;
 
 	// cahce_memory
-	(*ram_style = "BLOCK"*) logic [LINE_SIZE-1:0] cache_memory 	[0:2**INDEX_LEN-1];
-	(*ram_style = "BLOCK"*) logic [TAG_LEN-1:0] 	tag_memory 		[0:2**INDEX_LEN-1];
-	(*ram_style = "BLOCK"*) logic								 	dirty_memory 	[0:2**INDEX_LEN-1];
+	(*ram_style = "BLOCK"*) logic [LINE_NUM-1:0][WAY_NUM-1:0][LINE_SIZE-1:0] 	cache_memory;
+	(*ram_style = "BLOCK"*) logic [LINE_NUM-1:0][WAY_NUM-1:0][TAG_LEN-1:0] 		tag_memory 	;
+	(*ram_style = "BLOCK"*) logic [LINE_NUM-1:0][WAY_NUM-1:0] 								dirty_memory;
+	(*ram_style = "BLOCK"*) logic [LINE_NUM-1:0][WAY_NUM-1:0]									lru_memory 	;
 
 	// decode of address
-	wire [OFFSET_LEN-1:0] offset	= addr[OFFSET_LEN - 1	:0];
-	wire [INDEX_LEN-1:0] 	line 		= addr[(INDEX_LEN + OFFSET_LEN) - 1	:(OFFSET_LEN - 1) + 1];
-	wire [TAG_LEN-1:0] 		tag 		= addr[ADDR_LEN-1	:	ADDR_LEN - TAG_LEN];
+	wire [OFFSET_LEN-1:0] 	offset 	= addr[OFFSET_LEN - 1	:0];
+	wire [INDEX_LEN-1:0] 		line 		= addr[(INDEX_LEN + OFFSET_LEN) - 1	:(OFFSET_LEN - 1) + 1];
+	wire [TAG_LEN-1:0] 			tag 		= addr[ADDR_LEN-1	:	ADDR_LEN - TAG_LEN];
 
 	// hit or miss
-	wire cache_hit = (tag_memory[line] == tag) ? 1'b1 : 1'b0;
+	wire [WAY_NUM-1:0] cache_hit =
+		(tag_memory[line][0] == tag) ? 4'b0001 :
+		(tag_memory[line][1] == tag) ? 4'b0010 :
+		(tag_memory[line][2] == tag) ? 4'b0100 :
+		(tag_memory[line][3] == tag) ? 4'b1000 :
+		4'b0000;
+
+	wire [2:0] way_addr;
+	encoder_cache hit(cache_hit, way_addr);
 
 	// data-register
 	logic [DATA_LEN-1:0] data_reg;
@@ -58,9 +67,9 @@ module cache_controller #(
 		if (~finish) begin
 			if (read_or_write) begin
 				//read
-				if (cache_hit) begin
+				if (|cache_hit) begin
 					// hit
-					data_reg <= cache_memory[line][(offset<<5)+7'd31:(offset<<5)];
+					data_reg <= cache_memory[line][way_addr[1:0]][(offset<<5)+7'd31:(offset<<5)];
 					finish <= 1'b1;
 				end else begin
 					// miss
@@ -146,6 +155,21 @@ module cache_controller #(
 					end
 				end
 			end
+		end else begin
+			finish <= 1'b0;
+			memory_access_state <= s_wait;
 		end
 	end
+endmodule
+
+module encoder_cache (
+	input [3:0] one_hot;
+	output [2:0] bin;
+);
+	assign bin =
+		(one_hot[0]) ? 3'd0 :
+		(one_hot[1]) ? 3'd1 :
+		(one_hot[2]) ? 3'd2 :
+		(one_hot[3]) ? 3'd3 :
+		3'd4;
 endmodule
