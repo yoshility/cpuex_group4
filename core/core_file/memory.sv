@@ -9,7 +9,7 @@ module  memory_order
   input logic rstn);
   (* ram_style = "block"*) reg [31:0] RAM [23000:0];
   initial begin
-    $readmemb("minrt_0219_256.mem",RAM);
+    $readmemb("minrt_0227.mem",RAM);
    end
   /*always_ff @(posedge clk) begin
         if(memwrite) begin
