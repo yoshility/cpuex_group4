@@ -45,8 +45,9 @@
 -- PART OF THIS FILE AT ALL TIMES.
 -- 
 -- DO NOT MODIFY THIS FILE.
+
 -- IP VLNV: xilinx.com:ip:fifo_generator:13.2
--- IP Revision: 7
+-- IP Revision: 5
 
 -- The following code must appear in the VHDL architecture header.
 
@@ -60,7 +61,7 @@ COMPONENT fifo_generator_1
     rd_en : IN STD_LOGIC;
     dout : OUT STD_LOGIC_VECTOR(127 DOWNTO 0);
     full : OUT STD_LOGIC;
-    empty : OUT STD_LOGIC 
+    empty : OUT STD_LOGIC
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -85,6 +86,4 @@ your_instance_name : fifo_generator_1
 -- You must compile the wrapper file fifo_generator_1.vhd when simulating
 -- the core, fifo_generator_1. When compiling the wrapper file, be sure to
 -- reference the VHDL simulation library.
-
-
 

@@ -22,7 +22,8 @@ wire output_sig;
 wire [31:0] pc;
 wire [31:0] pcw;
 logic cpu_clk;
-top_pipe_no_ddr dut(clk,reset,writedata,dataadr,memwrite,rxd,txd,stat1,data_count,rstn_start,input_sig,rts,output_sig,pc,pcw);      
+logic uart_clk;
+top_pipe_no_ddr dut(clk,reset,writedata,dataadr,memwrite,rxd,txd,stat1,data_count,rstn_start,input_sig,rts,output_sig,pc,pcw,uart_clk);      
 //top_fifo fifo1 (rxd,txd,clk,reset);
 wire rdata_ready_;
 wire [7:0] rdata_;
@@ -35,9 +36,9 @@ logic [31:0] data_count_;
 logic output_ready;
 //logic output_stall;
 logic [1:0] core_sig;
-uart_tx  #(.CLK_PER_HALF_BIT(30)) u3(sdata,tx_start,tx_busy,rxd,clk,reset);
+uart_tx  #(.CLK_PER_HALF_BIT(30)) u3(sdata,tx_start,tx_busy,rxd,uart_clk,reset);
 wire ferr;
-uart_rx #(.CLK_PER_HALF_BIT(30)) u4(rdata,rdata_ready,ferr,txd,clk,reset);
+uart_rx #(.CLK_PER_HALF_BIT(30)) u4(rdata,rdata_ready,ferr,txd,uart_clk,reset);
 logic [31:0] RAM [16383:0];
 logic [31:0] RAMb [2047:0];
 logic [7:0] RAM_rec [100:0];
@@ -52,9 +53,14 @@ logic valid ;
 logic [14:0] num;
 logic [12:0] numb;
 logic [2:0] position;
+
 always begin
     clk <= 1'b1; # 5;
     clk <= 1'b0; # 5;
+end
+always begin
+    uart_clk <= 1'b1; # 5;
+    uart_clk <= 1'b0; # 5;
 end
 logic tmp;
 always @(posedge clk) begin
@@ -99,7 +105,7 @@ always @(posedge clk) begin
                 if (position == 2'b11) begin
                     sdata <= RAM[num];
                 end
-                if (num <= 15'd2) begin
+                if (num <= 15'd15) begin
                     core_sig <= 2'b11;
                     tx_start <= 1'b1;
                     state <=3'b010;
