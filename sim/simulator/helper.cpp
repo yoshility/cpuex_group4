@@ -102,12 +102,18 @@ float sign(float n) {
     }
 }
 
-// クロック数カウント
-void clk_count(unsigned long long* clk, bool* pre_inst_is_load, int* pre_load_rd, int v1, int v2, bool next_flag, int next_rd, int* stall) {
+// lwによるデータハザードのためのクロックカウンタ
+void clk_count(unsigned long long* clk, bool* pre_inst_is_load, int* pre_load_rd, int v1, int v2, bool next_flag, int next_rd, int* stall, int* output_clk, bool busy) {
     if (*pre_inst_is_load && ((v1==*pre_load_rd) || (v2==*pre_load_rd)) && (*pre_load_rd!=0)) {
         *clk += 2; *stall += 1;
+        if (busy) { // outBufにデータがあったら、出力用のclkを同じ分だけ増やす
+            *output_clk += 2;
+        }
     } else {
         *clk += 1;
+        if (busy) { // outBufにデータがあったら、出力用のclkを同じ分だけ増やす
+            *output_clk += 1;
+        }
     }
     *pre_inst_is_load = next_flag;
     *pre_load_rd = next_rd;

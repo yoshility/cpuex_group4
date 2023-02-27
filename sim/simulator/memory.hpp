@@ -78,7 +78,7 @@ class Cache {
 		// void print_block(int);
 		void print_hit_miss(int, bool);
 		void write_back(int, int, Memory);
-		void use_cache(int, int, Memory, int*, float*, int, bool, unsigned long long*);
+		void use_cache(int, int, Memory, int*, float*, int, bool, unsigned long long*, int*, bool);
 		void print_stat();
 };
 
@@ -161,7 +161,7 @@ void Cache::write_back(int index, int way, Memory memory) {
 }
 
 // みんなまとめてキャッシュを使う
-void Cache::use_cache(int op, int addr, Memory memory, int* reg, float* freg, int rd, bool debug, unsigned long long* clk) {
+void Cache::use_cache(int op, int addr, Memory memory, int* reg, float* freg, int rd, bool debug, unsigned long long* clk, int* output_clk, bool outBuf_is_busy) {
 	accessed_times++;
 	unsigned int tag = (addr >> (INDEX_WIDTH + OFFSET_WIDTH));
 	unsigned int index = (addr >> OFFSET_WIDTH) & ((1 << INDEX_WIDTH)-1);
@@ -206,6 +206,9 @@ void Cache::use_cache(int op, int addr, Memory memory, int* reg, float* freg, in
 			}
 			miss_times++;
 			*clk += MEMORY_ACCESS_CLK;
+			if (outBuf_is_busy) {
+				*output_clk += MEMORY_ACCESS_CLK;
+			}
 			// メモリからキャッシュにデータを持ってくる
 			for (int j=0; j<(1<<(OFFSET_WIDTH-2)); j++) {
 				d[index]._cache_lines[i]._data[j] = memory.d[(addr-offset)/4 + j];
@@ -259,6 +262,9 @@ void Cache::use_cache(int op, int addr, Memory memory, int* reg, float* freg, in
 	}
 	miss_times++;
 	*clk += MEMORY_ACCESS_CLK;
+	if (outBuf_is_busy) {
+		*output_clk += MEMORY_ACCESS_CLK;
+	}
 	// この時点でLRUは決定している->そのwayを追い出すことを考える
 	// dirty missのときだけwrite back
 	if (d[index]._cache_lines[LRU]._status == DIRTY) {
@@ -302,7 +308,7 @@ void Cache::print_stat() {
 	printf("\tcache accessed_times: %lld\n", accessed_times);
 	printf("\tcache hit_times:      %lld\n", hit_times);
 	printf("\tcache miss_times:     %lld\n", miss_times);
-	printf("\thit rate:             %f\n", (double)hit_times/accessed_times*100);
-	printf("\tmiss rate:            %f\n", (double)miss_times/accessed_times*100);
+	printf("\thit rate:             %f(%%)\n", (double)hit_times/accessed_times*100);
+	printf("\tmiss rate:            %f(%%)\n", (double)miss_times/accessed_times*100);
 	printf("\n");
 }

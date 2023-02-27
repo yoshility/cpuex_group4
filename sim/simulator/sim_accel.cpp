@@ -4,10 +4,12 @@
 #include "./predictor.hpp"
 #include "./fpu.hpp"
 #include "./fmul_fdiv.hpp"
+#include "./uart.hpp"
 using namespace std;
 
-#define BUFSIZE 100
-#define CLK_HZ  10000000 // 10MHz
+#define BUFSIZE     100
+#define CLK_HZ      10000000    // 10MHz
+#define BAUD_RATE   4800        // bps
 
 const unordered_map<string, int> op_n = {
     {"addi", 1}, {"add", 2}, {"sub", 3}, {"mul", 4}, {"div", 5}, {"slli", 6}, {"luil", 7}, {"beq", 8}, {"bne", 9}, {"blt", 10}, {"lw", 11}, {"sw", 12}, {"fadd", 13}, {"fsub", 14}, {"fmul", 15}, {"fdiv", 16}, {"flw", 17}, {"fsw", 18}, {"fsqrt", 19}, {"fsgnjn", 20}, {"fsgnjx", 21}, {"fsgnj", 22}, {"fcvtsw", 23}, {"fcvtws", 24}, {"feq", 25}, {"flt", 26}, {"jalr", 27}, {"jal", 28}, {"lui", 29}, {"srli", 30}, {"addil", 31}
@@ -58,6 +60,7 @@ int main(int argc, char* argv[]) {
     bool use_cache = atoi(argv[5]);
     bool step_by_step = atoi(argv[6]);
 
+    // devices
     Inst *inst_memory;                  // instr memory 構造体版
     inst_memory = (Inst*)malloc(sizeof(Inst) * INST_MEMORY_SIZE);
 
@@ -66,7 +69,11 @@ int main(int argc, char* argv[]) {
     Memory memory;                      // data memory
     Cache cache;                        // data cache
     Predictor predictor;                // bimodal predictor
+    int cphb = round((double)8 / BAUD_RATE * CLK_HZ);
+    printf("CLK_PER_8_BIT = %d\n", cphb);
+    OutputBuffer outBuf(cphb);                // output buffer
 
+    // support variables
     char line[BUFSIZE];
     char opcode[30];
     char r0[30];
@@ -295,6 +302,7 @@ int main(int argc, char* argv[]) {
         addr += 4;
         line_n++;
     }
+    fclose(in);
 
     // <step 3> あとは命令メモリを逐次実行
     reg[1] = 1025;              // first ra = 1025
@@ -303,6 +311,7 @@ int main(int argc, char* argv[]) {
     opcode_n = 0;               // opcode 番号
     unsigned long long inst_count = 0;  // 命令数
     unsigned long long clk = 4; // クロック数
+    int output_clk = 0;         // uart送信にかかっているクロック数（16667clk溜まったら出力できる/いろんなところで参照するのでここで宣言）
     bool pre_inst_is_load = 0;  // 前の命令がロードか
     int pre_load_rd = -1;       // ロードされた目的レジスタ
     int data_hazard_stall = 0;  // ロードによるストール回数
@@ -310,13 +319,15 @@ int main(int argc, char* argv[]) {
     char enter;                 // ステップ実行用
     // int tmp1, tmp2;             // feqデバッグ用
     // unsigned long long input = 0;
-    printf("* Processing...\n");
+    printf("Processing...\n");
     while (1) {
         if (pc == 1025) { // 大元のra
             cout << "pc = initial ra!" << endl;
             break;
         } 
         op = inst_memory[pc/4];
+
+        inst_count++;
 
         // 書き変わる前のpcを保持
         pre_pc = pc;
@@ -326,119 +337,119 @@ int main(int argc, char* argv[]) {
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << op._r2;
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = reg[op._r1] + op._r2;
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 2: // add rd, rs1, rs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << reg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = reg[op._r1] + reg[op._r2];
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 3: // sub rd, rs1, rs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << reg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = reg[op._r1] - reg[op._r2];
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 4: // mul rd, rs1, rs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << reg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = reg[op._r1] * reg[op._r2];
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 5: // div rd, rs1, rs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << reg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = reg[op._r1] / reg[op._r2];
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, op._r2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 6: // slli rd, rs1, uimm
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << op._r2;
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = reg[op._r1] << op._r2;
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 7: // luil rd, label
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1;
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = ((op._r1 / 2048) << 12);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, -2, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, -2, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 8: // beq rs1, rs2, label
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << op._r2;
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 if (reg[op._r0] == reg[op._r1]) {
                     pc = op._r2;
                 } else {
                     pc += 4;
                 }
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r0, op._r1, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r0, op._r1, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 predictor.predict((reg[op._r0]==reg[op._r1]), &clk, debug);
                 break;
             case 9: // bne rs1, rs2, label
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << op._r2;
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 if (reg[op._r0] != reg[op._r1]) {
                     pc = op._r2;
                 } else {
                     pc += 4;
                 }
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r0, op._r1, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r0, op._r1, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 predictor.predict((reg[op._r0]!=reg[op._r1]), &clk, debug);
                 break;
             case 10: // blt rs1, rs2, label
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << op._r2;
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 if (reg[op._r0] < reg[op._r1]) {
                     pc = op._r2;
                 } else {
                     pc += 4;
                 }
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r0, op._r1, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r0, op._r1, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 predictor.predict((reg[op._r0]<reg[op._r1]), &clk, debug);
                 break;
             case 11: // lw rd, imm(rs1) (input=s10/x26)
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1 << "(" << reg_name_.at(op._r2) << ")";
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                     printf("\t[lw] addr: %d\n", reg[op._r2]+op._r1);
                 }
                 // input
@@ -456,21 +467,21 @@ int main(int argc, char* argv[]) {
                 }
                 // cache
                 else if (use_cache) {
-                    cache.use_cache(0, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk);
+                    cache.use_cache(0, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk, &output_clk, outBuf.busy);
                 }
                 // regular lw
                 else {
                     reg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].i;
                 }
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 1, op._r0, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 1, op._r0, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             // sw rs2, imm(rs1) (int output=s10/x26; char output=s11/x27)
             case 12:
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1 << "(" << reg_name_.at(op._r2) << ")";
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                     printf("\t[sw] addr: %d\n", reg[op._r2]+op._r1);
                 }
                 // int output
@@ -486,67 +497,69 @@ int main(int argc, char* argv[]) {
                         cout << "\t[sw] char output!" << endl;
                     }
                     fprintf(out_ppm, "%c", reg[op._r0]);
+                    outBuf.enqueue(&clk, &output_clk);
                 }
                 // cache
                 else if (use_cache) {
-                    cache.use_cache(1, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk);
+                    cache.use_cache(1, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk, &output_clk, outBuf.busy);
                 }
                 // regular sw
                 else {
                     memory.d[(reg[op._r2]+op._r1)/4].i = reg[op._r0];
                 }
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r0, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 13: // fadd fd, fs1, fs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 // freg[op._r0] = freg[op._r1] + freg[op._r2];
                 freg[op._r0] = fadd(freg[op._r1], freg[op._r2]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 14: // fsub fd, fs1, fs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 // freg[op._r0] = freg[op._r1] - freg[op._r2];
                 freg[op._r0] = fadd(freg[op._r1], -freg[op._r2]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 15: // fmul fd, fs1, fs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
+
                 // freg[op._r0] = freg[op._r1] * freg[op._r2];
                 freg[op._r0] = fmul(freg[op._r1], freg[op._r2]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 16: // fdiv fd, fs1, fs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 // freg[op._r0] = freg[op._r1] / freg[op._r2];
                 freg[op._r0] = fdiv(freg[op._r1], freg[op._r2]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 17: // flw fd, imm(rs1) (input=s11/x27)
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << op._r1 << "(" << reg_name_.at(op._r2) << ")";
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                     printf("\t[flw] addr: %d\n", reg[op._r2]+op._r1);
                 }
                 // input
@@ -567,176 +580,179 @@ int main(int argc, char* argv[]) {
                 else if (reg[op._r2]+op._r1 < 256) {
                     freg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].f;
                     pc += 4;
-                    clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 1, (op._r0+32), &data_hazard_stall);
+                    clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 1, (op._r0+32), &data_hazard_stall, &output_clk, outBuf.busy);
                     break;
                 }
                 // cache
                 else if (use_cache) {
-                    cache.use_cache(2, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk);
+                    cache.use_cache(2, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk, &output_clk, outBuf.busy);
                 }
                 // regular flw
                 else {
                     freg[op._r0] = memory.d[(reg[op._r2]+op._r1)/4].f;
                 }
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 1, (op._r0+32), &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 1, (op._r0+32), &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 18: // fsw fs2, imm(rs1) (outputには使わない)
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << op._r1 << "(" << reg_name_.at(op._r2) << ")";
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                     printf("\t[fsw] addr: %d\n", reg[op._r2]+op._r1);
                 }
                 // cache
                 if (use_cache) {
-                    cache.use_cache(3, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk);
+                    cache.use_cache(3, reg[op._r2]+op._r1, memory, reg, freg, op._r0, debug, &clk, &output_clk, outBuf.busy);
                 }
                 // no cache
                 else {
                 memory.d[(reg[op._r2]+op._r1)/4].f = freg[op._r0];
                 }
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r2, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 19: // fsqrt fd, fs1
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
+
+                // check_error1(19, fsqrt(freg[op._r1]), sqrt(freg[op._r1]), freg[op._r1], 0.0);
+
                 // freg[op._r0] = sqrt(freg[op._r1]);
                 freg[op._r0] = fsqrt(freg[op._r1]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 20: // fsgnjn fd, fs1, fs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 // freg[op._r0] = fabs(freg[op._r1]) * (-sign(freg[op._r2]));
                 freg[op._r0] = fsgnjn(freg[op._r1], freg[op._r2]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 21: // fsgnjx fd, fs1, fs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 // freg[op._r0] = freg[op._r1] * sign(freg[op._r2]);
                 freg[op._r0] = fsgnjx(freg[op._r1], freg[op._r2]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 22: // fsgnj fd, fs1, fs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 // freg[op._r0] = fabs(freg[op._r1]) * sign(freg[op._r2]);
                 freg[op._r0] = fsgnj(freg[op._r1], freg[op._r2]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 23: // fcvtsw fd, rs1
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << reg_name_.at(op._r1);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 // freg[op._r0] = (float)(reg[op._r1]);
                 freg[op._r0] = itof(reg[op._r1]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 24: // fcvtws rd, fs1
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << freg_name_.at(op._r1);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 // reg[op._r0] = (int)round(freg[op._r1]); // 最近傍
                 reg[op._r0] = ftoi(freg[op._r1]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 25: // feq rd, fs1, fs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 // reg[op._r0] = (freg[op._r1] == freg[op._r2]);
                 reg[op._r0] = feq(freg[op._r1], freg[op._r2]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 26: // flt rd, fs1, fs2
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << freg_name_.at(op._r1) << ", " << freg_name_.at(op._r2);
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 // reg[op._r0] = (freg[op._r1] < freg[op._r2]);
                 reg[op._r0] = flt(freg[op._r1], freg[op._r2]);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1+32, op._r2+32, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 27: // jalr rd, rs1, imm
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << op._r2;
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = pc + 4;
                 pc = reg[op._r1] + op._r2;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 clk += 2;
                 break;
             case 28: // jal rd, label
                 if (debug) {
                     printf("####[pc: 0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1;
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = pc + 4;
                 pc = op._r1;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, -2, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, -2, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 29: // lui rd, imm
                 if (debug) {
                     printf("####[pc :0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << op._r1;
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = (op._r1 << 12);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, -2, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, -2, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 30: // srli rd, rs1, imm
                 if (debug) {
                     printf("####[pc :0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << op._r2;
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = reg[op._r1] >> op._r2;
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             case 31: // addil rd, rs1, label -> addi rd, rs1, {0,label[10:0]}
                 if (debug) {
                     printf("####[pc :0x%08X | ", pc);
                     cout << n_op.at(op._opcode) << " " << reg_name_.at(op._r0) << ", " << reg_name_.at(op._r1) << ", " << op._r2;
-                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count+1);
+                    printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
                 reg[op._r0] = reg[op._r1] + (op._r2 % 2048);
                 pc += 4;
-                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall);
+                clk_count(&clk, &pre_inst_is_load, &pre_load_rd, op._r1, -2, 0, -1, &data_hazard_stall, &output_clk, outBuf.busy);
                 break;
             default: // others
                 printf("[Step 3] Error: unknown inst: %d\tinst_count: %lld\n", opcode_n, inst_count);
@@ -763,8 +779,6 @@ int main(int argc, char* argv[]) {
         //     cache.print();
         // }
 
-        inst_count++;
-
         reg[0] = 0;
         
         if (inst_count % 100000000 == 0) {
@@ -775,6 +789,9 @@ int main(int argc, char* argv[]) {
             printf("pre_inst_is_load: %d\n", pre_inst_is_load);
             printf("pre_load_rd: %d\n", pre_load_rd);
         }
+
+        outBuf.dequeue(&output_clk);
+        // outBuf.print(inst_count, op._line_n, clk, output_clk);
 
         if (step_by_step) {
             if(scanf("%c", &enter) < 0) {
