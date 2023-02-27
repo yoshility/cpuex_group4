@@ -23,7 +23,8 @@ module cache_memory ( // DDR2
     output wire [31:0] read_data,
     output wire finish,
     input logic rstn,
-    output logic cpu_clk);
+    output logic cpu_clk,
+    input wire uart_clk);
     // clock
     //logic cpu_clk;
     logic mig_clk;
