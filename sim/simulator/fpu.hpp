@@ -30,6 +30,9 @@ void check_error1(int op, float apx, float real, float A, float B) {
     union Bit32 adj2_20;    // 調整用に掛ける2^20 (e=e'+127=20+127=147)
     adj2_20.i = 147<<23;
     
+    // union Bit32 tmp;
+    // tmp.i = 254<<23;
+
     switch (op) {
         case 13: // fadd
             if (abs(apx-real)*adj2_23.f >= max({abs(A), abs(B), abs(real), eps.f*adj2_23.f})) {
@@ -52,13 +55,16 @@ void check_error1(int op, float apx, float real, float A, float B) {
         case 15: // fmul
             if (abs(apx-real)*adj2_22.f >= max(abs(real), eps.f*adj2_22.f)) {
                 printf("[fmul diff]\n");
-                printf("A:    %.54f\n", A);
-                printf("B:    %.54f\n", B);
-                printf("A*B:  %.54f\n", real);
-                printf("fmul: %.54f\n", apx);
-                printf("eps:  %.54f\n", eps.f);
-                exit(1);
-            } else { break; }
+                printf("A:\t\t%60.54f\n", A);
+                printf("B:\t\t%60.54f\n", B);
+                printf("|error|:\t%60.54f\n", abs(apx-real));
+                printf("|error|*2^22:\t%60.54f\n", abs(apx-real)*adj2_22.f);
+                printf("A*B:\t\t%60.54f\n", real);
+                printf("fmul:\t\t%60.54f\n", apx);
+                printf("eps*2^22:\t%60.54f\n", eps.f*adj2_22.f);
+                // exit(1);
+            }
+            break;
         case 16: // fdiv
             if (abs(apx-real)*adj2_20.f >= max({abs(real), eps.f*adj2_20.f})) {
                 printf("[fdiv diff]\n");
@@ -71,10 +77,14 @@ void check_error1(int op, float apx, float real, float A, float B) {
         case 19: // fsqrt
             if (abs(apx-real)*adj2_20.f >= max({abs(real), eps.f*adj2_20.f})) {
                 printf("[fsqrt diff]\n");
-                printf("A:     %.8f\n", A);
-                printf("√A:   %.8f\n", real);
-                printf("fsqrt: %.8f\n", apx);
+                printf("A:\t\t%60.54f\n", A);
+                printf("√A:\t\t%60.54f\n", real);
+                printf("fsqrt:\t\t%60.54f\n", apx);
+                printf("|error|:\t%60.54f\n", abs(apx-real));
+                printf("|error|*2^20:\t%60.54f\n", abs(apx-real)*adj2_20.f);
+                printf("eps*2^20:\t%60.54f\n", eps.f*adj2_20.f);
                 exit(1);
+                // break;
             } else { break; }
         default:
             printf("check_error1 unknown op: %d\n", op);
@@ -128,7 +138,7 @@ void check_error2(int op, float apx, float real, float A, float B, int C) {
                 printf("ftoi:  %.38f\n", apx);
                 exit(1);
             } else { break; }
-        case 25: // feq (要らないかも)
+        case 25: // feq
             if (apx != real) {
                 printf("[feq diff]\n");
                 printf("A:    %.54f\n", A);

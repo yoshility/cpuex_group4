@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define AAA 10
+#define BBB AAA*3
+
 union data {
     long int i;
     float f;
@@ -217,10 +220,17 @@ int main(int argc, char* argv[]) {
     // float a = 0.00188944430556148290634155273437500000; // 1 !?
     // float b = 0.0018894443055614; // 1 !?
     // float c = 0.00188; // 1 !?
-    float d = 0.001;
-    printf("%f\n", round(d));
-    printf("%d\n", ftoi(d));
+    // float d = 0.52;
+    // printf("%f\n", round(d));
+    // printf("%d\n", ftoi(d));
     
+    // int a = 40;
+    // int b = -1;
+    // printf("%d\n", a>>b);
+
+    printf("A: %d\n", AAA);
+    printf("B: %d\n", BBB);
+
 	return 0;
 }
 
