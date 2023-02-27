@@ -23,17 +23,17 @@ wire output_sig;
 wire [31:0] pc;
 wire [31:0] pcw;
 logic cpu_clk;
-top_pipe dut(clk,reset,writedata,dataadr,memwrite,rxd,txd,stat1,data_count,rstn_start,input_sig,rts,output_sig,pc,pcw,cpu_clk);
-
+//top_pipe dut(clk,reset,writedata,dataadr,memwrite,rxd,txd,stat1,data_count,rstn_start,input_sig,rts,output_sig,pc,pcw,cpu_clk);
+top_fifo fifo(rxd,txd,clk,reset,cpu_clk);
 logic output_stall;
 logic [31:0] send_data;
 logic [31:0] data_count_;
 logic output_ready;
 logic output_stall;
 logic [1:0] core_sig;
-uart_tx  #(.CLK_PER_HALF_BIT(20)) u3(sdata,tx_start,tx_busy,rxd,cpu_clk,reset);
+uart_tx  #(.CLK_PER_HALF_BIT(520)) u3(sdata,tx_start,tx_busy,rxd,cpu_clk,reset);
 wire ferr;
-uart_rx #(.CLK_PER_HALF_BIT(20))u4(rdata,rdata_ready,ferr,txd,cpu_clk,reset);
+uart_rx #(.CLK_PER_HALF_BIT(520))u4(rdata,rdata_ready,ferr,txd,cpu_clk,reset);
 logic [31:0] RAM [16383:0];
 logic [31:0] RAMb [2047:0];
 logic [7:0] RAM_rec [100:0];
@@ -74,7 +74,7 @@ always @(posedge cpu_clk) begin
                     position <= 2'b00;
                     valid <= 1'b0;
                 end
-       if (rts && ~tx_busy) begin
+       if (~tx_busy) begin
             if (state == 3'b110) begin
                 //tx_start <= 1'b1;
                 state <= 3'b001;
@@ -199,57 +199,68 @@ endmodule
 module top_fifo
    (input logic rxd,
     output logic txd,
-    input logic clk,
-    input logic rstn);
+    input logic input_clk,
+    input logic rstn,//,
+    output logic clk);
     logic [7:0] sdata;
     logic tx_start;
     logic tx_busy;
-    logic [7:0] rdata;
+    logic [31:0] rdata;
     logic rdata_ready;
     logic full;
     logic empty;
     logic en;
-    logic reset;
-    initial begin
-        reset <= 1'b0;
-        #30;
-        reset <= 1'b1;
-        #30;
-        reset <= 1'b0;
-    end
+    logic [7:0] rd_data_count;
+    logic valid;
+    //logic clk;
+    clk_wiz_1 clk_w (.clk_in1(input_clk),.clk_out1(clk));
+    logic state;
     always_ff @(posedge clk,negedge rstn) begin
         if(~rstn) begin
             tx_start <= 1'b0;
             en <= 1'b0;
+            state <= 1'b0;
         end
         else begin
-            if (rdata_ready) begin
-                tx_start <= 1'b1;
-//                en <= 1'b1;               
-            end
-            if (tx_start) begin 
-                //en <= 1'b1;
-                tx_start <= 1'b0;
+            if (state == 1'b0) begin
+                if (~tx_busy && (rd_data_count > 8'b0)) begin
+                    tx_start <= 1'b0;
+                    en <= 1'b1;
+                    state <= 1'b1;               
+                end
+                else begin
+                    en <= 1'b0;
+                    tx_start <= 1'b0;
+                end
             end
             else begin
-                en <= 1'b0;
+                if (valid) begin 
+                    en <= 1'b0;
+                    tx_start <= 1'b1;
+                    state <= 1'b0;
                 end
+                else begin
+                    en <= 1'b0;
+                    tx_start <= 1'b0;
+                end
+            end
         end
     end
-    uart_tx  #(.CLK_PER_HALF_BIT(20)) u3(sdata,tx_start,tx_busy,txd,clk,rstn);
+    uart_tx  #(.CLK_PER_HALF_BIT(520)) u3(sdata,tx_start,tx_busy,txd,clk,rstn);
     logic ferr;
-    uart_rx #(.CLK_PER_HALF_BIT(20))u4(rdata,rdata_ready,ferr,rxd,clk,rstn);
-   fifo_generator_2 fifo_1 
+    uart_rx #(.CLK_PER_HALF_BIT(520))u4(rdata[7:0],rdata_ready,ferr,rxd,clk,rstn);
+   fifo_generator_2_1 fifo_1 
     (.full(full),
      .din(rdata),
      .wr_en(rdata_ready),
      .empty(empty),
      .dout(sdata),
-     .rst(reset),
+     .valid(valid),
+     //.rst(reset),
      .rd_en(en),
+     .rd_data_count(rd_data_count),
      .wr_clk(clk),
      .rd_clk(clk));
-   
 endmodule
 module testbench_ddr();
     logic clk;
@@ -292,7 +303,7 @@ wire [5:0] data_num;
     wire [0:0] ddr2_cs_n;
     wire [1:0] ddr2_dm;
     wire [0:0] ddr2_odt;
-     ddr2 ddr2 (
+     /*ddr2 ddr2 (
         .ck(ddr2_ck_p),
         .ck_n(ddr2_ck_n),
         .cke(ddr2_cke),
@@ -308,9 +319,12 @@ wire [5:0] data_num;
         .dqs_n(ddr2_dqs_n),
         .rdqs_n(),
         .odt(ddr2_odt)
-    );
+    );*/
 //top_pipe_ddr dut(clk,reset,writedata,dataadr,memwrite,rxd,txd,stat1,data_count,rstn_start,input_sig,rts,output_sig,pc,pcw,cpu_clk);      
-top_ddr top(
+logic program_fin;
+wire fifo_reset;
+logic data_valid;
+top_ddr_ddr top(
       clk,
       reset,
       rxd,
@@ -319,7 +333,10 @@ top_ddr top(
       stat1,
       data_num,
       input_num,
-      cpu_clk,
+      data_valid,
+      program_fin,
+    fifo_reset,
+    cpu_clk,
      //ddr2
       ddr2_addr,
      ddr2_ba,

@@ -239,6 +239,7 @@ module branch_predict (input logic rstn,input logic [31:0] instrf,input logic [2
                     weak_untaken : state = (result) ? weak_taken : strong_untaken;
                     weak_taken : state = (result) ? strong_taken : weak_untaken;
                     strong_taken : state = (result) ? strong_taken : weak_taken;
+                    default : state = weak_taken;
                   endcase
               end
               case(state)
@@ -246,6 +247,7 @@ module branch_predict (input logic rstn,input logic [31:0] instrf,input logic [2
                     weak_untaken : out = 1'b0;
                     weak_taken : out = 1'b1;
                     strong_taken : out = 1'b1;
+                    default : out = 1'b0;
               endcase
             end
             assign branch_pc = pcf +  {{20{instrf[31]}},instrf[7],instrf[30:25],instrf[11:8],1'b0};

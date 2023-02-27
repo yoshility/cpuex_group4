@@ -9,7 +9,7 @@ module  memory_order
   input logic rstn);
   (* ram_style = "block"*) reg [31:0] RAM [23000:0];
   initial begin
-    $readmemb("minrt_0214.mem",RAM);
+    $readmemb("minrt_0219_256.mem",RAM);
    end
   /*always_ff @(posedge clk) begin
         if(memwrite) begin
@@ -34,7 +34,7 @@ module virtual_data_memory
       input logic [31:0] wd,
       output logic [31:0] rd,
       output logic data_memory_valid);
-      (*ram_style = "BLOCK"*) reg [31:0] RAM [4000000:0];//[4094000:0];
+      (*ram_style = "BLOCK"*) reg [31:0] RAM [400:0];//[4094000:0];
       always_comb /*@(posedge clk)*/ begin
         if (we) begin 
           RAM[a[31:2]] <= wd;
@@ -71,15 +71,18 @@ module data_memory
       input logic [31:0] wd,
       output logic [31:0] rd,
       output logic data_valid);
-      (*ram_style = "BLOCK"*)logic [31:0] RAM [4000000:0];
+      (*ram_style = "BLOCK"*)logic [31:0] RAM [400:0];
       (*ram_style = "BLOCK"*)logic [31:0] RAM1 [63:0];
-      initial begin
+      /*initial begin
         $readmemb("minrt_bin.mem",RAM1);
-        end
+        end*/
       always_ff @(posedge clk) begin
         if (we && (a >= 32'd256)) begin 
           RAM[a[23:2]] <= wd;
          end
+         else if (we) begin
+            RAM1[a[23:2]] <= wd;
+            end
       end
       always_ff @(posedge clk) begin
         if (a >= 32'd256) begin 
