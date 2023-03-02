@@ -21,7 +21,7 @@ class Predictor {
             predict_miss = 0;
         }
         void change_status(bool);
-        void predict(int, unsigned long long*, bool);
+        void predict(int, unsigned long long*, bool, int*, int*, bool);
         void print_stat();
 };
 
@@ -42,7 +42,7 @@ void Predictor::change_status(bool is_taken) {
 }
 
 // 予測する関数(act:実際 status:予測)
-void Predictor::predict(int act, unsigned long long* clk, bool debug) {
+void Predictor::predict(int act, unsigned long long* clk, bool debug, int* input_clk, int* output_clk, bool busy) {
     predict_access++;
     if (act && (status>0)) {
         predict_hit++;  // takenで予測成功
@@ -63,12 +63,24 @@ void Predictor::predict(int act, unsigned long long* clk, bool debug) {
         if (debug) {
             printf("\ttaken predict failed. now status: %d\n", status);
         }
+
+        // uart
+        *input_clk += 2;
+        if (busy) {
+            *output_clk += 2;
+        }
     } else if (act && (status<0)) {
         *clk += 2;      // untakenと予測して失敗
         predict_miss++;
         change_status(1);
         if (debug) {
             printf("\tuntaken predict failed. now status: %d\n", status);
+        }
+
+        // uart
+        *input_clk += 2;
+        if (busy) {
+            *output_clk += 2;
         }
     } else {
         printf("Predictor::predict error!\n");
