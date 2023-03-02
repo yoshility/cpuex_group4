@@ -15,7 +15,6 @@ module cache_memory ( // DDR2
     output wire [1:0] ddr2_dm,
     output wire [0:0] ddr2_odt,
     // others
-    input logic clk,
     input wire [26:0] addr,
     input wire [31:0] write_data,
     input wire read_or_write,
@@ -23,17 +22,7 @@ module cache_memory ( // DDR2
     output wire [31:0] read_data,
     output wire finish,
     input logic rstn,
-    output logic cpu_clk,
-    output logic uart_clk);
-    // clock
-    //logic cpu_clk;
-    logic mig_clk;
-    clk_wiz_0 clk_gen (
-        .clk_in1(clk),
-        .clk_out1(mig_clk),
-        .clk_out2(cpu_clk),
-        .clk_out3(uart_clk)
-    );
+    input logic mig_clk);
 
     // interfaces
     master_fifo master_fifo ();
@@ -68,8 +57,5 @@ module cache_memory ( // DDR2
         .sys_clk(mig_clk),
         .fifo(slave_fifo)
     );
-    
+
 endmodule
-
-
-
