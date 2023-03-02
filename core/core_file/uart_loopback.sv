@@ -234,7 +234,7 @@ endmodule
 
 
 
-module input_fifo#(CLK_PER_HALF_BIT = 260) (
+module input_fifo#(CLK_PER_HALF_BIT = 520) (
   input logic rxd,
   output logic [31:0] input_data_32,
   input logic input_req,
@@ -321,7 +321,7 @@ end
 
 endmodule
 
-module output_fifo #(CLK_PER_HALF_BIT = 20)
+module output_fifo #(CLK_PER_HALF_BIT = 520)
             (output logic txd,
              input logic [31:0] core_data,
              input logic [1:0] output_sig,
@@ -394,7 +394,7 @@ always_ff @(posedge uart_clk,negedge rstn) begin
     end
 endmodule
 
-module uart_input #(CLK_PER_HALF_BIT = 260) (
+module uart_input #(CLK_PER_HALF_BIT = 520) (
   input logic rxd,
   output logic [31:0] input_data_32,
   input logic input_req,
@@ -532,7 +532,7 @@ module uart_input #(CLK_PER_HALF_BIT = 260) (
   
 endmodule
 
-module uart_input_sub #(CLK_PER_HALF_BIT = 260) (
+module uart_input_sub #(CLK_PER_HALF_BIT = 520) (
   input wire rxd,
   output logic [31:0] input_data_32,
   input wire input_ready,
@@ -590,7 +590,7 @@ module uart_input_sub #(CLK_PER_HALF_BIT = 260) (
   end
 endmodule 
 
-module uart_output #(CLK_PER_HALF_BIT = 260 ) (
+module uart_output #(CLK_PER_HALF_BIT = 520 ) (
              output logic txd,
              input logic [31:0] core_data,
              input logic [1:0] output_sig,//{output_signal,4byte{1} or 1byte{0}}

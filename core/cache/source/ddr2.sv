@@ -24,14 +24,15 @@ module cache_memory ( // DDR2
     output wire finish,
     input logic rstn,
     output logic cpu_clk,
-    input wire uart_clk);
+    output logic uart_clk);
     // clock
     //logic cpu_clk;
     logic mig_clk;
     clk_wiz_0 clk_gen (
         .clk_in1(clk),
         .clk_out1(mig_clk),
-        .clk_out2(cpu_clk)
+        .clk_out2(cpu_clk),
+        .clk_out3(uart_clk)
     );
 
     // interfaces
