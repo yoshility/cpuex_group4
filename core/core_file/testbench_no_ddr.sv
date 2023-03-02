@@ -44,7 +44,7 @@ logic [31:0] RAMb [2047:0];
 logic [7:0] RAM_rec [100:0];
 logic [31:0] rec_count;
 initial begin
-    $readmemb("b.mem",RAM);
+    $readmemh("b.mem",RAM);
     $readmemb("c.mem",RAMb);
     reset <= 1'b0;#18; 
     reset <= 1'b1; #3; controll <= 1'b1;
@@ -105,7 +105,7 @@ always @(posedge clk) begin
                 if (position == 2'b11) begin
                     sdata <= RAM[num];
                 end
-                if (num <= 15'd15) begin
+                if (num <= 15'd2) begin
                     core_sig <= 2'b11;
                     tx_start <= 1'b1;
                     state <=3'b010;

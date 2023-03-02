@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Mon Feb 27 12:18:42 2023
+// Date        : Thu Mar  2 18:57:32 2023
 // Host        : LAPTOP-OLI9C9H0 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/tansei/Documents/cpu/cpuex_group4/core/cache/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
@@ -16,28 +16,34 @@
 module clk_wiz_0
    (clk_out1,
     clk_out2,
+    clk_out3,
     clk_in1);
   output clk_out1;
   output clk_out2;
+  output clk_out3;
   input clk_in1;
 
   (* IBUF_LOW_PWR *) wire clk_in1;
   wire clk_out1;
   wire clk_out2;
+  wire clk_out3;
 
   clk_wiz_0_clk_wiz_0_clk_wiz inst
        (.clk_in1(clk_in1),
         .clk_out1(clk_out1),
-        .clk_out2(clk_out2));
+        .clk_out2(clk_out2),
+        .clk_out3(clk_out3));
 endmodule
 
 (* ORIG_REF_NAME = "clk_wiz_0_clk_wiz" *) 
 module clk_wiz_0_clk_wiz_0_clk_wiz
    (clk_out1,
     clk_out2,
+    clk_out3,
     clk_in1);
   output clk_out1;
   output clk_out2;
+  output clk_out3;
   input clk_in1;
 
   wire clk_in1;
@@ -48,17 +54,20 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
   wire clk_out2;
   wire clk_out2_clk_wiz_0;
   wire clk_out2_clk_wiz_0_en_clk;
+  wire clk_out3;
+  wire clk_out3_clk_wiz_0;
+  wire clk_out3_clk_wiz_0_en_clk;
   wire clkfbout_clk_wiz_0;
   wire locked_int;
   (* RTL_KEEP = "true" *) (* async_reg = "true" *) wire [7:0]seq_reg1;
   (* RTL_KEEP = "true" *) (* async_reg = "true" *) wire [7:0]seq_reg2;
+  (* RTL_KEEP = "true" *) (* async_reg = "true" *) wire [7:0]seq_reg3;
   wire NLW_clkf_buf_O_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
-  wire NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED;
@@ -127,22 +136,44 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
        (.I(clk_out2_clk_wiz_0),
         .O(clk_out2_clk_wiz_0_en_clk));
   (* BOX_TYPE = "PRIMITIVE" *) 
+  (* XILINX_LEGACY_PRIM = "BUFGCE" *) 
+  (* XILINX_TRANSFORM_PINMAP = "CE:CE0 I:I0" *) 
+  BUFGCTRL #(
+    .INIT_OUT(0),
+    .PRESELECT_I0("TRUE"),
+    .PRESELECT_I1("FALSE"),
+    .SIM_DEVICE("7SERIES")) 
+    clkout3_buf
+       (.CE0(seq_reg3[7]),
+        .CE1(1'b0),
+        .I0(clk_out3_clk_wiz_0),
+        .I1(1'b1),
+        .IGNORE0(1'b0),
+        .IGNORE1(1'b1),
+        .O(clk_out3),
+        .S0(1'b1),
+        .S1(1'b0));
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFH clkout3_buf_en
+       (.I(clk_out3_clk_wiz_0),
+        .O(clk_out3_clk_wiz_0_en_clk));
+  (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(6.000000),
+    .CLKFBOUT_MULT_F(10.000000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(10.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(3.000000),
+    .CLKOUT0_DIVIDE_F(5.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
-    .CLKOUT1_DIVIDE(5),
+    .CLKOUT1_DIVIDE(100),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
-    .CLKOUT2_DIVIDE(1),
+    .CLKOUT2_DIVIDE(100),
     .CLKOUT2_DUTY_CYCLE(0.500000),
     .CLKOUT2_PHASE(0.000000),
     .CLKOUT2_USE_FINE_PS("FALSE"),
@@ -189,7 +220,7 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
         .CLKOUT1(clk_out2_clk_wiz_0),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
-        .CLKOUT2(NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED),
+        .CLKOUT2(clk_out3_clk_wiz_0),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
         .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),
@@ -369,6 +400,86 @@ module clk_wiz_0_clk_wiz_0_clk_wiz
         .CE(1'b1),
         .D(seq_reg2[6]),
         .Q(seq_reg2[7]),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \seq_reg3_reg[0] 
+       (.C(clk_out3_clk_wiz_0_en_clk),
+        .CE(1'b1),
+        .D(locked_int),
+        .Q(seq_reg3[0]),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \seq_reg3_reg[1] 
+       (.C(clk_out3_clk_wiz_0_en_clk),
+        .CE(1'b1),
+        .D(seq_reg3[0]),
+        .Q(seq_reg3[1]),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \seq_reg3_reg[2] 
+       (.C(clk_out3_clk_wiz_0_en_clk),
+        .CE(1'b1),
+        .D(seq_reg3[1]),
+        .Q(seq_reg3[2]),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \seq_reg3_reg[3] 
+       (.C(clk_out3_clk_wiz_0_en_clk),
+        .CE(1'b1),
+        .D(seq_reg3[2]),
+        .Q(seq_reg3[3]),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \seq_reg3_reg[4] 
+       (.C(clk_out3_clk_wiz_0_en_clk),
+        .CE(1'b1),
+        .D(seq_reg3[3]),
+        .Q(seq_reg3[4]),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \seq_reg3_reg[5] 
+       (.C(clk_out3_clk_wiz_0_en_clk),
+        .CE(1'b1),
+        .D(seq_reg3[4]),
+        .Q(seq_reg3[5]),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \seq_reg3_reg[6] 
+       (.C(clk_out3_clk_wiz_0_en_clk),
+        .CE(1'b1),
+        .D(seq_reg3[5]),
+        .Q(seq_reg3[6]),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \seq_reg3_reg[7] 
+       (.C(clk_out3_clk_wiz_0_en_clk),
+        .CE(1'b1),
+        .D(seq_reg3[6]),
+        .Q(seq_reg3[7]),
         .R(1'b0));
 endmodule
 `ifndef GLBL
