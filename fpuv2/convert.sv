@@ -5,24 +5,27 @@ module ftoi (
 	input clk,
 	input rstn
 );
-	wire [ 8:0] exp = float_x[30:23] + 8'd129;
-	wire [30:0] frac = {1'b1, float_x[22:0], 7'b0};
-	wire [30:0] frac_shift = frac >> (8'd30 - exp[7:0]);
-	wire [ 8:0] round_bit = (9'd30 - exp);
-	wire [30:0] pos_fraction = (round_bit[5]) ? (frac[round_bit[4:0]] ? frac_shift + 30'b1 : frac_shift) : frac_shift ;
-	wire [30:0] fraction = (float_x[31]) ? ~pos_fraction + 30'b1 : pos_fraction;
-	wire 				zero = (~|float_x[30:23]) ? 1'b1 :
-										 (exp[8]) ? 1'b1 :
-										 (exp[7:0] >= 8'd32) ? 1'b1 :
-										 1'b0;
-
-	always_comb begin
-		if (~rstn) begin
-			int_x = 32'b0;
-		end else begin
-			int_x = (zero) ? {float_x[31], 31'b0}: {float_x[31], fraction};
-		end
+	//step0
+	logic [31:0] float_x_0;
+	logic [7:0] exp_0;
+	logic [4:0] shift_0;
+	logic [30:0] frac_0;
+	always @(posedge clk) begin
+		float_x_0 <= float_x;
+		exp_0 <= exp;
+		shift_0 <= (exp[7]) ? exp[4:0] : 5'b0;
+		frac_0 <= {1'b1, float_x[22:0], 7'b0};
 	end
+	wire [ 7:0] exp = float_x[30:23] - 8'd127;
+
+	//step1
+	always @(posedge clk) begin
+		int_x <= {float_x_0[31], fraction};
+	end
+	wire [30:0] frac_shift = frac_0 >> (8'd30 - exp_0);
+	wire [30:0] frac_tmp = frac_0 >> (8'd29 - exp_0);
+	wire [30:0] pos_fraction = (frac_tmp[0]) ? frac_shift + 1 :frac_shift;
+	wire [30:0] fraction = (float_x_0[31]) ? ~pos_fraction + 31'b1 : pos_fraction;
 endmodule
 
 module itof (
@@ -31,6 +34,15 @@ module itof (
 	input clk,
 	input rstn
 );
+	//step0
+	logic [31:0] int_x_0;
+	logic [30:0] value_0;
+	logic [4:0] significant_0;
+	always @(posedge clk) begin
+		int_x_0 <= int_x;
+		value_0 <= value;
+		significant_0 <= significant;
+	end
 	wire [30:0] value = (int_x[31]) ? (~int_x[30:0] + 31'b1) : int_x[30:0];
 	wire [ 4:0] significant =
 		(value[30]) ? 5'd30 :
@@ -64,15 +76,12 @@ module itof (
 		(value[ 2]) ? 5'd2 :
 		(value[ 1]) ? 5'd1 :
 		5'd0;
-	wire [30:0] frac_calc = value << (5'd31 - significant);
-	wire [22:0] fraction = (frac_calc[7]) ? frac_calc[30:8] + 22'b1: frac_calc[30:8];
-	wire [ 7:0] exponent = (&frac_calc[30:7]) ? {3'b0, significant} + 8'd128 : {3'b0, significant} + 8'd127;
 
-	always_comb begin
-		if (~rstn) begin
-			float_x = 32'b0;
-		end else begin
-			float_x = (int_x == 32'b0) ? 32'b0 : {int_x[31], exponent, fraction};
-		end
+	//step1
+	always @(posedge clk) begin
+		float_x = (int_x_0 == 32'b0) ? 32'b0 : {int_x_0[31], exponent, fraction};
 	end
+	wire [30:0] frac_calc = value_0 << (5'd31 - significant_0);
+	wire [22:0] fraction = (frac_calc[7]) ? frac_calc[30:8] + 22'b1: frac_calc[30:8];
+	wire [ 7:0] exponent = (&frac_calc[30:7]) ? {3'b0, significant_0} + 8'd128 : {3'b0, significant_0} + 8'd127;
 endmodule
