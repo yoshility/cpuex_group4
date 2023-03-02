@@ -190,8 +190,8 @@ module top_ddr_ddr(
                                                     memory_addr,dmem_write_req,
                                                     data_32,data_ready,rdata,rdata_ready,input_start,input_req_init,first_pc,program_size,data_valid,valid);
 
-     input_fifo #(.CLK_PER_HALF_BIT(1042))uart1 (rxd,data_32,input_req,clk,uart_clk,rstn,input_start,rts/*,rdata,rdata_ready*/,data_valid,valid);//,request_position,data_buf);
-     output_fifo #(.CLK_PER_HALF_BIT(1042))uart2(txd,send_data,core_sig,clk,uart_clk,rstn/*,data_count*/,output_stall,fifio_reset);//,output_ready);//for outpu
+     input_fifo #(.CLK_PER_HALF_BIT(521))uart1 (rxd,data_32,input_req,clk,uart_clk,rstn,input_start,rts/*,rdata,rdata_ready*/,data_valid,valid);//,request_position,data_buf);
+     output_fifo #(.CLK_PER_HALF_BIT(521))uart2(txd,send_data,core_sig,clk,uart_clk,rstn/*,data_count*/,output_stall,fifio_reset);//,output_ready);//for outpu
      pileline_processor_fpu pipe(clk,rstn,rstn_start,pcf,instrf,memwritem,alu_resultm,dwritedatam,readdatam,init_sig,output_sig,input_sig,data_32,input_valid,lw_sig,data_memory_valid,lw_stall,first_pc,output_stall,output_src,pcw);
      memory_order imem(pcf,instrf,pro_data,pro_addr,imemwrite,clk,rstn);
      assign lw_stall = (lw_sig || dmemwritem) ?  ((output_sig) ? output_stall : finish) : 1'b0;
@@ -220,7 +220,8 @@ module top_ddr_ddr(
     .read_data(readdatam),
     .finish(finish),
     .rstn(rstn),
-    .mig_clk(mig_clk));
+    .mig_clk(mig_clk),
+    .cpu_clk(clk));
      always @(posedge input_sig,negedge rstn) begin
         if (~rstn) begin
           input_counter <= 16'b0;

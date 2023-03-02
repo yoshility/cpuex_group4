@@ -8,6 +8,11 @@ module fmul (
   input wire       clk,
   input wire       rstn
 );
+    // reg
+	logic [31:0] x1_reg1, x1_reg2, x2_reg1, x2_reg2;
+	logic [47:0] frac_calc_reg;
+	logic [ 9:0] exp_sum_reg1, exp_sum_reg2;
+	logic [ 8:0] exp_add1_reg, exp_sub1_reg, exp_sub2_reg;
 	// step1
 	wire [ 7:0] exp_x1 = (|x1[30:23]) ? x1[30:23] : 8'b1 ;
 	wire [ 7:0] exp_x2 = (|x2[30:23]) ? x2[30:23] : 8'b1 ;
@@ -33,11 +38,7 @@ module fmul (
 	wire 				zero = (~(|x1_reg2[30:23]) || ~(|x2_reg2[30:23])) ? 1'b1 : 1'b0;
 	wire 				inf = (&x1_reg2[30:23] || &x2_reg2[30:23]) ? 1'b1 : 1'b0;
 
-	// reg
-	logic [31:0] x1_reg1, x1_reg2, x2_reg1, x2_reg2;
-	logic [47:0] frac_calc_reg;
-	logic [ 9:0] exp_sum_reg1, exp_sum_reg2;
-	logic [ 8:0] exp_add1_reg, exp_sub1_reg, exp_sub2_reg;
+
 	always_ff @( posedge clk ) begin
 		if (~rstn) begin
 			x1_reg1 <= 32'b0;
@@ -60,7 +61,7 @@ module fmul (
 			x1_reg2 <= x1_reg1;
 			x2_reg1 <= x2;
 			x2_reg2 <= x2_reg1;
-			frac_calc_reg <= {{24'b0,hh_reg}<<24} + {{24'b0,hl_reg}<<12} + {{24'b0,lh_reg}<<12} + {24'b0,ll_reg};
+			frac_calc_reg <= {{24'b0,hh}<<24} + {{24'b0,hl}<<12} + {{24'b0,lh}<<12} + {24'b0,ll};
 			exp_sum_reg1 <= {1'b0,x1[30:23]} + {1'b0, x2[30:23]}  + 10'd129;
 			exp_sum_reg2 <= exp_sum_reg1;
 			exp_add1_reg <= exp_sum_reg1 + 9'd1;

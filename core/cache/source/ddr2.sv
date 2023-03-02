@@ -22,7 +22,8 @@ module cache_memory ( // DDR2
     output wire [31:0] read_data,
     output wire finish,
     input logic rstn,
-    input logic mig_clk);
+    input logic mig_clk,
+    input logic cpu_clk);
 
     // interfaces
     master_fifo master_fifo ();
