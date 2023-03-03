@@ -16,20 +16,20 @@ module aludecoder(input logic opb5,
     always_comb begin
                 case  (ALU_op)
                         2'b00 : alu_cont = 5'b00000;//add
-                        2'b01 : case(funct3)
+                        2'b01 : case(funct3) 
                                 3'b000 : alu_cont = 5'b01001 ;//beq
                                 3'b001 : alu_cont = 5'b01010 ;//bne
                                 3'b100 : alu_cont = 5'b01011;//blt
                         endcase
                         2'b10 : case (funct3)
-                                        3'b000 : alu_cont = (opb5 == 1'b1) ? ((funct7 == 7'b0000001) ? 5'b00100 : (rtypesub ? 5'b00001 : 5'b00000)) : 5'b00000;//((funct7 == 7'b0000000) ? 5'b00000 : (funct7 == 7'b0100000) ?  : 5'b0);
+                                        3'b000 : alu_cont = (opb5 == 1'b1) ? ((funct7 == 7'b0000001) ? 5'b00100 : (rtypesub ? 5'b00001 : 5'b00000)) : 5'b00000;//((funct7 == 7'b0000000) ? 5'b00000 : (funct7 == 7'b0100000) ?  : 5'b0); 
                                         3'b001 : alu_cont = 5'b00110;
                                         3'b010 : alu_cont = 5'b00101;//slt
                                         3'b100 : alu_cont = 5'b00111;
                                         3'b110 : alu_cont = 5'b00011;//or
                                         3'b101 : alu_cont = 5'b01000;//srl
                                         3'b111 : alu_cont = 5'b00010;//and
-
+                                        
                                         default : alu_cont = 5'b0;
                                 endcase
                         2'b11 : case(funct7[6:2])
@@ -41,7 +41,7 @@ module aludecoder(input logic opb5,
                                         5'b11010 : alu_cont = 5'b11100;//fcvtsw
                                         5'b11000 : alu_cont = 5'b11101;//fcvtws
                                         5'b00100 : case (funct3)//sgnnjn
-                                                        3'b000 : alu_cont = 5'b11000 ;//fsgnj
+                                                        3'b000 : alu_cont = 5'b11000 ;//fsgnj 
                                                         3'b001 : alu_cont = 5'b11001 ;//fsgnjn
                                                         default : alu_cont = 5'b11010 ;//fsgnjx
                                                 endcase
@@ -53,20 +53,20 @@ module aludecoder(input logic opb5,
                                         default : alu_cont = 5'b0;
                                 endcase
                         default : alu_cont = 5'b0 ;
-                endcase
+                endcase 
     end
      always_comb begin
                 case(ALU_op)
                         2'b11 : case(funct7[6:2])
-                                        5'b00000 : fpu_stall = 4'd5;//fadd
-                                        5'b00001 : fpu_stall = 4'd5;//fsub
-                                        5'b00010 : fpu_stall = 4'd5;//fmul
-                                        5'b00011 : fpu_stall = 4'd8;//fdiv
-                                        5'b01011 : fpu_stall = 4'd3;//fsqrt
-                                        5'b00100 : fpu_stall = 4'd0;//fsgn .etc
-                                        5'b10100 : fpu_stall = 4'd0;//feq,flt,fle
-                                        5'b11010 : fpu_stall = 4'd2;//fcvtsw
-                                        5'b11000 : fpu_stall = 4'd2;//fcvtws
+                                        5'b00000 : fpu_stall = 4'd0;//4'd3 ; //fadd
+                                        5'b00001 : fpu_stall = 4'd0;//4'd3;//fsub
+                                        5'b00010 : fpu_stall = 4'd0;//4'd2; //fmul
+                                        5'b00011 : fpu_stall = 4'd0; //fdiv
+                                        5'b01011 : fpu_stall = 4'd0;//4'd7;//fsqrt
+                                        5'b00100 : fpu_stall = 4'd0; //fsgn .etc
+                                        5'b10100 : fpu_stall = 4'd0; //feq,flt,fle
+                                        5'b11010 : fpu_stall = 4'd0;
+                                        5'b11000 : fpu_stall = 4'd0;
                                         default : fpu_stall = 4'd0;
                                 endcase
                         default : fpu_stall = 4'd0;
@@ -82,7 +82,7 @@ module aludecoder(input logic opb5,
                                         default : source_reg_src = 2'b11;
                                         endcase
                                 2'b00 : source_reg_src = (opb5) ? 2'b10 : 2'b00;
-                                default : source_reg_src = 2'b00;
+                                default : source_reg_src = 2'b00; 
                                 endcase
                         default :source_reg_src = 2'b00;
                 endcase
@@ -99,7 +99,7 @@ module aludecoder(input logic opb5,
                                         default : rd_reg_src = 1'b1;
                                         endcase
                                 2'b00 : rd_reg_src = 1'b1;
-                                default : rd_reg_src = 1'b0;
+                                default : rd_reg_src = 1'b0; 
                                 endcase
                         default :rd_reg_src = 1'b0;
                 endcase
@@ -130,7 +130,7 @@ module ALU (input logic[31:0] a,
             logic [31:0] tmp;
             assign tmp = {31'b0,(a<b)};
             always_comb begin
-                case(alu_cont)
+                case(alu_cont) 
                         5'b00000 : y = y00;//add
                         5'b00001 : y = y01;//sub
                         5'b00010 : y = y10;//and
@@ -144,17 +144,17 @@ module ALU (input logic[31:0] a,
             endcase
             end
             always_comb begin
-                case(alu_cont)
+                case(alu_cont) 
                         5'b01001 : zero = (a == b);//add
                         5'b01010 : zero = (a != b);//y01;//sub
                         5'b01011 : zero = (a[31] == 1'b1) ? 1'b1 : (a < b);//y = y10;//and
                         default : zero = 0;
             endcase
             end
-
+            
 endmodule
 
-module maindecoder
+module maindecoder 
                 (input logic [6:0] op,
                output logic [1:0] Result_Src,
                output logic Memwrite,
@@ -184,9 +184,9 @@ module maindecoder
                                 7'b1100111 : controlls = 15'b001_000_1_0_10_0_00_1_0;//jalr
                                 7'b1010011 : controlls = 15'b101_000_0_0_00_0_11_0_1; //float_calculation
                                 7'b0110111 : controlls = 15'b001_100_0_0_00_0_00_0_0; //lui
-                                default :    controlls = 15'b00000000000000;
+                                default :    controlls = 15'b00000000000000; 
                         endcase
-                end
+                end 
                 assign exec_src = controlls[14];
                 assign regwrite = controlls[13:12];
                 assign Imm_src = controlls[11:9];
@@ -197,12 +197,12 @@ module maindecoder
                 assign ALU_op = controlls[3:2];
                 assign Jump = controlls[1];
                 assign alu_fpu_sig = controlls[0];
-
+                
 
                 assign pc_select_d = (op == 7'b1100111) ? 1'b1 : 1'b0;
 endmodule
 
-module contlloer_alu_pipe
+module contlloer_alu_pipe 
         (input logic [6:0] op,
          input logic [2:0] funct3,
          input logic [6:0] funct7,
@@ -248,21 +248,21 @@ module fpu (
         logic fad__ovf;
         logic [31:0] y_fcvtsw;
         logic [31:0] y_fcvtws;
-        fsgnjn fsgnjn1 (x1,x2,y_fsgnjn,clk,rstn);
-        fsgnjx fsgnjx1 (x1,x2,y_fsgnjx,clk,rstn);
-        fsgnj fsgnj1 (x1,x2,y_fsgnj,clk,rstn);
-        itof fcvtsw1 (x1,y_fcvtsw,clk,rstn);
-        ftoi fcvtws1 (x1,y_fcvtws,clk,rstn);
-        fadd fadd1_1(x1,x2,y_fadd,clk,rstn);
-        fadd fsub1 (x1,{~x2[31],x2[30:0]},y_fsub,clk,rstn);
+        fsgnjn fsgnjn_1 (x1,x2,y_fsgnjn,clk,rstn);
+        fsgnjx fsgnjx_1 (x1,x2,y_fsgnjx,clk,rstn);
+        fsgnj fsgnj_1 (x1,x2,y_fsgnj,clk,rstn);
+        itof fcvtsw_1 (x1,y_fcvtsw,clk,rstn);
+        ftoi fcvtws_1 (x1,y_fcvtws,clk,rstn);
+        fadd_ fadd1_1(x1,x2,y_fadd,obf_add);
+        fadd_ fsub1 (x1,{~x2[31],x2[30:0]},y_fsub,fad_ovf);
         fmul fmul1 (x1,x2,y_fmul,clk,rstn);
         fdiv fdiv1 (x1,x2,y_fdiv,clk,rstn);
-        sqrt fsqrt1 (x1,y_sqrt,clk,rstn);
+        sqrt fsqrt_1 (x1,y_sqrt,clk,rstn);
         feq feq1 (x1,x2,y_feq,clk,rstn);
         flt flt1 (x1,x2,y_flt,clk,rstn);
         fle fle1 (x1,x2,y_fle,clk,rstn);
         always_comb begin
-         case(fpu_cont)
+         case(fpu_cont) 
             5'b10000 : y = y_fadd;//fadd
             5'b10001 : y = y_fsub;//fsub
             5'b10010 : y = y_fmul;//fmul
@@ -278,5 +278,5 @@ module fpu (
             5'b11101 : y = y_fcvtws;//
             default : y = 32'b0;
             endcase
-            end
+            end   
 endmodule
