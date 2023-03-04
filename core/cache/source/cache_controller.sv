@@ -28,8 +28,16 @@ module cache_controller #(
 	(*ram_style = "BLOCK"*) logic [DATA_LEN-1:0] data_section_memory [0:63];
 	wire [INDEX_LEN-1:0] target_line = addr[(INDEX_LEN + OFFSET_LEN)-1 + 2:(OFFSET_LEN-1) + 1+2];
 	wire [OFFSET_LEN-1:0] offset = addr[OFFSET_LEN+1:2];
+
+	logic cache_hit;
+
+	always_ff @(posedge clk) begin
+		if (memory_sig) begin
+			cache_hit <= (dirty_memory[target_line]) ? ((tag_memory[target_line] == addr[ADDR_LEN-1:ADDR_LEN-TAG_LEN]) ? 1'b1 : 1'b0) : 1'b0;//? ;
+			finish <= (addr < 27'd256) ? 1'b0 : (dirty_memory[target_line]) ? ((cache_hit) ? 1'b0 : 1'b1) : 1'b0 ;
+		end
+	end
 	
-	wire cache_hit = (dirty_memory[target_line]) ? ((tag_memory[target_line] == addr[ADDR_LEN-1:ADDR_LEN-TAG_LEN]) ? 1'b1 : 1'b0) : 1'b0;//? ;
 	logic [DATA_LEN-1:0] data_reg;
 	assign read_data = data_reg;
 
@@ -41,10 +49,9 @@ module cache_controller #(
 	localparam s_finish		= 6'b010000;
 	localparam s_fetch_wait = 6'b100000;
 	logic read_valid;
-	assign finish = (addr < 27'd256) ? 1'b0 : (dirty_memory[target_line]) ? ((cache_hit) ? 1'b0 : 1'b1) : 1'b0 ;
 	initial begin
-	 $readmemb("minrt_bin.mem",data_section_memory);
-	 end
+		$readmemb("minrt_bin.mem",data_section_memory);
+	end
     always_ff @ (posedge clk) begin
 		if (~rstn) begin
 			data_reg <= 32'b0;
@@ -218,9 +225,6 @@ module cache_controller #(
 					end
 				end
 		    end
-		end
-		else begin
-			//finish <= 1'b0;
 		end
     end
 endmodule
