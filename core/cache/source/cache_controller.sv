@@ -22,10 +22,10 @@ module cache_controller #(
 	assign fifo.clk = clk;
 	assign fifo.rsp_rdy = 1'b1;
 
-	(*ram_style = "BLOCK"*) logic [LINE_SIZE-1:0] cache_memory [0:2**INDEX_LEN-1];
-	(*ram_style = "BLOCK"*) logic [TAG_LEN-1:0] tag_memory [0:2**INDEX_LEN-1];
-	(*ram_style = "BLOCK"*) logic [2**INDEX_LEN-1:0] dirty_memory ;
-	(*ram_style = "BLOCK"*) logic [DATA_LEN-1:0] data_section_memory [0:63];
+	(*ram_style = "BLOCK"*) reg [LINE_SIZE-1:0] cache_memory [0:2**INDEX_LEN-1];
+	(*ram_style = "BLOCK"*) reg [TAG_LEN-1:0] tag_memory [0:2**INDEX_LEN-1];
+	(*ram_style = "BLOCK"*) reg dirty_memory [0:2**INDEX_LEN-1];
+	(*ram_style = "BLOCK"*) reg [DATA_LEN-1:0] data_section_memory [0:63];
 	wire [INDEX_LEN-1:0] target_line = addr[(INDEX_LEN + OFFSET_LEN)-1 + 2:(OFFSET_LEN-1) + 1+2];
 	wire [OFFSET_LEN-1:0] offset = addr[OFFSET_LEN+1:2];
 
@@ -57,7 +57,7 @@ module cache_controller #(
 			data_reg <= 32'b0;
 			//finish <= 1'b0;
 			memory_access_state <= s_wait;
-			dirty_memory <= 0;
+			//dirty_memory <= 0;
 			//cache_controller <= '{default:0};
 			//tag_memory <= '{default:0};
 			read_valid <= 1'b0;

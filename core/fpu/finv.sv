@@ -44,7 +44,7 @@ module finv_table (
 	input 	wire 				rstn
 );
 	(*ram_style = "BLOCK"*) logic [35:0] finv_table [1023:0];
-	always_comb begin
+	always_ff @(posedge clk) begin
 		dout = finv_table[addr];
 	end
 	initial begin
