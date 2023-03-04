@@ -17,12 +17,12 @@ module  memory_order (
 			RAM[pro_addr[31:2]-1] <= pro_data;
 		end
 	end*/
-	always_comb /*@(posedge clk)*/ begin
+	always_ff @(posedge clk) begin
     	if (~rstn) begin
       		rd <= 32'd0;
     	end
 		else begin
-      	rd <= RAM[a[31:2]];
+      		rd <= RAM[a[31:2]];
    		end
   	end
 endmodule
@@ -37,12 +37,12 @@ module virtual_data_memory (
 	output logic data_memory_valid
 );
 	(*ram_style = "BLOCK"*) reg [31:0] RAM [400:0];//[4094000:0];
-	always_comb /*@(posedge clk)*/ begin
+	always_ff @(posedge clk) begin
         if (we) begin
 			RAM[a[31:2]] <= wd;
         end
 	end
-	always_comb /*@(posedge clk)*/ begin
+	always_ff @(posedge clk) begin
         if (~rstn) begin
           	rd <= 32'd0;
         end
