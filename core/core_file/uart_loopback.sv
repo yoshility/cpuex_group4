@@ -25,17 +25,17 @@ module program_init (
 	logic input_ready;
 
 	typedef enum {
-		rec_total_size, 
+		rec_total_size,
 		rec_pc,
-		rec_datasec_size, 
-		writing_datasec, 
+		rec_datasec_size,
+		writing_datasec,
 		writing_program,fin
 	} rec_state;
 	rec_state state;
 
 	logic [31:0] number_of_data_section;
-	
-	logic [1:0] data_state; 
+
+	logic [1:0] data_state;
 	//what arrives first is the size of the assembly file
 	always_ff @(posedge clk) begin
 		if (~rstn) begin
@@ -54,7 +54,7 @@ module program_init (
 		end
 		if (enable) begin
 			case (state)
-				rec_total_size : 
+				rec_total_size :
 					if (data_state == 2'b0) begin
 						if (data_valid) begin
 							input_req <= 1'b0;
@@ -63,7 +63,7 @@ module program_init (
 						else begin
 							input_req <= 1'b1;
 							data_state <= 2'b0;
-						end     
+						end
 					end
 					else if (data_state == 2'b01) begin
 						input_req <= 1'b0;
@@ -75,7 +75,7 @@ module program_init (
 						program_size <= data_tmp >> 2;
 						data_state <= 2'b0;
 					end
-				rec_datasec_size : 
+				rec_datasec_size :
 					if (data_state == 2'b0) begin
 						if (data_valid) begin
 							input_req <= 1'b0;
@@ -84,7 +84,7 @@ module program_init (
 						else begin
 							input_req <= 1'b1;
 							data_state <= 2'b0;
-						end     
+						end
 					end
 					else if (data_state == 2'b01) begin
 						input_req <= 1'b0;
@@ -96,7 +96,7 @@ module program_init (
 						data_state <= 2'b0;
 						size_of_program <= size_of_program - 1 - data_tmp;
 					end
-				rec_pc : 
+				rec_pc :
 					if (data_state == 2'b0) begin
 						if (data_valid) begin
 							input_req <= 1'b0;
@@ -105,7 +105,7 @@ module program_init (
 						else begin
 							input_req <= 1'b1;
 							data_state <= 2'b0;
-						end     
+						end
 					end
 					else if (data_state == 2'b01) begin
 						input_req <= 1'b0;
@@ -116,7 +116,7 @@ module program_init (
 						first_pc <= data_tmp;
 						data_state <= 2'b0;
 					end
-				writing_datasec : 
+				writing_datasec :
 					if (number_of_data_section > 32'd0) begin
 						if (data_state == 2'b0) begin
 							if (data_valid) begin
@@ -126,7 +126,7 @@ module program_init (
 							else begin
 								input_req <= 1'b1;
 								data_state <= 2'b0;
-							end     
+							end
 						end
 						else if (data_state == 2'b01) begin
 							input_req <= 1'b0;
@@ -139,14 +139,14 @@ module program_init (
 							input_req <= 1'b0;
 							number_of_data_section <= number_of_data_section - 7'd1;
 							data_state <= 2'b0;
-						end 
+						end
 					end
 					else begin
 						state <= fin;
 						dmem_write_req <= 1'b0;
 						input_req <= 1'b0;
 					end
-				writing_program : 
+				writing_program :
 					if (size_of_program > 32'd1) begin
 						if (data_state == 2'b0) begin
 							if (data_valid) begin
@@ -156,7 +156,7 @@ module program_init (
 							else begin
 								input_req <= 1'b1;
 								data_state <= 2'b0;
-							end     
+							end
 						end
 						else if (data_state == 2'b01) begin
 							input_req <= 1'b0;
@@ -169,16 +169,16 @@ module program_init (
 							size_of_program <= size_of_program - 32'd1;
 							input_req <= 1'b0;
 							data_state <= 2'b0;
-						end 
+						end
 					end
 					else begin
 						state <= fin;
 						dmem_write_req <= 1'b0;
 						input_req <= 1'b0;
-					end                                     
-				fin : 
+					end
+				fin :
 					program_fin <= 1'b1;
-				default : 
+				default :
 					program_fin <= 1'b0;//input_req <= 1'b0;//program_fin <= 1'b0;
 			endcase
 			if (~data_ready) begin
@@ -260,14 +260,14 @@ module input_fifo #(
                 	state <= 2'b0;
                 	//data_valid <= 1'b1;
             	end
-            	else begin 
+            	else begin
                 	rd_en <= 1'b0;
                 	state <= 2'b1;
 					//data_valid <= 1'b0;
             	end
         	end
     	end
-	end  
+	end
 endmodule
 
 module output_fifo #(
@@ -324,7 +324,7 @@ module output_fifo #(
                 if (~tx_busy && (rd_data_count > 10'b0)) begin
                     tx_start <= 1'b0;
                     rd_en <= 1'b1;
-                    state <= 2'b01;               
+                    state <= 2'b01;
                 end
                 else begin
                     rd_en <= 1'b0;
@@ -332,7 +332,7 @@ module output_fifo #(
                 end
             end
             else if (state == 2'b01) begin
-                if (valid && ~tx_busy) begin 
+                if (valid && ~tx_busy) begin
                     rd_en <= 1'b0;
                     tx_start <= 1'b1;
                     state <= 2'b11;

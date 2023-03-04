@@ -196,7 +196,15 @@ module top_ddr_ddr(
 		txd,send_data,core_sig,clk,uart_clk,rstn/*,data_count*/,output_stall,fifio_reset//,output_ready
 	);
     pileline_processor_fpu pipe (
-		clk,rstn,rstn_start,pcf,instrf,memwritem,alu_resultm,dwritedatam,readdatam,init_sig,output_sig,input_sig,data_32,input_valid,lw_sig,data_memory_valid,lw_stall,first_pc,output_stall,output_src,pcw
+		clk,rstn,rstn_start,
+		pcf,instrf,
+		memwritem,alu_resultm,dwritedatam,readdatam,
+		init_sig,output_sig,
+		input_sig,data_32,input_valid,
+		lw_sig,data_memory_valid,lw_stall,
+		first_pc,
+		output_stall,output_src,
+		pcw
 	);
     memory_order imem (
 		pcf,instrf,pro_data,pro_addr,imemwrite,clk,rstn
