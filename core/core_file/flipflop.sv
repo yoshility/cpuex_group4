@@ -76,7 +76,7 @@ module flip_clr #(
 	input logic [N-1:0] x,
 	output logic [N-1:0] y
 );
-	always @(posedge clk) begin
+	always_ff @(posedge clk) begin
         if (~rstn || clr) begin
 			y <= 0;
         end
