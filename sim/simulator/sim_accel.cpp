@@ -316,7 +316,7 @@ int main(int argc, char* argv[]) {
     Inst op;                            // 命令
     char enter;                         // ステップ実行用
 
-    printf("input Processing...\n");
+    printf("Processing...\n");
     while (1) {
         if (pc == 1025) { // 大元のra
             cout << "pc = initial ra!" << endl;
@@ -617,9 +617,6 @@ int main(int argc, char* argv[]) {
                     cout << n_op.at(op._opcode) << " " << freg_name_.at(op._r0) << ", " << freg_name_.at(op._r1);
                     printf(" | line: %d | inst_count: %lld]##############################################################################\n", op._line_n, inst_count);
                 }
-
-                // check_error1(19, fsqrt(freg[op._r1]), sqrt(freg[op._r1]), freg[op._r1], 0.0);
-
                 // freg[op._r0] = sqrt(freg[op._r1]);
                 freg[op._r0] = fsqrt(freg[op._r1]);
                 pc += 4;
@@ -768,33 +765,23 @@ int main(int argc, char* argv[]) {
             print_freg(freg);
         }
 
-        // print memory
-        // if (debug && !use_cache) {
-        //     memory.print(8188, 8060);
-        // }
-
-        // print cache
-        // if (debug && use_cache) {
-        //     cache.print();
-        // }
-
         reg[0] = 0;
         
-        if (inst_count % 100000000 == 0) {
-            cout << "now inst count: " << inst_count << endl;
-        }
+        // if (inst_count % 100000000 == 0) {
+        //     cout << "now inst count: " << inst_count << endl;
+        // }
 
         // hazardチェック
         // printf("[inst_count|%lld] [clk|%lld] [line|%d] [op|%d] [pre_inst_is_load|%d] [pre_load_rd|%d]\n", inst_count, clk, op._line_n, op._opcode, pre_inst_is_load, pre_load_rd);
 
         inBuf.enqueue(&input_clk);
         outBuf.dequeue(&output_clk);
-        // input状況をチェック
-        // printf("[inst_count|%lld]\t[line|%d]\t[op|%d]\t[clk|%lld]\t[data_n|%d]\t[input_clk|%d]\t[input_count|%d]\t[input_stall|%d]\n\n", inst_count, op._line_n, op._opcode, clk, inBuf.data_n, input_clk, inBuf.input_count, inBuf.input_stall);
 
-        // output状況をチェック
+        // inputチェック
+        // printf("[inst_count|%lld]\t[line|%d]\t[op|%d]\t[clk|%lld]\t[data_n|%d]\t[input_clk|%d]\t[input_count|%d]\t[input_stall|%d]\n", inst_count, op._line_n, op._opcode, clk, inBuf.data_n, input_clk, inBuf.input_count, inBuf.input_stall);
+
+        // outputチェック
         // printf("[inst_count|%lld]\t[line|%d]\t[op|%d]\t[clk|%lld]\t[busy|%d]\t[data_n|%d]\t[output_clk|%d]\t[output_count|%d]\t[output_stall|%d]\n\n", inst_count, op._line_n, op._opcode, clk, outBuf.busy, outBuf.data_n, output_clk, outBuf.output_count, outBuf.output_stall);
-        
 
         // ステップ実行
         if (step_by_step) {
@@ -828,9 +815,7 @@ int main(int argc, char* argv[]) {
     printf("clk_count:\t\t%lld\n", clk);
     printf("estimated time:\t\t%lf(s) / %lf(min)\n", (double)clk/CLK_HZ, (double)clk/CLK_HZ/60);
     printf("lw stall count:\t\t%d\n", data_hazard_stall);
-
     printf("sim elapsed time:\t%lf(ms)\n", elapsed);
-    // printf("input: %lld\n", input);
 
     return 0;
 }

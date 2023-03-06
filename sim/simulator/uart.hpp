@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define CLK_HZ      5000000     // 10MHz
-#define BAUD_RATE   4800        // bps
+#define CLK_HZ      10000000     // 10MHz
+#define BAUD_RATE   9600         // bps
 
 class InputBuffer {
     public:
@@ -15,7 +15,7 @@ class InputBuffer {
             // busy = 0;
             data_n = 0;
             clk_per_8_bit = round((double)8 / BAUD_RATE * CLK_HZ);
-            printf("CLK_PER_8_BIT = %d\n", clk_per_8_bit);
+            // printf("CLK_PER_8_BIT = %d\n", clk_per_8_bit);
             input_count = 0;
             input_stall = 0;
         }
@@ -36,13 +36,15 @@ void InputBuffer::enqueue(int* input_clk) {
 // input命令が来たとき
 void InputBuffer::dequeue(unsigned long long* clk, int* input_clk) {
     input_count++;
-    if (data_n == 0) {
+    if (data_n < 4) {
         input_stall++;
-        // 空だったら、まだ消費できてない残りのクロック数の分だけストールする
-        *clk += clk_per_8_bit - *input_clk;
+        // 4byteなかったらデータが揃うまでストール
+        *clk += clk_per_8_bit - *input_clk + (3-data_n)*clk_per_8_bit;
+        // *clk += clk_per_8_bit - *input_clk; // もともとの
         *input_clk = 0;
+        data_n = 0;
     } else {
-        data_n--;
+        data_n -= 4;
     }
 }
 

@@ -90,9 +90,10 @@ void Predictor::predict(int act, unsigned long long* clk, bool debug, int* input
 
 // 情報出力
 void Predictor::print_stat() {
-    printf("Predictor access time:\t%lld\n", predict_access);
-    printf("Predictor hit time:\t%lld\n", predict_hit);
-    printf("Predictor miss time:\t%lld\n", predict_miss);
-    printf("Predictor hit rate:\t%f(%%)\n", (double)predict_hit/predict_access*100);
+    printf("\n\t---- Predictor Statistics ---------------------------\n\n");
+    printf("\tPredictor access time:\t%lld\n", predict_access);
+    printf("\tPredictor hit time:\t%lld\n", predict_hit);
+    printf("\tPredictor miss time:\t%lld\n", predict_miss);
+    printf("\tPredictor hit rate:\t%f(%%)\n", (double)predict_hit/predict_access*100);
     printf("\n");
 }
