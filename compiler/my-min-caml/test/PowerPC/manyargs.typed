@@ -1,0 +1,87 @@
+Let
+   x
+   type Int
+   42
+   LetRec
+         f:type Fun:type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,type Int,->type Unit
+         args:y1:type Int, y2:type Int, y3:type Int, y4:type Int, y5:type Int, y6:type Int, y7:type Int, y8:type Int, y9:type Int, y10:type Int, y11:type Int, y12:type Int, y13:type Int, y14:type Int, y15:type Int, y16:type Int, y17:type Int, y18:type Int, y19:type Int, y20:type Int, y21:type Int, y22:type Int, y23:type Int, y24:type Int, y25:type Int, 
+         App
+            Var print_int
+            Add
+               Add
+                  Add
+                     Add
+                        Add
+                           Add
+                              Add
+                                 Add
+                                    Add
+                                       Add
+                                          Add
+                                             Add
+                                                Add
+                                                   Add
+                                                      Add
+                                                         Add
+                                                            Add
+                                                               Add
+                                                                  Add
+                                                                     Add
+                                                                        Add
+                                                                           Add
+                                                                              Add
+                                                                                 Add
+                                                                                    Add
+                                                                                       Var x
+                                                                                       Var y1
+                                                                                    Var y2
+                                                                                 Var y3
+                                                                              Var y4
+                                                                           Var y5
+                                                                        Var y6
+                                                                     Var y7
+                                                                  Var y8
+                                                               Var y9
+                                                            Var y10
+                                                         Var y11
+                                                      Var y12
+                                                   Var y13
+                                                Var y14
+                                             Var y15
+                                          Var y16
+                                       Var y17
+                                    Var y18
+                                 Var y19
+                              Var y20
+                           Var y21
+                        Var y22
+                     Var y23
+                  Var y24
+               Var y25
+         App
+            Var f
+            1
+            2
+            3
+            4
+            5
+            6
+            7
+            8
+            9
+            10
+            11
+            12
+            13
+            14
+            15
+            16
+            17
+            18
+            19
+            20
+            21
+            22
+            23
+            24
+            25
