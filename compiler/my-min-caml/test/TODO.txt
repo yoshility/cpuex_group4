@@ -1,0 +1,39 @@
+- 関数呼び出し規約 <- freeze
+- ライブラリ関数
+- IO周りの確認
+- test scriptを通す
+- 特に小数点に注意
+- label と即値
+- array??
+
+## test
+- print done ok
+- sum-tail done ok
+- gcd done ok
+- sum done ok
+- fib done ok
+- ack done ok
+- even-odd done ok
+- adder done ok
+- funcomp done ok
+- cls-rec done ok
+- cls-bug done ok
+- cls-bug2 done ok
+- cls-reg-bug done ok
+- shuffle done ok
+- spill done ok
+- spill2 done ok
+- spill3 done ok
+- join-stack done ok
+- join-stack2 simulator bug ok
+- join-stack3 done ok
+- join-reg done ok 
+- join-reg2 done ok 
+- non-tail-if bug unfinished simulator? ok
+- non-tail-if2 done ok
+- inprod done ok
+- inprod-rec simulator: no slli ok
+- inprod-loop simulator: no slli ok
+- matmul simulator: no slli ok
+- matmul-flat simulator: no slli ok
+- manyargs freeze (not necessary)

@@ -1,0 +1,263 @@
+Let
+   n_objects
+   type Array type Int
+   Array
+        1
+        0
+   Let
+      objects
+      type Array type Tuple(type Int,type Int,type Int,type Int,type Array type Float,type Array type Float,type Bool,type Array type Float,type Array type Float,type Array type Float,type Array type Float,)
+      Let
+         dummy
+         type Array type Float
+         Array
+              0
+              0.
+         Array
+              60
+              Tuple
+                   0
+                   0
+                   0
+                   0
+                   Var dummy
+                   Var dummy
+                   false
+                   Var dummy
+                   Var dummy
+                   Var dummy
+                   Var dummy
+      Let
+         screen
+         type Array type Float
+         Array
+              3
+              0.
+         Let
+            viewpoint
+            type Array type Float
+            Array
+                 3
+                 0.
+            Let
+               light
+               type Array type Float
+               Array
+                    3
+                    0.
+               Let
+                  beam
+                  type Array type Float
+                  Array
+                       1
+                       255.
+                  Let
+                     and_net
+                     type Array type Array type Int
+                     Array
+                          50
+                          Array
+                               1
+                               Neg 1
+                     Let
+                        or_net
+                        type Array type Array type Array type Int
+                        Array
+                             1
+                             Array
+                                  1
+                                  Get
+                                     Var and_net
+                                     0
+                        Let
+                           solver_dist
+                           type Array type Float
+                           Array
+                                1
+                                0.
+                           Let
+                              intsec_rectside
+                              type Array type Int
+                              Array
+                                   1
+                                   0
+                              Let
+                                 tmin
+                                 type Array type Float
+                                 Array
+                                      1
+                                      1000000000.
+                                 Let
+                                    intersection_point
+                                    type Array type Float
+                                    Array
+                                         3
+                                         0.
+                                    Let
+                                       intersected_object_id
+                                       type Array type Int
+                                       Array
+                                            1
+                                            0
+                                       Let
+                                          nvector
+                                          type Array type Float
+                                          Array
+                                               3
+                                               0.
+                                          Let
+                                             texture_color
+                                             type Array type Float
+                                             Array
+                                                  3
+                                                  0.
+                                             Let
+                                                diffuse_ray
+                                                type Array type Float
+                                                Array
+                                                     3
+                                                     0.
+                                                Let
+                                                   rgb
+                                                   type Array type Float
+                                                   Array
+                                                        3
+                                                        0.
+                                                   Let
+                                                      image_size
+                                                      type Array type Int
+                                                      Array
+                                                           2
+                                                           0
+                                                      Let
+                                                         image_center
+                                                         type Array type Int
+                                                         Array
+                                                              2
+                                                              0
+                                                         Let
+                                                            scan_pitch
+                                                            type Array type Float
+                                                            Array
+                                                                 1
+                                                                 0.
+                                                            Let
+                                                               startp
+                                                               type Array type Float
+                                                               Array
+                                                                    3
+                                                                    0.
+                                                               Let
+                                                                  startp_fast
+                                                                  type Array type Float
+                                                                  Array
+                                                                       3
+                                                                       0.
+                                                                  Let
+                                                                     screenx_dir
+                                                                     type Array type Float
+                                                                     Array
+                                                                          3
+                                                                          0.
+                                                                     Let
+                                                                        screeny_dir
+                                                                        type Array type Float
+                                                                        Array
+                                                                             3
+                                                                             0.
+                                                                        Let
+                                                                           screenz_dir
+                                                                           type Array type Float
+                                                                           Array
+                                                                                3
+                                                                                0.
+                                                                           Let
+                                                                              ptrace_dirvec
+                                                                              type Array type Float
+                                                                              Array
+                                                                                   3
+                                                                                   0.
+                                                                              Let
+                                                                                 dirvecs
+                                                                                 type Array type Array type Tuple(type Array type Float,type Array type Array type Float,)
+                                                                                 Let
+                                                                                    dummyf
+                                                                                    type Array type Float
+                                                                                    Array
+                                                                                         0
+                                                                                         0.
+                                                                                    Let
+                                                                                       dummyff
+                                                                                       type Array type Array type Float
+                                                                                       Array
+                                                                                            0
+                                                                                            Var dummyf
+                                                                                       Let
+                                                                                          dummy_vs
+                                                                                          type Array type Tuple(type Array type Float,type Array type Array type Float,)
+                                                                                          Array
+                                                                                               0
+                                                                                               Tuple
+                                                                                                    Var dummyf
+                                                                                                    Var dummyff
+                                                                                          Array
+                                                                                               5
+                                                                                               Var dummy_vs
+                                                                                 Let
+                                                                                    light_dirvec
+                                                                                    type Tuple(type Array type Float,type Array type Array type Float,)
+                                                                                    Let
+                                                                                       dummyf2
+                                                                                       type Array type Float
+                                                                                       Array
+                                                                                            0
+                                                                                            0.
+                                                                                       Let
+                                                                                          v3
+                                                                                          type Array type Float
+                                                                                          Array
+                                                                                               3
+                                                                                               0.
+                                                                                          Let
+                                                                                             consts
+                                                                                             type Array type Array type Float
+                                                                                             Array
+                                                                                                  60
+                                                                                                  Var dummyf2
+                                                                                             Tuple
+                                                                                                  Var v3
+                                                                                                  Var consts
+                                                                                    Let
+                                                                                       reflections
+                                                                                       type Array type Tuple(type Int,type Tuple(type Array type Float,type Array type Array type Float,),type Float,)
+                                                                                       Let
+                                                                                          dummyf3
+                                                                                          type Array type Float
+                                                                                          Array
+                                                                                               0
+                                                                                               0.
+                                                                                          Let
+                                                                                             dummyff3
+                                                                                             type Array type Array type Float
+                                                                                             Array
+                                                                                                  0
+                                                                                                  Var dummyf3
+                                                                                             Let
+                                                                                                dummydv
+                                                                                                type Tuple(type Array type Float,type Array type Array type Float,)
+                                                                                                Tuple
+                                                                                                     Var dummyf3
+                                                                                                     Var dummyff3
+                                                                                                Array
+                                                                                                     180
+                                                                                                     Tuple
+                                                                                                          0
+                                                                                                          Var dummydv
+                                                                                                          0.
+                                                                                       Let
+                                                                                          n_reflections
+                                                                                          type Array type Int
+                                                                                          Array
+                                                                                               1
+                                                                                               0
+                                                                                          Unit

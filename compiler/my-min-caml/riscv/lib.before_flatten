@@ -1,0 +1,73 @@
+Let
+   Ti15 type Int
+   Let
+      Ti11 type Int
+      Let
+         Ti7 type Int
+         Let
+            Ti3 type Int
+            Let
+               Td2 type Float
+               Let
+                  Td1 type Float
+                  1.
+                  AppDir
+                        Label: fsqr Td1,
+               AppDir
+                     Label: min_caml_int_of_float Td2,
+            Let
+               Ti6 type Int
+               Let
+                  Td5 type Float
+                  Let
+                     Td4 type Float
+                     1.
+                     AppDir
+                           Label: fhalf Td4,
+                  AppDir
+                        Label: min_caml_int_of_float Td5,
+               Add
+                  Ti3
+                  Ti6
+         Let
+            Ti10 type Int
+            Let
+               Td9 type Float
+               Let
+                  Td8 type Float
+                  1.
+                  AppDir
+                        Label: atan Td8,
+               AppDir
+                     Label: min_caml_int_of_float Td9,
+            Add
+               Ti7
+               Ti10
+      Let
+         Ti14 type Int
+         Let
+            Td13 type Float
+            Let
+               Td12 type Float
+               1.
+               AppDir
+                     Label: cos Td12,
+            AppDir
+                  Label: min_caml_int_of_float Td13,
+         Add
+            Ti11
+            Ti14
+   Let
+      Ti18 type Int
+      Let
+         Td17 type Float
+         Let
+            Td16 type Float
+            1.
+            AppDir
+                  Label: sin Td16,
+         AppDir
+               Label: min_caml_int_of_float Td17,
+      Add
+         Ti15
+         Ti18

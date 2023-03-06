@@ -1,0 +1,1 @@
+let rec add a b = a+b in print_int(int_of_float((add 1.5 8.5) *. 5.0))

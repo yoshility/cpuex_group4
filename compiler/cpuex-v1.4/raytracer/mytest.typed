@@ -1,0 +1,16 @@
+Let
+   Tu1
+   type Unit
+   Put
+      Var n_objects
+      0
+      1
+   App
+      Var print_int
+      App
+         Var int_of_float
+         FAdd
+             Get
+                Var screen
+                0
+             0.

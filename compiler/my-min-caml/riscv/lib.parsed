@@ -1,0 +1,663 @@
+LetRec
+      while1:type Var type Fun:type Float,type Float,->type Float
+      args:a:type Var type Float, p:type Var type Float, 
+      IF
+        App
+           Var fispos
+           FSub
+               Var a
+               Var p
+        App
+           Var while1
+           Var a
+           FMul
+               2.
+               Var p
+        Var p
+      LetRec
+            p1:type Var type Fun:type Float,->type Float
+            args:a:type Var type Float, 
+            Let
+               pi
+               type Var type Float
+               3.14159265359
+               App
+                  Var while1
+                  Var a
+                  FMul
+                      2.
+                      Var pi
+            LetRec
+                  while2:type Var type Fun:type Float,type Float,->type Float
+                  args:a:type Var type Float, p:type Var type Float, 
+                  Let
+                     pi
+                     type Var type Float
+                     3.14159265359
+                     IF
+                       App
+                          Var fispos
+                          FSub
+                              Var a
+                              FMul
+                                  2.
+                                  Var pi
+                       IF
+                         App
+                            Var fispos
+                            FSub
+                                Var a
+                                Var p
+                         App
+                            Var while2
+                            FSub
+                                Var a
+                                Var p
+                            FDiv
+                                Var p
+                                2.
+                         App
+                            Var while2
+                            Var a
+                            FDiv
+                                Var p
+                                2.
+                       Var a
+                  LetRec
+                        reduction_2pi:type Var type Fun:type Float,->type Float
+                        args:x:type Var type Float, 
+                        App
+                           Var while2
+                           Var x
+                           App
+                              Var p1
+                              Var x
+                        LetRec
+                              kernel_sin:type Var type Fun:type Float,->type Float
+                              args:x:type Var type Float, 
+                              Let
+                                 s3
+                                 type Var type Float
+                                 0.16666668
+                                 Let
+                                    s5
+                                    type Var type Float
+                                    0.008332824
+                                    Let
+                                       s7
+                                       type Var type Float
+                                       0.00019587841
+                                       Let
+                                          x2
+                                          type Var type Float
+                                          FMul
+                                              Var x
+                                              Var x
+                                          FMul
+                                              FAdd
+                                                  FMul
+                                                      FSub
+                                                          FMul
+                                                              FAdd
+                                                                  FMul
+                                                                      FSub
+                                                                          0.
+                                                                          Var s7
+                                                                      Var x2
+                                                                  Var s5
+                                                              Var x2
+                                                          Var s3
+                                                      Var x2
+                                                  1.
+                                              Var x
+                              LetRec
+                                    kernel_cos:type Var type Fun:type Float,->type Float
+                                    args:x:type Var type Float, 
+                                    Let
+                                       c2
+                                       type Var type Float
+                                       0.5
+                                       Let
+                                          c4
+                                          type Var type Float
+                                          0.04166368
+                                          Let
+                                             c6
+                                             type Var type Float
+                                             0.0013695068
+                                             Let
+                                                x2
+                                                type Var type Float
+                                                FMul
+                                                    Var x
+                                                    Var x
+                                                FAdd
+                                                    FMul
+                                                        FSub
+                                                            FMul
+                                                                FAdd
+                                                                    FMul
+                                                                        FSub
+                                                                            0.
+                                                                            Var c6
+                                                                        Var x2
+                                                                    Var c4
+                                                                Var x2
+                                                            Var c2
+                                                        Var x2
+                                                    1.
+                                    LetRec
+                                          flag0:type Var type Fun:type Float,->type Int
+                                          args:x:type Var type Float, 
+                                          IF
+                                            App
+                                               Var fispos
+                                               Var x
+                                            1
+                                            0
+                                          LetRec
+                                                x0:type Var type Fun:type Float,->type Float
+                                                args:x:type Var type Float, 
+                                                Let
+                                                   f1
+                                                   type Var type Int
+                                                   App
+                                                      Var flag0
+                                                      Var x
+                                                   IF
+                                                     Eq
+                                                       Var f1
+                                                       1
+                                                     Var x
+                                                     FMul
+                                                         -1.
+                                                         Var x
+                                                LetRec
+                                                      x00:type Var type Fun:type Float,->type Float
+                                                      args:x:type Var type Float, 
+                                                      Let
+                                                         x2
+                                                         type Var type Float
+                                                         App
+                                                            Var x0
+                                                            Var x
+                                                         App
+                                                            Var reduction_2pi
+                                                            Var x2
+                                                      LetRec
+                                                            x1:type Var type Fun:type Float,->type Float
+                                                            args:x:type Var type Float, 
+                                                            Let
+                                                               x000
+                                                               type Var type Float
+                                                               App
+                                                                  Var x00
+                                                                  Var x
+                                                               Let
+                                                                  pi
+                                                                  type Var type Float
+                                                                  3.14159265359
+                                                                  IF
+                                                                    App
+                                                                       Var fispos
+                                                                       FSub
+                                                                           Var x000
+                                                                           Var pi
+                                                                    FSub
+                                                                        Var x000
+                                                                        Var pi
+                                                                    Var x000
+                                                            LetRec
+                                                                  flag1:type Var type Fun:type Float,->type Int
+                                                                  args:x:type Var type Float, 
+                                                                  Let
+                                                                     x10
+                                                                     type Var type Float
+                                                                     App
+                                                                        Var x1
+                                                                        Var x
+                                                                     Let
+                                                                        x000
+                                                                        type Var type Float
+                                                                        App
+                                                                           Var x00
+                                                                           Var x
+                                                                        Let
+                                                                           flag00
+                                                                           type Var type Int
+                                                                           App
+                                                                              Var flag0
+                                                                              Var x
+                                                                           IF
+                                                                             Eq
+                                                                               Var x10
+                                                                               Var x000
+                                                                             Var flag00
+                                                                             Sub
+                                                                                1
+                                                                                Var flag00
+                                                                  LetRec
+                                                                        x2:type Var type Fun:type Float,->type Float
+                                                                        args:x:type Var type Float, 
+                                                                        Let
+                                                                           x10
+                                                                           type Var type Float
+                                                                           App
+                                                                              Var x1
+                                                                              Var x
+                                                                           Let
+                                                                              pi
+                                                                              type Var type Float
+                                                                              3.14159265359
+                                                                              IF
+                                                                                App
+                                                                                   Var fispos
+                                                                                   FSub
+                                                                                       FMul
+                                                                                           2.
+                                                                                           Var x10
+                                                                                       Var pi
+                                                                                FSub
+                                                                                    Var pi
+                                                                                    Var x10
+                                                                                Var x10
+                                                                        LetRec
+                                                                              x3:type Var type Fun:type Float,->type Float
+                                                                              args:x:type Var type Float, 
+                                                                              Let
+                                                                                 x20
+                                                                                 type Var type Float
+                                                                                 App
+                                                                                    Var x2
+                                                                                    Var x
+                                                                                 Let
+                                                                                    pi
+                                                                                    type Var type Float
+                                                                                    3.14159265359
+                                                                                    IF
+                                                                                      App
+                                                                                         Var fispos
+                                                                                         FSub
+                                                                                             Var pi
+                                                                                             FMul
+                                                                                                 4.
+                                                                                                 Var x20
+                                                                                      App
+                                                                                         Var kernel_sin
+                                                                                         Var x20
+                                                                                      App
+                                                                                         Var kernel_cos
+                                                                                         FSub
+                                                                                             FDiv
+                                                                                                 Var pi
+                                                                                                 2.
+                                                                                             Var x20
+                                                                              LetRec
+                                                                                    sin:type Var type Fun:type Float,->type Float
+                                                                                    args:x:type Var type Float, 
+                                                                                    IF
+                                                                                      Eq
+                                                                                        App
+                                                                                           Var flag1
+                                                                                           Var x
+                                                                                        1
+                                                                                      App
+                                                                                         Var x3
+                                                                                         Var x
+                                                                                      FMul
+                                                                                          -1.
+                                                                                          App
+                                                                                             Var x3
+                                                                                             Var x
+                                                                                    LetRec
+                                                                                          x0:type Var type Fun:type Float,->type Float
+                                                                                          args:x:type Var type Float, 
+                                                                                          IF
+                                                                                            App
+                                                                                               Var fispos
+                                                                                               Var x
+                                                                                            Var x
+                                                                                            FMul
+                                                                                                -1.
+                                                                                                Var x
+                                                                                          LetRec
+                                                                                                x00:type Var type Fun:type Float,->type Float
+                                                                                                args:x:type Var type Float, 
+                                                                                                App
+                                                                                                   Var reduction_2pi
+                                                                                                   App
+                                                                                                      Var x0
+                                                                                                      Var x
+                                                                                                LetRec
+                                                                                                      x1:type Var type Fun:type Float,->type Float
+                                                                                                      args:x:type Var type Float, 
+                                                                                                      Let
+                                                                                                         pi
+                                                                                                         type Var type Float
+                                                                                                         3.14159265359
+                                                                                                         Let
+                                                                                                            x000
+                                                                                                            type Var type Float
+                                                                                                            App
+                                                                                                               Var x00
+                                                                                                               Var x
+                                                                                                            IF
+                                                                                                              App
+                                                                                                                 Var fispos
+                                                                                                                 FSub
+                                                                                                                     Var x000
+                                                                                                                     Var pi
+                                                                                                              FSub
+                                                                                                                  Var x000
+                                                                                                                  Var pi
+                                                                                                              Var x000
+                                                                                                      LetRec
+                                                                                                            flag0:type Var type Fun:type Float,->type Int
+                                                                                                            args:x:type Var type Float, 
+                                                                                                            IF
+                                                                                                              Eq
+                                                                                                                App
+                                                                                                                   Var x1
+                                                                                                                   Var x
+                                                                                                                App
+                                                                                                                   Var x00
+                                                                                                                   Var x
+                                                                                                              1
+                                                                                                              0
+                                                                                                            LetRec
+                                                                                                                  x2:type Var type Fun:type Float,->type Float
+                                                                                                                  args:x:type Var type Float, 
+                                                                                                                  Let
+                                                                                                                     pi
+                                                                                                                     type Var type Float
+                                                                                                                     3.14159265359
+                                                                                                                     Let
+                                                                                                                        x10
+                                                                                                                        type Var type Float
+                                                                                                                        App
+                                                                                                                           Var x1
+                                                                                                                           Var x
+                                                                                                                        IF
+                                                                                                                          App
+                                                                                                                             Var fispos
+                                                                                                                             FSub
+                                                                                                                                 FMul
+                                                                                                                                     2.
+                                                                                                                                     Var x10
+                                                                                                                                 Var pi
+                                                                                                                          FSub
+                                                                                                                              Var pi
+                                                                                                                              Var x10
+                                                                                                                          Var x10
+                                                                                                                  LetRec
+                                                                                                                        flag1:type Var type Fun:type Float,->type Int
+                                                                                                                        args:x:type Var type Float, 
+                                                                                                                        Let
+                                                                                                                           flag00
+                                                                                                                           type Var type Int
+                                                                                                                           App
+                                                                                                                              Var flag0
+                                                                                                                              Var x
+                                                                                                                           IF
+                                                                                                                             Eq
+                                                                                                                               App
+                                                                                                                                  Var x2
+                                                                                                                                  Var x
+                                                                                                                               App
+                                                                                                                                  Var x1
+                                                                                                                                  Var x
+                                                                                                                             Var flag00
+                                                                                                                             Sub
+                                                                                                                                1
+                                                                                                                                Var flag00
+                                                                                                                        LetRec
+                                                                                                                              x3:type Var type Fun:type Float,->type Float
+                                                                                                                              args:x:type Var type Float, 
+                                                                                                                              Let
+                                                                                                                                 pi
+                                                                                                                                 type Var type Float
+                                                                                                                                 3.14159265359
+                                                                                                                                 Let
+                                                                                                                                    x20
+                                                                                                                                    type Var type Float
+                                                                                                                                    App
+                                                                                                                                       Var x2
+                                                                                                                                       Var x
+                                                                                                                                    IF
+                                                                                                                                      App
+                                                                                                                                         Var fispos
+                                                                                                                                         FSub
+                                                                                                                                             Var pi
+                                                                                                                                             FMul
+                                                                                                                                                 4.
+                                                                                                                                                 Var x20
+                                                                                                                                      App
+                                                                                                                                         Var kernel_cos
+                                                                                                                                         Var x20
+                                                                                                                                      App
+                                                                                                                                         Var kernel_sin
+                                                                                                                                         FSub
+                                                                                                                                             FDiv
+                                                                                                                                                 Var pi
+                                                                                                                                                 2.
+                                                                                                                                             Var x20
+                                                                                                                              LetRec
+                                                                                                                                    cos:type Var type Fun:type Float,->type Float
+                                                                                                                                    args:x:type Var type Float, 
+                                                                                                                                    IF
+                                                                                                                                      Eq
+                                                                                                                                        App
+                                                                                                                                           Var flag1
+                                                                                                                                           Var x
+                                                                                                                                        1
+                                                                                                                                      App
+                                                                                                                                         Var x3
+                                                                                                                                         Var x
+                                                                                                                                      FMul
+                                                                                                                                          -1.
+                                                                                                                                          App
+                                                                                                                                             Var x3
+                                                                                                                                             Var x
+                                                                                                                                    LetRec
+                                                                                                                                          ker_atan:type Var type Fun:type Float,->type Float
+                                                                                                                                          args:x:type Var type Float, 
+                                                                                                                                          Let
+                                                                                                                                             a3
+                                                                                                                                             type Var type Float
+                                                                                                                                             0.33333333
+                                                                                                                                             Let
+                                                                                                                                                a5
+                                                                                                                                                type Var type Float
+                                                                                                                                                0.2
+                                                                                                                                                Let
+                                                                                                                                                   a7
+                                                                                                                                                   type Var type Float
+                                                                                                                                                   0.142857142
+                                                                                                                                                   Let
+                                                                                                                                                      a9
+                                                                                                                                                      type Var type Float
+                                                                                                                                                      0.111111104
+                                                                                                                                                      Let
+                                                                                                                                                         a11
+                                                                                                                                                         type Var type Float
+                                                                                                                                                         0.08976446
+                                                                                                                                                         Let
+                                                                                                                                                            a13
+                                                                                                                                                            type Var type Float
+                                                                                                                                                            0.06003548
+                                                                                                                                                            Let
+                                                                                                                                                               x2
+                                                                                                                                                               type Var type Float
+                                                                                                                                                               FMul
+                                                                                                                                                                   Var x
+                                                                                                                                                                   Var x
+                                                                                                                                                               FAdd
+                                                                                                                                                                   FMul
+                                                                                                                                                                       FMul
+                                                                                                                                                                           FSub
+                                                                                                                                                                               FMul
+                                                                                                                                                                                   FAdd
+                                                                                                                                                                                       FMul
+                                                                                                                                                                                           FSub
+                                                                                                                                                                                               FMul
+                                                                                                                                                                                                   FAdd
+                                                                                                                                                                                                       FMul
+                                                                                                                                                                                                           FSub
+                                                                                                                                                                                                               FMul
+                                                                                                                                                                                                                   Var a13
+                                                                                                                                                                                                                   Var x2
+                                                                                                                                                                                                               Var a11
+                                                                                                                                                                                                           Var x2
+                                                                                                                                                                                                       Var a9
+                                                                                                                                                                                                   Var x2
+                                                                                                                                                                                               Var a7
+                                                                                                                                                                                           Var x2
+                                                                                                                                                                                       Var a5
+                                                                                                                                                                                   Var x2
+                                                                                                                                                                               Var a3
+                                                                                                                                                                           Var x
+                                                                                                                                                                       Var x2
+                                                                                                                                                                   Var x
+                                                                                                                                          LetRec
+                                                                                                                                                flag1:type Var type Fun:type Float,->type Int
+                                                                                                                                                args:x:type Var type Float, 
+                                                                                                                                                IF
+                                                                                                                                                  App
+                                                                                                                                                     Var fispos
+                                                                                                                                                     Var x
+                                                                                                                                                  1
+                                                                                                                                                  Neg 1
+                                                                                                                                                LetRec
+                                                                                                                                                      x0:type Var type Fun:type Float,->type Float
+                                                                                                                                                      args:x:type Var type Float, 
+                                                                                                                                                      IF
+                                                                                                                                                        App
+                                                                                                                                                           Var fispos
+                                                                                                                                                           Var x
+                                                                                                                                                        Var x
+                                                                                                                                                        FMul
+                                                                                                                                                            -1.
+                                                                                                                                                            Var x
+                                                                                                                                                      LetRec
+                                                                                                                                                            y:type Var type Fun:type Float,->type Float
+                                                                                                                                                            args:x:type Var type Float, 
+                                                                                                                                                            Let
+                                                                                                                                                               pi
+                                                                                                                                                               type Var type Float
+                                                                                                                                                               3.14159265359
+                                                                                                                                                               Let
+                                                                                                                                                                  x00
+                                                                                                                                                                  type Var type Float
+                                                                                                                                                                  App
+                                                                                                                                                                     Var x0
+                                                                                                                                                                     Var x
+                                                                                                                                                                  IF
+                                                                                                                                                                    App
+                                                                                                                                                                       Var fispos
+                                                                                                                                                                       FSub
+                                                                                                                                                                           0.4375
+                                                                                                                                                                           Var x00
+                                                                                                                                                                    App
+                                                                                                                                                                       Var ker_atan
+                                                                                                                                                                       Var x00
+                                                                                                                                                                    IF
+                                                                                                                                                                      App
+                                                                                                                                                                         Var fispos
+                                                                                                                                                                         FSub
+                                                                                                                                                                             2.4375
+                                                                                                                                                                             Var x00
+                                                                                                                                                                      FAdd
+                                                                                                                                                                          FDiv
+                                                                                                                                                                              Var pi
+                                                                                                                                                                              4.
+                                                                                                                                                                          App
+                                                                                                                                                                             Var ker_atan
+                                                                                                                                                                             FDiv
+                                                                                                                                                                                 FSub
+                                                                                                                                                                                     Var x00
+                                                                                                                                                                                     1.
+                                                                                                                                                                                 FAdd
+                                                                                                                                                                                     Var x00
+                                                                                                                                                                                     1.
+                                                                                                                                                                      FSub
+                                                                                                                                                                          FDiv
+                                                                                                                                                                              Var pi
+                                                                                                                                                                              2.
+                                                                                                                                                                          App
+                                                                                                                                                                             Var ker_atan
+                                                                                                                                                                             FDiv
+                                                                                                                                                                                 1.
+                                                                                                                                                                                 Var x00
+                                                                                                                                                            LetRec
+                                                                                                                                                                  flag2:type Var type Fun:type Float,->type Int
+                                                                                                                                                                  args:x:type Var type Float, 
+                                                                                                                                                                  IF
+                                                                                                                                                                    App
+                                                                                                                                                                       Var fispos
+                                                                                                                                                                       App
+                                                                                                                                                                          Var y
+                                                                                                                                                                          Var x
+                                                                                                                                                                    1
+                                                                                                                                                                    Neg 1
+                                                                                                                                                                  LetRec
+                                                                                                                                                                        atan:type Var type Fun:type Float,->type Float
+                                                                                                                                                                        args:x:type Var type Float, 
+                                                                                                                                                                        Let
+                                                                                                                                                                           y0
+                                                                                                                                                                           type Var type Float
+                                                                                                                                                                           App
+                                                                                                                                                                              Var y
+                                                                                                                                                                              Var x
+                                                                                                                                                                           IF
+                                                                                                                                                                             Eq
+                                                                                                                                                                               App
+                                                                                                                                                                                  Var flag1
+                                                                                                                                                                                  Var x
+                                                                                                                                                                               App
+                                                                                                                                                                                  Var flag2
+                                                                                                                                                                                  Var x
+                                                                                                                                                                             Var y0
+                                                                                                                                                                             FMul
+                                                                                                                                                                                 -1.
+                                                                                                                                                                                 Var y0
+                                                                                                                                                                        LetRec
+                                                                                                                                                                              fhalf:type Var type Fun:type Float,->type Float
+                                                                                                                                                                              args:x:type Var type Float, 
+                                                                                                                                                                              FMul
+                                                                                                                                                                                  Var x
+                                                                                                                                                                                  0.5
+                                                                                                                                                                              LetRec
+                                                                                                                                                                                    fsqr:type Var type Fun:type Float,->type Float
+                                                                                                                                                                                    args:x:type Var type Float, 
+                                                                                                                                                                                    FMul
+                                                                                                                                                                                        Var x
+                                                                                                                                                                                        Var x
+                                                                                                                                                                                    Add
+                                                                                                                                                                                       Add
+                                                                                                                                                                                          Add
+                                                                                                                                                                                             Add
+                                                                                                                                                                                                App
+                                                                                                                                                                                                   Var int_of_float
+                                                                                                                                                                                                   App
+                                                                                                                                                                                                      Var fsqr
+                                                                                                                                                                                                      1.
+                                                                                                                                                                                                App
+                                                                                                                                                                                                   Var int_of_float
+                                                                                                                                                                                                   App
+                                                                                                                                                                                                      Var fhalf
+                                                                                                                                                                                                      1.
+                                                                                                                                                                                             App
+                                                                                                                                                                                                Var int_of_float
+                                                                                                                                                                                                App
+                                                                                                                                                                                                   Var atan
+                                                                                                                                                                                                   1.
+                                                                                                                                                                                          App
+                                                                                                                                                                                             Var int_of_float
+                                                                                                                                                                                             App
+                                                                                                                                                                                                Var cos
+                                                                                                                                                                                                1.
+                                                                                                                                                                                       App
+                                                                                                                                                                                          Var int_of_float
+                                                                                                                                                                                          App
+                                                                                                                                                                                             Var sin
+                                                                                                                                                                                             1.
