@@ -1,3 +1,0 @@
-[submodule "compiler/min-caml"]
-	path = compiler/min-caml
-	url = git@github.com:yoshility/cpuex_group4.git
