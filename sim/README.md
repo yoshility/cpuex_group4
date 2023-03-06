@@ -8,42 +8,45 @@ sim/ -- assembler/ (アセンブラ用のファイル一式)
 ```
 
 ## シミュレータの使い方
-1. test/にアセンブリファイル、simulator/にsldファイルとppmファイルを用意
-
-   ※ アセンブリの書式は`test/fib_iter2.s`を参照し、空白行や#コメントだけの行を作らないように 
+1. `test/`にアセンブリファイル、`simulator/`にsldファイルを用意\
+   ※ アセンブリの書式は`test/minrt_256_0214.s`を参照し、空白行や#コメントだけの行を作らないように 
 2. simulator/下で以下を実行
    ```
-   $ make
-   $ ./sim ../test/<assembly> <sld> <ppm> <option1> <option2> <option3>
+   $ make accel
+   $ ./sim_accel ../test/<assembly> <sld> <ppm> <option1> <option2> <option3>
    ```
 
 ※ `option`の説明：
    ```
    option1: デバッグモードにする               -> 1
             デバッグモードにしない             -> 0
-   option2: キャッシュを使いたい               -> 1
-            キャッシュではなくメモリのみ使う   -> 0
-   option3: 1命令ずつ実行したい                -> 1
-            最後まで一気に実行したい           -> 0
+   option2: キャッシュを使う                   -> 1
+            キャッシュではなくメモリのみ使う    -> 0
+   option3: 1命令ずつ実行する                 -> 1
+            最後まで一気に実行する             -> 0
    ```
 使用例：
    
-   アセンブリ`hello.s`を実行（デバッグモード、キャッシュなし、一命令ずつ実行）：
+   アセンブリ`minrt_256_0214.s`を実行（デバッグモードでない、キャッシュあり、最後まで一気に実行）
    ```
-   $ ./sim ../test/hello.s base.sld test.ppm 1 0 1
+   $ ./sim_accel ../test/minrt_256_0214.s contest.sld output.ppm 0 1 0
    ```
    1命令ずつ実行するときはエンターを押せば次の命令に行く。
    
 ※ ターミナルで>コマンドを使えばデバッグ内容をファイルに出力できるので標準出力が多すぎて遡れないときに使ってください。
 
 ## アセンブラの使い方
-1. testフォルダにアセンブリファイルを用意
-2. assembler/下で以下を実行
+1. `test`フォルダにアセンブリファイルを用意
+2. `assembler/`下で以下を実行
    ```
    $ make
    $ ./asm ../test/<filename> <option1>
    ```
 3. 変換された`binary.txt`が`test/`に入る
+4. `clean`するときは以下を実行
+   ```
+   $ make clean
+   ```
 
 ※ `option`の説明：
    ```
@@ -52,7 +55,12 @@ sim/ -- assembler/ (アセンブラ用のファイル一式)
    ```
 使用例：
 
-   `fib_iter2.s`をデバッグモードでアセンブルしたいとき：
+   `minrt_256_0214.s`をデバッグモードでアセンブルしたいとき：
    ```
-   $ ./asm ../test/fib_iter.s 1
+   $ ./asm ../test/minrt_256_0214.s 1
+   ```
+
+   `minrt_256_0214.s`をプレーンな機械語にアセンブルしたいとき：
+   ```
+   $ ./asm ../test/minrt_256_0214.s
    ```
