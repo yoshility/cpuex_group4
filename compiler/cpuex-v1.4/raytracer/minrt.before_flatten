@@ -1,0 +1,14 @@
+Let
+   Tu246 type Unit
+   Let
+      Ti247 type Int
+      128
+      Let
+         Ti248 type Int
+         128
+         Let
+            Ti249 type Int
+            3
+            AppDir
+                  Label: rt Ti247,Ti248,Ti249,
+   Unit

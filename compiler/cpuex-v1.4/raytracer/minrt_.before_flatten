@@ -1,0 +1,446 @@
+Let
+   n_objects type Array type Int
+   Let
+      Ti247 type Int
+      1
+      Let
+         Ti248 type Int
+         0
+         AppDir
+               Label: min_caml_create_array Ti247,Ti248,
+   Let
+      objects type Array type Tuple(type Int,type Int,type Int,type Int,type Array type Float,type Array type Float,type Bool,type Array type Float,type Array type Float,type Array type Float,type Array type Float,)
+      Let
+         dummy type Array type Float
+         Let
+            Ti249 type Int
+            0
+            Let
+               Td250 type Float
+               0.
+               AppDir
+                     Label: min_caml_create_float_array Ti249,Td250,
+         Let
+            Ti251 type Int
+            60
+            Let
+               Tt257 type Tuple(type Int,type Int,type Int,type Int,type Array type Float,type Array type Float,type Int,type Array type Float,type Array type Float,type Array type Float,type Array type Float,)
+               Let
+                  Ti252 type Int
+                  0
+                  Let
+                     Ti253 type Int
+                     0
+                     Let
+                        Ti254 type Int
+                        0
+                        Let
+                           Ti255 type Int
+                           0
+                           Let
+                              Ti256 type Int
+                              0
+                              Tuple
+                                   Ti252
+                                   Ti253
+                                   Ti254
+                                   Ti255
+                                   dummy
+                                   dummy
+                                   Ti256
+                                   dummy
+                                   dummy
+                                   dummy
+                                   dummy
+               AppDir
+                     Label: min_caml_create_array Ti251,Tt257,
+      Let
+         screen type Array type Float
+         Let
+            Ti258 type Int
+            3
+            Let
+               Td259 type Float
+               0.
+               AppDir
+                     Label: min_caml_create_float_array Ti258,Td259,
+         Let
+            viewpoint type Array type Float
+            Let
+               Ti260 type Int
+               3
+               Let
+                  Td261 type Float
+                  0.
+                  AppDir
+                        Label: min_caml_create_float_array Ti260,Td261,
+            Let
+               light type Array type Float
+               Let
+                  Ti262 type Int
+                  3
+                  Let
+                     Td263 type Float
+                     0.
+                     AppDir
+                           Label: min_caml_create_float_array Ti262,Td263,
+               Let
+                  beam type Array type Float
+                  Let
+                     Ti264 type Int
+                     1
+                     Let
+                        Td265 type Float
+                        255.
+                        AppDir
+                              Label: min_caml_create_float_array Ti264,Td265,
+                  Let
+                     and_net type Array type Array type Int
+                     Let
+                        Ti266 type Int
+                        50
+                        Let
+                           Ta270 type Array type Int
+                           Let
+                              Ti267 type Int
+                              1
+                              Let
+                                 Ti269 type Int
+                                 Let
+                                    Ti268 type Int
+                                    1
+                                    Neg Ti268
+                                 AppDir
+                                       Label: min_caml_create_array Ti267,Ti269,
+                           AppDir
+                                 Label: min_caml_create_array Ti266,Ta270,
+                     Let
+                        or_net type Array type Array type Array type Int
+                        Let
+                           Ti271 type Int
+                           1
+                           Let
+                              Ta276 type Array type Array type Int
+                              Let
+                                 Ti272 type Int
+                                 1
+                                 Let
+                                    Ta275 type Array type Int
+                                    Let
+                                       Ta273 type Array type Array type Int
+                                       588
+                                       Let
+                                          Ti274 type Int
+                                          0
+                                          Get
+                                             Ta273                                             Ti274
+                                    AppDir
+                                          Label: min_caml_create_array Ti272,Ta275,
+                              AppDir
+                                    Label: min_caml_create_array Ti271,Ta276,
+                        Let
+                           solver_dist type Array type Float
+                           Let
+                              Ti277 type Int
+                              1
+                              Let
+                                 Td278 type Float
+                                 0.
+                                 AppDir
+                                       Label: min_caml_create_float_array Ti277,Td278,
+                           Let
+                              intsec_rectside type Array type Int
+                              Let
+                                 Ti279 type Int
+                                 1
+                                 Let
+                                    Ti280 type Int
+                                    0
+                                    AppDir
+                                          Label: min_caml_create_array Ti279,Ti280,
+                              Let
+                                 tmin type Array type Float
+                                 Let
+                                    Ti281 type Int
+                                    1
+                                    Let
+                                       Td282 type Float
+                                       1000000000.
+                                       AppDir
+                                             Label: min_caml_create_float_array Ti281,Td282,
+                                 Let
+                                    intersection_point type Array type Float
+                                    Let
+                                       Ti283 type Int
+                                       3
+                                       Let
+                                          Td284 type Float
+                                          0.
+                                          AppDir
+                                                Label: min_caml_create_float_array Ti283,Td284,
+                                    Let
+                                       intersected_object_id type Array type Int
+                                       Let
+                                          Ti285 type Int
+                                          1
+                                          Let
+                                             Ti286 type Int
+                                             0
+                                             AppDir
+                                                   Label: min_caml_create_array Ti285,Ti286,
+                                       Let
+                                          nvector type Array type Float
+                                          Let
+                                             Ti287 type Int
+                                             3
+                                             Let
+                                                Td288 type Float
+                                                0.
+                                                AppDir
+                                                      Label: min_caml_create_float_array Ti287,Td288,
+                                          Let
+                                             texture_color type Array type Float
+                                             Let
+                                                Ti289 type Int
+                                                3
+                                                Let
+                                                   Td290 type Float
+                                                   0.
+                                                   AppDir
+                                                         Label: min_caml_create_float_array Ti289,Td290,
+                                             Let
+                                                diffuse_ray type Array type Float
+                                                Let
+                                                   Ti291 type Int
+                                                   3
+                                                   Let
+                                                      Td292 type Float
+                                                      0.
+                                                      AppDir
+                                                            Label: min_caml_create_float_array Ti291,Td292,
+                                                Let
+                                                   rgb type Array type Float
+                                                   Let
+                                                      Ti293 type Int
+                                                      3
+                                                      Let
+                                                         Td294 type Float
+                                                         0.
+                                                         AppDir
+                                                               Label: min_caml_create_float_array Ti293,Td294,
+                                                   Let
+                                                      image_size type Array type Int
+                                                      Let
+                                                         Ti295 type Int
+                                                         2
+                                                         Let
+                                                            Ti296 type Int
+                                                            0
+                                                            AppDir
+                                                                  Label: min_caml_create_array Ti295,Ti296,
+                                                      Let
+                                                         image_center type Array type Int
+                                                         Let
+                                                            Ti297 type Int
+                                                            2
+                                                            Let
+                                                               Ti298 type Int
+                                                               0
+                                                               AppDir
+                                                                     Label: min_caml_create_array Ti297,Ti298,
+                                                         Let
+                                                            scan_pitch type Array type Float
+                                                            Let
+                                                               Ti299 type Int
+                                                               1
+                                                               Let
+                                                                  Td300 type Float
+                                                                  0.
+                                                                  AppDir
+                                                                        Label: min_caml_create_float_array Ti299,Td300,
+                                                            Let
+                                                               startp type Array type Float
+                                                               Let
+                                                                  Ti301 type Int
+                                                                  3
+                                                                  Let
+                                                                     Td302 type Float
+                                                                     0.
+                                                                     AppDir
+                                                                           Label: min_caml_create_float_array Ti301,Td302,
+                                                               Let
+                                                                  startp_fast type Array type Float
+                                                                  Let
+                                                                     Ti303 type Int
+                                                                     3
+                                                                     Let
+                                                                        Td304 type Float
+                                                                        0.
+                                                                        AppDir
+                                                                              Label: min_caml_create_float_array Ti303,Td304,
+                                                                  Let
+                                                                     screenx_dir type Array type Float
+                                                                     Let
+                                                                        Ti305 type Int
+                                                                        3
+                                                                        Let
+                                                                           Td306 type Float
+                                                                           0.
+                                                                           AppDir
+                                                                                 Label: min_caml_create_float_array Ti305,Td306,
+                                                                     Let
+                                                                        screeny_dir type Array type Float
+                                                                        Let
+                                                                           Ti307 type Int
+                                                                           3
+                                                                           Let
+                                                                              Td308 type Float
+                                                                              0.
+                                                                              AppDir
+                                                                                    Label: min_caml_create_float_array Ti307,Td308,
+                                                                        Let
+                                                                           screenz_dir type Array type Float
+                                                                           Let
+                                                                              Ti309 type Int
+                                                                              3
+                                                                              Let
+                                                                                 Td310 type Float
+                                                                                 0.
+                                                                                 AppDir
+                                                                                       Label: min_caml_create_float_array Ti309,Td310,
+                                                                           Let
+                                                                              ptrace_dirvec type Array type Float
+                                                                              Let
+                                                                                 Ti311 type Int
+                                                                                 3
+                                                                                 Let
+                                                                                    Td312 type Float
+                                                                                    0.
+                                                                                    AppDir
+                                                                                          Label: min_caml_create_float_array Ti311,Td312,
+                                                                              Let
+                                                                                 dirvecs type Array type Array type Tuple(type Array type Float,type Array type Array type Float,)
+                                                                                 Let
+                                                                                    dummyf type Array type Float
+                                                                                    Let
+                                                                                       Ti313 type Int
+                                                                                       0
+                                                                                       Let
+                                                                                          Td314 type Float
+                                                                                          0.
+                                                                                          AppDir
+                                                                                                Label: min_caml_create_float_array Ti313,Td314,
+                                                                                    Let
+                                                                                       dummyff type Array type Array type Float
+                                                                                       Let
+                                                                                          Ti315 type Int
+                                                                                          0
+                                                                                          AppDir
+                                                                                                Label: min_caml_create_array Ti315,dummyf,
+                                                                                       Let
+                                                                                          dummy_vs type Array type Tuple(type Array type Float,type Array type Array type Float,)
+                                                                                          Let
+                                                                                             Ti316 type Int
+                                                                                             0
+                                                                                             Let
+                                                                                                Tt317 type Tuple(type Array type Float,type Array type Array type Float,)
+                                                                                                Tuple
+                                                                                                     dummyf
+                                                                                                     dummyff
+                                                                                                AppDir
+                                                                                                      Label: min_caml_create_array Ti316,Tt317,
+                                                                                          Let
+                                                                                             Ti318 type Int
+                                                                                             5
+                                                                                             AppDir
+                                                                                                   Label: min_caml_create_array Ti318,dummy_vs,
+                                                                                 Let
+                                                                                    light_dirvec type Tuple(type Array type Float,type Array type Array type Float,)
+                                                                                    Let
+                                                                                       dummyf2 type Array type Float
+                                                                                       Let
+                                                                                          Ti319 type Int
+                                                                                          0
+                                                                                          Let
+                                                                                             Td320 type Float
+                                                                                             0.
+                                                                                             AppDir
+                                                                                                   Label: min_caml_create_float_array Ti319,Td320,
+                                                                                       Let
+                                                                                          v3 type Array type Float
+                                                                                          Let
+                                                                                             Ti321 type Int
+                                                                                             3
+                                                                                             Let
+                                                                                                Td322 type Float
+                                                                                                0.
+                                                                                                AppDir
+                                                                                                      Label: min_caml_create_float_array Ti321,Td322,
+                                                                                          Let
+                                                                                             consts type Array type Array type Float
+                                                                                             Let
+                                                                                                Ti323 type Int
+                                                                                                60
+                                                                                                AppDir
+                                                                                                      Label: min_caml_create_array Ti323,dummyf2,
+                                                                                             Tuple
+                                                                                                  v3
+                                                                                                  consts
+                                                                                    Let
+                                                                                       reflections type Array type Tuple(type Int,type Tuple(type Array type Float,type Array type Array type Float,),type Float,)
+                                                                                       Let
+                                                                                          dummyf3 type Array type Float
+                                                                                          Let
+                                                                                             Ti324 type Int
+                                                                                             0
+                                                                                             Let
+                                                                                                Td325 type Float
+                                                                                                0.
+                                                                                                AppDir
+                                                                                                      Label: min_caml_create_float_array Ti324,Td325,
+                                                                                          Let
+                                                                                             dummyff3 type Array type Array type Float
+                                                                                             Let
+                                                                                                Ti326 type Int
+                                                                                                0
+                                                                                                AppDir
+                                                                                                      Label: min_caml_create_array Ti326,dummyf3,
+                                                                                             Let
+                                                                                                dummydv type Tuple(type Array type Float,type Array type Array type Float,)
+                                                                                                Tuple
+                                                                                                     dummyf3
+                                                                                                     dummyff3
+                                                                                                Let
+                                                                                                   Ti327 type Int
+                                                                                                   180
+                                                                                                   Let
+                                                                                                      Tt330 type Tuple(type Int,type Tuple(type Array type Float,type Array type Array type Float,),type Float,)
+                                                                                                      Let
+                                                                                                         Ti328 type Int
+                                                                                                         0
+                                                                                                         Let
+                                                                                                            Td329 type Float
+                                                                                                            0.
+                                                                                                            Tuple
+                                                                                                                 Ti328
+                                                                                                                 dummydv
+                                                                                                                 Td329
+                                                                                                      AppDir
+                                                                                                            Label: min_caml_create_array Ti327,Tt330,
+                                                                                       Let
+                                                                                          n_reflections type Array type Int
+                                                                                          Let
+                                                                                             Ti331 type Int
+                                                                                             1
+                                                                                             Let
+                                                                                                Ti332 type Int
+                                                                                                0
+                                                                                                AppDir
+                                                                                                      Label: min_caml_create_array Ti331,Ti332,
+                                                                                          Let
+                                                                                             pi type Float
+                                                                                             3.14159265359
+                                                                                             MakeCls
+                                                                                                    p1: type Fun:type Float,->type FloatLabel:p1
+                                                                                                    pi, 
+                                                                                                    

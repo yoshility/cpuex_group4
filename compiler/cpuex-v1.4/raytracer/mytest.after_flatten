@@ -1,0 +1,39 @@
+Let
+   Tu1 type Unit
+   Let
+      Ta2 type Array type Int
+      ExtArray
+              n_objects
+      Let
+         Ti3 type Int
+         0
+         Let
+            Ti4 type Int
+            1
+            Put
+               Ta2               Ti3               Ti4
+   Let
+      Ti10 type Int
+      Let
+         Td9 type Float
+         Let
+            Td7 type Float
+            Let
+               Ta5 type Array type Float
+               ExtArray
+                       screen
+               Let
+                  Ti6 type Int
+                  0
+                  Get
+                     Ta5                     Ti6
+            Let
+               Td8 type Float
+               0.
+               FAdd
+                   Td7
+                   Td8
+         AppDir
+               Label: min_caml_int_of_float Td9,
+      AppDir
+            Label: min_caml_print_int Ti10,
