@@ -9,7 +9,7 @@ using namespace std;
 #define CLEAN 				1
 #define DIRTY 				2
 #define MEMORY_SIZE			8188000
-#define MEMORY_ACCESS_CLK	100 // missしたときにメモリアクセスする時間
+#define MEMORY_ACCESS_CLK	21 // missしたときにメモリアクセスする時間
 
 #define LW					0
 #define SW					1
@@ -98,46 +98,6 @@ Cache::Cache() {
 	hit_times = 0;
 	miss_times = 0;
 }
-
-// キャッシュ全出力
-// void Cache::print() {
-// 	printf("\n\t---- Data Cache -------------------------------------------------------------------------------------------\n\n");
-// 	printf("\t     Status  |            Tag             |                          Data\n");
-// 	printf("\t             |                            | ");
-// 	for (int i=0; i<(1<<OFFSET_WIDTH); i+=4) {
-// 		printf("%03d ", i);
-// 	}
-// 	printf("\n");
-// 	printf("\t-------------|----------------------------|----------------------------------------------------------------\n");
-// 	for (int i=0; i<4; i++) {
-// 		// print status
-// 		if ((d[i]._status) == 0) {
-// 			printf("\t[%02d] INVALID", i);
-// 		} else if (d[i]._status == 1) {
-// 			printf("\t[%02d]   CLEAN", i);
-// 		} else if (d[i]._status == 2) {
-// 			printf("\t[%02d]   DIRTY", i);
-// 		} else {
-// 			printf("\t[%02d] ???????", i);
-// 		}
-// 		// print tag (絶対正なのでもう32bitでいい)
-// 		printf(" | %026lld | ", to_binary_m(d[i]._tag, 32));
-// 		// print data
-// 		for (int j=0; j<(1<<(OFFSET_WIDTH-2)); j++) {
-// 			printf("%03ld ", d[i]._data[j].i);
-// 		}
-// 		printf("\n");
-// 	}
-// }
-
-// キャッシュブロック1個だけ出力
-// void Cache::print_block(int n) {
-// 	string sta[3] = {"INVALID", "CLEAN", "DIRTY"};
-// 	printf("\tCache_block No.%d\n", n);
-// 	for (int i=0; i<WAY_NUM; i++) {
-		
-// 	}
-// }
 
 // debug print hit or miss
 void Cache::print_hit_miss(int op, bool h_m) {
