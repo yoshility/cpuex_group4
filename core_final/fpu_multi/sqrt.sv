@@ -53,7 +53,7 @@ module sqrt_table (
 	input 	logic 		 rstn
 );
 	(*ram_style = "BLOCK"*) logic [35:0] sqrt_table [1023:0];
-	always_comb begin
+	always_ff @(posedge clk) begin
 		dout = sqrt_table[addr];
 	end
 	initial begin
